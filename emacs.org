@@ -1,0 +1,45 @@
+#+TITLE Emacs
+#+AUTHOR Elliot Penson
+
+* Commands
+
+** Navigation
+
+| Command | Description             |
+|---------+-------------------------|
+| C-b/C-f | Cursor backward/forward |
+| C-a/C-e | Line beginning/end      |
+| C-p/C-n | Line previous/next      |
+| M-v/C-v | Next/previous screen    |
+| C-l     | Center on cursor        |
+| C-s/C-r | Search forward/backward |
+| M-b/M-f | Word backward/forward   |
+| M-</M-> | Document beginning/end  |
+
+** Editing
+
+| Command    | Description           |
+|------------+-----------------------|
+| C-d        | Delete next character |
+| C-<delete> | Delete previous word  |
+| C-k        | Kill to end of line   |
+| C-y        | Yank                  |
+| C-/        | Undo                  |
+
+** Buffers/Files/Windows
+
+| Command | Description            |
+|---------+------------------------|
+| C-x C-f | Open file              |
+| C-x C-s | Save file              |
+| C-x C-c | Close Emacs            |
+| C-x C-b | Buffer list            |
+| C-x b   | Buffer switch to       |
+| C-x o   | Move to other window   |
+| C-x 0   | Delete selected window |
+| C-x 2   | Split vertically       |
+| C-x 3   | Split horizontally     |
+| C-M-v   | Scroll other window    |
+
+** Org mode
+** SLIME
