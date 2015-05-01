@@ -10,7 +10,7 @@
 | C-b/C-f | Cursor backward/forward |
 | C-a/C-e | Line beginning/end      |
 | C-p/C-n | Line previous/next      |
-| M-v/C-v | Next/previous screen    |
+| C-v/M-v | Next/previous screen    |
 | C-l     | Center on cursor        |
 | C-s/C-r | Search forward/backward |
 | M-b/M-f | Word backward/forward   |
@@ -23,8 +23,11 @@
 | C-d        | Delete next character |
 | C-<delete> | Delete previous word  |
 | C-k        | Kill to end of line   |
-| C-y        | Yank                  |
+| C-y        | Yank (paste)          |
 | C-/        | Undo                  |
+| C-space    | Set mark at cursor    |
+| C-g        | Deactivate mark       |
+| C-w        | Kill region           |
 
 ** Buffers/Files/Windows
 
@@ -37,9 +40,17 @@
 | C-x b   | Buffer switch to       |
 | C-x o   | Move to other window   |
 | C-x 0   | Delete selected window |
-| C-x 2   | Split vertically       |
-| C-x 3   | Split horizontally     |
+| C-x 2   | Split horizontally     |
+| C-x 3   | Split vertically       |
 | C-M-v   | Scroll other window    |
+
+** Keyboard Macros
+
+| Command | Description                   |
+|---------+-------------------------------|
+| C-x (   | Start defining keyboard macro |
+| C-x )   | Stop defining keyboard macro  |
+| C-x e   | Execute keyboard macro        |
 
 ** Org mode
 ** SLIME
