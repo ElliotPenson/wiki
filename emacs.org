@@ -1,5 +1,5 @@
-#+TITLE Emacs
-#+AUTHOR Elliot Penson
+#+TITLE: Emacs
+#+AUTHOR: Elliot Penson
 
 * Commands
 
