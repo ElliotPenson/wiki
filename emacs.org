@@ -53,4 +53,17 @@
 | C-x e   | Execute keyboard macro        |
 
 ** Org mode
+
+Headings: * for h1, ** for h2, etc.
+Formatting: *bold*, /italics/
+
+| Command            | Description                 |
+|--------------------+-----------------------------|
+| <tab> (on heading) | Expand/collapse section     |
+| C-c C-n/p          | Next/previous heading       |
+| C-c                | Create a new table          |
+| <tab> (in table)   | Move to next cell in table  |
+| "<s" <tab>         | New code snippet            |
+| C-c '              | Edit snippet in native mode |
+
 ** SLIME
