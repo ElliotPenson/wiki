@@ -1,0 +1,126 @@
+#+TITLE: Swift
+#+AUTHOR: Elliot Penson
+
+* Language Basics
+
+Information is taken from Apple's /The Swift Programming Language/ document.
+  
+** Constants and Variables
+
+   #+BEGIN_SRC swift
+     let maximumLoginAttempts = 10
+     var currentLoginAttempt = 0
+   #+END_SRC
+   
+   The keyword *let* declares a constant, *var* a variable. Swift allows
+   multiple declarations on a single line:
+
+   #+BEGIN_SRC swift
+     var x = 0.0, y = 0.0, z = 0.0
+   #+END_SRC
+
+   *Type declarations*
+
+   #+BEGIN_SRC swift
+     var someString : String
+     var red, green, blue: Double
+   #+END_SRC
+   
+   Names can contain Unicode characters! No whitespace, mathematical symbols,
+   arrows, private-use (or invalid) Unicode code points, or line- and box-
+   drawing characters. Nor can they /begin/ with a number. You cannot redclare
+   constants or variables (Yay!).
+
+   *println* is a global function that prints a value followed by a line break.
+
+   #+BEGIN_SRC swift
+     println("this is a test of our virtual communications")
+   #+END_SRC
+
+   *String interpolation* allows the combination of variables/constants and
+   strings.
+
+   #+BEGIN_SRC swift
+     println("The current value of someString is \(somestring)")
+   #+END_SRC
+   
+** Comments
+   
+   Single-line and multiline comments are supported.
+
+   #+BEGIN_SRC swift
+     // this is a comment
+     /* this is also a comment,
+     but written over multiple lines */
+   #+END_SRC
+
+   Nested multiline comments are allowed.
+
+** Semicolons
+
+   Semicolons are optional. They /are/ required however, if you want to write
+   multiple separate statements on a single line.
+
+** Numbers
+
+*** Integers
+
+    Swift provides signed and unsigned integers in 8, 16, 32, and 64 bit forms.
+    These integers follow a naming convention similar to C, in that a 8-bit
+    unsigned integer is of type *UInt8*, and a 32-bit signed integer is of type
+    *Int32*. Unless you need to work with a specific size of integer, always use
+    *Int* and *UInt* for integer values in your code for consistency and
+    interoperability. *Int* is generally preferred when either type would be
+    appropriate.
+
+*** Floating-Point Numbers
+
+    Swift provides two signed floating-point number types:
+    
+    - *Double* represents a 64-bit floating-point number
+    - *Float* represents a 32-bit floating-point number
+      
+    *Double* is generally preferred when either type would be appropriate.
+    
+** Type Safety and Type Inference
+
+   Swift is a *type safe* language and performs *type checks* when compiling.
+   When a type isn't specifies, Swift used *type inference*. When declaring a
+   constant or variable with an initial value, the type is inferred from the
+   *literal*.
+
+** Booleans
+
+   Swift has a Boolean type, called *Bool* and two Boolean constant values:
+   *true* and *false*.
+
+** Optionals
+
+   You use *optionals* in situations where a value may be absent. An optional
+   says, "there /is/ a value, and it equals /x/" or "there /isn't/ a value at
+   all". An optional *Int* is written as *Int?*, not *Int*. You set an
+   optional variable to a valueless state by assigning it the special value
+   nil:
+   
+   #+BEGIN_SRC swift
+     var serverResponseCode: Int? = 404
+     serverResponseCode = nil
+   #+END_SRC
+
+   If you define an optional variable without providing a default value, the
+   variable is automatically set to nil for you.
+   
+   You can use an if statement to find out whether an optional contains a value
+   by comparing the optional against nil.
+
+   #+BEGIN_SRC swift
+     let possibleNumber = "123"
+     let convertedNumber = possibleNumber.toInt()
+     if convertedNumber != nil {
+         println("convertedNumber contains some integer value.")
+     }
+   #+END_SRC
+
+   Once you're sure that the optional /does/ contain a value, you can access
+   its underlying value by adding an exclamation mark (!) to the end of the
+   optional's name (called *forced unwrapping*).
