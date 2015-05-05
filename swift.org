@@ -2,11 +2,11 @@
 #+AUTHOR: Elliot Penson
 
 * Language Basics
-
-Information is taken from Apple's /The Swift Programming Language/ document.
+  
+  Information is taken from Apple's /The Swift Programming Language/ document.
   
 ** Constants and Variables
-
+   
    #+BEGIN_SRC swift
      let maximumLoginAttempts = 10
      var currentLoginAttempt = 0
@@ -14,13 +14,13 @@ Information is taken from Apple's /The Swift Programming Language/ document.
    
    The keyword *let* declares a constant, *var* a variable. Swift allows
    multiple declarations on a single line:
-
+   
    #+BEGIN_SRC swift
      var x = 0.0, y = 0.0, z = 0.0
    #+END_SRC
-
+   
    *Type declarations*
-
+   
    #+BEGIN_SRC swift
      var someString : String
      var red, green, blue: Double
@@ -30,16 +30,16 @@ Information is taken from Apple's /The Swift Programming Language/ document.
    arrows, private-use (or invalid) Unicode code points, or line- and box-
    drawing characters. Nor can they /begin/ with a number. You cannot redclare
    constants or variables (Yay!).
-
+   
    *println* is a global function that prints a value followed by a line break.
-
+   
    #+BEGIN_SRC swift
      println("this is a test of our virtual communications")
    #+END_SRC
-
+   
    *String interpolation* allows the combination of variables/constants and
    strings.
-
+   
    #+BEGIN_SRC swift
      println("The current value of someString is \(somestring)")
    #+END_SRC
@@ -47,24 +47,24 @@ Information is taken from Apple's /The Swift Programming Language/ document.
 ** Comments
    
    Single-line and multiline comments are supported.
-
+   
    #+BEGIN_SRC swift
      // this is a comment
      /* this is also a comment,
      but written over multiple lines */
    #+END_SRC
-
+   
    Nested multiline comments are allowed.
-
+   
 ** Semicolons
-
+   
    Semicolons are optional. They /are/ required however, if you want to write
    multiple separate statements on a single line.
-
+   
 ** Numbers
-
+   
 *** Integers
-
+    
     Swift provides signed and unsigned integers in 8, 16, 32, and 64 bit forms.
     These integers follow a naming convention similar to C, in that a 8-bit
     unsigned integer is of type *UInt8*, and a 32-bit signed integer is of type
@@ -72,9 +72,9 @@ Information is taken from Apple's /The Swift Programming Language/ document.
     *Int* and *UInt* for integer values in your code for consistency and
     interoperability. *Int* is generally preferred when either type would be
     appropriate.
-
+    
 *** Floating-Point Numbers
-
+    
     Swift provides two signed floating-point number types:
     
     - *Double* represents a 64-bit floating-point number
@@ -83,19 +83,19 @@ Information is taken from Apple's /The Swift Programming Language/ document.
     *Double* is generally preferred when either type would be appropriate.
     
 ** Type Safety and Type Inference
-
+   
    Swift is a *type safe* language and performs *type checks* when compiling.
-   When a type isn't specifies, Swift used *type inference*. When declaring a
+   When a type isn't specified, Swift used *type inference*. When declaring a
    constant or variable with an initial value, the type is inferred from the
    *literal*.
-
+   
 ** Booleans
-
-   Swift has a Boolean type, called *Bool* and two Boolean constant values:
+   
+   Swift has a Boolean type, called *Bool*, and two Boolean constant values:
    *true* and *false*.
-
+   
 ** Optionals
-
+   
    You use *optionals* in situations where a value may be absent. An optional
    says, "there /is/ a value, and it equals /x/" or "there /isn't/ a value at
    all". An optional *Int* is written as *Int?*, not *Int*. You set an
@@ -106,13 +106,13 @@ Information is taken from Apple's /The Swift Programming Language/ document.
      var serverResponseCode: Int? = 404
      serverResponseCode = nil
    #+END_SRC
-
+   
    If you define an optional variable without providing a default value, the
    variable is automatically set to nil for you.
    
    You can use an if statement to find out whether an optional contains a value
    by comparing the optional against nil.
-
+   
    #+BEGIN_SRC swift
      let possibleNumber = "123"
      let convertedNumber = possibleNumber.toInt()
@@ -120,7 +120,156 @@ Information is taken from Apple's /The Swift Programming Language/ document.
          println("convertedNumber contains some integer value.")
      }
    #+END_SRC
-
+   
    Once you're sure that the optional /does/ contain a value, you can access
    its underlying value by adding an exclamation mark (!) to the end of the
    optional's name (called *forced unwrapping*).
+   
+   You use *optional binding* to find out whether an optional contains
+   a value, and if so, to make that value available as a temporary
+   constant or variable.
+   
+   #+BEGIN_SRC swift
+     if let actualNumber = possibleNumber.toInt() {
+         println("\'\(possibleNumber)\' has an integer value of \(actualNumber)")
+     } else {
+         println("\'\(possibleNumber)\' could not be converted to an integer")
+     }
+   #+END_SRC
+   
+   Note that there's no need to use the ! suffix to access the value.
+   
+   You write an *implicitly unwrapped optional* by placing an
+   exclamation mark (String!) rather than a question mark (String?)
+   after the type that you went to make optional. You can think of an
+   implicitly unwrapped optional as giving permission for the optional
+   to be unwrapped automatically whenever it is used. You can still
+   check if an implicitly unwrapped optional is nil and unwrap it in
+   an optional binding. Note: do not use an implicitly unwrapped
+   optional when there is a possibility of a variable becoming nil at
+   a later point.
+   
+** Assertions
+   
+   You write an assertion by calling the global *assert* function. You
+   pass the *assert* function an expression that evaluates to *true*
+   or *false* and a message that should be displayed if the result of
+   the condition is false:
+   
+   #+BEGIN_SRC swift
+     let age = -3
+     assert(age >= 0, "A person's age cannot be less than zero")
+   #+END_SRC
+   
+   Note that the assertion message can be omitted if desired:
+   
+   #+BEGIN_SRC swift
+     assert(age >= 0)
+   #+END_SRC
+   
+* Basic Operators
+  
+** Assignment Operator
+   
+   The /assignment operator/ (a = b) initializes or update the value of
+   a with the value of b. This operator also operates on tuples:
+   
+   #+BEGIN_SRC swift
+     let (x, y) = (1, 2)
+   #+END_SRC
+   
+   The assignment operator (=) does not return a value, to prevent it
+   from being mistakenly used when the equal to operator (==) is
+   intended.
+   
+** Arithmetic Operators
+   
+   Arithmetic operators (+, -, *, /, %, and so forth) detect and
+   disallow value overflow.
+   
+   The addition perator is also supported for /String/ concatenation:
+   
+   #+BEGIN_SRC swift
+    "hello, " + "world" // equals "hello, world"
+   #+END_SRC
+   
+   Swift lets you perform remainder (%) calculations on floating-point
+   numbers. Also note that the sign is ignored when using % (that's
+   also why it's called /remainder/ instead of /modulo/).
+   
+   Like C, Swift provides an /increment operator/ (++) and a /decrement
+   operator (--) as a shortcut to increase or decrease the value of a
+   numeric variable by 1. The ++ and -- symbols can be used as prefix
+   operators or as postfix operators:
+   
+  - If the operator is written /before/ the variable, it increments
+    the variable /before/ returning its value.
+  - If the operator is written /after/ the variable, it increments the
+    variable /after/ returning its value.
+    
+  Unless you need the specific behavior of i++, it is recommended that
+  you use ++i and --i in all cases.
+  
+  The sign of a numeric value can be toggled using a prefixed -, known
+  as the /unary minus operator/:
+  
+  #+BEGIN_SRC swift
+    let three = 3
+    let minusThree = -three      // equals -3
+    let plusThree = -minusThree  // equals 3
+  #+END_SRC
+  
+** Compound Assignment Operators
+   
+   Like C, Swift provides /compound assignment operators/ that combine
+   assignment (=) with another operation. For example the /addition
+   assignment operator (+=).
+   
+   #+BEGIN_SRC swift
+    var a = 1
+    a += 2
+    // a is now equal to 3
+   #+END_SRC
+   
+** Comparison Operators
+   
+   Swift supports all standard C /comparison operators/ (==, !=, >, <,
+   <=, <=). Also note that Swift provides two /identity operators/ (===
+   and !==), which you use to test whether two object references both
+   refer to the same object instance.
+   
+** Range Operators
+   
+*** Closed Range Operator
+    
+    The /closed range operator/ (a...b) defines a range that runs from
+    a to b, and includes the values a and b. The value of a must not
+    be greater than b.
+    
+    #+BEGIN_SRC swift
+      for index in 1...5 {
+          println("\(index) times 5 is \(index * 5)")
+      }
+      // 1 times 5 is 5
+      // 2 times 5 is 10
+      // 3 times 5 is 15
+      // 4 times 5 is 20
+      // 5 times 5 is 25
+
+    #+END_SRC
+    
+*** Half-Open Range Operator
+    
+    The /half-open range operator/ (a..<b) define a range that runs
+    from a to b, but does not include b (particularly useful for
+    zero-based lists). If the value of a is equal to b, then the
+    resulting range will be empty.
+    
+** Logical Operators
+   
+   Swift supports the three standard logical operators found in
+   C-based languages (!, &&, and ||). The AND and OR operators use
+   short-circuit evaluation to consider its expressions. The Swift
+   logical operators && and || are left-associative, meaning that
+   compound expressions with multiple logical operators evaluate the
+   leftmost subexpression first.
