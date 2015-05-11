@@ -1,0 +1,122 @@
+#+TITLE: Carnegie Mellon University Probability and Statistics
+#+AUTHOR: Elliot Penson
+
+Information taken from Carnegie Mellon's /Probability and Statistics/
+course.
+
+* Introduction
+  
+** Metacognition
+   
+   Metacognition, or "thinking about thinking," refers to your awareness
+   of yourself as a learner and your ability to regulate your own
+   learning.
+   
+   1. Assess the task
+   2. Evaluate your strengths and weaknesses
+   3. Plan an approach
+   4. Apply strategies and monitor your performance
+   5. Reflect and adjust if needed
+   
+** The Big Picture
+   
+   The *population* is the entire group that is the target of our
+   interest. *Producing data* involves choosing a sample of the
+   population and collecting data from it. Usually we choose a sample
+   because the population is too large to examine as a
+   whole. *Exploratory Data Analysis* consists of summarizing the
+   collected data. *Probability* tells us how the sample we're using may
+   differ from the population as a whole. Probability is the "machinery"
+   that allows us to draw conslusions about the population based on the
+   data collected about the sample. Finally, we can use what we've
+   discovered about our sample to draw conslusions about the population
+   based on the data collected about the sample. Finally, we can use what
+   we've discovered about our sample to draw conslusions about our
+   population. We call this final step in the process *inference*.
+   
+   [[file:images/big-picture.png][big-picture]]
+   
+* Unit 1 - Exploratory Data Analysis
+  
+** Introduction
+   
+   *Data* are pieces of information about individuals organized into
+   variables. By an *individual*, we mean a particular person or
+   object. By a *variable*, we mean a particular characteristic of the
+   individual.
+   
+   A *dataset* is a set of data identified with particular
+   circumstances. Datasets are typically displayed in tables, in which
+   rows represent individuals and columns represent variables.
+   
+   *Quantitative variables* take numerical values, and represent some
+   kind of measurement. *Categorical variables* take category or
+   label values, and place an individual into one of several groups.
+   
+   *Exploratory Data Analysis (EDA)* is how we make sense of the data
+   by converting them from their raw form to a more informative
+   one. EDA consists of:
+   - Organizing and summarizing the raw data,
+   - Discovering important features and patterns in the data and any
+     striking deviations from those patterns, and then,
+   - Interpreting our findings in the context of the problem
+     
+   *Distributions* are concerned with one variable at
+   time. *Replationships* are concerned with two variables at a time.
+   
+** Module 1
+   
+*** Examining Distributions
+    
+   By *distribution* of a variable, we mean:
+   - What values the variable takes, and
+   - How often the variable takes those values.
+
+*** One Categorical Variable
+
+   The distribution of a categorical variable is summarized using:
+   - Graphical display: pie chart or bar chart, supplemented by
+   - Numerical summaries: category counts and percentages.
+      
+   The pie chart emphasizes how the different categories relate to the
+   whole, and the bar chart ephasizes how the different categories
+   compare with each other.
+
+*** One Quantitatice Variable
+
+   To display data from one quantitative variable graphically, we can
+   use either the *histogram* or the *stemplot*.
+
+   Breaking a range of values into intervals can be useful for
+   graphing. The square brakcet means "including" and the parenthesis
+   means "not including". For example, [50,60) is the interval from 50
+   to 60, including 50 and not including 60.
+
+   Once the distribution has been displayed graphically, we can
+   describe the overall pattern of the distibution and mention any
+   striking deviations from that pattern. More specifically, we should
+   consider the following features of the distribution:
+   - Overall pattern:
+     - Shape
+     - Center
+     - Spread
+   - Deviations from the pattern:
+     - Outliers
+
+**** Shape
+
+   When describing the shape of a distribution, we should consider:
+   1. Symmetry/skewness of the distribution
+   2. Peakedness (modality) - the number of peaks (modes) the
+      distribution has.
+
+   [[file:images/histogram-shapes.gif][histogram-shapes]]
+
+   From left to right: symmetric, single-peaked (unimodal); symmetric,
+   double-peaked (bimodal); symmetric, uniform; skewed-right,
+   skewed-left.
+
+   Note that if a distribution has more than two modes, we say that
+   the distribution is multimoda.
+
+   I ended on page 17.
