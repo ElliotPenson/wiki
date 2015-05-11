@@ -60,10 +60,22 @@ Formatting: *bold*, /italics/
 | Command            | Description                 |
 |--------------------+-----------------------------|
 | <tab> (on heading) | Expand/collapse section     |
+| C-<enter>          | New heading of same level   |
 | C-c C-n/p          | Next/previous heading       |
 | C-c                | Create a new table          |
 | <tab> (in table)   | Move to next cell in table  |
 | "<s" <tab>         | New code snippet            |
 | C-c '              | Edit snippet in native mode |
 
-** SLIME
+*** Clocking
+
+| Command     | Description                                                        |
+|-------------+--------------------------------------------------------------------|
+| C-c C-x C-i | Start clock on current item                                        |
+| C-c C-x C-o | Stop clock on current item                                         |
+| C-c C-c     | Recompute the time interval (afer changing one of the time stamps) |
+| C-c C-x C-q | Cancel current clock                                               |
+| C-c C-x C-r | Generate dynamic block containing a clock report                   |
+| C-C C-c     | Update dynamic block at point                                      |
+
+** Slime
