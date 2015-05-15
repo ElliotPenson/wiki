@@ -260,7 +260,7 @@
     
 *** Half-Open Range Operator
     
-    The /half-open range operator/ (a..<b) define a range that runs
+    The /half-open range operator/ (a..<b) defines a range that runs
     from a to b, but does not include b (particularly useful for
     zero-based lists). If the value of a is equal to b, then the
     resulting range will be empty.
@@ -273,3 +273,222 @@
    logical operators && and || are left-associative, meaning that
    compound expressions with multiple logical operators evaluate the
    leftmost subexpression first.
+
+* Strings and Characters
+
+** String Literals
+   
+   #+BEGIN_SRC swift
+     let someString = "Some string literal value"
+   #+END_SRC
+   
+   Note that Swift infers a type of *String* for the someString
+   constant.
+
+** Initializing an Empty String
+
+   To create an empty String value as the starting point for building
+   a longer string, either assign an empty string literal to a
+   variable, or initialize a new String instance with initializer
+   syntax:
+
+   #+BEGIN_SRC swift
+     var emptyString = ""              // empty string literal
+     var anotherEmptyString = String() // initializer syntax
+   #+END_SRC
+
+   Find out whether a String value is empty by checking its Boolean
+   isEmpty property:
+
+   #+BEGIN_SRC swift
+     if emptyString.isEmpty {
+         println("Nothing to see here")
+     }
+   #+END_SRC
+
+** String Mutability
+
+   You indivate whether a particular String can be modified (or
+   /mutated/) by assigning it to a variable (in which ase it can be
+   modified), or to a constant (in which case it cannot be modified).
+
+** Strings Are Value Types
+
+   Swift's String type is a /value type/. If you create a new String
+   value, that String value is /copied/ when it is passed to a
+   function or method, or when it is assigned to a constant or
+   variable.
+
+** Working with Characters
+
+   Swift's String type represents a collection of *Character* values
+   in a specific order. You can access the individual Character values
+   in a string by iterating over that string with a for-in loop:
+
+   #+BEGIN_SRC swift
+     for character in "Dog!" {
+         println(character)
+     }
+   #+END_SRC
+   
+   Alternativly, create a stand-alone Character constant or variable
+   from a single-character string literal by providing a /Character/
+   type annotation:
+   
+   #+BEGIN_SRC swift
+     let exclamationMark: Character = "!"
+   #+END_SRC
+
+   String values can be constructed by passing an array of Character
+   values as an argument to its initializer:
+
+   #+BEGIN_SRC swift
+     let catCharacters: [Character] = ["C", "a", "t", "!"]
+     let catString = String(catCharacters)
+   #+END_SRC
+
+** Concatenating String and Characters
+
+   The addition operator (+) can be used to concatenate strings. The
+   addition assignment operator (+=) can be used to append a String
+   value to an existing String variable. You can append a Character
+   value to a String variable with the String type's *append()*
+   method:
+
+   #+BEGIN_SRC swift
+     var welcome = "hello there"
+     let exclamationMark: Character = "!"
+     welcome.append(exclamationMark)
+   #+END_SRC
+
+** String Interpolation
+
+   #+BEGIN_SRC swift
+     let multiplier = 3
+     let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"
+     // message is "3 times 2.5 is 7.5"
+   #+END_SRC
+
+   Note: the expressions you write inside parentheses within an
+   interpolated string cannot contain an unescaped double quote (") or
+   backslash(\), and cannot contain a carriage return or line feed.
+
+** Counting Characters
+
+   To retrieve a count of the *Character* values in a string, call the
+   global *count(_:)* function and pass in a string as the function's
+   sole parameter:
+   
+   #+BEGIN_SRC swift
+     let animals = "Koala, Snail, Penguin"
+     println("animals has \(count(animals)) characters")
+     // prints "animals has 21 characters"
+   #+END_SRC
+
+** Accessing and Modifying a String
+
+*** String Indexes
+
+    Each *String* value has an associated /index type/,
+    *String.Index*, which corresponds to the positions of each
+    *Character* it contains. Different characters can require
+    different amounts of memory to store; Swift strings cannot be
+    indexed by integer values.
+
+    Use the *startIndex* property to access the position of the first
+    *Character* of a *String*, and the *endIndex* property to access
+    the position of the last.
+
+    You can use subscript syntax to access the Character at a
+    particular String index:
+
+    #+BEGIN_SRC swift
+      let greeting = "Guten Tag"
+      greeting[greeting.startIndex] // G
+    #+END_SRC
+    
+    A *String.Index* value can access its immediately preceding index
+    by calling the *predecessor()* method, and its immediately
+    succeeding index by calling the *successor()* method. Any index in
+    a String can be accessed from any other index by chaining these
+    methods together, or by using the global *advance(start:n:)*
+    function.
+
+    #+BEGIN_SRC swift
+      greeting[greeting.startIndex.successor()]   // u
+      greeting[greeting.startIndex.predecessor()] // g
+      let index = advance(greeting.startIndex, 7)
+      greeting[index] // a
+    #+END_SRC
+    
+    Use the global function *indicies(_:)* to create a *Range* of all
+    of the indexes used to access individual characters in a string.
+
+    #+BEGIN_SRC swift
+      for index in indices(greeting) {
+          print("\(greeting[index]) ")
+      }
+      println("\n")
+      // prints "G u t e n  T a g"
+    #+END_SRC
+
+*** Inserting and Removing
+
+    To insert a character into a string at a specified index, use the
+    *insert(:atIndex:)* method.
+
+    #+BEGIN_SRC swift
+      var welcome = "hello"
+      welcome.insert("!", atIndex: welcome.endIndex)
+      println(welcome)
+      // prints "hello!"
+    #+END_SRC
+
+    To insert another string at a specified index, use the
+    *splice(_:atIndex:)* method.
+
+    #+BEGIN_SRC swift
+      welcome.splice(" there", atIndex: welcome.endIndex.predecessor())
+      println(welcome)
+      // prints "hello there!"
+    #+END_SRC
+
+    To remove a character from a string at a specified index, use the
+    *removeAtIndex(_:)* method.
+
+    #+BEGIN_SRC swift
+      welcome.removeAtIndex(welcome.endIndex.predecessor()) // !
+      println(welcome) // prints "hello there"
+    #+END_SRC
+
+    To remove a substringat a specified range, use the removeRange(_:)
+    method:
+
+    #+BEGIN_SRC swift
+      let range = advance(welcome.endIndex, -6)..<welcome.endIndex
+      welcome.removeRange(range)
+      println(welcome)
+      // prints "hello"
+    #+END_SRC
+
+** Comparing Strings
+
+   String and character equality is chacked with the "equal to"
+   operator (==) and the "not equal to" operator (!=). To check
+   whether a string has a particular string prefix or suffix, call the
+   string's *hasPrefix(\_:)* and *hasSuffix(\_:)* methods, both of
+   which take a single argument of type String and return a Boolean
+   value.
+
+   #+BEGIN_SRC swift
+     let play = "Act 1 Scene 1: Verona, A public place"
+     play.hasPrefix("Act 1 ") // evaluates to true
+   #+END_SRC
+
+** Strings and Arrays
+
+   A String can be converted to an Array<Character> like this:
+
+   #+BEGIN_SRC swift
+     let myArrayOfCharacters = Array(myString)   
+   #+END_SRC  
