@@ -2,80 +2,95 @@
 #+AUTHOR: Elliot Penson
 
 * Commands
-
+  
+  Note that C- and M- mean Control- and Meta- respectively. Also, to
+  quit a partially entered command, type C-g. To open the emacs
+  tutorial, type C-g t.
+  
 ** Navigation
-
-| Command | Description             |
-|---------+-------------------------|
-| C-b/C-f | Cursor backward/forward |
-| C-a/C-e | Line beginning/end      |
-| C-p/C-n | Line previous/next      |
-| C-v/M-v | Next/previous screen    |
-| C-l     | Center on cursor        |
-| C-s/C-r | Search forward/backward |
-| M-b/M-f | Word backward/forward   |
-| M-</M-> | Document beginning/end  |
-
+   
+   | Command | Description             |
+   |---------+-------------------------|
+   | C-b/C-f | Cursor backward/forward |
+   | C-a/C-e | Line beginning/end      |
+   | C-p/C-n | Line previous/next      |
+   | C-v/M-v | Next/previous screen    |
+   | C-l     | Center on cursor        |
+   | C-s/C-r | Search forward/backward |
+   | M-b/M-f | Word backward/forward   |
+   | M-a/M-e | Sentence beginning/end  |
+   | M-</M-> | Document beginning/end  |
+   | M-g M-g | Go to line              |
+   
 ** Editing
-
-| Command    | Description           |
-|------------+-----------------------|
-| C-d        | Delete next character |
-| C-<delete> | Delete previous word  |
-| C-k        | Kill to end of line   |
-| C-y        | Yank (paste)          |
-| C-/        | Undo                  |
-| C-space    | Set mark at cursor    |
-| C-g        | Deactivate mark       |
-| C-w        | Kill region           |
-
+   
+   | Command    | Description                        |
+   |------------+------------------------------------|
+   | C-d        | Delete next character              |
+   | C-<delete> | Delete previous word               |
+   | C-k        | Kill to end of line                |
+   | C-y        | Yank (paste)                       |
+   | C-/        | Undo                               |
+   | C-space    | Set mark at cursor                 |
+   | C-g        | Deactivate mark                    |
+   | C-w        | Kill region                        |
+   | C-x h      | Mark whole buffer                  |
+   | C-x C-=/-  | Increase/decrease buffer text size |
+   
 ** Buffers/Files/Windows
-
-| Command | Description            |
-|---------+------------------------|
-| C-x C-f | Open file              |
-| C-x C-s | Save file              |
-| C-x C-c | Close Emacs            |
-| C-x C-b | Buffer list            |
-| C-x b   | Buffer switch to       |
-| C-x o   | Move to other window   |
-| C-x 0   | Delete selected window |
-| C-x 2   | Split horizontally     |
-| C-x 3   | Split vertically       |
-| C-M-v   | Scroll other window    |
-
+   
+   | Command | Description            |
+   |---------+------------------------|
+   | C-x C-f | Open file              |
+   | C-x C-s | Save file              |
+   | C-x C-c | Close Emacs            |
+   | C-x C-b | Buffer list            |
+   | C-x b   | Buffer switch to       |
+   | C-x o   | Move to other window   |
+   | C-x 0   | Delete selected window |
+   | C-x 1   | Delete other windows   |
+   | C-x 2   | Split horizontally     |
+   | C-x 3   | Split vertically       |
+   | C-M-v   | Scroll other window    |
+   
 ** Keyboard Macros
-
-| Command | Description                   |
-|---------+-------------------------------|
-| C-x (   | Start defining keyboard macro |
-| C-x )   | Stop defining keyboard macro  |
-| C-x e   | Execute keyboard macro        |
-
+   
+   | Command | Description                   |
+   |---------+-------------------------------|
+   | C-x (   | Start defining keyboard macro |
+   | C-x )   | Stop defining keyboard macro  |
+   | C-x e   | Execute keyboard macro        |
+   
+** Extensions
+   
+   | Command           | Description             |
+   |-------------------+-------------------------|
+   | M-x list-packages | Show available packages |
+   
 ** Org mode
-
-Headings: * for h1, ** for h2, etc.
-Formatting: *bold*, /italics/
-
-| Command            | Description                 |
-|--------------------+-----------------------------|
-| <tab> (on heading) | Expand/collapse section     |
-| C-<enter>          | New heading of same level   |
-| C-c C-n/p          | Next/previous heading       |
-| C-c                | Create a new table          |
-| <tab> (in table)   | Move to next cell in table  |
-| "<s" <tab>         | New code snippet            |
-| C-c '              | Edit snippet in native mode |
-
+   
+   Headings: * for h1, ** for h2, etc.
+   Formatting: *bold*, /italics/
+   
+   | Command            | Description                 |
+   |--------------------+-----------------------------|
+   | <tab> (on heading) | Expand/collapse section     |
+   | C-<enter>          | New heading of same level   |
+   | C-c C-n/p          | Next/previous heading       |
+   | C-c                | Create a new table          |
+   | <tab> (in table)   | Move to next cell in table  |
+   | "<s" <tab>         | New code snippet            |
+   | C-c '              | Edit snippet in native mode |
+   
 *** Clocking
-
-| Command     | Description                                                        |
-|-------------+--------------------------------------------------------------------|
-| C-c C-x C-i | Start clock on current item                                        |
-| C-c C-x C-o | Stop clock on current item                                         |
-| C-c C-c     | Recompute the time interval (afer changing one of the time stamps) |
-| C-c C-x C-q | Cancel current clock                                               |
-| C-c C-x C-r | Generate dynamic block containing a clock report                   |
-| C-C C-c     | Update dynamic block at point                                      |
-
+    
+    | Command     | Description                                                        |
+    |-------------+--------------------------------------------------------------------|
+    | C-c C-x C-i | Start clock on current item                                        |
+    | C-c C-x C-o | Stop clock on current item                                         |
+    | C-c C-c     | Recompute the time interval (afer changing one of the time stamps) |
+    | C-c C-x C-q | Cancel current clock                                               |
+    | C-c C-x C-r | Generate dynamic block containing a clock report                   |
+    | C-C C-c     | Update dynamic block at point                                      |
+    
 ** Slime
