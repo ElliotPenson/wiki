@@ -979,3 +979,176 @@
     case and into the next one. If you really need C-style fallthrough
     behavior, you can opt in to this behavior on a case-by-case basis
     with the *fallthrough* keyword.
+
+* Functions
+
+** Defining and Calling Functions
+   
+   Here's an example of a function /definition/ prefixed with the
+   *func* keyword.
+
+   #+BEGIN_SRC swift
+     func sayHello(personName: String) -> String {
+         return "Hello, " + personName + "!"
+     }
+     println(sayHello("Anna")) // prints "Hello, Anna!"
+   #+END_SRC
+
+   The /return type/ is indicated with the /return arrow/ *->*.
+
+** Function Parameters and Return Types
+
+   Functions can have multiple input parameters, which are written
+   within the function's parentheses, separated by commas.
+
+   #+BEGIN_SRC swift
+     func range(min: Int, max: Int) -> Int {
+         max - min
+     }
+   #+END_SRC
+
+   Functions can also have no parameters.
+
+   #+BEGIN_SRC swift
+     func sayHelloWorld() -> String {
+         return "hello, world"
+     }
+   #+END_SRC
+
+   Functions are not required to define a return type. Functions
+   without a defined return type return a special value of type
+   *Void*. This is simply an empty tuple, in effect a typle with zero
+   elements, which can be written as ().
+
+   #+BEGIN_SRC swift
+     func sayGoodbye(personName: String) {
+         println("Goodbye, \(personName)!")
+     }
+     sayGoodbye("Dave")
+   #+END_SRC
+
+   The return value of a function can be ignored when it is
+   called. This can be done by using an expression like a statement.
+
+** Function Types
+
+   Every function has a specific /function type/, made up of the
+   parameter types and the return type of the function. For example:
+
+   #+BEGIN_SRC swift
+     func addTwoInts(a: Int, b: Int) -> Int {
+         return a + b
+     }
+     func multiplyTwoInts(a: Int, b: Int) -> Int {
+         return a * b
+     }
+   #+END_SRC
+
+   The type of this function is (Int, Int) -> Int. This can be read
+   as: "A function type that has two parameters, both of type Int, and
+   that returns a value of type Int."
+
+   Here's another example:
+
+   #+BEGIN_SRC swift
+     func printHelloWorld() {
+         println("hello, world")
+     }
+   #+END_SRC
+
+   The type of this function is () -> (), or "a function that has no
+   parameters, and returns *Void*."
+
+*** Using Function Types
+
+    You use function types just like any other types in Swift. For
+    example, you can define a constant or variable to be of a function
+    type and assign an appropriate function to that variable:
+
+    #+BEGIN_SRC swift
+      var mathFunction: (Int, Int) -> Int = addTwoInts
+    #+END_SRC
+    
+    You can now call the assigned function with the name
+    *mathFunction*:
+
+    #+BEGIN_SRC swift
+      println("Result: \(mathFunction(2, 3))") // prints "Result: 5"
+    #+END_SRC
+
+    A different function with the same matching type can be assigned
+    to the same variable, in the same way as for non-function types:
+    
+    #+BEGIN_SRC swift
+      mathFunction = multiplyTwoInts
+      println("Result: \(mathFunction(2, 3))") // prints "Result: 6"
+    #+END_SRC
+
+    As with any other type, you can leave it to Swift to infer the
+    function type when you assign a function to a constant or
+    variable:
+
+    #+BEGIN_SRC swift
+      let anotherMathFunction = addTwoInts
+    #+END_SRC
+    
+*** Function Types as Parameter Types
+
+    You can use a function type such as (Int, Int) -> Int as a
+    parameter type for another function. This enables you to leave
+    some aspects of a function's implementation for the function's
+    caller to provide when the function is called.
+
+    #+BEGIN_SRC swift
+      func printMathResult(mathFunction: (Int, Int) -> Int, a: Int, b: Int) {
+          println("Result: \(mathFunction(a, b))")
+      }
+      printMathResult(addTwoInts, 3 5) // prints "Result: 8"
+    #+END_SRC
+
+*** Function Types as Return Types
+
+    You can use a function type as the return type of another
+    function. You do this by writing a complete function type
+    immediately after the return arrow (->) of the returning function.
+
+    #+BEGIN_SRC swift
+      func stepForward(input: Int) -> Int {
+          return input + 1
+      }
+      func stepBackward(input: Int) -> Int {
+          return input - 1
+      }
+      func chooseStepFunction(backwards: Bool) -> (Int) -> Int {
+          return backwards ? stepBackward : stepForward
+      }
+      var currentValue = 3
+      let moveNearerToZero = chooseStepFunction(currentValue > 0)
+      // Counting to zero:
+      while currentValue != 0 {
+          println("\(vurrentValue)...")
+          currentValue = moveNearerToZero(currentValue)
+      }
+    #+END_SRC
+
+** Nested Functions
+
+   All of the functions encountered so far have been examples of
+   /global functions/, which are defined at a global scope. You can
+   also define functions inside the bodies of other functions, known
+   as /nested functions/.
+
+   Nested functions are hidden from the outside world by default, but
+   can still be called and used by their enclosing function. An
+   enclosing function can also return one of its nested functions to
+   allow the nested function to be used in another scope. You can
+   rewrite the chooseStepFunction example above to use and return
+   nested functions:
+
+   #+BEGIN_SRC swift
+     func chooseStepFunction(backwards: Bool) -> (Int) -> Int {
+         func stepForward(input: Int) -> { return input + 1 }
+         func stepBackward(input: Int) -> { return input - 1 }
+         return backwards ? stepBackward : stepForward
+     }
+   #+END_SRC
