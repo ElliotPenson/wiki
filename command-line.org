@@ -1,0 +1,113 @@
+#+TITLE: Command Line
+#+AUTHOR: Elliot Penson
+
+* Basic Commands
+
+  | Command           | Description                                          |
+  |-------------------+------------------------------------------------------|
+  | ls                | List contents of current directory                   |
+  | ls -l             | List contents with extra information                 |
+  | ls -a             | Show /all/ file (event hidden files)                 |
+  | mkdir [name]      | Create a directory                                   |
+  | pwd               | Show current working directory                       |
+  | cd                | Move to the home directory                           |
+  | cd [path]         | Change to the given path                             |
+  | cd ..             | Move up the directory tree                           |
+  | cd -              | Go the the previous working directory                |
+  | cp [file] [place] | Copy a file                                          |
+  | mv [file] [file]  | Move a file (also used to rename)                    |
+  | rm [file]         | Delete the given file                                |
+  | rm -r [folder]    | Delete the given directory (recursive)               |
+  | less [file]       | Open the a file (q to quit, / to search, h for help) |
+  | cat [file]        | Print the contents of a file                         | 
+
+* Network Commands
+
+** SSH
+
+   *Secure shell* enables remote machine login. The command provides
+   secure encrypted communication. The basic format is ssh
+   user@host. For example: ssh elliot.penson@csgate.wheaton.edu.
+
+** SCP
+
+   *Secure copy* allows files/folders to be copied to, from, or
+   between different hosts. It uses ssh for data transfer and provides
+   the same authentication and same security. Use the -r flag for
+   folder transfer. The command takes the form scp [remote/local
+   file/directory] [remote/local file/directory]. For example: scp -r
+   elliot.penson@csgate.wheaton.edu:/homes/epenson/test/ .
+
+* Symbolic Links
+
+  Unix filesystems make use of aliases for files known as symbolic
+  links (symlinks). A symbolic link to a file is ordinarily treaded
+  identically to that file. The command ln -s creates symlinks. The
+  command ls -l can reveal where a symlink points. For example:
+
+  #+BEGIN_SRC sh
+    $ ls
+    bar foo
+    $ ln -s bar baz
+    $ ls -l
+    total 8
+    -rw-r--r-- 1 elliot staff 0 Jan 8 09:50 bar
+    lrwxr-xr-x 1 elliot staff 3 Jan 8 09:58 baz -> bar
+    -rw-r--r-- 1 elliot staff 0 Jan 8 09:57 foo
+  #+END_SRC
+
+* Grep
+
+  Information in this section is taken from
+  http://www.uccs.edu/~ahitchco/grep/.
+
+  Grep stands for Global Regular Expression Print. The command
+  searches input files for a search string and prints matching
+  lines. The command takes the form: grep [options] [regex]
+  [filename]. Grep would loop through every line of the file and print
+  out every line with text matching the regular expression.
+
+** Options
+  
+   | Flag | Description                                                                  |
+   |------+------------------------------------------------------------------------------|
+   | -n   | Explains which lines match the search string                                 |
+   | -v   | Prints the negative result (all non-matching lines)                          |
+   | -c   | Suppresses the line printing, displays the number of matching lines          |
+   | -l   | Only prints the filenames with matching lines                                |
+   | -i   | Ignore case                                                                  |
+   | -x   | Search for eXact matches only                                                |
+   | -f   | Allows specification of a file containing the search string                  |
+   | -r   | Directory search. /grep -r "test" ./ searches files in the current directory |
+
+** Sibling Commands
+   
+   The egrep command stands for "extended grep" and supports certain
+   useful sequences such as the + and ? operators. It's equivalent to
+   grep -E. The fgrep command gives a performance boost as it doesn't
+   interpret regular expressions. It's equivalent to grep -F.
+
+* Pipes and Redirects
+
+  | Operator | Description                               |
+  |----------+-------------------------------------------|
+  | <bar>    | Pass the output of one command to another |
+  | >        | Redirect output from a command to a file  |
+  | <        | Read a command's input from a file        |
+
+* Documentation
+
+** Usage Statement (Loose) Guidelines
+
+   Anything in angle brackets (<>) means the argument is required
+   (e.g. <foo>). Anothing in square brackets ([]) means the argument
+   is optional (e.g. [bar]). Options separated by the pipe (|) are
+   choices (e.g. --baz=one|two|three). Note that this mirrors the /or/
+   operator. Single-letter options start with one dash
+   (e.g. -a). Multi-letter options start with two dashes
+   (e.g. --foo-bar).
+
+* Utilities
+
+  - Irssi for IRC
+    - See http://www.reyhan.org/2012/12/how-to-irssi.html
