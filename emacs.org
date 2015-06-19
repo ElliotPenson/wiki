@@ -77,10 +77,11 @@
    | <tab> (on heading) | Expand/collapse section     |
    | C-<enter>          | New heading of same level   |
    | C-c C-n/p          | Next/previous heading       |
-   | C-c                | Create a new table          |
+   | C-c <bar>          | Create a new table          |
    | <tab> (in table)   | Move to next cell in table  |
    | "<s" <tab>         | New code snippet            |
    | C-c '              | Edit snippet in native mode |
+   | C-c C-e            | Dispatch for export         |
    
 *** Clocking
     
