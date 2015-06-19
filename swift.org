@@ -1152,3 +1152,195 @@
          return backwards ? stepBackward : stepForward
      }
    #+END_SRC
+
+* Closures
+
+  /Closures/ are self-contained blocks of functionality that can be
+  passed around and used in your code. Closures in Swift are similar
+  to blocks in C and Objective-C and to lambdas in other programming
+  languages.
+
+  Closures can capture and stored references to any constants and
+  variables from the context in which they are defined. This is known
+  as /closing/ over those constants and variables, hence the name
+  "closures". Swift handles all of the memory management of capturing
+  for you.
+
+  Closures take one of three forms:
+  - Global functions are closures that have a name and do not capture
+    any values.
+  - Nested functions are closures that have a name and can capture
+    values from their enclosing function.
+  - Closure expressions are unnamed closures written in a lightweight
+    syntax that can capture values from their surrounding context.
+
+  Swift's closure expressions have the following optimizations:
+  - Infer parameter and return value types from context
+  - Implicit returns from single-expression closures
+  - Shorthand argument names
+  - Trailing closure syntax
+
+** Closure Expressions
+
+   Swift's standard library provides a funcion called *sorted*, which
+   sorts an array of values of a known type, based on the output of a
+   sorting closure that you provide. The original array is not
+   modified by the sorted function.
+   
+   #+BEGIN_SRC swift
+     let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+   #+END_SRC
+
+   This example is sorting an array of String values, and so the
+   sorting closure needs to be a function of type (String, String) ->
+   Bool.
+
+   One way to provide the sorting closure is to write a normal
+   function of the correct type, and to pass it in as the sorted
+   function's second parameter:
+   
+   #+BEGIN_SRC swift
+     func backwards(s1: String, s2: String) -> Bool {
+         return s1 > s2
+     }
+     var reversed = sorted(names, backwards)
+   #+END_SRC
+
+*** Closure Expression Syntax
+
+    Closure expression syntax has the following general form:
+
+    { (parameters) -> return type in
+        statements
+    }
+
+    Closure expression syntax can use constant parameters, variable
+    parameters, and *inout* parameters. Default values cannot be
+    provided. Variadic parameters can be used if you name the variadic
+    parameter and place it last in the parameter list. Tuples can also
+    be used as parameter types and return types.
+
+    The example below shows a closure expression varsion of the
+    *backwards* function from earlier:
+
+    #+BEGIN_SRC swift
+      reserved = sorted(names, { (s1: String, s2: String) ->
+              Bool in
+          return s1 > s2
+      })
+    #+END_SRC
+
+    For the inline closure expression, the parameters and return type
+    are written /inside/ the curly braces, not outside of them. The
+    start of the closure's body is introduced by the *in*
+    keyword. This keyword indicates that the definition of the
+    closure's parameters and return type has finished, and the body of
+    the closure is about to begin.
+
+*** Inferring Type From Context    
+
+    Because the sorting closure is passed as an argument to a
+    function, Swift can infer the types of its parameters and the type
+    of the value it return from the type of the sorted function's
+    second parameter. This parameter is expecting a function of type
+    (String, String) -> Bool. This means that the (STring, String) and
+    Bool types do not need to be written as part of the closure
+    expression's definition. Because all of the types can be inferred,
+    the return arrow (->) and the parentheses around the names of the
+    parameters can also be omitted:
+
+    #+BEGIN_SRC swift
+      reversed = sorted(names, { s1, s2 in return s1 > s2 } )
+    #+END_SRC
+
+    It is always possible to infer the parameter types and return type
+    when passing a closure to a function as an inline closure
+    expression. As a result you never need to write an inline closure
+    in its fullest form when the closure is used as a function
+    argument.
+
+    Nonetheless, you can still make the types explicit if you wish,
+    and doing so is encouraged if it avoids ambiguity for readers of
+    your code. In the case of the sorted function, the purpose of the
+    closure is clear from the face that sorting is taking place, and
+    it is safe for a reader to assume that the closure is likely to be
+    working with String valeus, because it is assisting with the
+    sorting of an array of strings.
+
+*** Implicit Returns from Single-Expression Closures
+
+    Single-expression closures can implicitly return the result of
+    their single expression by omitting the return keyword from their
+    declaration, as in this version of the previous example:
+
+    #+BEGIN_SRC swift
+      reversed = sorted(names, { s1, s2 in s1 > s2 } )
+    #+END_SRC
+
+*** Shorthand Argument Names
+
+    Swift automatically provides shorthand argument names to inline
+    closures, which can be used to refer to the values of the
+    closure's arguments by the names $0, $1, $2, and so on.
+
+    If you use these shorthand argument names within your closure
+    expression, you can omit the closure's argument list from its
+    definition, and the number and type of the shorthand argument
+    names will be inferred form the expression is made up entirely of
+    its body:
+
+    #+BEGIN_SRC swift
+      reversed = sorted(names, { $0 > $1 } )
+    #+END_SRC
+
+*** Operator Functions
+
+    There's actually an evern /shorter/ way to write the closure
+    expression above. Swift's String type defines its string-specific
+    implementation of the greater-than operator (.) as a function that
+    has two parameters of type String, and returns a value of type
+    Bool. This exactly matches the function type needed for the sorted
+    function's second parameter. Therefore, you can simply pass in the
+    greater-than operator, and Swift will infer that you want to use
+    its string-specific implementation:
+
+    #+BEGIN_SRC swift
+      reversed = sorted(names, >)
+    #+END_SRC
+
+** Trailing Closures
+   
+   If you need to pass a closure expression to a function as the
+   function's final argument and the closure expression is long, it
+   can be useful to write it as a /trailing closure/ instead. A
+   trailing closure is a closure expression that is written outside of
+   (and /after/) the parentheses of the function call it supports.
+
+   #+BEGIN_SRC swift
+     func someFunctionThatTakesAClosure(closure: () -> ()) {
+         // function body goes here
+     }
+
+     // here's how you call this function without using a trailing closure:
+
+     someFunctionThatTakesAClosure({
+         // closure's body goes here
+     })
+
+     // here's how you call this function with a trailing closure instead:
+
+     someFunctionThatTakesAClosure() {
+         // trailing closure's body goes here
+     }
+   #+END_SRC
+
+   Note: if a closure expression is provided as the function's only
+   argument and you provide that expression as a trailing closure, you
+   do not need to write a pair of parentheses () after the function's
+   name when you call the function.
+
+   The string-sorting closure from above can be written as:
+
+   #+BEGIN_SRC swift
+     reversed = sorted(names) { $0 > $1 }
+   #+END_SRC
