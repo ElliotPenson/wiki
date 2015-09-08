@@ -64,8 +64,8 @@
   Grep stands for Global Regular Expression Print. The command
   searches input files for a search string and prints matching
   lines. The command takes the form: grep [options] [regex]
-  [filename]. Grep would loop through every line of the file and print
-  out every line with text matching the regular expression.
+  [filename]. In this case, grep would loop through and print every
+  line of the file with a match against the regular expression.
 
 ** Options
   
