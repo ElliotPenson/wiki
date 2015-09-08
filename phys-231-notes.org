@@ -1,0 +1,123 @@
+#+TITLE: Six Ideas That Shaped Physics Notes
+#+AUTHOR: Elliot Penson
+
+* Chapter #1 Introduction to Interactions
+
+  When an isolated set of objects interacts with one another, we find
+  that (no matter how the objects interact) certain quantities (which
+  we call the set's total *energy*, *momentum*, and *angular
+  momentum*) are /conserved/ (i.e., have values that do not change
+  with time). The laws of physics are independent of /time/, /place/,
+  and /orientation/.
+
+  *Mechanics* is the area of physics that deals with how the physical
+  interactions between object affect their motion.
+
+  *Newton's first law*: Any object that does not interact with
+  something else moves with a /constant speed/ in a /fixed
+  direction/. An *interaction* is a physical relationship /between two
+  objects/ that, in the absence of other interactions, /changes/ the
+  motion of each. Newton's model sees friction as being an interaction
+  between a moving object and something else that actively /slows down
+  the object/.
+
+  All matter consists of elementary particles known as *quarks* and
+  *leptons*. Electrons are an example of the more general class
+  leptons, while protons and neutrons are constructed of quarks.
+
+  There are four fundamental interactions:
+
+  - *string nuclear*
+  - *electromagnetic*
+  - *weak nuclear*
+  - *gravitational*
+
+  Between *macroscopic* objects, we see *long-range* interactions:
+
+  - *electrostatic*
+  - *magnetic*
+  - *gravitational*
+
+  and *contact interactions*:
+
+  - *friction*
+  - *compression*
+  - *tension*
+
+  Note that at the fundamental level, electrostatic, magnetic, and all
+  contact interactions are different manifestations of the
+  electromagnetic interaction.
+
+** SI Units
+
+   | Type        | Unit     | Abbreviation |
+   |-------------+----------+--------------|
+   | distance    | meter    | m            |
+   | time        | second   | s            |
+   | mass        | kilogram | kg           |
+   | temperature | kelvin   | K            |
+   | molecules   | mole     | mol          |
+   | current     | ampere   | A            |
+   | luminousity | candela  | cd           |
+
+** Standard Prefixes
+
+   |  Power | Prefix | Symbol |
+   |--------+--------+--------|
+   |  10^12 | tera   | T      |
+   |   10^9 | giga   | G      |
+   |   10^6 | mega   | M      |
+   |   10^3 | kilo   | k      |
+   |  10^-2 | centi  | c      |
+   |  10^-3 | milli  | m      |
+   |  10^-6 | micro  | µ      |
+   |  10^-9 | nano   | n      |
+   | 10^-12 | pico   | p      |
+   
+* Chapter #2 Vectors
+
+  A *scalar* quantity is any quantity (such as speed) that we can
+  completely describe using a single numerical value. A *vector* is a
+  quantity (such as velocity) that has *direction* in addition to a
+  numerical *magnitude*.
+
+  *Displacement* is a shift in position from one point in space to
+  another. See pages 27 and 28 for examples of *vector addition*
+  ($\vec{u_1}+\vec{u_2}$), *vector inverse* ($\vec{u_1}+\vec{u_2}=0$),
+  and *vector difference* ($\vec{u_1}-\vec{u_2}$). Note that
+  $\vec{u_1}-\vec{u_2}=\vec{u_1}+(-\vec{u_2})$.
+
+  A vector is a sum of three component vectors:
+
+  $\vec{u}=u_x\hat{x}+u_y\hat{y}+u_z\hat{z}$
+
+  The $\hat{x}$, $\hat{y}$, and $\hat{z}$ are *directionals*. We call
+  $u_x$, $u_y$, $u_z$ the *x component*, *y component*, and *z
+  component*. A *component vector* is the combination of a component
+  and a directional.
+
+  The *magnitude* of an arbitrary vector is as follows:
+
+  $mag(\vec{u})=\sqrt{u_x^2+u_y^2+u_z^2}$
+
+  Pages 32 and 33 relate basic trigonometry to vectors. Note: the
+  three angles of a triangle add to 180 degrees.
+
+  As expected, vector addition and difference can be calculated using
+  components in vector notation.
+
+  A *reference frame* is an "imaginary cubical grid". We need to
+  choose the *origin*, and the *+x*, *+y*, and *+z directions*. Note
+  that we can attach a reference frame to any object that we
+  please. We can also orient the frame in any way that we like.
+
+  We can calculate the displacement between two points with vector
+  difference.
+
+  We can use our right hand to determine axis directions in a
+  *right-handed reference frame*. See figure C2.11a on page 38 for an
+  example. In *standard orientation*, +x=east, +y=north, +z=up.
+
+* Chapter #3 Interactions Transfer Momentum
+
+
