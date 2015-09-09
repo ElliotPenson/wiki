@@ -58,7 +58,7 @@
    | temperature | kelvin   | K            |
    | molecules   | mole     | mol          |
    | current     | ampere   | A            |
-   | luminousity | candela  | cd           |
+   | luminosity  | candela  | cd           |
 
 ** Standard Prefixes
 
@@ -89,7 +89,9 @@
 
   A vector is a sum of three component vectors:
 
-  $\vec{u}=u_x\hat{x}+u_y\hat{y}+u_z\hat{z}$
+  \begin{equation}
+  \vec{u}=u_x\hat{x}+u_y\hat{y}+u_z\hat{z}
+  \end{equation}
 
   The $\hat{x}$, $\hat{y}$, and $\hat{z}$ are *directionals*. We call
   $u_x$, $u_y$, $u_z$ the *x component*, *y component*, and *z
@@ -98,7 +100,9 @@
 
   The *magnitude* of an arbitrary vector is as follows:
 
-  $mag(\vec{u})=\sqrt{u_x^2+u_y^2+u_z^2}$
+  \begin{equation}
+  mag(\vec{u})=\sqrt{u_x^2+u_y^2+u_z^2}
+  \end{equation}
 
   Pages 32 and 33 relate basic trigonometry to vectors. Note: the
   three angles of a triangle add to 180 degrees.
@@ -120,4 +124,106 @@
 
 * Chapter #3 Interactions Transfer Momentum
 
+  A *particle* is a hypothetical object having zero volume, and thus
+  its position is a mathematical point in space. The position
+  $\vec{r}$ of a point in space is its displacement from the reference
+  frame origin to the point in question. The displacement between two
+  arbitrary points is the difference of their positions:
+  $\Delta\vec{r}\equiv\vec{r_2}-\vec{r_1}$.
 
+  A particles *velocity* $\vec{v}$ at a given instant of time t is a
+  vector whose magnitude is the particle's speed $v$ and whose
+  direction is the particle's direction of motion at that instance of
+  time. Let $dt$ be the duration of a time interval containing the
+  instant $t$ at which we want to know $\vec{v}$, and let $d\vec{r}$
+  be the particle's tiny displacement during that tiny time
+  interval. If $dt$ is /sufficiently short/ that neither the particle's
+  speed nor its direction of motion changes appreciable during that
+  time interval, then the particle's velocity is:
+
+  \begin{equation}
+  \vec{v}\equiv\frac{d\vec{r}}{dt}
+  \end{equation}
+
+  *Speed* is the magnitude of a particle's velocity:
+  \begin{equation}
+  mag(\vec{v})\equiv\sqrt{v_x^2+v_y^2+v_z^2}
+  \end{equation}
+
+  Remember from chapter 1 that an *interaction* between two objects is
+  a physical relationship between them that allows each to affect the
+  other's motion. *Momentum*, or the "quantity of motion", is defined
+  as:
+
+  \begin{equation}
+  \vec{p}\equiv m\vec{v}
+  \end{equation}
+
+  The *momentum-transfer principle*: any interaction between two
+  objects affects their motion by transferring momentum from one to
+  the other.
+
+  Physicists call the amount of momentum that a /particular/
+  interaction A between two particles transfers to either particle
+  during a short interval of time the *impulse* $[d\vec{p}]_A$ that
+  the interaction delievers to that particle during that interval. A
+  financial analogy may help us understand some subtle distinctions in
+  meaning between the terms /a particle's momentum/, /impulse/, and
+  /momentum/ in general. Think of the /particle's momentum/ as being
+  like a person's net financial worth. An /interaction/ is like a
+  financial transaction that increases on person's net worth at the
+  expense of the other's. An /impulse/ is like a check that a person
+  writes or receives in the transaction. The term /momentum/ is, like
+  /money/, a general term for both what each particle (person) has and
+  what is being transferred.
+
+  The change $d\vec{p}$ in the momentum of a particle that
+  participates in multiple interactions during a given interval is the
+  /vector sum/ of the impulses it receives during that interval
+
+  \begin{equation}
+  d\vec{p}=[d\vec{p}]_A + [d\vec{p}]_B + ...
+  \end{equation}
+
+  We define the *force* $\vec{F}$ that an interaction exerts on a
+  given object to be the /rate/ at which momentum flows into the
+  object because of that interaction:
+
+  \begin{equation}
+  \vec{F}_A \equiv \frac{[d\vec{p}]_A}{dt}
+  \end{equation}
+
+  The SI unit of force is the *newton*, where $1 N = 1 kg*m/s^2$.
+
+  We can visualize an interaction between two particles as being like
+  a hose that carries a flow of momentum from one to the other. Since
+  any momentum that flows /out/ of one must flow /into/ the other, the
+  /magnitude/ of the rate of momentum flow must be the same for both
+  particles. This statement and the definition of force directly imply
+  that: A given interaction between particles A and B must exert a
+  force on B that is equal in magnitude and opposite in direction the
+  the force that it exerts on A: $\vec{F}_{on B} = -\vec{F}_{on
+  A}$. Physicists call this statement *Newton's third law*.
+
+  A particle's *mass* simply expresses the relationship between its
+  momentum and its velocity, each of which we can define
+  separately. /Mass/ and /weight/ are /completely distinct
+  concepts/. An object's mass expresses its resistance to changes in
+  its velocity. An object's *weight* $\vec{F}_g$, however expresses
+  the force that a gravitational interaction exerts on teh object as a
+  certain point in space. /Mass/ is a /scalar/ measured in kilograms;
+  /weight/ is a /vector/ measured in newtons.
+
+  \begin{equation}
+  \vec{F}_g = m\vec{g}
+  \end{equation}
+
+  Where $\vec{g}$ is the *gravitational field vector* at a certain
+  point in space. Near the earth's surface, $\vec{g}$ points toward
+  the earth's center, and the *gravitational field strength* $g \equiv
+  mag(\vec{g}) = 9.8 N/kg$.
+
+  There are two momentum flow and motion models discussed in the book:
+  the *multitap model* and the *three-reservoir model*. See
+  page 56. Also see page 57-58 for some common mistakes made when
+  working with vectors.
