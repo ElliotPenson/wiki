@@ -227,3 +227,87 @@
   the *multitap model* and the *three-reservoir model*. See
   page 56. Also see page 57-58 for some common mistakes made when
   working with vectors.
+* Chapter #4 Particles and Systems
+
+  A *system* in physics is a set of interacting particles having a
+  well-defined "boundary" that allows us to determine whether a given
+  particle is inside or outside the system. An *extended object* is a
+  material object with well-defined /surface/ in space that defines
+  its boundary and encloses a nonzero volume.
+
+  There are two categories of system interaction. If /both/ particles
+  involved in the interaction are inside the system, we call it an
+  *internal interaction*; if one of the two particles involved in the
+  interaction is inside the system and the other is outside, then we
+  call it an *external interaction*.
+
+  We define a system's *total momentum* $\vec{p}_{tot}$ to be the vector
+  sum of the momenta of its constituent particles:
+
+  \begin{equation}
+  \vec{p}_{tot} \equiv \vec{p}_1 + \vec{p}_2 + ... + \vec{p}_N
+  \end{equation}
+
+  The *momentum-transfer principal* (from last chapter) means that a
+  system's internal interactions only transfer momentum back and forth
+  /within/ the system and therefore cannot affect a system's total
+  momentum. /Only external interactions can transfer momentum into or
+  out of a system/ and thus change its total momentum. If a system
+  participates in /no/ external interactions, we call it an *isolated
+  system*. Since no momentum can flow either into or out of such a
+  system, the following holds: *The law of conservation of momentum*:
+  the total momentum $\vec{p}_{tot}$ of an /isolated/ system is
+  /conserved/. That is, it does not change with time.
+
+  The *center of mass* of /any/ system of particles is a mathematical
+  point whose position we define as follows:
+
+  \begin{equation}
+  \vec{r}_{CM} \equiv \frac{1}{M}(m_1\vec{r}_1 + m_2\vec{r}_2 + ... +
+  ... m_N\vec{r}_N)
+  \end{equation}
+
+  Where $\vec{r}_1, \vec{r}_2, ..., \vec{r}_N$ are the positions of
+  the system's N particles. $m_1, m_2, ..., m_N$ are their masses; and
+  $M \equiv m_1 + ... + m_N$ is the system's mass.
+
+  In many systems, there's an outrageously huge number of elementary
+  particles involved. A practical (but approximate) method is to break
+  the object up into a moderate number of macroscopic chunks that are
+  still small enough that we can consider the particles in each to
+  have essentially the same position.
+
+  Note that we can calculate the position of the center of mass of any
+  /set/ of extended objects by treating each object as if it were a
+  point particle with all its mass concentrated at its /individual/
+  center of mass.
+
+  To find a systems total momentum, all that we need to do is to
+  multiply its total mass M by the velocity of its center of mass
+  $\vec{v}_{CM}$, /exactly as if the system were a single particle
+  located at its center of mass!/
+
+  \begin{equation}
+  \vec{p}_{tot} = M\vec{v}_{CM}
+  \end{equation}
+
+  In conjunction with the law of conservation of momentum, the
+  equation above implies that an /isolated/ system's $\vec{v}_{CM}$ is
+  a constant. This is simply /Newton's first law/, except we now see
+  that it applies to arbitrary systems, not just to particles!
+
+  *The particle model*: A system's center of mass responds to its
+  /external/ interactions /exactly/ as a point particle would respond
+  to those interactions. This means that every idea of equation that
+  we have formulated up to now for interacting /particles/ also
+  applies to any /system/ of particles, as long as we substitute the
+  system quantities $\vec{r}_{CM}$, $\vec{v}_{CM}$, and
+  $\vec{p}_{tot}$ for the particle quantities $\vec{r}$, $\vec{v}$,
+  and $\vec{p}$, respectively, and put the qualifier /external/ in
+  front of any references to /interactions/.
+
+  *Inertial reference frames* are reference frames in which we find
+  Newton's first law to be obeyed; *noninertial reference frames* are
+  frames in which we find it to be violated. The models of motion we
+  have been developing work in inertial reference frames but fail in
+  noninertial reference frames.
