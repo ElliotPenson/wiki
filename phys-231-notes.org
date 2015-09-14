@@ -227,6 +227,7 @@
   the *multitap model* and the *three-reservoir model*. See
   page 56. Also see page 57-58 for some common mistakes made when
   working with vectors.
+
 * Chapter #4 Particles and Systems
 
   A *system* in physics is a set of interacting particles having a
@@ -311,3 +312,40 @@
   frames in which we find it to be violated. The models of motion we
   have been developing work in inertial reference frames but fail in
   noninertial reference frames.
+
+* Chapter #5 Applying Momentum Conservation
+
+  A system does not have to be strictly isolated for its total
+  momentum to be conserved. For example, the gravitation and
+  compression interations a laptop experiences when it's sitting on a
+  desk are negligible because they cancel each other out. In general,
+  a system's momentum is conserved in any process where its external
+  interactions do not change its total momentum /significantly/ during
+  that process. There are three distinct types of situations in which
+  this is true:
+
+  - *Floats in space*: only interacts gravitationally with distant
+    objects
+  - *Functionally isolated*: external interactions cancel
+  - *Momentarily isolated*: strong external interactions that do /not/
+    cancel, but we only look at the system's momentum /just before/
+    and /just after/ a very strong and brief interaction. If the
+    collision process is sufficiently brief, external interactions
+    simply do not have /time/ to transfer significant momentum to the
+    system.
+
+** Problem-Solving Framework
+
+   - Translation -> draw a picture
+   - Conceptual model -> applicable theories/principles
+   - Algebraic solution -> solve equations symbolically
+   - Evaluation -> check results make sense
+
+   Draw an *interaction diagram* as follows: draw a large circle to
+   represent the system, and draw one rectangular box inside that
+   circle for each object inside the system, labeling the box with the
+   object's name. If the object inside the system interact with object
+   outside the system, draw a box outside the circle for each relevant
+   object outside the system, and label these boxes as well. Then draw
+   lines connecting the boxes to represent the internal and external
+   interactions involved.
