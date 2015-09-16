@@ -1,351 +1,353 @@
 #+TITLE: Six Ideas That Shaped Physics Notes
 #+AUTHOR: Elliot Penson
 
-* Chapter #1 Introduction to Interactions
-
-  When an isolated set of objects interacts with one another, we find
-  that (no matter how the objects interact) certain quantities (which
-  we call the set's total *energy*, *momentum*, and *angular
-  momentum*) are /conserved/ (i.e., have values that do not change
-  with time). The laws of physics are independent of /time/, /place/,
-  and /orientation/.
-
-  *Mechanics* is the area of physics that deals with how the physical
-  interactions between object affect their motion.
-
-  *Newton's first law*: Any object that does not interact with
-  something else moves with a /constant speed/ in a /fixed
-  direction/. An *interaction* is a physical relationship /between two
-  objects/ that, in the absence of other interactions, /changes/ the
-  motion of each. Newton's model sees friction as being an interaction
-  between a moving object and something else that actively /slows down
-  the object/.
-
-  All matter consists of elementary particles known as *quarks* and
-  *leptons*. Electrons are an example of the more general class
-  leptons, while protons and neutrons are constructed of quarks.
-
-  There are four fundamental interactions:
-
-  - *string nuclear*
-  - *electromagnetic*
-  - *weak nuclear*
-  - *gravitational*
-
-  Between *macroscopic* objects, we see *long-range* interactions:
-
-  - *electrostatic*
-  - *magnetic*
-  - *gravitational*
-
-  and *contact interactions*:
-
-  - *friction*
-  - *compression*
-  - *tension*
-
-  Note that at the fundamental level, electrostatic, magnetic, and all
-  contact interactions are different manifestations of the
-  electromagnetic interaction.
-
-** SI Units
-
-   | Type        | Unit     | Abbreviation |
-   |-------------+----------+--------------|
-   | distance    | meter    | m            |
-   | time        | second   | s            |
-   | mass        | kilogram | kg           |
-   | temperature | kelvin   | K            |
-   | molecules   | mole     | mol          |
-   | current     | ampere   | A            |
-   | luminosity  | candela  | cd           |
-
-** Standard Prefixes
-
-   |  Power | Prefix | Symbol |
-   |--------+--------+--------|
-   |  10^12 | tera   | T      |
-   |   10^9 | giga   | G      |
-   |   10^6 | mega   | M      |
-   |   10^3 | kilo   | k      |
-   |  10^-2 | centi  | c      |
-   |  10^-3 | milli  | m      |
-   |  10^-6 | micro  | µ      |
-   |  10^-9 | nano   | n      |
-   | 10^-12 | pico   | p      |
-   
-* Chapter #2 Vectors
-
-  A *scalar* quantity is any quantity (such as speed) that we can
-  completely describe using a single numerical value. A *vector* is a
-  quantity (such as velocity) that has *direction* in addition to a
-  numerical *magnitude*.
-
-  *Displacement* is a shift in position from one point in space to
-  another. See pages 27 and 28 for examples of *vector addition*
-  ($\vec{u_1}+\vec{u_2}$), *vector inverse* ($\vec{u_1}+\vec{u_2}=0$),
-  and *vector difference* ($\vec{u_1}-\vec{u_2}$). Note that
-  $\vec{u_1}-\vec{u_2}=\vec{u_1}+(-\vec{u_2})$.
-
-  A vector is a sum of three component vectors:
-
-  \begin{equation}
-  \vec{u}=u_x\hat{x}+u_y\hat{y}+u_z\hat{z}
-  \end{equation}
-
-  The $\hat{x}$, $\hat{y}$, and $\hat{z}$ are *directionals*. We call
-  $u_x$, $u_y$, $u_z$ the *x component*, *y component*, and *z
-  component*. A *component vector* is the combination of a component
-  and a directional.
-
-  The *magnitude* of an arbitrary vector is as follows:
-
-  \begin{equation}
-  mag(\vec{u})=\sqrt{u_x^2+u_y^2+u_z^2}
-  \end{equation}
-
-  Pages 32 and 33 relate basic trigonometry to vectors. Note: the
-  three angles of a triangle add to 180 degrees.
-
-  As expected, vector addition and difference can be calculated using
-  components in vector notation.
-
-  A *reference frame* is an "imaginary cubical grid". We need to
-  choose the *origin*, and the *+x*, *+y*, and *+z directions*. Note
-  that we can attach a reference frame to any object that we
-  please. We can also orient the frame in any way that we like.
-
-  We can calculate the displacement between two points with vector
-  difference.
-
-  We can use our right hand to determine axis directions in a
-  *right-handed reference frame*. See figure C2.11a on page 38 for an
-  example. In *standard orientation*, +x=east, +y=north, +z=up.
-
-* Chapter #3 Interactions Transfer Momentum
-
-  A *particle* is a hypothetical object having zero volume, and thus
-  its position is a mathematical point in space. The position
-  $\vec{r}$ of a point in space is its displacement from the reference
-  frame origin to the point in question. The displacement between two
-  arbitrary points is the difference of their positions:
-  $\Delta\vec{r}\equiv\vec{r_2}-\vec{r_1}$.
-
-  A particles *velocity* $\vec{v}$ at a given instant of time t is a
-  vector whose magnitude is the particle's speed $v$ and whose
-  direction is the particle's direction of motion at that instance of
-  time. Let $dt$ be the duration of a time interval containing the
-  instant $t$ at which we want to know $\vec{v}$, and let $d\vec{r}$
-  be the particle's tiny displacement during that tiny time
-  interval. If $dt$ is /sufficiently short/ that neither the particle's
-  speed nor its direction of motion changes appreciable during that
-  time interval, then the particle's velocity is:
-
-  \begin{equation}
-  \vec{v}\equiv\frac{d\vec{r}}{dt}
-  \end{equation}
-
-  *Speed* is the magnitude of a particle's velocity:
-  \begin{equation}
-  mag(\vec{v})\equiv\sqrt{v_x^2+v_y^2+v_z^2}
-  \end{equation}
-
-  Remember from chapter 1 that an *interaction* between two objects is
-  a physical relationship between them that allows each to affect the
-  other's motion. *Momentum*, or the "quantity of motion", is defined
-  as:
-
-  \begin{equation}
-  \vec{p}\equiv m\vec{v}
-  \end{equation}
-
-  The *momentum-transfer principle*: any interaction between two
-  objects affects their motion by transferring momentum from one to
-  the other.
-
-  Physicists call the amount of momentum that a /particular/
-  interaction A between two particles transfers to either particle
-  during a short interval of time the *impulse* $[d\vec{p}]_A$ that
-  the interaction delievers to that particle during that interval. A
-  financial analogy may help us understand some subtle distinctions in
-  meaning between the terms /a particle's momentum/, /impulse/, and
-  /momentum/ in general. Think of the /particle's momentum/ as being
-  like a person's net financial worth. An /interaction/ is like a
-  financial transaction that increases on person's net worth at the
-  expense of the other's. An /impulse/ is like a check that a person
-  writes or receives in the transaction. The term /momentum/ is, like
-  /money/, a general term for both what each particle (person) has and
-  what is being transferred.
-
-  The change $d\vec{p}$ in the momentum of a particle that
-  participates in multiple interactions during a given interval is the
-  /vector sum/ of the impulses it receives during that interval
-
-  \begin{equation}
-  d\vec{p}=[d\vec{p}]_A + [d\vec{p}]_B + ...
-  \end{equation}
-
-  We define the *force* $\vec{F}$ that an interaction exerts on a
-  given object to be the /rate/ at which momentum flows into the
-  object because of that interaction:
-
-  \begin{equation}
-  \vec{F}_A \equiv \frac{[d\vec{p}]_A}{dt}
-  \end{equation}
-
-  The SI unit of force is the *newton*, where $1 N = 1 kg*m/s^2$.
-
-  We can visualize an interaction between two particles as being like
-  a hose that carries a flow of momentum from one to the other. Since
-  any momentum that flows /out/ of one must flow /into/ the other, the
-  /magnitude/ of the rate of momentum flow must be the same for both
-  particles. This statement and the definition of force directly imply
-  that: A given interaction between particles A and B must exert a
-  force on B that is equal in magnitude and opposite in direction the
-  the force that it exerts on A: $\vec{F}_{on B} = -\vec{F}_{on
-  A}$. Physicists call this statement *Newton's third law*.
-
-  A particle's *mass* simply expresses the relationship between its
-  momentum and its velocity, each of which we can define
-  separately. /Mass/ and /weight/ are /completely distinct
-  concepts/. An object's mass expresses its resistance to changes in
-  its velocity. An object's *weight* $\vec{F}_g$, however expresses
-  the force that a gravitational interaction exerts on teh object as a
-  certain point in space. /Mass/ is a /scalar/ measured in kilograms;
-  /weight/ is a /vector/ measured in newtons.
-
-  \begin{equation}
-  \vec{F}_g = m\vec{g}
-  \end{equation}
-
-  Where $\vec{g}$ is the *gravitational field vector* at a certain
-  point in space. Near the earth's surface, $\vec{g}$ points toward
-  the earth's center, and the *gravitational field strength* $g \equiv
-  mag(\vec{g}) = 9.8 N/kg$.
-
-  There are two momentum flow and motion models discussed in the book:
-  the *multitap model* and the *three-reservoir model*. See
-  page 56. Also see page 57-58 for some common mistakes made when
-  working with vectors.
-
-* Chapter #4 Particles and Systems
-
-  A *system* in physics is a set of interacting particles having a
-  well-defined "boundary" that allows us to determine whether a given
-  particle is inside or outside the system. An *extended object* is a
-  material object with well-defined /surface/ in space that defines
-  its boundary and encloses a nonzero volume.
-
-  There are two categories of system interaction. If /both/ particles
-  involved in the interaction are inside the system, we call it an
-  *internal interaction*; if one of the two particles involved in the
-  interaction is inside the system and the other is outside, then we
-  call it an *external interaction*.
-
-  We define a system's *total momentum* $\vec{p}_{tot}$ to be the vector
-  sum of the momenta of its constituent particles:
-
-  \begin{equation}
-  \vec{p}_{tot} \equiv \vec{p}_1 + \vec{p}_2 + ... + \vec{p}_N
-  \end{equation}
-
-  The *momentum-transfer principal* (from last chapter) means that a
-  system's internal interactions only transfer momentum back and forth
-  /within/ the system and therefore cannot affect a system's total
-  momentum. /Only external interactions can transfer momentum into or
-  out of a system/ and thus change its total momentum. If a system
-  participates in /no/ external interactions, we call it an *isolated
-  system*. Since no momentum can flow either into or out of such a
-  system, the following holds: *The law of conservation of momentum*:
-  the total momentum $\vec{p}_{tot}$ of an /isolated/ system is
-  /conserved/. That is, it does not change with time.
-
-  The *center of mass* of /any/ system of particles is a mathematical
-  point whose position we define as follows:
-
-  \begin{equation}
-  \vec{r}_{CM} \equiv \frac{1}{M}(m_1\vec{r}_1 + m_2\vec{r}_2 + ... +
-  ... m_N\vec{r}_N)
-  \end{equation}
-
-  Where $\vec{r}_1, \vec{r}_2, ..., \vec{r}_N$ are the positions of
-  the system's N particles. $m_1, m_2, ..., m_N$ are their masses; and
-  $M \equiv m_1 + ... + m_N$ is the system's mass.
-
-  In many systems, there's an outrageously huge number of elementary
-  particles involved. A practical (but approximate) method is to break
-  the object up into a moderate number of macroscopic chunks that are
-  still small enough that we can consider the particles in each to
-  have essentially the same position.
-
-  Note that we can calculate the position of the center of mass of any
-  /set/ of extended objects by treating each object as if it were a
-  point particle with all its mass concentrated at its /individual/
-  center of mass.
-
-  To find a systems total momentum, all that we need to do is to
-  multiply its total mass M by the velocity of its center of mass
-  $\vec{v}_{CM}$, /exactly as if the system were a single particle
-  located at its center of mass!/
-
-  \begin{equation}
-  \vec{p}_{tot} = M\vec{v}_{CM}
-  \end{equation}
-
-  In conjunction with the law of conservation of momentum, the
-  equation above implies that an /isolated/ system's $\vec{v}_{CM}$ is
-  a constant. This is simply /Newton's first law/, except we now see
-  that it applies to arbitrary systems, not just to particles!
-
-  *The particle model*: A system's center of mass responds to its
-  /external/ interactions /exactly/ as a point particle would respond
-  to those interactions. This means that every idea of equation that
-  we have formulated up to now for interacting /particles/ also
-  applies to any /system/ of particles, as long as we substitute the
-  system quantities $\vec{r}_{CM}$, $\vec{v}_{CM}$, and
-  $\vec{p}_{tot}$ for the particle quantities $\vec{r}$, $\vec{v}$,
-  and $\vec{p}$, respectively, and put the qualifier /external/ in
-  front of any references to /interactions/.
-
-  *Inertial reference frames* are reference frames in which we find
-  Newton's first law to be obeyed; *noninertial reference frames* are
-  frames in which we find it to be violated. The models of motion we
-  have been developing work in inertial reference frames but fail in
-  noninertial reference frames.
-
-* Chapter #5 Applying Momentum Conservation
-
-  A system does not have to be strictly isolated for its total
-  momentum to be conserved. For example, the gravitation and
-  compression interations a laptop experiences when it's sitting on a
-  desk are negligible because they cancel each other out. In general,
-  a system's momentum is conserved in any process where its external
-  interactions do not change its total momentum /significantly/ during
-  that process. There are three distinct types of situations in which
-  this is true:
-
-  - *Floats in space*: only interacts gravitationally with distant
-    objects
-  - *Functionally isolated*: external interactions cancel
-  - *Momentarily isolated*: strong external interactions that do /not/
-    cancel, but we only look at the system's momentum /just before/
-    and /just after/ a very strong and brief interaction. If the
-    collision process is sufficiently brief, external interactions
-    simply do not have /time/ to transfer significant momentum to the
-    system.
-
-** Problem-Solving Framework
-
-   - Translation -> draw a picture
-   - Conceptual model -> applicable theories/principles
-   - Algebraic solution -> solve equations symbolically
-   - Evaluation -> check results make sense
-
-   Draw an *interaction diagram* as follows: draw a large circle to
-   represent the system, and draw one rectangular box inside that
-   circle for each object inside the system, labeling the box with the
-   object's name. If the object inside the system interact with object
-   outside the system, draw a box outside the circle for each relevant
-   object outside the system, and label these boxes as well. Then draw
-   lines connecting the boxes to represent the internal and external
-   interactions involved.
+* Unit N: Conservation Laws Constrain Interactions
+
+** Chapter #1 Introduction to Interactions
+
+   When an isolated set of objects interacts with one another, we find
+   that (no matter how the objects interact) certain quantities (which
+   we call the set's total *energy*, *momentum*, and *angular
+   momentum*) are /conserved/ (i.e., have values that do not change
+   with time). The laws of physics are independent of /time/, /place/,
+   and /orientation/.
+
+   *Mechanics* is the area of physics that deals with how the physical
+   interactions between object affect their motion.
+
+   *Newton's first law*: Any object that does not interact with
+   something else moves with a /constant speed/ in a /fixed
+   direction/. An *interaction* is a physical relationship /between two
+   objects/ that, in the absence of other interactions, /changes/ the
+   motion of each. Newton's model sees friction as being an interaction
+   between a moving object and something else that actively /slows down
+   the object/.
+
+   All matter consists of elementary particles known as *quarks* and
+   *leptons*. Electrons are an example of the more general class
+   leptons, while protons and neutrons are constructed of quarks.
+
+   There are four fundamental interactions:
+
+   - *string nuclear*
+   - *electromagnetic*
+   - *weak nuclear*
+   - *gravitational*
+
+   Between *macroscopic* objects, we see *long-range* interactions:
+
+   - *electrostatic*
+   - *magnetic*
+   - *gravitational*
+
+   and *contact interactions*:
+
+   - *friction*
+   - *compression*
+   - *tension*
+
+   Note that at the fundamental level, electrostatic, magnetic, and all
+   contact interactions are different manifestations of the
+   electromagnetic interaction.
+
+*** SI Units
+
+    | Type        | Unit     | Abbreviation |
+    |-------------+----------+--------------|
+    | distance    | meter    | m            |
+    | time        | second   | s            |
+    | mass        | kilogram | kg           |
+    | temperature | kelvin   | K            |
+    | molecules   | mole     | mol          |
+    | current     | ampere   | A            |
+    | luminosity  | candela  | cd           |
+
+*** Standard Prefixes
+
+    |  Power | Prefix | Symbol |
+    |--------+--------+--------|
+    |  10^12 | tera   | T      |
+    |   10^9 | giga   | G      |
+    |   10^6 | mega   | M      |
+    |   10^3 | kilo   | k      |
+    |  10^-2 | centi  | c      |
+    |  10^-3 | milli  | m      |
+    |  10^-6 | micro  | µ      |
+    |  10^-9 | nano   | n      |
+    | 10^-12 | pico   | p      |
+    
+** Chapter #2 Vectors
+
+   A *scalar* quantity is any quantity (such as speed) that we can
+   completely describe using a single numerical value. A *vector* is a
+   quantity (such as velocity) that has *direction* in addition to a
+   numerical *magnitude*.
+
+   *Displacement* is a shift in position from one point in space to
+   another. See pages 27 and 28 for examples of *vector addition*
+   ($\vec{u_1}+\vec{u_2}$), *vector inverse* ($\vec{u_1}+\vec{u_2}=0$),
+   and *vector difference* ($\vec{u_1}-\vec{u_2}$). Note that
+   $\vec{u_1}-\vec{u_2}=\vec{u_1}+(-\vec{u_2})$.
+
+   A vector is a sum of three component vectors:
+
+   \begin{equation}
+   \vec{u}=u_x\hat{x}+u_y\hat{y}+u_z\hat{z}
+   \end{equation}
+
+   The $\hat{x}$, $\hat{y}$, and $\hat{z}$ are *directionals*. We call
+   $u_x$, $u_y$, $u_z$ the *x component*, *y component*, and *z
+   component*. A *component vector* is the combination of a component
+   and a directional.
+
+   The *magnitude* of an arbitrary vector is as follows:
+
+   \begin{equation}
+   mag(\vec{u})=\sqrt{u_x^2+u_y^2+u_z^2}
+   \end{equation}
+
+   Pages 32 and 33 relate basic trigonometry to vectors. Note: the
+   three angles of a triangle add to 180 degrees.
+
+   As expected, vector addition and difference can be calculated using
+   components in vector notation.
+
+   A *reference frame* is an "imaginary cubical grid". We need to
+   choose the *origin*, and the *+x*, *+y*, and *+z directions*. Note
+   that we can attach a reference frame to any object that we
+   please. We can also orient the frame in any way that we like.
+
+   We can calculate the displacement between two points with vector
+   difference.
+
+   We can use our right hand to determine axis directions in a
+   *right-handed reference frame*. See figure C2.11a on page 38 for an
+   example. In *standard orientation*, +x=east, +y=north, +z=up.
+
+** Chapter #3 Interactions Transfer Momentum
+
+   A *particle* is a hypothetical object having zero volume, and thus
+   its position is a mathematical point in space. The position
+   $\vec{r}$ of a point in space is its displacement from the reference
+   frame origin to the point in question. The displacement between two
+   arbitrary points is the difference of their positions:
+   $\Delta\vec{r}\equiv\vec{r_2}-\vec{r_1}$.
+
+   A particles *velocity* $\vec{v}$ at a given instant of time t is a
+   vector whose magnitude is the particle's speed $v$ and whose
+   direction is the particle's direction of motion at that instance of
+   time. Let $dt$ be the duration of a time interval containing the
+   instant $t$ at which we want to know $\vec{v}$, and let $d\vec{r}$
+   be the particle's tiny displacement during that tiny time
+   interval. If $dt$ is /sufficiently short/ that neither the particle's
+   speed nor its direction of motion changes appreciable during that
+   time interval, then the particle's velocity is:
+
+   \begin{equation}
+   \vec{v}\equiv\frac{d\vec{r}}{dt}
+   \end{equation}
+
+   *Speed* is the magnitude of a particle's velocity:
+   \begin{equation}
+   mag(\vec{v})\equiv\sqrt{v_x^2+v_y^2+v_z^2}
+   \end{equation}
+
+   Remember from chapter 1 that an *interaction* between two objects is
+   a physical relationship between them that allows each to affect the
+   other's motion. *Momentum*, or the "quantity of motion", is defined
+   as:
+
+   \begin{equation}
+   \vec{p}\equiv m\vec{v}
+   \end{equation}
+
+   The *momentum-transfer principle*: any interaction between two
+   objects affects their motion by transferring momentum from one to
+   the other.
+
+   Physicists call the amount of momentum that a /particular/
+   interaction A between two particles transfers to either particle
+   during a short interval of time the *impulse* $[d\vec{p}]_A$ that
+   the interaction delievers to that particle during that interval. A
+   financial analogy may help us understand some subtle distinctions in
+   meaning between the terms /a particle's momentum/, /impulse/, and
+   /momentum/ in general. Think of the /particle's momentum/ as being
+   like a person's net financial worth. An /interaction/ is like a
+   financial transaction that increases on person's net worth at the
+   expense of the other's. An /impulse/ is like a check that a person
+   writes or receives in the transaction. The term /momentum/ is, like
+   /money/, a general term for both what each particle (person) has and
+   what is being transferred.
+
+   The change $d\vec{p}$ in the momentum of a particle that
+   participates in multiple interactions during a given interval is the
+   /vector sum/ of the impulses it receives during that interval
+
+   \begin{equation}
+   d\vec{p}=[d\vec{p}]_A + [d\vec{p}]_B + ...
+   \end{equation}
+
+   We define the *force* $\vec{F}$ that an interaction exerts on a
+   given object to be the /rate/ at which momentum flows into the
+   object because of that interaction:
+
+   \begin{equation}
+   \vec{F}_A \equiv \frac{[d\vec{p}]_A}{dt}
+   \end{equation}
+
+   The SI unit of force is the *newton*, where $1 N = 1 kg*m/s^2$.
+
+   We can visualize an interaction between two particles as being like
+   a hose that carries a flow of momentum from one to the other. Since
+   any momentum that flows /out/ of one must flow /into/ the other, the
+   /magnitude/ of the rate of momentum flow must be the same for both
+   particles. This statement and the definition of force directly imply
+   that: A given interaction between particles A and B must exert a
+   force on B that is equal in magnitude and opposite in direction the
+   the force that it exerts on A: $\vec{F}_{on B} = -\vec{F}_{on
+   A}$. Physicists call this statement *Newton's third law*.
+
+   A particle's *mass* simply expresses the relationship between its
+   momentum and its velocity, each of which we can define
+   separately. /Mass/ and /weight/ are /completely distinct
+   concepts/. An object's mass expresses its resistance to changes in
+   its velocity. An object's *weight* $\vec{F}_g$, however expresses
+   the force that a gravitational interaction exerts on teh object as a
+   certain point in space. /Mass/ is a /scalar/ measured in kilograms;
+   /weight/ is a /vector/ measured in newtons.
+
+   \begin{equation}
+   \vec{F}_g = m\vec{g}
+   \end{equation}
+
+   Where $\vec{g}$ is the *gravitational field vector* at a certain
+   point in space. Near the earth's surface, $\vec{g}$ points toward
+   the earth's center, and the *gravitational field strength* $g \equiv
+   mag(\vec{g}) = 9.8 N/kg$.
+
+   There are two momentum flow and motion models discussed in the book:
+   the *multitap model* and the *three-reservoir model*. See
+   page 56. Also see page 57-58 for some common mistakes made when
+   working with vectors.
+
+** Chapter #4 Particles and Systems
+
+   A *system* in physics is a set of interacting particles having a
+   well-defined "boundary" that allows us to determine whether a given
+   particle is inside or outside the system. An *extended object* is a
+   material object with well-defined /surface/ in space that defines
+   its boundary and encloses a nonzero volume.
+
+   There are two categories of system interaction. If /both/ particles
+   involved in the interaction are inside the system, we call it an
+   *internal interaction*; if one of the two particles involved in the
+   interaction is inside the system and the other is outside, then we
+   call it an *external interaction*.
+
+   We define a system's *total momentum* $\vec{p}_{tot}$ to be the vector
+   sum of the momenta of its constituent particles:
+
+   \begin{equation}
+   \vec{p}_{tot} \equiv \vec{p}_1 + \vec{p}_2 + ... + \vec{p}_N
+   \end{equation}
+
+   The *momentum-transfer principal* (from last chapter) means that a
+   system's internal interactions only transfer momentum back and forth
+   /within/ the system and therefore cannot affect a system's total
+   momentum. /Only external interactions can transfer momentum into or
+   out of a system/ and thus change its total momentum. If a system
+   participates in /no/ external interactions, we call it an *isolated
+   system*. Since no momentum can flow either into or out of such a
+   system, the following holds: *The law of conservation of momentum*:
+   the total momentum $\vec{p}_{tot}$ of an /isolated/ system is
+   /conserved/. That is, it does not change with time.
+
+   The *center of mass* of /any/ system of particles is a mathematical
+   point whose position we define as follows:
+
+   \begin{equation}
+   \vec{r}_{CM} \equiv \frac{1}{M}(m_1\vec{r}_1 + m_2\vec{r}_2 + ... +
+   ... m_N\vec{r}_N)
+   \end{equation}
+
+   Where $\vec{r}_1, \vec{r}_2, ..., \vec{r}_N$ are the positions of
+   the system's N particles. $m_1, m_2, ..., m_N$ are their masses; and
+   $M \equiv m_1 + ... + m_N$ is the system's mass.
+
+   In many systems, there's an outrageously huge number of elementary
+   particles involved. A practical (but approximate) method is to break
+   the object up into a moderate number of macroscopic chunks that are
+   still small enough that we can consider the particles in each to
+   have essentially the same position.
+
+   Note that we can calculate the position of the center of mass of any
+   /set/ of extended objects by treating each object as if it were a
+   point particle with all its mass concentrated at its /individual/
+   center of mass.
+
+   To find a systems total momentum, all that we need to do is to
+   multiply its total mass M by the velocity of its center of mass
+   $\vec{v}_{CM}$, /exactly as if the system were a single particle
+   located at its center of mass!/
+
+   \begin{equation}
+   \vec{p}_{tot} = M\vec{v}_{CM}
+   \end{equation}
+
+   In conjunction with the law of conservation of momentum, the
+   equation above implies that an /isolated/ system's $\vec{v}_{CM}$ is
+   a constant. This is simply /Newton's first law/, except we now see
+   that it applies to arbitrary systems, not just to particles!
+
+   *The particle model*: A system's center of mass responds to its
+   /external/ interactions /exactly/ as a point particle would respond
+   to those interactions. This means that every idea of equation that
+   we have formulated up to now for interacting /particles/ also
+   applies to any /system/ of particles, as long as we substitute the
+   system quantities $\vec{r}_{CM}$, $\vec{v}_{CM}$, and
+   $\vec{p}_{tot}$ for the particle quantities $\vec{r}$, $\vec{v}$,
+   and $\vec{p}$, respectively, and put the qualifier /external/ in
+   front of any references to /interactions/.
+
+   *Inertial reference frames* are reference frames in which we find
+   Newton's first law to be obeyed; *noninertial reference frames* are
+   frames in which we find it to be violated. The models of motion we
+   have been developing work in inertial reference frames but fail in
+   noninertial reference frames.
+
+** Chapter #5 Applying Momentum Conservation
+
+   A system does not have to be strictly isolated for its total
+   momentum to be conserved. For example, the gravitation and
+   compression interations a laptop experiences when it's sitting on a
+   desk are negligible because they cancel each other out. In general,
+   a system's momentum is conserved in any process where its external
+   interactions do not change its total momentum /significantly/ during
+   that process. There are three distinct types of situations in which
+   this is true:
+
+   - *Floats in space*: only interacts gravitationally with distant
+     objects
+   - *Functionally isolated*: external interactions cancel
+   - *Momentarily isolated*: strong external interactions that do /not/
+     cancel, but we only look at the system's momentum /just before/
+     and /just after/ a very strong and brief interaction. If the
+     collision process is sufficiently brief, external interactions
+     simply do not have /time/ to transfer significant momentum to the
+     system.
+
+*** Problem-Solving Framework
+
+    - Translation -> draw a picture
+    - Conceptual model -> applicable theories/principles
+    - Algebraic solution -> solve equations symbolically
+    - Evaluation -> check results make sense
+
+    Draw an *interaction diagram* as follows: draw a large circle to
+    represent the system, and draw one rectangular box inside that
+    circle for each object inside the system, labeling the box with the
+    object's name. If the object inside the system interact with object
+    outside the system, draw a box outside the circle for each relevant
+    object outside the system, and label these boxes as well. Then draw
+    lines connecting the boxes to represent the internal and external
+    interactions involved.
