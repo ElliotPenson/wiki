@@ -1,9 +1,9 @@
 #+TITLE: Six Ideas That Shaped Physics Notes
 #+AUTHOR: Elliot Penson
 
-* Unit N: Conservation Laws Constrain Interactions
+* Unit C: Conservation Laws Constrain Interactions
 
-** Chapter #1 Introduction to Interactions
+** Chapter 1: Introduction to Interactions
 
    When an isolated set of objects interacts with one another, we find
    that (no matter how the objects interact) certain quantities (which
@@ -76,7 +76,7 @@
     |  10^-9 | nano   | n      |
     | 10^-12 | pico   | p      |
     
-** Chapter #2 Vectors
+** Chapter 2: Vectors
 
    A *scalar* quantity is any quantity (such as speed) that we can
    completely describe using a single numerical value. A *vector* is a
@@ -124,7 +124,7 @@
    *right-handed reference frame*. See figure C2.11a on page 38 for an
    example. In *standard orientation*, +x=east, +y=north, +z=up.
 
-** Chapter #3 Interactions Transfer Momentum
+** Chapter 3: Interactions Transfer Momentum
 
    A *particle* is a hypothetical object having zero volume, and thus
    its position is a mathematical point in space. The position
@@ -230,7 +230,7 @@
    page 56. Also see page 57-58 for some common mistakes made when
    working with vectors.
 
-** Chapter #4 Particles and Systems
+** Chapter 4: Particles and Systems
 
    A *system* in physics is a set of interacting particles having a
    well-defined "boundary" that allows us to determine whether a given
@@ -315,7 +315,7 @@
    have been developing work in inertial reference frames but fail in
    noninertial reference frames.
 
-** Chapter #5 Applying Momentum Conservation
+** Chapter 5: Applying Momentum Conservation
 
    A system does not have to be strictly isolated for its total
    momentum to be conserved. For example, the gravitation and
@@ -351,3 +351,403 @@
     object outside the system, and label these boxes as well. Then draw
     lines connecting the boxes to represent the internal and external
     interactions involved.
+
+* Unit N: The Laws of Physics are Universal
+
+** Chapter 1: Newton's Laws
+
+   Newton's theories of motion were the first that were able to
+   explain both terrestial /and/ celestial phenomena using the same
+   theoretical framework. This unification is called the *newtonian
+   synthesis*.
+   
+   Conservation of momentum implies that /the total momentum of an
+   isolated system is conserved/. *Newton's first law* directly
+   follows from this: "In the absence of external interactions, an
+   object's (or system's) center of mass moves at a constant
+   velocity."
+
+   A tiny impulse $[d\vec{p}]$ flowing /out/ of one object A is the
+   same as $-[d\vec{p}]$ flowing /into/ A. Force $\vec{F}$ exerted by
+   an interaction on an object is defined to be the /rate/ at which
+   the interaction transfers momentum into the object. The rate at
+   which a given interaction transfers momentum into object B is the
+   negative of the rate at which it transfers momentum into object
+   A. *Newton's third law* says that "When object A and B interact,
+   the force the interaction exerts on A is equal in magnitude and
+   opposite in direction to the force that it exerts on B." Or
+   mathematically:
+
+   \begin{equation}
+   \vec{F}_B \equiv -\vec{F}_A
+   \end{equation}
+
+   Consider a 10,000-kg truck traveling at 65 mi/h. Imagine that it
+   hits a parked 500-kg Volkswagen Beetle. Which vehicle exerts the
+   stronger force on the other during the collision? According to the
+   third law, the magnitudes of the forces that the contact interation
+   exerts on either vehicle /must be the same/: any momentum that the
+   interaction transfers out of the truck must go into the Beetle at
+   the same rate. This seems counter intuitive. Note that the fact
+   that the /forces/ are the same on each doesn't mean that each has
+   to /respond/ in the same way. Because the Beetle is 20 times less
+   massive than the truck, a given amount of momentum flowing into the
+   Beetle will lead to a change in its velocity whose magnitude is 20
+   times larger than the change in the truck's velocity from the same
+   momentum flow.
+
+   For point particles, *Newton's second law* looks like:
+
+   \begin{equation}
+   \vec{F}_{net} = \frac{d\vec{p}}{dt} = m\frac{d\vec{v}}{dt} \equiv
+   m\vec{a}
+   \end{equation}
+
+   Where a particle's *acceleration* $\vec{a} \equiv d\vec{v}/dt$. Now
+   let's consider a /system/ of particles that interacts with its
+   surroundings. Internal interactions only transfer momentum from
+   particle to particle /inside/ the system, so they will not change
+   the system's /total/ momentum.
+
+   \begin{equation}
+   \vec{F}_{net,ext} = \frac{d\vec{p}_{tot}}{dt} =
+   M\frac{d\vec{v}_{CM}}{dt} \equiv M\vec{a}_{CM}
+   \end{equation}
+
+   Note that the object must have a fixed mass. This equation is
+   *Newton's second law* for /systems/ of particles. To understand how
+   an object's center of mass moves, we only need to be able to
+   quantify the /net exernal force/ acting on that object.
+
+   Forces do not cause /motion/, they cause /acceleration/. A force
+   does not /overcome/ another force to cause an object to move in a
+   certain way: rather all forces acting on the object act in concert
+   to direct the object's acceleration.
+
+*** Classification of Forces
+
+    See pages 11-12 of the the Unit N book for more specific
+    information on these forces.
+
+**** Long-Range Interactions
+
+     | Symbol      | Name                |
+     |-------------+---------------------|
+     | $\vec{F}_g$ | Gravitational force |
+     | $\vec{F}_e$ | Electrostatic force |
+     | $\vec{F}_m$ | Magnetic force      |
+
+**** Contact Interactions
+
+     | Symbol         | Name             |
+     |----------------+------------------|
+     | $\vec{F}_{sp}$ | Spring force     |
+     | $\vec{F}_T$    | Tension force    |
+     | $\vec{F}_N$    | Normal force     |
+     | $\vec{F}_{SF}$ | Static friction  |
+     | $\vec{F}_{KF}$ | Kinetic friction |
+     | $\vec{F}_D$    | Drag force       |
+     | $\vec{F}_L$    | Lift force       |
+     | $\vec{F}_{Th}$ | Thrust force     |
+     | $\vec{F}_p$    | Pressure force   |
+     | $\vec{F}_B$    | Buoyant force    |
+     
+*** TODO Free-Body Diagrams
+
+    See page 13 of the Unit N book!
+
+** Chapter 2: Vector Calculus
+
+   An object's *average velocity*:
+
+   \begin{equation}
+   \vec{v}_{\Delta t} \equiv \frac{\Delta\vec{r}}{\Delta t}
+   \end{equation}
+
+   With a nonzero $\Delta t$, this  equation most closely approximates
+   the object's instantaneous velocity at an instant $t$ halfway
+   throught the interval $\Delta t$.
+
+   An object's *average acceleration*:
+   
+   \begin{equation}
+   \vec{a}_{\Delta t} \equiv \frac{\Delta\vec{v}}{\Delta t}
+   \end{equation}
+
+   Again, this equation provides a good /approximation/ for
+   instantaneous acceleration midway through the interval.
+
+*** TODO Motion Diagrams
+
+    See page 26 of the Unit N book! Note that motion diagrams display
+    both velocity and acceleration.
+
+*** Uniform Circular Motion
+
+    *Uniform circular motion* is when an object is moving at a
+    /constant speed/ around a circle of radius $R$. The acceleration
+    of an object moving at a constant speed around a circle points
+    directly toward the center of the circle at every instant. Note
+    that this /only/ applies if the object is moving at a constant
+    speed. Page 32 gives a superb diagram of the relation between
+    velocity and acceleration. A mathematical representation of this
+    acceleration can be seen below:
+
+    \begin{equation}
+    mag(\vec{a}) = \frac{mag(\vec{v})^2}{R} = \frac{v^2}{R}
+    \end{equation}
+    
+** Chapter 3: Forces from Motion
+
+   The *kinematic chain* connects position, velocity, and acceleration
+   by derivative relationships:
+
+   \begin{equation}
+   \vec{r}(t) -time\:derivative\rightarrow \vec{v}(t)
+   -time\:derivative\rightarrow \vec{a}(t)
+   \end{equation}
+
+*** Net-Force Diagrams
+
+    A *net-force diagram* is similar to a *free-body diagram* but more
+    vividly displays the quantitative relationship between these
+    forces. Net force is the vector sum of all external forces acting
+    on an object. Here are the steps to creating a net-force diagram:
+
+    1. Draw a free-body diagram first
+    2. Copy the force arrows and arrange them in sequence by drawing
+       each new force arrow with its tail end starting at the tip of
+       the previously drawn arrow
+    3. Draw the arrow that represents the vector sum of these force
+       arrows.
+
+*** Third-Law and Second-Law Pairs
+
+    A pair of forces fitting the following conditions are *third-law
+    partners*:
+
+    1. Each force in the pair must act on a /different/ object
+    2. Both forces must reflect the /same interaction/ between the
+       objects.
+
+    Two forces that act on the same object /cannot/ be third-law
+    partners.
+
+    Forces are called *second-law partners* if:
+
+    1. Both forces act on the /same/ object
+    2. The forces oppose each other along a certain axis
+    3. No other forces have any component along that axis
+    4. The component of the object's acceleration along that axis is
+       zero.
+
+*** Graphs of One-Dimensional Motion
+
+    When constructing a graph of $a_x(t)$ from one of $v_x(t)$, the
+    /value/ of the object's x-acceleration at every instant of time
+    will correspond to the /slope/ of $v_x(t)$ when the latter is
+    plotted versus $t$ on the graph.
+
+    When constructing a graph of $v_x(t)$ from one of $x(t)$, the
+    /value/ of $v_x$ at every instant of time will correspond to the
+    /slope/ of a graph of $x(t)$ versus $t$.
+
+    /Always/ use the symbols $v_x$, and $a_x$ to refer to signed
+    numbers and /always/ use $r$, $v$, and $a$ to refer to the
+    (nonnegative) magnitudes of the corresponding vectors.
+
+** Chapter 4: Motion from Forces
+
+   The kinematic chain of relationships link an object's position to
+   its velocity and its acceleration. We can reverse the chain by
+   taking /antiderivatives/. This is called the *reverse kinematic
+   chain*:
+
+   \begin{equation}
+   \vec{a}(t) -time\:antiderivative\rightarrow \vec{v}(t)
+   -time\:antiderivative\rightarrow \vec{r}(t)
+   \end{equation}
+
+   There are lots of different approaches to finding the
+   antiderivatives of acceleration.
+
+   1. Graphical Antiderivatives
+
+      Use the reverse of the *slope method* seen in N3. Note that
+      there is a certain ambiguity in this process from constants.
+      
+   2. Integrals for One-Dimensional Motion
+
+      $v_x(t) = \int a_x(t) dt + C_1 \qquad and \qquad x(t) = \int
+      v_x(t) dt + C_2$
+
+      Note that we can determine the $C_1$ if we know the object's
+      initial velocity $v_x(t)$. We need only substitute t = 0 into
+      the expression for $v_x(t) and choose the value of $C_2$ that
+      gives the correct initial velocity $v_x(0)$. We can similarly
+      determine $C_2$ by choosing it so that we get the correct value
+      of $x(0)$.
+
+   3. Constant x-acceleration equations
+      
+      $v_x(t) = a_xt + v_0x \qquad and \qquad x(t) =
+      \frac{1}{2}a_xt^2 + v_{0x}t + x_0$
+
+   When functions are really /vector/ functions, we can find
+   antiderivativesd by considering each component separately. This
+   means that we can treat vector functions (symbolically) as if they
+   were scalar functions:
+
+   \begin{equation}
+   \vec{v}(t) - \vec{v}(0) = \int_{0}^{t}\vec{a}(t)dt
+   \qquad and \qquad \vec{r}(t) - \vec{r}(0) = \int_{0}^{t}\vec{v}(t)dt
+   \end{equation}
+
+*** Constructing Trajectory Diagrams
+
+    To draw a trajectory diagram, first /center/ the object's initial
+    velocity arrow on its initial position. Then use the known
+    acceleration vector to construct future position points from the
+    initial arrow's two endpoints.
+
+** Chapter 6: Linearly Constrained Motion
+
+   A *free-particle diagram* is like a free-body diagram, but all of
+   the force arrow's tails start at the center of mass. Also, the
+   diagram should contain a set of reference frame axes.
+
+   If an object moves in a straight line at a constant velocity, its
+   acceleration is zero, implying that the net force on the object
+   must be zero.
+
+*** TODO Static and Kinetic Friction Forces
+    
+    $F_{KF}$ is usually less than the maximum value of $F_{SF}$.
+
+    \begin{equation}
+    mag(\vec{F}_{SF}) \leq mag(\vec{F}_{SF,max}) \approx
+    \mu_s mag(\vec{F}_N)
+    \end{equation}
+
+    \begin{equation}
+    mag(\vec{F}_{KF}) \approx \mu_k mag(\vec{F}_N)
+    \end{equation}
+    
+*** TODO Drag Forces
+
+    \begin{equation}
+    mag(\vec{F}_D) \approx \frac{1}{2}CpAv^2
+    \end{equation}
+
+    Where $C$ is the drag coefficient, $p$ the density, and $A$ the
+    cross section. Note that the density of air is $1.2\:kg/m^3$.
+
+** Chapter 7: Coupled Objects
+   
+   A pair of *coupled objects* consists of two objects that are
+   constrained by some kind of connection so that their motions are
+   linked in some well-defined manner.
+
+   For cases where forces are acting on more than one object, we have
+   a notation convention for force symbols. We add to the basic symbol
+   for the type of force involved a pair of superscripts, the first
+   indicating the object on which this force is exerted and the second
+   (in parentheses) indicating the other object involved in the
+   interaction that gives rise to this force. For example:
+   $\vec{F}^{A(B)}$. Note that this really helps recognize third-law
+   partners.
+
+*** TODO Strings, Real, and Ideal
+
+    See page 118. Talk about working with real strings that have a
+    mass and *ideal strings* that don't.
+
+*** TODO Pulleys
+
+    see page 122. Talk about *ideal pulleys* that have a very small
+    mass and are nearly frictionless.
+
+** TODO Chapter 10: Projectile Motion
+
+   In physics we define an object's /weight/ $\vec{F}_g$ to be the
+   force that gravity exerts on that object. The weight force itself
+   is given by $\vec{F}_g = m\vec{g}$. If the /only/ force on an
+   object is its weight $\vec{F}_g$, we say that it is *freely
+   falling*.
+
+   As long as (1) an object remains "sufficiently close" to the
+   surface of the earth and (2) its trajectory is "sufficiently short"
+   that the curvature of the earth is not significant, the magnitude
+   and direction of $\vec{g}$ (and thus of the object's weight
+   $\vec{F}_g$) will be approximately constant. If in addition (3) the
+   object is "not significantly affected" by other forces except
+   possibly air drag, then we call it a *projectile* and its motion
+   *projectile motion*. When (4) we /also/ neglect drag, we say that
+   the object's motion is *simple projectile motion*.
+
+*** Simple Projective Motion
+
+    Newton's second law implies that object's in *simple projectile
+    motion* will have constant acceleration $\vec{a} = \vec{g}$.
+    
+    \begin{equation}
+    \left[
+    \begin{array}{ c c }
+    v_x(t) \\
+    v_y(t) \\
+    v_z(t)
+    \end{array} \right]
+    =
+    \left[
+    \begin{array}{ c c }
+    v_{0x} \\
+    v_{0y} \\
+    -gt+v_{0z}
+    \end{array} \right]
+    \end{equation}
+
+    \begin{equation}
+    \left[
+    \begin{array}{ c c }
+    x(t) \\
+    y(t) \\
+    z(t)
+    \end{array} \right]
+    =
+    \left[
+    \begin{array}{ c c }
+    v_{0x}t + x_0 \\
+    v_{0y}t + y_0 \\
+    -\frac{1}{2}gt^2 + v_{0z}t + z_0
+    \end{array} \right]
+    \end{equation}
+
+    /The object must be in simple projectile motion for these
+    equations to apply/.
+
+    How do we determine when the object has reached its maximum
+    altitude and when it reaches the ground? Well the peak is when
+    $v_z(t)=0$ and the object hits the ground at $z(t) = 0$.
+
+*** Drag and Terminal Speed
+
+    Since the force from drag $\vec{F}_D$ is proportional, as a
+    falling object's downward speed increases, the grag force also
+    increases, decreasing the net force on the object and thus its
+    downward acceleration. When the net force is essentially zero, the
+    object no longer accelerates, but continues to fall with constant
+    downward velocity. We call the magnitude of this final constant
+    downward velocity the object's *terminal speed* $v_Tf$.
+
+    \begin{equation}
+    v_T = \sqrt{\frac{2mg}{CpA}}
+    \end{equation}
+
+    Note that this equation is created by the equation for the force
+    from drag solved for v. The $F_D$ has been substituted for $mg$
+    since at terminal velocity drag is equal to weight ($F_g=F_D$).
+
+    An object falling from rest at time $t = 0$ will behave as a
+    simple projectile for times $t << t_T \equiv v_T / g$, but will
+    essentially reach its terminal spped after a time $t \approx
+    2t_T$.
