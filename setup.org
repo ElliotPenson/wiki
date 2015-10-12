@@ -1,0 +1,41 @@
+#+TITLE: Setup
+#+AUTHOR: Elliot Penson
+
+* Mac OS X
+
+** Development
+
+*** Emacs
+
+   1. Download and install Emacs
+      - See http://emacsformacosx.com/
+   2. Use my configuration
+      - See https://github.com/ElliotPenson/.emacs.d
+
+*** SBCL
+
+   1. Install homebrew
+      - See http://www.brew.sh/
+   2. Run brew install sbcl
+
+*** Quicklisp
+
+   1. See the quicklisp website for instructions
+      - https://www.quicklisp.org/beta/
+      - At time of writing, steps were:
+        1. Download quicklisp.lisp
+        2. Load quicklisp.lisp
+        3. Run (quicklisp-quickstart:install)
+        4. Evaluate (ql:add-to-init-file)
+
+** Essential Apps
+
+   - Emacs
+   - iTerm2
+   - Xcode
+   - 1Password
+   - Chrome
+   - Alfred
+   - Bartender
+   - Dropbox
+   - Transmit
