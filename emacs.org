@@ -24,19 +24,24 @@
    
 ** Editing
    
-   | Command    | Description                        |
-   |------------+------------------------------------|
-   | C-d        | Delete next character              |
-   | C-<delete> | Delete previous word               |
-   | C-k        | Kill to end of line                |
-   | C-y        | Yank (paste)                       |
-   | C-/        | Undo                               |
-   | C-space    | Set mark at cursor                 |
-   | C-g        | Deactivate mark                    |
-   | C-w        | Kill region                        |
-   | C-x h      | Mark whole buffer                  |
-   | C-x C-=/-  | Increase/decrease buffer text size |
-   | M-^        | Join lines                         |
+   | Command    | Description                          |
+   |------------+--------------------------------------|
+   | C-d        | Delete next character                |
+   | C-<delete> | Delete previous word                 |
+   | C-k        | Kill to end of line                  |
+   | C-y        | Yank (paste)                         |
+   | C-/        | Undo                                 |
+   | C-space    | Set mark at cursor                   |
+   | C-g        | Deactivate mark                      |
+   | C-w        | Kill region                          |
+   | C-x h      | Mark whole buffer                    |
+   | C-x C-=/-  | Increase/decrease buffer text size   |
+   | M-^        | Join lines                           |
+   | M-l        | Convert following word to lower case |
+   | M-u        | Convert following word to upper case |
+   | M-c        | Capitalize the following word        |
+   | C-x C-l    | Convert region to lower case         |
+   | C-x C-u    | Convert region to upper case         |
    
 ** Buffers/Files/Windows
    
