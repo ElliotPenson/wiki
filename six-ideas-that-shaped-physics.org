@@ -352,6 +352,107 @@
     lines connecting the boxes to represent the internal and external
     interactions involved.
 
+** Chapter 6: Introduction to Energy
+   
+** Chapter 7: Some Potential Energy Functions
+
+** Chapter 8: Force and Energy
+
+** Chapter 9: Rotational Energy
+
+** Chapter 10: Thermal Energy
+
+   *Thermal physics* focuses on physical processes involving heat and
+   temperature change. In 1843, James Prescott Joule showed a
+   connection between heat and energy. Object are made up of molecules
+   that are in ceaseless random motion. An object's *temperature* $T$
+   is a measure of the intensity of this motion. The SI unit for
+   temperature is *kelvins*.
+
+   For gases and simple solids under everyday conditions, temperature
+   is directly proportional to the average /kinetic/ energy per
+   molecule of its molecules' random motions in the substance
+   (treating the molecule as a point particle):
+
+   \begin{equation}
+   K_{avg} \:(per\:molecule)\: = \frac{3}{2}k_BT
+   \end{equation}
+   
+   Where $k_B = 1.38 x 10^{-23} J/K$ and is called *Boltzmann's
+   constant*.
+
+   An object whose molecules are all at rest has a temperature of
+   /zero/. Since molecules cannot have negative kinetic energy, this
+   is the lowest possible temperature an object can have: we therefore
+   call this temperature *absolute zero*.
+
+   When two surfaces are in contact and one moves past the other their
+   surface molecules often become entangled. The entangled molecules
+   are stretched away from their normal positions. Their interaction
+   transforms a tiny bit of kinetic energy to potential energy in the
+   bonds between molecules. At a certain point, the molecules suddenly
+   become unstuck and snap back toward their initial positions, where
+   they oscillate wildly. The kinetic energy apparently lost in
+   friction and collisions interacts actually is transformed to
+   /thermal energy/.
+
+   As is the case for potential energy, it is the /change/ in thermal
+   energy that is usually important. *Internal energy* $U$ is the
+   /total/ energy that an object contains within the boundary defining
+   its surface. When a hot object is placed in contact with a cold
+   object, energy spontaneously flows across the boundary between them
+   from the hot object to the cold object until both objects have the
+   same temperature. In physics, *heat* $Q$ is any energy that crosses
+   the boundary between the two objects /because/ of the temperature
+   difference between them. We define *work* $W$ to be any /other/
+   kind of energy flowing across an object's boundary. For example, if
+   I stir a cup of water vigorously and it gets warm as a result, I
+   have not "heated" the water, I have done /work/ on it; the
+   mechanical energy that flows across the water's boundary flows not
+   because of a temperature difference but because of my stirring
+   effort.
+
+   Conservation of energy implies that in a given process:
+
+   \begin{equation}
+   \Delta U = Q + W
+   \end{equation}
+
+   Formally, an object's *thermal energy* $U^{th}$ is the part of its
+   internal energy that increases with temperature. Note /heat/ is an
+   energy flow across an object boundary, whereas /thermal energy/ is
+   energy /enclosed/ by that boundary. An object can /absorb/ heat,
+   but it never /contains/ heat!
+
+   An object's thermal energy is generally a complicated function of
+   temperature, but for relatively small temperature changes not too
+   close to the temperatures where an object changes *phase* from
+   solid to liquid or liquid to gas, we have:
+
+   \begin{equation}
+   dU^{th} = McdT
+   \end{equation}
+   
+   Where $M$ is the object's mass, and c is its *specific heat*. Note
+   that for this equation to work, the change in temperature $dT$ must
+   be small enough that c is mostly constant over the temperature
+   range.
+
+   Keeping track of thermal energies enables us to solve conservation
+   of energy problems involving:
+
+   1. Impact or friction interactions that do /work/ on objects in the
+      system or
+   2. *Thermal contact interactions* that transfer heat between
+      objects.
+
+   To represent each such interaction, we add a $\DeltaU^{th}$ term to
+   our conservation of energy equation for /each/ object involved.
+
+** Chapter 11: Energy in Bonds
+
+** Chapter 12: Power, Collisions, and Impacts
+
 * Unit N: The Laws of Physics are Universal
 
 ** Chapter 1: Newton's Laws
