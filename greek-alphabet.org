@@ -1,0 +1,29 @@
+#+TITLE: Greek Alphabet
+#+AUTHOR: Elliot Penson
+
+| Name    | Uppercase Letter | Lowercase Letter |
+|---------+------------------+------------------|
+| alpha   | A                | $\alpha$         |
+| beta    | B                | $\beta$          |
+| gamma   | $\Gamma$         | $\gamma$         |
+| delta   | $\Delta$         | $\delta$         |
+| epsilon | E                | $\epsilon$       |
+| zeta    | Z                | $\zeta$          |
+| eta     | H                | $\eta$           |
+| theta   | $\Theta$         | $\theta$         |
+| iota    | I                | $\iota$          |
+| kappa   | K                | $\kappa$         |
+| lambda  | $\Lambda$        | $\lambda$        |
+| mu      | M                | $\mu$            |
+| nu      | N                | $\nu$            |
+| xi      | $\Xi$            | $\xi$            |
+| omicron | O                | o                |
+| pi      | $\Pi$            | $\pi$            |
+| rho     | P                | $\rho$           |
+| sigma   | $\Sigma$         | $\sigma$         |
+| tau     | T                | $\tau$           |
+| upsilon | $\Upsilon$       | $\upsilon$       |
+| phi     | $\Phi$           | $\phi$           |
+| chi     | X                | $\chi$           |
+| psi     | $\Psi$           | $\psi$           |
+| omega   | $\Omega$         | $\omega$         |
