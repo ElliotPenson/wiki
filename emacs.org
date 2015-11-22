@@ -9,18 +9,19 @@
   
 ** Navigation
    
-   | Command | Description             |
-   |---------+-------------------------|
-   | C-b/C-f | Cursor backward/forward |
-   | C-a/C-e | Line beginning/end      |
-   | C-p/C-n | Line previous/next      |
-   | C-v/M-v | Next/previous screen    |
-   | C-l     | Center on cursor        |
-   | C-s/C-r | Search forward/backward |
-   | M-b/M-f | Word backward/forward   |
-   | M-a/M-e | Sentence beginning/end  |
-   | M-</M-> | Document beginning/end  |
-   | M-g M-g | Go to line              |
+   | Command     | Description                                 |
+   |-------------+---------------------------------------------|
+   | C-b/C-f     | Cursor backward/forward                     |
+   | C-a/C-e     | Line beginning/end                          |
+   | C-p/C-n     | Line previous/next                          |
+   | C-v/M-v     | Next/previous screen                        |
+   | C-l         | Center on cursor                            |
+   | C-s/C-r     | Search forward/backward                     |
+   | M-b/M-f     | Word backward/forward                       |
+   | M-a/M-e     | Sentence beginning/end                      |
+   | M-</M->     | Document beginning/end                      |
+   | M-g M-g     | Go to line                                  |
+   | C-u C-space | Pop the mark (go back to previous location) |
    
 ** Editing
    
@@ -78,16 +79,17 @@
    Headings: * for h1, ** for h2, etc.
    Formatting: *bold*, /italics/
    
-   | Command            | Description                 |
-   |--------------------+-----------------------------|
-   | <tab> (on heading) | Expand/collapse section     |
-   | C-<enter>          | New heading of same level   |
-   | C-c C-n/p          | Next/previous heading       |
-   | C-c <bar>          | Create a new table          |
-   | <tab> (in table)   | Move to next cell in table  |
-   | "<s" <tab>         | New code snippet            |
-   | C-c '              | Edit snippet in native mode |
-   | C-c C-e            | Dispatch for export         |
+   | Command            | Description                    |
+   |--------------------+--------------------------------|
+   | <tab> (on heading) | Expand/collapse section        |
+   | C-<enter>          | New heading of same level      |
+   | C-c C-n/p          | Next/previous heading          |
+   | C-c <bar>          | Create a new table             |
+   | <tab> (in table)   | Move to next cell in table     |
+   | "<s" <tab>         | New code snippet               |
+   | C-c '              | Edit snippet in native mode    |
+   | C-c C-e            | Dispatch for export            |
+   | M-<enter>          | New list item at current level |
    
 *** Clocking
     
