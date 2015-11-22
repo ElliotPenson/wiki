@@ -353,12 +353,192 @@
     interactions involved.
 
 ** Chapter 6: Introduction to Energy
+
+   @TODO
+
+   *Total energy* E is defined as:
+   
+   \begin{equation}
+   E = K_1 + K_2 + V(r_{12})
+   \end{equation}
+
+   Conservation of energy implies that:
+
+   \begin{equation}
+   \Delta E = \Delta K_1 + \Delta K_2 + \Delta V(r_{12}) = 0
+   \end{equation}
+   
+   For a system involving two objects.
+   
+   In the context of the newtonian model, *kinetic energy* is defined
+   as:
+
+   \begin{equation}
+   K \equiv \frac{1}{2}mv^2
+   \end{equation}
+
+   Experimentally, we find that for the gravitational interaction,
+
+   \begin{equation}
+   V(z) = mgz
+   \end{equation}
+   
+   Note that this equation only applies when the object is close to
+   the earth's surface.
+
+   Ambiguity in the value of $V$ allows us to /choose/ $V$ to be zero
+   at a convenient *reference separation*. If we set up the reference
+   separation to not be $z = 0$, but instead $z_0$, then $V(z) = mgz -
+   mgz_0$.
    
 ** Chapter 7: Some Potential Energy Functions
 
+   @TODO
+
+   The potential energy function for the interaction between two
+   *charged* particles is:
+
+   \begin{equation}
+   V(r) = +k\frac{q_1q_2}{r}
+   \end{equation}
+
+   Reference separation: $V(R) \equiv 0$ when $r = \infty$. This
+   equation describes the *electrostatic* potential energy function
+   $V(r)$ for an electromagnetic interaction between two charged
+   particles. In the equation, $q_1$ and $q_2$d are the two particles'
+   charges, $r$ is their separation, and $k$ is the *Coulomb constant*
+   = $8.99\:x\:10^9 J \cdot m/C^2$. The SI unit of charge is the
+   *coulomb*.
+
+   The potential energy function for a gravitational interaction
+   between two particles is:
+
+   \begin{equation}
+   V(r) = -G\frac{m_1m_2}{r}
+   \end{equation}
+
+   Reference separation: $V(R) \equiv 0$ when $r = \infty$. This
+   equation describes the potential energy function $V(r)$ for a
+   gravitational interaction between two particles separated by a
+   distance $r$. The symbols $m_1$ and $m_2$ are the particles'
+   masses, and $G$ is the *universal gravitational constant*
+   (empirically, G = $6.67\:x\:10^11 J \cdot m/kg^2$.
+
+   We can treat two object connected by a spring as if they were
+   participating in a long-range interaction whose potential energy is
+   very nearly:
+
+   \begin{equation}
+   V(r) = \frac{1}{2}k_s(r - r_0)^2
+   \end{equation}
+
+   Reference separation: $V(r) \equiv 0$ when $r = r_0$. In the
+   equation, $r_0$ is the separation of the objects' centers when the
+   spring is relaxed, and $k_x$ is a *spring constant* characterizing
+   the spring's stiffness.
+
 ** Chapter 8: Force and Energy
 
+   @TODO
+
+   We define the *dot product* $\vec{u} \cdot \vec{w}$ of two
+   arbitrary vectors $\vec{u}$ and $\vec{w}$ to be the following
+   /scalar/ quantity:
+   
+   \begin{equation}
+   \vec{u} \cdot \vec{w} \equiv uw\cos{\theta}$ = u_xw_x +
+   u_yw_y + u_zw_z 
+   \end{equation}
+
+   We can therefore express the change in a particle's kinetic energy
+   as being $dK = \vec{v} \cdot d\vec{p}$. This then implies that:
+
+   \begin{equation}
+   [dK] \equiv \vec{F} \cdot d\vec{r}
+   \end{equation}
+
+   \begin{equation}
+   dK = [dK]_A + [dK]_B + ...
+   \end{equation}
+
+   This equation describes how to compute the tiny change $dK$ in a
+   particle's kinetic energy from the tiny amount of *k-work* $[dK]$
+   that each interaction contributes during a tiny time interval $dt$.
+   
 ** Chapter 9: Rotational Energy
+
+   @TODO
+
+   The *radians* can be defined as:
+
+   \begin{equation}
+   \left|\theta\right| \equiv \frac{s}{r}
+   \end{equation}
+
+   Where $s$ is the arclength *subtended* by the angle along the
+   circumference of a circle of radius $r$.
+
+   [[./images/radians-s-over-r.gif]]
+
+   The radian is a "unitless unit". We usually display it when we want
+   to make it clear that the quantity involves measuring an angle or
+   if we want to convert to or from other angular units, such as the
+   *degree* or *revolution*.
+
+   We define an object's *angular velocity* $\vec{\omega}$ to be:
+
+   \begin{equation}
+   \vec{\omega} \equiv \left|\frac{d\theta}{dt}\right|\hat{\omega}
+   \end{equation}
+
+   This equation only makes sense when applied to a rigid object
+   rotating around a well-defined axis or to a particle moving in a
+   plane around some origin.
+
+   An object's *moment of inertia* $I$ and its *rotational kinetic
+   energy* $K^{rot}$ for rotations around a given axis are given by:
+
+   \begin{equation}
+   I \equiv m_1r^2_1 + m_2r^2_2 + ... + m_Nr^2_N \equiv
+   \sum_{i=1}^{N} m_ir^2_i
+   \end{equation}
+
+   Where $m_i$ is the mass of the $i$th particle in the object, and
+   $r_i$ is the particle's distance from the rotation axis.
+
+   \begin{equation}
+   K^{rot} = \frac{1}{2}I\omega^2
+   \end{equation}
+   
+   (compare with $K = \frac{1}{2}mv^2$)
+
+   How can we calculate the value of $I$ for a given object? The
+   actual number of elementary particles in any extended object is so
+   large that a /literal/ application of the equation above is
+   impractical. But we can group the particles in an object into a
+   reasonable number of pieces (each small enough that all its
+   particles are /approximately/ the same distance from the axis of
+   rotation) and then sum over the pieces instead of the particles.
+
+   The total kinetic energy of an object that is simultaneously moving
+   and rotating turns out to be simply:
+
+   \begin{equation}
+   K = K^{cm} + K^{rot} = \frac{1}{2}Mv^2_{CM} + \frac{1}{2}I\omega^2
+   \end{equation}
+
+   The angular speed $\omega$ of an object of radius R that rolls
+   without slipping is linked to its center-of-mass speed $v_CM$ by:
+
+   \begin{equation}
+   \omega = \frac{v_{CM}}{R}
+   \end{equation}
+
+   fRolling without splipping is causes by the friction part of a
+   contact interaction between the object and a surface. Therefore, we
+   can handle such an interaction in a conservation of energy problem
+   by including a rotational kinetic energy term in our conservation
+   of energy equation.
 
 ** Chapter 10: Thermal Energy
 
@@ -446,12 +626,56 @@
    2. *Thermal contact interactions* that transfer heat between
       objects.
 
-   To represent each such interaction, we add a $\DeltaU^{th}$ term to
+   To represent each such interaction, we add a $\Delta }U^{th}$ term to
    our conservation of energy equation for /each/ object involved.
 
 ** Chapter 11: Energy in Bonds
 
+   /Note: only sections one and two are included below./
+
+   A *potential energy diagram* for a two-objevt system is simply a
+   graph of its total interaction potential energy $V(r)$ versus the
+   objects' separation $r$. We represent the system's fixed total
+   energy $E$ as a horizontal line on a potential energy diagram. The
+   light object's kinetic energy $K$ at any given $x$ is $K = E -
+   V(x)$. Since $K$ cannot be negative, regions of the x axis where
+   $V(x) > E$ are *forbidden regions*, while regions where $E > V(x)$
+   are *allowed regions*. The points where $E = V(x) are *turning
+   points*: the velocity reverses direction at such points to keep
+   from entering a forbidden region.
+
+   We can read from these diagrams the x component $F_x$ that the
+   interaction exerts on the light object at any position. This value
+   is given $F_x = \frac{-dV}{dx}$. Points along the x axis where the
+   slope of $V(x)$ is zero (implying $F_x = 0$) are *equilibrium
+   positions* where the light object could in principle remain at
+   rest. If such a point corresponds to the bottom of a valley in the
+   potential energy function, it is a *stable equilibrium position*;
+   otherwise it is an *unstable equilibrium position*.
+
+   TODO: *bonds*. See page 197
+
 ** Chapter 12: Power, Collisions, and Impacts
+
+   *Power* expresses /the magnitude of the rate at which energy flows
+   into or out of a given form/ in the course of some interaction or
+   process.
+
+   \begin{equation}
+   P \equiv \left|\frac{dK}{dt}\right| \quad or \quad
+   \left|\frac{dV}{dt}\right| \quad or \quad
+   \left|\frac{dU}{dt}\right|
+   \end{equation}
+
+   The SI unit of power is the *watt*, where $1W \equiv 1J/s$.
+
+   If a specific interaction exerts a force on a moving object, the
+   rate at which energy is transformed by that particular interaction
+   is:
+   
+   \begin{equation}
+   P = \left|\frac{[dK]}{dt}\right| = |\vec{F}\cdot\vec{v}|
+   \end{equation}
 
 * Unit N: The Laws of Physics are Universal
 
