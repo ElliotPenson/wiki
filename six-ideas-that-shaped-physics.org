@@ -1076,3 +1076,154 @@
     simple projectile for times $t << t_T \equiv v_T / g$, but will
     essentially reach its terminal spped after a time $t \approx
     2t_T$.
+
+* Unit R: The Laws of Physics are Frame-Independent
+
+** Chapter 1: The Principle of Relativity
+
+   Think of being on a smooth sailing plane. If you drop something it
+   acts as if the plane is sitting in the loading dock. The laws of
+   physics are the same inside a laboratory moving at a constant
+   velocity as they are in a laboratory at rest. This is an unpolished
+   statement of what we call the *principle of relativity*. This idea
+   is the foundation for Einstein's *special theory of relativity*.
+
+   An *event* is any physical occurrence that we can consider to
+   happen at a definite place in space and at a definite instant in
+   time. We can quantify when and where the event occurs by four
+   numbers: three numbers that specify the location of the event in
+   some three-dimensional spatial coordinate system and one number
+   that specifies what time the event occurred. We call these four
+   numbers the event's *spacetime* coordinates. The motion of /any/
+   particle can be mathematically described to arbitrary accuracy by
+   specifying the spacetime coordinates of a sufficiently large number
+   of events suitably distributed along its path.
+
+   We need to add the /time/ of an event to our definition of
+   reference frames. Imagine that we attach a clock to every lattice
+   intersection. We can then define the /time/ coordinate of an event
+   to be the time displayed on the lattice clock nearest the event
+   (relative to some specified time $t = 0$) and the event's three
+   /spatial/ coordinates to be the lattice coordinates of that nearest
+   clock, specified in the usual way by stating the distances along
+   the lattice directions that one has to travel (from some specified
+   spatial origin) to the clock. We can determine these four numbers
+   to whatever precision we want by sufficiently decreasing the
+   lattice spacing and the time between clock ticks.
+
+   Why is it important to have a clock at /every/ lattice
+   intersection? The point is to make sure that there is a clock
+   essentially /at/ the location of any event to be measured. If we
+   attempt to read the time of an event by using a clock located a
+   substantial distance away, we need to make assumptions about how
+   long it took the information that the event has occurred to /reach/
+   that distant clock. For example, if we read the time when the
+   /sound/ from an event reaches the distant clock, we should correct
+   that value by subtracting the time that it takes sound to travel
+   from the event to the clock; byt to do this, we have to know the
+   speed of sound in our lattice. We can avoid this problem if we
+   require that an event's time coordinate be measured by a clock
+   essentially /present/ at the event.
+
+   We must /synchronize/ the clocks. This will be discussed later.
+
+   An *operational definition* of a physical quantity defines that
+   quantity by describing how the quantity can be /measured/. A
+   *reference frame* is defined to be a rigid cubical lattice of
+   appropriately synchronized clocks /or its functional
+   equivalent/. The *spacetime coordinates* of an event in a given
+   refgerence frame are defined to be an ordered set of four numbers,
+   the first specifying the /time/ of the event as registed by the
+   nearest clock in the lattice, followed by three that specify the
+   spatial coordinates of that clock in the lattice. An *observer* is
+   defined to be a (possibly hypothetical) person who interprets
+   measurements made in a reference frame.
+
+   A reference frame may be moving or at rest, accelerating, or even
+   rotating about some axis. The beauty of the definition of spacetime
+   coordinates given above is that measurements of the coordinates of
+   events can be carried out in a reference frame no matter how it is
+   moving. However, not all reference frames are equally useful for
+   doing physics. We can divide reference frames into two general
+   classes: *inertial frames* and *noninertial frames*. An /inertial
+   frame/ is one in which an isolated object is always and everywhere
+   observed to move at a constant velocity. In a /noninertial frame/
+   such an object is observed to move with a nonconstant velocity in
+   at least some situations.
+
+   Any inertial reference frame will be observed to move at a
+   /constant velocity/ relative to /any other/ inertial reference
+   frame. Conversely, a rigid, nonrotating reference frame that moves
+   at a constant with respect to nay other inertial reference frame
+   must /itself/ by inertial.
+
+   Consider two inertial reference frames, which we will call the
+   *Home Frame* and the *Other Frame*. An isolated object at rest in
+   the Other Frame must move at a constant velocity with respect to
+   the Home Frame, so the whole Other Frame must move at the same
+   constant velocity relative to the Home Frame.
+
+   We cannot physically distinguish a reference frame "moving at a
+   constant veloicty" from one "at rest". The principle of relativity
+   specifically states that a reference frame moving at a constant
+   velocity is /physically equivalent/ to a frame at rest. Our final
+   polished statement of *The Principle of Relativity* is a follows:
+   /The laws of physics are the same in all inertial reference
+   frames/.
+
+   In *standard orientation* we have the Home Frame's $x$, $y$, and
+   $z$ axes point in the same directions as the corresponding axes in
+   the Other Frame. We conventionally distinguish the Home Frame and
+   the Other Frame axes by referring to the Home Frame axes as $x$,
+   $y$, and $z$ and the Other Frame axes as $x'$, $y'$, and $z'$. It
+   also is conventional to define the origin event (the event that
+   defines $t = 0$ in both frames) to be the instant at which the
+   spatial origin of one frame passes the origin of the
+   other. Finally, we conventionally choose the common $x$ axis so
+   that the Other Frame moves in the $+x$ direction with respect to
+   the Home Frame.
+
+   Suppose the Other Frame moves at a constant velocity
+   $\vec{\beta}$. The relationship between the object's position
+   vectors in the two frames a given time is as follows:
+
+   \begin{equation}
+   t' = t \qquad x' = x - \beta t \qquad y' = y \qquad z' = z
+   \end{equation}
+
+   Physicists call these four equations the *galilean transformation
+   equations*. They allow us to find the position of the object at a
+   given time $t'$ in the Other Frame if we know its position at time
+   $t = t'$ in the Home Frame (/assuming/, or course, that time is
+   universal and absolute).
+
+   If we take the time derivative of both sides of each of the last
+   three equations, we get:
+
+   \begin{equation}
+   v_x' = v_x - \beta \qquad v_y' = v_y \qquad v_z' = v_z
+   \end{equation}
+
+   These equations tell us how to find the velocity of an object in
+   the Other Frame, given its velocity in the Home Frame: we call
+   these equations the *galilean velocity transformation equations*.
+
+   If we take the time derivative again, we get:
+
+   \begin{equation}
+   a_x' = a_x \qquad a_y' = a_y \qquad a_z' = a_z
+   \end{equation}
+   
+   This tells us that /observers in both inertial frames agree about
+   an object's acceleration at a given time/, even thought they may
+   well disagree about the object position and velocity components at
+   that time!
+
+   When we say that the "laws of physics are the same" in different
+   inertial frames we realize that observers in different inertial
+   frames may disagree abut the values of various quantities
+   (particularly positions and velocities) by each oberver will agree
+   that the same basic equations will be found to describe the laws of
+   physics in all inertial reference frames.
+
+** TODO Chapter 2: Synchronizing Clocks
