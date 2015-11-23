@@ -1226,4 +1226,103 @@
    that the same basic equations will be found to describe the laws of
    physics in all inertial reference frames.
 
-** TODO Chapter 2: Synchronizing Clocks
+** Chapter 2: Synchronizing Clocks
+
+   In 1878, James Clerk Maxwell published a set of equations (now
+   called *Maxwell's equations*) that summarized the laws of
+   electromagnetism in compact and elegant form. These equations
+   predicted that light waves must travel at a specific speed $c =
+   3.00 \times 10^8 m/s$. Einstein argued, to make Maxwell's equations
+   consistent with the principle of relativity, that /the speed of
+   light is a frame-independent quantity/.
+
+   If time is not "universal and absolute", what is it? Einstein said
+   that we must define what we mean by "time" /operationally/ within
+   each inertial frame by specifying a concrete and specific procedure
+   for synchronizing that frame's clocks that is consistent with both
+   the principle of relativity and the laws of electromagnetism. Since
+   the speed of light has to be $c$ in every inertial frame anyway,
+   let us in face synchronize the clocks in our inertial reference
+   frame by /assuming/ that light always has the same speed of $c$!
+   Imagine that we have a master clock at the spatial origin of our
+   reference frame. At exactly $t = 0$, we send a light flash from
+   that clock that ripples out to the other clocks in the frame.
+
+*** SR Units
+
+    In this unit distance will be measured in a new unit, called a
+    /light-second/ or just /second/. A *light-second* or *second* is
+    defined to be the distance that light travels in 1s of time. There
+    is exactly 299,792,458 m in 1 light-second by definition.
+
+    Agreeing to measure distance in seconds allows us to state the
+    definition of clock synchronization in an inertial frame in a
+    particularly nice and concise manner: Two clocks in an inertial
+    reference frame are defined to be synchronized if the time
+    interval (in seconds) registered by the clocks for a light flash
+    to travel between them is equal to their separation (in
+    light-seconds).
+
+    In this chapter we will use a slightly modified version of SI
+    units, called *SR units*, where distance is measured in /seconds/
+    (i.e., light-seconds) instead of in meters.
+
+    In SR units, the light-second is considered to be /equivalent/ to
+    the second of time, and both units are simply referred to as
+    /seconeds/. This means that these units can be canceled if one
+    appears in the numerator of an expression and the other in the
+    denominator. For example, in SI units, velocity has units of
+    meters per second; but in SR units it has units of seconds per
+    second = unitless(!). Thus an object that travels 0.5 light
+    seconds in 1.0 s has a speed in SR units of 0.5s/1.0s = 0.5 (no
+    units!).
+
+*** Spacetime Diagrams
+    
+    We can conveniently depict the coordinates of events by using a
+    special kind of graph called a *spacetime diagram*.
+
+    [[./images/spacetime.jpg]]
+
+    Note that the point marked $O$ in the figure also represents an
+    event. This event occurs at time $t = 0$ and at position $x =
+    0$. We call this event the *origin event* of the diagram.
+    
+    If we need to draw a spacetime diagram of an event $A$ that occurs
+    in space somewhere in the $xy$ place, we must add another axis to
+    the spacetime diagram (seen in the image to the right).
+
+    On a spacetime diagram, an event is represented by a
+    point. The motion of any object is represented by an infinite set
+    of infinitesimally separated points, which is a /curve/.
+
+    In drawing spacetime diagrams, it is also convenient and
+    conventional to use the same-size scale on both axes. If this is
+    done, a flash of light always has a slope of either 1 (if the
+    flash is moving in the $+x$ direction) or -1 (if the flash is
+    moving in the $-x$ direction), since light travels 1.0s of
+    distance in 1.0s of time by definition in every inertial reference
+    frame. It is also conventional to draw the worldline of a flash of
+    light with a dashed line instead of a solid line.
+
+*** The Radar Method
+
+    If we are willing to confine our attention to events occurring
+    only along the x axis (and thus to objects moving only along that
+    axis), it is possible to determine the spacetime coordinates of an
+    event with a single master clock and some light flashes: we don't
+    need ton construct a lattice at all! The method is analogous to
+    locating an airplace by using radar.
+
+    After sending a light flash out, the values of the emission and
+    reception times $t_A$ and $t_B$ are sufficient to determine both
+    the location and the time that event $E$ occurred!
+
+    \begin{equation}
+    t_E = \frac{1}{2}(t_B + t_A) \qquad x_E = \frac{1}{2}(t_B - t_A)
+    \end{equation}
+
+    This equation expresses an event $E$'s spacetime coordinates $t_E$
+    and $x_E$ in terms of the time $t_A$ at which a light flash leaves
+    a given frame's origin and the time $t_B$ when it returns after
+    being reflected by the event.
