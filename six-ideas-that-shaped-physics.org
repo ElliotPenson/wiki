@@ -446,7 +446,7 @@
    /scalar/ quantity:
    
    \begin{equation}
-   \vec{u} \cdot \vec{w} \equiv uw\cos{\theta}$ = u_xw_x +
+   \vec{u} \cdot \vec{w} \equiv uw\cos{\theta} = u_xw_x +
    u_yw_y + u_zw_z 
    \end{equation}
 
@@ -626,7 +626,7 @@
    2. *Thermal contact interactions* that transfer heat between
       objects.
 
-   To represent each such interaction, we add a $\Delta }U^{th}$ term to
+   To represent each such interaction, we add a $\Delta U^{th}$ term to
    our conservation of energy equation for /each/ object involved.
 
 ** Chapter 11: Energy in Bonds
