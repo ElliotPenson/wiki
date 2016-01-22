@@ -143,3 +143,12 @@
 
 ** Paredit
 
+   | Command | Description                            |
+   |---------+----------------------------------------|
+   | M-(     | Wrap parens around an sexp             |
+   | M-"     | Wrap quotes around an sexp             |
+   | C-)     | "Slurp" forward. Pull in sexp on right |
+   | C-(     | "Slurp" backward. Pull in sexp on left |
+   | C-}     | "Barf" forward. Push out last sexp     |
+   | C-{     | "Barf" backward. Push out first sexp   |
+   
