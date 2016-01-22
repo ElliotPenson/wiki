@@ -27,6 +27,7 @@
    
    | Command    | Description                          |
    |------------+--------------------------------------|
+   | C-j        | New line and indent                  |
    | C-d        | Delete next character                |
    | C-<delete> | Delete previous word                 |
    | C-k        | Kill to end of line                  |
@@ -35,6 +36,7 @@
    | C-space    | Set mark at cursor                   |
    | C-g        | Deactivate mark                      |
    | C-w        | Kill region                          |
+   | M-w        | Copy region                          |
    | C-x h      | Mark whole buffer                    |
    | C-x C-=/-  | Increase/decrease buffer text size   |
    | M-^        | Join lines                           |
