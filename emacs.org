@@ -45,6 +45,7 @@
    | M-c        | Capitalize the following word        |
    | C-x C-l    | Convert region to lower case         |
    | C-x C-u    | Convert region to upper case         |
+   | M-;        | Comment out region            |
    
 ** Buffers/Files/Windows
    
@@ -151,4 +152,3 @@
    | C-(     | "Slurp" backward. Pull in sexp on left |
    | C-}     | "Barf" forward. Push out last sexp     |
    | C-{     | "Barf" backward. Push out first sexp   |
-   
