@@ -1,0 +1,64 @@
+#+TITLE: Git
+#+AUTHOR: Elliot Penson
+#+OPTIONS: num:nil
+
+A git repository can be thought of as a graph. Each node represents a
+commit on the graph. The head is what’s found on your disk - it’s the
+code you will find if you open any of the files through an external
+application. If you ever need to learn more about a git command, ~git
+help <command>~ can help.
+
+Begin a new repository with ~git init~. A general git workflow takes
+the following form:
+1. You edit/create/remove a file(s). 
+2. Those files are [[Staging][staged]] using the ~add~ command.
+3. The staged files are [[Committing][committed]] using the ~commit~ command.
+4. Finally, the files are ~pushed~ to a remote repository.
+
+Commit early, commit often. It's good practice to put different types
+of additions into different commits.
+
+Note that when indicated below, ~<paths>~ refers to a file or set of
+files. Generally these may be fileglobs and can have a leading
+directory name. For example ~code.lisp~, ~*.txt~, and
+~folder/file.txt~ would all be appropriate values.
+
+* Staging
+
+  Staging defines which changes will be in the next version of the
+  project. The ~git add [<paths>]~ command provides this
+  functionality. The ~all~ option (~git add --all~) will stage all
+  files already in the working tree.
+
+  But what if you want to only stage some of the changes in a file?
+  [[http://stackoverflow.com/q/1085162][This stackoverflow answer]] provides a helpful overview:
+
+  #+BEGIN_QUOTE
+  You can do ~git add --patch filename.x~ (or ~-p~ for short), and git
+  will begin breaking down your file in what it thinks are sensible
+  "hunks" (portions of the file). You will then be prompted with this
+  question:
+
+  Stage this hunk [y,n,q,a,d,/,j,J,g,s,e,?]?
+  #+END_QUOTE
+
+  Type ~y~ to stage and ~n~ to skip the hunk. ~q~ will quit and not
+  stage any following hunks. ~a~ will stage this hunk and any future
+  ones. Typing ~s~ will split the current hunk into smaller hunks. See
+  the stackoverflow answer for descriptions of the other options.
+
+  Accidentally staged a file? The inverse of ~git add [<paths>]~ is
+  ~git reset [<paths>]~. A simple ~git reset~ will unstage all
+  files. Just like ~git add~, the patch (~-p~) option exits.
+
+  ~git diff [<paths>]~ shows you the difference between the last
+  commit and the state of the current working directory. ~git diff
+  --staged~ will show the changes that have been staged.
+
+* Committing
+
+  A commit creates a new repository version of the project. All staged
+  changes will be included. A simple ~git commit~ will launch a text
+  editor. A log message may then be written to describe the
+  changes. ~git commit -m "Some message"~ enables one to more quickly
+  create a commit.
