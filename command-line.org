@@ -1,49 +1,118 @@
 #+TITLE: Command Line
 #+AUTHOR: Elliot Penson
 
-* Basic Commands
+* Core Commands
 
-  | Command           | Description                                          |
-  |-------------------+------------------------------------------------------|
-  | ls                | List contents of current directory                   |
-  | ls -l             | List contents with extra information                 |
-  | ls -a             | Show /all/ file (event hidden files)                 |
-  | mkdir [name]      | Create a directory                                   |
-  | pwd               | Show current working directory                       |
-  | cd                | Move to the home directory                           |
-  | cd [path]         | Change to the given path                             |
-  | cd ..             | Move up the directory tree                           |
-  | cd -              | Go the the previous working directory                |
-  | cp [file] [place] | Copy a file                                          |
-  | mv [file] [file]  | Move a file (also used to rename)                    |
-  | rm [file]         | Delete the given file                                |
-  | rm -r [folder]    | Delete the given directory (recursive)               |
-  | less [file]       | Open the a file (q to quit, / to search, h for help) |
-  | cat [file]        | Print the contents of a file                         | 
+** ~ls~  
+
+   - *Description*: display contents of working directory
+   - *Form*: ~ls [options]~
+   - *Options*:
+     - ~-l~
+       - /List/ contents with extra information
+     - ~-a~
+       - Show /all/ files/folders (even hidden ones)
+
+** ~pwd~
+
+   - *Description*: show the working directory path
+   - *Form*: ~pwd~
+
+** ~cd~
+
+   - *Description*: change the working directory
+   - *Forms*:
+     - ~cd~: move to the home directory
+     - ~cd ..~: move up the directory tree
+     - ~cd -~: move to the previous working directory
+     - ~cd [path]~: move to a specific location
+   - *Example*: ~cd ~/.emacs.d/~
+
+** ~mkdir~
+
+   - *Description*: create a directory
+   - *Form*: ~mkdir <name>~
+
+** ~cp~
+
+   - *Description*: copy a file
+   - *Form*: ~cp <file> <file>~
+   - *Example*: ~cd file.lisp folder/file.lisp~
+
+** ~mv~
+
+   - *Description*: move/rename a file
+   - *Form*: ~mv <file> <file>~
+   - *Examples*:
+     - ~mv file.lisp folder/file.lisp~
+     - ~mv file.lisp new-name.lisp~
+
+** ~rm~
+
+   - *Description*: delete a file/folder
+   - *Form*: ~rm <file>~
+   - *Options*:
+     - ~-r~
+       - /Recursively/ delete a directory
+   - *Examples*:
+     - ~rm file.lisp~
+     - ~rm -r some/folder~
+
+** ~less~
+
+   - *Description*: view the contents of a file. ~less~ has a cousin
+     called ~more~.
+   - *Form*: ~less <file>~
+   - *Usage*:
+     - Type ~q~ to quit, ~/~ to search, and ~h~ for help
+
+** ~cat~
+
+   - *Description*: print the entire contents of a file
+   - *Forms*
+     - ~cat <file>~
+     - ~cat <file1> <file2> ...~
+
+** ~echo~
+
+   - *Description*: convert standard input to standard output
+   - *Form*: ~echo <string>~
+   - *Example*: ~echo "some text"~
+
+** ~man~
+
+   - *Description*: open a command's manual
+   - *Form*: ~man <command>~
 
 * Network Commands
 
-** SSH
+** ~ssh~
 
-   *Secure shell* enables remote machine login. The command provides
-   secure encrypted communication. The basic format is ssh
-   user@host. For example: ssh elliot.penson@csgate.wheaton.edu.
+   - *Description*: Secure SHell enables remote machine login. The
+     command provides secure, encrypted communication.
+   - *Form*: ~ssh user@host~
+   - *Example*: ~ssh john.cabmin@csgatewheaton.edu~
 
-** SCP
+** ~scp~
 
-   *Secure copy* allows files/folders to be copied to, from, or
-   between different hosts. It uses ssh for data transfer and provides
-   the same authentication and same security. Use the -r flag for
-   folder transfer. The command takes the form scp [remote/local
-   file/directory] [remote/local file/directory]. For example: scp -r
-   elliot.penson@csgate.wheaton.edu:/homes/epenson/test/ .
+   - *Description*: Secure CoPy allows files/folders to be moved to,
+     from, or between different hosts. It uses ~ssh~ for data transfer
+     and provides the same authentication and security.
+   - *Form*: ~scp [remove/local file/directory] [remove/local
+     file/directory]~
+   - *Options*
+     - ~-r~
+       - /Recursively/ move a directory
+   - *Example*:  ~scp -r
+     john.cabmin@csgate.wheaton.edu:/homes/john.cabmin/folder/ .~
 
 * Symbolic Links
 
   Unix filesystems make use of aliases for files known as symbolic
-  links (symlinks). A symbolic link to a file is ordinarily treaded
-  identically to that file. The command ln -s creates symlinks. The
-  command ls -l can reveal where a symlink points. For example:
+  links (symlinks). A symbolic links are treaded in a similar fashion
+  to the actual file. The ~ln~ command can be used to create
+  symlinks. The ~ls -l~ will reveal where a symlink points. For
+  example:
 
   #+BEGIN_SRC sh
     $ ls
@@ -56,44 +125,64 @@
     -rw-r--r-- 1 elliot staff 0 Jan 8 09:57 foo
   #+END_SRC
 
-* Grep
+** ~ln~
+
+   - *Description*: create a link
+   - *Form*: ~ln <file> <alias-file>~
+   - *Options*:
+     - ~-s~
+       - Make a symbolic link
+
+* Searching
+
+** ~grep~
 
   Information in this section is taken from
   http://www.uccs.edu/~ahitchco/grep/.
 
-  Grep stands for Global Regular Expression Print. The command
-  searches input files for a search string and prints matching
-  lines. The command takes the form: grep [options] [regex]
-  [filename]. In this case, grep would loop through and print every
-  line of the file with a match against the regular expression.
+  - *Description*: Global Regular Expression Print. Searches input
+    files for a search string and prints matching lines.
+  - *Form*: ~grep [options] <regex> <filename(s)>~
+  - *Options*:
+    - ~-n~
+      - Explains which lines match the search string
+    - ~-v~
+      - Prints the negative result (all non-matching lines)
+    - ~-c~
+      - Suppresses the line printing, displays the number of matching
+        lines
+    - ~-l~
+      - Only prints the filenames with matching lines
+    - ~-i~
+      - Ignore case
+    - ~-x~
+      - Search for eXact matches only
+    - ~-f~
+      - Allows specification of a file containing the search string
+    - ~-r~
+      - Directory search. /grep -r "test" ./ searches files in the
+        current directory
 
-** Options
-  
-   | Flag | Description                                                                  |
-   |------+------------------------------------------------------------------------------|
-   | -n   | Explains which lines match the search string                                 |
-   | -v   | Prints the negative result (all non-matching lines)                          |
-   | -c   | Suppresses the line printing, displays the number of matching lines          |
-   | -l   | Only prints the filenames with matching lines                                |
-   | -i   | Ignore case                                                                  |
-   | -x   | Search for eXact matches only                                                |
-   | -f   | Allows specification of a file containing the search string                  |
-   | -r   | Directory search. /grep -r "test" ./ searches files in the current directory |
-
-** Sibling Commands
+*** Sibling Commands
    
-   The egrep command stands for "extended grep" and supports certain
-   useful sequences such as the + and ? operators. It's equivalent to
-   grep -E. The fgrep command gives a performance boost as it doesn't
-   interpret regular expressions. It's equivalent to grep -F.
+    The egrep command stands for "extended grep" and supports certain
+    useful sequences such as the + and ? operators. It's equivalent to
+    grep -E. The fgrep command gives a performance boost as it doesn't
+    interpret regular expressions. It's equivalent to grep -F.
 
 * Pipes and Redirects
 
-  | Operator | Description                               |
-  |----------+-------------------------------------------|
-  | <bar>    | Pass the output of one command to another |
-  | >        | Redirect output from a command to a file  |
-  | <        | Read a command's input from a file        |
+** Pipe operator
+
+   The pipe operator ~|~ passes the output from one command to
+   another. For example: ~ls | grep ".org"~ will display all org-mode
+   files in the current directory.
+
+** Redirects
+
+   The less-than ~>~ symbol is used to redirect the output from a
+   command to a file. The greater-than ~<~ symbol causes a command to
+   read its input from a file.
 
 * Documentation
 
