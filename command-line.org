@@ -184,6 +184,51 @@
    command to a file. The greater-than ~<~ symbol causes a command to
    read its input from a file.
 
+* Processes
+
+  A process is an instance of a program. Processes are identified with
+  a Process ID (PID). In the command line, programs are either run in
+  the foreground or the background. The shell waits for foreground
+  commands to finish. Most programs run in the foreground by
+  default. The shell doesn't wait for background processes to end and
+  other commands can be executed in the meantime. Include an ampersand
+  (~&~) at the end of a command to run it in the background. Programs
+  currently running in the foreground may be changed into a background
+  process with Control-Z.
+
+** ~ps~
+
+   - *Description*: Process Status - display a list of running
+     processes.
+   - *Form*: ~ps [options]~
+   - *Options*:
+     - ~-e~
+       - Show all user processes (even those without a controlling
+         terminal). This option is useful for finding the PID of a
+         command executed with ~nohup~ (see below).
+     - ~-f~
+       - Display extra information including user ID, CPU percentage,
+         process start time, and arguments used.
+
+** ~fg~
+
+   - *Description*: Move a background process to the foreground.
+   - *Form*: ~fg [%job-number]~
+
+** ~kill~
+
+   - *Description*: Stop a given process.
+   - *Form*: ~kill [PID]~
+
+** ~nohup~
+   
+   - *Description*: Causes a command to ignore the hangup (HUP)
+     signal. When one exits the shell, background commands are usually
+     stopped. ~nohup~ allows users to prevent this stop signal on
+     logout.
+   - *Form*: ~nohup <command> <arguments> &~
+   - *Example*: ~nohup python program.py &~
+
 * Documentation
 
 ** Usage Statement (Loose) Guidelines
