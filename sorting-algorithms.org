@@ -1,0 +1,35 @@
+#+TITLE: Sorting Algorithms
+#+AUTHOR: Elliot Penson
+
+* Algorithm Properties
+
+  *In-place* refers to memory usage. An in-place algorithms needs only
+  constant ($O(1)$) memory beyond the items being sorted. In-place
+  sorting algorithms usually work within and overwrite the input
+  array. Note that sometimes $O(\log{}n)$ additional memory is
+  considered in-place.
+
+  A *stable* sorting algorithm maintains the relative order of the
+  input. For example, suppose one has an array of people. Each person
+  has an age and a name. Using a stable sorting algorithm, the array
+  is sorted first on age, then on name. When you look at the cluster
+  of people named "John," you'll notice that they are still organized
+  by age.
+
+* Algorithms
+
+** Bubble Sort
+
+** Selection Sort
+
+** Insertion Sort
+
+** Shellsort
+
+** Mergesort
+
+** Quicksort
+
+** Heapsort
+
+** Tapesort
