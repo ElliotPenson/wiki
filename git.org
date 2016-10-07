@@ -8,13 +8,6 @@ code you will find if you open any of the files through an external
 application. If you ever need to learn more about a git command, ~git
 help <command>~ can help.
 
-Begin a new repository with ~git init~. A general git workflow takes
-the following form:
-1. You edit/create/remove a file(s). 
-2. Those files are [[Staging][staged]] using the ~add~ command.
-3. The staged files are [[Committing][committed]] using the ~commit~ command.
-4. Finally, the files are ~pushed~ to a remote repository.
-
 Commit early, commit often. It's good practice to put different types
 of additions into different commits.
 
@@ -23,6 +16,21 @@ files. Generally these may be fileglobs and can have a leading
 directory name. For example ~code.lisp~, ~*.txt~, and
 ~folder/file.txt~ would all be appropriate values.
 
+* Basic Concepts
+
+  Begin a new repository with ~git init~.
+
+  A general git workflow takes the following form:
+
+  1. You edit/create/remove a file(s). 
+  2. Those files are [[Staging][staged]] using the ~add~ command.
+  3. The staged files are [[Committing][committed]] using the ~commit~ command.
+  4. Finally, the files are /pushed/ to a remote repository.
+
+  The ~git status~ command gives an assortment of useful
+  information. Modified files, untracked files, current branch, and
+  remote status are all displayed.
+  
 * Staging
 
   Staging defines which changes will be in the next version of the
@@ -62,3 +70,50 @@ directory name. For example ~code.lisp~, ~*.txt~, and
   editor. A log message may then be written to describe the
   changes. ~git commit -m "Some message"~ enables one to more quickly
   create a commit.
+
+  If something goes wrong with your commit, you may want to change
+  your last commit. Running ~git commit --amend~ adds all of the
+  staged files to your last commit.
+
+* Remote Repositories and Pulling/Pushing
+
+  If a remote repository already exists, it can be downloaded locally
+  with ~git clone~. Record the repo's URL (for example
+  https://github.com/youruser/somename.git) and run ~git clone
+  <url>~. This will create a new directory on your machine. To
+  manually link an existing repository with a remote one, use ~git
+  remote~. Simply run ~git remote add origin <url>~.
+
+  If changes exist in the remote repository, call ~git pull~ to
+  receive them on your machine. Depending on your setup, you may need
+  to be more specific: ~git pull origin master~. Sometimes, git isn't
+  able to automatically combine your code with the remote code. This
+  results in a /merge conflict/. Git adds lines to the respective
+  files to indicate conflicts:
+
+  #+BEGIN_SRC 
+    head>>>>>>>>>>>>>>>
+        [your code]
+    ===================
+        [their code]
+    master<<<<<<<<<<<<<
+  #+END_SRC
+
+  You may edit this file manually, but some very convenient file
+  comparison apps exist. See me about those.
+
+  Rebasing is an alternative to merging that changes your previous
+  commits. Its a good way to add your changes without including merge
+  conflicts in the change tree. Rebasing also often eliminates the
+  need for a merge. The simplest way to do a rebase is with ~git pull
+  --rebase~.
+
+  Use ~git push~ to add your local changes to the remote
+  repository. Depending on your setup, you may need to be more
+  specific: ~git push origin master~.
+
+* Future Features
+
+  After becoming familiar with the concepts described above, I would
+  recommend learning about /branching/ and /stashing/. Also check out
+  http://www.learnenough.com/git-tutorial.
