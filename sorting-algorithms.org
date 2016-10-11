@@ -1,5 +1,6 @@
 #+TITLE: Sorting Algorithms
 #+AUTHOR: Elliot Penson
+#+OPTIONS: num:nil
 
 * Algorithm Properties
 
@@ -20,9 +21,93 @@
 
 ** Bubble Sort
 
+*** Overview
+
+    Bubble sort compares adjacent neighbors, and if out of order,
+    exchanges them. At the end of the first pass, the largest is at
+    the end. Sorting usually requires passes proportional to the
+    input.
+
+    |--------------------+-------------------|
+    | Best Complexity    | $O(n)$            |
+    | Average Complexity | $O(n^2)$          |
+    | Worst Complexity   | $O(n^2)$          |
+    | Memory Usage       | In-place ($O(n)$) |
+    | Stability          | Stable            |
+    |--------------------+-------------------|
+
+*** Implementation
+
+    #+BEGIN_SRC python
+      def bubble_sort(list):
+          while True:
+              modified = False
+              for i in range(len(list) - 1):
+                  if list[i] > list[i + 1]:
+                      list[i], list[i + 1] = list[i + 1], list[i]
+                      modified = True
+              if not modified:
+                  return list
+    #+END_SRC
+
 ** Selection Sort
 
+*** Overview
+    
+    Selection sort maintains a sorted and an unsorted portion of the
+    list. Initially the sorted portion is of length zero. Each
+    iteration of the algorithm /selects/ the smallest element in the
+    unsorted portion and places it at the end of the sorted portion.
+
+    |--------------------+-------------------|
+    | Best Complexity    | $O(n^2)$          |
+    | Average Complexity | $O(n^2)$          |
+    | Worst Complexity   | $O(n^2)$          |
+    | Memory Usage       | In-place ($O(n)$) |
+    | Stability          | Stable            |
+    |--------------------+-------------------|
+
+*** Implementation
+    
+    #+BEGIN_SRC python
+      def selection_sort(list):
+          for i in range(len(list)):
+              for j in range(i, len(list)):
+                  if list[i] > list[j]:
+                      list[i], list[j] = list[j], list[i]
+          return list
+    #+END_SRC
+
 ** Insertion Sort
+
+*** Overview
+
+    Just like selection sort, insertion sort maintains a sorted and an
+    unsorted portion of the list. Initially the sorted portion of
+    length zero. Each iteration of the algorithm takes the first
+    element in the unsorted portion and /inserts/ it into the correct
+    location in the sorted portion.
+
+    |--------------------+-------------------|
+    | Best Complexity    | $O(n)$            |
+    | Average Complexity | $O(n^2)$          |
+    | Worst Complexity   | $O(n^2)$          |
+    | Memory Usage       | In-place ($O(n)$) |
+    | Stability          | Unstable*         |
+    |--------------------+-------------------|
+
+*** Implementation
+    
+    #+BEGIN_SRC python
+      def insertion_sort(list):
+          for i in range(len(list)):
+              for j in range(i, 0, -1):
+                  if list[j] < list[j - 1]:
+                      list[j], list[j - 1] = list[j - 1], list[j]
+                  else:
+                      break
+          return list
+    #+END_SRC
 
 ** Shellsort
 
