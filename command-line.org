@@ -234,7 +234,7 @@
 ** Usage Statement (Loose) Guidelines
 
    Anything in angle brackets (<>) means the argument is required
-   (e.g. <foo>). Anothing in square brackets ([]) means the argument
+   (e.g. <foo>). Anything in square brackets ([]) means the argument
    is optional (e.g. [bar]). Options separated by the pipe (|) are
    choices (e.g. --baz=one|two|three). Note that this mirrors the /or/
    operator. Single-letter options start with one dash
