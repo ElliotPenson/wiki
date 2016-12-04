@@ -32,6 +32,12 @@ complexity ($O(1)$).
   /bucket/). To find a key's value we search through this linked
   list.
 
+** TODO Linear Probing
+   
+   The above implementation uses /separate chaining/. /Linear probing/
+   represents another approach. See page 469 of Algorithms by
+   Sedgewick and Wayne for more information.
+
 * Hash Function
 
   A hash function is an function that maps a large data set to a
@@ -42,6 +48,25 @@ complexity ($O(1)$).
   - Consistently produce the same location for a key (a pure
     function).
   - Uniformly distribute values over a table (to reduce collisions).
+  - Be efficient to computer.
+
+  "The most commonly used method for hashing integers is called
+  /modular hashing/: we choose the array size M to be prime and, for
+  any positive integer key K, computer the remainder when dividing k
+  by M...If M is not prime, it may be the case that not all of the
+  bits of the key play a role...Modular hashing works for long keys
+  such as strings, too: we simply treat them as huge integers." (page
+  460 of Algorithms by Sedgewick and Wayne).
+
+** TODO Universal Hashing
+
+   See page 35 of Algorithms by Dasgupta, Papadimitriou, and
+   Vazirani).
+
+* TODO Array Resizing
+
+  See page 474 of Algorithms by Sedgewick and Wayne for more
+  information.
 
 * Libraries
 
