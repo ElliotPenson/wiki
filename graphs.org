@@ -1,0 +1,172 @@
+#+TITLE: Graphs
+#+AUTHOR: Elliot Penson
+#+OPTIONS: num:nil
+
+*Note:* parts of this page are taken (sometimes word for word) from
+/Algorithms/ by Dasgupta, Papadimitriou, and Vazirani.
+
+* Overview
+  
+  Formally, a graph is specified by a set of vertices (also called
+  /nodes/) $V$ and by edges $E$ between select pairs of vertices. In
+  the example below, $V = \{1, 2, 3, 4, 5, 6\}$ and $E = \{\{1, 1\},
+  \{1, 2\}, \{1, 4\}, \{2, 4\}, \{2, 5\}, \{3, 5\}, \{4, 6\}\}$.
+
+  #+ATTR_HTML: :width 400
+  [[./images/graph.png]]
+
+  An edge means that "x is connected with y." This is a symmetric
+  relation - it implies also that y is connected with x - and we
+  denote it using set notation, $e = \{x, y\}$. Such edges are
+  /undirected/ and are part of an /undirected graph/.
+
+  Sometimes graphs depict relations that do not have this reciprocity,
+  in which case it is necessary to use edges with directions on
+  them. There can be /directed edges/ $e$ from x to y (written $e =
+  (x, y)$), or both. /Directed graphs/ contain /directed
+  edges/. Directed edges are drawn with arrows on them.
+
+* Representations
+
+** Adjacency Matrix
+
+   We can represent a graph by an /adjacency matrix/; if there are $n
+   = |V|$ vertices $v_1,...,v_n$, this is an $nxn$ array whose $(i,
+   j)$ th entry is:
+   
+   \begin{equation}
+   a_{ij} = 
+   \begin{cases}
+   \text{1} &\quad\text{if there is an edge from $v_i$ to $v_j$}\\
+   \text{0} &\quad\text{otherwise.} \ 
+   \end{cases}
+   \end{equation}
+
+   For undirected graphs, the matrix is symmetric since an edge $\{u,
+   v\}$ can be taken in either direction.
+
+   Here's the adjacency matrix for the graph above:
+
+   |---+---+---+---+---+---|
+   | 1 | 1 | 0 | 1 | 0 | 0 |
+   | 1 | 0 | 0 | 1 | 1 | 0 |
+   | 0 | 0 | 0 | 0 | 1 | 0 |
+   | 1 | 1 | 0 | 0 | 0 | 1 |
+   | 0 | 1 | 1 | 0 | 0 | 0 |
+   | 0 | 0 | 0 | 1 | 0 | 0 |
+
+   The biggest convenience of this format is that the presence of a
+   particular edge can be checked in constant time, with just one
+   memory access. On the other hand the matrix takes up $O(|V|^2)$
+   space, which is wasteful if the graph does not have very many
+   edges.
+
+** Adjacency List
+
+   An alternative representation to the adjacency matrix, with size
+   proportional to the number of edges, is the /adjacency
+   list/. It consists of $|V|$ linked lists, one per vertex. The
+   linked list for vertex $u$ holds the names of vertices to which $u$
+   has an outgoing edge - that is, vertices $v$ for which $(u, v) \in
+   E$. Therefore, each edge appears in exactly one of the linked lists
+   if the graph is directed or two of the lists if the graph is
+   undirected. Either way, the total size of the data structure is
+   $O(|E|)$. Checking for a particular edge $(u, v)$ is no longer
+   constant time, because it requires sifting through $u$'s adjacency
+   list. But it is easy to iterate through all neighbors of a vertex
+   (by running down the corresponding linked list), and, as we shall
+   soon see, this turns out to be a very useful operation in graph
+   algorithms. Again, for undirected graphs, this representation has a
+   symmetry of sorts: $v$ is in $u$'s adjacency list if and only if
+   $u$ is in $v$'s adjacency list.
+
+** Adjacency Matrix vs. Adjacency List
+
+   Which of the two representations is better? Well, it depends on the
+   relationship between $|V|$, the number of nodes in the graph, and
+   $|E|$, the number of edges. $|E|$ can be as small as $|V|$ (if it
+   gets much smaller, then the graph degenerates - for example, has
+   isolated vertices), or as large as $|V|^2$ (when all possible edges
+   are present). When $|E|$ is close to the upper limit of this range,
+   we call the graph /dense/. At the other extreme, if $|E|$ is close
+   to $|V|$, the graph is /sparse/. Exactly where $|E|$ lies in this
+   range is usually a crucial factor in selecting the right graph
+   algorithm.
+
+   [see World Wide Web example in the shaded box of page 82]
+
+* Operations
+
+** Depth-first search in undirected graphs
+
+   Depth-first search (DFS) addresses the question "what parts of the
+   graph are reachable from a given vertex?" DFS works by exploring
+   deep before going wide. In other words, the algorithm looks at the
+   entirety of a child before moving to the next child. Since graphs
+   can be cyclic, DFS must maintain a set of visited vertexes.
+
+*** Sample Code
+
+    #+BEGIN_SRC python
+      def depth_first_search(vertex, visited=None):
+          if visited is None:
+              visited = set()
+          visited.add(vertex)
+          for neighbor in vertex.neighbors():
+              if neighbor not in visited:
+                  depth_first_search(graph, neighbor, visited)
+          return visited
+    #+END_SRC
+
+    Note that to search an entire graph one would need to apply this
+    function to each vertex in the graph.
+
+** Breadth-first search in undirected graphs
+
+   Breadth-first search (BFS) is similar to DFS. Both algorithms give
+   vertexes reachable from a given vertex. Unlike DFS though, BFS
+   explores wide before going deep. In other words, the algorithm
+   looks at each child before looking at any of the children's
+   children. BFS (like DFS) maintains a set of visited vertexes.
+
+   DFS and BFS can both be modified to find paths between vertexes. An
+   advantage of BFS over DFS is that BFS is guaranteed to return the
+   shortest path first.
+
+*** Sample Code
+
+    #+BEGIN_SRC python
+      def breadth_first_search(vertex):
+          queue = [vertex]
+          visited = set()
+          while queue:
+              current = queue.pop(0)
+              if current not in visited:
+                  visited.add(current)
+                  queue.extend(vertex.neighbors)
+          return visited
+    #+END_SRC
+
+    Note that to search an entire graph one would need to apply this
+    function to each vertex in the graph.
+
+* TODO Glossary of Terms
+
+  Taken from /Algorithms/ by Sedgewick and Wayne. See
+  http://algs4.cs.princeton.edu/41graph/
+
+  - A /self-loop/ is an adge that connects a vertex to itself.
+  - When an edge connects two vertices, we say that the vertices are
+    /adjacent/ to one another and that the edge is /incident/ on both
+    vertices.
+  - The /degree/ of a vertex is the number of edges incident to it.
+  - A /path/ in a graph is a sequence of vertices connected by edges.
+  - A /cycle/ is a path (with at least one edge) whose first and last
+    vertices are the same.
+  - We say that one vertex is /connected/ to another if there exists a
+    path that contains both of them.
+  - A graph is /connected/ if there is a path from every vertex to
+    every other vertex.
+  - An /acyclic graph/ is a graph with no cycles.
+  - A /tree/ is a acyclic connected graph.
+  - A /forest/ is a disjoint set of trees.
