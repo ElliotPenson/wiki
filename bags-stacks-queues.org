@@ -1,0 +1,73 @@
+#+TITLE: Bags, Stacks, and Queues
+#+AUTHOR: Elliot Penson
+#+OPTIONS: num:nil
+
+* Bags
+
+  A bag is a collection that stores items in an unordered fashion
+  without support for removal. The data structure is usually used to
+  collect items and then iterate through them.
+
+** Operations
+
+   - ~add()~
+   - ~isEmpty()~
+   - ~size()~
+
+** Implementation
+
+   A bag can be implemented in a similar fashion to a stack (see
+   below). The /pop/ operation needs to be removed and /push/ needs to
+   be changed to /add/.
+
+* Stacks
+
+  A (pushdown) stack is a collection based on the last-in-first-out
+  (LIFO) policy. Plates stacked in the kitchen. The final plate added
+  to the stack is the first one to be removed. 
+
+** Operations
+
+   - ~push()~
+   - ~pop()~
+   - ~isEmpty()~
+   - ~size()~
+
+** Implementation
+
+   A stack can be implemented with an array. A class maintains the
+   array and the size of the stack (which begins at zero). Pushing an
+   element increases the size and adds the element to
+   array[size]. Popping an element returns the element at array[size]
+   and then reduces size by one. Resizing is required if one doesn't
+   know the maximum number of elements that can be added.
+
+   A linked list can also be used. This method of course requires
+   references. We only need to maintain the head of the linked list
+   for a stack implementation. A push appends to the front, a pop
+   remove the first element.
+
+* Queues
+
+  A queue is a collection based on the first-in-first-out (FIFO)
+  policy. A real world example is the line for checkout at a
+  store. The next person added to the line has to wait until all of
+  the people in front of him/her have left the line.
+
+** Operations
+
+   - ~enqueue()~
+   - ~dequeue()~
+   - ~isEmpty()~
+   - ~size()~
+
+** Implementation
+
+   Just like a stack, a queue can be implemented with an array. This
+   time, the class needs to maintain a head and a tail index.
+
+   Again, a linked list can also be used. The algorithm maintains a
+   reference to the first and last elements in the linked
+   list. Dequeuing means removing and returning the first element and
+   updating the head reference. Enqueuing means changing the next node
+   in the last element and then updating the reference to last.
