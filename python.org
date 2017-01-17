@@ -1,0 +1,82 @@
+#+TITLE: Python
+#+AUTHOR: Elliot Penson
+
+* Virtualenv
+
+  Information in this section is taken from the [[https://virtualenv.pypa.io/en/stable/][virtualenv docs]].
+
+  ~virtualenv~ "creates an environment that has its own installation
+  directories, that doesn't share libraries with other virtual env
+  environments (and optionally doesn't access the globally installed
+  libraries either)." An example of a time this utility is useful is
+  when you have two applications that use different versions of a
+  certain library.
+
+** Usage
+
+   Virtualenv has one basic command:
+
+   #+BEGIN_SRC sh
+     $ virtualenv ENV
+   #+END_SRC
+
+   Where ~ENV~ is a directory to place the new virtual
+   environment. This directory is often called ~venv~ (so we would run
+   ~virtualenv venv~. This command has a number of usual effects:
+
+   - ~ENV/lib/~ and ~ENV/include/~ are created, containing supporting
+     library files for a new virtualenv python. Packages installed in
+     this environment will live under
+     ~ENV/lib/pythonX.X/site-packages/~.
+   - ~ENV/bin~ is created, where executables live - noticeably a new
+     python. Thus running a script with ~#! /path/to/ENV/bin/python~
+     would run that script under this virtualenv’s python.
+   - The crucial packages pip and setuptools are installed, which
+     allow other packages to be easily installed to the
+     environment. This associated pip can be run from ~ENV/bin/pip.~
+
+   The python in your new virtualenv is effectively isolated from the
+   python that was used to create it.
+
+*** Activate Script
+
+    In the newly created virtualenv there will also be an *activate*
+    shell script. On mac machines, this script can be called with
+    ~. ENV/bin/activate~. where again ~ENV~ is the name of the
+    virtualenv directory (again, often ~venv~).
+
+    This will change your ~$PATH~ so its first entry is the
+    virtualenv's ~bin/~ directory. This is all it does; it's purely a
+    convenience. If you directly run a script or the python
+    interpreter form the virtual env's ~bin/~ directory there's no
+    need for activation.
+
+    The ~activate~ script will also modify your shell prompt to
+    indicate which environment is currently active.
+
+    To undo these changes to your path (and prompt), just run:
+
+    #+BEGIN_SRC sh
+      $ deactivate
+    #+END_SRC
+    
+*** Removing an Environment
+
+    Removing a virtual environment is simply done by deactivating it
+    and deleting the environment folder with all its contents:
+
+    #+BEGIN_SRC sh
+      (ENV)$ deactivate
+      $ rm -r /path/to/ENV
+    #+END_SRC
+
+*** The ~--system-site-packages~ Option
+
+    If you build with ~virtualenv --system-site-packages ENV~, your
+    virtual environment will inherit packages from
+    ~/usr/lib/python2.7/site-packages~ (or wherever your global
+    site-packages directory is).
+
+    This can be used if you have control over the global site-packages
+    directory, and you want to depend on the packages there. If you
+    want isolation from the global system, do not use this flag.
