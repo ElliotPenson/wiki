@@ -1,0 +1,224 @@
+#+TITLE: CSS
+#+AUTHOR: Elliot Penson
+
+* Sass
+  
+  *Sass* is an extension of CSS. The modern syntax of Sass is called
+  /SCSS/. Files in this format use the extension ~.scss~. The Sass
+  preprocessor converts SCSS files into plain CSS for use on the
+  web. The ~sass~ terminal application provides this
+  functionality. Many features of Sass help encourage DRY (don't
+  repeat yourself) CSS.
+
+  Much of the information on this page is taken from the [[http://sass-lang.com/guide][Sass Guide]] or
+  the [[http://sass-lang.com/documentation/file.SASS_REFERENCE.html][Sass Reference]].
+
+** Variables
+
+   Variables begin with dollar signs. Variables are only available
+   within the level of nested selectors where they're defined. If
+   they're defined outside of any nested selectors, they're available
+   everywhere.
+
+   #+BEGIN_SRC scss
+     $font-stack:    Helvetica, sans-serif;
+     $primary-color: #333;
+
+     body {
+       font: 100% $font-stack;
+       color: $primary-color;
+     }
+   #+END_SRC
+
+** Nesting
+
+   Sass will let you nest your CSS selectors in a way that follows the
+   same visual hierarchy of your HTML.
+
+   For example,
+
+   #+BEGIN_SRC scss
+     nav {
+       ul {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+       }
+
+       li { display: inline-block; }
+
+       a {
+         display: block;
+         padding: 6px 12px;
+         text-decoration: none;
+       }
+     }
+   #+END_SRC
+
+   will produce the following CSS:
+
+   #+BEGIN_SRC css
+     nav ul {
+       margin: 0;
+       padding: 0;
+       list-style: none;
+     }
+
+     nav li {
+       display: inline-block;
+     }
+
+     nav a {
+       display: block;
+       padding: 6px 12px;
+       text-decoration: none;
+     }
+   #+END_SRC
+
+** Import
+
+   Pure CSS provides an ~@import~ option. This allows CSS files to be
+   split into smaller, more maintainable portions. Unfortunately, each
+   time you use ~@import~ in CSS it creates another HTTP request. Sass
+   instead chooses to combine the current file and those imported into
+   a single CSS file.
+
+   Simply call ~@import~ at the top of your SCSS file to import
+   another SCSS file. For example, the following imports
+   ~_other.scss~:
+
+   #+begin_SRC scss
+     @import 'other'
+   #+END_SRC
+
+   Often, there are certain files that provide general functionality
+   and should only be imported. These /partial files/ are named with a
+   leading underscore (e.g. ~_other.scss~ in the example above). The
+   underscore lets Sass know that the file is only a partial and that
+   it should not be generated into a CSS file.
+
+** Mixins
+
+   A mixin lets you make groups of CSS declarations that you want to
+   reuse throughout your site. You can even pass in values to make
+   your mixin more flexible. For example,
+
+   #+BEGIN_SRC scss
+     @mixin border-radius($radius) {
+       -webkit-border-radius: $radius;
+          -moz-border-radius: $radius;
+           -ms-border-radius: $radius;
+               border-radius: $radius;
+     }
+
+     .box { @include border-radius(10px); }
+   #+END_SRC
+
+   will produce the following CSS:
+
+   #+BEGIN_SRC scss
+     .box {
+       -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+       -ms-border-radius: 10px;
+       border-radius: 10px;
+     }
+   #+END_SRC
+
+   Create a mixin with the ~@mixin~ directive and give it a name. Use
+   a mixin as a CSS declaration starting with ~@include~ followed by
+   the name of the mixin.
+
+** Extend/Inheritance
+
+   There are often cases when designing a page when one class should
+   have all the styles of another class, as well as its own specific
+   styles. The ~@extend~ directive avoids these problems by telling
+   Sass that one selector should inherit the styles of another
+   selector. For example,
+
+   #+BEGIN_SRC scss
+     .message {
+       border: 1px solid #ccc;
+       padding: 10px;
+       color: #333;
+     }
+
+     .success {
+       @extend .message;
+       border-color: green;
+     }
+
+     .error {
+       @extend .message;
+       border-color: red;
+     }
+
+     .warning {
+       @extend .message;
+       border-color: yellow;
+     }
+   #+END_SRC
+
+   will produce the following CSS:
+
+   #+BEGIN_SRC scss
+     .message, .success, .error, .warning {
+         border: 1px solid #cccccc;
+         padding: 10px;
+         color: #333;
+     }
+
+     .success {
+         border-color: green;
+     }
+
+     .error {
+         border-color: red;
+     }
+
+     .warning {
+         border-color: yellow;
+     }
+   #+END_SRC
+
+*** ~@extend~ vs. ~@mixin~
+
+    These two directives serve similar purposes. Note that mixins can
+    take parameters but the ~@extend~ directive cannot. Another key
+    difference is how the two are transformed into CSS. Including a
+    mixin effectively pastes in the declarations. A call to extend
+    adds the current selector to the list of selectors of the rule-set
+    being extended.
+
+** Operators
+
+   Doing math in your CSS is very helpful. Sass has a handful of
+   standard math operators like ~+~, ~-~, ~*~, ~/~, and ~%~. Note that
+   these operators work on a variety of operands.
+
+** Referencing Parent Selectors
+   
+   The ~&~ character indicates where the parent selector should be
+   inserted. For example,
+
+   #+BEGIN_SRC scss
+     a {
+         font-weight: bold;
+         text-decoration: none;
+         &:hover { text-decoration: underline; }
+     }
+   #+END_SRC
+
+   will produce the following CSS:
+
+   #+BEGIN_SRC scss
+     a {
+         font-weight: bold;
+         text-decoration: none;
+     }
+
+     a:hover {
+         text-decoration: underline;
+     }
+   #+END_SRC
