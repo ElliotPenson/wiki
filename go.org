@@ -1,0 +1,644 @@
+#+TITLE: Go Programming Language
+#+AUTHOR: Elliot Penson
+
+Information in this document is taken (often directly) from
+http://tour.golang.org/list.
+
+* TODO Compiler
+
+  See https://golang.org/doc/code.html
+
+* Packages
+
+  Programs start running in package ~main~.
+
+  #+BEGIN_SRC go
+    package main
+  #+END_SRC
+
+  By convention, the package name is the same as the last element of
+  the import path. For instance, the ~"math/rand"~ package comprises
+  files that begin with the statement ~package rand~.
+
+  Imports can be grouped into a parenthesized, "factored" import
+  statement.
+
+  #+BEGIN_SRC go
+    import (
+            "fmt"
+            "math"
+    )
+  #+END_SRC
+
+  In Go, a name is exported if it begins with a capital letter. When
+  importing a package, you can refer only to its exported names.
+
+* Functions
+
+  A function can take zero or more arguments.
+
+  #+BEGIN_SRC go
+    func add(x int, y int) int {
+            return x + y
+    }
+  #+END_SRC
+  
+  Notice that the type comes after the variable name.
+
+  When two or more consecutive named function parameters share a type,
+  you can omit the type from all but the last.
+
+  #+BEGIN_SRC go
+    func add(x, y int) int {
+            return x + y
+    }
+  #+END_SRC
+
+** Multiple Results
+   
+   A function can return any number of results.
+
+   #+BEGIN_SRC go
+     func swap(x, y string) (string, string) {
+             return y, x
+     }
+   #+END_SRC
+
+** Named Return Values
+
+   Go's return values may be named. If so, they are treated as
+   variables defined at the top of the function. These names should be
+   used to document the meaning of the return values.
+
+   A ~return~ statement without arguments returns the named return
+   values. This is known as a *naked* return. Naked return statements
+   should be used only in short functions. They can can harm
+   readability in longer functions.
+  
+* Variables
+
+  A ~var~ statement declares a list of variables; as in function
+  argument lists the type is last. A ~var~ statement can be at package
+  or function level.
+
+  #+BEGIN_SRC go
+    package main
+
+    import "fmt"
+
+    var c, python, java bool
+
+    func main() {
+            var i int
+            fmt.Println(i, c, python, java)
+    }
+  #+END_SRC
+
+** Initializers
+
+  A ~var~ declaration can include initializers, one per variable. If
+  an initializer is present, the type can be omitted; the variable
+  will take the type of the initializer.
+
+  #+BEGIN_SRC go
+    var i, j = 1, 2
+  #+END_SRC
+
+** Short Variable Declarations
+
+   Inside a function, the `:=` short assignment statement can be used
+   in place of a ~var~ declaration with implicit type. Outside a
+   function, every statement begins with a keyword (~var~, ~func~, and
+   so on) and so the ~:=~ construct is not available.
+
+   #+BEGIN_SRC go
+     k := 3
+   #+END_SRC
+
+** Types
+
+   Go's basic types are:
+  
+   #+BEGIN_SRC 
+     bool
+
+     string
+
+     int  int8  int16  int32  int64
+     uint uint8 uint16 uint32 uint64 uintptr
+
+     byte // alias for uint8
+
+     rune // alias for int32
+          // represents a Unicode code point
+
+     float32 float64
+
+     complex64 complex128
+    #+END_SRC
+
+   The ~int~, ~uint~, and ~uintptr~ types are usually 32 bits wide on
+   32-bit systems and 64 bits wide on 64-bit systems. When you need an
+   integer value you should use ~int~ unless you have a specific
+   reason to use a sized or unsigned integer type.
+
+** Zero Values
+   
+   Variables declared without an explicit initial value are given
+   their /zero value/. The zero value is ~0~ for numeric types,
+   ~false~ for the boolean type, and ~""~ (the empty string) for
+   strings.
+
+** Type Conversions
+
+   The expression ~T(v)~ converts the value ~v~ to the type ~T~.
+
+   #+BEGIN_SRC go
+     i := 42
+     f := float64(i)
+     u := uint(f)
+   #+END_SRC
+
+** Constants
+
+   Constants are declared like variables, but with the ~const~
+   keyword. Constants can be character, string, boolean, or numeric
+   values. Constants cannot be declared using the ~:=~ syntax.
+
+   #+BEGIN_SRC go
+     const Pi = 3.14
+   #+END_SRC
+
+* ~for~
+
+  Go has only one looping construct, the ~for~ loop. The basic ~for~
+  loop looks similar to C (with three components) but without
+  parenthesis.
+
+  #+BEGIN_SRC go
+    for i := 0; i < 10; i++ {
+            // something
+    }
+  #+END_SRC
+
+  The init and post statement are optional. At that point you can drop
+  the semicolons: C's ~while~ is spelled ~for~ in Go.
+
+  #+BEGIN_SRC go
+    sum := 1
+    for sum < 1000 {
+            sum += sum
+    }
+  #+END_SRC
+  
+  If you omit the loop condition it loops forever.
+
+* ~if~
+
+  No need for parens in Go's ~if~ statements, but the braces are
+  required.
+
+  #+BEGIN_SRC go
+    if x < 0 {
+            // body
+    }
+  #+END_SRC
+
+  Like ~for~, the ~if~ statement can start with a short statement to
+  execute before the condition. Variables declared by the statement
+  are only in scope until the end of the ~if~.
+
+  #+BEGIN_SRC go
+    if v := math.Pow(x, n); v < lim {
+            return v
+    }
+  #+END_SRC
+
+** ~if~ and ~else~
+
+   Variables declared inside an ~if~ short statement are also
+   available inside any of the ~else~ blocks.
+
+* ~switch~
+
+  A ~switch~ statement is a shorter way to write a sequence of ~if -
+  else~ statements. It runs the first case whose value is equal to
+  the condition expression.
+
+  Go's switch is like the one in C, except that Go only runs the
+  selected case, not all the cases that follow.
+
+  #+BEGIN_SRC go
+    package main
+
+    import (
+            "fmt"
+            "runtime"
+    )
+
+    func main() {
+            fmt.Print("Go runs on ")
+            switch os := runtime.GOOS; os {
+            case "darwin":
+                    fmt.Println("OS X.")
+            case "linux":
+                    fmt.Println("Linux.")
+            default:
+                    // freebsd, openbsd,
+                    // plan9, windows...
+                    fmt.Printf("%s.", os)
+            }
+    }
+  #+END_SRC
+
+  Switch cases evaluate from top to bottom, stopping when a case
+  succeeds.
+
+  Switch without a condition is the same as ~switch true~. This
+  construct can be a clean way to write long if-then-else chains.
+
+* ~defer~
+
+  A defer statement defers the execution of a function until the
+  surrounding function returns. The deferred call's arguments are
+  evaluated immediately, but the function call is not executed until
+  the surrounding function returns.
+
+  #+BEGIN_SRC go
+    func main() {
+            defer fmt.Println("world")
+
+            fmt.Println("hello")
+    }
+  #+END_SRC
+  
+  Deferred function calls are pushed onto a stack. When a function
+  returns its deferred calls are executed in last-in-first-out order.
+
+* Pointers
+
+  Go has pointers. A pointer holds the memory address of a value. The
+  type ~*T~ is a pointer to a ~T~ value. Its zero value is ~nil~.
+
+  #+BEGIN_SRC go
+    var p *int
+  #+END_SRC
+
+  The ~&~ operator generates a pointer to its operand.
+
+  #+BEGIN_SRC go
+    i := 42
+    p = &i
+  #+END_SRC
+
+  The ~*~ operator denotes the pointer's underlying value.
+
+  #+BEGIN_SRC go
+    fmt.Println(*p) // read i throught the pointer p
+    ,*p = 21         // set i through the pointer p
+  #+END_SRC
+
+  This is known as *dereferencing* or *indirecting*.
+
+  Unlike C, Go has no pointer arithmetic.
+
+* Structs
+
+  A ~struct~ is a collection of fields.
+
+  #+BEGIN_SRC go
+    package main
+
+    import "fmt"
+
+    type Vertex struct {
+            X int
+            Y int
+    }
+
+    func main() {
+            fmt.Println(Vertex{1, 2})
+    }
+  #+END_SRC
+
+  Struct fields are accessed using a dot.
+
+  #+BEGIN_SRC go
+    v := Vertex{1, 2}
+    v.X = 4
+    fmt.Println(v.X)
+  #+END_SRC
+
+** Struct Pointer
+
+   Struct fields can be accessed through a struct pointer. To access
+   the field X of a struct when we have the struct pointer ~p~ we could
+   write ~(*p).X~. However, that notation is cumbersome, so the
+   language permits us instead to write just ~p.X~, without the
+   explicit dereference.
+
+   #+BEGIN_SRC go
+     v := Vertex{1, 2}
+     p := &v
+     p.X = 1e9
+     fmt.Println(v)
+   #+END_SRC
+
+** Struct Literals
+  
+   A struct literal denotes a newly allocated struct value by listing
+   the values of its fields.
+
+   #+BEGIN_SRC go
+     var v1 = Vertex{1, 2}  // has type Vertex
+   #+END_SRC
+   
+   You can list just a subset of fields by using the ~Name:~
+   syntax. (And the order of named fields is irrelevant.)
+
+   #+BEGIN_SRC go
+     var v2 = Vertex{X: 1}  // Y:0 is implicit
+   #+END_SRC
+
+   The special prefix ~&~ returns a pointer to a struct value.
+
+   #+BEGIN_SRC go
+     p = &Vertex{1, 2}  // has type *Vertex
+   #+END_SRC
+
+* Arrays
+
+  The type ~[n]T~ is an array of ~n~ values of type ~T~. The
+  expression
+
+  #+BEGIN_SRC go
+    var a [10]int
+    a[0] = 1
+
+    primes := [6]int{2, 3, 5, 7, 11, 13}
+  #+END_SRC
+  
+  declares a variable ~a~ as an array of ten integers. An array's
+  length is part of its type, so arrays cannot be resized. This seems
+  limiting, but don't worry; Go provides a convenient way of working
+  with arrays.
+
+* Slices
+
+  An array has a fixed size. A slice, on the other hand, is a
+  dynamically-sized, flexible view into the elements of an array. In
+  practice, slices are much more common than arrays.
+
+  The type ~[]T~ is a slice with elements of type ~T~.
+
+  A slice is formed by specifying two indices, a low and high bound,
+  separated by a colon:
+
+  #+BEGIN_SRC go
+    a[low : high]
+  #+END_SRC
+
+  This selects a half-open range which includes the first element, but
+  excludes the last one.
+
+  The following expression creates a slice which includes elements 1
+  through 3 of a:
+
+  #+BEGIN_SRC go
+    a[1:4]
+  #+END_SRC
+
+  Slices are like references to arrays. A slices does not store any
+  data, it just describes a section of an underlying array. Changing
+  the elements of a slice modifies the corresponding elements of its
+  underlying array. Other slices that share the same underlying array
+  will see those changes.
+
+** Slice Literals
+
+   A slice literal is like an array literal without the length
+
+   This is an array literal
+
+   #+BEGIN_SRC go
+     [3]bool{true, true, false}
+   #+END_SRC
+
+   And this creates the same array as above, then builds a slice that
+   references it:
+
+   #+BEGIN_SRC go
+     []bool{true, true, false}   
+   #+END_SRC
+
+** Slice Defaults
+
+   When slicing, you may omit the high or low bounds to use their
+   defaults instead. The default is zero for the low bound and the
+   length of the slice for the high bound.
+
+   For the array
+
+   #+BEGIN_SRC go
+     var a [10]int
+   #+END_SRC
+
+   these slice expressions are equivalent:
+
+   #+BEGIN_SRC go
+     a[0:10]
+     a[:10]
+     a[0:]
+     a[:]
+   #+END_SRC
+
+** Slice Length and Capacity
+
+   A slice has both a /length/ and a /capacity/. The length of a slice
+   is the number of elements it contains. The capacity of a slice is
+   the number of elements in the underlying array, counting from the
+   first element in the slice.
+
+   The length and capacity of a slice ~s~ can be obtained using the
+   expressions ~len(s)~ and ~cap(s)~.
+
+   You can extend a slice's length by re-slicing it, provided it has
+   sufficient capacity.
+
+   The zero value of a slice is ~nil~. A nil slice has a length and
+   capacity of 0 and has no underlying array.
+
+   #+BEGIN_SRC go
+     var s []int
+     if s == nil {
+             fmt.Println("nil!")
+     }
+   #+END_SRC
+
+** Creating a Slice With Make
+
+   Slices can be created with the built-in ~make~ function; this is
+   how you create dynamically-sized arrays.
+
+   The ~make~ function allocates a zeroed array and returns a slice
+   that refers to that array:
+
+   #+BEGIN_SRC go
+     a := make([]int, 5)  // len(a)=5
+   #+END_SRC
+
+   To specify a capacity, pass a third argument to ~make~.
+
+   #+BEGIN_SRC go
+     b := make([]int, 0, 5)  // len(b)=0, cap(b)=5
+   #+END_SRC
+
+** Slices of Slices
+
+   Slices can contain any type, including other slices.
+
+   #+BEGIN_SRC go
+     board := [][]string{
+             []string{"_", "_", "_"},
+             []string{"_", "_", "_"},
+             []string{"_", "_", "_"},
+     }
+     board[0][0] = "X"
+   #+END_SRC
+
+** Slice Appending
+
+   It is common to append new elements to a slice, and so Go provides
+   a build-in ~append~ function. The first parameter ~s~ of ~append~
+   is a slice of type ~T~, and the rest are ~T~ values to append to
+   the slice.
+
+   #+BEGIN_SRC go
+     var s []int
+     s = append(s, 0)
+     s = append(s, 2, 3, 4)
+   #+END_SRC
+
+   If the backing array of ~s~ is too small to fit all the given
+   values a bigger array will be allocated. The returned slice will
+   point to the newly allocated array.
+
+* Range
+
+  The ~range~ form of the ~for~ loop iterates over a slice or
+  map. When ranging over a slice, two values are returned for each
+  iteration. The first is the index, and the second is a copy of the
+  element of that index.
+
+  #+BEGIN_SRC go
+    pow := []int{1, 2, 4, 8, 16, 32, 64, 128}
+    for i, v := range pow {
+            fmt.Printf("2**%d = %d\n", i, v)
+    }
+  #+END_SRC
+
+  You can skip the index or value by assigning to ~_~. If you only
+  want the index, drop the ", value" entirely.
+
+* Maps
+
+  A map maps keys to values. The zero value of a map is ~nil~. A ~nil~
+  map has no keys, nor can keys be added. The ~make~ function returns
+  a map of the given type, initialized and ready for use.
+
+  #+BEGIN_SRC go
+    var m map[string]Vertex
+    // ...
+    m = make(map[string]Vertex)
+    m["Bell Labs"] = Vertex{
+            40.68433, -74.39967
+    }
+    fmt.Println(m["Bell Labs"])
+  #+END_SRC
+
+** Map Literals
+
+   Map literals are like struct literals, but the keys are required.
+
+   #+BEGIN_SRC go
+     var m = map[string]Vertex{
+             "Bell Labs": Vertex{
+                     40.68433, -74.39967,
+             },
+             "Google": Vertex{
+                     37.42202, -122.08408,
+             },
+     }
+   #+END_SRC
+
+   If the top-level type is just a type name, you can omit it from the
+   elements of the literal.
+
+   #+BEGIN_SRC go
+     var m = map[string]Vertex{
+             "Bell Labs": {40.68433, -74.39967},
+             "Google":    {37.42202, -122.08408},
+     }
+   #+END_SRC
+
+** Mutating Maps
+
+   Insert or update an element in map ~m~:
+
+   #+BEGIN_SRC go
+     m[key] = elem
+   #+END_SRC
+
+   Retrieve an element:
+   
+   #+BEGIN_SRC go
+     elem = m[key]
+   #+END_SRC
+
+   Delete an element:
+
+   #+BEGIN_SRC go
+     delete(m, key)
+   #+END_SRC
+
+   Test that a key is present with a two-value assignment:
+
+   #+BEGIN_SRC go
+     elem, ok := m[key]
+   #+END_SRC
+
+   If ~key~ is in ~m~, ~ok~ is ~true~. If not, ~ok~ is ~false~. If
+   ~key~ is not in the map, then ~elem~ is the zero value for the
+   map's element type.
+
+* Function Values
+
+  Functions are values too. They can be passed around just like other
+  values (as arguments and return values).
+
+  #+BEGIN_SRC go
+    package main
+
+    import (
+            "fmt"
+            "math"
+    )
+
+    func compute(fn func(float64, float64) float64) float64 {
+            return fn(3, 4)
+    }
+
+    func main() {
+            hypot := func(x, y float64) float64 {
+                    return math.Sqrt(x*x + y*y)
+            }
+            fmt.Println(computer(hypot))
+    }
+  #+END_SRC
+
+* Function Closures
+
+  Go functions may be closures. A closure if a function value that
+  references variables from outside its body. The function may access
+  and assign to the referenced variables; in this sense the function
+  is bound to the variables.
