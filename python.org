@@ -1,6 +1,93 @@
 #+TITLE: Python
 #+AUTHOR: Elliot Penson
 
+* __init__.py
+
+  Information in this section is taken from [[http://mikegrouchy.com/blog/2012/05/be-pythonic-__init__py.html][this document]].
+
+  The primary use of __init__.py is to initialize Python packages. The
+  inclusion of the __init__.py file in a directory indicates to the
+  Python interpreter that the directory should be treated like a
+  Python package.
+
+  _init__.py can be an empty file but it is often used to perform
+  setup needed for the package(import things, load things into path,
+  etc).
+
+  One common thing to do in your __init__.py is to import selected
+  Classes, functions, etc into the package level so they can be
+  convieniently imported from the package.
+
+  In our example above we can say that file.py has the Class File. So
+  without anything in our __init__.py you would import with this
+  syntax:
+
+  #+BEGIN_SRC python
+    from package.file import File
+  #+END_SRC
+
+  However you can import File into your __init__.py to make it
+  available at the package level:
+
+  #+BEGIN_SRC python
+    # in your __init__.py
+    from file import File
+
+    # now import File from package
+    from package import File
+  #+END_SRC
+
+  Another thing to do is at the package level make subpackages/modules
+  available with the __all__ variable. When the interpeter sees an
+  __all__ variable defined in an __init__.py it imports the modules
+  listed in the __all__ variable when you do:
+
+  #+BEGIN_SRC python
+    from package import *
+  #+END_SRC
+
+  __all__ is a list containing the names of modules that you want to
+  be imported with import * so looking at our above example again if
+  we wanted to import the submodules in subpackage the __all__
+  variable in subpackage/__init__.py would be:
+
+  #+BEGIN_SRC python
+    __all__ = ['submodule1', 'submodule2']
+  #+END_SRC
+
+  With the __all__ variable populated like that, when you perform
+
+  #+BEGIN_SRC python
+    from subpackage import *
+  #+END_SRC
+
+  it would import submodule1 and submodule2.
+
+* Python 3
+
+  See https://docs.python.org/3.0/whatsnew/3.0.html for specific
+  information. Here's a list of changes that have affected me:
+
+  - Python 3 stores strings as Unicode by default, whereas Python 2
+    requires you to mark a string with a “u” if you want to store it
+    as Unicode.
+  - The ~print~ statement has been replaced with the ~print()~
+    function.
+  - ~range()~ now behaves like ~xrange()~ used to behave, except it
+    works with values of arbitrary size. The latter no longer exists.
+  - An expression like ~1/2~ returns a float. Use ~1//2~ to get the
+    truncating behavior.
+  - Extended Iterable Unpacking. You can now write things like ~a, b,
+    *rest = some_sequence~. And even ~*rest, a = stuff~. The rest
+    object is always a (possibly empty) list; the right-hand side may
+    be any iterable. Example: ~(a, *rest, b) = range(5)~. This sets
+    This sets ~a~ to ~0~, ~b~ to ~4~, and rest to ~[1, 2, 3]~.
+  - Dictionary comprehensions
+  - Set literals. Set comprehensions are also supported.
+
+  Python 3.6 also adds formatted string literals or /f-strings/. See
+  [[https://docs.python.org/3.6/whatsnew/3.6.html#whatsnew36-pep498][this page]].
+
 * Virtualenv
 
   Information in this section is taken from the [[https://virtualenv.pypa.io/en/stable/][virtualenv docs]].
