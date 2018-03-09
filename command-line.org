@@ -84,14 +84,37 @@
    - *Description*: open a command's manual
    - *Form*: ~man <command>~
 
+** ~sed~
+
+   - *Description*: modify lines in a file
+   - *Form*: ~sed <command> <file>~
+   - *Options*:
+     - ~-i~
+       - Perform edits in-place. This will cause ~sed~ to modify the
+         source file instead of just printing the results.
+   - *Examples*:
+     - ~sed -i 's/red/blue' file.txt~
+       - Replace the first occurrence of 'red' with 'blue' on each
+         line.
+     - ~sed -i 's/red/blue/g' file.txt~
+       - Replace all occurrences of 'red' with 'blue' on each line.
+     - ~sed -i 's/unix/{&}/' file.txt~
+       - Replace all occurrences of 'unix' with '{unix}'. ~&~
+         represents the matched string.
+     - ~sed -i '/HOST/ s/localhost/ds-dev01/' file.txt~
+       - Find lines that contain 'HOST'. In those lines, replace all
+         occurrences of 'localhost' with 'ds-dev01'.
+
 * Network Commands
 
-** ~ssh~
+** TODO ~ssh~
 
    - *Description*: Secure SHell enables remote machine login. The
      command provides secure, encrypted communication.
    - *Form*: ~ssh user@host~
    - *Example*: ~ssh john.cabmin@csgatewheaton.edu~
+
+*** TODO SSH Keys
 
 ** ~scp~
 
@@ -105,6 +128,38 @@
        - /Recursively/ move a directory
    - *Example*:  ~scp -r
      john.cabmin@csgate.wheaton.edu:/homes/john.cabmin/folder/ .~
+
+** TODO ~curl~
+
+   - *Description*: ~curl~ downloads content from the Internet. It can
+     be very useful for hitting endpoints.
+   - *Form*: ~curl [options] <URL>~
+   - *Options:*
+     - ~-X, --request <command>~
+       - Specifies a custom request method to use when communicating
+         with the HTTP server. The specified request method will be
+         used instead of the method otherwise used (which defaults to
+         GET).
+     - ~-H, --header <header>~
+       - Extra header to include in the request when sending HTTP to a
+         server.
+     - ~-d, --data <data>~
+       - Sends the specified data in a POST request to the HTTP
+         server, in the same way that a browser does when a user has
+         filled in an HTML form and presses the submit button.
+     - ~-m, --max-time <time>~
+       - Maximum time in seconds that you allow the whole operation to
+         take.
+     - ~-o, --output <file>~
+       - Write output to ~<file>~ instead of stdout. If you are using
+         {} or [] to fetch multiple documents, you can use ~#~
+         followed by a number in the <file> specifier. That variable
+         will be replaced with the current string for the URL being
+         fetched.
+   - *Examples*:
+     - ~curl http://www.google.com~
+     - ~curl ftp://ftp.example.com/file[1-100].txt~
+     - ~curl http://{one,two}.example.com -o "file_#1.txt"~
 
 * Symbolic Links
 
@@ -160,7 +215,7 @@
     - ~-f~
       - Allows specification of a file containing the search string
     - ~-r~
-      - Directory search. /grep -r "test" ./ searches files in the
+      - Directory search. /grep -r "test" ./ searches all files in the
         current directory
 
 *** Sibling Commands
@@ -169,6 +224,16 @@
     useful sequences such as the + and ? operators. It's equivalent to
     grep -E. The fgrep command gives a performance boost as it doesn't
     interpret regular expressions. It's equivalent to grep -F.
+
+** ~find~
+
+   - *Description*: Search for files in a directory hierarchy.
+   - *Form*: TODO
+   - *Options*: TODO
+   - *Example*:
+     - ~find . -name "foo*"~
+       - Recursively find all files in current and subfolders based on
+         wildcard matching.
 
 * Pipes and Redirects
 
