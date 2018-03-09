@@ -1,0 +1,535 @@
+#+TITLE: Swift
+#+AUTHOR: Elliot Penson
+
+Information in this document is taken (often word-for-word) from
+Apple's [[https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0][The Swift Programming Language]].
+
+Swift code doesn't have a ~main()~ function; code written at global
+scope is used as the entry point for the program.
+
+#+BEGIN_SRC swift
+print("Hello, World!")
+#+END_SRC
+
+* Variables
+
+  Use ~let~ to make a constant and ~var~ to make a variable.
+
+  #+BEGIN_SRC swift
+    var someVariable = 42
+    someVariable = 50
+    let someConstant = 42
+  #+END_SRC
+
+  Swift infers the type. If the initial value doesn't provide enough
+  information, specify the type by writing it after the variable,
+  separated by a colon.
+
+  #+BEGIN_SRC swift
+    let explicitDouble: Double = 70
+  #+END_SRC
+
+  Values are never implicitly converted to another type. If you need
+  to convert a value to a different type, explicitly make an instance
+  of the desired type.
+
+** Strings
+
+  Strings can include values with a backslash before a pair of
+  parentheses.
+
+  #+BEGIN_SRC swift
+    let apples = 3
+    let appleSummary = "I have \(apples) apples."
+  #+END_SRC
+
+  Use three double quotes (~"""~) for strings that take up multiple
+  lines. Indentation at the start of each quotes line is removed, as
+  long as it matches the indentation of the closing quote.
+
+** Collections
+
+   Create arrays and dictionaries using brackets (~[]~), and access
+   their elements by writing the index or key in brackets. A comma is
+   allowed after the last element.
+
+   #+BEGIN_SRC swift
+     var shoppingList = ["catfish", "water", "tulips", "blue paint"]
+     shoppingList[1] = "bottle of water"
+
+     var occupations = [
+       "Malcolm": "Captain",
+       "Kaylee": "Mechanic",
+     ]
+     occupations["Jayne"] = "Public Relations"
+   #+END_SRC
+
+   To create an empty array or dictionary, use the initializer
+   syntax.
+
+   #+BEGIN_SRC swift
+     let emptyArray = [String]()
+     let emptyDictionary = [String: Float]()
+   #+END_SRC
+
+   If type information can be inferred, you can write an empty array
+   as ~[]~ and an empty dictionary as ~[:]~ - for example, when you
+   set a new value for a variable or pass an argument to a function.
+
+* Control Flow
+
+  Use ~if~ and ~switch~ to make conditionals, and use ~for-in~,
+  ~while~, and ~repeat-while~ to make loops. Parentheses around the
+  condition or loop variable are optional. Braces around the body are
+  required.
+
+  #+BEGIN_SRC swift
+    let individualScores = [75, 43, 103, 87, 12]
+    var teamScore = 0
+    for score in individualScores {
+        if score > 50 {
+            teamScore += 3
+        } else {
+            teamScore += 1
+        }
+    }
+    print(teamScore)
+  #+END_SRC
+
+** Optionals
+
+   An optional value either contains a value or contains ~nil~ to
+   indicate that a value is missing. Write a question mark (~?~) after
+   the type of a value to mark the value as optional.
+
+   #+BEGIN_SRC swift
+     var optionalName: String? = "John Appleseed"
+   #+END_SRC
+
+   You can use ~if~ and ~let~ together to work with values that might
+   be missing.
+
+   #+BEGIN_SRC swift
+     if let name = optionalName {
+         print("Hello, \(name)")
+     }
+   #+END_SRC
+
+   Another way to handle optional values is to provide a default value
+   using the ~??~ operator. If the optional value is missing, the
+   default value is used instead.
+
+   #+BEGIN_SRC swift
+     let nickName: String? = nil
+     print("Hi \(nickName ?? "there")!")
+   #+END_SRC
+
+** Switches
+
+   #+BEGIN_SRC swift
+     let vegetable = "red pepper"
+     switch vegetable {
+     case "celery":
+         print("Add some raisins and make ants on a log.")
+     case "cucumber", "watercress":
+         print("That would make a good tea sandwich.")
+     case let x where x.hasSuffix("pepper"):
+         print("Is it a spicy \(x)?")
+     default:
+         print("Everything tastes good in soup.")
+     }
+   #+END_SRC
+
+   Notice how ~let~ can be used in a pattern to assign the value that
+   matches the pattern to a constant. There's implicit breaks after
+   every case.
+
+** Dictionaries
+
+   #+BEGIN_SRC swift
+     interestingNumbers = [
+       "Prime": [2, 3, 5, 7, 11, 13],
+       "Fibonacci": [1, 1, 2, 3, 5, 8],
+       "Square": [1, 4, 9, 16, 25],
+     ]
+     var largest = 0
+     for (kind, numbers) in interestingNumbers {
+         for number in numbers {
+             if number > largest {
+                 largest = number
+             }
+         }
+     }
+     print(largest)
+   #+END_SRC
+
+** Ranges
+
+   You can keep an index in a loop by using ~..<~ to make a range of
+   indexes.
+
+   #+BEGIN_SRC swift
+     var total = 0
+     for i in 0..<4 {
+         total += i
+     }
+     print(total)
+   #+END_SRC
+
+   Use ~..<~ to make a range that omits its upper value, and use ~...~
+   to make a range that includes both values.
+
+* Functions and Closures
+
+  #+BEGIN_SRC swift
+    func greet(person: String, day: String) -> String {
+        return "Hello \(person), today is \(day)."
+    }
+    greet(person: "Bob", day: "Tuesday")
+  #+END_SRC
+
+  By default, functions use their parameter names as labels for their
+  arguments. Write a custom argument label before the parameter name,
+  or write _ to use no argument label.
+  
+  #+BEGIN_SRC swift
+    func greet(_ person: String, on day: String) -> String {
+        return "Hello \(person), today is \(day)."
+    }
+    greet("John", on: "Wednesday")
+  #+END_SRC
+
+  Note that functions can be nested.
+
+** Tuples
+
+   Use a tuple to make a compound value - for example, to return
+   multiple values from a function. The elements of a tuple can be
+   referred to either by name or by number.
+   
+   #+BEGIN_SRC swift
+     func calculateStatistics(scored: [Int]) -> (min: Int, max: Int, sum: Int) {
+         var min = scores[0]
+         var max = scores[0]
+         var sum = 0
+
+         for score in scores {
+             if score > max {
+                 max = score
+             } else if score < min {
+                 min = score
+             }
+             sum += score
+         }
+
+         return (min, max, sum)
+     }
+     let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
+     print(statistics.sum)
+     print(statistics.2)
+   #+END_SRC
+
+** First-Class Types
+
+   Functions are a first-class type. This means that a function can
+   return another function as its value and/or take another function
+   as one of its arguments.
+
+   #+BEGIN_SRC swift
+     func makeIncrementer() -> ((Int) -> Int) {
+         func addOne(number: Int) -> Int {
+             return 1 + number
+         }
+         return addOne
+     }
+     var increment = makeIncrementer()
+     increment(7)
+   #+END_SRC
+
+   You can write a closure without a name by surrounding code with
+   braces (~{}~). Use ~in~ to separate the arguments and return type
+   from the body.
+
+   #+BEGIN_SRC swift
+     numbers.map({ (number: Int) -> Int in
+         let result = 3 * number
+         return result
+     })
+   #+END_SRC
+
+   If a closure's type is already known, you can omit the type of its
+   parameters, its return type, or both. Single statement closures
+   implicitly return the value of their only statement.
+
+   #+BEGIN_SRC swift
+     let mappedNumbers = numbers.map({ number in 3 * number })
+   #+END_SRC
+
+   You can refer to parameters by number instead of by name - this
+   approach is especially useful in very short closures. A closure
+   passed as the last argument to a function can appear immediately
+   after the parentheses. When a closure is the only argument to a
+   function, you can omit the parentheses entirely.
+
+   #+BEGIN_SRC swift
+     let sortedNumbers = numbers.sorted { $0 > $1 }
+   #+END_SRC
+
+* Objects and Classes
+
+  #+BEGIN_SRC swift
+    class Shape {
+        var numberOfSides = 0 // property declaration
+        var name: String
+
+        init(name: String) {
+            self.name = name
+        }
+
+        func simpleDescription() -> String {
+            return "A shape with \(numberOfSides) sides."
+        }
+    }
+    var shape = Shape("Triangle")
+    shape.numberOfSides = 3
+    var shapeDescription = shape.simpleDescription()
+  #+END_SRC
+
+  Notice how ~self~ is used to distinguish the ~name~ property from
+  the ~name~ argument to the initializer. Every property needs a value
+  assigned - either in its declaration (as with ~numberOfSides~) or in
+  the initializer (as with ~name~). Use ~deinit~ to create a
+  deinitializer if you need to perform some cleanup before the object
+  is deallocated.
+
+  Subclasses include their superclass name after their class name,
+  separated by a colon. Methods on a subclass that override the
+  superclass's implementation are marked with ~override~ (just before
+  ~func~).
+
+  In addition to simple properties that are stored, properties can
+  have a getter and a setter.
+
+  #+BEGIN_SRC swift
+    class EquilateralTriangle: Shape {
+        var sideLength: Double = 0.0
+        
+        init(sideLength: Double) {
+            self.sideLength = sideLength
+            super.init(name: "Triangle")
+            numberOfSides = 3
+        }
+
+        var perimeter: Double {
+            get {
+                return numberOfSides * sideLength
+            }
+            set {
+                sideLength = newValue / numberOfSides
+            }
+        }
+
+        override func simpleDescription() -> String {
+            return "An equilateral triangle with sides of length \(sideLength)."
+        }
+    }
+    var triangle = EquilateralTriangle(sideLength: 3.1)
+    triangle.perimeter
+    triangle.perimeter = 9.9
+  #+END_SRC
+
+  In the setter for ~perimeter~, the new value has the implicit name
+  ~newValue~. You can provide an explicit name in parentheses after
+  ~set~. Properties can also take ~willSet~ and ~didSet~ blocks. The
+  code you provide is run any time the value changes outside of an
+  initializer.
+
+  When working with optional values, you can write ~?~ before
+  operations like methods, properties, and subscripting. If the value
+  before ~?~ is ~nil~, everything after the ~?~ is ignored and the
+  value of the whole expression is ~nil~. Otherwise, the optional
+  value is unwrapped, and everything after the ~?~ acts on the
+  unwrapped value. In both cases, the value of the whole expression
+  is an optional value.
+  
+  #+BEGIN_SRC swift
+    let optionalShape: Shape? = Shape(name: "Circle")
+    let description = optionalShape?.simpleDescription()
+  #+END_SRC
+  
+* Enumerations and Structures
+
+  Use ~enum~ to create an enumeration. Like classes and all other
+  named types, enumerations can have methods associated with them.
+
+  #+BEGIN_SRC swift
+    enum Rank: Int {
+        case ace = 1
+        case two, three, four, five, six, seven, eight, nine, ten
+        case jack, queen, king
+        func simpleDescription() -> String {
+            switch self {
+            case .ace:
+                return "ace"
+            case .jack:
+                return "jack"
+            case .gueen:
+                return "aueen"
+            case .king:
+                return "king"
+            default:
+                return String(self.rawValue)
+            }
+        }
+    }
+    let ace = Rank.ace
+    ace.rawValue
+  #+END_SRC
+
+  By default, Swift assigns the raw values starting at zero and
+  incrementing by one each time, but you can change this behavior by
+  explicitly specifying values. In the example above, ~Ace~ is
+  explicitly given a raw value of ~1~, and the rest of the raw values
+  are assigned in order. You can also use strings or floating-point
+  numbers as the raw type of an enumeration.
+
+  Use the ~init?(rawValue:)~ initializer to make an instance of an
+  enumeration from a raw value. It returns either the enumeration case
+  matching the raw value or ~nil~ if there is no matching ~Rank~.
+
+  #+BEGIN_SRC swift
+    if let convertedRank = Rank(rawValue: 3) {
+        let threeDescription = convertedRank.simpleDescription()
+    }
+  #+END_SRC
+  
+  The case values of an enumeration are actual values, not just
+  another way of writing their raw values. In fact, in cases where
+  there isn't a meaningful raw value, you don't have to provide one
+  right after ~enum Name~. Note that values can also be associated
+  with the case.
+
+  Use ~struct~ to create a structure. Structures support many of the
+  same behaviors as classes, including methods and initializers. One
+  of the most important different differences between structures and
+  classes is that structures are always copied when they are passed
+  around in your code, but classes are passed by reference.
+
+  #+BEGIN_SRC swift
+    struct Card {
+        var rank: Rank
+        var suit: Suit
+        func simpleDescription() -> String {
+            return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+        }
+    }
+    let threeOfSpaces = Card(rank: .three, suit: .spades)
+    let threeOfSpacesDescription = threeOfSpades.simpleDescription()
+  #+END_SRC
+
+* Protocols and Extensions
+  
+  Use ~protocol~ to declare a protocol. Classes, enumerations, and
+  structs can all adopt protocols.
+
+  #+BEGIN_SRC swift
+    protocol ExampleProtocol {
+        var simpleDescription: String { get }
+        mutating func adjust()
+    }
+  #+END_SRC
+
+  Use ~extension~ to add functionality to an existing type, such as
+  new methods and computed properties. You can use an extension to add
+  protocol conformance to a type that is declared elsewhere, or even
+  to a type that you imported from a library or framework.
+
+  #+BEGIN_SRC swift
+    extension Int: ExampleProtocol {
+        var simpleDescription: String {
+            return "The number \(self)"
+        }
+        mutating func adjust() {
+            self +=42
+        }
+    }
+    7.simpleDescription
+  #+END_SRC
+  
+* Error Handling
+
+  You represent errors using any type that adopts the ~Error~
+  protocol.
+
+  #+BEGIN_SRC swift
+    enum PrinterError: Error {
+        case outOfPaper
+        case noToner
+        case onFire
+    }
+  #+END_SRC
+
+  Use ~throw~ to throw an error and ~throws~ to mark a function that
+  can throw an error.
+
+  #+BEGIN_SRC swift
+    func send(job: Int, toPrinter printerName: String) throws -> String {
+        if printerName == "Never Has Toner" {
+            throw PrinterError.noToner
+        }
+        return "Job sent"
+    }
+  #+END_SRC
+
+  A ~do-catch~ can handle errors. Inside the ~do~ block, you mark code
+  that can throw an error by writing ~try~ in front of it. Inside the
+  ~catch~ block, the error is automatically given the name ~error~
+  unless you give it a different name.
+
+  #+BEGIN_SRC swift
+    do {
+        let printerResponse = try send(job: 1040, toPrinter: "Bi Sheng")
+        print(printerResponse)
+    } catch {
+        print(error)
+    }
+  #+END_SRC
+
+  You can provide multiple ~catch~ blocks that handle specific
+  errors. You write a pattern after ~catch~ just as you do after
+  ~case~ in a switch.
+
+  Another way to handle errors is to use ~try?~ to convert the result
+  to an optional. If the function throws an error, the specific error
+  is discarded and the result is ~nil~. Otherwise, the result is an
+  optional containing the value that the function returned.
+  
+  #+BEGIN_SRC swift
+    let printerSuccess = try? send(job: 1884, toPrinter: "Mergenthaler")
+  #+END_SRC
+
+  Use ~defer~ to write a block of code that is executed after all
+  other code in the function, just before the function returns. The
+  code is executed regardless of whether the function throws an
+  error.
+
+* Generics
+
+  Write a name inside angle brackets to make a generic function or
+  type.
+
+  #+BEGIN_SRC swift
+    func makeArray<Item>(repeating item: Item, numberOfTimes: Int) -> [Item] {
+        var result = [Item]()
+        for _ in 0..<numberOfTimes {
+            result.append(item)
+        }
+        return result
+    }
+    makeArray(repeating: "knock", numberOfTimes: 4)
+  #+END_SRC
+
+  Use ~where~ right before the body to specify a list of
+  requirements - for example, to require the type to implement a
+  protocol, to require two types to be the same, or to require a class
+  to have a particular superclass.

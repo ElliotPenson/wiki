@@ -729,13 +729,13 @@
 
    Underfitting, or high bias, is when the form of our hypothesis
    function h maps poorly to the tend of the data. It is usually
-   caused by a function that is too simple o uses too few features. At
-   the other extreme, overfitting, or high variance, is caused by a
-   hypothesis function that fits the available data but does not
-   generalize well to predict new data. It is usually caused by a
-   complicated function that creates a lot of unnecessary curves and
-   angles unrelated to the data. This terminology is applied to both
-   linear and logistic regression.
+   caused by a function that is too simple or uses too few
+   features. At the other extreme, overfitting, or high variance, is
+   caused by a hypothesis function that fits the available data but
+   does not generalize well to predict new data. It is usually caused
+   by a complicated function that creates a lot of unnecessary curves
+   and angles unrelated to the data. This terminology is applied to
+   both linear and logistic regression.
 
    There are two main options to address the issue of overfitting:
 
@@ -790,3 +790,8 @@
     smooth the output of our hypothesis function to reduce
     overfitting. If lambda is chosen to be too large, it may smooth
     out the function too much and cause underfitting.
+
+*** Linear Regression and Logistic Regression
+
+    See the course for the algorithms and equations necessary for
+    gradient descent and the normal equation.

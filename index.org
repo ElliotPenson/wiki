@@ -8,7 +8,13 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
 * Books
 
-  - [[file:clean-code.org][Clean Code Clean Code by Robert C. Martin]]
+  - [[file:clean-code.org][Clean Code by Robert C. Martin]]
+
+* Courses
+
+  - [[file:cmu-stats.org][Carnegie Mellon University Probability and Statistics]]
+  - [[file:coursera-ml.org][Coursera Machine Learning]]
+  - [[file:six-ideas-that-shaped-physics.org][Six Ideas That Shaped Physics]]
 
 * Languages
 
@@ -18,6 +24,11 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:swift.org][Swift]]
   - [[file:yaml.org][YAML]]
 
+* Theory
+
+  - [[file:greek-alphabet.org][Greek Alphabet]]
+  - [[file:genetic-algorithms.org][Genetic Algorithms]]
+
 * Tools
 
   - [[file:command-line.org][Command Line]]
@@ -26,9 +37,4 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:setup.org][Machine Setup]]
   - [[file:shebang.org][Shebang]]
 
-* Courses
-
-  - [[file:cmu-stats.org][Carnegie Mellon University Probability and Statistics]]
-  - [[file:coursera-ml.org][Coursera Machine Learning]]
-  - [[file:six-ideas-that-shaped-physics.org][Six Ideas That Shaped Physics]]
 

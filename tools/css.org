@@ -1,6 +1,41 @@
 #+TITLE: CSS
 #+AUTHOR: Elliot Penson
 
+* Syntax
+
+  #+BEGIN_SRC css
+    /* The following four lines constitute a CSS rule-set: */
+    h1 {                 /* selector */
+        color: blue;     /* declaration */
+        font-size: 12px; /* declaration */
+    }
+  #+END_SRC
+
+  TODO: Alternate naming. Taken from Airbnb:
+
+  #+BEGIN_SRC css
+    /* The following four lines constitute a CSS rule declaration: */
+    h1 {                 /* selector */
+        color: blue;     /* property */
+        font-size: 12px; /* property */
+    }
+  #+END_SRC
+
+* Style
+
+  See the [[https://github.com/airbnb/css][Airbnb CSS/Sass Styleguide]].
+
+** Sass
+
+*** Order
+
+    1. ~@extend~
+    2. ~@include~
+    3. "regular" styles
+    4. Nested pseudo elements
+    5. Nested pseudo classes
+    6. Nested selectors
+       
 * Sass
   
   *Sass* is an extension of CSS. The modern syntax of Sass is called
