@@ -1,0 +1,34 @@
+#+TITLE: Personal Wiki
+#+AUTHOR: Elliot Penson
+
+My brain in plain text.
+
+This site has been created with Emacs org-mode and [[https://github.com/marsmining/ox-twbs][ox-twbs]]. Original source
+files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
+
+* Books
+
+  - [[file:clean-code.org][Clean Code Clean Code by Robert C. Martin]]
+
+* Languages
+
+  - [[file:css.org][CSS]]
+  - [[file:go.org][Go]]
+  - [[file:python.org][Python]]
+  - [[file:swift.org][Swift]]
+  - [[file:yaml.org][YAML]]
+
+* Tools
+
+  - [[file:command-line.org][Command Line]]
+  - [[file:emacs.org][Emacs]]
+  - [[file:git.org][Git]]
+  - [[file:setup.org][Machine Setup]]
+  - [[file:shebang.org][Shebang]]
+
+* Courses
+
+  - [[file:cmu-stats.org][Carnegie Mellon University Probability and Statistics]]
+  - [[file:coursera-ml.org][Coursera Machine Learning]]
+  - [[file:six-ideas-that-shaped-physics.org][Six Ideas That Shaped Physics]]
+
