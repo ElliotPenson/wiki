@@ -8,33 +8,34 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
 * Books
 
-  - [[file:clean-code.org][Clean Code by Robert C. Martin]]
+  - [[file:books/clean-code.org][Clean Code by Robert C. Martin]]
 
 * Courses
 
-  - [[file:cmu-stats.org][Carnegie Mellon University Probability and Statistics]]
-  - [[file:coursera-ml.org][Coursera Machine Learning]]
-  - [[file:six-ideas-that-shaped-physics.org][Six Ideas That Shaped Physics]]
+  - [[file:courses/cmu-stats.org][Carnegie Mellon University Probability and Statistics]]
+  - [[file:courses/coursera-ml.org][Coursera Machine Learning]]
+  - [[file:courses/six-ideas-that-shaped-physics.org][Six Ideas That Shaped Physics]]
 
 * Languages
 
-  - [[file:css.org][CSS]]
-  - [[file:go.org][Go]]
-  - [[file:python.org][Python]]
-  - [[file:swift.org][Swift]]
-  - [[file:yaml.org][YAML]]
+  - [[file:languages/css.org][CSS]]
+  - [[file:languages/go.org][Go]]
+  - [[file:languages/python.org][Python]]
+  - [[file:languages/swift.org][Swift]]
+  - [[file:languages/yaml.org][YAML]]
 
 * Theory
 
-  - [[file:greek-alphabet.org][Greek Alphabet]]
-  - [[file:genetic-algorithms.org][Genetic Algorithms]]
+  - [[file:theory/greek-alphabet.org][Greek Alphabet]]
+  - [[file:theory/genetic-algorithms.org][Genetic Algorithms]]
 
 * Tools
 
-  - [[file:command-line.org][Command Line]]
-  - [[file:emacs.org][Emacs]]
-  - [[file:git.org][Git]]
-  - [[file:setup.org][Machine Setup]]
-  - [[file:shebang.org][Shebang]]
+  - [[file:tools/command-line.org][Command Line]]
+  - [[file:tools/emacs.org][Emacs]]
+  - [[file:tools/git.org][Git]]
+  - [[file:tools/intellij.org][IntelliJ]]
+  - [[file:tools/setup.org][Machine Setup]]
+  - [[file:tools/shebang.org][Shebang]]
 
 

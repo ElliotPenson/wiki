@@ -1,0 +1,57 @@
+#+TITLE: IntelliJ IDEA
+#+AUTHOR: Elliot Penson
+
+IntelliJ IDEA is an IDE developed by JetBrains.
+
+* Shortcuts
+
+** User Inferface
+
+   | Shortcut | Description                  |
+   |----------+------------------------------|
+   | ⌘1       | Go to project window         |
+   | ⌘9       | Go to version control window |
+   | ⌘4       | Go to run window             |
+   | ⌘5       | Go to debug window           |
+   | ESC      | Go to editor window          |
+   | ⇧⌘]      | Go to next tab               |
+   | ⇧⌘[      | Go to previous tab           |
+
+** Code Completion
+
+   | Shortcut | Description           |
+   |----------+-----------------------|
+   | ^space   | Basic code completion |
+   | ^⇧space  | Smart code completion |
+
+** Editor
+
+   | Shortcut | Description                            |
+   |----------+----------------------------------------|
+   | ⇧⏎       | Start a new line                       |
+   | ⇧⌘↑, ⇧⌘↓ | Move the current line of code          |
+   | ⌘d       | Duplicate a line of code               |
+   | ⌘⌫       | Remove a line of code                  |
+   | ⌘c       | Copy current line                      |
+   | ⌘/       | Comment/uncomment line or code section |
+
+** Navigation
+
+   | Shortcut | Description                          |
+   |----------+--------------------------------------|
+   | ⌘o       | Navigate to a class                  |
+   | ⌘O       | Navigate to a file                   |
+   | ⌥⌘o      | Navigate to a symbol                 |
+   | ⌘l       | Navigate to a line                   |
+   | ⌘f       | Find in current file                 |
+   | ⌘r       | Find and replace in the current file |
+   | ⌘g       | Next occurrence                      |
+   | ⌘G       | Previous occurrence                  |
+
+** Reference
+
+   | Shortcut | Description          |
+   |----------+----------------------|
+   | ⌥space   | Quickview definition |
+   | ⌘click   | Go to definition     |
+
