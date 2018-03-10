@@ -3,6 +3,8 @@
 
 My brain in plain text.
 
+[[file:images/brain.png]]
+
 This site has been created with Emacs org-mode and [[https://github.com/marsmining/ox-twbs][ox-twbs]]. Original source
 files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 

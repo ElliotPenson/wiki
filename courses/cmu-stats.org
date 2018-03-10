@@ -34,7 +34,7 @@ course.
    we've discovered about our sample to draw conslusions about our
    population. We call this final step in the process *inference*.
    
-   [[file:images/big-picture.png][big-picture]]
+   [[../images/big-picture.png]]
    
 * Unit 1 - Exploratory Data Analysis
   
@@ -112,7 +112,7 @@ course.
    2. Peakedness (modality) - the number of peaks (modes) the
       distribution has.
       
-   [[file:images/histogram-shapes.gif][histogram-shapes]]
+   [[../images/histogram-shapes.gif]]
    
    Clockwise from left: symmetric, single-peaked (unimodal);
    suymmetric, double-peaked (bimodal); symmetric, uniform;
@@ -244,7 +244,7 @@ course.
        such that three quarters (75%) of the data points fall below
        it, or the median of the top half of the data.
 
-       [[file:images/IQR.gif][IQR]]
+       [[../images/IQR.gif]]
 
        Note that when n is odd, the median is *not* included in either
        the bottom or top half of the data; When n is even, the data
@@ -269,7 +269,7 @@ course.
       Max). The boxplot depicts the five number summary (blue), the
       range and IQR (red), and outliers (green).
 
-      [[images/boxplot.gif][boxplot]]
+      [[../images/boxplot.gif]]
 
       Boxplots are most useful when presented side-by-side for
       comparing and contrasting distributions from two or more
@@ -285,7 +285,7 @@ course.
       gives the average (or typical distance) between a data point and
       the mean.
 
-      [[images/standard-deviation.gif][standard deviation]]
+      [[../images/standard-deviation.gif]]
 
       Note that the average of the square deviations (the part weithin
       the square root) is called the *variance* of the data. So the SD
@@ -313,4 +313,4 @@ course.
       - Approximately 99.7% (or virtually all) of the observations
         fall within 3 standard deviations of the mean.
       
-      [[images/sd-rule.gif][Standard Deviation Rule]]
+      [[../images/sd-rule.gif]]

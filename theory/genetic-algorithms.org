@@ -70,12 +70,12 @@ generation.
     parent organisms.
 
     #+attr_html: :width 250px
-    [[./images/single-point-crossover.png]]
+    [[../images/single-point-crossover.png]]
     
 *** Two-Point
 
     #+attr_html: :width 250px
-    [[./images/two-point-crossover.png]]
+    [[../images/two-point-crossover.png]]
 
 *** Uniform
 
@@ -83,7 +83,7 @@ generation.
     compared between two parents. The bits are swapped with a fixed
     probability (called /recombination probability/). 
 
-    [[./images/uniform-crossover.png]]
+    [[../images/uniform-crossover.png]]
   
 ** Mutation
 

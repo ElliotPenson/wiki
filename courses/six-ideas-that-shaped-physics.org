@@ -478,7 +478,7 @@
    Where $s$ is the arclength *subtended* by the angle along the
    circumference of a circle of radius $r$.
 
-   [[./images/radians-s-over-r.gif]]
+   [[../images/radians-s-over-r.gif]]
 
    The radian is a "unitless unit". We usually display it when we want
    to make it clear that the quantity involves measuring an angle or
@@ -1282,7 +1282,7 @@
     We can conveniently depict the coordinates of events by using a
     special kind of graph called a *spacetime diagram*.
 
-    [[./images/spacetime.jpg]]
+    [[../images/spacetime.jpg]]
 
     Note that the point marked $O$ in the figure also represents an
     event. This event occurs at time $t = 0$ and at position $x =

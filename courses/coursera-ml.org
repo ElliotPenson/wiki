@@ -58,7 +58,7 @@
     y. For historical reasons, this function h is called a
     *hypothesis*.
     
-    [[~/org/images/learning.png]]
+    [[../images/learning.png]]
 
 *** Cost Function
 
