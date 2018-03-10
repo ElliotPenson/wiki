@@ -2,11 +2,42 @@
 #+AUTHOR: Elliot Penson
 
 Information in this document is taken (often directly) from
-http://tour.golang.org/list.
+[[http://tour.golang.org/list][golang.org's tour]].
 
-* TODO Compiler
+* Building and Running
 
-  See https://golang.org/doc/code.html
+  Information in this section is from [[https://golang.org/doc/code.html][How to Write Go Code]] on the
+  golang website.
+  
+  The ~go~ tool is the standard way to fetch, build, and install Go
+  packages and commands. Go programmers typically keep all their Go
+  code in a single /workspace/. A workspace contains many version
+  control /repositories/. Each repository contains one or more
+  /packages/. Each package consists of one or more Go source files in
+  a single directory.
+
+  A workspace is a directory hierarchy with three directories at its
+  root: ~src~, ~pkg~, and ~bin~. The ~go~ tool builds source packages
+  and installs the resulting binaries to the ~pkg~ and ~bin~
+  directories. The ~src~ subdirectory typically contains multiple
+  version control repositories.
+
+  The ~GOPATH~ environment variable specifies the location of your
+  workspace. 
+
+  An /import path/ is a string that uniquely identifies a package. A
+  package's import path corresponds to its location inside a workspace
+  or in a remote repository. If you have a GitHub account at
+  ~github.com/user~, that should be your base path.
+
+  Now you can build and install a program with the ~go~ tool:
+
+  #+BEGIN_SRC sh
+    go install github.com/elliotpenson/hello
+  #+END_SRC
+
+  You can also omit the package path if you run ~go install~ from the
+  package directory.
 
 * Packages
 
@@ -642,3 +673,98 @@ http://tour.golang.org/list.
   references variables from outside its body. The function may access
   and assign to the referenced variables; in this sense the function
   is bound to the variables.
+
+* Methods
+
+  Go does not have classes. However, you can define methods on
+  types. A method is a function with a special /receiver/
+  argument. The receiver appears in its own argument list between the
+  ~func~ keyword and the method name.
+
+  In this example, the ~Abs~ method has a receiver of type ~Vertex~
+  named ~v~.
+
+  #+BEGIN_SRC go
+    type Vertex struct {
+            X, Y float64
+    }
+
+    func (v Vertex) Abs() float64 {
+            return math.Sqrt(v.X*v.X + v.Y*v.Y)
+    }
+
+    func main() {
+            v := Vertex{3, 4}
+            fmt.Println(v.Abs())
+    }
+  #+END_SRC
+
+  A method is just a function with a receiver argument.
+
+  You can declare a method on non-struct types, too. In this example
+  we see a numeric type ~MyFloat~ with an ~Abs~ method.
+
+  #+BEGIN_SRC go
+    type MyFloat float64
+
+    func (f MyFloat) Abs() float64 {
+            if f < 0 {
+                    return float64(-f)
+            }
+            return float64(f)
+    }
+
+    func main() {
+            f := MyFloat(-math.Sqrt2)
+            fmt.Println(f.Abs())
+    }
+  #+END_SRC
+
+  You can only declare a method with a receiver whose type is defined
+  in the same package as the method. You cannot declare a method with
+  a receiver whose type is defined in another package (which includes
+  the built-in types such as ~int~).
+
+** Pointer Receivers
+
+   Methods with pointer receivers can modify the value to which the
+   receiver points (as ~Scale~ does here). Since methods often need to
+   modify their receiver, pointer receivers are more common than value
+   receivers.
+
+   #+BEGIN_SRC go
+     func (v *Vertex) Scale(f float64) {
+             v.X = v.X * f
+             v.Y = v.Y * f
+     }
+   #+END_SRC
+
+   With a value receiver, the ~Scale~ method operates on a copy of the
+   original ~Vertex~ value. (This is the same behavior as for any
+   other function argument.)
+
+   Unlike functions with pointer arguments, methods with pointer
+   receivers can take either a value or a pointer as the
+   receiver. Likewise, methods with value receivers take either a
+   value or a pointer as the receiver when they are called.
+
+   There are two reasons to use a pointer receiver. The first is so
+   that the method can modify the value that its receiver points
+   to. The second is to avoid copying the value on each method
+   call. This can be more efficient if the receiver is a large struct,
+   for example.
+
+   In general, all methods on a given type should have either value or
+   pointer receivers, but not a mixture of both.
+
+* Interfaces
+
+  An *interface type* is defined as a set of method signatures. A
+  value of interface type can hold any value that implements those
+  methods.
+
+  A type implements an interface by implementing its methods. There is
+  no explicit declaration of intent, no "implements" keyword. Implicit
+  interfaces decouple the definition of an interface from its
+  implementation, which could then appear in any package without
+  prearrangement.
