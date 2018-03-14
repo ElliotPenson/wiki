@@ -34,6 +34,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 * Tools
 
   - [[file:tools/command-line.org][Command Line]]
+  - [[file:tools/elasticsearch.org][Elasticsearch]]
   - [[file:tools/emacs.org][Emacs]]
   - [[file:tools/git.org][Git]]
   - [[file:tools/intellij.org][IntelliJ]]

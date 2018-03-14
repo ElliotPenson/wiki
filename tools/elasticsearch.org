@@ -1,0 +1,329 @@
+#+TITLE: Elasticsearch
+#+AUTHOR: Elliot Penson
+
+Information on this page is taken from [[http://www.elastic.co/][elastic.co]].
+
+* Overview
+  
+  The open source /Elastic Stack/ includes a number of tightly coupled products:
+  
+  - /Kibana/: Elasticsearch data visualization tool.
+  - /Elasticsearch/: Search engine based on lucene.
+  - /Beats/: Lightweight data shipper.
+  - /Logstash/: ETL tool used for data enrichment.
+    
+  Elasticsearch is horizontally scalable and provides high availability.
+  
+* Kibana
+  
+  The Kibana /Dev Tools/ console lets you interact with Elasticsearch. Navigate
+  to kibana and choose /Dev Tools/ in the side bar. Commands should be entered
+  into the editor pane (left). Each command will begin with REST methods like
+  ~POST~ or ~GET~.
+  
+  After typing a command, click the green arrow to execute it. You may also
+  execute with ⌘-ENTER on a Mac. Results will appear in the response pane
+  (right). You can also click the wrench next to the green arrow to copy as a
+  cURL command.
+  
+* CRUD
+  
+  Elasticsearch operates through REST endpoints. Even the language specific
+  clients (JavaScript, Python, etc) use REST behind the scenes. All commands in
+  this section will be written as if they were typed into Kibana.
+  
+** Create
+   
+*** POST
+    
+    Elasticsearch stores documents using the JSON format. Each value must be one
+    of six types: string, number, object, array, boolean, and null.
+    
+    #+BEGIN_SRC sh
+     POST /inspections/report
+     {
+         "business_address": "660 Sacramento St",
+         "business_city": "San Francisco",
+         "business_location": {
+             "type": "Point",
+             "coordinates": [
+                 -122.585833,
+                 37.985355
+             ]
+         },
+         "inspection_date": "2016-02-04T00:00:00.000"
+         "inspection_score": 96
+     }
+    #+END_SRC
+    
+    This command will index a document in Elasticsearch. ~inspections~ is the
+    index name. ~report~ is the type. You can only have one type per index in the
+    latest version of Elasticsearch.
+    
+    Executing this command will automatically create the index for us, named
+    "inspection". Instead of dynamically creating the index based on the first
+    document we add, we can create the index beforehand, to set certain
+    settings.
+    
+    #+BEGIN_SRC sh
+     PUT /inspections
+     {
+         "settings": {
+             "index.number_of_shards": 1,
+             "index.number_of_replicas": 0
+         }
+     }
+    #+END_SRC
+    
+*** PUT
+    
+    ~PUT~ lets you specify the ID of the document. ~POST~ creates the document's
+    ID for us.
+    
+    #+BEGIN_SRC sh
+     PUT /inspections/report/1234
+     {
+         "business_address": "660 Sacramento St",
+         "business_city": "San Francisco",
+         "business_location": {
+             "type": "Point",
+             "coordinates": [
+                 -122.585833,
+                 37.985355
+             ]
+         },
+         "inspection_date": "2016-02-04T00:00:00.000"
+         "inspection_score": 96
+     }
+    #+END_SRC
+    
+*** Bulk Insert
+    
+    When you need to index a large number of documents, you should use the bulk
+    API (at the ~_bulk~ endpoint). You may see significant performance benefits.
+    
+    #+BEGIN_SRC sh
+      POST /inspections/report/_bulk
+      { "index": { "_id": 1 }}
+      { "business_address": "315 California St", ... }
+      { "index": { "_id": 2 }}
+      { "business_address": "10 Mason St", ... }
+    #+END_SRC
+    
+    Notice that we have one line for the operation type and a second type for
+    the document we are going to index.
+    
+** Read
+   
+   Find a single document by specifying the ID:
+   
+   #+BEGIN_SRC sh
+     GET /inspections/report/1
+   #+END_SRC
+   
+** Update
+   
+   We can add fields by hitting the ~_update~ endpoint.
+
+   #+BEGIN_SRC sh
+     POST /inspections/report/5/_update
+     {
+         "doc": {
+             "flagged": true,
+             "views": 0
+         }
+     }
+   #+END_SRC
+
+   Here we're adding "flagged" and "views" fields to document ~5~. This will
+   create a new version of the document.
+
+   We can also use a ~PUT~. This will replace the entire document with the
+   contents given in the request.
+   
+** Delete
+
+   To delete a document, we can just pass the document ID to the DELETE API.
+
+   #+BEGIN_SRC sh
+     DELETE /inspections/report/5
+   #+END_SRC
+   
+   Delete an entire index with
+   
+   #+BEGIN_SRC sh
+     DELETE /inspections
+   #+END_SRC
+
+* Search
+  
+  Documents in the results list will have a ~_score~ field. This indicates how
+  well they match the query.
+  
+** Find All
+   
+   #+BEGIN_SRC sh
+    GET /inspections/report/_search
+   #+END_SRC
+   
+** Match
+   
+   Use ~match~ to find all documents that contain a specific string within a
+   field.
+   
+   #+BEGIN_SRC sh
+    GET /inspections/report/_search
+    {
+        "query": {
+            "match": {
+                "business_name": "soup"
+            }
+        }
+    }
+   #+END_SRC
+   
+   The documents in the return set will all have the string "soup" somewhere in
+   their business name. You may also use ~term~ to match an exact string.
+   
+   Another way to match is with ~match_phrase~.
+   
+   #+BEGIN_SRC sh
+    GET /inspections/report/_search
+    {
+        "query": {
+            "match_phrase": {
+                "business_name": "san francisco"
+            }
+        }
+    }
+   #+END_SRC
+   
+   Match phrase requires that words exist in the exact order given.
+
+** Range
+
+   Find documents with fields that have terms within a certain range.
+
+   #+BEGIN_SRC sh
+     GET /inspections/report/_search
+     {
+         "query": {
+             "range": {
+                 "inspection_score": {
+                     "gte": 50,
+                     "lte": 90
+                 }
+             }
+         }
+     }
+   #+END_SRC
+
+   This query returns all documents where ~inspection_score~ is between 50 and
+   90.
+
+   The ~range~ query accepts the parameters ~gte~ (greater-than or equal to),
+   ~gt~ (greater-than), ~lte~ (less-than or equal to), and ~lt~
+   (less-than).
+
+   When applying these values to dates, [[https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#date-math][Date Math]] may be useful. In addition, a
+   the default date format can be overridden by the ~format~ parameter.
+   
+** Boolean Fields
+   
+   We can also do boolean combinations of queries. The ~bool~ fields can be
+   ~must~ (similar to AND), ~should~ (similar to OR), ~must_not~, and ~filter~.
+   
+   #+BEGIN_SRC sh
+     GET /inspections/report/_search
+     {
+         "query": {
+             "bool": {
+                 "must": [
+                     {
+                         "match": {
+                             "business_name": "soup"
+                         }
+                     },
+                     {
+                         "match": {
+                             "business_state": "CA"
+                         }
+                     }
+                 ]
+             }
+         }
+     }
+   #+END_SRC
+
+   This command will find all documents that have "soup" somewhere in their
+   name, and "CA" somewhere in their state field.
+   
+** Sort
+   
+   ~sort~ is another top level term like ~query~.
+   
+   #+BEGIN_SRC sh
+     GET /inspections/report/_search
+     {
+         "query": {
+             "range": {
+                 "inspection_score": {
+                     "gte": 80
+                 }
+             }
+         },
+         "sort": [
+             { "inspection_score": "desc" }
+         ]
+     }
+   #+END_SRC
+   
+* Aggregations
+
+  Use the top-level ~aggregations~ command to bucket results.
+
+  #+BEGIN_SRC sh
+    GET /inspections/report/_search
+    {
+        "query": {
+            "match": {
+                "business_name": "soup"
+            }
+        },
+        "aggregations": {
+            "healthscore": {
+                "range": {
+                    "field": "inspection_score",
+                    "ranges": [
+                        {
+                            "key": "0-80",
+                            "from": 0,
+                            "to": 80
+                        },
+                        {
+                            "key": "81-90",
+                            "from": 81,
+                            "to": 90
+                        },
+                        {
+                            "key": "91-100",
+                            "from": 91,
+                            "to": 100
+                        },
+                    ]
+                }
+            }
+        }
+    }
+  #+END_SRC
+
+* Field Types
+
+  Elasticsearch will automatically determine field types. You can see these
+  with:
+
+  #+BEGIN_SRC sh
+    GET /inspections/_mapping/report
+  #+END_SRC
+
+  You can edit this mapping with a PUT to the same endpoint.
