@@ -1,0 +1,424 @@
+#+TITLE: Clean Code
+#+AUTHOR: Elliot Penson
+
+This file contains my notes (usually direct quotes) from /Clean Code/ by Robert
+C. Martin.
+
+* Meaningful Names
+
+** Use Intention-Revealing Names
+
+   The name of a variable, function, or class, should answer all the big
+   questions. It should tell you why it exists, what is does, and how it is
+   used. If a name requires a comment, then the name does not reveal its
+   intent. Good names give you the /intention/.
+
+** Avoid Disinformation
+
+   Avoid words whose entrenched meanings vary from our intended meaning. For
+   example, do not refer to a grouping of accounts as an ~accountList~ unless
+   it's actually a ~List~.
+
+   Beware of using names that vary in small ways.
+
+** Make Meaningful Distinctions
+
+   It is not sufficient to add number series or noise words, even though the
+   compiler is satisfied. Number-series naming ~(a1, a2, ... aN)~ is the
+   opposite of intentional naming. Such names are not disinformative - they are
+   noninformative; they provide no clue to the author's intention. Consider:
+   
+   #+BEGIN_SRC java
+     public static void copyChars(char a1[], char a2[]) {
+         for (int i = 0; i < a1.length; i++) {
+             a2[i] = a2[i];
+         }
+     }
+   #+END_SRC
+
+   This function reads much better when ~source~ and ~destination~ are used for
+   the argument names.
+
+   Noise words are redundant. The word ~variable~ should never appear in a
+   variable name. The name ~table~ should never appear in a table name. Imagine
+   finding one class named ~Customer~ and another named ~CustomerObject~. What
+   should you understand as the distinction? Distinguish names in such a way
+   that the reader knows what the differences offer.
+
+** Use Pronounceable Names
+
+   If you can't pronounce it, you can't discuss it without sounding like an
+   idiot.
+
+** Use Searchable Names
+
+   The name ~e~ is a poor choice for any variable for which a programmer might
+   need to search. In this regard, longer names trump shorter names, and any
+   searchable name trumps a constant in code.
+
+** Avoid Encodings
+
+   Encoding type or scope information into names simply adds an extra burden of
+   deciphering.
+
+** Avoid Mental Mapping
+
+   Readers shouldn't have to mentally translate your names into other names they
+   already know. This is a problem with single-letter variable names. In most
+   other concepts than loop counters, a single-letter name is a poor
+   choice. /Clarity is kind/.
+
+** Class Names
+
+   Classes and objects should have noun or noun phrase names like ~Customer~,
+   ~WikiPage~, ~Account~, and ~AddressParser~. Avoid words like ~Manager~,
+   ~Processor~, ~Data~, or ~Info~ in the name of a class. A class name should
+   not be a verb.
+
+** Method Names
+
+   Methods should have verb or verb phrase names like ~postPayment~,
+   ~deletePage~, or ~save~. Accessors, mutators, and predicates, should be named
+   for their value and prefixed with ~get~, ~set~, and ~is~.
+
+** Don't Be Cute
+
+   Choose clarity over entertainment value.
+
+** Pick One Word per Concept
+
+   Pick one word for one abstract concept and stick with it. For instance, it's
+   confusing to have ~fetch~, ~retrieve~, and ~get~ as equivalent methods of
+   different classes. A consistent lexicon is a great boon to the programmers
+   who must use your code.
+
+** Don't Pun
+
+   Avoid using the same word for two purposes. Using the same term for two
+   different ideas is essentially a pun.
+
+** Use Solution Domain Names
+
+   Remember that the people who read your code will be programmers. So go ahead
+   and use computer science terms, algorithm names, and pattern names, math
+   terms, and so forth. The name ~AccountVisitor~ means a great deal to a
+   programmer who is familiar with the Visitor pattern.
+
+** Add Meaningful Context
+
+   There are a few names which are meaningful in and of themselves - most are
+   not. Instead, you need to place names in context for your reader by enclosing
+   them in well-named classes, functions, or namespaces.
+
+* Functions
+   
+** Small!
+
+   The first rule of functions is that they should be small. The second rule of
+   functions is that /they should be smaller than that/.
+
+*** Blocks and Indenting
+
+    This implies that the blocks within ~if~ statements, ~else~ statements,
+    ~while~ statements, and so on should be one line long. Probably that line
+    should be a function call. Not only does this keep the enclosing function
+    small, but it also adds documentary value because the function called within
+    the block can have a nicely descriptive name.
+
+    This also implies that functions should not be large enough to hold nested
+    structures. Therefore, the indent level of a function should not be greater
+    than one or two. This, of course, makes the functions easier to read and
+    understand.
+
+** Do One Thing
+
+   Functions should do one thing. They should do it well. They should do it
+   only.
+
+** One Level of Abstraction per Function
+
+   In order to make sure our functions are doing "one thing," we need to make
+   sure that the statements within our function are all at the same level of
+   abstraction.
+
+** Switch Statements
+
+   My general rule for ~switch~ statements is that they can be tolerated if they
+   appear only once, are used to create polymorphic objects, and are hidden
+   behind an inheritance relationship so that the rest of the system can't see
+   them.
+
+** Use Descriptive Names
+
+   Half the battle to achieving that principle is choosing good names for small
+   functions that do one thing. The smaller and more focused a function is, the
+   easier it is to choose a descriptive name.
+
+   Don't be afraid to make a name long. A long descriptive name is better than a
+   short enigmatic name.
+
+** Function Arguments
+
+   The ideal number of arguments for a function is zero (niladic). Next comes
+   one (monadic), followed by two (dyadic). Three arguments (triadic) should be
+   avoided where possible. More than three (polyadic) requires very special
+   justification - and then shouldn't be used anyway.
+
+*** Common Monadic Forms
+
+    There are two very common reasons to pass a single argument into a
+    function. You may be asking a question about that argument, as in ~boolean
+    fileExists("MyFile")~. Or you may be operating on that argument,
+    transforming it into something else and /returning/ it. A somewhat less
+    common, but still very useful form for a single argument function, is an
+    /event/. In this form there is an input argument but no output argument. Use
+    this form with care. It should be very clear to the reader that this is an
+    event.
+
+*** Flag Arguments
+
+    Flag arguments are ugly. Passing a boolean into a function is a truly
+    terrible practice. It immediately complicates the signature of the method,
+    loudly proclaiming that this function does more than one thing. It does one
+    thing if the flag is true and another if the flag is false!
+
+*** Dyadic Functions
+
+    A function with two arguments is harder to understand than a monadic
+    function. For example, ~writeField(name)~ is easier to understand than
+    ~writeField(output-Stream, name)~. Dyads aren't evil, and you will certainly
+    have to write them. However, you should be aware that they come at a cost
+    and should take advantage of what mechanisms may be available to you to
+    convert them into monads. For example, you might make the ~writeField~
+    method a member of ~outputStream~ so that you can say
+    ~outputStream.writeField(name)~. Or you might make the ~outputStream~ a
+    member variable of the current class so that you don't have to pass it. Or
+    you might extract a new class like ~FieldWriter~ that takes the
+    ~outputStream~ in its constuctor and has a ~write~ method.
+
+*** Triads
+
+    I suggest you think very carefully before creating a triad.
+
+*** Argument Objects
+
+    When a function seems to need more than two or three arguments, it is likely
+    that some of those arguments ought to be wrapped into a class of their
+    own. Consider, for example, the difference between the two following
+    declarations:
+
+    #+BEGIN_SRC java
+      Circle makeCircle(double x, double y, double radius);
+      Circle makeCircle(Point center, double radius);
+    #+END_SRC
+
+    Reducing the number of arguments by creating objects out of them may seem
+    like cheating, but it's not. When groups of variables are passed together,
+    the way ~x~ and ~y~ are in the example above, they are likely part of a
+    concept that deserves a name of its own.
+
+*** Verbs and Keywords
+
+    In the case of a monad, the function and argument should form a very nice
+    verb/noun pair. For example, ~write(name)~ is very evocative. Whatever this
+    "name" thing is, it is being "written." An even better name might be
+    ~writeField(name)~, which tells us that the "name" thing is a "field."
+
+** Have No Side Effects
+
+   Side effects are lies. Your function promises to do one thing, but it also
+   does other /hidden/ things.
+
+   If your function must change the state of something, have it change the state
+   of its owning object.
+
+** Command Query Separation
+
+   Functions should either do something or answer something, but not
+   both. Either your function should change the state of an object, or it should
+   return some information about that object. Doing both often leads to
+   confusion.
+
+** Prefer Exceptions to Returning Error Codes
+
+   Returning error codes from command functions is a subtle violation of command
+   query separation. It promotes commands being used as expressions in the
+   predicates of ~if~ statements.
+
+   Functions should do one thing. Error handling is one thing. Thus a function
+   that handles errors should do nothing else. This implies (as in the example
+   above) that if the keyword ~try~ exists in a function, it should be the very
+   first word in the function and that there should be nothing after the
+   ~catch~/~finally~ blocks.
+
+** Don't Repeat Yourself
+
+   Duplication may be the root of all evil in software.
+
+** How Do You Write Functions Like This?
+
+   When I write functions, they come out long and complicated. I massage and
+   refine that code, splitting out functions, changing names, eliminating
+   duplication. In the end, I wind up with functions that follow the rules I've
+   laid down in this chapter. I don't write them that way to start. I don't
+   think anyone could. If you follow the rules herein, your functions will be
+   short, well named, and nicely organized.
+
+* Comments
+
+  Nothing can be quite so helpful as a well-placed comment. Nothing can clutter
+  up a module more than frivolous dogmatic comments. Comments are, at best, a
+  necessary evil.
+
+  The proper use of comments is to compensate for our failure to express ourself
+  in code. Note that I used the word /failure/. I mean it. Comments are always
+  failures. We must have them because we cannot always figure out how to express
+  ourselves without them, but their use is not a cause for celebration.
+
+  The older a comment is, and the farther away it is from the code it describes,
+  the more likely it is to just be plain wrong. The reason is
+  simple. Programmers can't realistically maintain them.
+
+  Truth can only be found in one place: the code. Only the code can truly tell
+  you what it does. It is the only source of truly accurate
+  information. Therefore, though comments are sometimes necessary, we will
+  expend significant energy to minimize them.
+
+** Explain Yourself in Code
+
+   Which would you rather see?
+
+   #+BEGIN_SRC java
+     // Check to see if the employee is eligible for full benefits
+     if ((employee.flags & HOURLY_FLAG) &&
+         (employee.age > 65))
+   #+END_SRC
+
+   #+BEGIN_SRC java
+     if (employee.isEligibleForFullBenefits())
+   #+END_SRC
+
+** Good Comments
+
+   - Legal comments
+   - Informative comments
+     - e.g. Description of a regular expression
+   - Explanation of intent
+   - Clarification
+   - Warning of consequences
+   - TODO comments
+   - Amplification
+   - Javadocs in Public APIs
+
+** Bad Comments
+
+   - Mumbling
+     - Any comment that forces you to look in another module for the meaning of
+       that comment has failed to communicate to you and is not worth the bits
+       it contains.
+   - Redundant comments
+   - Misleading comments
+   - Mandated comments
+   - Journal comments (i.e. log of changes)
+   - Noise comments
+     - Don't use a comment when you can use a function of a variable!
+   - Position markers
+   - Closing brace comments
+   - Attributions and bylines
+   - Commented-out code
+   - HTML comments
+   - Nonlocal information
+   - Too much information
+   - Function headers
+   - Javadocs in nonpublic code
+
+* Formatting
+
+  You should choose a set of simple rules that govern the format of your code,
+  and then you should consistently apply those rules. If you are working on a
+  team, then the team should agree to a single set of formatting rules and all
+  members should comply. It helps to have an automated tool that can apply those
+  formatting rules for you.
+
+** Vertical Formatting
+
+   Small files are usually easier to understand than large files are.
+
+   Think of a well-written newspaper article. You read it vertically. At the top
+   you expect a headline that will tell you what the story is about and allows
+   you to decide whether it is something you want to read. The first paragraph
+   give you a synopsis of the whole story, hiding all the details while giving
+   you the broad-brush concepts. As you continue downward, the details increase
+   until you have all the dates, names, quotes, claims, and other minutia.
+
+   We would like a source file to be like a newspaper article. The name should
+   be simple but explanatory. The name, by itself, should be sufficient to tell
+   us whether we are in the right module or not. The topmost parts of the source
+   file should provide the high-level concepts and algorithms. Detail should
+   increase as we move downward, until at the end we find the lowest level
+   functions and details in the source file.
+
+*** Vertical Openness/Density
+    
+    Each group of lines represents a complete thought. Those thoughts should be
+    separated from each other with blank lines. If openness separates concepts,
+    then vertical density implies close association.
+
+*** Vertical Distance
+    
+    Concepts that are closely related should be kept vertically close to each
+    other. Clearly this rule doesn't work for concepts that belong in separate
+    files. But then closely related concepts should not be separated into
+    different files unless you have a very good reason. We want to avoid forcing
+    our readers to hop around through our source files and classes
+    
+    *Variables* should be declared as close to their usage as possible. Because
+    our functions are very short, local variables should appear at the top of
+    each function.
+    
+    *Instance variables* on the other hand, should be declared at the top of the
+    class. This should not increase the vertical distance of these variables,
+    because in a well-designed class they are used by many, if not all, of the
+    methods of the class.
+    
+    *Dependent functions*. If one function calls another, they should be
+    vertically close, and the caller should be above the callee, if at all
+    possible. This gives the program a natural flow. If the convention is
+    followed reliably, readers will be able to trust that function definitions
+    will follow reliably, readers will be able to trust that function
+    definitions will follow shortly after their use.
+
+    *Conceptual affinity*. Certain bits of code want to be near other bits. For
+    example, affinity might be caused because a group of functions perform a
+    similar operation.
+
+*** Vertical Ordering
+
+    A function that is called should be below a function that does the calling.
+
+** Horizontal Formatting
+
+   We should keep our lines short. The old Hollerith limit of 80 is a bit
+   arbitrary, and I'm not opposed to lines edging out to 100 or even 120. But
+   beyond that is probably just careless.
+
+   Indentation is important. It allows programmers to quickly hop over scopes.
+
+   A team of developers should agree upon a single formatting style, and then
+   every member of that team should use that style. We want the software to have
+   a consistent style. The last thing we want to do is add more complexity to
+   the source code by writing it in a jumble of different individual styles.
+
+* Objects and Data Structures
+
+  There is a reason that we keep our variables private. We don't want anyone
+  else to depend on them. We want to keep the freedom to change their type or
+  implementation on a whim or an impulse. Why, then, do so many programmers
+  automatically add getters and setters to their objects, exposing their private
+  variables as if they were public?
+
+  Hiding implementation is not just a matter of putting a layer of functions
+  between the variables. Hiding implementation is about abstractions! A class
+  does not simply push its variables out through getters and setters. Rather it
+  exposes abstract interfaces that allow its users to manipulate the /essence/
+  of the data,without having to know its implementation.

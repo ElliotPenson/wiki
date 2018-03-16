@@ -1,0 +1,170 @@
+#+TITLE: Git
+#+AUTHOR: Elliot Penson
+#+OPTIONS: num:nil
+
+* Overview
+
+  A git repository can be thought of as a graph. Each node represents
+  a commit on the graph. The head is what’s found on your disk - it’s
+  the code you will find if you open any of the files through an
+  external application. If you ever need to learn more about a git
+  command, ~git help <command>~ can help.
+
+  Begin a new repository with ~git init~. A general git workflow takes
+  the following form:
+  1. You edit/create/remove a file(s).
+  2. Those files are [[Staging][staged]] using the ~add~ command.
+  3. The staged files are [[Committing][committed]] using the ~commit~ command.
+  4. Other files are ~pulled~ to one's local repository
+  5. Files are ~pushed~ to a remote repository.
+
+  Commit early, commit often. It's good practice to put different
+  types of additions into different commits.
+
+  Note that when indicated below, ~<paths>~ refers to a file or set of
+  files. Generally these may be fileglobs and can have a leading
+  directory name. For example ~code.lisp~, ~*.txt~, and
+  ~folder/file.txt~ would all be appropriate values.
+
+* Staging
+
+  Staging defines which changes will be in the next version of the
+  project. The ~git add [<paths>]~ command provides this
+  functionality. The ~all~ option (~git add --all~) will stage all
+  files already in the working tree.
+
+  But what if you want to only stage some of the changes in a file?
+  [[http://stackoverflow.com/q/1085162][This stackoverflow answer]] provides a helpful overview:
+
+  #+BEGIN_QUOTE
+  You can do ~git add --patch filename.x~ (or ~-p~ for short), and git
+  will begin breaking down your file in what it thinks are sensible
+  "hunks" (portions of the file). You will then be prompted with this
+  question:
+
+  Stage this hunk [y,n,q,a,d,/,j,J,g,s,e,?]?
+  #+END_QUOTE
+
+  Type ~y~ to stage and ~n~ to skip the hunk. ~q~ will quit and not
+  stage any following hunks. ~a~ will stage this hunk and any future
+  ones. Typing ~s~ will split the current hunk into smaller hunks. See
+  the stackoverflow answer for descriptions of the other options.
+
+  Accidentally staged a file? The inverse of ~git add [<paths>]~ is
+  ~git reset [<paths>]~. A simple ~git reset~ will unstage all
+  files. Just like ~git add~, the patch (~-p~) option exits.
+
+  ~git diff [<paths>]~ shows you the difference between the last
+  commit and the state of the current working directory. ~git diff
+  --staged~ will show the changes that have been staged.
+
+* Committing
+
+  A commit creates a new repository version of the project. All staged
+  changes will be included. A simple ~git commit~ will launch a text
+  editor. A log message may then be written to describe the
+  changes. ~git commit -m "Some message"~ enables one to more quickly
+  create a commit.
+
+  Switch to a specific commit (without losing all the commits made
+  after it) with ~git checkout <commit_hash>~. Then you can return to
+  your branch by ~git checkout <branch-name>~.
+
+* Remotes
+
+** TODO Setup
+
+** TODO Pulling
+
+   TODO rebase
+
+   ~git pull remotename branchname~
+
+** TODO Pushing
+
+   Information in this page is taken from the [[https://help.github.com/articles/pushing-to-a-remote/][github documentation]].
+
+   Use ~git push~ to push commits made on your local branch to a
+   remote repository. ~git push~ takes two arguments: a remote name
+   (e.g. ~origin~) and a branch name (e.g. ~master~). For example ~git
+   push <REMOTENAME> <BRANCHNAME>~
+
+* Branching
+
+  A branch is an independent line of development.
+
+  Create a new branch with ~git branch <name>~. Switch to an existing
+  branch with ~git checkout <name>~. Create a new branch and switch to
+  it at the same time with ~git checkout -b <name>~. Merge another
+  branch into the current branch with ~git merge <name>~. Delete a
+  branch with ~git branch -d <name>~. Rename the current branch to
+  <new-name> with ~git branch -m <new-name>~.
+
+  HEAD is a special pointer that points to the current branch.
+
+  Some git workflows (like [[https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow][gitflow]]) rely heavily on branching.
+
+* Stashing
+
+  Information taken (often directly) from [[https://git-scm.com/docs/git-stash][this page]].
+  
+  Use ~git stash~ when you want to record the current state of the
+  working directory and the index, but want to go back to a clean
+  working directory (e.g. if you want to switch branches). The command
+  saves your local modifications away and reverts the working
+  directory to match the ~HEAD~ commit. Note that the stash is local
+  to your Git repository; stashes are not transferred to the server
+  when you push.
+
+  Call ~git stash~ to shelf current changes. You can reapply
+  previously stashed changes with ~git stash pop~. Alternatively, you
+  can reapply the changes to your working copy and keep them in your
+  stash with ~git stash apply~.
+
+  By default, ~git stash~ will stash staged and unstaged changes. But
+  it will not stash new files in your working copy that have not yet
+  been staged or files that have been ignored. Adding the ~-u~ option
+  tells ~git stash~ to also stash your untracked files. The ~-a~
+  option will include ignored files (as well as untracked files).
+
+  View all stashed with ~git stash list~. To provide a bit more
+  context, it's good practice to annotate your stashes with a
+  description, using ~git stash save "message"~. You can choose which
+  stash to re-apply by passing its identifier as the last argument,
+  for example: ~git stash pop stash@{2}~. If you decide you no longer
+  need a particular stash, you can delete it with ~git stash drop~
+  (e.g. ~git stash drop stash@{1}~). Or you can delete all of your
+  stashed with ~git stash clear~.
+
+* TODO Tags
+
+  Tags are most commonly used to mark release points. Tags may be
+  lightweight or annotated. "A lightweight tag...[is] just a pointer
+  to a specific commit. Annotated tags, however, are stored as full
+  objects in the Git database. They're checksummed; contain the tagger
+  name, email, and data; have a tagging message; and can be signed and
+  verified with GNU Privacy Guard (GPG)" (Pro Git). Annotated tags are
+  meant for release while lightweight tags are meant for private or
+  temporary object labels.
+
+  | Operation                            | Description                    |
+  |--------------------------------------+--------------------------------|
+  | ~git tag~                            | List available tags            |
+  | ~git tag <tag-name>~                 | Create a lightweight tag       |
+  | ~git tag -a <tag-name> -m <message>~ | Create an annotated tag        |
+  | ~git show <tag-name>~                | Display tag data               |
+  | ~git push origin <tag-name>~         | Push a tag to shared server    |
+  | ~git push origin --tags~             | Push all tags to shared server |
+  | ~git tag -d <tag-name>~              | Delete a tag                   |
+
+  Note that ~git tag~ can also accept a commit hash as the last
+  parameter. With out the commit hash, the most recent commit will be
+  tagged.
+
+* TODO Topics to Add to This Document
+  
+  - Removing the last commit (git reset HEAD~)
+  - Editing previous commits
+    - http://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits
+    - git rebase -i HEAD~X
+

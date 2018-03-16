@@ -1,0 +1,107 @@
+#+TITLE: YAML
+#+AUTHOR: Elliot Penson
+
+YAML is a simple data serialization language often used for
+configuration (e.g. docker and ansible). Information on this page is
+taken (often word-for-word) from
+http://docs.ansible.com/ansible/YAMLSyntax.html.
+
+* Syntax
+
+  All YAML files can optionally begin with ~---~ and end with ~...~ to
+  indicate the start and end of a document. Tab characters are never
+  allowed as indentation.
+
+** Comments
+
+   Comments begin with the number sign (~#~). They must be separated
+   from other tokens by white space characters.
+
+** Strings
+
+   Strings are ordinarily unquoted, but may be enclosed in
+   double-quotes, or single quotes.
+
+   There are two ways to write multi-line strings, one preserving
+   newlines (using the ~|~ character) and one that folds the newlines
+   (using the ~>~ character), both followed by a newline character.
+
+   #+BEGIN_SRC
+     --- # Newline preservation
+     data: |
+        This will be on one line
+        This will be on another
+     --- # Newline folding
+     data: >
+        These bits of text will all
+        be folded into a single paragraph
+   #+END_SRC
+
+** Lists
+
+   Members of a list are lines beginning at the same indentation level
+   starting with a ~"- ~ (a dash and a space).
+   
+   #+BEGIN_SRC
+     drinks:
+         - Water
+         - Lemonade
+         - Snapple
+         - Coke
+         - Pepsi
+   #+END_SRC
+
+   Can also be abbreviated as
+
+   #+BEGIN_SRC
+     drinks: ['Water', 'Lemonade', 'Snapple', 'Coke', 'Pepsi']
+   #+END_SRC
+
+** Dictionaries
+
+   A dictionary is represented in a simple ~key: value~ form (the
+   colon must be followed by a space).
+
+   #+BEGIN_SRC
+     ages:
+         john: 24
+         tom: 12
+         alice: 28
+         frank: 39
+   #+END_SRC
+
+   Abbreviated as
+
+   #+BEGIN_SRC
+     ages: {john: 24, tom: 12, alice: 28, frank: 39}
+   #+END_SRC
+
+** Anchors and References
+
+   Anchors and references allow duplication of content across a
+   document. An anchor is created with ~&~, a reference with ~*~.
+
+   #+BEGIN_SRC 
+     companies:
+         - &apple Apple, Incorporated
+         - &samsung SAMSUNG, Incorporated
+     macbook:
+         creator: &apple
+     iphone:
+         creator: &apple
+     galaxy:
+         creator: &samsung
+   #+END_SRC
+
+   Anchors can also be used to duplicate/inherit properties.
+
+   #+BEGIN_SRC
+     base: &base
+         name: Everyone has this name
+     foo:
+         <<: *base
+         age: 10
+     bar:
+         <<: *base
+         age: 20
+   #+END_SRC

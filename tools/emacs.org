@@ -110,6 +110,19 @@
    Run slime with M-x slime. See [[http://pchristensen.com/wp-content/uploads/2008/02/slimecommands.pdf][Peter Christensen's cheat sheet]] for
    more commands.
 
+** Interactively Do Things
+
+   Interactively Do Things (Ido) is shipped with emacs but not enabled by
+   default. It provides instant feedback for many operations (like buffer
+   switching and file navigation).
+
+   | Command | Description    |
+   |---------+----------------|
+   | C-f     | Disable ido    |
+   | C-s     | Next match     |
+   | C-r     | Previous match |
+   
+
 *** Compilation/Evaluation
 
    | Command | Description                  |
@@ -152,3 +165,18 @@
    | C-(     | "Slurp" backward. Pull in sexp on left |
    | C-}     | "Barf" forward. Push out last sexp     |
    | C-{     | "Barf" backward. Push out first sexp   |
+
+* Configuration
+
+** Terminal
+
+*** Use Left Command as Meta Key Under iTerm2 Terminal Emulator
+
+    Taken from http://www.emacswiki.org/emacs/EmacsForMacOS#toc22.
+
+    1. In iTerm2 go to Preferences > Keys
+    2. Under Remap Modifier Keys, change Left Command Key to behave
+       like Right Option
+    3. Then go to Preference > Profiles > $YourProfile > Keys
+    4. On the bottom right of the screen click "Right option key acts
+       as: +Esc"
