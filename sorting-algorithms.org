@@ -219,7 +219,7 @@
     The following implementation uses the leftmost element as the
     pivot. Unfortunately, this choice produces worst-case performance
     on sorted lists. Most implementations will therefore select a
-    difference pivot.
+    different pivot.
 
     #+BEGIN_SRC python
       def quicksort(list):
