@@ -1,0 +1,245 @@
+#+TITLE: Sorting Algorithms
+#+AUTHOR: Elliot Penson
+#+OPTIONS: num:nil
+
+* Algorithm Properties
+
+  *In-place* refers to memory usage. An in-place algorithms needs only
+  constant ($O(1)$) memory beyond the items being sorted. In-place
+  sorting algorithms usually work within and overwrite the input
+  array. Note that sometimes $O(\log{}n)$ additional memory is
+  considered in-place.
+
+  A *stable* sorting algorithm maintains the relative order of the
+  input. For example, suppose one has an array of people. Each person
+  has an age and a name. Using a stable sorting algorithm, the array
+  is sorted first on age, then on name. When you look at the cluster
+  of people named "John," you'll notice that they are still organized
+  by age.
+
+* Algorithms
+
+** Bubble Sort
+
+*** Overview
+
+    Bubble sort compares adjacent neighbors, and if out of order,
+    exchanges them. At the end of the first pass, the largest is at
+    the end. Sorting usually requires passes proportional to the
+    input.
+
+    |--------------------+-------------------|
+    | Best Complexity    | $O(n)$            |
+    | Average Complexity | $O(n^2)$          |
+    | Worst Complexity   | $O(n^2)$          |
+    | Memory Usage       | In-place ($O(n)$) |
+    | Stability          | Stable            |
+    |--------------------+-------------------|
+
+*** Implementation
+
+    #+BEGIN_SRC python
+      def bubble_sort(list):
+          while True:
+              modified = False
+              for i in range(len(list) - 1):
+                  if list[i] > list[i + 1]:
+                      list[i], list[i + 1] = list[i + 1], list[i]
+                      modified = True
+              if not modified:
+                  return list
+    #+END_SRC
+
+** Selection Sort
+
+*** Overview
+    
+    Selection sort maintains a sorted and an unsorted portion of the
+    list. Initially the sorted portion is of length zero. Each
+    iteration of the algorithm /selects/ the smallest element in the
+    unsorted portion and places it at the end of the sorted portion.
+
+    |--------------------+-------------------|
+    | Best Complexity    | $O(n^2)$          |
+    | Average Complexity | $O(n^2)$          |
+    | Worst Complexity   | $O(n^2)$          |
+    | Memory Usage       | In-place ($O(n)$) |
+    | Stability          | Stable            |
+    |--------------------+-------------------|
+
+*** Implementation
+    
+    #+BEGIN_SRC python
+      def selection_sort(list):
+          for i in range(len(list)):
+              for j in range(i, len(list)):
+                  if list[i] > list[j]:
+                      list[i], list[j] = list[j], list[i]
+          return list
+    #+END_SRC
+
+** Insertion Sort
+
+*** Overview
+
+    Just like selection sort, insertion sort maintains a sorted and an
+    unsorted portion of the list. Initially the sorted portion is of
+    length zero. Each iteration of the algorithm takes the first
+    element in the unsorted portion and /inserts/ it into the correct
+    location in the sorted portion.
+
+    |--------------------+-------------------|
+    | Best Complexity    | $O(n)$            |
+    | Average Complexity | $O(n^2)$          |
+    | Worst Complexity   | $O(n^2)$          |
+    | Memory Usage       | In-place ($O(n)$) |
+    | Stability          | Stable            |
+    |--------------------+-------------------|
+
+*** Implementation
+    
+    #+BEGIN_SRC python
+      def insertion_sort(list):
+          for i in range(len(list)):
+              for j in range(i, 0, -1):
+                  if list[j] < list[j - 1]:
+                      list[j], list[j - 1] = list[j - 1], list[j]
+                  else:
+                      break
+          return list
+    #+END_SRC
+
+** Shellsort
+
+*** Overview
+
+    Shellsort repeatedly applies another sorting algorithm (usually
+    insertion sort) to subsections of the list. The subsections are
+    defined by a /gap sequence/. Let's say our list is [x1, x2, x3,
+    x4, x5, x6, x7] and our gap sequence is [3, 1]. In the first pass,
+    Shellsort would have a gap of 3 and therefore sort [x1, x4,
+    x7]. In the second pass, Shellsort would have a gap of 1 and sort
+    [x1, x2, x3, x4, x5, x6, x7] (the entire list).
+
+    |--------------------+-------------------------|
+    | Best Complexity    | Depends on gap sequence |
+    | Average Complexity | Depends on gap sequence |
+    | Worst Complexity   | Depends on gap sequence |
+    | Memory Usage       | In-place ($O(n)$)       |
+    | Stability          | Unstable                |
+    |--------------------+-------------------------|
+
+*** Implementation
+
+    The following function uses a $2^k - 1$ gap sequence. This gap
+    sequence gives the algorithm a complexity of $O(n)$.
+    
+    #+BEGIN_SRC python
+      def shellsort(list):
+          gaps = [2**k - 1 for k in range(1, int(math.log(len(list) + 1) /
+                                                 math.log(2)))]
+          for gap in reversed(gaps):
+              for i in range(0, len(list), gap):
+                  for j in range(i, 0, -gap):
+                      if list[j] < list[j - gap]:
+                          list[j], list[j - gap] = list[j - gap], list[j]
+                      else:
+                          break
+
+          return list
+    #+END_SRC
+
+** Mergesort
+
+*** Overview
+
+    Mergesort is a divide and conquer algorithm. The algorithm first
+    divides the input into smaller and smaller lists. At the base case
+    (list length = 1) the list is sorted. These sorted sublists are
+    progressively /merged/ until we have sorted the original list.
+
+    |--------------------+---------------|
+    | Best Complexity    | $O(n\log{}n)$ |
+    | Average Complexity | $O(n\log{}n)$ |
+    | Worst Complexity   | $O(n\log{}n)$ |
+    | Memory Usage       | $O(n)$        |
+    | Stability          | Stable        |
+    |--------------------+---------------|
+
+*** Implementation
+
+    #+BEGIN_SRC python
+      def mergesort(list):
+          if len(list) < 2:
+              return list
+          else:
+              middle = len(list) / 2
+              left, right = list[:middle], list[middle:]
+              sorted_left, sorted_right = mergesort(left), mergesort(right)
+              return merge(sorted_left, sorted_right)
+
+      def merge(list1, list2):
+          "Combine two sorted lists into one sorted list."
+          to_return = []
+          while list1 or list2:
+              if not list1:
+                  to_return.append(list2.pop(0))
+              elif not list2:
+                  to_return.append(list1.pop(0))
+              elif list1[0] < list2[0]:
+                  to_return.append(list1.pop(0))
+              else:
+                  to_return.append(list2.pop(0))
+          return to_return
+    #+END_SRC
+
+** Quicksort
+
+*** Overview
+
+    Like mergesort, quicksort is a divide and conquer algorithm. In
+    mergesort, the hard part is combining the sublists. In quicksort,
+    the hard part is dividing the list. Quicksort first chooses a
+    /pivot/. The input is then divided into two parts: one with elements
+    smaller than the pivot and one with elements larger than the
+    pivot.
+
+    |--------------------+--------------------|
+    | Best Complexity    | $O(n\log{}n)$      |
+    | Average Complexity | $O(n\log{}n)$      |
+    | Worst Complexity   | $O(n^2)$           |
+    | Memory Usage       | Extra $O(\log{}n)$ |
+    | Stability          | Stable             |
+    |--------------------+--------------------|
+
+    Extra memory is required for the stack.
+
+*** Implementation
+
+    The following implementation uses the leftmost element as the
+    pivot. Unfortunately, this choice produces worst-case performance
+    on sorted lists. Most implementations will therefore select a
+    different pivot.
+
+    #+BEGIN_SRC python
+      def quicksort(list):
+          if len(list) < 2:
+              return list
+          else:
+              pivot = list[0]
+              left = [x for x in list[1:] if x <= pivot]
+              right = [x for x in list[1:] if x > pivot]
+              return quicksort(left) + [pivot] + quicksort(right)
+    #+END_SRC
+
+    Note that the implementation makes new lists at each logarithmic
+    step. It's possible to implement quicksort with only $O(\log{}n)$
+    extra memory. See the [[https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme/][Hoare partition scheme]] for an approach that
+    progressively switches elements around a central pivot.
+
+** TODO Heapsort
+
+** TODO Tapesort
+
+   See
+   https://en.wikipedia.org/wiki/External_sorting#External_merge_sort

@@ -32,8 +32,13 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
 * Theory
 
+  - [[file:theory/bags-stacks-queues.org][Bags, Stacks, and Queues]]
+  - [[file:theory/graphs.org][Graphs]]
   - [[file:theory/greek-alphabet.org][Greek Alphabet]]
   - [[file:theory/genetic-algorithms.org][Genetic Algorithms]]
+  - [[file:theory/hash-tables.org][Hash Tables]]
+  - [[file:theory/sorting-algorithms.org][Sorting Algorithms]]
+  - [[file:theory/trees.org][Trees]]
 
 * Tools
 

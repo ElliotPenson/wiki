@@ -1,0 +1,73 @@
+#+TITLE: Hash Tables
+#+AUTHOR: Elliot Penson
+#+OPTIONS: num:nil
+
+A *hash table* is one implementation of the /associative array/. An
+associative array (or map, dictionary) maintains a set of key/value
+pairs. This data structure supports four operations:
+
+- Add a pair to the collection.
+- Remove a pair from the collection.
+- Modify the value associated with a given key.
+- Find a given key's value.
+
+To implement these operations we could just use an array (with keys as
+indexes). If we have a large number of potential keys, this array
+would be massive (or even infinitely large given string keys). But
+lookup would be really fast. Another implementation could store each
+key/value as a node in a linked list. This collection would take up
+far less space. But lookup would be quite slow. The hash table tries
+to get the advantages of both algorithms (fast lookup and space
+efficiency). All operations on a hash table have constant average
+complexity ($O(1)$).
+
+* Description
+
+  A hash table maintains an array of linked lists. The algorithm
+  converts a given key to a position in the array (done by a /hash
+  function/). A /collision/ occurs when two keys go to the same
+  location in the array. Collisions happen because the number of keys
+  is usually greater than the number of array slots. To resolve this
+  problem, a linked list is found in each array slot (called a
+  /bucket/). To find a key's value we search through this linked
+  list.
+
+** TODO Linear Probing
+   
+   The above implementation uses /separate chaining/. /Linear probing/
+   represents another approach. See page 469 of Algorithms by
+   Sedgewick and Wayne for more information.
+
+* Hash Function
+
+  A hash function is an function that maps a large data set to a
+  smaller data set of a fixed length. Hash functions return a hash
+  code (also known as hash value).
+
+  Every hash function must:
+  - Consistently produce the same location for a key (a pure
+    function).
+  - Uniformly distribute values over a table (to reduce collisions).
+  - Be efficient to computer.
+
+  "The most commonly used method for hashing integers is called
+  /modular hashing/: we choose the array size M to be prime and, for
+  any positive integer key K, computer the remainder when dividing k
+  by M...If M is not prime, it may be the case that not all of the
+  bits of the key play a role...Modular hashing works for long keys
+  such as strings, too: we simply treat them as huge integers." (page
+  460 of Algorithms by Sedgewick and Wayne).
+
+** TODO Universal Hashing
+
+   See page 35 of Algorithms by Dasgupta, Papadimitriou, and
+   Vazirani).
+
+* TODO Array Resizing
+
+  See page 474 of Algorithms by Sedgewick and Wayne for more
+  information.
+
+* Libraries
+
+  Java's standard library provides the HashTable class.
