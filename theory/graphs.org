@@ -13,7 +13,7 @@
   \{1, 2\}, \{1, 4\}, \{2, 4\}, \{2, 5\}, \{3, 5\}, \{4, 6\}\}$.
 
   #+ATTR_HTML: :width 400
-  [[./images/graph.png]]
+  [[../images/graph.png]]
 
   An edge means that "x is connected with y." This is a symmetric
   relation - it implies also that y is connected with x - and we
