@@ -26,6 +26,13 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:languages/swift.org][Swift]]
   - [[file:languages/yaml.org][YAML]]
 
+* Math
+
+  - [[file:math/greek-alphabet.org][Greek Alphabet]]
+  - [[file:math/linear-algebra.org][Linear Algebra]]
+  - [[file:math/normal-distribution.org][Normal Distribution]]
+  - [[file:math/simultaneous-equations.org][Simultaneous Equations]]
+
 * Security
 
   - [[file:security/web-application-security.org][Web Application Security]]
@@ -34,7 +41,6 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
   - [[file:theory/bags-stacks-queues.org][Bags, Stacks, and Queues]]
   - [[file:theory/graphs.org][Graphs]]
-  - [[file:theory/greek-alphabet.org][Greek Alphabet]]
   - [[file:theory/genetic-algorithms.org][Genetic Algorithms]]
   - [[file:theory/hash-tables.org][Hash Tables]]
   - [[file:theory/sorting-algorithms.org][Sorting Algorithms]]
@@ -49,6 +55,3 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:tools/intellij.org][IntelliJ]]
   - [[file:tools/setup.org][Machine Setup]]
   - [[file:tools/shebang.org][Shebang]]
-
-
-

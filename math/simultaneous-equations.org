@@ -1,0 +1,67 @@
+#+TITLE: Simultaneous Equations
+#+AUTHOR: Elliot Penson
+
+"Simultaneous equations, also known as a system of equations, is a finite set of
+equations for which common solutions are sought." - [[https://en.wikipedia.org/wiki/System_of_equations][Wikipedia]].
+
+[[file:linear-algebra.org][Linear algebra]] can be used to solve a system of linear equations.
+
+* Solving By Hand
+
+** Elimination
+
+   Let's say we have the following equations:
+
+   \begin{equation}
+   3x + 2y = 7
+   \end{equation}
+
+   \begin{equation}
+   2x + 3y = 8
+   \end{equation}
+
+   We can find the values of $x$ and $y$ by removing a variable through
+   elimination.
+
+   Let's first make the leading coefficient the same for one of the variables.
+
+   \begin{equation}
+   2 * (3x + 2y = 7) => 6x + 4y = 14
+   \end{equation}
+
+   \begin{equation}
+   3 * (2x + 3y = 8) => 6x + 9y = 24
+   \end{equation}
+
+   Here we're trying to make the coefficient for $x$ the same in both
+   equations. Notice that we multiply by the coefficient of the other equation.
+
+   We then subtract the equations to eliminate $x$:
+
+   #+BEGIN_SRC sh
+        6x + 4y = 14
+      -(6x + 9y = 24)
+     ________________
+            -5y = -10
+   #+END_SRC
+   
+   We can now easily solve for **.
+
+** Substitution
+
+   Using the same equations as above, we can also solve the equations by
+   substituting a value from one into the other.
+
+   First, let's get $x$ on one side in the first equation:
+
+   \begin{equation}
+   x = \frac{7-2y}{3}
+   \end{equation}
+
+   Next we can substitute that value for $x$ into the second equation:
+
+   \begin{equation}
+   2(\frac{7-2y}{3}) + 3y = 8
+   \end{equation}
+
+   We can now easily solve for $y$.

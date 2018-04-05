@@ -1,0 +1,96 @@
+#+TITLE: Linear Algebra
+#+AUTHOR: Elliot Penson
+
+Information on this page is taken from the [[https://www.coursera.org/learn/linear-algebra-machine-learning][Imperial College London's course]].
+
+* Overview
+
+  Linear algebra is the study of vectors, vector spaces, and mapping between
+  vector spaces. Linear algebra emerged from the study of [[file:simultaneous-equations.org][linear equations]] an
+  the realization that these could be solved with vectors and matrices.
+
+* Vectors
+
+** Vector Operations
+
+   In physics, a vector is often used to describe movement in physical space. In
+   data science, a vector is often a list of attributes about an object.
+
+   Vectors are defined by their operations. Vectors obey two operations: vector
+   addition and scalar multiplication. Addition happens
+
+   #+attr_html: :width 400px
+   [[file:../images/vector-operations.png]]
+
+   Note that addition is communicative ($r + s = s + r$) and associative ($(r +
+   s) + t = r + (s + t)$).
+
+   Addition happens by components:
+
+   \begin{equation}
+   \begin{bmatrix}
+   1 \\
+   2
+   \end{bmatrix}
+   +
+   \begin{bmatrix}
+   3 \\
+   4
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+   4 \\
+   6
+   \end{bmatrix}
+   \end{equation}
+
+** Vectors and Data Science
+
+   Let's say that we have a distribution. We'd like to find the [[file:./normal-distribution.org][normal
+   distribution]] that best fits the data. Here's an example:
+
+   #+attr_html: :width 400px
+   [[file:../images/distribution-fit.png]]
+
+   The normal distribution has two parameters: $\sigma$ and $\mu$. We need to
+   find the best values for these two parameters.
+
+   Here's an example of a bad $\sigma$ and $\mu$.
+
+   #+attr_html: :width 400px
+   [[file:../images/bad-distribution-fit.png]]
+
+   The "badness" of this fit could be determined by finding the difference
+   between the data and the curve.
+
+   We can plot every possible parameter value on a chart.
+
+   [[file:../images/x-y-graph.jpg]]
+
+   Each guess could be expressed as a vector.
+
+   \begin{equation}
+   \begin{bmatrix}
+   \sigma \\
+   \mu
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+   2 \\
+   -5
+   \end{bmatrix}
+   \end{equation}
+
+   The total set of vectors and their "badness" (or cost) values create a
+   contour. To get the best fit, we need to minimize the cost. Once we have a
+   point, we need to find out where to go next. This direction is found with
+   calculus. Each "jump" or "move" is a new vector. We need vector operations to
+   be able to express this movement.
+
+   An example of a "badness" calculation is the *Sum of Squared Residuals*
+   (*SSR*). Here we take all of the residuals (the difference between the
+   measured and predicted data), square them and add them together.
+
+* TODO Matrices
+
+  
