@@ -1,0 +1,9 @@
+#+TITLE: Amazon CloudWatch
+#+AUTHOR: Elliot Penson
+
+Amazon CloudWatch provides monitoring services for AWS.
+
+* Billing
+
+  Billing alarms may be created. You can choose to receive an email if your
+  estimated AWS charges go beyond a certain threshold.

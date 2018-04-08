@@ -37,6 +37,12 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
   - [[file:security/web-application-security.org][Web Application Security]]
 
+* Services
+
+  - [[file:services/aws.org][Amazon Web Services]]
+  - [[file:services/iam.org][Amazon IAM]]
+  - [[file:services/cloudwatch.org][Amazon CloudWatch]]
+
 * Theory
 
   - [[file:theory/bags-stacks-queues.org][Bags, Stacks, and Queues]]

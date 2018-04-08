@@ -1,0 +1,231 @@
+#+TITLE: Amazon Web Services
+#+AUTHOR: Elliot Penson
+
+Most information on this page comes from A Cloud Guru's [[https://acloud.guru/course/aws-certified-solutions-architect-associate][Certified Solutions
+Architect Course]].
+
+* 10,000 Foot Overview
+
+  The cloud enabled quick experimentation without danger. This is the cloud's
+  power.
+
+** AWS Global Infrastructure
+
+   A *region* is a geographical area. It's a physical location in the world
+   which consists of 2 (or more) *availability zones*. An availability zone
+   (*AZ*) is one or more discrete data centers, each with redundant power,
+   networking and connectivity, housed in separate facilities. The availability
+   zones are far enough apart that an issue in one shouldn't affect another.
+
+   #+attr_html: :width 200px
+   [[file:../images/regions-availability-zones.png]]
+
+   *Edge locations* are endpoints for AWS which are used for caching
+   content. Typically this consists of CloudFront, Amazon's Content Delivery
+   Network (CDN). There are many more edge locations than regions. Currently
+   there are over 96 edge locations.
+
+   Everything else sits on top of the AWS Global Infrastructure.
+
+** Compute
+
+   | Service                     | Description                                                                                                                                                                        |
+   |-----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | EC2 (Elastic Compute Cloud) | Virtual machines inside the AWS platform.                                                                                                                                          |
+   | EC2 Container Service       | Create and run Docker containers at scale.                                                                                                                                         |
+   | Elastic Beanstalk           | Automatically handles the deployment of your code (from capacity provisioning, load balancing, auto-scaling to application health monitorying) based on the code you upload to it. |
+   | Lambda                      | Function-as-a-Service (FaaS). Upload code and choose when it executes. No need to manage virtual machines or any system.                                                           |
+   | Lightsail                   | Amazon's VPS (Virtual Private Service). Lightsail is a very watered down version of EC2 that manages security groups for you.                                                      |
+   | Batch                       | Batch computing in the cloud.                                                                                                                                                      |
+
+** Storage
+   
+   | Service                     | Description                                                                                                                                                                                                 |
+   |-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | S3 (Simple Storage Service) | Object-based storage. Files are uploaded into /buckets/ in the cloud. Can storage and retrieve any amount of data.                                                                                          |
+   | EFS (Elastic File System)   | Network attached storage (NAS) in the cloud (attaches to EC2 instances).                                                                                                                                    |
+   | Glacier                     | Data archival.                                                                                                                                                                                              |
+   | Snowball                    | Petabyte-scale data transport solution. Transfer of large amounts of data to AWS (with a physical disk).                                                                                                                                          |
+   | Storage Gateway             | Virtual appliances (VMs) installed in your data center which replication information on S3. A hybrid storage service that enables your on-premises applications to seamlessly use storage in the AWS Cloud. |
+
+** Databases
+
+   | Service                           | Description                                                 |
+   |-----------------------------------+-------------------------------------------------------------|
+   | RDS (Relational Database Service) | Offers SQL, MySQL, MariaDB, PostgreSQL, Aurora, and Oracle. |
+   | DynamoDB                          | For non-relational databases.                               |
+   | Elasticache                       | Caching service.                                            |
+   | Red Shift                         | Data warehousing and business intelligence.                 |
+
+** Migration
+
+   | Service                          | Description                                                                                     |
+   |----------------------------------+-------------------------------------------------------------------------------------------------|
+   | AWS Migration Hub                | Track your services as you move them to AWS. Provides visualization.                            |
+   | Application Discovery Service    | Automated set of tools that detects what applications you have and what their dependencies are. |
+   | (DMS) Database Migration Service | Migrate databases to AWS.                                                                       |
+   | Service Migration Service        | Migrate virtual and physical servers to the AWS cloud.                                          |
+   | Snowball                         | Mentioned above. Sits between storage and migration.                                            |
+
+** Networking & Content Delivery
+
+   | Service                     | Description                                                                                                                                                                                                                                                                                                                        |
+   |-----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | VPC (Virtual Private Cloud) | Think of it like a virtual data center. You'll configure firewalls, route tables, etc. A Virtual Private Cloud (VPC) is a virtual network dedicated to a single AWS account. It is logically isolated from other virtual networks in the AWS cloud, providing compute resources with security and robust networking functionality. |
+   | CloudFront                  | Amazon's content delivery network. Think of media assets, if you have these stored in London and your user is in Australia, they can access it from an edge location instead.                                                                                                                                                      |
+   | Route53                     | DNS service (if you look up a domain you'll get an IPv6 address).                                                                                                                                                                                                                                                                  |
+   | API Gateway                 | A way of creating your own APIs for your other services to talk to.                                                                                                                                                                                                                                                                |
+   | Direct Connect              | A way of running a dedicated line from your office into Amazon and connect into your VPC.                                                                                                                                                                                                                                          |
+
+** Developer Tools
+
+   | Service      | Description                                                                                  |
+   |--------------+----------------------------------------------------------------------------------------------|
+   | CodeStar     | Way of getting a group of developers working together. Project management for collaboration. |
+   | CodeCommit   | Place to store code. Source control service. Store git repositories.                         |
+   | CodeBuild    | Compile and build code.                                                                      |
+   | CodeDeploy   | Automates deployment to EC2, on-premise, and lambda.                                         |
+   | CodePipeline | Continuous delivery.                                                                         |
+   | X-Ray        | Analyze and debug serverless applications.                                                   |
+   | Cloud9       | IDE environment.                                                                             |
+
+** Management Tools
+
+   | Service          | Description                                                                                                                                                                      |
+   |------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | CloudWatch       | Monitoring service.                                                                                                                                                              |
+   | CloudFormation   | Automated provisioning engine designed to deploy entire cloud environments via a JSON script. A way of scripting infrastructure.                                                 |
+   | CloudTrail       | Log changes to your AWS environment.                                                                                                                                             |
+   | Config           | Manages configuration of you entire AWS environment.                                                                                                                             |
+   | OpsWorks         | Configuration management service that uses Chef, an automation platform that treats server configurations as code. OpsWorks is effectively a way of automating your environment. |
+   | Service Catalog  | Manages a catalog of IT service that are approved for use. Usually used by big organizations.                                                                                    |
+   | Systems Manager  | An interface for managing your AWS resources. Typically used for EC2 (e.g. patch management).                                                                                    |
+   | Trusted Advisor  | Will give you advice around different environments. e.g. security risks, how to increase performance, ways to save money.                                                        |
+   | Managed Services | TODO.                                                                                                                                                                            |
+
+** Media Services
+
+   | Service            | Description                                               |
+   |--------------------+-----------------------------------------------------------|
+   | Elastic Transcoder | Changes media so that it works well on different devices. |
+   | MediaConvert       | File-based transcoder.                                    |
+   | MediaLive          | Live video processing service. Used for streams.          |
+   | MediaPackage       | Prepares and protects videos for transfer.                |
+   | MediaStore         | Storage system for media.                                 |
+   | MediaTailor        | Allows you to do targeted advertising for video streams.  |
+
+** Machine Learning
+
+   | Service           | Description                                                                     |
+   |-------------------+---------------------------------------------------------------------------------|
+   | SageMaker         | Makes it really easy for developers to use deep learning.                       |
+   | Comprehend        | Does sentiment analysis around data.                                            |
+   | DeepLens          | Artificially aware camera. It's a physics piece of hardware.                    |
+   | Lex               | Powers Amazon Alexa.                                                            |
+   | Machine Learning  | Give it a data set and predictions. Makes new predictions.                      |
+   | Polly             | Turns text to speech.                                                           |
+   | Rekognition       | Upload a file and it will tell you what's in that file (visual classification). |
+   | Amazon Translate  | Just like Google translate.                                                     |
+   | Amazon Transcribe | Automatic speech recognition.                                                   |
+
+** Analytics
+
+   | Service               | Description                                                                                                                                                                                       |
+   |-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | Athena                | Run SQL queries against things in a S3 bucket (e.g. an excel file).                                                                                                                               |
+   | EMR                   | Process large amounts of data efficiently.                                                                                                                                                                     |
+   | Cloud Search          | Search!                                                                                                                                                                                           |
+   | ElasticSearch Service | Search!                                                                                                                                                                                           |
+   | Kinesis               | Amazon Kinesis is used to collect, process, and analyze real-time, streaming data. A way of ingesting large amounts of data.                                                                                                                                                        |
+   | Kinesis Video Streams | TODO.                                                                                                                                                                                             |
+   | QuickSight            | Fast, cloud-powered business analytics service that makes it easy to build visualizations, perform ad-hoc analysis, and quickly get business insights from your data. Business intelligence tool. |
+   | Data Pipeline         | Move your data between various AWS services.                                                                                                                                                      |
+   | Glue                  | ETL.                                                                                                                                                                                              |
+   
+** Security & Identity & Compliance
+
+   | Service                          | Description                                                                                   |
+   |----------------------------------+-----------------------------------------------------------------------------------------------|
+   | [[file:iam.org][IAM]] (Identity Access Management) | TODO                                                                                          |
+   | Cognito                          | Device authentication that gives temporary access to AWS.                                     |
+   | GuardDuty                        | Monitors for malicious activities on your account.                                            |
+   | Inspector                        | An agent that's installed on your virtual machines or EC2 instances. Gives a security report. |
+   | Macie                            | Scan S3 buckets and look for personally identifiable information (PII).                       |
+   | Certificate Manager              | Get SSL certificates for free.                                                                |
+   | CloudHSM                         | Hardware security module used for storing private/public keys.                                |
+   | Directory Service                | Way of integrating Microsoft active directory services with AWS services.                     |
+   | WAF (Web Application Firewall)   | Like a layer 7 firewall. Stops things like cross-site scripting, SQL injection.               |
+   | Shield                           | DDOS mitigation.                                                                              |
+   | Artifact                         | Used for audit and compliance. Way of downloading and inspecting Amazon's documentation.      |
+
+** Mobile Services
+
+   | Service          | Description                                                                                                                 |
+   |------------------+-----------------------------------------------------------------------------------------------------------------------------|
+   | Mobile Hub       | Management console. Will setup AWS for you.                                                                                 |
+   | Pinpoint         | Way of using targeted push notifications to drive engagement.                                                               |
+   | AWS AppSync      | Automatically updates the data in web and mobile applications in real time. Also updates offline users when they reconnect. |
+   | Device Farm      | Way of testing your app on real life devices.                                                                               |
+   | Mobile Analytics | Analytics for mobile!                                                                                                       |
+
+** AR (Augmented Reality)/VR (Virtual Reality)
+
+   | Service  | Description                                   |
+   |----------+-----------------------------------------------|
+   | Sumerian | A language and common set of tools for AR/VR. |
+
+** Application Integrations
+
+   | Service                           | Description                            |
+   |-----------------------------------+----------------------------------------|
+   | Step Functions                    | Way of managing lambda functions.      |
+   | Amazon MQ                         | Message queues.                        |
+   | SNS (Simple Notification Service) | TODO.                                  |
+   | SQS (Simple Queue Service)        | Way of decoupling your infrastructure. |
+   | SWF (Simple Workflow Service)     | TODO.                                  | 
+
+** Customer Engagement
+
+   | Service                    | Description                                            |
+   |----------------------------+--------------------------------------------------------|
+   | Connect                    | Contact center as a service. Call center in the cloud. |
+   | SES (Simple Email Service) | Scalable email.                                        |
+
+** Business Productivity
+
+   | Service            | Description                                       |
+   |--------------------+---------------------------------------------------|
+   | Alexa For Business | Use Alexa to dial into meetings, contact IT, etc. |
+   | Chime              | Video conferencing. Similar to Google Hangouts.   |
+   | Work Docs          | Like a dropbox for AWS.                           |
+   | WorkMail           | Similar to Gmail or Office365.                    |
+
+** Desktop & App Streaming
+
+   | Service       | Description                                                                                                    |
+   |---------------+----------------------------------------------------------------------------------------------------------------|
+   | Workspaces    | VDI solution. Running an operating system in the cloud. Desktop-as-a-Service (DaaS) solution that runs on AWS. |
+   | AppStream 2.0 | Way of streaming applications from the cloud.                                                                  |
+
+** Internet of Things (IOT)
+
+   | Service               | Description                                                                                                                                                 |
+   |-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | iOT                   |                                                                                                                                                             |
+   | iOT Device Management |                                                                                                                                                             |
+   | Amazon FreeRTOS       | An operating system for your microcontrollers.                                                                                                              |
+   | Greengrass            | Software that let's you run local compute messaging, data caching, sync, and machine learning interface capabilities for connected devices in a secure way. |
+
+** Game Development
+
+   | Service  | Description                 |
+   |----------+-----------------------------|
+   | GameLift | Develop games in the cloud. |
+
+* Solutions Architect Associate Exam
+
+  The Solution's Architect Associate exam will only test you on Global
+  Infrastructure, Compute, Storage, Databases, Migration, Networking & Content
+  Delivery, Management Tools, Analytics, Security & Identity & Compliance,
+  Application Integration, and Desktop & App Streaming. Be sure that you
+  understand VPC!

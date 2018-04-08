@@ -1,0 +1,58 @@
+#+TITLE: Amazon Identity Access Management (IAM)
+#+AUTHOR: Elliot Penson
+
+IAM (Identity Access Management) allows management of users and their level of
+access to the AWS Console. IAM gives
+
+- Centralized control of your AWS account.
+- Shared access to your AWS account.
+- Granular permissions.
+- Identity federation.
+- Multi-factor authentication (MFA).
+- Temporary access for users/devices and services where necessary.
+- Password rotation policies.
+
+*IAM is global*. This service does not allow region selection.
+
+* Terminology
+  
+  - *Users*: End users (think people).
+  - *Groups*: A collection of users under a set of permissions.
+  - *Roles*: A set of permissions assigned to AWS resources.
+  - *Policies*: A document that defines one (or more) permissions. Can be attached
+    to users, groups, and roles. These documents remain universal. Policies are
+    defined with JSON.
+
+  The /root account/ is the account initially used to sign up for AWS. It has
+  complete admin access.
+
+* Programmatic vs. Console Access 
+
+  Users can have /programmatic/ and /console/ access. Programmatic access gives
+  an access key ID and a secret access key. Console access happens through a
+  username and password. The access key ID and the secret access key cannot be
+  used to login through the console. Likewise you cannot use your username and
+  password to programmatically interact with AWS.
+
+  Access Key IDs and Secret Access Keys may only be viewed once. If you lose
+  them, you have to regenerate them. Download and save them in a secure
+  location.
+
+* Roles
+
+  Roles are a way to grant permissions to entities that you trust. These
+  entities may be
+  - An IAM in another account.
+  - Application code running on an EC2 instance that needs to perform actions on
+    AWS resources.
+  - An AWS service that needs to act on resources in your account to provide its
+    features.
+
+* Best Practices
+
+  - Always setup multi-factor authentication on your root account.
+  - IAM allows the creation of a password policy. This includes password
+    rotation policies.
+  - Users have no permissions when first created. Users should be given the
+    minimum amount of permissions.
+  - IAM allows a customized sign-in link for new users.
