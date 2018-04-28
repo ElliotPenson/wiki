@@ -40,8 +40,9 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 * Services
 
   - [[file:services/aws.org][Amazon Web Services]]
-  - [[file:services/iam.org][Amazon IAM]]
-  - [[file:services/cloudwatch.org][Amazon CloudWatch]]
+    - [[file:services/cloudwatch.org][Amazon CloudWatch]]
+    - [[file:services/iam.org][Amazon IAM]]
+    - [[file:services/s3.org][Amazon S3]]
 
 * Theory
 

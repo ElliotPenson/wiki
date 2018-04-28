@@ -1,0 +1,171 @@
+#+TITLE: Amazon S3
+#+AUTHOR: Elliot Penson
+
+S3 (Simple Storage Service) provides secure, durable, highly-scalable /object
+storage/ in the cloud. Object storage (also known as /object-based storage/)
+saves flat files. S3 is not /block-based/ storage and thus doesn't allow you to
+run an operating system or a database.
+
+S3 gives unlimited storage.
+
+* Properties
+
+  - S3 is a universal namespace, that is, names must be unique globally.
+  - S3 creates a DNS: ~https://s3-<region>.amazonaws.com/<bucket>~.
+  - When you upload a file to S3 you will receive an HTTP 200 code if the upload
+    was successful.
+
+* Objects
+
+  S3 provides simple key, value store. Files can be from 0 bytes to 5 TB.
+
+  Objects consist of the following:
+  - Key (the object name)
+  - Value (the object's data: a sequence of bytes).
+  - Version ID
+  - Metadata (data about the data. e.g. date)
+  - Subresources
+    - Access Control Lists (ACL): who can access this object - fine-grained
+      permissions.
+    - Torrent
+  
+  S3 is lexographical. Objects are stored in alphabetical order. Files that have
+  a very similar name are stored in a similar location. You may want to add some
+  randomness to the beginning of the file name to prevent bottlenecks.
+
+* Buckets
+
+  Objects are stored in /Buckets/. A Bucket is similar to a folder.
+
+  Buckets reside in a certain region.
+
+* Data Consistency Model
+
+  - Read after write consistency for PUTS of new objects.
+  - Eventual consistency for overwrite PUTS and DELETE (can take some time to
+    propagate).
+
+  Updates to S3 are atomic. You will either get the old file or the new
+  file. You won't get partial or corrupted data.
+
+* Tolerance
+
+  Data is spread across multiple devices and facilities; S3 is designed to
+  withstand failure.
+
+  - Built for 99.99% availability for the S3 platform.
+  - Amazon guarantee 99.99% availability.
+  - Amazon guarantees 99.99999999999% durability for S3 information (remember 11
+    x 9's). This is the /eleven 9s durability agreement/.
+
+* Security
+
+  By default Buckets are private and all objects stored inside them are
+  private.
+
+  - Encryption
+    - Client Side Encryption (encrypt on your computer then upload)
+    - Server Side Encryption
+      - Server-side encryption with Amazon S3 Managed Keys (SSE-S3)
+      - Server-side encryption with KMS (SSE-KMS)
+      - Server-side encryption with Customer Provided Keys (SSE-C)
+  - Secure your data using Access Control Lists (ACL) or using Bucket Policies.
+
+* Storage Tiers/Classes
+
+  - *S3* - 99.99% availability, 99.99999999999% durability, stored redundantly
+    across multiple devices in multiple facilities and is designed to sustain
+    the loss of 2 facilities concurrently.
+  - *S3 - IA* (Infrequently Accessed) For data that is accessed less frequently,
+    but requires rapid access when needed. Lower fee than S3, but you are
+    charged a retrieval fee.
+  - *RRS* (Reduced Redundancy Storage) - Designed to provide 99.99% durability
+    and 99.99% availability of objects over a given year. We can only lose 1
+    facility.
+  - *Glacier* - Very cheap, but used for archival only. It takes 3-5 hours to
+    restore from Glacier.
+
+  Reduced Redundancy Storage is usually used for data that is reproducible, such
+  as thumbnails.
+
+  Glacier is an extremely low-cost storage service for data archival. Amazon
+  Glacier stores data for as little as $0.01 per gigabyte per month, and is
+  optimized for data that is infrequently accessed and for which retrieval times
+  of 3 to 5 hours are suitable. Glacier is an independent service but it tightly
+  integrated with S3. First byte latency is minutes or hours instead of
+  milliseconds like S3 services.
+
+  |                                     |             S3 |         S3-IA |          RRS | Glacier          |
+  |-------------------------------------+----------------+---------------+--------------+------------------|
+  | Availability                        |         99.99% |         99.9% |       99.99% | N/A              |
+  | Durability                          | 99.9999999999% | 99.999999999% |       99.99% | 99.999999999%    |
+  | Concurrent facility fault tolerance |              2 |             2 |            1 | 2                |
+  | First byte latency                  |   Milliseconds |  Milliseconds | Milliseconds | Minutes or hours |
+
+* Charges
+
+  In S3, costs can come from
+  - Storage
+  - Requests
+  - Storage Management Pricing (cost tracking)
+  - Data Transfer Pricing (moving data around within S3)
+  - Transfer Acceleration
+
+* Transfer Acceleration
+
+  Amazon S3 Transfer Acceleration enables fast, easy, and secure transfers of
+  files over long distances between your end users and an S3 bucket. Transfer
+  Acceleration takes advantage of Amazon CloudFront's globally distributes edge
+  locations. As the data arrives at an edge location, data is routed to Amazon
+  S3 over an optimized network path.
+
+* Tags
+
+  You can tag buckets and objects. Individual objects don't inherit the tag from
+  the bucket.
+
+* Versioning
+
+  "Versioning is a means of keeping multiple variants of an object in the same
+  bucket"
+  (https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html). It's a
+  great backup tool.
+
+  Every time a file changes there will be a copy of both the original and the
+  change. Of course, versioning can increase S3 costs. Even deleting is a
+  version (a /delete marker/ is made)!
+
+  Once enabled, versioning cannot be disabled. Versioning can only be
+  /suspended/ after turned on.
+  
+  /MFA Delete/ helps stop people from accidentally deleting a version. This
+  multi-factor authentication provides an extra layer of security.
+
+  Versioning integrates with lifecycle rules.
+
+* Cross Region Replication
+
+  Cross-region replication enables automatic and asynchronous copying of objects
+  across buckets in different AWS regions. Enable in the S3 console by clicking
+  on a bucket then /Management/ then /Replication/. Note that cross-region
+  replication requires versioning enabled on both the source and destination
+  buckets. Regions must be unique.
+  
+  Note that only new objects will be replicated. Files in an existing bucket are
+  not replicated automatically.
+
+  Currently, cross region replication cannot replicate to multiple buckets or
+  use daisy chaining.
+
+  Version deletes are not replicated.
+
+* Command Line Tools
+
+  The AWS CLI can be used to access S3. After running ~aws configure~ to set
+  things up, type ~aws s3 ls~ to see all your buckets. Copy object from one
+  bucket to another with ~aws s3 cp --recursive s3://<bucket1> s3://<bucket2>~.
+
+* TODO
+
+  - life cycle management.
+  - Read the AS3 FAQ before taking the exam. It comes up A LOT!
