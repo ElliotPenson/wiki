@@ -8,6 +8,8 @@ run an operating system or a database.
 
 S3 gives unlimited storage.
 
+See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
+
 * Properties
 
   - S3 is a universal namespace, that is, names must be unique globally.
@@ -37,7 +39,7 @@ S3 gives unlimited storage.
 
   Objects are stored in /Buckets/. A Bucket is similar to a folder.
 
-  Buckets reside in a certain region.
+  Buckets reside in a certain AWS region.
 
 * Data Consistency Model
 
@@ -60,16 +62,33 @@ S3 gives unlimited storage.
 
 * Security
 
-  By default Buckets are private and all objects stored inside them are
-  private.
+  - By default, all newly created buckets are PRIVATE.
+  - You can setup access control to your buckets using;
+    - Bucket Policies
+      - Bucket-wide permissions.
+    - Access Control Lists (ACL)
+      - Can drill down to individual objects.
+  - S3 buckets can be configured to create access logs which log all requests
+    made to the S3 bucket. This logs can be setup to be saved to another
+    bucket. Of course, logging is important for security.
 
-  - Encryption
-    - Client Side Encryption (encrypt on your computer then upload)
+* Encryption
+  
+  - In Transit;
+    - SSL/TLS
+  - At Rest;
     - Server Side Encryption
-      - Server-side encryption with Amazon S3 Managed Keys (SSE-S3)
-      - Server-side encryption with KMS (SSE-KMS)
-      - Server-side encryption with Customer Provided Keys (SSE-C)
-  - Secure your data using Access Control Lists (ACL) or using Bucket Policies.
+      1. S3 Managed Keys (*SSE-S3*)
+         - Most common method. Uses AES-256.
+      2. AWS Key Management Service, Managed Keys (*SSE-KMS*)
+         - More expensive method. Provides an extra layer of protection using an
+           envelope key. This key protects your encryption key. In addition,
+           SSE-KMS provides an audit trail of when keys were used and by
+           whom. Lastly, you can also manage your keys yourself.
+      3. Customer Provided Keys (*SSE-C*)
+         - You manage the keys but Amazon manages the encryption.
+    - Client Side Encryption
+      - Encrypt on your computer and then upload.
 
 * Storage Tiers/Classes
 
@@ -159,13 +178,30 @@ S3 gives unlimited storage.
 
   Version deletes are not replicated.
 
+* Lifecycle Management
+
+  Click a Bucket then select /Management/->/Lifecycle/. Here you can define
+  lifecycle rules to automatically manage S3 objects. The following actions can
+  be done:
+  
+  - Transition to Standard - Infrequent Access Storage Class (after a minimum of
+    30 days).
+  - Archive to the Glacier Storage Class (after any number of days or a minimum
+    of 30 days after transition to Standard-IA).
+  - Permanently delete.
+
+  Lifecycle management can be used in conjunction with vertioning. It can be
+  applied to current versions and previous versions.
+
 * Command Line Tools
 
-  The AWS CLI can be used to access S3. After running ~aws configure~ to set
-  things up, type ~aws s3 ls~ to see all your buckets. Copy object from one
-  bucket to another with ~aws s3 cp --recursive s3://<bucket1> s3://<bucket2>~.
+  The AWS CLI can be used to access S3.
 
-* TODO
-
-  - life cycle management.
-  - Read the AS3 FAQ before taking the exam. It comes up A LOT!
+  - List buckets:
+    - ~aws s3 ls~
+  - Create a bucket:
+    - ~aws s3 mb s3://<bucket>~
+  - Copy to an object to a bucket.
+    - ~aws s3 cp <file> s3://<bucket>~
+  - Copy a folder to a bucket.
+    - ~aws s3 cp --recursive <folder> s3://<bucket>~
