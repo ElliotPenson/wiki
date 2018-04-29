@@ -1,0 +1,60 @@
+#+TITLE: AWS Snowball
+#+AUTHOR: Elliot Penson
+
+Snowball is a data transport solution that allows you to bypass the
+internet. Snowball appliances (actual physical devices) are shipped to you for
+transfer. Snowball can import from and export to S3.
+
+* Import/Export
+
+  AWS Import/Export Disk accelerates moving large amounts of data into and out
+  of the AWS cloud using portable storage devices for transport. Using this
+  service, you send your own storage devices to Amazon and transfer data
+  directly onto and off using their internal network.
+
+  This service is deprecated; it's still available although Snowball is advised.
+
+* Snowball Types
+
+** Snowball
+
+   Snowball is a petabyte-scale data transport solution that uses secure
+   appliances to transfer large amounts of data into and out of AWS. Using
+   Snowball addresses common challenges with large-scale data transfers
+   including high network costs, long transfer times, and security
+   concerns. Transferring data with Snowball is simple, fast, secure, and can be
+   as little as one-fifth the cost of high-speed internet.
+
+   80TB snowball in all regions. Snowball uses multiple layers of security
+   designed to protect your data including tamper-resistant enclusures, 256-bit
+   encryption, and an industry-standard Trusted Platform Module (TPM) designed
+   to ensure both security and full chain-of-custody of your data. Once the data
+   transfer job has been processed and verified, AWS performs a software erasure
+   of the Snowball appliance.
+
+** Snowball Edge
+
+   AWS Snowball Edge is a 100TB data transfer device with on-board storage and
+   /compute capabilities/. You can use Snowball Edge to move large amounts of
+   data into and out of AWS, as a temporary storage tier for large local
+   datasets, or to support local workloads in remote or offline locations. For
+   example, airline technicians might use Snowball Edge on a plane to collect
+   data about how the engine is running. Even things like their lambda functions
+   will work on the device. Once the plane lands things can be connected with
+   AWS again. It's an AWS datacenter in a box.
+
+   Snowball Edge connects to your existing applications and infrastructure using
+   standard storage interfaces, streamlining the data transfer process and
+   minimizing setup and integration. Snowball Edge can cluster together to form
+   a local storage tier and process your data on-premises, helping ensure your
+   applications continue to run even when they are not able to access the cloud.
+   
+** Snowmobile
+
+   AWS Snowmobile is an exabyte-scale data transfer service used to move
+   extremely large amounts of data to AWS. You can transfer up to 100PB per
+   Snowmobile, a 45-foot long ruggedized shipping container, pulled by a
+   semi-trailer truck. Snowmobile makes it easy to move massive volumes of data
+   to the cloud, including video libraries, image repositories, or even a
+   complete data center migration. Transferring data with Snowmobile is secure,
+   fast, and cost effective.
