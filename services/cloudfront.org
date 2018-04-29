@@ -1,0 +1,67 @@
+#+TITLE: Amazon CloudFront
+#+AUTHOR: Elliot Penson
+
+CloudFront is Amazon's Content Delivery Network (CDN). A CDN is a system of
+distributed servers (network) that deliver web pages and other web content to a
+user based on the geographic locations of the user, the origin of the web page
+and a content delivery server.
+
+Let's that we're running a web site from London without a CDN. We'll get
+different latencies from different locations. This site might be fast for users
+in France. Unfortunately it might be slow for users in Australia.
+
+With CloudFront, users contact an /Edge Location/ instead. Amazon currently have
+over 50 edge locations. This Edge Location will check if the object is
+cached. If not, the object will be retrieved from the /Origin/ and then cached
+for a certain /Time To Live/ (TTL). It's only the first user that experiences
+the penalty.
+
+Amazon CloudFront can be used to deliver your entire website, including dynamic,
+static, streaming, and interactive content using a global network of edge
+locations. Requests for your content are automatically routed to the nearest
+edge location, so content is delivered with the best possible performance.
+
+Amazon CloudFront is optimized to work with other Amazon Web Services, like
+Amazon Simple Storage (S3), Amazon Elastic Compute Cloud (EC2), Amazon Elastic
+Load Balancing, and Amazon Route 53. Amazon CloudFront also works seamlessly
+with any non-AWS origin server which stores the original, definitive versions of
+your files.
+
+* Terminology
+
+  - *Edge Location*: The location where content will be cached. This is separate to
+    an AWS Region/Availability Zone. Edge locations are not just READ only, you
+    can write to them too (PUT).
+  - *Origin*: The origin of all the files that the CDN will distribute. This can
+    be either an S3 Bucket, an EC2 Instance, an Elastic Load Balancer, Route53,
+    or a non-AWS server.
+  - *Distribution*: The name given to the CDN which consists of a collection of
+    Edge Locations.
+    - *Web Distribution*: Typically used for websites. This is in contrast with
+      RTMP.
+    - *RTMP Distribution*: Used for media streaming.
+
+* Caching and Invalidating
+
+  Objects are cached for the life of the TTL (Time To Live). If the object is
+  changed in the origin, the changes won't be seen at the Edge Location until
+  the TTL has expired.
+
+  /Invalidating/ objects removes them from CloudFront edge caches. Clearing cached
+  objects costs money so you'll want to try and avoid it. Good CloudFront design
+  involves choosing an appropriate TTL for your application.
+
+* Restrictions
+
+  When creating a CloudFront distribution, you can choose to /Restrict Bucket
+  Access/. This prevents users from accessing the bucket without using an edge
+  location. If this feature is enabled you must choose an /Origin Access
+  Identity/. This is the user that will then be used to access the bucket.
+
+  /Restrict Viewer Access/ is an option that appears when creating a CloudFront
+  distribution. You can choose to use signed URLs or signed cookies. This option
+  allows one to make sure that only certain (e.g. paying) customers can access
+  content.
+
+  /Geo Restriction/ can be used to prevent users in selected countries from
+  accessing your content. You may create a blacklist or a whitelist.
