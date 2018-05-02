@@ -1,0 +1,113 @@
+#+TITLE: Amazon EC2
+#+AUTHOR: Elliot Penson
+
+Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides
+resizable compute capacity in the cloud. Amazon EC2 reduces the time required to
+obtain and boot new server instances to minutes, allowing you to quickly scale
+capacity, both up and down, as your computing requirements change. EC2 is
+effectively virtual machines in the cloud.
+
+Amazon EC2 changes the economics of computing by allowing you to pay only for
+capacity that you actually use. Amazon EC2 provides developers the tools to
+build failure resilient applications and isolate themselves from common failure
+scenarios.
+
+See the [[https://aws.amazon.com/ec2/faqs/][EC2 FAQs]] for more information.
+
+* Pricing Options
+
+** On Demand
+
+   Pay a fixed rate by the hour (or by the second) with no commitment.
+   
+   Use Cases:
+   - Applications with short term, spiky, or unpredictable workloads that cannot
+     be interrupted.
+   - Applications that are being developed or tested on Amazon EC2 for the first
+     time.
+   - Users that want the low cost and flexibility of Amazon EC2 without any
+     up-front payment or long-term commitment.
+
+** Reserved
+
+   Provides you with a capacity reservation, and offers a significant discount
+   on the hourly charge for an instance. 1 year or 3 year terms.
+
+   Use cases:
+  - Applications with a steady state or predictable usage.
+  - Applications that require reserved capacity.
+  - Users are able to make upfront payments to reduce their total computing
+    costs even further.
+
+** Spot
+
+   Enables you to bid whatever price you want for instance capacity, providing
+   for even greater savings if your applications have flexible start and end
+   times. Once the price goes below your bid, your instance will start up.
+
+   Use cases:
+   - Applications that have flexible start and end times.
+   - Applications that are only feasible at very low compute prices. Example
+     usage might be big data processing that can happen at 3AM.
+   - Users with urgent computing needs for large amounts of additional capacity.
+
+   *Note*: with spot instances, if you terminate the instance, you pay for the
+   hour. If AWS terminates the spot instance, you get the hour it was terminated
+   in for free.
+
+** Dedicated Hosts
+
+   Physical EC2 server /dedicated/ for your use. This in contrast to the other
+   types which are /shared/. Dedicated Hosts can help you reduce costs by
+   allowing you to use your existing server-bound software licenses. Can be
+   purchased on-demand (hourly). Can also be purchased as a reservation for up
+   to 70% off the on-demand price.
+
+   Use cases:
+   - Useful for regulatory requirements that may not support multi-tenant
+     virtualization.
+   - Great for licensing which does not support multi-tenancy or cloud
+     deployments.
+
+* Instance Types
+
+  [[file:../images/ec2-instance-types.png]]
+
+  These types can be remembered with...
+
+  - *D*: Density.
+  - *R*: RAM.
+  - *M*: Main choice for general purpose applications.
+  - *C*: Compute.
+  - *G*: Graphics.
+  - *I*: IOPS.
+  - *F*: Field Programmable Gate Array.
+  - *T*: "Tiny", cheap general purpose.
+  - *P*: Graphics (think Pics)
+  - *X*: Extreme memory.
+
+  #+attr_html: :width 400px
+  [[file:../images/dr-mcgift-px.png]]
+
+* Amazon Machine Image (AMI)
+
+  When first creating an EC2 instance you get to choose an Amazon Machine Image
+  (AMI). An AMI is a virtual appliance. The main component is a read-only
+  filesystem image that includes an operating system and any additional
+  software.
+
+* Termination
+
+  /Terminating/ an instance shuts it down and deletes it. On an EBS-backed
+  instance, the default action is for the root EBS volume to be deleted when the
+  instance is terminated.
+
+  *Termination Protection* can be set on EC2 instances to prevent termination
+  until the option is disabled.
+
+* Encryption
+
+  EBS volumes may be encrypted. However, EBS Root Volumes of your DEFAULT AMIs
+  cannot be encrypted. You can also use a third party tool (such as bit locker
+  etc) to encrypt the root volume, or this can be done when creating AMIs in the
+  AWS console or using the API. Of course, additional volumes can be encrypted.

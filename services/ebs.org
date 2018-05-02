@@ -1,0 +1,40 @@
+#+TITLE: Amazon EBS
+#+AUTHOR: Elliot Penson
+
+Amazon Elastic Block Storage (EBS) allows you to create storage volumes and
+attach them to Amazon EC2 instances. Once attached, you can create a file system
+on top of these volumes, run a database, or use them in any other way you would
+use a block device. Amazon EBS volumes are placed in a specific Availability
+Zone, where they are automatically replicated to protect you from the failure of
+a single component.
+
+Note that you cannot mount 1 EBS volume to multiple EC2 instances. For that,
+you'll need to use EFS.
+
+* EBS Volume Types
+
+** SSD
+
+   - General Purpose SSD (GP2)
+     - Balances both price and performance.
+   - Provisioned IOPS SSD (IO1)
+     - Designed for I/O intensive applications such as large relational or NoSQL
+       databases.
+     - Use if you need more than 10,000 IOPS (input/output operations per
+       second).
+
+** Magnetic
+
+   - Throughput Optimized HDD (ST1)
+     - Typical use cases include big data, data warehouses, and log
+       processing. This volume type is best with sequential writes.
+     - Note that you cannot boot these volumes.
+   - Cold HDD (SC1)
+     - Lowest cost storage for infrequently access workloads.
+     - Typical use case is a file server.
+     - Note that you cannot boot these volumes.
+   - Magnetic (Standard)
+     - Lowest cost per gigabyte of all EBS volume types that is
+       bootable.
+     - Magnetic volumes are ideal for workloads where data is accessed
+       infrequently, and applications where the lowest storage cost is important.
