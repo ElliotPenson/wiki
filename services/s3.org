@@ -4,9 +4,8 @@
 S3 (Simple Storage Service) provides secure, durable, highly-scalable /object
 storage/ in the cloud. Object storage (also known as /object-based storage/)
 saves flat files. S3 is not /block-based/ storage and thus doesn't allow you to
-run an operating system or a database.
-
-S3 gives unlimited storage.
+run an operating system or a database. You can have 100 buckets per account by
+default.
 
 See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
 
@@ -19,7 +18,8 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
 
 * Objects
 
-  S3 provides simple key, value store. Files can be from 0 bytes to 5 TB.
+  S3 provides simple key, value store. Files can be from 0 bytes to 5 TB. S3
+  gives unlimited storage.
 
   Objects consist of the following:
   - Key (the object name)
@@ -34,6 +34,8 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
   S3 is lexographical. Objects are stored in alphabetical order. Files that have
   a very similar name are stored in a similar location. You may want to add some
   randomness to the beginning of the file name to prevent bottlenecks.
+
+  You can load files to S3 much faster by enabling /multipart upload/.
 
 * Buckets
 
@@ -75,16 +77,17 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
 * Encryption
   
   - In Transit;
-    - SSL/TLS
+    - SSL/TLS (saying that you have to use HTTPS).
   - At Rest;
     - Server Side Encryption
       1. S3 Managed Keys (*SSE-S3*)
          - Most common method. Uses AES-256.
       2. AWS Key Management Service, Managed Keys (*SSE-KMS*)
          - More expensive method. Provides an extra layer of protection using an
-           envelope key. This key protects your encryption key. In addition,
-           SSE-KMS provides an audit trail of when keys were used and by
-           whom. Lastly, you can also manage your keys yourself.
+           envelope key (which has separate permissions). This key protects your
+           encryption key. In addition, SSE-KMS provides an audit trail of when
+           keys were used and by whom. Lastly, you can also manage your keys
+           yourself.
       3. Customer Provided Keys (*SSE-C*)
          - You manage the keys but Amazon manages the encryption.
     - Client Side Encryption
@@ -92,15 +95,17 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
 
 * Storage Tiers/Classes
 
-  - *S3* - 99.99% availability, 99.99999999999% durability, stored redundantly
-    across multiple devices in multiple facilities and is designed to sustain
-    the loss of 2 facilities concurrently.
-  - *S3 - IA* (Infrequently Accessed) For data that is accessed less frequently,
-    but requires rapid access when needed. Lower fee than S3, but you are
-    charged a retrieval fee.
-  - *RRS* (Reduced Redundancy Storage) - Designed to provide 99.99% durability
-    and 99.99% availability of objects over a given year. We can only lose 1
-    facility.
+  - *S3* - (durable, immediately available, frequently accessed). 99.99%
+    availability, 99.99999999999% durability, stored redundantly across multiple
+    devices in multiple facilities and is designed to sustain the loss of 2
+    facilities concurrently.
+  - *S3 - IA* (Infrequently Accessed) - (durable immediately available,
+    infrequently accessed). For data that is accessed less frequently, but
+    requires rapid access when needed. Lower fee than S3, but you are charged a
+    retrieval fee.
+  - *RRS* (Reduced Redundancy Storage) - (data that is easily reproducible, such
+    as thumnails etc). Designed to provide 99.99% durability and 99.99%
+    availability of objects over a given year. We can only lose 1 facility.
   - *Glacier* - Very cheap, but used for archival only. It takes 3-5 hours to
     restore from Glacier.
 
@@ -138,6 +143,12 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
   locations. As the data arrives at an edge location, data is routed to Amazon
   S3 over an optimized network path.
 
+  A distinct URL is used for transfer acceleration:
+  ~<bucket>.s3-accelerate.amazonaws.com~.
+
+  You can enable Transfer Acceleration by clicking on a bucket and selecting
+  /Properties/ -> /Transfer acceleration/.
+
 * Tags
 
   You can tag buckets and objects. Individual objects don't inherit the tag from
@@ -156,11 +167,11 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
 
   Once enabled, versioning cannot be disabled. Versioning can only be
   /suspended/ after turned on.
-  
-  /MFA Delete/ helps stop people from accidentally deleting a version. This
-  multi-factor authentication provides an extra layer of security.
 
   Versioning integrates with lifecycle rules.
+
+  /MFA Delete/ helps stop people from accidentally deleting a version. This
+  multi-factor authentication provides an extra layer of security.
 
 * Cross Region Replication
 
@@ -185,13 +196,25 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
   be done:
   
   - Transition to Standard - Infrequent Access Storage Class (after a minimum of
-    30 days).
+    30 days. Data must also be at least 128KB).
   - Archive to the Glacier Storage Class (after any number of days or a minimum
     of 30 days after transition to Standard-IA).
   - Permanently delete.
 
   Lifecycle management can be used in conjunction with vertioning. It can be
-  applied to current versions and previous versions.
+  applied to current versions and previous versions. Can also be used without
+  versioning.
+
+* Static Website Hosting
+
+  S3 allows static website hosting. These websites may contain client-side
+  scripts. Dynamic, service-side processing is not supported.
+
+  The URL for static website hosting looks like:
+  ~<bucket>.s3-website-<region>.amazonaws.com~. For example
+  http://elliotp.s3-website-us-east-1.amazonaws.com.
+
+  S3 static website hosting scales automatically and is very cheap.
 
 * Command Line Tools
 

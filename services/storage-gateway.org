@@ -17,9 +17,9 @@ option that is right for you.
 * Four Types of Storage Gateways
 
   - *File Gateway (NFS)*: Flat files are stored directly on S3.
-  - *Volumes Gateway (iSCSI)*: Block storage. e.g. a virtual hard drive. Not
-    stored in S3.
-    - *Stored Volumes*: Store an entire copy of your data on-premises.
+  - *Volumes Gateway (iSCSI)*: Block storage. e.g. a virtual hard drive.
+    - *Stored Volumes*: Store an entire copy of your data on-premises. Backed up
+      as a snapshot to S3 asynchronously.
     - *Cached Volumes*: Only storing the most recently accessed on-premises.
   - *Tape Gateway (VTL)*: Used for backup and uses popular backup applications
     like NetBackup, Backup Exec, Veeam, etc.

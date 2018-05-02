@@ -43,9 +43,9 @@ your files.
 
 * Caching and Invalidating
 
-  Objects are cached for the life of the TTL (Time To Live). If the object is
-  changed in the origin, the changes won't be seen at the Edge Location until
-  the TTL has expired.
+  Objects are cached for the life of the TTL (Time To Live, in seconds). If the
+  object is changed in the origin, the changes won't be seen at the Edge
+  Location until the TTL has expired.
 
   /Invalidating/ objects removes them from CloudFront edge caches. Clearing cached
   objects costs money so you'll want to try and avoid it. Good CloudFront design
