@@ -94,7 +94,7 @@ See the [[https://aws.amazon.com/ec2/faqs/][EC2 FAQs]] for more information.
   When first creating an EC2 instance you get to choose an Amazon Machine Image
   (AMI). An AMI is a virtual appliance. The main component is a read-only
   filesystem image that includes an operating system and any additional
-  software.
+  software. You can create AMIs from both Volumes and Snapshots.
 
 * Termination
 
@@ -111,3 +111,33 @@ See the [[https://aws.amazon.com/ec2/faqs/][EC2 FAQs]] for more information.
   cannot be encrypted. You can also use a third party tool (such as bit locker
   etc) to encrypt the root volume, or this can be done when creating AMIs in the
   AWS console or using the API. Of course, additional volumes can be encrypted.
+
+* Instance Lifecycle
+
+  #+attr_html: :width 500px
+  [[file:../images/ec2-instance-lifecycle.png]]
+
+* Security Groups
+
+  A Security Group is a virtual firewall. It's a set of rules that control the
+  traffic to and from your instance.
+
+  You can have any number of EC2 instances within a Security Group. You can
+  also have multiple Security Groups attached to EC2 instances.
+
+  Changes to Security Groups take effect immediately.
+
+** Rules
+   
+   Security Group rules are a whitelist; you can specify allow rules, but not
+   deny rules. This means that you cannot block specific IP addresses using
+   Security Groups (for this purpose use Network Access Control Lists).
+
+   Rules can be *inbound* or *outbound*. Rules are *stateful*; If you create an
+   inbound rule allowing traffic in, that traffic is automatically allowed back
+   out again.
+
+** Defaults
+
+   All inbound traffic is blocked by default. All outbound traffic is allowed by
+   default.
