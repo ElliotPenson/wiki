@@ -1,9 +1,57 @@
 #+TITLE: Amazon CloudWatch
 #+AUTHOR: Elliot Penson
 
-Amazon CloudWatch provides monitoring services for AWS.
+Amazon CloudWatch provides monitoring services for AWS resources.
 
-* Billing
+Note that CloudWatch is different than CloudTrail. CloudTrail lets you create an
+audit trail of changes to your AWS environment. For example, you can log when
+you create a new user or a new role. CloudWatch is for performance monitoring of
+/specific/ resources.
 
-  Billing alarms may be created. You can choose to receive an email if your
-  estimated AWS charges go beyond a certain threshold.
+* Metrics
+
+  Metrics are the fundamental concept in CloudWatch. A metric represents a
+  time-ordered set of data points that are published to CloudWatch. AWS services
+  send metrics to CloudWatch, and you can send your own custom metrics to
+  CloudWatch.
+
+** Billing
+   
+   Billing alarms may be created. You can choose to receive an email if your
+   estimated AWS charges go beyond a certain threshold.
+
+** EC2
+
+   EC2 monitoring can be /basic/ or /detailed/. Basic (or /standard/) monitoring
+   creates metrics at a five-minute frequency. Detailed monitoring happens every
+   minute.
+
+   Default metrics for EC2 instances:
+   - CPU utilization
+   - Disk usage (~DiskReadBytes~, ~DiskReadOps~, ~DiskWriteBytes~,
+     ~DiskWriteOps~)
+   - Data transfer (~NetworkIn~, ~NetworkOut~, ~NetworkPacketsIn~,
+     ~NetworkPacketsOut~).
+   - Status checks
+
+* Dashboard
+
+  CloudWatch Dashboards let you display metrics. Each Dashboard displays
+  widgets. Each widget can be markdown text, a number, or a chart.
+
+* Alarms
+
+  CloudWatch Alarms notify you when a metric hits a particular threshold. An
+  alarm has three possible states: ~OK~, ~ALARM~, and ~INSUFFICIENT_DATA~.
+
+* Events
+
+  CloudWatch Events help you respond to state changes in your AWS resources. For
+  example, you could have an event that automatically triggers a Lambda to
+  update your DNS when an EC2 instance comes online.
+
+* Logs
+
+  CloudWatch Logs help you aggregate, monitor, and store logs. These logs
+  usually happen at the application layer (unlike the /host/ layer). To store
+  logs, download an /agent/ on your EC2 instance.
