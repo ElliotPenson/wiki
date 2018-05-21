@@ -44,8 +44,11 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:services/cloudwatch.org][Amazon CloudWatch]]
     - [[file:services/ebs.org][Amazon EBS]]
     - [[file:services/ec2.org][Amazon EC2]]
+    - [[file:services/efs.org][Amazon EFS]]
     - [[file:services/iam.org][Amazon IAM]]
     - [[file:services/s3.org][Amazon S3]]
+    - [[file:services/aws-cli.org][AWS Command Line Interface]]
+    - [[file:services/lambda.org][AWS Lambda]]
     - [[file:services/snowball.org][AWS Snowball]]
     - [[file:services/storage-gateway.org][AWS Storage Gateway]]
 

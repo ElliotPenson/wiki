@@ -1,0 +1,18 @@
+#+TITLE: AWS Command Line Interface
+#+AUTHOR: Elliot Penson
+
+* Credentials
+
+  For general use, the ~aws configure~ command is the fastest way to set up your
+  AWS CLI installation. The AWS CLI will prompt you for four pieces of
+  information. AWS Access Key ID and AWS Secret Access Key are your account
+  credentials.
+
+  The AWS CLI supports /named profiles/ stored in the config and credentials
+  files. You can configure additional profiles by using ~aws configure~ with the
+  ~--profile~ option or by adding entries to the config and credentials
+  files. To use a named profile, add the ~--profile~ option to your command.
+  
+* Commands
+
+  ~aws <service> <command>~. Like ~aws s3 ls~.

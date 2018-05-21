@@ -1,0 +1,76 @@
+#+TITLE: AWS Lambda
+#+AUTHOR: Elliot Penson
+
+AWS Lambda is a compute service where you can upload your code and create a
+Lambda function. AWS Lambda takes care of provisioning and managing the servers
+that you use to run the code. You don't have to worry about operating systems,
+patching, scaling, etc. You can use Lambda in the following ways:
+
+- Event-driven compute service where AWS Lambda runs your code in response to
+  events. These events could be changes to data in an Amazon S3 bucket or an
+  Amazon DynamoDB table.
+- As a compute service to run your code in response to HTTP requests using
+  Amazon API Gateway or API calls made using AWS SDKs.
+
+* Background
+
+  The history of cloud has consisted on layer after layer of abstraction. The
+  first of these was the *Data Center*. In 2006, Amazon introduced EC2. You
+  could create servers from your command line. This was the basis of
+  Infrastructure as a service (*IaaS*). Platform as a service (*PaaS*) was a new
+  innovation where you only had to upload your code and a company would handle
+  the rest. For Amazon, this was Elastic Beanstalk. You were still managing the
+  operating system here. *Containers* were the next layer of
+  abstraction. *Serverless* (*Lambda* for Amazon) is the latest
+  innovation. Literally all you have to worry about is your code.
+
+* Runtimes
+
+  Lambdas can be written in C#, Go, Java, Node.js, and Python.
+
+* Scalability
+
+  In the IT world, to *scale horizontally* (or *scale out/in*) involves adding
+  new nodes (such as launching a new computer) To *scale vertically* (or *scale
+  up/down*) means to add resources to (or remove resources from) a single node
+  in a system (e.g. CPUs, RAM).
+
+  Lambda will scale out (not up) automatically. If we have two users sending two
+  HTTP requests to API Gateway, that's going to trigger two Lambda
+  functions. It'll be the same function, but just two instances. In other words,
+  Lambda functions are independent, 1 event = 1 function.
+
+* Triggers
+
+  - API Gateway
+  - Alexa Skills Kit
+  - CloudFront
+  - CloudWatch Events
+  - CloudWatch Logs
+  - DynamoDB
+  - Kinesis
+  - S3
+  - SNS
+
+  and others...
+
+  Of course, Lambda functions can trigger other Lambda functions. One event can
+  trigger /n/ functions if the functions trigger other functions.
+  
+* Pricing
+
+  - Number of requests
+    - First 1 million requests are free. $0.20 per 1 million requests
+      thereafter.
+  - Duration
+    - Duration is calculated from the time your code begins executing until it
+      returns or otherwise terminates, rounded up to the nearest 100ms. The
+      price depends on the amount of memory you allocate to your function. You
+      are charged $0.00001667 for every GB-second used.
+
+  Note that Lambda functions have a maximum threshold of five minutes.
+
+* Miscellaneous
+
+  Lambda can do things globally, you can use it to back up S3 buckets to other
+  S3 buckets etc.
