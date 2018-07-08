@@ -98,7 +98,12 @@ See the [[https://aws.amazon.com/ec2/faqs/][EC2 FAQs]] for more information.
 
   If you set up an instance, take a snapshot, and then create an AMI, you can
   use that AMI to launch a new instance that has the same setup. This template
-  can ease future set ups.
+  can ease future set ups. Note that you cannot delete a snapshot of an EBS
+  Volume that is used as the root device of a registered AMI.
+
+  AMIs are regional. You can only launch an AMI from the region in which it is
+  stored. However you can copy AMIs to other regions using the console, command
+  line, or the Amazon EC2 API.
 
 ** AMI Types
 
@@ -115,7 +120,7 @@ See the [[https://aws.amazon.com/ec2/faqs/][EC2 FAQs]] for more information.
    Instance Store Volumes are sometimes called Ephemeral Storage. Instance Store
    Volumes cannot be stopped. If the underlying host fails, you will lose your
    data. EBS backed instances can be stopped. You will not lose the data on this
-   instance if it is stopped. You can reboot both, you will not lost your
+   instance if it is stopped. *You can reboot both*, you will not lost your
    data. By default, both ROOT volumes will be deleted on termination, however
    with EBS volumes, you can tell AWS to keep the root device volume.
 
@@ -125,8 +130,16 @@ See the [[https://aws.amazon.com/ec2/faqs/][EC2 FAQs]] for more information.
   instance, the default action is for the root EBS volume to be deleted when the
   instance is terminated.
 
+  You can control whether an EBS root volume is deleted when its associated
+  instance is terminated. The default delete-on-termination behaviour depends on
+  whether the volume is a root volume, or an additional volume. By default, the
+  DeleteOnTermination attribute for root volumes is set to 'true.' However, this
+  attribute may be changed at launch by using either the AWS Console or the
+  command line. For an instance that is already running, the DeleteOnTermination
+  attribute must be changed using the CLI.
+
   *Termination Protection* can be set on EC2 instances to prevent termination
-  until the option is disabled.
+  until the option is disabled. Termination Protection is turned off by default.
 
 * Encryption
 
@@ -171,22 +184,7 @@ See the [[https://aws.amazon.com/ec2/faqs/][EC2 FAQs]] for more information.
 
   #+BEGIN_SRC sh
     ssh ec2-user@<public-ip> -i keyPair.pem
-  #+END_SRC
-
-* Load Balancing
-
-  Load balancers distribute the workload across multiple computing
-  resources. AWS provides *Elastic Load Balancer (ELB)* for load balancing EC2
-  instances. Instances monitored ELB are reported as /InService/ or
-  /OutofService/. Once your EC2 instance is out of service, traffic won't be
-  sent there. /Health Checks/ check the instance by talking to it (usually HTTP
-  or HTTPS).
-
-  Elastic Load Balancers have their own DNS name. Unlike EC2, you don't get a
-  public IP address for you load balancer. AWS manages the IP behind the scenes.
-
-  AWS provides an /Application Load Balancer/ and /Classic Load Balancer/. See
-  the ELB FAQ for more information.
+  #+END_ARC
 
 * AIM Roles and EC2
   
@@ -196,6 +194,10 @@ See the [[https://aws.amazon.com/ec2/faqs/][EC2 FAQs]] for more information.
   manage. Roles can improve security and ease management. Create a role using
   IAM. Roles can be attached to EC2 instances when they are created or even when
   they are running.
+
+  You can change the permissions to a role, even if that role is already
+  assigned to an existing EC2 instance, and these changes will take effect
+  immediately.
 
 * Bootstrap Scripts
 
@@ -252,4 +254,12 @@ See the [[https://aws.amazon.com/ec2/faqs/][EC2 FAQs]] for more information.
     an AMI from your existing instance, and then launch a new instance from the
     AMI into a placement group.
 
+** Placement Group Types
 
+   AWS has two types of Placement Groups:
+
+   - Clustered Placement Groups
+     - Always going to be in one availability zone. Used for low-latency, high
+       throughput.
+   - Spread Placement Groups
+     - Guarantees separate hardware.

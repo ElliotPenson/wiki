@@ -1,0 +1,58 @@
+#+TITLE: Amazon Elastic Load Balancers
+#+AUTHOR: Elliot Penson
+
+Load balancers distribute the workload across multiple computing
+resources. AWS provides *Elastic Load Balancer (ELB)* for load balancing EC2
+instances. Instances monitored ELB are reported as /InService/ or
+/OutofService/. Once your EC2 instance is out of service, traffic won't be
+sent there. /Health Checks/ check the instance by talking to it (usually HTTP
+or HTTPS).
+
+Elastic Load Balancers have their own DNS name. Unlike EC2, you don't get a
+public IP address for you load balancer. AWS manages the IP behind the scenes.
+
+* Load Balancer Types
+  
+  AWS provides three types of load balancers: /Application Load Balancer/,
+  /Network Load Balancer/, and /Classic Load Balancer/. Nine times out of ten
+  you want to use the Application Load balancer. If extreme performance and
+  static IP is needed for your application then use the Network Load
+  Balancer. Use the Classic Load Balancer if your application is built within
+  the EC2 classic network.
+  
+** Application Load Balancer
+   
+   Best suited for load balancing of HTTP and HTTPS traffic. They operate at
+   OSI Layer 7 and are application-aware. They are intelligent, and you can
+   create advanced request routing, sending specified requests to specific web
+   servers.
+   
+** Network Load Balancer
+   
+   Best suited for load balancing of TCP traffic where extreme performance is
+   required. Operating at the connection level (OSI Layer 4), Network Load
+   Balancers are capable of handling millions of requests per second, while
+   maintaining ultra-low latencies. Use for extreme performance! This is the
+   most costly type of ELB.
+   
+** Classic Load Balancers
+   
+   Legacy Elastic Load Balancers. You can load balance HTTP/HTTPS applications
+   and use Layer 7-specific features, such as X-Forwarded and sticky
+   sessions. You can also use strict Layer 4 load balancing for applications
+   that rely purely on the TCP protocol.
+   
+* Load Balancer Errors
+  
+  If your application stops responding, the ELB responds with a 504 error. This
+  gateway time out means that the application is having issues. This could be
+  either at the web server layer or at the database layer. You'll need to
+  identity where the application is failing, and scale it up or out where
+  possible.
+  
+* X-Forwarded-For Header
+  
+  When an ELB sends a user request on to the underlying EC2 instance, an
+  internal IP address is used. This means that the original IP
+  (e.g. ~124.12.3.231~) isn't accessible. To solve this problem, the
+  ~X-Forwarded-For~ header will provide the user's IPv4 public address.
