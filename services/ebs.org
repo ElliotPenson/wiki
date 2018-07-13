@@ -12,9 +12,9 @@ Note that you cannot mount 1 EBS volume to multiple EC2 instances. For that,
 you'll need to use EFS.
 
 * Volume Types
-
+  
 ** SSD
-
+   
    - General Purpose SSD (GP2)
      - Balances both price and performance.
    - Provisioned IOPS SSD (IO1)
@@ -22,9 +22,9 @@ you'll need to use EFS.
        databases.
      - Use if you need more than 10,000 IOPS (input/output operations per
        second).
-
+       
 ** Magnetic
-
+   
    - Throughput Optimized HDD (ST1)
      - Typical use cases include big data, data warehouses, and log
        processing. This volume type is best with sequential writes.
@@ -38,27 +38,42 @@ you'll need to use EFS.
        bootable.
      - Magnetic volumes are ideal for workloads where data is accessed
        infrequently, and applications where the lowest storage cost is important.
-
+       
 * Properties
-
+  
   - You can change EBS volume sizes on the fly (without downtime), including
     changing the size and storage type.
-  - Volumes will ALWAYS be in the same Availability Zone as the EC2 instance.
-  - To move an EC2 volume from one AZ/Region to another, take a snapshot or an
+  - Volumes must ALWAYS be in the same Availability Zone as the EC2 instance.
+  - To move an EBS volume from one AZ/Region to another, take a snapshot or an
     image of it, then copy it to the new AZ/Region.
-
+    
 * Snapshots
-
+  
   Snapshots are point in time copies of Volumes. Snapshots exist in
   S3. Snapshots are incremental; only the blocks that have changed since your
-  last snapshot are moved to S3.
-
+  last snapshot are moved to S3. If this is your first snapshot, it may take
+  some time to create.
+  
   To create a snapshot for Amazon EBS volumes that serve as root devices, you
   should stop the instance before taking the snapshot. However you can take a
   snap while the instance is running.
-
-  Snapshots of encrypted volumes are encrypted automatically. Volumes restored
-  from encrypted snapshots are encrypted automatically.
-
+  
   You can share snapshots, but only if they are unencrypted. These snapshots can
   be shared with other AWS accounts or made public.
+  
+* Encryption
+  
+** Attached Volumes
+   
+   You may choose to encrypt attached EBS volumes when you create them. Volumes
+   that are created from encrypted snapshots are automatically encrypted, and
+   volumes that are created from unencrypted snapshots are automatically
+   unencrypted.
+   
+** Root Volumes
+   
+   You can encrypt the root device volume using the operating system level
+   encryption. This may be done with a third-party tool like BitLocker. You can
+   also encrypt the root device volume by first taking a snapshot of that volume,
+   and then creating a copy of that snap with encryption. You can then make an
+   AMI of this snap and deploy the encrypted root device volume.

@@ -141,13 +141,6 @@ See the [[https://aws.amazon.com/ec2/faqs/][EC2 FAQs]] for more information.
   *Termination Protection* can be set on EC2 instances to prevent termination
   until the option is disabled. Termination Protection is turned off by default.
 
-* Encryption
-
-  EBS volumes may be encrypted. However, EBS Root Volumes of your DEFAULT AMIs
-  cannot be encrypted. You can also use a third party tool (such as bit locker
-  etc) to encrypt the root volume, or this can be done when creating AMIs in the
-  AWS console or using the API. Of course, additional volumes can be encrypted.
-
 * Instance Lifecycle
 
   #+attr_html: :width 500px
