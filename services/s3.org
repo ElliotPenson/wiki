@@ -22,14 +22,14 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
   gives unlimited storage.
 
   Objects consist of the following:
-  - Key (the object name)
-  - Value (the object's data: a sequence of bytes).
+  - Key (name)
+  - Value (data: a sequence of bytes).
   - Version ID
   - Metadata (data about the data. e.g. date)
-  - Subresources
-    - Access Control Lists (ACL): who can access this object - fine-grained
-      permissions.
-    - Torrent
+  - Subresources (bucket-specific configuration)
+    - Bucket Policies, Access Control Lists (ACL).
+    - Cross Origin Resource Sharing (CORS)
+    - Transfer Acceleration
   
   S3 is lexographical. Objects are stored in alphabetical order. Files that have
   a very similar name are stored in a similar location. You may want to add some
@@ -46,7 +46,7 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
 * Data Consistency Model
 
   - Read after write consistency for PUTS of new objects.
-  - Eventual consistency for overwrite PUTS and DELETE (can take some time to
+  - /Eventual consistency/ for overwrite PUTS and DELETE (can take some time to
     propagate).
 
   Updates to S3 are atomic. You will either get the old file or the new
@@ -58,19 +58,19 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
   withstand failure.
 
   - Built for 99.99% availability for the S3 platform.
-  - Amazon guarantee 99.99% availability.
-  - Amazon guarantees 99.99999999999% durability for S3 information (remember 11
-    x 9's). This is the /eleven 9s durability agreement/.
+  - Amazon guarantee 99.9% availability (note 3x9).
+  - Amazon guarantees 99.999999999% durability for S3 information (note
+    11x9). This is the /eleven 9s durability agreement/.
 
 * Security
 
   - By default, all newly created buckets are PRIVATE.
   - You can setup access control to your buckets using;
     - Bucket Policies
-      - Bucket-wide permissions.
+      - Applied at the /bucket/ level.
     - Access Control Lists (ACL)
-      - Can drill down to individual objects.
-  - S3 buckets can be configured to create access logs which log all requests
+      - Applied at an /object/ level.
+  - S3 buckets can be configured to create *access logs* which log all requests
     made to the S3 bucket. This logs can be setup to be saved to another
     bucket. Of course, logging is important for security.
 
@@ -95,44 +95,43 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
 
 * Storage Tiers/Classes
 
-  - *S3* - (durable, immediately available, frequently accessed). 99.99%
-    availability, 99.99999999999% durability, stored redundantly across multiple
-    devices in multiple facilities and is designed to sustain the loss of 2
-    facilities concurrently.
-  - *S3 - IA* (Infrequently Accessed) - (durable immediately available,
-    infrequently accessed). For data that is accessed less frequently, but
-    requires rapid access when needed. Lower fee than S3, but you are charged a
-    retrieval fee.
-  - *RRS* (Reduced Redundancy Storage) - (data that is easily reproducible, such
-    as thumnails etc). Designed to provide 99.99% durability and 99.99%
-    availability of objects over a given year. We can only lose 1 facility.
-  - *Glacier* - Very cheap, but used for archival only. It takes 3-5 hours to
-    restore from Glacier.
+  - *S3*
+    - Durable, immediately available, frequently accessed.
+    - 99.99% availability, 99.99999999999% durability, stored redundantly across
+      multiple devices in multiple facilities and is designed to sustain the
+      loss of 2 facilities concurrently.
+  - *S3 - IA* (Infrequently Accessed)
+    - Durable, immediately available, infrequently accessed.
+    - Lower fee than S3, but you are charged a retrieval fee.
+  - *S3 - One Zone IA*
+    - Similar to IA, but data is stored in a single Availability
+      Zone. Durability is the same, but we have 99.5% availability.
+    - Cost is 20% less than regular S3 - IA.
+  - *RRS* (Reduced Redundancy Storage)
+    - Data that is easily reproducible, such as thumnails etc.
+    - Designed to provide 99.99% durability and 99.99% availability of objects
+      over a given year. We can only lose 1 facility.
+  - *Glacier*
+    - Very cheap, but used for archival only. It takes 3-5 hours to restore from
+      Glacier. First byte latency is minutes or hours instead of milliseconds
+      like S3 services.
+    - Costs as little as $0.01 per gigabyte per month.
 
-  Reduced Redundancy Storage is usually used for data that is reproducible, such
-  as thumbnails.
-
-  Glacier is an extremely low-cost storage service for data archival. Amazon
-  Glacier stores data for as little as $0.01 per gigabyte per month, and is
-  optimized for data that is infrequently accessed and for which retrieval times
-  of 3 to 5 hours are suitable. Glacier is an independent service but it tightly
-  integrated with S3. First byte latency is minutes or hours instead of
-  milliseconds like S3 services.
-
-  |                                     |             S3 |         S3-IA |          RRS | Glacier          |
-  |-------------------------------------+----------------+---------------+--------------+------------------|
-  | Availability                        |         99.99% |         99.9% |       99.99% | N/A              |
-  | Durability                          | 99.9999999999% | 99.999999999% |       99.99% | 99.999999999%    |
-  | Concurrent facility fault tolerance |              2 |             2 |            1 | 2                |
-  | First byte latency                  |   Milliseconds |  Milliseconds | Milliseconds | Minutes or hours |
+  |                                     |            S3 |         S3 IA | S3 One Zone IA |          RRS | Glacier          |
+  |-------------------------------------+---------------+---------------+----------------+--------------+------------------|
+  | Durability                          | 99.999999999% | 99.999999999% |  99.999999999% |       99.99% | 99.999999999%    |
+  | Availability                        |        99.99% |         99.9% |          99.5% |       99.99% | N/A              |
+  | Availability SLA                    |         99.9% |           99% |            99% |        99.9% | N/A              |
+  | Concurrent facility fault tolerance |             2 |             2 |              1 |            1 | 2                |
+  | First byte latency                  |  Milliseconds |  Milliseconds |   Milliseconds | Milliseconds | Minutes or hours |
 
 * Charges
 
   In S3, costs can come from
-  - Storage
-  - Requests
+  - Storage per GB.
+  - Requests (Get, Put, Copy, etc)
   - Storage Management Pricing (cost tracking)
-  - Data Transfer Pricing (moving data around within S3)
+  - Data Management Pricing (mostly just transferring out of S3)
   - Transfer Acceleration
 
 * Transfer Acceleration
@@ -215,16 +214,3 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
   http://elliotp.s3-website-us-east-1.amazonaws.com.
 
   S3 static website hosting scales automatically and is very cheap.
-
-* Command Line Tools
-
-  The AWS CLI can be used to access S3.
-
-  - List buckets:
-    - ~aws s3 ls~
-  - Create a bucket:
-    - ~aws s3 mb s3://<bucket>~
-  - Copy to an object to a bucket.
-    - ~aws s3 cp <file> s3://<bucket>~
-  - Copy a folder to a bucket.
-    - ~aws s3 cp --recursive <folder> s3://<bucket>~

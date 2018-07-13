@@ -20,9 +20,10 @@
 
 ** S3
 
-   | Command                            | Description               |
-   |------------------------------------+---------------------------|
-   | ~aws s3 ls~                        | List buckets              |
-   | ~aws s3 ls s3://<bucket>~          | List a bucket's contents  |
-   | ~aws s3 mb s3://<bucket>~          | Create a bucket           |
-   | ~aws s3 cp file.txt s3://<bucket>~ | Upload a file to a bucket |
+   | Command                                      | Description                |
+   |----------------------------------------------+----------------------------|
+   | ~aws s3 ls~                                  | List buckets               |
+   | ~aws s3 ls s3://<bucket>~                    | List a bucket's contents   |
+   | ~aws s3 mb s3://<bucket>~                    | Create a bucket            |
+   | ~aws s3 cp file.txt s3://<bucket>~           | Upload a file to a bucket  |
+   | ~aws s3 cp --recursive folder s3://<bucket>~ | Copy a folder to a bucket. |
