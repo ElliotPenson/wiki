@@ -1,0 +1,54 @@
+#+TITLE: Amazon API Gateway
+#+AUTHOR: Elliot Penson
+
+Amazon API Gateway is a fully managed service that makes it easy for developers
+to publish, maintain, monitor, and secure APIs at any scale. With a few clicks
+in the AWS Management Console, you can create an API that acts as a "front door"
+for applications to access data, business logic, or functionality from your
+backend services, such as appications running on EC2, Lambda, or any web
+application.
+
+With API Gateway you can expose HTTPS endpoints to define a RESTful API.
+
+* APIs
+
+  API stands for Application Programming Interface. An API is an intermediary
+  that provides an interface between two applications. Two common types of APIs
+  are REST and SOAP. REST (REpresentational State Transfer) APIs use JSON. SOAP
+  (Simple Object Access Protocol) APIs use XML.
+
+* Features
+
+  - HTTPS endpoints for RESTful API definition.
+  - Serverless connection to services like Lambda and DynamoDB.
+  - Low cost.
+  - Effortless scaling.
+  - API keys.
+  - Request throttling to prevent attacks.
+  - Logging in CloudWatch.
+
+* API Caching
+
+  You can enable API caching in Amazon API Gateway to cache your endpoint's
+  response. With caching, you can reduce the number of calls made to your
+  endpoint and also improve the latency of the requests to your API. When you
+  enable caching for a stage, API Gateway caches responses from your endpoint
+  for a specified time-to-live (TTL) period, in seconds. API Gateway then
+  responds to the request by looking up the endpoint response from the cache
+  instead of making a request to your endpoint.
+
+* Cross-Origin Resource Sharing (CORS)
+
+  In computing, the *same-origin policy* is an important concept in the web
+  application security model. Under the policy, a web browser permits scripts
+  contained in a first web page to access data in a second web page, but only if
+  both web pages have the same origin.
+
+  CORS is one way the server at the other end (not the client code in the
+  browser) can relax the same-origin policy. Cross-origin resource sharing
+  (CORS) is a mechanism that allows restricted resources (e.g. fonts) on a web
+  page to be requested from another domain outside the domain from which the
+  first resource was served.
+
+  If you receive the error "origin policy cannot be read at the remote
+  resource," you need to enable CORS on API Gateway.
