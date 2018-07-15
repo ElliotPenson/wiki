@@ -20,7 +20,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
 * Internet
 
-  - [[file:internet/http.org][HTTP]
+  - [[file:internet/http.org][HTTP]]
   - [[file:internet/web-application-security.org][Web Application Security]]
 
 * Languages
