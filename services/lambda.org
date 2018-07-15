@@ -14,7 +14,7 @@ patching, scaling, etc. You can use Lambda in the following ways:
 
 * Background
 
-  The history of cloud has consisted on layer after layer of abstraction. The
+  The history of cloud has consisted of layer after layer of abstraction. The
   first of these was the *Data Center*. In 2006, Amazon introduced EC2. You
   could create servers from your command line. This was the basis of
   Infrastructure as a service (*IaaS*). Platform as a service (*PaaS*) was a new
@@ -69,6 +69,25 @@ patching, scaling, etc. You can use Lambda in the following ways:
       are charged $0.00001667 for every GB-second used.
 
   Note that Lambda functions have a maximum threshold of five minutes.
+
+* Version Control
+
+  AWS Lambda supports *versioning*. Version enable different variations of your
+  Lambda function for development, production, etc. Each Lambda function version
+  has a unique Amazon Resource Name (ARN). After you publish a version, it is
+  immutable.
+
+  AWS maintains your latest function code in the ~$LATEST~ version. You can
+  refer to versioned functions using the *qualified* or *unqualified* ARN. The
+  qualified ARN has a version suffix:
+  ~arn:aws:lambda:aws-region:acct-id:function:helloworld:$LATEST~. The
+  unqualified ARN does not have a version suffix:
+  ~arn:aws:lambda:aws-region:acct-id:function:helloworld~.
+
+  You can create an *alias* that points to a specific version of your Lambda
+  function. You could, for example, create a ~PROD~ alias that points to version
+  5 of your function. An alias can also be used to split traffic to different
+  versions.
 
 * Miscellaneous
 
