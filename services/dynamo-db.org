@@ -1,0 +1,143 @@
+#+TITLE: DynamoDB
+#+AUTHOR: Elliot Penson
+
+Amazon DynamoDB is a fast and flexible NoSQL database service for all
+applications that need consistent, single-digit millisecond latency at any
+scale. It is a fully managed database and supports both document and key-value
+data models.
+
+DynamoDB is always stored on SSDs. It's spread across three geographically
+distinct data centers.
+
+Note that DynamoDB can be expensive for writes, but it's extremely cheap for
+reads.
+
+DynamoDB has *push button scaling*, meaning that you can scale your database on
+the fly, without any downtime. RDS is harder to scale and might have some
+downtime.
+
+* Data
+
+  DynamoDB consists of tables with items that have attributes. The database
+  supports key-value and document data structures. Documents can be written in
+  JSON, HTML, or XML.
+
+* Consistency Models
+  
+  AWS gives you a choice between two consistency models: *eventually consistent
+  reads* and *strongly consistent reads*.
+  
+** Eventually Consistent Reads
+   
+   Consistency across all copies of data is usually reached within a
+   second. Repeating a read after a short time should return the updated
+   data (best read performance)
+   
+** Strongly Consistent Reads
+   
+   Returns a result that reflects all writes that received a successful
+   response prior to the read. Choose this model if you need to be able to
+   read the information less than a second after it's written.
+
+* Primary Keys
+
+  DynamoDB stores and retrieves data based on a primary key. DynamoDB has two
+  types of primary keys: *partiton keys* and *composite keys*.
+
+** Partition Keys
+
+   A partition key is a unique attribute (e.g. user ID). The value of the
+   partition key is input to an internal hash function which determines the
+   partition or physical location on which the data is stored. If you are using
+   the partition key as your primary key, then no two items can have the same
+   partition key.
+
+** Composite Keys
+
+   Made up of a partition key and a sort key in combination. Let's say you are
+   storing messages by the same user posting multiple times. The composition key
+   might have a partition key of the user ID and a sort key of the timestamp of
+   the post. A composite key allows you to store multiple items with the same
+   partition key.
+
+* Access Control
+
+  DynamoDB authentication is managed by IAM. You can create an IAM user within
+  your AWS account which has specific permissions to access and create DynamoDB
+  tables. *IAM conditions* can be added to IAM policies give fine grained
+  access. The ~dynamodb:LeadingKeys~ parameter allows users to access only the
+  items where the partition key matches their user ID.
+
+* Indexes
+
+  DynamoDB provides fast access to items in a table by specifying primary key
+  values. However, many applications might benefit from having one or more
+  secondary keys available. DynamoDB supports two types of secondary indexes
+  *local secondary indexes* and *global secondary indexes*.
+
+** Local Secondary Index
+
+   Can only be created when you are creating your table. It cannot be added,
+   removed, or modified later. This index has the same partition key as your
+   original table but a different sort key. This gives a different view of you
+   data, organized according to this alternate sort key.
+
+** Global Secondary Index
+
+   Can be added when you create your table /or/ after the table has been
+   created. The global secondary index has a different partition key as well as
+   a different sort key.
+
+* Scan and Query API Calls
+
+** Query
+
+   A *Query* operation finds items in a table based on the primary key. An
+   optional sort key can also be given to further refine the results.
+
+   By default, a Query returns all the attributes for the items, but you can use
+   the ~ProjectionExpression~ parameter if you want the query to only return the
+   specific attributes you want.
+
+   Results are always sorted by the sort key. You can reverse the order by
+   setting the ~ScanIndexForward~ parameter to false.
+
+** Scan
+
+   A *Scan* operation examines every item in the table. A filter can be given to
+   refine the results. Again, the ~ProjectionExpression~ parameter can refine
+   which attributes are returned.
+
+   A scan operation is usually slower than a query operation (especially as the
+   table grows). You can reduce the impact of a query or scan by setting a
+   smaller page size which uses fewer read operations. You can also configure
+   DynamoDB to use /parallel scans/. This will logically divide a table into
+   segments and scan each segment in parallel. Avoid scan operations if you can!
+
+* Provisioned Throughput
+
+  When you create a table or index in DynamoDB, you must specify your capacity
+  requirements for read and write activity. DynamoDB provisioned throughput is
+  measured in /capacity units/.
+  
+  - 1 write capacity unit = 1 KB write per second.
+  - 1 read capacity unit = 
+    - 1 strongly consistent read of 4KB per second
+    - or, 2x eventually consist reads of 4KB per second (default).
+
+* DynamoDB Accelerator (DAX)
+
+  DAX is a fully managed, clustered in-memory cache for DynamoDB. This cache
+  delivers up to 10x read performance improvement. Retrieval of data from
+  reduces the read load on DynamoDB tables.
+
+  DAX is a write-through caching service; data is written to the cache as well
+  as the backend store at the same time. This allows you to point your DynamoDB
+  API calls at the DAX cluster. If the item you are querying is in the cache
+  (cache hit), DAX returns the result. IF the item is not available (cache miss)
+  then DAX performs an eventually consistent ~GetItem~ operation.
+
+  DAX caters for eventually consistent reads only. It isn't suitable for
+  applications that require strongly consistent reads. It also doesn't really
+  help write-intensive applications or applications that just don't perform many
+  read operations.

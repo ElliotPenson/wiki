@@ -159,32 +159,7 @@
 
 * DynamoDB
 
-  Amazon DynamoDB is a fast and flexible NoSQL database service for all
-  applications that need consistent, single-digit millisecond latency at any
-  scale. It is a fully managed database and supports both document and key-value
-  data models. Its flexible data model and reliable performance make it a great
-  fit for mobile, web, gaming, ad-tech, IoT, and many other applications.
-
-  DynamoDB is always stored on SSDs. It's spread across three geographically
-  distinct data centers.
-
-  Note that DynamoDB can be expensive for writes, but it's extremely cheap for
-  reads.
-
-  DynamoDB has *push button scaling*, meaning that you can scale your database
-  on the fly, without any downtime. RDS is harder to scale and might have some
-  downtime.
-  
-** Consistency Models
-   
-  - Eventual Consistent Reads (default)
-    - Consistency across all copies of data is usually reached within a
-      second. Repeating a read after a short time should return the updated
-      data (best read performance).
-  - Strongly Consistent Reads
-    - Returns a result that reflects all writes that received a successful
-      response prior to the read. Choose this model if you need to be able to
-      read the information less than a second after it's written.
+  See separate [[file:dynamo-db.org][DynamoDB page]].
 
 * RedShift
 
