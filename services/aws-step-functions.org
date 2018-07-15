@@ -1,0 +1,7 @@
+#+TITLE: AWS Step Functions
+#+AUTHOR: Elliot Penson
+
+AWS Step Functions allow coordination of distributed application components as a
+series of steps in a visual workflow. You can quickly build and run state
+machines to execute the steps of your application in a reliable and scalable
+fashion.

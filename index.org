@@ -62,6 +62,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:services/aws-cli.org][AWS Command Line Interface]]
     - [[file:services/lambda.org][AWS Lambda]]
     - [[file:services/snowball.org][AWS Snowball]]
+    - [[file:services/aws-step-functions.org][AWS Step Functions]]
     - [[file:services/storage-gateway.org][AWS Storage Gateway]]
 
 * Theory
