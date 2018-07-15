@@ -18,6 +18,11 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:courses/coursera-ml.org][Coursera Machine Learning]]
   - [[file:courses/six-ideas-that-shaped-physics.org][Six Ideas That Shaped Physics]]
 
+* Internet
+
+  - [[file:internet/http.org][HTTP]
+  - [[file:internet/web-application-security.org][Web Application Security]]
+
 * Languages
 
   - [[file:languages/css.org][CSS]]
@@ -32,10 +37,6 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:math/linear-algebra.org][Linear Algebra]]
   - [[file:math/normal-distribution.org][Normal Distribution]]
   - [[file:math/simultaneous-equations.org][Simultaneous Equations]]
-
-* Security
-
-  - [[file:security/web-application-security.org][Web Application Security]]
 
 * Services
 

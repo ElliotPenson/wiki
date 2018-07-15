@@ -1,0 +1,11 @@
+#+TITLE: HTTP
+#+AUTHOR: Elliot Penson
+
+* Status Codes
+
+  | Code | Meaning                    |
+  |------+----------------------------|
+  |  200 | The request was successful |
+  |  3XX | There was a redirection    |
+  |  4XX | Client-side error          |
+  |  5XX | Server-side error          |
