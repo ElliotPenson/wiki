@@ -41,7 +41,6 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 * Services
 
   - [[file:services/aws.org][Amazon Web Services]]
-    - [[file:services/aws-databases.org][Databases on AWS]]
     - [[file:services/api-gateway.org][Amazon API Gateway]]
     - [[file:services/cloudfront.org][Amazon CloudFront]]
     - [[file:services/cloudwatch.org][Amazon CloudWatch]]
@@ -50,6 +49,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:services/efs.org][Amazon EFS]]
     - [[file:services/elb.org][Amazon ELB]]
     - [[file:services/elastic-transcoder.org][Amazon Elastic Transcoder]]
+    - [[file:services/elasticache.org][Amazon ElastiCache]]
     - [[file:services/iam.org][Amazon IAM]]
     - [[file:services/kinesis.org][Amazon Kinesis]]
     - [[file:services/route-53.org][Amazon Route 53]]
@@ -65,6 +65,8 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:services/aws-step-functions.org][AWS Step Functions]]
     - [[file:services/storage-gateway.org][AWS Storage Gateway]]
     - [[file:services/x-ray.org][AWS X-Ray]]
+    - [[file:services/aws-databases.org][Databases on AWS]]
+      - [[file:services/dynamo-db.org][DynamoDB]]
 
 * Theory
 
