@@ -36,10 +36,11 @@ your files.
     be either an S3 Bucket, an EC2 Instance, an Elastic Load Balancer, Route53,
     or a non-AWS server.
   - *Distribution*: The name given to the CDN which consists of a collection of
-    Edge Locations.
-    - *Web Distribution*: Typically used for websites. This is in contrast with
-      RTMP.
-    - *RTMP Distribution*: Used for media streaming.
+    Edge Locations. CloudFront has two delivery methods:
+    - *Web Distribution*: Typically used for websites, specifically
+      HTTP/HTTPS.
+    - *RTMP Distribution*: Used for media streaming with the Adobe Real Time
+      Messaging Protocol (flash).
 
 * Caching and Invalidating
 
