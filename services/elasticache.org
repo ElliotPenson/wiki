@@ -1,0 +1,59 @@
+#+TITLE: Amazon ElastiCache
+#+AUTHOR: Elliot Penson
+
+ElastiCache is a web service that makes it easy to deploy, operate, and scale an
+in-memory cache in the cloud. The service improves the performance of web
+applications by allowing you to retrieve information from fast, managed,
+in-memory caches, instead of relying entirely on slower disk-based
+databases. Elasticache is a good choice if your database is particularly read
+heavy and not prone to frequent changing. ElastiCache can also be used on top of
+compute resources.
+
+* Caching Engines
+  
+  ElastiCache supports two open-source in-memory caching engines: *Memcached*
+  and *Redis*.
+  
+** Memcached
+   
+   Memcached is a widely adopted memory object caching
+   system. ElastiCache is protocol compliant with Memcached, so popular tools
+   that you use today with existing Memcached environments will work seamlessly
+   with the service.
+   
+   Memcached is good for simple caching use. It's a good choice for object
+   caching. ElastiCache manages Memcached nodes as a pool that can grow and
+   shrink. Thus Memcached has multithreaded performance and scales horizontally.
+   
+** Redis
+   
+   Redis is a popular open-source in-memory key-value store
+   that supports data structures such as sorted sets and lists. ElastiCache
+   supports master/slave replication and multi-AZ which can be used to achieve
+   cross AZ redundancy.
+   
+   Redis is better for advanced use than Memcached. Redis provides more advanced
+   data types than Memcached (like lists, hashes, and sets). Redis also provides
+   in-memory sorting and ranking for datasets. Really useful if your application
+   provides a leaderboard. Redis is also more durable than Memcached with
+   persistence and failover.
+   
+* Caching Strategies
+  
+  ElastiCache supports *lazy loading* and *write-through*.
+  
+** Lazy Loading Strategy
+   
+   /Lazy loading/ loads the data into the cache only when necessary. If requested
+   data isn't in the cache, ElastiCache returns ~null~ and fetches the
+   data. This means that only requested data is ever cached. Note that there's
+   a cache miss penalty.
+   
+   A TTL specified the number of seconds until the key expires to avoid keeping
+   stale data in the cache. Lazy loading treats an expired key as a cache miss.
+   
+** Write Through Strategy
+   
+   /Write through/ adds or updates data to the cache whenever data is written
+   to the database. This means that writes now have a penalty. But it does mean
+   that data in the cache is never stale.
