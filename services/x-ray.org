@@ -1,0 +1,16 @@
+#+TITLE: AWS X-Ray
+#+AUTHOR: Elliot Penson
+
+AWS X-Ray is a distributed tracing system that allows visualization of
+serverless applications. X-Ray collects data about requests that your
+application serves and provides tools you can use to view, filter, and gain
+insights into that data to identify issues and opportunities for optimization.
+
+X-Ray provides an SDK that gives
+- Interceptors to add to your code to trace incoming HTTP requests.
+- Client handlers to instrument AWS SDK clients that your application uses to
+  call other AWS services.
+- An HTTP client to instrument calls to other internal and external HTTP web
+  services.
+
+X-Ray integrates with ELB, Lambda, API Gateway, EC2, and Elastic Beanstalk.

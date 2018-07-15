@@ -64,6 +64,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:services/snowball.org][AWS Snowball]]
     - [[file:services/aws-step-functions.org][AWS Step Functions]]
     - [[file:services/storage-gateway.org][AWS Storage Gateway]]
+    - [[file:services/x-ray.org][AWS X-Ray]]
 
 * Theory
 
