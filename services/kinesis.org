@@ -1,0 +1,31 @@
+#+TITLE Kinesis
+#+AUTHOR: Elliot Penson
+
+Streaming data is data that is generated continuously by sometimes thousands of
+data sources, which typically send in records simultaneously, and in small sizes
+(order of Kilobytes). Amazon Kinesis is a platform on AWS to send your streaming
+data to! Kinesis makes it easy to load and analyze streaming data. The service
+also allows you to build custom applications for your business needs.
+
+* Kinesis Streams
+
+  Kinesis Streams connect information pushed by /producers/ to /consumers/ which
+  process the data in real time. Kinesis Streams retain data for 24 hours by
+  default. This can be extended to up to 7 days. Kinesis Streams consist of
+  /shards/. A shard has a sequence of data records. The data capacity of your
+  stream is a function of the number of shards that you specify for the
+  stream. You manage the consumers with Kinesis Streams. These consumers will
+  usually transform and save the data.
+
+* Kinesis Firehose
+
+  Kinesis Firehose also connects producers to consumers. You don't need to worry
+  about shards though. Firehose is a very automated way of doing
+  streams. There's no concept of a retention period. Firehose usually writes to
+  S3 or Elasticsearch Cluster. Note that you do not implement consumers yourself
+  in Firehose.
+
+* Kinesis Analytics
+
+  Kinesis Analytics allow you to run SQL queries on streaming data in real
+  time. These queries are ran on Kinesis Streams or Kinesis Firehouse.
