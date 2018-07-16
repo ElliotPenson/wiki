@@ -22,8 +22,17 @@
 
    | Command                                      | Description                |
    |----------------------------------------------+----------------------------|
-   | ~aws s3 ls~                                  | List buckets               |
-   | ~aws s3 ls s3://<bucket>~                    | List a bucket's contents   |
-   | ~aws s3 mb s3://<bucket>~                    | Create a bucket            |
-   | ~aws s3 cp file.txt s3://<bucket>~           | Upload a file to a bucket  |
+   | ~aws s3 ls~                                  | List buckets.              |
+   | ~aws s3 ls s3://<bucket>~                    | List a bucket's contents.  |
+   | ~aws s3 mb s3://<bucket>~                    | Create a bucket.           |
+   | ~aws s3 cp file.txt s3://<bucket>~           | Upload a file to a bucket. |
    | ~aws s3 cp --recursive folder s3://<bucket>~ | Copy a folder to a bucket. |
+
+** KMS
+
+   | Command                       | Description                                        |
+   |-------------------------------+----------------------------------------------------|
+   | ~aws kms encrypt~             | Encrypt plaintext to ciphertext.                   |
+   | ~aws kms decrypt~             | Decrypt ciphertext.                                |
+   | ~aws kms re-encrypt~          | Encrypt with a new key without exposing plaintext. |
+   | ~aws kms enable-key-rotation~ | Enable automatic rotation of keys.                 |
