@@ -1,0 +1,66 @@
+#+TITLE: AWS Elastic Beanstalk
+#+AUTHOR: Elliot Penson
+
+Elastic Beanstalk is a service for deploying and scaling web applications. You
+simply upload your code and Elastic Beanstalk automatically handles the
+deployment, from capacity provisioning, load balancing, auto-scaling to
+application health monitoring. You still retain full control of the underlying
+AWS resources.
+
+There is not additional charge for Elastic Beanstalk, you pay only for the AWS
+resources needed to store and run your applications.
+
+* Deployment Policies
+
+  Elastic Beanstalk supports several options for processing deployment.
+
+** All at Once
+
+   Deploys the new version to all instances simultaneously. All of your
+   instances are out of service while the deployment takes place. You will
+   experience an outage while the deployment is taking place.
+
+** Rolling
+
+   Deploys the new version in batches. Each batch of instances is taken out of
+   service while the deployment takes place. Your environment capacity will be
+   reduced by the number of instances in a batch while the deployment takes
+   place. This isn't ideal for performance sensitive systems.
+
+** Rolling with Additional Batch
+
+   Launches an additional batch of instances and deploys the new version in
+   batches. The deployment method maintains full capacity during the deployment
+   process.
+
+** Immutable
+
+   Deploys the new version to a fresh group of instances in their own new auto
+   scaling group. When the new instances pass their health checks, they are
+   moved to your existing auto scaling group; and finally the old instances are
+   terminated. This maintains full capacity during the deployment process. This
+   is the preferred option for mission critical production systems.
+
+* Configuration
+
+  You can customize your Elastic Beanstalk environment using configuration
+  files. You can define requirements, create Linux users and groups, run shell
+  commands, specify services to enable, etc. These files are written in YAML or
+  JSON. They have a filename of your choice but must have a ~.config~ extension
+  and be saved inside a folder called ~.ebextensions~. This folder must be
+  located in the top level directory of your application source code bundle.
+
+* RDS and Elastic Beanstalk
+
+  You may launch an RDS instance from within Elastic Beanstalk. This can be done
+  through the console. This will place the instance within your Elastic
+  Beanstalk environment, coupling the RDS instance with your EC2 instances.
+
+  You can also launch an RDS instance outside of Elastic Beanstalk. For
+  production environments, this is preferred. In this case you'd launch the RDS
+  instance from the RDS section of the console then specify the database in your
+  Elastic Beanstalk configuration file. This option gives you a lot more
+  flexibility, allows you to connect multiple environments to the same database,
+  provides a wider choice of database types, and allows you to tear down your
+  application environment without affecting your database instance.
+
