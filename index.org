@@ -51,6 +51,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:services/elastic-transcoder.org][Amazon Elastic Transcoder]]
     - [[file:services/elasticache.org][Amazon ElastiCache]]
     - [[file:services/iam.org][Amazon IAM]]
+    - [[file:services/aws-kms.org][AWS Key Management Service]]
     - [[file:services/kinesis.org][Amazon Kinesis]]
     - [[file:services/route-53.org][Amazon Route 53]]
     - [[file:services/s3.org][Amazon S3]]

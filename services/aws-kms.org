@@ -1,0 +1,18 @@
+#+TITLE: AWS Key Management Service
+#+AUTHOR: Elliot Penson
+
+AWS Key Management Service (AWS KMS) is a managed service for creating and
+controling encryption keys. AWS KMS is integrated with other AWS services
+including EBS, S3, Redshift, Elastic Transcoder, WorkMail, RDS, and others. KMS
+can be found under IAM in the AWS console.
+
+Encryption keys with KMS /are/ regional.
+
+As a best practice, the user with key administrative permissions should be
+different than the user with key usage permissions.
+
+* Envelope Encryption
+
+  Envelope encryption provides an extra layer of encryption. A customer master
+  key is used to encrypt the envelope key (data key). The envelope key is used
+  to decrypt the data.
