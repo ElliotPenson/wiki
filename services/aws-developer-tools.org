@@ -1,0 +1,135 @@
+#+TITLE: AWS Developer Tools
+#+AUTHOR: Elliot Penson
+
+* Background
+  
+  CI and CD are best practices for software development and deployment. They
+  enable frequent software changes whilst maintaining system and service
+  stability.
+  
+** Continuous Integration (CI)
+   
+   Let's say that developers are frequently interacting with a shared
+   codebase. We need a way to ensure that any code change does not break the
+   build or introduce new bugs into the application. With continuous
+   integration, a build and a test framework is automatically triggered for
+   every push. CI encourages frequent merging of code changes.
+   
+** Continuous Delivery/Deployment (CD)
+   
+   Continuous delivery is a development practice where merged changes are
+   automatically build, tested, and prepared for release into staging and
+   eventually production environments. There is usually a manual decision
+   process to initiate deployment of new code. Continuous deployment takes this
+   one step further and automatically deploys the new code following successful
+   build and testing.
+   
+* CodeCommit
+  
+  CodeCommit is a fully managed source control service that enables git
+  repository hosting. With CodeCommit, data is encrypted in transit and at
+  rest. CodeCommit has a visual interface with an online editor, repository
+  browser, and pull requests. Note that to connect using git on command line,
+  you'll need to give your AWS IAM user the correct permissions.
+  
+* CodeDeploy
+  
+  CodeDeploy is an automated deployment service which allows you to deploy
+  application code automatically to EC2 instances, on-premise systems, and
+  Lambda functions.
+  
+  CodeDeploy integrates with various CI/CD tools like Jenkins, GitHub,
+  Atlassian, AWS CodePipeline as well as configuration management tools like
+  Ansible, Puppet, and Chef.
+  
+** Setup
+   
+   1. Install CodeDeploy agents on your EC2 instances.
+   2. Give CodeDeploy permissions to your IAM user.
+   3. Create a new application and deployment group in CodeDeploy.
+   4. Deploy using the CodeDeploy console!
+      
+** CodeDeploy Deployment Approaches
+   
+*** In-Place Deployment
+    
+    A rolling update, the application is stopped on each instance
+    in turn and the latest revision is installed. The instance is out of service
+    during this time and your capacity will be reduced. If the instances are
+    behind a load balancer, you can configure the load balancer to stop sending
+    requests to the instances which are being upgraded.
+    
+*** Blue/Green Deployment
+    
+    New instances are provisioned and the latest revision is installed on the
+    new instances. Blue represents the active deployment, green is the new
+    release. The new instances are registered with an Elastic Load Balancer,
+    traffic is routed to the new instances, and the original instances will be
+    terminated.
+    
+    Switching back to the original environment is faster and more reliable and
+    is just a case of routing the traffic back to the original servers (as long
+    as you haven't already terminated them).
+    
+** CodeDeploy Terminology
+   
+   - *Deployment Group*: A set of EC2 instances or Lambda functions to which a
+     new revision of the software is to be deployed.
+   - *Deployment*: The process and components used to apply a new revision.
+   - *Deployment Configuration*: A set of deployment rules as well as
+     success/failure conditions used during a deployment.
+   - *AppSpec File*: A definition of deployment actions you want AWS CodeDeploy
+     to execute.
+   - *Revision*: Everything needed to deploy the new version: AppSpec file,
+     application files, executables, config files.
+   - *Application*: Unique identifier for the application you want to deploy. To
+     ensure the correct combination of revision, deployment configuration, and
+     deployment group are referenced during a deployment.
+     
+** CodeDeploy AppSpec File
+   
+   The AppSpec File is used to define the parameters that will be used for
+   deployment. The file structure depends on whether you are deploying to Lambda
+   or EC2/On Premises.
+   
+*** AppSpec for Lambda Deployments
+    
+    For Lambda deployments, the AppSpec File may be written in YAML or JSON and
+    contains the following fields: 
+    
+    - ~version~: Reserved for future use (currently only allows 0.0).
+    - ~resources~: The name and properties of the Lambda function.
+    - ~hooks~: Lambda functions to run as validation tests.
+      
+    Two hooks are available for use: ~BeforeAllowTraffic~ and
+    ~AfterAllowTraffic~. These are both validation tests.
+    
+*** AppSpec for EC2/On Premises
+    
+    For EC2 and On Premises systems, the AppSpec file must be in YAML and has a
+    slightly different set of fields:
+    
+    - ~version~: Reserved for future use (currently only allows 0.0).
+    - ~os~: The operation system you are using.
+    - ~files~: Source and destination folders for application files.
+    - ~hooks~: Lifecycle event hooks that allow you to specify scripts that need
+      to run at set points in the deployment lifecycle.
+    
+    There are a series of hooks that are in a specific /run order/:
+    ~BeforeBlockTraffic~, ~BlockTraffic~, ~AfterBlockTraffic~,
+    ~ApplicationStop~, ~DownloadBundle~, ~BeforeInstall~, ~Install~,
+    ~AfterInstall~, ~ApplicationStart~ ~ValidateService~, ~BeforeAllowTraffic~,
+    ~AllowTraffic~, and ~AfterAllowTraffic~.
+    
+* CodePipeline
+  
+  CodePipeline orchestrate the build, test, and even deployment of your
+  application every time there is a change (CI/CD). With CodePipeline you model
+  your release process as a workflow which integrates with CodeCommit,
+  CodeBuild, CodeDeploy, Lambda, Elastic Beanstalk, CloudFormation, ECS, as well
+  as third party tools, like GitHub and Jenkins.
+  
+* CodeBuild
+  
+  CodeBuild is a fully managed build service that compiles source code, runs
+  tests, and produces software packages that are ready to deploy.

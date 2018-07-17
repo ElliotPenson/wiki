@@ -2,24 +2,24 @@
 #+AUTHOR: Elliot Penson
 
 * Credentials
-
+  
   For general use, the ~aws configure~ command is the fastest way to set up your
   AWS CLI installation. The AWS CLI will prompt you for four pieces of
   information. AWS Access Key ID and AWS Secret Access Key are your account
   credentials.
-
+  
   The AWS CLI supports /named profiles/ stored in the config and credentials
   files. You can configure additional profiles by using ~aws configure~ with the
   ~--profile~ option or by adding entries to the config and credentials
   files. To use a named profile, add the ~--profile~ option to your command.
   
 * Commands
-
+  
   Commands with the AWS command-line interface take the form ~aws <service>
   <command>~.
-
+  
 ** S3
-
+   
    | Command                                      | Description                |
    |----------------------------------------------+----------------------------|
    | ~aws s3 ls~                                  | List buckets.              |
@@ -27,12 +27,19 @@
    | ~aws s3 mb s3://<bucket>~                    | Create a bucket.           |
    | ~aws s3 cp file.txt s3://<bucket>~           | Upload a file to a bucket. |
    | ~aws s3 cp --recursive folder s3://<bucket>~ | Copy a folder to a bucket. |
-
+   
 ** KMS
-
+   
    | Command                       | Description                                        |
    |-------------------------------+----------------------------------------------------|
    | ~aws kms encrypt~             | Encrypt plaintext to ciphertext.                   |
    | ~aws kms decrypt~             | Decrypt ciphertext.                                |
    | ~aws kms re-encrypt~          | Encrypt with a new key without exposing plaintext. |
    | ~aws kms enable-key-rotation~ | Enable automatic rotation of keys.                 |
+   
+** CodeDeploy
+   
+   | Command                         | Description                                  |
+   |---------------------------------+----------------------------------------------|
+   | ~aws deploy create-application~ | Establish the application within CodeDeploy. |
+   | ~aws deploy push~               | PUT application code into an S3 bucket.      |

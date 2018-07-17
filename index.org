@@ -60,6 +60,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:services/swf.org][Amazon SWF]]
     - [[file:services/aws-best-practices.org][AWS Best Practices]]
     - [[file:services/aws-cli.org][AWS Command Line Interface]]
+    - [[file:services/aws-developer-tools.org][AWS Developer Tools]]
     - [[file:services/elastic-beanstalk.org][AWS Elastic Beanstalk]]
     - [[file:services/aws-kms.org][AWS Key Management Service]]
     - [[file:services/lambda.org][AWS Lambda]]
