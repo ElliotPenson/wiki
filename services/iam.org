@@ -60,6 +60,22 @@ access to the AWS Console. IAM gives
   policies immediately take affect. Of course, roles are universal - you can use
   them in any region.
 
+* Policies
+
+  IAM provides three types of policies:
+  
+  - *Managed Policies*: Policies created and administered by AWS. These
+    AWS-provided policies can be attached to multiple users, groups, or
+    roles. You cannot change the permissions.
+  - *Customer Managed Policy*: Stand-alone policy created by you. You can attach
+    this policy to multiple users, group, and roles - but only within your own
+    account.
+  - *Inline Policy*: Policy embedded within the user, group, or role to which it
+    applies. There is a strict 1:1 relationship between the entity and the
+    policy.
+
+  In most cases, AWS recommends using Managed Policies over Inline Policies.
+
 * Best Practices
 
   - Always setup multi-factor authentication on your root account.
