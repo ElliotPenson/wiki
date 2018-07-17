@@ -146,7 +146,8 @@ See [[https://aws.amazon.com/s3/faqs/][the FAQ]] for more information.
   files over long distances between your end users and an S3 bucket. Transfer
   Acceleration takes advantage of Amazon CloudFront's globally distributes edge
   locations. As the data arrives at an edge location, data is routed to Amazon
-  S3 over an optimized network path.
+  S3 over an optimized network path. Note that Transfer Acceleration does not
+  provide caching, it's only for data transfer.
 
   A distinct URL is used for transfer acceleration:
   ~<bucket>.s3-accelerate.amazonaws.com~.
