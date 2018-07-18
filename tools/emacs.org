@@ -2,13 +2,12 @@
 #+AUTHOR: Elliot Penson
 
 * Global Commands
-  
-  Note that C- and M- mean Control- and Meta- respectively. Also, to
-  quit a partially entered command, type C-g. To open the emacs
-  tutorial, type C-g t.
-  
+
+  Note that C- and M- mean Control- and Meta- respectively. To quit a partially
+  entered command, type C-g. To open the emacs tutorial, type C-g t.
+
 ** Navigation
-   
+
    | Command       | Description                                 |
    |---------------+---------------------------------------------|
    | C-b/C-f       | Cursor backward/forward                     |
@@ -22,33 +21,34 @@
    | M-</M->       | Document beginning/end                      |
    | M-g M-g       | Go to line                                  |
    | C-u C-<space> | Pop the mark (go back to previous location) |
-   
+
 ** Editing
-   
-   | Command    | Description                          |
-   |------------+--------------------------------------|
-   | C-j        | New line and indent                  |
-   | C-d        | Delete next character                |
-   | C-<delete> | Delete previous word                 |
-   | C-k        | Kill to end of line                  |
-   | C-y        | Yank (paste)                         |
-   | C-/        | Undo                                 |
-   | C-<space>  | Set mark at cursor                   |
-   | C-g        | Deactivate mark                      |
-   | C-w        | Kill region                          |
-   | M-w        | Copy region                          |
-   | C-x h      | Mark whole buffer                    |
-   | C-x C-=/-  | Increase/decrease buffer text size   |
-   | M-^        | Join lines                           |
-   | M-l        | Convert following word to lower case |
-   | M-u        | Convert following word to upper case |
-   | M-c        | Capitalize the following word        |
-   | C-x C-l    | Convert region to lower case         |
-   | C-x C-u    | Convert region to upper case         |
-   | M-;        | Comment out region                   |
-   
+
+   | Command                | Description                              |
+   |------------------------+------------------------------------------|
+   | C-j                    | New line and indent                      |
+   | C-d                    | Delete next character                    |
+   | C-<delete>             | Delete previous word                     |
+   | C-k                    | Kill to end of line                      |
+   | C-y                    | Yank (paste)                             |
+   | C-/                    | Undo                                     |
+   | C-<space>              | Set mark at cursor                       |
+   | C-g                    | Deactivate mark                          |
+   | C-w                    | Kill region                              |
+   | M-w                    | Copy region                              |
+   | C-x h                  | Mark whole buffer                        |
+   | C-x C-=/-              | Increase/decrease buffer text size       |
+   | M-^                    | Join lines                               |
+   | M-l                    | Convert following word to lower case     |
+   | M-u                    | Convert following word to upper case     |
+   | M-c                    | Capitalize the following word            |
+   | C-x C-l                | Convert region to lower case             |
+   | C-x C-u                | Convert region to upper case             |
+   | M-;                    | Comment out region                       |
+   | M-x whitespace-cleanup | Automatically remove trailing whitespace |
+
 ** Buffers/Files/Windows
-   
+
    | Command | Description            |
    |---------+------------------------|
    | C-x C-f | Open file              |
@@ -63,21 +63,21 @@
    | C-x 2   | Split horizontally     |
    | C-x 3   | Split vertically       |
    | C-M-v   | Scroll other window    |
-   
+
 ** Keyboard Macros
-   
+
    | Command | Description                   |
    |---------+-------------------------------|
    | C-x (   | Start defining keyboard macro |
    | C-x )   | Stop defining keyboard macro  |
    | C-x e   | Execute keyboard macro        |
-   
+
 ** Extensions
-   
+
    | Command           | Description             |
    |-------------------+-------------------------|
    | M-x list-packages | Show available packages |
-   
+
 * Packages
 
 ** Avy
@@ -100,10 +100,10 @@
    | C-r     | Previous match |
 
 ** Org mode
-   
+
    Headings: * for h1, ** for h2, etc.
    Formatting: *bold*, /italics/
-   
+
    | Command            | Description                    |
    |--------------------+--------------------------------|
    | <tab> (on heading) | Expand/collapse section        |
@@ -115,9 +115,9 @@
    | C-c '              | Edit snippet in native mode    |
    | C-c C-e            | Dispatch for export            |
    | M-<enter>          | New list item at current level |
-   
+
 *** Clocking
-    
+
     | Command     | Description                                                        |
     |-------------+--------------------------------------------------------------------|
     | C-c C-x C-i | Start clock on current item                                        |
@@ -137,7 +137,7 @@
    | C-(     | "Slurp" backward. Pull in sexp on left |
    | C-}     | "Barf" forward. Push out last sexp     |
    | C-{     | "Barf" backward. Push out first sexp   |
-    
+
 ** Slime
 
    Run slime with M-x slime. See [[http://pchristensen.com/wp-content/uploads/2008/02/slimecommands.pdf][Peter Christensen's cheat sheet]] for
@@ -145,35 +145,35 @@
 
 *** Compilation/Evaluation
 
-   | Command | Description                  |
-   |---------+------------------------------|
-   | C-c C-k | Compile and load entire file |
-   | C-c C-c | Compile the toplevel form    |
-   | C-x C-e | Evaluate last expression     |
-   | C-c M-c | Remove all compilation notes |
+    | Command | Description                  |
+    |---------+------------------------------|
+    | C-c C-k | Compile and load entire file |
+    | C-c C-c | Compile the toplevel form    |
+    | C-x C-e | Evaluate last expression     |
+    | C-c M-c | Remove all compilation notes |
 
 *** REPL
 
-   | Command | Description                     |
-   |---------+---------------------------------|
-   | C-c M-p | Set current REPL package        |
-   | M-p/M-n | REPL: Go to previous/next input |
-   | C-c C-c | REPL: Interrupt                 |
-   | TAB     | REPL: Complete symbol at point  |
+    | Command | Description                     |
+    |---------+---------------------------------|
+    | C-c M-p | Set current REPL package        |
+    | M-p/M-n | REPL: Go to previous/next input |
+    | C-c C-c | REPL: Interrupt                 |
+    | TAB     | REPL: Complete symbol at point  |
 
 *** Editing
 
-   | Command   | Description                               |
-   |-----------+-------------------------------------------|
-   | C-c C-d h | Hyperspec lookup                          |
-   | C-c C-w c | Show function callers                     |
-   | C-c <     | List callers of a function                |
-   | C-c >     | List callees of a function                |
-   | M-.       | Go to definition                          |
-   | M-,       | Return from definition to examined symbol |
-   | M-TAB     | Complete symbol                           |
-   | C-c M-i   | Fuzzy complete                            |
-   | C-c C-s   | Insert arglist                            |
+    | Command   | Description                               |
+    |-----------+-------------------------------------------|
+    | C-c C-d h | Hyperspec lookup                          |
+    | C-c C-w c | Show function callers                     |
+    | C-c <     | List callers of a function                |
+    | C-c >     | List callees of a function                |
+    | M-.       | Go to definition                          |
+    | M-,       | Return from definition to examined symbol |
+    | M-TAB     | Complete symbol                           |
+    | C-c M-i   | Fuzzy complete                            |
+    | C-c C-s   | Insert arglist                            |
 
 * Configuration
 
