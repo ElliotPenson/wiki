@@ -1,7 +1,7 @@
 #+TITLE: Emacs
 #+AUTHOR: Elliot Penson
 
-* Commands
+* Global Commands
   
   Note that C- and M- mean Control- and Meta- respectively. Also, to
   quit a partially entered command, type C-g. To open the emacs
@@ -9,19 +9,19 @@
   
 ** Navigation
    
-   | Command     | Description                                 |
-   |-------------+---------------------------------------------|
-   | C-b/C-f     | Cursor backward/forward                     |
-   | C-a/C-e     | Line beginning/end                          |
-   | C-p/C-n     | Line previous/next                          |
-   | C-v/M-v     | Next/previous screen                        |
-   | C-l         | Center on cursor                            |
-   | C-s/C-r     | Search forward/backward                     |
-   | M-b/M-f     | Word backward/forward                       |
-   | M-a/M-e     | Sentence beginning/end                      |
-   | M-</M->     | Document beginning/end                      |
-   | M-g M-g     | Go to line                                  |
-   | C-u C-space | Pop the mark (go back to previous location) |
+   | Command       | Description                                 |
+   |---------------+---------------------------------------------|
+   | C-b/C-f       | Cursor backward/forward                     |
+   | C-a/C-e       | Line beginning/end                          |
+   | C-p/C-n       | Line previous/next                          |
+   | C-v/M-v       | Next/previous screen                        |
+   | C-l           | Center on cursor                            |
+   | C-s/C-r       | Search forward/backward                     |
+   | M-b/M-f       | Word backward/forward                       |
+   | M-a/M-e       | Sentence beginning/end                      |
+   | M-</M->       | Document beginning/end                      |
+   | M-g M-g       | Go to line                                  |
+   | C-u C-<space> | Pop the mark (go back to previous location) |
    
 ** Editing
    
@@ -33,7 +33,7 @@
    | C-k        | Kill to end of line                  |
    | C-y        | Yank (paste)                         |
    | C-/        | Undo                                 |
-   | C-space    | Set mark at cursor                   |
+   | C-<space>  | Set mark at cursor                   |
    | C-g        | Deactivate mark                      |
    | C-w        | Kill region                          |
    | M-w        | Copy region                          |
@@ -45,7 +45,7 @@
    | M-c        | Capitalize the following word        |
    | C-x C-l    | Convert region to lower case         |
    | C-x C-u    | Convert region to upper case         |
-   | M-;        | Comment out region            |
+   | M-;        | Comment out region                   |
    
 ** Buffers/Files/Windows
    
@@ -56,6 +56,7 @@
    | C-x C-c | Close Emacs            |
    | C-x C-b | Buffer list            |
    | C-x b   | Buffer switch to       |
+   | C-x k   | Kill buffer            |
    | C-x o   | Move to other window   |
    | C-x 0   | Delete selected window |
    | C-x 1   | Delete other windows   |
@@ -77,6 +78,27 @@
    |-------------------+-------------------------|
    | M-x list-packages | Show available packages |
    
+* Packages
+
+** Avy
+
+   | Command    | Description                           |
+   |------------+---------------------------------------|
+   | C-' <char> | Input a character and jump to it      |
+   | C-: <char> | Input two characters and jump to them |
+
+** Interactively Do Things
+
+   Interactively Do Things (Ido) is shipped with emacs but not enabled by
+   default. It provides instant feedback for many operations (like buffer
+   switching and file navigation).
+
+   | Command | Description    |
+   |---------+----------------|
+   | C-f     | Disable ido    |
+   | C-s     | Next match     |
+   | C-r     | Previous match |
+
 ** Org mode
    
    Headings: * for h1, ** for h2, etc.
@@ -104,24 +126,22 @@
     | C-c C-x C-q | Cancel current clock                                               |
     | C-c C-x C-r | Generate dynamic block containing a clock report                   |
     | C-C C-c     | Update dynamic block at point                                      |
+
+** Paredit
+
+   | Command | Description                            |
+   |---------+----------------------------------------|
+   | M-(     | Wrap parens around an sexp             |
+   | M-"     | Wrap quotes around an sexp             |
+   | C-)     | "Slurp" forward. Pull in sexp on right |
+   | C-(     | "Slurp" backward. Pull in sexp on left |
+   | C-}     | "Barf" forward. Push out last sexp     |
+   | C-{     | "Barf" backward. Push out first sexp   |
     
 ** Slime
 
    Run slime with M-x slime. See [[http://pchristensen.com/wp-content/uploads/2008/02/slimecommands.pdf][Peter Christensen's cheat sheet]] for
    more commands.
-
-** Interactively Do Things
-
-   Interactively Do Things (Ido) is shipped with emacs but not enabled by
-   default. It provides instant feedback for many operations (like buffer
-   switching and file navigation).
-
-   | Command | Description    |
-   |---------+----------------|
-   | C-f     | Disable ido    |
-   | C-s     | Next match     |
-   | C-r     | Previous match |
-   
 
 *** Compilation/Evaluation
 
@@ -155,28 +175,6 @@
    | C-c M-i   | Fuzzy complete                            |
    | C-c C-s   | Insert arglist                            |
 
-** Paredit
-
-   | Command | Description                            |
-   |---------+----------------------------------------|
-   | M-(     | Wrap parens around an sexp             |
-   | M-"     | Wrap quotes around an sexp             |
-   | C-)     | "Slurp" forward. Pull in sexp on right |
-   | C-(     | "Slurp" backward. Pull in sexp on left |
-   | C-}     | "Barf" forward. Push out last sexp     |
-   | C-{     | "Barf" backward. Push out first sexp   |
-
 * Configuration
 
-** Terminal
-
-*** Use Left Command as Meta Key Under iTerm2 Terminal Emulator
-
-    Taken from http://www.emacswiki.org/emacs/EmacsForMacOS#toc22.
-
-    1. In iTerm2 go to Preferences > Keys
-    2. Under Remap Modifier Keys, change Left Command Key to behave
-       like Right Option
-    3. Then go to Preference > Profiles > $YourProfile > Keys
-    4. On the bottom right of the screen click "Right option key acts
-       as: +Esc"
+  My Emacs configuration can be found on [[https://github.com/ElliotPenson/.emacs.d][GitHub]].
