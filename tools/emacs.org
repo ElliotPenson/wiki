@@ -175,6 +175,17 @@
     | C-c M-i   | Fuzzy complete                            |
     | C-c C-s   | Insert arglist                            |
 
+** YASnippet
+
+   Templating system for Emacs. Type a /trigger key/ then hit TAB to expand a
+   snippet. By default, snippets are stored in ~.emacs.d/snippets~
+
+   | Command             | Description          |
+   |---------------------+----------------------|
+   | M-x yas-new-snippet | Create a new snippet |
+
+   See [[http://joaotavora.github.io/yasnippet/snippet-development.html][the documentation]] for instructions on creating snippets.
+
 * Configuration
 
   My Emacs configuration can be found on [[https://github.com/ElliotPenson/.emacs.d][GitHub]].
