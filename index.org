@@ -11,6 +11,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 * Books
 
   - [[file:books/clean-code.org][Clean Code by Robert C. Martin]]
+  - [[file:books/visual-display-of-quantitative-information.org][The Visual Display of Quantitative Information by Edward Tufte]]
 
 * Courses
 

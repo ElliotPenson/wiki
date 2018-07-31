@@ -1,0 +1,50 @@
+#+TITLE: The Visual Display of Quantitative Information by Edward Tufte
+#+AUTHOR: Elliot Penson
+
+* Graphical Excellence
+
+  Graphical displays should
+
+  - show the data
+  - induce the viewer to think about the substance rather than about
+    methodology, graphic design, the technology of graphic production, or
+    something else
+  - avoid distorting what the data have to say
+  - present *many numbers in a small space*
+  - make large data sets coherent (tell a *story*)
+  - encourage the eye to *compare* different pieces of data
+  - reveal the data at several *levels of detail*, from a broad overview to the
+    fine structure
+  - server a reasonably clear purpose: description, exploration, tabulation, or
+    decoration
+  - be closely integrated with the statistical and verbal descriptions of a data
+    set
+
+** Data Maps
+
+   Data maps are a combination of cartographic and statistical skills. Maps can
+   show large amounts of data on a single page. Good graphics reward careful
+   study. Data can be examined at many different levels - from the contemplation
+   of general overall patterns to the detection of fine detail.
+
+** Time Series
+
+   The time-series plot sets on dimension to a regular rhythm of seconds,
+   minutes, hours, days, weeks, etc. Multiple time-series can be combined (same
+   chart or above and below) to encourage comparison.
+
+   Time-series displays are at their best for big data sets with real
+   variability. Why waste the power of data graphics on simple linear changes,
+   which can usually be better summarized in one or two numbers? Instead,
+   graphics should be reserved for the richer, more complex, more difficult
+   statistical material.
+
+   Small, noncomparative, highly labeled data sets usually belong in tables.
+
+   The problem with time-series is that the simple passage of time is not a good
+   explanatory variable: descriptive chronology is not causal explanation. There
+   are occasional exceptions, especially when there is a clear mechanism that
+   drives the Y-variable. Time-series plots can be moved toward causal
+   explanation by smuggling additional variables into the graphic design.
+
+** TODO Narrative Graphics of Space and Time
