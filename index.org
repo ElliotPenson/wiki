@@ -8,6 +8,10 @@ My brain in plain text.
 This site has been created with Emacs org-mode and [[https://github.com/marsmining/ox-twbs][ox-twbs]]. Original source
 files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
+* Blogs
+
+  - [[file:blogs/joel-on-software.org][Joel on Software]]
+
 * Books
 
   - [[file:books/clean-code.org][Clean Code by Robert C. Martin]]
