@@ -1,6 +1,8 @@
 #+TITLE: Emacs
 #+AUTHOR: Elliot Penson
 
+Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.d][my Emacs configuration]].
+
 * Global Commands
 
   Note that C- and M- mean Control- and Meta- respectively. To quit a partially
@@ -86,6 +88,31 @@
    |------------+---------------------------------------|
    | C-' <char> | Input a character and jump to it      |
    | C-: <char> | Input two characters and jump to them |
+
+** Elpy
+
+   Elpy is a Python development environment for Emacs.
+
+*** Elpy Navigation
+
+    | Command | Description                                         |
+    |---------+-----------------------------------------------------|
+    | M-.     | Go to definition                                    |
+    | C-c C-f | Find a file in the current project                  |
+    | C-c C-o | Display classes and functions in the current buffer |
+    | C-c C-d | Find documentation for object at point              |
+
+*** Elpy Interpreter
+
+    | Command               | Description                                            |
+    |-----------------------+--------------------------------------------------------|
+    | C-c C-z               | Switch to (and start) Python interpreter               |
+    | C-c C-k               | Kill the Python interpreter                            |
+    | C-<return>            | Send statement to the Python interpreter               |
+    | C-c C-c               | Send region or entire buffer to the Python interpreter |
+    | M-x pyvenv-activate   | Activate a virtual environment                         |
+    | M-X pyvenv-deactivate | Deactivate a virtual environment                       |
+    | M-X pyvenv-restart    | Restart Python (useful if venv was activated late)     |
 
 ** Interactively Do Things
 
