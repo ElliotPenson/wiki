@@ -237,7 +237,7 @@
 
    The less-than ~>~ symbol is used to redirect the output from a command to a
    file. The greater-than ~<~ symbol causes a command to read its input from a
-   file.
+   file. Double less-than ~>>~ will append output to a file.
 
 * Symbolic Links
 
