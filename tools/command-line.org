@@ -1,173 +1,243 @@
 #+TITLE: Command Line
 #+AUTHOR: Elliot Penson
 
-* Core Commands
+* Basic Commands
+
+** ~clear~
+
+   - *Description*: Clear the terminal screen.
+   - *Form*: ~clear~
+
+** ~echo~
+
+   - *Description*: Print arguments. Useful for piping and bash scripting.
+   - *Form*: ~echo <string>~
+   - *Example*: ~echo "some text"~
+
+** ~exit~
+
+   - *Description*: Quit the shell.
+   - *Form*: ~exit~
+
+** ~history~
+   
+   - *Description*: Show previous commands.
+   - *Form*: ~history~
+
+* File System Commands
 
 ** ~ls~  
 
-   - *Description*: display contents of working directory
+   - *Description*: Display contents of the working directory.
    - *Form*: ~ls [options]~
    - *Options*:
      - ~-l~
-       - /List/ contents with extra information
+       - /List/ contents with extra information.
      - ~-a~
-       - Show /all/ files/folders (even hidden ones)
+       - Show /all/ files/folders (even hidden ones).
+     - ~-t~
+       - Sort by date modified.
 
 ** ~pwd~
 
-   - *Description*: show the working directory path
+   - *Description*: Show the working directory path.
    - *Form*: ~pwd~
 
 ** ~cd~
 
-   - *Description*: change the working directory
+   - *Description*: Change the working directory.
    - *Forms*:
-     - ~cd~: move to the home directory
-     - ~cd ..~: move up the directory tree
-     - ~cd -~: move to the previous working directory
-     - ~cd [path]~: move to a specific location
+     - ~cd~: Move to the home directory.
+     - ~cd ..~: Move up the directory tree.
+     - ~cd -~: Move to the previous working directory.
+     - ~cd <path>~: Move to a specific location.
    - *Example*: ~cd ~/.emacs.d/~
 
 ** ~mkdir~
 
-   - *Description*: create a directory
+   - *Description*: Create a directory.
    - *Form*: ~mkdir <name>~
 
 ** ~cp~
 
-   - *Description*: copy a file
-   - *Form*: ~cp <file> <file>~
-   - *Example*: ~cd file.lisp folder/file.lisp~
+   - *Description*: Copy a file/folder.
+   - *Form*: ~cp <source> <target>~
+   - *Options*:
+     - ~-r~
+       - /Recursively/ copy a folder.
+   - *Examples*:
+     - ~cp file.lisp folder/file.lisp~
+     - ~cp folder/ destination/folder/~
 
 ** ~mv~
 
-   - *Description*: move/rename a file
+   - *Description*: Move or rename a file/folder.
    - *Form*: ~mv <file> <file>~
    - *Examples*:
      - ~mv file.lisp folder/file.lisp~
      - ~mv file.lisp new-name.lisp~
+     - ~mv folder renamed-folder~
 
 ** ~rm~
 
-   - *Description*: delete a file/folder
+   - *Description*: Delete a file/folder.
    - *Form*: ~rm <file>~
    - *Options*:
      - ~-r~
-       - /Recursively/ delete a directory
+       - /Recursively/ delete a directory.
    - *Examples*:
      - ~rm file.lisp~
      - ~rm -r some/folder~
 
+** ~cat~
+
+   - *Description*: Print the entire contents of a file.
+   - *Form*: ~cat <file>~
+
 ** ~less~
 
-   - *Description*: view the contents of a file. ~less~ has a cousin
-     called ~more~.
+   - *Description*: View the contents of a file.
    - *Form*: ~less <file>~
    - *Usage*:
      - Type ~q~ to quit, ~/~ to search, and ~h~ for help
 
-** ~cat~
-
-   - *Description*: print the entire contents of a file
-   - *Forms*
-     - ~cat <file>~
-     - ~cat <file1> <file2> ...~
-
-** ~echo~
-
-   - *Description*: convert standard input to standard output
-   - *Form*: ~echo <string>~
-   - *Example*: ~echo "some text"~
-
-** ~man~
-
-   - *Description*: open a command's manual
-   - *Form*: ~man <command>~
-
 ** ~sed~
 
-   - *Description*: modify lines in a file
+   - *Description*: Modify lines in a file.
    - *Form*: ~sed <command> <file>~
    - *Options*:
      - ~-i~
-       - Perform edits in-place. This will cause ~sed~ to modify the
-         source file instead of just printing the results.
+       - Perform edits in-place. This will cause ~sed~ to modify the source file
+         instead of just printing the results.
    - *Examples*:
      - ~sed -i 's/red/blue' file.txt~
-       - Replace the first occurrence of 'red' with 'blue' on each
-         line.
+       - Replace the first occurrence of 'red' with 'blue' on each line.
      - ~sed -i 's/red/blue/g' file.txt~
        - Replace all occurrences of 'red' with 'blue' on each line.
      - ~sed -i 's/unix/{&}/' file.txt~
-       - Replace all occurrences of 'unix' with '{unix}'. ~&~
-         represents the matched string.
+       - Replace all occurrences of 'unix' with '{unix}'. ~&~ represents the
+         matched string.
      - ~sed -i '/HOST/ s/localhost/ds-dev01/' file.txt~
-       - Find lines that contain 'HOST'. In those lines, replace all
-         occurrences of 'localhost' with 'ds-dev01'.
+       - Find lines that contain 'HOST'. In those lines, replace all occurrences
+         of 'localhost' with 'ds-dev01'.
 
 * Network Commands
 
-** TODO ~ssh~
+** ~ssh~
 
    - *Description*: Secure SHell enables remote machine login. The
      command provides secure, encrypted communication.
-   - *Form*: ~ssh user@host~
-   - *Example*: ~ssh john.cabmin@csgatewheaton.edu~
-
-*** TODO SSH Keys
+   - *Form*: ~ssh <user@host>~
+   - *Options*:
+     - ~-i <key>~
+       - Specify a private key file.
+   - *Example*:
+     - ~ssh john.cabmin@penson.io~
+     - ~ssh -i key.pem ec2-user@216.3.128.12~
 
 ** ~scp~
 
    - *Description*: Secure CoPy allows files/folders to be moved to,
      from, or between different hosts. It uses ~ssh~ for data transfer
      and provides the same authentication and security.
-   - *Form*: ~scp [remove/local file/directory] [remove/local
-     file/directory]~
+   - *Form*: ~scp <[user@host:]file> <[user@host:]file>~
    - *Options*
      - ~-r~
        - /Recursively/ move a directory
-   - *Example*:  ~scp -r
-     john.cabmin@csgate.wheaton.edu:/homes/john.cabmin/folder/ .~
+   - *Examples*:
+     - ~scp elliot@penson.io:/homes/elliot/file .~
+     - ~scp -r elliot@penson.io:/homes/elliot/folder/ .~
 
-** TODO ~curl~
+** ~curl~
 
-   - *Description*: ~curl~ downloads content from the Internet. It can
-     be very useful for hitting endpoints.
+   - *Description*: Transfer data from or to a server. Commonly used for HTTP
+     and FTP.
    - *Form*: ~curl [options] <URL>~
    - *Options:*
      - ~-X, --request <command>~
-       - Specifies a custom request method to use when communicating
-         with the HTTP server. The specified request method will be
-         used instead of the method otherwise used (which defaults to
-         GET).
-     - ~-H, --header <header>~
-       - Extra header to include in the request when sending HTTP to a
-         server.
-     - ~-d, --data <data>~
-       - Sends the specified data in a POST request to the HTTP
-         server, in the same way that a browser does when a user has
-         filled in an HTML form and presses the submit button.
-     - ~-m, --max-time <time>~
-       - Maximum time in seconds that you allow the whole operation to
-         take.
-     - ~-o, --output <file>~
-       - Write output to ~<file>~ instead of stdout. If you are using
-         {} or [] to fetch multiple documents, you can use ~#~
-         followed by a number in the <file> specifier. That variable
-         will be replaced with the current string for the URL being
-         fetched.
+       - HTTP method (e.g. POST, PUT). Defaults to GET.
+     - ~-H <header>~
+       - HTTP request header (e.g. ~'Content-Type: application/json'~).
+     - ~-d <data>~
+       - Send data in an HTTP POST request. Similar to a web form.
+     - ~-u <user:pass>~
+       - Username and password for authentication.
+     - ~-o <file>~
+       - Write output to ~<file>~ instead of stdout.
    - *Examples*:
      - ~curl http://www.google.com~
-     - ~curl ftp://ftp.example.com/file[1-100].txt~
-     - ~curl http://{one,two}.example.com -o "file_#1.txt"~
+     - ~curl -d '{"name":"elliot"}' -H 'Content-Type: application/json' http://penson.io~
+
+* Search Commands
+
+** ~grep~
+
+  Information in this section is taken from
+  http://www.uccs.edu/~ahitchco/grep/.
+
+  - *Description*: Global Regular Expression Print. Searches input files for a
+    search string and prints matching lines.
+  - *Form*: ~grep [options] <regex> <filename(s)>~
+  - *Options*:
+    - ~-n~
+      - Explains which lines match the search string.
+    - ~-v~
+      - Prints the negative result (all non-matching lines).
+    - ~-c~
+      - Suppresses the line printing, displays the number of matching lines.
+    - ~-l~
+      - Only prints the filenames with matching lines.
+    - ~-i~
+      - Ignore case.
+    - ~-x~
+      - Search for eXact matches only.
+    - ~-f~
+      - Allows specification of a file containing the search string.
+    - ~-r~
+      - Directory search. /grep -r "test" ./ searches all files in the current
+        directory
+
+*** Sibling ~grep~ Commands
+   
+    The ~egrep~ command stands for "extended grep" and supports certain useful
+    sequences such as the + and ? operators. It's equivalent to ~grep -E~. The
+    ~fgrep~ command gives a performance boost as it doesn't interpret regular
+    expressions. It's equivalent to ~grep -F~.
+
+** ~find~
+
+   - *Description*: Search for files in a directory hierarchy.
+   - *Form*: ~find <path> <expression>~
+   - *Examples*:
+     - ~find . -name 'foo'~
+       - Find a file called foo.
+     - ~find . -name 'foo*'~
+       - Find a file beginning with foo.
+     - ~find . -name '*.txt'~
+       - Find a file with the ~txt~ extension.
+     - ~find . -type d -name 'bar'~
+       - Find a folder called bar.
+
+* Pipes and Redirects
+
+** Pipe operator
+
+   The pipe operator ~|~ passes the output from one command to another. For
+   example: ~ls | grep ".org"~ will display all org-mode files in the current
+   directory.
+
+** Redirects
+
+   The less-than ~>~ symbol is used to redirect the output from a command to a
+   file. The greater-than ~<~ symbol causes a command to read its input from a
+   file.
 
 * Symbolic Links
 
-  Unix filesystems make use of aliases for files known as symbolic
-  links (symlinks). A symbolic links are treaded in a similar fashion
-  to the actual file. The ~ln~ command can be used to create
-  symlinks. The ~ls -l~ will reveal where a symlink points. For
-  example:
+  Unix filesystems make use of aliases for files known as symbolic links
+  (symlinks). A symbolic link is treaded in a similar fashion to the actual
+  file. The ~ln~ command can be used to create symlinks. The ~ls -l~ will reveal
+  where a symlink points. For example:
 
   #+BEGIN_SRC sh
     $ ls
@@ -182,98 +252,35 @@
 
 ** ~ln~
 
-   - *Description*: create a link
+   - *Description*: Create a link.
    - *Form*: ~ln <file> <alias-file>~
    - *Options*:
      - ~-s~
-       - Make a symbolic link
-
-* Searching
-
-** ~grep~
-
-  Information in this section is taken from
-  http://www.uccs.edu/~ahitchco/grep/.
-
-  - *Description*: Global Regular Expression Print. Searches input
-    files for a search string and prints matching lines.
-  - *Form*: ~grep [options] <regex> <filename(s)>~
-  - *Options*:
-    - ~-n~
-      - Explains which lines match the search string
-    - ~-v~
-      - Prints the negative result (all non-matching lines)
-    - ~-c~
-      - Suppresses the line printing, displays the number of matching
-        lines
-    - ~-l~
-      - Only prints the filenames with matching lines
-    - ~-i~
-      - Ignore case
-    - ~-x~
-      - Search for eXact matches only
-    - ~-f~
-      - Allows specification of a file containing the search string
-    - ~-r~
-      - Directory search. /grep -r "test" ./ searches all files in the
-        current directory
-
-*** Sibling Commands
-   
-    The egrep command stands for "extended grep" and supports certain
-    useful sequences such as the + and ? operators. It's equivalent to
-    grep -E. The fgrep command gives a performance boost as it doesn't
-    interpret regular expressions. It's equivalent to grep -F.
-
-** ~find~
-
-   - *Description*: Search for files in a directory hierarchy.
-   - *Form*: TODO
-   - *Options*: TODO
-   - *Example*:
-     - ~find . -name "foo*"~
-       - Recursively find all files in current and subfolders based on
-         wildcard matching.
-
-* Pipes and Redirects
-
-** Pipe operator
-
-   The pipe operator ~|~ passes the output from one command to
-   another. For example: ~ls | grep ".org"~ will display all org-mode
-   files in the current directory.
-
-** Redirects
-
-   The less-than ~>~ symbol is used to redirect the output from a
-   command to a file. The greater-than ~<~ symbol causes a command to
-   read its input from a file.
+       - Make a symbolic link.
 
 * Processes
 
-  A process is an instance of a program. Processes are identified with
-  a Process ID (PID). In the command line, programs are either run in
-  the foreground or the background. The shell waits for foreground
-  commands to finish. Most programs run in the foreground by
-  default. The shell doesn't wait for background processes to end and
-  other commands can be executed in the meantime. Include an ampersand
-  (~&~) at the end of a command to run it in the background. Programs
-  currently running in the foreground may be changed into a background
-  process with Control-Z.
+  A process is an instance of a program. Processes are identified with a process
+  ID (PID). In the command line, programs are run either in the foreground or
+  the background. The shell waits for foreground commands to finish. Most
+  programs run in the foreground by default. The shell doesn't wait for
+  background processes to end and other commands can be executed in the
+  meantime. Include an ampersand (~&~) at the end of a command to run it in the
+  background. Programs currently running in the foreground may be changed into a
+  background process with Control-Z.
 
 ** ~ps~
 
-   - *Description*: Process Status - display a list of running
-     processes.
+   - *Description*: Process Status. Display a list of running processes.
    - *Form*: ~ps [options]~
    - *Options*:
      - ~-e~
        - Show all user processes (even those without a controlling
-         terminal). This option is useful for finding the PID of a
-         command executed with ~nohup~ (see below).
+         terminal). This option is useful for finding the PID of a command
+         executed with ~nohup~ (see below).
      - ~-f~
-       - Display extra information including user ID, CPU percentage,
-         process start time, and arguments used.
+       - Display extra information including user ID, CPU percentage, process
+         start time, and arguments used.
 
 ** ~fg~
 
@@ -287,26 +294,24 @@
 
 ** ~nohup~
    
-   - *Description*: Causes a command to ignore the hangup (HUP)
-     signal. When one exits the shell, background commands are usually
-     stopped. ~nohup~ allows users to prevent this stop signal on
-     logout.
+   - *Description*: Causes a command to ignore the hangup (HUP) signal. When one
+     exits the shell, background commands are usually stopped. ~nohup~ allows
+     users to prevent this stop signal on logout.
    - *Form*: ~nohup <command> <arguments> &~
-   - *Example*: ~nohup python program.py &~
+   - *Example*: ~nohup python program.by &~
 
 * Documentation
+
+** ~man~
+
+   - *Description*: Open a command's manual.
+   - *Form*: ~man <command>~
 
 ** Usage Statement (Loose) Guidelines
 
    Anything in angle brackets (<>) means the argument is required
-   (e.g. <foo>). Anything in square brackets ([]) means the argument
-   is optional (e.g. [bar]). Options separated by the pipe (|) are
-   choices (e.g. --baz=one|two|three). Note that this mirrors the /or/
-   operator. Single-letter options start with one dash
-   (e.g. -a). Multi-letter options start with two dashes
-   (e.g. --foo-bar).
-
-* Utilities
-
-  - Irssi for IRC
-    - See http://www.reyhan.org/2012/12/how-to-irssi.html
+   (e.g. <foo>). Anything in square brackets ([]) means the argument is optional
+   (e.g. [bar]). Options separated by the pipe (|) are choices
+   (e.g. --baz=one|two|three). Note that this mirrors the /or/
+   operator. Single-letter options start with one dash (e.g. -a). Multi-letter
+   options start with two dashes (e.g. --foo-bar).
