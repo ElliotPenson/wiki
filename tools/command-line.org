@@ -307,6 +307,14 @@
    - *Form*: ~nohup <command> <arguments> &~
    - *Example*: ~nohup python program.by &~
 
+** ~top~
+
+   - *Description*: Display dynamic information about running processes.
+   - *Form*: ~top~
+   - *Usage*:
+     - Get help with ~?~. Type ~o~ to specify a sort key. Options include ~pid~,
+       ~cpu~, and ~mem~. Quit with ~q~.
+
 * Documentation
 
 ** ~man~
