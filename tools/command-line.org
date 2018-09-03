@@ -123,6 +123,33 @@
 
 * Network Commands
 
+** ~curl~
+
+   - *Description*: Transfer data from or to a server. Commonly used for HTTP
+     and FTP.
+   - *Form*: ~curl [options] <URL>~
+   - *Options:*
+     - ~-X, --request <command>~
+       - HTTP method (e.g. POST, PUT). Defaults to GET.
+     - ~-H <header>~
+       - HTTP request header (e.g. ~'Content-Type: application/json'~).
+     - ~-d <data>~
+       - Send data in an HTTP POST request. Similar to a web form.
+     - ~-u <user:pass>~
+       - Username and password for authentication.
+     - ~-o <file>~
+       - Write output to ~<file>~ instead of stdout.
+   - *Examples*:
+     - ~curl http://www.google.com~
+     - ~curl -d '{"name":"elliot"}' -H 'Content-Type: application/json'
+       http://penson.io~
+
+** ~ping~
+
+   - *Description*: Send an echo request to test a network connection.
+   - *Form*: ~ping <host>~
+   - *Example*: ~ping google.com~
+
 ** ~ssh~
 
    - *Description*: Secure SHell enables remote machine login. The
@@ -147,26 +174,6 @@
    - *Examples*:
      - ~scp elliot@penson.io:/homes/elliot/file .~
      - ~scp -r elliot@penson.io:/homes/elliot/folder/ .~
-
-** ~curl~
-
-   - *Description*: Transfer data from or to a server. Commonly used for HTTP
-     and FTP.
-   - *Form*: ~curl [options] <URL>~
-   - *Options:*
-     - ~-X, --request <command>~
-       - HTTP method (e.g. POST, PUT). Defaults to GET.
-     - ~-H <header>~
-       - HTTP request header (e.g. ~'Content-Type: application/json'~).
-     - ~-d <data>~
-       - Send data in an HTTP POST request. Similar to a web form.
-     - ~-u <user:pass>~
-       - Username and password for authentication.
-     - ~-o <file>~
-       - Write output to ~<file>~ instead of stdout.
-   - *Examples*:
-     - ~curl http://www.google.com~
-     - ~curl -d '{"name":"elliot"}' -H 'Content-Type: application/json' http://penson.io~
 
 * Search Commands
 
