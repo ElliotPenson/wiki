@@ -1,0 +1,61 @@
+#+TITLE: Library
+#+AUTHOR: Elliot Penson
+
+* Fiction
+
+  - [ ] And Then There Were None by Agatha Christie
+  - [X] Dune by Frank Herbert
+  - [X] Ender's Game by Orson Scott Card
+  - [X] Flowers for Algernon
+  - [ ] Pride and Prejudice by Jane Austen
+  - [X] Red Rising by Pierce Brown
+  - [X] Room by Emma Donoghue
+  - [X] Speaker for the Dead by Orson Scott Card
+  - [ ] The Diamond Age by Neal Stephenson
+  - [X] The Hitchhiker's Guide to the Galaxy by Douglas Adams
+  - [X] The Martian by Andy Weir
+  - [X] The Ocean at the End of the Lane by Neil Gaiman
+
+* Non-Fiction
+
+** Business
+
+   - [ ] Founders at Work by Jessica Livingston
+   - [ ] Good to Great by James Collins
+   - [ ] Zero to One by Peter Thiel
+
+** Computer Science
+
+   - [X] [[file:./clean-code.org][Clean Code by Robert C. Martin]]
+   - [ ] The Pragmatic Programmer by Andrew Hunt
+   - [ ] The Algorithm Design Manual by Steven Skina
+   - [ ] Zero Bugs and Program Faster by Kate Thompson
+
+** English
+
+   - [ ] The Elements of Style by William Strunk
+
+** Math
+
+   - [ ] How to Solve It by G. Polya
+   - [ ] Naked Statistics by Charles Wheelan
+   - [ ] The Visual Display of Quantitative Information by Edward R. Tufte
+
+** Poetry
+
+   - [ ] A Book of Luminous Things by Robert Hass
+   - [ ] Where the Sidewalk Ends by Shel Silverstein
+
+** Psychology
+
+   - [X] A Grief Observed by C.S. Lewis
+   - [ ] Flow by Mihaly Csikszentmihalyi
+   - [ ] Man's Search for Meaning by Viktor Frankl
+   - [ ] On The Shortness of Life by Seneca
+   - [ ] Pond River Ocean Rain by Charles Lattimore Howard
+   - [ ] When Breath Becomes Air by Paul Kalanithi
+
+** Science
+
+   - [ ] Astrophysics for People in a Hurry by Neil deGrasse Tyson
+   - [ ] Cosmos by Carl Sagan
