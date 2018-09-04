@@ -1,0 +1,34 @@
+#+TITLE: Paul Graham Essays
+#+AUTHOR: Elliot Penson
+
+* TODO [[http://paulgraham.com/mean.html][Mean People Fail]]
+
+* TODO [[http://paulgraham.com/cities.html][Cities and Ambition]]
+
+* TODO [[http://paulgraham.com/startupideas.html][How to Get Startup Ideas]]
+
+* TODO [[http://paulgraham.com/startuplessons.html][The Hardest Lessons for Startups to Learn]]
+
+* TODO [[http://paulgraham.com/startupmistakes.html][The 18 Mistakes that Kill Startups]]
+
+* TODO [[http://paulgraham.com/notnot.html][Why to Not Not Start a Startup]]
+
+* TODO [[http://paulgraham.com/relres.html][Relentlessly Resourceful]]
+
+* TODO [[http://paulgraham.com/wealth.html][How to Make Wealth]]
+
+* TODO [[http://paulgraham.com/start.html][How to Start a Startup]]
+
+* TODO [[http://paulgraham.com/hiring.html][Hiring is Obsolete]]
+
+* TODO [[http://www.paulgraham.com/avg.html][Beating the Averages]]
+
+* TODO [[http://www.paulgraham.com/lies.html][Lies We Tell Kids]]
+
+* TODO [[http://www.paulgraham.com/hs.html][What You'll Wish You'd Known]]
+
+* TODO [[http://www.paulgraham.com/newthings.html][Six Principles for Making New Things]]
+
+* TODO [[http://paulgraham.com/head.html][Holding a Program in One's Head]]
+
+* TODO [[http://paulgraham.com/really.html][What Startups Are Really Like]]

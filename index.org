@@ -11,6 +11,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 * Blogs
 
   - [[file:blogs/joel-on-software.org][Joel on Software]]
+  - [[file:blogs/paul-graham-essays.org][Paul Graham Essays]]
 
 * Books
 
