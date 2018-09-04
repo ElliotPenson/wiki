@@ -5,20 +5,47 @@ This page houses my notes from [[https://www.joelonsoftware.com/][Joel Spolsky's
 
 * [[https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/][Things You Should Never Do, Part I]]
 
+  *Don't rewrite from scratch!*
+
   Netscape made the single worst strategic mistake when they decided to rewrite
   the code from scratch in version 5.0. This version was never released!
 
   Programmers always want to throw away the code and start over. They think the
-  old code is a mess because it's harder to read code than to write it. Old code
-  has been used and tested. The "little hairs" on code are often bug fixes. When
-  you throw away code and start from scratch, you are throwing away all that
-  knowledge. All those collected bug fixes.
+  old code is a mess because *it's harder to read code than to write it*. Old
+  code has been used and tested. The "little hairs" on code are often bug
+  fixes. When you throw away code and start from scratch, you are throwing away
+  all that knowledge. All those collected bug fixes.
 
   Architectural, efficiency, and style problems can all be solved without
   throwing away the code.
 
-  Lastly, there's no reason to believe you'll actually do a better job than the
-  first time.
+  In addition, there's no reason to believe you'll actually do a better job than
+  the first time.
+
+* [[https://www.joelonsoftware.com/2006/10/24/the-phone-screen-2/][The Phone Screen]]
+
+  1. Career History
+     - Get the candidate comfortable and loosened up.
+     - Look for problem solvers (/people who get things done/) and passion
+       (people who care about stuff they did).
+     - Ask about technology (in detail) and politics (challenges).
+  2. Technical Problem
+     - How would you design a data structure or a block of code to do /x/? Where
+       /x/ is something kind of big and complicated.
+     - Talk about the code, time-space tradeoffs, performance, etc.
+     - Smart people can generally tell if they’re talking to other smart people
+       by having a conversation with them on a difficult or highly technical
+       subject.
+  3. Questions for Interviewer
+     - Has the candidate done their homework?
+
+  Example technical questions:
+
+  - How might you design a program that lets people play Monopoly with each
+    other over the Internet?
+  - What would be a good data structure for a photo editor?
+  - How would you implement code to operate the elevators in a high rise?
+  - How would you implement the rendering engine of a web browser?
 
 * TODO [[https://www.joelonsoftware.com/2000/05/12/strategy-letter-i-ben-and-jerrys-vs-amazon/][Strategy Letter I: Ben and Jerry's vs. Amazon]]
 
@@ -41,3 +68,7 @@ This page houses my notes from [[https://www.joelonsoftware.com/][Joel Spolsky's
 * TODO [[https://www.joelonsoftware.com/2001/12/11/back-to-basics/][Back to Basics]]
 
 * TODO [[https://www.joelonsoftware.com/2003/12/01/craftsmanship-2/][Craftmanship]]
+
+* TODO [[https://www.joelonsoftware.com/2006/09/08/sorting-resumes-2/][Sorting Resumes]]
+
+* TODO [[https://www.joelonsoftware.com/2006/10/25/the-guerrilla-guide-to-interviewing-version-30/][The Guerrilla Guide to Interviewing]]
