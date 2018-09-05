@@ -4,6 +4,9 @@
 * Fiction
 
   - [ ] And Then There Were None by Agatha Christie
+  - [ ] Brave New World by Aldous Huxley
+  - [ ] Cross Her Heart by Sarah Pinborough
+  - [ ] Dark Matter by Blake Crouch
   - [X] Dune by Frank Herbert
   - [X] Ender's Game by Orson Scott Card
   - [X] Flowers for Algernon
@@ -11,6 +14,7 @@
   - [X] Red Rising by Pierce Brown
   - [X] Room by Emma Donoghue
   - [X] Speaker for the Dead by Orson Scott Card
+  - [ ] Stories of Your Life and Others by Ted Chiang
   - [ ] The Diamond Age by Neal Stephenson
   - [X] The Hitchhiker's Guide to the Galaxy by Douglas Adams
   - [X] The Martian by Andy Weir
@@ -27,6 +31,11 @@
 ** Computer Science
 
    - [X] [[file:./clean-code.org][Clean Code by Robert C. Martin]]
+   - [ ] Insanely Great by Steven Levy
+   - [ ] Peopleware by DeMarco and Lister
+   - [X] Land of Lisp by Conrad Barski
+   - [ ] The C Programming Language by Kernighan and Richie
+   - [ ] The Mythical Man-Month by Fred Brooks
    - [ ] The Pragmatic Programmer by Andrew Hunt
    - [ ] The Algorithm Design Manual by Steven Skina
    - [ ] Zero Bugs and Program Faster by Kate Thompson
@@ -48,12 +57,16 @@
 
 ** Psychology
 
-   - [X] A Grief Observed by C.S. Lewis
    - [ ] Flow by Mihaly Csikszentmihalyi
    - [ ] Man's Search for Meaning by Viktor Frankl
    - [ ] On The Shortness of Life by Seneca
-   - [ ] Pond River Ocean Rain by Charles Lattimore Howard
    - [ ] When Breath Becomes Air by Paul Kalanithi
+
+** Religion
+
+   - [X] A Grief Observed by C.S. Lewis
+   - [ ] Pond River Ocean Rain by Charles Lattimore Howard
+   - [X] The Weight of Glory by C.S. Lewis
 
 ** Science
 
