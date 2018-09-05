@@ -16,6 +16,7 @@
   - [X] Speaker for the Dead by Orson Scott Card
   - [ ] Stories of Your Life and Others by Ted Chiang
   - [ ] The Diamond Age by Neal Stephenson
+  - [ ] The Fifth Season by N.K. Jemisin
   - [X] The Hitchhiker's Guide to the Galaxy by Douglas Adams
   - [X] The Martian by Andy Weir
   - [X] The Ocean at the End of the Lane by Neil Gaiman
@@ -72,3 +73,12 @@
 
    - [ ] Astrophysics for People in a Hurry by Neil deGrasse Tyson
    - [ ] Cosmos by Carl Sagan
+
+* Schedule
+
+  This section describes my weekly reading schedule. Each week is denoted with
+  ~<year>.<week>: <title>~.
+
+  - 18.35: Naked Statistics
+  - 18.36: Cross Her Heart
+  - 18.37: The Fifth Season
