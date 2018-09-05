@@ -167,7 +167,7 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
 
 ** Restclient
 
-   Explore and text REST services with Emacs. Run queries from a plain-text file
+   Explore and test REST services with Emacs. Run queries from a plain-text file
    and display output.
 
 *** Restclient Commands
