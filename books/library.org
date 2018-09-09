@@ -48,8 +48,8 @@
 ** Math
 
    - [ ] How to Solve It by G. Polya
-   - [ ] Naked Statistics by Charles Wheelan
-   - [ ] The Visual Display of Quantitative Information by Edward R. Tufte
+   - [ ] [[file:naked-statistics.org][Naked Statistics by Charles Wheelan]]
+   - [ ] [[file:visual-display-of-quantitative-information.org][The Visual Display of Quantitative Information by Edward Tufte]]
 
 ** Poetry
 

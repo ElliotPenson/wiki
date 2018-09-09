@@ -1,0 +1,135 @@
+#+TITLE: Naked Statistics by Charles Wheelan
+#+AUTHOR: Elliot Penson
+
+~TODO~ /Sampling/ is the process of gathering data for a small area and then
+using those data to make an informed judgment, or inference, about the
+population as a whole. Sampling requires far less resources than trying to
+count an entire population; done properly, it can be every bit as accurate.
+
+* Descriptive Statistics
+
+  A *descriptive statistic* is a summary of raw data that makes the underlying
+  phenomenon meaningful and manageable. Be careful! Any simplification invites
+  abuse.
+
+  *Mean* ($\mu$) and *median* are descriptive statistics. While outliers can
+  greatly affect the mean, them median usually ignores them. *Quertiles* are
+  divisions of the distribution into quarters (first quartile is the bottom 25
+  percent of observations, etc). Each *percentile* represents 1 percent of the
+  distribution.
+
+  An *absolute* score, number, or figure has some intrinsic meaning. A
+  *relative* value has meaning only in comparison to something else. For
+  example, 43/60 on an exam is an absolute score, the 8th percentile is a
+  relative score.
+
+  The *standard deviation* ($\sigma$) is a measure of how dispersed the data are
+  from their mean. For many typical distributions of data, a high proportion of
+  the observations lie within *one standard deviation of the mean*.
+
+  Data that are distributed *normally* are symmetrical around their mean in a
+  bell shape. By definition of the normal distribution, 68.2 percent of
+  observations lie within one standard deviation of the mean, 95.4 percent lie
+  within two standard deviations of the mean.
+
+  An *index* is a descriptive statistic made up of other descriptive
+  statistics. An index is highly sensitive to its parts and their weights.
+
+* Descriptive Deception
+
+  Although the field of statistics is rooted in mathematics, and mathematics is
+  exact, the use of statistics to describe complex phenomena is not exact. A
+  crucial distinction exists between *precision* and *accuracy*. Precision
+  reflects the exactitude with which we can express something. Accuracy is a
+  measure of whether a figure is broadly consistent with the truth. If an answer
+  is accurate, then more precision is usually better. But no amount of precision
+  can make up for inaccuracy.
+
+  Deception can come from a variety of places. Always check measurements or
+  calculations against common sense!
+  - Sometimes you need more than one descriptive statistic to understand the
+    data.
+  - Pay attention to the *unit of analysis*. Who or what is being described?
+    Cell phone coverage by land area might be different than coverage by person.
+  - The mean is sensitive to outliers, while the median is not. Do outliers
+    distort the description or are they an important part of the message?
+  - Don't compare "apples and oranges." For example, both exchange rates and
+    inflation can affect money comparisons. *Normal* figures are not adjusted
+    for inflation but *real* figures are.
+  - Percentages can be used to exaggerate. Percentage will be high for a very
+    low starting point. On the flip side, a small percentage of an enormous sum
+    can be a big number.
+  - Any comparison over time must have a start point and an end point. One can
+    sometimes manipulate those points in ways that affect the message.
+
+* Correlation
+
+  *Correlation* measures the degree to which two phenomena are related to one
+  another. Two variables are *positively correlated* if a change in one is
+  associated with a change in the other in the same direction. A correlation is
+  *negative* if a positive change in one variable is associated with a negative
+  change in the other. Note that not /every/ observation has to fit the pattern
+  for variables to be correlated.
+
+  We can encapsulate an association between two variables in a single
+  descriptive statistic: the *correlation coefficient*. The correlation
+  coefficient is a single number ranging from -1 to 1 with no units attached. A
+  correlation of 1, often described as perfect correlation, means that every
+  change in one variable is associated with an equivalent change in the other
+  variable in the same direction. A correlation of -1, or perfect negative
+  correlation, means that a change in one variable is associated with an
+  equivalent change in the other variable in the opposite direction.
+
+  The correlation coefficient is calculated by finding the distance (in standard
+  deviations) from the mean for each observation. The equation then finds the
+  relationship between the variables using these standard units.
+
+  \begin{equation}
+  r = \frac{1}{n} \sum_{i=1}^{n} \frac{(x_i - \bar{x})}{\sigma_x} \frac{(y_i - \bar{y})}{\sigma_y}
+  \end{equation}
+
+* Basic Probability
+
+  *Probability* is the study of events and outcomes involving an element of
+  uncertainty. Many events have known probabilities. The probability of flipping
+  heads with a fair coin is $\frac{1}{2}$. Other events have probabilities that
+  can be inferred on the basis of past data. Probabilities do not tell us what
+  will happen for sure; they tell us what is likely to happen and what is less
+  likely to happen. Probability can also sometimes tell us after the fact what
+  likely happened and what likely did not happen.
+
+  The probability of two independent events /both/ happening is the product of
+  their respective probabilities. If the probability of flipping heads with a
+  fair coin is $\frac{1}{2}$, then the probability of flipping heads twice in a
+  row is $\frac{1}{2} \times \frac{1}{2}$, or $\frac{1}{4}$. This is only the
+  case if the events are independent. The probability that it rains today is
+  /not/ independent of whether it rained yesterday, since storm fronts can last
+  for days.
+
+  If the events are mutually exclusive, such as throwing a 1, 2, or 3 with a
+  single die, the probability of getting A or B consists of the sum of their
+  individual probabilities. If the events are /not/ mutually exclusive, such as
+  drawing a five or a hears from a deck of cards (5 of hearts fits both groups),
+  the probability of getting A or B consists of the sum of their individual
+  probabilities minus the probability of both events happening.
+
+  The *expected value* is the sum of all the different outcomes, each weighted
+  by its probability and payoff. Let's say we a dice game where the payoff is $1
+  if you roll a 1; $2 if you roll a 2, etc. Each possible outcome has a
+  $\frac{1}{6}$ probability, so the expected value is
+
+  \begin{equation}
+  \frac{1}{6}($1) + \frac{1}{6}($2) + \frac{1}{6}($3) + \frac{1}{6}($4) + \frac{1}{6}($5) + \frac{1}{6}($6) = $3.50.
+  \end{equation}
+
+  The *law of large numbers* tells us that as the number of independent trials
+  increases, the average of the outcomes will get closer and closer to its
+  expected value. A *probability density function* plots the assorted outcomes
+  along the x-axis and the expected probability of each outcome on the y-axis;
+  the weighted probabilities - each outcome multiplied by its expected
+  frequency - will add up to 1. With more trials, the plot will become skinnier
+  and skinnier.
+
+  A *decision tree* maps out each source of uncertainty and the probabilities
+  associated with all possible outcomes. The end of the tree gives us all the
+  possible payoffs and the probability of each.
