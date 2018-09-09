@@ -133,3 +133,31 @@ count an entire population; done properly, it can be every bit as accurate.
   A *decision tree* maps out each source of uncertainty and the probabilities
   associated with all possible outcomes. The end of the tree gives us all the
   possible payoffs and the probability of each.
+
+* Problems with Probability
+
+  Prior to the 2008 financial crisis, firms throughout the financial industry
+  used a common barometer of risk, the Value at Risk model, or *VaR*. VaR had
+  two catastrophic problems. Firstly, the underlying probabilities on which the
+  models were built were based on past market movements; however, in financial
+  markets, the future does not necessarily look like the past. Secondly, the
+  "tail risk" and their true potential damage was neglected. Unlikely things
+  happen. In fact, over a long enough period of time, they are not even that
+  unlikely.
+
+  Here are some of the most common probability-related errors:
+
+  - Assuming events are independent when they are not.
+  - Not understanding when events /are/ independent.
+    - e.g. people looking at the dice and declaring that they are "due."
+  - Clusters happen.
+    - If a log of people flip coins, someone will get a streak.
+  - The prosecutor's fallacy.
+    - This fallacy occurs when the context surrounding statistical evidence is
+      neglected. For example, if you look for a one in a million DNA match if
+      you run through a database of a random million people.
+  - Reversion to the mean (or regression to the mean).
+    - Probability tells us that any outlier is likely to be followed by outcomes
+      that are more consistent with the long-term average.
+
+* TODO The Importance of Data
