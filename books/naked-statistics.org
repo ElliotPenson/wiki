@@ -1,11 +1,6 @@
 #+TITLE: Naked Statistics by Charles Wheelan
 #+AUTHOR: Elliot Penson
 
-~TODO~ /Sampling/ is the process of gathering data for a small area and then
-using those data to make an informed judgment, or inference, about the
-population as a whole. Sampling requires far less resources than trying to
-count an entire population; done properly, it can be every bit as accurate.
-
 * Descriptive Statistics
 
   A *descriptive statistic* is a summary of raw data that makes the underlying
@@ -160,4 +155,75 @@ count an entire population; done properly, it can be every bit as accurate.
     - Probability tells us that any outlier is likely to be followed by outcomes
       that are more consistent with the long-term average.
 
-* TODO The Importance of Data
+* The Importance of Data
+
+  Good data are essential. No amount of fancy analysis can make up for
+  fundamentally flawed data: garbage in, garbage out.
+
+  The data sample needs to be representative of some larger group or
+  population. *Sampling* is the process of gathering data for a small area and
+  then using those data to make an informed judgment, or inference, about the
+  population as a whole. Sampling requires far less resources than trying to
+  count an entire population; done properly, it can be every bit as
+  accurate. The easiest way to gather a representative sample of a larger
+  population is to select some subset of that population randomly (known as a
+  *simple random sample*).
+
+  Data should provide some source of comparison. Is a new medicine more
+  effective than the current treatment? We do this to isolate the impact of /one
+  specific intervention of attribute/. Researchers usually try to create a
+  *control group* and a *treatment group*. Ideally, one would randomly assign to
+  these groups.
+
+  Bad data can appear for many reasons.
+
+  - *Selection bias*: If you ask 100 people in a public place to complete a
+    short survey, and 60 are willing to answer your questions, those 60 are likely
+    to be different in significant ways from the 40 who walked by without making
+    eye contact.
+  - *Publication bias* appears because positive findings are more likely to be
+    published than negative findings.
+  - *Recall bias* can appear because memory is not always a good source of
+    data. Recall bias is one reason that longitudinal studies are often
+    preferred to cross-sectional studies.
+  - *Survivorship bias* occurs when some or many of the observations are falling
+    out of the sample. For example, the average test scores of students in high
+    school will rise steadily for four years. But...each year some of the
+    students drop out!
+
+* The Central Limit Theorem
+
+  The *central limit theorem* tells us that a large, properly drawn sample will
+  resemble the population from which it is drawn. There will be variation from
+  sample to sample, but the probability that any sample will deviate massively
+  from the underlying population is very low.
+
+  - If we have detail information about some population, then we can make
+    powerful inferences about any properly drawn sample from that population.
+  - Conversely, if we have detailed information about a properly drawn sample,
+    we can make strikingly accurate inferences about the population from which
+    the sample was drawn.
+  - We can calculate the probability that a particular sample was drawn from a
+    given population.
+  - We can infer whether or not two samples were likely drawn from the same
+    population.
+
+  According to the central limit theorem, the /sample means for any population
+  will be distributed roughly as a normal distribution around the population
+  mean/. The will be true no matter what the distribution of the underlying
+  population looks like.
+
+  [[file:../images/CLT.png]]
+
+  The *standard error* measures the dispersion of the sample means (it's the
+  standard deviation). Here's the equation for standard error:
+
+  \begin{equation}
+  SE = \frac{s}{\sqrt{n}}
+  \end{equation}
+
+  Where $s$ is the standard deviation of the population from which the sample is
+  drawn, and $n$ is the size of the sample. The standard error grows when the
+  population is more diverse and shrinks when the sample size increases. For
+  large samples, we can assume that the standard deviation of the sample is
+  reasonably close to the standard deviation of the population.
