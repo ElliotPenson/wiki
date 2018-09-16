@@ -227,3 +227,51 @@
   population is more diverse and shrinks when the sample size increases. For
   large samples, we can assume that the standard deviation of the sample is
   reasonably close to the standard deviation of the population.
+
+* Inference
+
+  Statistics cannot prove anything with certainty. *Inference* tells us what is
+  likely, and what is unlikely. Any statistical inference begins with an
+  implicit or explicit *null hypothesis*. This is our starting assumption, which
+  will be rejected or not on the basis of subsequent statistical analysis. If we
+  reject the null hypothesis, then we typically accept some *alternative
+  hypothesis*. The null hypothesis and alternative hypothesis are logical
+  complements. If one is true, the other is false. Researchers often create a
+  null hypothesis in hopes of being able to reject it.
+
+  One of the most common thresholds that researchers use for rejecting a null
+  hypothesis is 5 percent or 0.05. This probability is known as a *significance
+  level*, and it represents the upper bound for the likelihood of observing some
+  pattern of data if the null hypothesis were true. The *p-value* is the
+  specific probability of getting the result you've observed if the null
+  hypothesis is true. When we can reject a null hypothesis at some reasonable
+  significance level, the results are said to be *statistically significant*. If
+  there is "no statistically significant association" between two variables then
+  the relationship between the two variables can reasonably be explained by
+  chance alone.
+
+  Often we're comparing two samples to see if they come from the same
+  population. Suppose your null hypothesis is that male professional basketball
+  players have the same mean height as the rest of the adult male
+  population. You randomly select 37 basketball players (all professionals that
+  would come!) and 50 average men. The means are 6'7" and 5'10". You find that
+  the standard error of these groups is around 0.8 and 0.4. You can build a
+  *confidence interval* that stretches two standard errors: $6'7"\pm1.6$ and
+  $5'10"\pm0.8$. The /lower bound/ of our 95 percent confidence interval of
+  basketball players is still higher than the /upper bound/ for the 95
+  confidence interval for average men. Since our confidence intervals do not
+  overlap, these samples likely do not come from the same population and we can
+  reject the null hypothesis.
+
+  A *Type I* error involves wrongly rejecting the null hypothesis (a *false
+  positive*). A *Type II* error involves failing to reject a false null
+  hypothesis (a *false negative*). Let's say that we are building a spam
+  filter. The null hypothesis is that any particular e-mail message is /not/
+  spam. A Type I error would involve screening out an e-mail message that is not
+  actually spam. A Type II error would involve letting spam through the filter
+  into your inbox. What kind of error is worse depends on the circumstances. In
+  this example, people would probably err on the side of allowing Type II
+  errors. *Significance level will affect how much you see one type of error
+  vs. the other type of error*.
+
+* TODO Polling
