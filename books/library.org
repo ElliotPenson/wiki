@@ -35,10 +35,11 @@
    - [ ] Insanely Great by Steven Levy
    - [ ] Peopleware by DeMarco and Lister
    - [X] Land of Lisp by Conrad Barski
+   - [ ] The Algorithm Design Manual by Steven Skina
    - [ ] The C Programming Language by Kernighan and Richie
    - [ ] The Mythical Man-Month by Fred Brooks
    - [ ] The Pragmatic Programmer by Andrew Hunt
-   - [ ] The Algorithm Design Manual by Steven Skina
+   - [ ] The Supermen by Charles J. Murray
    - [ ] Zero Bugs and Program Faster by Kate Thompson
 
 ** English
@@ -47,6 +48,7 @@
 
 ** Math
 
+   - [ ] Burn Math Class by Jason Wilkes
    - [ ] How to Solve It by G. Polya
    - [ ] [[file:naked-statistics.org][Naked Statistics by Charles Wheelan]]
    - [ ] [[file:visual-display-of-quantitative-information.org][The Visual Display of Quantitative Information by Edward Tufte]]
@@ -60,6 +62,7 @@
 
    - [ ] Flow by Mihaly Csikszentmihalyi
    - [ ] Man's Search for Meaning by Viktor Frankl
+   - [ ] Modern Romance by Aziz Ansari
    - [ ] On The Shortness of Life by Seneca
    - [ ] When Breath Becomes Air by Paul Kalanithi
 
@@ -76,9 +79,22 @@
 
 * Schedule
 
-  This section describes my weekly reading schedule. Each week is denoted with
-  ~<year>.<week>: <title>~.
-
-  - 18.35: Naked Statistics
-  - 18.36: Cross Her Heart
-  - 18.37: The Fifth Season
+  | Year | Week | Title                           |
+  |------+------+---------------------------------|
+  | 2018 |   36 | Naked Statistics                |
+  | 2018 |   37 | Dark Matter                     |
+  | 2018 |   38 | Zero to One                     |
+  | 2018 |   39 | Modern Romance                  |
+  | 2018 |   40 | Flow                            |
+  | 2018 |   41 | The Diamond Age                 |
+  | 2018 |   42 | Peopleware                      |
+  | 2018 |   43 | Pond River Ocean Rain           |
+  | 2018 |   44 | Burn Math Class                 |
+  | 2018 |   45 | The Supermen                    |
+  | 2018 |   46 | Stories of Your Life and Others |
+  | 2018 |   47 |                                 |
+  | 2018 |   48 |                                 |
+  | 2018 |   49 |                                 |
+  | 2018 |   50 |                                 |
+  | 2018 |   51 |                                 |
+  | 2018 |   52 |                                 |
