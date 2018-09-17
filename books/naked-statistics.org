@@ -274,4 +274,122 @@
   errors. *Significance level will affect how much you see one type of error
   vs. the other type of error*.
 
-* TODO Polling
+* Polling
+
+  A poll (or survey) is an inference about the opinions of some population that
+  is based on the views expressed by some sample. The central limit theorem
+  tells us that a large, representative sample will look a lot like the
+  population from which it is drawn.
+
+  In a poll, the sample statistic we care about is not a mean but rather a
+  percentage or proportion. For any properly drawn random sample, the standard
+  error is equal to
+
+  \begin{equation}
+  \sqrt{\frac{p(1 - p)}{n}}
+  \end{equation}
+
+  Where $p$ is the proportion of respondents expressing a particular view, $(1 -
+  p$ is the proportion of respondents expressing a different view, and $n$ is
+  the total number of respondents in the sample. This standard error will be
+  small when the sample size is large or when $p$ and $(1 - p)$ are far apart.
+
+  When polling, use accurate samples, ask good questions, and ensure respondents
+  are telling the truth. Avoid self-selection and be aware of response
+  rate. Note that different phrases ("tax relief" vs. "tax cuts" and "climate
+  change" vs. global words") can elicit different responses.
+
+* Regression Analysis
+
+  *Regression analysis* allows us to quantify the relationship between a
+  particular variable and an outcome that we care about while controlling for
+  other factors. The hard part in regression analysis is determining which
+  variables ought to be considered in the analysis.
+
+  At its core, regression analysis seeks to find the "best fit" for a linear
+  relationship between two variables. Typically we use *ordinary least squares
+  (OLS)*. OLS fits the line that minimizes the sum of the squared
+  residuals.
+
+  Regression analysis outputs an equation that describes a line: $y = a +
+  bx$. The variable that is being explained is known as the *dependent variable*
+  ($y$). The variables that we are using to explain our dependent variable are
+  *explanatory variables* (or *independent variables*). The slope of the line
+  ($b$) is the *regression coefficient*.
+
+  For any regression coefficient, you will be interested in /sign/, /size/, and
+  /significance/. To determine if the coefficient is significant, we can use
+  standard error and test the null hypothesis. Note that the formula for
+  calculating the standard error for a coefficient was purposely avoided in
+  /Naked Statistics/.
+
+  Regression analysis also produces $R^2$. This statistic is a measure of the
+  total amount of variation explained by the regression equation. An $R^2$ of
+  zero means that our regression equation does no better than the mean. An $R^2$
+  of 1 means that the regression equation perfectly predicts elements in the
+  sample. A value below one means that some variation still needs explanation.
+
+  *Multivariate regression* (or *multiple regression*) is regression analysis
+  with multiple explanatory variables. This type of regression will give us a
+  coefficient for each explanatory variable included in the regression
+  equation. These coefficients estimate the linear association between each
+  explanatory variable and the dependent variable while holding other dependent
+  variables constant. /Multivariate regression thus lets us quantity a
+  relationship while controlling for other variables./ It's the best tool for
+  finding meaningful patterns in large, complex data sets.
+
+* Common Regression Mistakes
+
+  - Using regression to analyze a nonlinear relationship.
+  - Assuming that correlation equals causation.
+  - Not considering reverse causality (B might cause A instead of A causing B).
+  - Omitting variables.
+    - Regression results will be misleading and inaccurate if the regression
+      equation leaves out an important explanatory variable, particularly if
+      other variables in the equation "pick up" that affect.
+    - For example, suppose we explain test scores by school spending
+      alone. We're probably omitting parental education (among other
+      variables). Well-educated families tend to live in affluent areas that
+      spend a lot of money on their schools. Our school spending explanatory
+      variable would probably pick up the parent education level variable.
+  - Using highly correlated explanatory variables (multicollinearity).
+  - Extrapolating beyond the data.
+  - Data mining (using too many variables).
+
+* Program Evaluation
+
+  *Program evaluation* is the process by which we seek to measure the causal
+  effect of some intervention. The intervention that we care about its
+  typically called the *treatment* (though that term is overloaded). We are
+  seeking the isolate the effect of that single factor; ideally we would like to
+  know how the group receiving that treatment fares compared with some other
+  group chose members are identical in all other respects but for the
+  treatment.
+
+  Program evaluation offers a set of tools for isolating the treatment effect
+  when cause and effect are otherwise elusive.
+
+  - Randomized, controlled experiments.
+    - The most straightforward way to create a treatment and control group is in
+      an experiment setting, though this isn't always possible.
+    - The optimal way to create the two groups is to distribute the study
+      participants randomly across the two groups. The randomization will
+      generally distribute the non-treatment-related variables more or less
+      evenly between the two groups.
+  - Natural experiment.
+    - Sometimes the treatment and control group are created by accident. Perhaps
+      by different laws or unique practices.
+  - Nonequivalent control.
+    - Sometimes the best available option for studying a treatment effect is to
+      create non-randomized treatment and control. This creates a bias, but we
+      might be able to cleverly remote it.
+  - Difference in differences.
+    - One of the best ways to observe cause and effect is to do something and
+      see what happens!
+    - We compare the "before" and "after" data for a group that received the
+      treatment to the "before" and "after" data for a similar group that didn't
+      receive the treatment.
+  - Discontinuity analysis.
+    - Here we compare the outcomes for some group that barely qualified for an
+      intervention or treatment with the outcomes for a group that just missed
+      the cutoff for eligibility and did not receive the treatment.
