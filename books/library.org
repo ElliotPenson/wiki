@@ -50,7 +50,7 @@
 
    - [ ] Burn Math Class by Jason Wilkes
    - [ ] How to Solve It by G. Polya
-   - [ ] [[file:naked-statistics.org][Naked Statistics by Charles Wheelan]]
+   - [X] [[file:naked-statistics.org][Naked Statistics by Charles Wheelan]]
    - [ ] [[file:visual-display-of-quantitative-information.org][The Visual Display of Quantitative Information by Edward Tufte]]
 
 ** Poetry

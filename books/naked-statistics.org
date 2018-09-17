@@ -8,7 +8,7 @@
   abuse.
 
   *Mean* ($\mu$) and *median* are descriptive statistics. While outliers can
-  greatly affect the mean, them median usually ignores them. *Quertiles* are
+  greatly affect the mean, the median usually ignores them. *Quertiles* are
   divisions of the distribution into quarters (first quartile is the bottom 25
   percent of observations, etc). Each *percentile* represents 1 percent of the
   distribution.
@@ -102,7 +102,7 @@
   for days.
 
   If the events are mutually exclusive, such as throwing a 1, 2, or 3 with a
-  single die, the probability of getting A or B consists of the sum of their
+  single die, the probability of getting A /or/ B consists of the sum of their
   individual probabilities. If the events are /not/ mutually exclusive, such as
   drawing a five or a hears from a deck of cards (5 of hearts fits both groups),
   the probability of getting A or B consists of the sum of their individual
@@ -198,7 +198,7 @@
   sample to sample, but the probability that any sample will deviate massively
   from the underlying population is very low.
 
-  - If we have detail information about some population, then we can make
+  - If we have detailed information about some population, then we can make
     powerful inferences about any properly drawn sample from that population.
   - Conversely, if we have detailed information about a properly drawn sample,
     we can make strikingly accurate inferences about the population from which
@@ -290,7 +290,7 @@
   \end{equation}
 
   Where $p$ is the proportion of respondents expressing a particular view, $(1 -
-  p$ is the proportion of respondents expressing a different view, and $n$ is
+  p)$ is the proportion of respondents expressing a different view, and $n$ is
   the total number of respondents in the sample. This standard error will be
   small when the sample size is large or when $p$ and $(1 - p)$ are far apart.
 
@@ -359,19 +359,18 @@
 * Program Evaluation
 
   *Program evaluation* is the process by which we seek to measure the causal
-  effect of some intervention. The intervention that we care about its
-  typically called the *treatment* (though that term is overloaded). We are
-  seeking the isolate the effect of that single factor; ideally we would like to
-  know how the group receiving that treatment fares compared with some other
-  group chose members are identical in all other respects but for the
-  treatment.
+  effect of some intervention. The intervention that we care about is typically
+  called the *treatment* (though that term is overloaded). We are seeking to
+  isolate the effect of that single factor; ideally we would like to know how
+  the group receiving that treatment fares compared with some other group whose
+  members are identical in all other respects but for the treatment.
 
   Program evaluation offers a set of tools for isolating the treatment effect
   when cause and effect are otherwise elusive.
 
   - Randomized, controlled experiments.
     - The most straightforward way to create a treatment and control group is in
-      an experiment setting, though this isn't always possible.
+      an experimental setting, though this isn't always possible.
     - The optimal way to create the two groups is to distribute the study
       participants randomly across the two groups. The randomization will
       generally distribute the non-treatment-related variables more or less
