@@ -1,0 +1,7 @@
+#+TITLE: The Algorithm Design Manual
+#+AUTHOR: Elliot Penson
+
+This document houses my notes from /The Algorithm Design Manual/ by Steven
+S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to odd exercises]].
+
+* Chapter 1

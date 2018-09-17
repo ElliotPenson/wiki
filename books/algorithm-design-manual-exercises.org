@@ -1,0 +1,2 @@
+#+TITLE: The Algorithm Design Manual Exercises
+#+AUTHOR: Elliot Penson

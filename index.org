@@ -18,6 +18,8 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:books/clean-code.org][Clean Code by Robert C. Martin]]
   - [[file:books/library.org][Library]]
   - [[file:books/naked-statistics.org][Naked Statistics by Charles Wheelan]]
+  - [[file:books/algorithm-design-manual.org][The Algorithm Design Manual]]
+    - [[file:books/algorithm-design-manual-exercises.org][The Algorithm Design Manual: Exercises]]
   - [[file:books/visual-display-of-quantitative-information.org][The Visual Display of Quantitative Information by Edward Tufte]]
 
 * Courses
