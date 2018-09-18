@@ -1,0 +1,69 @@
+#+TITLE: Vocabulary
+#+AUTHOR: Elliot Penson
+
+* Instructions
+
+  Create a flashcard by writing ~adj~, ~noun~, or ~verb~ and then hitting
+  ~<tab>~. Begin a test session with ~M-x org-drill~.
+
+* Cards
+
+** Adjective                                                          :drill:
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :END:
+
+*** Word
+
+    Emphatic
+
+*** Definition
+
+    Expressing something forcibly and clearly.
+
+** Noun                                                               :drill:
+   SCHEDULED: <2018-09-21 Fri>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       AD8BC9F4-1311-4418-B5EB-FAFC7D15CB5F
+   :DRILL_LAST_INTERVAL: 4.14
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 5.0
+   :DRILL_EASE: 2.6
+   :DRILL_LAST_QUALITY: 5
+   :DRILL_LAST_REVIEWED: [2018-09-17 Mon 23:20]
+   :END:
+
+*** Word
+
+    Heuristic
+
+*** Definition
+
+    A practical method, not guaranteed to be optimal, that's sufficient for an
+    immediate goal; a shortcut.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-21 Fri>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       C828036F-4AD6-45B8-BAC0-9C53279B12A3
+   :DRILL_LAST_INTERVAL: 4.14
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 5.0
+   :DRILL_EASE: 2.6
+   :DRILL_LAST_QUALITY: 5
+   :DRILL_LAST_REVIEWED: [2018-09-17 Mon 23:20]
+   :END:
+
+*** Word
+
+    Inscrutable
+
+*** Definition
+
+    Impossible to understand.
