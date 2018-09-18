@@ -9,8 +9,87 @@
 * Cards
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-22 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
+   :ID:       2E43F534-1683-4391-A37F-CAE6D02F7882
+   :DRILL_LAST_INTERVAL: 3.86
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-09-18 Tue 00:07]
+   :END:
+
+*** Word
+
+    Anthropomorphic
+
+*** Definition
+
+    Human like, non-human possessing human traits, emotions, or intentions.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-22 Sat>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       24DF2E32-B372-4B95-87AB-C38A57753C80
+   :DRILL_LAST_INTERVAL: 4.14
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 5.0
+   :DRILL_EASE: 2.6
+   :DRILL_LAST_QUALITY: 5
+   :DRILL_LAST_REVIEWED: [2018-09-18 Tue 00:07]
+   :END:
+
+*** Word
+
+    Crass
+
+*** Definition
+
+    Lacking sensitivity, refinement, or intelligence.
+
+** Verb                                                               :drill:
+   SCHEDULED: <2018-09-22 Sat>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       566639E9-4CEF-4794-B194-D078CAE951F6
+   :DRILL_LAST_INTERVAL: 4.14
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 5.0
+   :DRILL_EASE: 2.6
+   :DRILL_LAST_QUALITY: 5
+   :DRILL_LAST_REVIEWED: [2018-09-18 Tue 00:08]
+   :END:
+
+*** Word
+
+    Distill
+
+*** Definition
+
+    Extract the essential meaning or most important aspects of.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-22 Sat>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       55CAB1CB-C77F-4E0D-BFBF-34106FDCA7E9
+   :DRILL_LAST_INTERVAL: 4.14
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 5.0
+   :DRILL_EASE: 2.6
+   :DRILL_LAST_QUALITY: 5
+   :DRILL_LAST_REVIEWED: [2018-09-18 Tue 00:07]
    :END:
 
 *** Word
@@ -67,3 +146,49 @@
 *** Definition
 
     Impossible to understand.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-22 Sat>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       FF38ABB0-ECF9-4B9B-91B5-1DB1DB2A8DCC
+   :DRILL_LAST_INTERVAL: 3.86
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-09-18 Tue 00:08]
+   :END:
+
+*** Word
+
+    Prima Facie
+
+*** Definition
+
+    /At first sight/; appears true at first consideration.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-22 Sat>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       B87CB477-B015-4680-B039-9D2E7B5CF337
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 2.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-09-18 Tue 00:09]
+   :END:
+
+*** Word
+
+    Reticent
+
+*** Definition
+
+    Not revealing one's thoughts or feelings readily; reserved.
