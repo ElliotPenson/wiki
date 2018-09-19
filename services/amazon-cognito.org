@@ -1,0 +1,39 @@
+#+TITLE: Amazon Cognito
+#+AUTHOR: Elliot Penson
+
+* Overview
+
+  Amazon Cognito is serverless identity provider (IDP) that allows user sign-up,
+  sign-in, and access control. Cognito is also an identity broker that allows
+  sign-in with 3rd party IDPs.
+
+* User Pools
+
+  User pools are directories of users. To add a new user pool, navigate to
+  cognito from the AWS console. Choose /Manage User Pools/ and select /Create a
+  User Pool/. Click /Review defaults/ and /Create pool/.
+
+* Clients
+
+  Clients have a many to one relationship to the pool. You can add a client
+  through the AWS console: select a user pool, choose /App clients/ and /Add an
+  app client/.
+
+  For JavaScript clients, see the ~aws/amazon-cognito-identity-js~ library [[https://github.com/aws/aws-amplify/tree/master/packages/amazon-cognito-identity-js][on
+  GitHub]]. Be sure to include both ~aws-cognito-sdk.js~ and
+  ~amazon-cognito-identity.js~. ~aws-cognito-sdk~ is a dependency. It's a
+  portion of Amazon's general SDK for JavaScript. See the /Usage/ section for
+  more information.
+
+* Federated Identities
+
+  Amazon Cognito Federated Identities enable you to create unique identities and
+  assign permissions for users. Your identity pool can include:
+
+  - Users in an Amazon Cognito user pool
+  - Users who authenticate with federated identity providers such as Facebook,
+    Google, or a SAML-based identity provider
+  - Users authenticated via your own existing authentication process
+
+  Navigate to Cognito from the AWS console. Choose /Manage Federated Identities/
+  and /Create Identity Pool/.

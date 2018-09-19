@@ -54,6 +54,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:services/api-gateway.org][Amazon API Gateway]]
     - [[file:services/cloudfront.org][Amazon CloudFront]]
     - [[file:services/cloudwatch.org][Amazon CloudWatch]]
+    - [[file:services/amazon-cognito.org][Amazon Cognito]]
     - [[file:services/ebs.org][Amazon EBS]]
     - [[file:services/ec2.org][Amazon EC2]]
     - [[file:services/efs.org][Amazon EFS]]
