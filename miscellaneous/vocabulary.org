@@ -125,6 +125,29 @@
     immediate goal; a shortcut.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-24 Mon>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       01741107-3BAC-4778-BE59-C7E4910EA4D6
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-09-20 Thu 17:01]
+   :END:
+
+*** Word
+
+    Ineffable
+
+*** Definition
+
+    Too great or extreme to be expressed or described in words.
+
+** Adjective                                                          :drill:
    SCHEDULED: <2018-09-21 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
@@ -192,3 +215,26 @@
 *** Definition
 
     Not revealing one's thoughts or feelings readily; reserved.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-24 Mon>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       5B641CB9-BB07-4971-9F01-D72CABF6A4DB
+   :DRILL_LAST_INTERVAL: 3.86
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 4
+   :DRILL_FAILURE_COUNT: 3
+   :DRILL_AVERAGE_QUALITY: 1.25
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-09-20 Thu 17:02]
+   :END:
+
+*** Word
+
+    Solicitous
+
+*** Definition
+
+    Characterized by or showing interest or concern.
