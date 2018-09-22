@@ -38,6 +38,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:languages/css.org][CSS]]
   - [[file:languages/go.org][Go]]
   - [[file:languages/python.org][Python]]
+  - [[file:languages/sql.org][SQL]]
   - [[file:languages/swift.org][Swift]]
   - [[file:languages/yaml.org][YAML]]
 

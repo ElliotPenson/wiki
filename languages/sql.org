@@ -1,0 +1,56 @@
+#+TITLE: SQL
+#+AUTHOR: Elliot Penson
+
+SQL (Structured Query Language) is a language for interacting with relational
+databases in an RDBMS. This page was created with reference to Ben Forta's [[http://forta.com/books/0672336073/][book
+on SQL]].
+
+* Terms
+
+  - A *table* is a structured list of data of a specific, consistent type.
+  - A *schema* describes table layout (and other information about the
+    database).
+  - A table consists of *columns* and *rows*.
+    - Each column is a single field with an associated data type.
+    - Each row is a record in a table.
+  - Every row in a table should have some column (or set of columns) that
+    uniquely identified it. This is called a *primary key*. Primary keys must be
+    unique and shouldn't be reused.
+
+* ~SELECT~
+
+  The ~SELECT~ statement retrieves information from one or more tables. At
+  minimum, you must specify what you want to select and from where you want to
+  select it.
+
+  #+BEGIN_SRC sql
+    -- Retrieve a single column.
+    SELECT first_name FROM People;
+
+    -- Retrieve multiple columns.
+    SELECT id, first_name, last_name FROM People;
+
+    -- Retrieve all columns.
+    SELECT * FROM People;
+  #+END_SRC
+
+** Unique Values
+
+   Use the ~DISTINCT~ keyword to find unique rows. Note that the keyword applies
+   to all columns, not just the one it precedes.
+
+   #+BEGIN_SRC sql
+     SELECT DISTINCT first_name FROM People;
+   #+END_SRC
+
+** Limit Results
+
+   Use the ~LIMIT~ keyword to control the number of rows returned. Note that SQL
+   implementations differ here.
+
+   #+BEGIN_SRC sql
+     SELECT first_name FROM People LIMIT 5;
+
+     -- Start from row 5.
+     SELECT first_name FROM People LIMIT 5 OFFSET 5;
+   #+END_SRC
