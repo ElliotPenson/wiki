@@ -101,18 +101,18 @@
     Expressing something forcibly and clearly.
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2018-09-21 Fri>
+   SCHEDULED: <2018-10-02 Tue>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       AD8BC9F4-1311-4418-B5EB-FAFC7D15CB5F
-   :DRILL_LAST_INTERVAL: 4.14
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 10.764
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 5.0
+   :DRILL_AVERAGE_QUALITY: 4.5
    :DRILL_EASE: 2.6
-   :DRILL_LAST_QUALITY: 5
-   :DRILL_LAST_REVIEWED: [2018-09-17 Mon 23:20]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-09-21 Fri 22:00]
    :END:
 
 *** Word
@@ -123,6 +123,29 @@
 
     A practical method, not guaranteed to be optimal, that's sufficient for an
     immediate goal; a shortcut.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-25 Tue>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       14849825-4B3C-46DD-A75D-4332C2083B15
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-09-21 Fri 22:04]
+   :END:
+
+*** Word
+
+    Hypoallergenic
+
+*** Definition
+
+    Relatively unlikely to cause an allergic reaction.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2018-09-24 Mon>
@@ -148,18 +171,18 @@
     Too great or extreme to be expressed or described in words.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-09-21 Fri>
+   SCHEDULED: <2018-10-02 Tue>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       C828036F-4AD6-45B8-BAC0-9C53279B12A3
-   :DRILL_LAST_INTERVAL: 4.14
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 11.1407
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 5.0
-   :DRILL_EASE: 2.6
+   :DRILL_EASE: 2.7
    :DRILL_LAST_QUALITY: 5
-   :DRILL_LAST_REVIEWED: [2018-09-17 Mon 23:20]
+   :DRILL_LAST_REVIEWED: [2018-09-21 Fri 22:00]
    :END:
 
 *** Word
@@ -169,6 +192,30 @@
 *** Definition
 
     Impossible to understand.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-25 Tue>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       30FFFEF3-4FCA-4A03-821D-329B3655FD26
+   :DRILL_LAST_INTERVAL: 3.86
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-09-21 Fri 22:03]
+   :END:
+
+*** Word
+
+    Irreverent
+
+*** Definition
+
+    Showing a lack of respect for people or things that are generally taken
+    seriously.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2018-09-22 Sat>
