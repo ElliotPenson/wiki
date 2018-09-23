@@ -54,3 +54,61 @@ on SQL]].
      -- Start from row 5.
      SELECT first_name FROM People LIMIT 5 OFFSET 5;
    #+END_SRC
+
+** Sorting
+
+   Use the ~ORDER BY~ clause to sort data retrieved using a ~SELECT~. Be sure
+   that the ~ORDER BY~ clause is the last clause in your ~SELECT~ statement.
+
+   #+BEGIN_SRC sql
+     SELECT first_name FROM People ORDER BY first_name;
+
+     -- Sort by multiple column names.
+     SELECT id FROM People ORDER BY first_name, last_name;
+
+     -- Sort in descending order (Z to A).
+     SELECT email FROM People ORDER BY first_name DESC;
+   #+END_SRC
+
+** Filtering
+
+   Use the ~WHERE~ clause to filter data retrieved by the ~SELECT~
+   statement. The ~WHERE~ clause is specified right after the table name. ~AND~,
+   ~OR~, and ~NOT~ may be used in where clauses. SQL (like most languages)
+   processes ~AND~ operators before ~OR~ operators. Use parenthesis to
+   explicitly group related operators.
+
+   #+BEGIN_SRC sql
+     SELECT first_name, last_name FROM People WHERE age = 21;
+
+     SELECT first_name FROM People WHERE last_name = 'Penson' AND age <= 30;
+
+     SELECT first_name FROM People WHERE last_name = 'Penson' OR last_name = 'Bland';
+
+     SELECT first_name FROM People WHERE NOT last_name = 'Penson';
+   #+END_SRC
+
+   The ~IN~ operator is used to specify a range of conditions, any of which can
+   be matched.
+
+   #+BEGIN_SRC sql
+     SELECT last_name FROM People WHERE zip IN ('20005', '20036') ORDER BY last_name;
+   #+END_SRC
+
+   Various operators are allowed. Note that single quotes should be used for
+   string literals.
+
+   | Operator              | Description                  |
+   |-----------------------+------------------------------|
+   | ~=~                   | Equality                     |
+   | ~<>~ or ~!=~          | Non-equality                 |
+   | ~<~                   | Less than                    |
+   | ~<=~                  | Less than or equal to        |
+   | ~!<~                  | Not less than                |
+   | ~>~                   | Greater than                 |
+   | ~>=~                  | Greater than or equal to     |
+   | ~!>~                  | Not greater than             |
+   | ~BETWEEN <a> AND <b>~ | Between two specified values |
+   | ~IS NULL~             | Is a ~NULL~ value.           |
+
+** TODO Wildcard Filtering
