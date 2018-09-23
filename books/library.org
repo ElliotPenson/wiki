@@ -6,7 +6,7 @@
   - [ ] And Then There Were None by Agatha Christie
   - [ ] Brave New World by Aldous Huxley
   - [ ] Cross Her Heart by Sarah Pinborough
-  - [ ] Dark Matter by Blake Crouch
+  - [X] Dark Matter by Blake Crouch
   - [X] Dune by Frank Herbert
   - [X] Ender's Game by Orson Scott Card
   - [X] Flowers for Algernon
@@ -79,22 +79,21 @@
 
 * Schedule
 
-  | Year | Week | Title                           |
-  |------+------+---------------------------------|
-  | 2018 |   36 | Naked Statistics                |
-  | 2018 |   37 | Dark Matter                     |
-  | 2018 |   38 | Zero to One                     |
-  | 2018 |   39 | Modern Romance                  |
-  | 2018 |   40 | Flow                            |
-  | 2018 |   41 | The Diamond Age                 |
-  | 2018 |   42 | Peopleware                      |
-  | 2018 |   43 | Pond River Ocean Rain           |
-  | 2018 |   44 | Burn Math Class                 |
-  | 2018 |   45 | The Supermen                    |
-  | 2018 |   46 | Stories of Your Life and Others |
-  | 2018 |   47 |                                 |
-  | 2018 |   48 |                                 |
-  | 2018 |   49 |                                 |
-  | 2018 |   50 |                                 |
-  | 2018 |   51 |                                 |
-  | 2018 |   52 |                                 |
+  | Year | Week | Title                           | Done |
+  |------+------+---------------------------------+------|
+  | 2018 |   37 | Naked Statistics                | X    |
+  | 2018 |   38 | Dark Matter                     | X    |
+  | 2018 |   39 | Zero to One                     |      |
+  | 2018 |   40 | Modern Romance                  |      |
+  | 2018 |   41 | Flow                            |      |
+  | 2018 |   42 | The Diamond Age                 |      |
+  | 2018 |   43 | Peopleware                      |      |
+  | 2018 |   44 | Pond River Ocean Rain           |      |
+  | 2018 |   45 | Burn Math Class                 |      |
+  | 2018 |   46 | The Supermen                    |      |
+  | 2018 |   47 | Stories of Your Life and Others |      |
+  | 2018 |   48 |                                 |      |
+  | 2018 |   49 |                                 |      |
+  | 2018 |   50 |                                 |      |
+  | 2018 |   51 |                                 |      |
+  | 2018 |   52 |                                 |      |
