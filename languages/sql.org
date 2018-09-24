@@ -111,4 +111,18 @@ on SQL]].
    | ~BETWEEN <a> AND <b>~ | Between two specified values |
    | ~IS NULL~             | Is a ~NULL~ value.           |
 
-** TODO Wildcard Filtering
+** Wildcard Filtering
+
+   To use wildcards in search clauses, the ~LIKE~ operator must be
+   used. Wildcard searching can only be used with text fields. The ~%~ sign
+   matches any number of occurrences of any character. The underscore (~_~)
+   matches any single character.
+
+   #+BEGIN_SRC sql
+     SELECT email FROM People WHERE email LIKE '%@gmail.com';
+
+     -- Find People (babies) with single digit heights.
+     SELECT height FROM People WHERE heigh LIKE '_ inches';
+   #+END_SRC
+
+** TODO Calculated Fields
