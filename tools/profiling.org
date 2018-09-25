@@ -1,0 +1,87 @@
+#+TITLE: (Program) Profiling
+#+AUTHOR: Elliot Penson
+
+#+BEGIN_QUOTE
+Premature optimization is the root of all evil...\\
+-- Donald Knuth
+#+END_QUOTE
+
+A *profiler* is a program that analyzes another program's execution to measure
+performance. Profilers sit among debuggers and compilers as a powerful tool in a
+programmer's arsenal.
+
+* Use Case
+
+  Profilers help programmers optimize their programs. They answer an essential
+  question, "where is my program spending its time?" Profiling establishes
+  bottlenecks and helps prevent blind, premature optimization.
+
+* Methods
+
+  Profilers fall into two major categories: *deterministic* and
+  *nondeterministic*. Deterministic profilers instrument the program to collect
+  timings. In contrast, nondeterministic profilers generally appear outside the
+  program being analyzed. Nondeterministic profilers sample the instruction
+  pointer and statistically deduce performance.
+
+  Deterministic profilers usually provide more information but add overhead to
+  execution. Nondeterministic profilers add little to no cost to program
+  execution (can be run in production!).
+
+* Output
+
+  Profilers can collect a significant amount of information. CPU (time) and
+  memory (space) are common metrics. Profilers also provide a *trace* of the
+  program. A trace is a history of events (usually function calls) annotated
+  with performance metrics.
+
+* Example
+
+  #+BEGIN_SRC python
+    from random import random
+    import math
+
+    def estimate_pi(iterations):
+        """Discover pi with Monte Carlo simulation."""
+        points = [(random(), random()) for _ in range(iterations)]
+        points_in_circle = 0
+        for point in points:
+            if is_in_circle(*point):
+                points_in_circle += 1
+        return 4 * (points_in_circle / iterations)
+
+    def is_in_circle(x, y, radius=1):
+        """Where does the point appear in a circle superimposed on a square?"""
+        return measure(x, y, 0, 0) < radius
+
+    def measure(x1, y1, x2, y2):
+        """Find the distance between two points."""
+        return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+  #+END_SRC
+
+  ~cProfile~ is Python's built-in, deterministic profiler. Let's try running the
+  profiler on the code above.
+
+  #+BEGIN_SRC sh
+    > import cProfile
+    > cProfile.run('estimate_pi(10000000)', sort='cumulative')
+
+             50000005 function calls in 15.574 seconds
+
+       Ordered by: cumulative time
+
+       ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+            1    0.000    0.000   15.574   15.574 {built-in method builtins.exec}
+            1    0.398    0.398   15.574   15.574 <string>:1(<module>)
+            1    2.229    2.229   15.175   15.175 pi.py:4(estimate_pi)
+     10000000    2.657    0.000    7.951    0.000 pi.py:13(is_in_circle)
+     10000000    4.551    0.000    5.293    0.000 pi.py:17(measure)
+            1    3.134    3.134    4.996    4.996 pi.py:6(<listcomp>)
+     20000000    1.862    0.000    1.862    0.000 {method 'random' of '_random.Random' objects}
+     10000000    0.743    0.000    0.743    0.000 {built-in method math.sqrt}
+            1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+  #+END_SRC
+
+  We can optimize this program in many ways. Most notably, we probably don't
+  need to manually calculate Pi! We could simply use Python's ~math.pi~
+  constant. This is something that profiling /won't/ tell you.

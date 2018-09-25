@@ -100,6 +100,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:tools/git.org][Git]]
   - [[file:tools/intellij.org][IntelliJ]]
   - [[file:tools/setup.org][Machine Setup]]
+  - [[file:tools/profiling.org][Profiling]]
   - [[file:tools/shebang.org][Shebang]]
 
 * Miscellaneous
