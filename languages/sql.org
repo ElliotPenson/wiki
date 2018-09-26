@@ -111,7 +111,7 @@ on SQL]].
    | ~BETWEEN <a> AND <b>~ | Between two specified values |
    | ~IS NULL~             | Is a ~NULL~ value.           |
 
-** Wildcard Filtering
+** Wildcards
 
    To use wildcards in search clauses, the ~LIKE~ operator must be
    used. Wildcard searching can only be used with text fields. The ~%~ sign
@@ -125,4 +125,26 @@ on SQL]].
      SELECT height FROM People WHERE heigh LIKE '_ inches';
    #+END_SRC
 
-** TODO Calculated Fields
+** Calculated Fields
+
+   A calculated field is created on-the-fly within a SQL ~SELECT~
+   statement. Concatenate strings with the ~||~ operator. SQL supports
+   mathematical operators like ~+~, ~-~, ~*~, and ~/~.
+
+   #+BEGIN_SRC sql
+     SELECT last_name || ', ' || first_name FROM People;
+
+     SELECT item_price * quantity FROM Orders;
+   #+END_SRC
+
+   An alias is an alternate name for a field or value. Aliases are assigned with
+   the ~AS~ keyword.
+
+   #+BEGIN_SRC sql
+      SELECT last_name || ', ' || first_name AS name FROM People ORDER BY name;
+   #+END_SRC
+
+   SQL also provides a variety of functions for manipulating values.
+   Unfortunately, functions tend to be very DBMS specific. Unlike SQL
+   statements, SQL functions are not portable. Be sure to look at documentation
+   for your specific SQL implementation!
