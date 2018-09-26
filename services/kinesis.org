@@ -1,4 +1,4 @@
-#+TITLE Kinesis
+#+TITLE: Kinesis
 #+AUTHOR: Elliot Penson
 
 Streaming data is data that is generated continuously by sometimes thousands of
