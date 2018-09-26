@@ -1,2 +1,68 @@
 #+TITLE: The Algorithm Design Manual Exercises
 #+AUTHOR: Elliot Penson
+
+* Chapter 1: Introduction
+
+** 1-1
+
+   a = -1 and b = -1 produces -2. This is less than min(a, b).
+
+** 1-3
+
+   Roads have different speed limits! We just need a long road that allows fast
+   travel.
+
+** 1-5
+
+   A. S = {1, 2, 3}, T = 5
+   B. S = {1, 2, 3}, T = 5
+   C. S = {1, 3, 5}, T = 6
+
+** 1-7
+
+   Suppose that ~c = 2~. We know that ~multiply(x, 0)~ is always ~0~. Based on
+   the pseudocode, ~multiply(x, y)~ is equal to
+   - ~multiply(2 * x, floor(y / 2)) + x * (y mod 2)~
+   - ~(2 * x) * floor(y / 2) + x * (y mod 2)~
+   - ~x * (2floor(y / 2) + y mod 2)~
+   - ~x * y~
+   When we assume that ~multiply(2 * x, floor(y / 2)) = 2x * floor(y / 2)~.
+
+** 1-9
+
+   *Base Case*: len(A) = 1. This list is sorted.
+
+   *Inductive Case*: Assume that bubblesort([1...n]) is sorts the list. To prove
+   that bubblesort([1...n + 1]) also sorts the list, we just need to show that
+   the main loop will correctly place the last element in the list. This
+   naturally follows from the "bubbling" to the correct position.
+
+   QED.
+
+** 1-11
+
+   *Base Case*: Suppose ~n = 1~.
+   - $\sum_{i=1}^{n} i^2 = \frac{n(n + 1)(2n + 1)}{6}$
+   - $(1)^2 = \frac{(1)((1) + 1)(2(1) + 1)}{6}$
+   - $1 = \frac{(1)(2)(3)}{6}$
+   - $1 = 1$
+
+   *Inductive Case*: Assume that $\sum_{i=1}^{n} i^2 = \frac{n(n + 1)(2n +
+   1)}{6}$. Now let's prove that ~n + 1~ also works. $\sum_{i=1}^{n + 1} i^2 =
+   \sum_{i=1}^{n} i^2 + (n + 1)^2$. We can show mathematically that
+   $\frac{n(n + 1)(2n + 1)}{6} + (n + 1)^2 = \frac{(n + 1)((n + 1) +
+   1)(2(n + 1) + 1)}{6}$.
+
+   QED.
+
+** 1-19
+
+   The average number of pages in my books is around 300. I have 18 small
+   shelves of books. Each shelf has around 15 books. I estimate that all the
+   books I own have 300 * 18 * 15 = 81,000 pages. This is far less than one
+   million pages!
+
+   My school library has three floors. Each floor has around 50 rows of
+   books. Each row has around 30 large shelves of books. Each shelf has around
+   50 books. I estimate that the number of pages in my school library is 300 *
+   3 * 50 * 30 * 50 = 67,500,000 pages.
