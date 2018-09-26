@@ -4,6 +4,23 @@
 This document houses my notes from /The Algorithm Design Manual/ by Steven
 S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to odd exercises]].
 
+* Schedule
+
+  | Week | Start Date   | Chapter                                                    |   Pages | Done? |
+  |------+--------------+------------------------------------------------------------+---------+-------|
+  |    1 | September 16 | Introduction to Algorithm Design                           |    1-30 | X     |
+  |    2 | September 23 | Algorithm Analysis                                         |   31-64 |       |
+  |    3 | September 30 | Data Structures (Part 1)                                   |   65-83 |       |
+  |    4 | October 7    | Data Structures (Part 2)                                   |  83-102 |       |
+  |    5 | October 14   | Sorting and Searching                                      | 103-144 |       |
+  |    6 | October 21   | Graph Traversal (Part 1)                                   | 145-169 |       |
+  |    7 | October 28   | Graph Traversal (Part 2)                                   | 169-190 |       |
+  |    8 | November 4   | Weighted Graph Algorithms                                  | 191-229 |       |
+  |    9 | November 11  | Combinatorial Search and Heuristic Methods                 | 230-272 |       |
+  |   10 | November 18  | Dynamic Programming                                        | 273-315 |       |
+  |   11 | November 25  | Intractable Problems and Approximation Algorithms (Part 1) | 316-330 |       |
+  |   12 | December 2   | Intractable Problems and Approximation Algorithms (Part 1) | 330-355 |       |
+
 * Chapter 1: Introduction
 
   A *problem* is specified by describing the complete set of *instances* it must
