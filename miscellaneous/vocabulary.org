@@ -100,6 +100,19 @@
 
     Expressing something forcibly and clearly.
 
+** Adjective                                                          :drill:
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :END:
+
+*** Word
+
+    Genial
+
+*** Definition
+
+    Friendly and cheerful.
+
 ** Noun                                                               :drill:
    SCHEDULED: <2018-10-02 Tue>
    :PROPERTIES:
@@ -216,6 +229,33 @@
 
     Showing a lack of respect for people or things that are generally taken
     seriously.
+
+** Noun, Adjective                                                    :drill:
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :END:
+
+*** Word
+
+    Pedant, Pedantic
+
+*** Definition
+
+    Person who is excessively concerned with minor details and rules or with
+    displaying academic learning.
+
+** Adjective                                                          :drill:
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :END:
+
+*** Word
+
+    Pensive
+
+*** Definition
+
+    Engaged in, involving, or reflecting deep or serious thought.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2018-09-22 Sat>
