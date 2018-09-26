@@ -9,18 +9,18 @@
 * Cards
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-09-22 Sat>
+   SCHEDULED: <2018-10-05 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       2E43F534-1683-4391-A37F-CAE6D02F7882
-   :DRILL_LAST_INTERVAL: 3.86
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.1096
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_AVERAGE_QUALITY: 3.5
    :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-09-18 Tue 00:07]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:27]
    :END:
 
 *** Word
@@ -32,18 +32,18 @@
     Human like, non-human possessing human traits, emotions, or intentions.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-09-22 Sat>
+   SCHEDULED: <2018-10-06 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       24DF2E32-B372-4B95-87AB-C38A57753C80
-   :DRILL_LAST_INTERVAL: 4.14
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 10.3873
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 5.0
-   :DRILL_EASE: 2.6
-   :DRILL_LAST_QUALITY: 5
-   :DRILL_LAST_REVIEWED: [2018-09-18 Tue 00:07]
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.46
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:27]
    :END:
 
 *** Word
@@ -55,18 +55,18 @@
     Lacking sensitivity, refinement, or intelligence.
 
 ** Verb                                                               :drill:
-   SCHEDULED: <2018-09-22 Sat>
+   SCHEDULED: <2018-09-30 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       566639E9-4CEF-4794-B194-D078CAE951F6
-   :DRILL_LAST_INTERVAL: 4.14
+   :DRILL_LAST_INTERVAL: 3.995
    :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 5.0
-   :DRILL_EASE: 2.6
-   :DRILL_LAST_QUALITY: 5
-   :DRILL_LAST_REVIEWED: [2018-09-18 Tue 00:08]
+   :DRILL_TOTAL_REPEATS: 3
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.46
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:29]
    :END:
 
 *** Word
@@ -78,18 +78,18 @@
     Extract the essential meaning or most important aspects of.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-09-22 Sat>
+   SCHEDULED: <2018-10-07 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       55CAB1CB-C77F-4E0D-BFBF-34106FDCA7E9
-   :DRILL_LAST_INTERVAL: 4.14
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 10.764
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 5.0
+   :DRILL_AVERAGE_QUALITY: 4.5
    :DRILL_EASE: 2.6
-   :DRILL_LAST_QUALITY: 5
-   :DRILL_LAST_REVIEWED: [2018-09-18 Tue 00:07]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:27]
    :END:
 
 *** Word
@@ -101,8 +101,18 @@
     Expressing something forcibly and clearly.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-30 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
+   :ID:       E8F5CA02-6246-4B0E-A390-ACE8088A3485
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:28]
    :END:
 
 *** Word
@@ -138,18 +148,18 @@
     immediate goal; a shortcut.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-09-25 Tue>
+   SCHEDULED: <2018-10-06 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       14849825-4B3C-46DD-A75D-4332C2083B15
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 10.352
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 4.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-09-21 Fri 22:04]
+   :DRILL_AVERAGE_QUALITY: 4.5
+   :DRILL_EASE: 2.6
+   :DRILL_LAST_QUALITY: 5
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:28]
    :END:
 
 *** Word
@@ -161,18 +171,18 @@
     Relatively unlikely to cause an allergic reaction.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-09-24 Mon>
+   SCHEDULED: <2018-09-30 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       01741107-3BAC-4778-BE59-C7E4910EA4D6
-   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_LAST_INTERVAL: 3.86
    :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 4.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-09-20 Thu 17:01]
+   :DRILL_TOTAL_REPEATS: 5
+   :DRILL_FAILURE_COUNT: 3
+   :DRILL_AVERAGE_QUALITY: 1.8
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:30]
    :END:
 
 *** Word
@@ -207,18 +217,18 @@
     Impossible to understand.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-09-25 Tue>
+   SCHEDULED: <2018-09-30 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       30FFFEF3-4FCA-4A03-821D-329B3655FD26
-   :DRILL_LAST_INTERVAL: 3.86
+   :DRILL_LAST_INTERVAL: 3.725
    :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_TOTAL_REPEATS: 5
+   :DRILL_FAILURE_COUNT: 3
+   :DRILL_AVERAGE_QUALITY: 1.2
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-09-21 Fri 22:03]
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:31]
    :END:
 
 *** Word
@@ -231,8 +241,18 @@
     seriously.
 
 ** Noun, Adjective                                                    :drill:
+   SCHEDULED: <2018-09-30 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
+   :ID:       5E04D751-F895-46C1-978A-416870A34B9B
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:29]
    :END:
 
 *** Word
@@ -245,8 +265,18 @@
     displaying academic learning.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-30 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
+   :ID:       946AB4B7-E026-486F-82BD-C9B74A78C671
+   :DRILL_LAST_INTERVAL: 3.86
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:28]
    :END:
 
 *** Word
@@ -258,18 +288,18 @@
     Engaged in, involving, or reflecting deep or serious thought.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-09-22 Sat>
+   SCHEDULED: <2018-10-05 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       FF38ABB0-ECF9-4B9B-91B5-1DB1DB2A8DCC
-   :DRILL_LAST_INTERVAL: 3.86
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.1096
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_AVERAGE_QUALITY: 3.5
    :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-09-18 Tue 00:08]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:28]
    :END:
 
 *** Word
@@ -281,18 +311,18 @@
     /At first sight/; appears true at first consideration.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-09-22 Sat>
+   SCHEDULED: <2018-09-30 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       B87CB477-B015-4680-B039-9D2E7B5CF337
-   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_LAST_INTERVAL: 3.86
    :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 2
-   :DRILL_FAILURE_COUNT: 1
-   :DRILL_AVERAGE_QUALITY: 2.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-09-18 Tue 00:09]
+   :DRILL_TOTAL_REPEATS: 7
+   :DRILL_FAILURE_COUNT: 5
+   :DRILL_AVERAGE_QUALITY: 1.571
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:30]
    :END:
 
 *** Word
@@ -304,18 +334,18 @@
     Not revealing one's thoughts or feelings readily; reserved.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-09-24 Mon>
+   SCHEDULED: <2018-09-30 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       5B641CB9-BB07-4971-9F01-D72CABF6A4DB
-   :DRILL_LAST_INTERVAL: 3.86
+   :DRILL_LAST_INTERVAL: 3.725
    :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 4
-   :DRILL_FAILURE_COUNT: 3
-   :DRILL_AVERAGE_QUALITY: 1.25
-   :DRILL_EASE: 2.36
+   :DRILL_TOTAL_REPEATS: 9
+   :DRILL_FAILURE_COUNT: 7
+   :DRILL_AVERAGE_QUALITY: 1.111
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-09-20 Thu 17:02]
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 00:31]
    :END:
 
 *** Word
