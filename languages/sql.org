@@ -148,3 +148,30 @@ on SQL]].
    Unfortunately, functions tend to be very DBMS specific. Unlike SQL
    statements, SQL functions are not portable. Be sure to look at documentation
    for your specific SQL implementation!
+
+** Aggregation
+
+   SQL supports five efficient aggregation functions.
+
+   | Function | Description                           |
+   |----------+---------------------------------------|
+   | AVG()    | Return a column's average value       |
+   | COUNT()  | Return the number of rows in a column |
+   | MAX()    | Return a column's highest value       |
+   | MIN()    | Return a column's lowest value        |
+   | SUM()    | Return the sum of a column's values   |
+
+   The ~COUNT~ function can be used in a few different ways.
+
+   #+BEGIN_SRC sql
+     -- Count the number of rows in a table.
+     SELECT COUNT(*) FROM People;
+
+     -- Count the number of rows that have values in a specific column.
+     SELECT COUNT(email) FROM People;
+
+     -- Count unique values.
+     SELECT COUNT(DISTINCT age) FROM People;
+   #+END_SRC
+
+** TODO Grouping Data
