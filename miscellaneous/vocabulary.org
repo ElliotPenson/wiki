@@ -54,6 +54,30 @@
 
     Lacking sensitivity, refinement, or intelligence.
 
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-30 Sun>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       1FC18694-FA0A-4907-96BE-EB8C842A09AA
+   :DRILL_LAST_INTERVAL: 3.86
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 22:28]
+   :END:
+
+*** Word
+
+    Disingenuous
+
+*** Definition
+
+    Not candid or sincere, typically by pretending that one knows less about
+    something than one really does.
+
 ** Verb                                                               :drill:
    SCHEDULED: <2018-09-30 Sun>
    :PROPERTIES:
@@ -309,6 +333,30 @@
 *** Definition
 
     /At first sight/; appears true at first consideration.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-09-30 Sun>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       EF68117D-DAED-4071-BE43-178DB41458EC
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-09-26 Wed 22:28]
+   :END:
+
+*** Word
+
+    Psychedelic
+
+*** Definition
+
+    Relating to or denoting drugs (especially LSD) that produce hallucinations
+    and apparent expansion of consciousness.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2018-09-30 Sun>
