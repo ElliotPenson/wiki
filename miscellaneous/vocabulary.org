@@ -124,6 +124,29 @@
 
     Expressing something forcibly and clearly.
 
+** Verb                                                               :drill:
+   SCHEDULED: <2018-10-01 Mon>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       73E5C6D4-AAFD-4E44-8888-B71BF22B9C27
+   :DRILL_LAST_INTERVAL: 3.86
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 3
+   :DRILL_FAILURE_COUNT: 2
+   :DRILL_AVERAGE_QUALITY: 2.333
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-09-27 Thu 13:30]
+   :END:
+
+*** Word
+
+    Eschew
+
+*** Definition
+
+    Deliberately avoid using; abstain from.
+
 ** Adjective                                                          :drill:
    SCHEDULED: <2018-09-30 Sun>
    :PROPERTIES:
@@ -263,6 +286,29 @@
 
     Showing a lack of respect for people or things that are generally taken
     seriously.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-10-01 Mon>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       9E0FFF26-A7F9-4872-9F1E-F7978A4EE8AF
+   :DRILL_LAST_INTERVAL: 3.86
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-09-27 Thu 13:29]
+   :END:
+
+*** Word
+
+    Nefarious
+
+*** Definition
+
+    Wicked or criminal.
 
 ** Noun, Adjective                                                    :drill:
    SCHEDULED: <2018-09-30 Sun>
