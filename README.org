@@ -12,3 +12,8 @@ My brain in plain text. View at [[http://wiki.penson.io/][wiki.penson.io]].
   #+BEGIN_SRC sh
     ./release
   #+END_SRC
+
+* Private Files
+
+  Store personal or sensitive information in ~private/~. The release script will
+  avoid files stored in this directory. ~private/~ is also ignored by ~git~.

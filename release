@@ -16,4 +16,5 @@ emacsclient --eval '(org-publish "org" t)' --alternate-editor ""
 echo "Uploading to S3..."
 aws s3 cp public_html/ s3://$bucket \
     --recursive \
+    --exclude "private/*" \
     --profile personal
