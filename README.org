@@ -5,3 +5,10 @@ My brain in plain text. View at [[http://wiki.penson.io/][wiki.penson.io]].
 
 [[./images/brain.png]]
 
+* Release
+
+  Render HTML and upload to S3 with
+
+  #+BEGIN_SRC sh
+    ./release
+  #+END_SRC

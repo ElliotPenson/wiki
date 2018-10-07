@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#
+# Render HTML and upload to S3.
+
+set -e
+
+bucket=wiki.penson.io
+
+if [[ -d public_html ]]; then
+    rm -r public_html
+fi
+
+echo "Rendering HTML..."
+emacsclient --eval '(org-publish "org" t)' --alternate-editor ""
+
+echo "Uploading to S3..."
+aws s3 cp public_html/ s3://$bucket \
+    --recursive \
+    --profile personal
