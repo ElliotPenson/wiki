@@ -310,6 +310,29 @@
     Showing a lack of respect for people or things that are generally taken
     seriously.
 
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-10-12 Fri>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       CD4C0925-E287-485D-B921-1645E591065E
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-10-08 Mon 19:34]
+   :END:
+
+*** Word
+
+    Nebulous
+
+*** Definition
+
+    (or a concept or idea) unclear, vague, or ill-defined.
+
 ** Noun                                                               :drill:
    SCHEDULED: <2018-10-11 Thu>
    :PROPERTIES:
@@ -495,3 +518,26 @@
 *** Definition
 
     Characterized by or showing interest or concern.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-10-12 Fri>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       550112B1-8ADA-40C8-9634-294E95143E8E
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-10-08 Mon 19:33]
+   :END:
+
+*** Word
+
+    Ubiquitous
+
+*** Definition
+
+    Present, appearing, or found everywhere.
