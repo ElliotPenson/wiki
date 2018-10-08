@@ -1,7 +1,19 @@
 #+TITLE: Paul Graham Essays
 #+AUTHOR: Elliot Penson
 
-* TODO [[http://paulgraham.com/mean.html][Mean People Fail]]
+* [[http://paulgraham.com/mean.html][Mean People Fail]]
+
+  Lots of people are mean, but successful founders often aren't.
+
+  - Being mean makes you stupid. Fighting isn't productive.
+  - Mean founders can't get the best people to work for them.
+  - /Very/ successful founders are driven by a spirit of benevolence.
+
+  #+BEGIN_QUOTE
+  For most of history, success meant success at zero-sum games...That is
+  changing...Increasingly you win by fighting to get control of a scarce
+  resource, but by having new ideas and building new things.
+  #+END_QUOTE
 
 * TODO [[http://paulgraham.com/cities.html][Cities and Ambition]]
 
