@@ -712,7 +712,7 @@
    \theta_1x$ to a dataset. We see that the data doesn't really lie on
    a straight line, and so the fit is not very good (*underfit*).
    
-   [[~/org/images/overfitting.png]]
+   [[file:../images/overfitting.png]]
 
    Instead, if we had added an extra feature $x^2$, and fit $y =
    \theta_0 + \theta_1x + \theta_2x^2$, then we obtain a slightly
