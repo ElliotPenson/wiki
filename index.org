@@ -35,6 +35,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
 * Languages
 
+  - [[file:languages/bash.org][Bash]]
   - [[file:languages/css.org][CSS]]
   - [[file:languages/go.org][Go]]
   - [[file:languages/python.org][Python]]
