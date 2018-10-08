@@ -106,4 +106,5 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
 * Miscellaneous
 
+  - [[file:miscellaneous/people.org][People]]
   - [[file:miscellaneous/vocabulary.org][Vocabulary]]

@@ -1,0 +1,22 @@
+#+TITLE: People
+#+AUTHOR: Elliot Penson
+
+* Dijkstra, Edsger W.
+
+  Edsger W. Dijkstra (1930-2002) was a Dutch computer science pioneer. Dijkstra
+  made fundamental contributions to a diverse set of areas in the field
+  (including compilers, distributed computing, concurrent programming, and
+  program design). He also had significant contributions to algorithms
+  (e.g. *Dijkstra's algorithm*). Dijkstra's 1968 letter /Go To Statement
+  Considered Harmful/ highlighted dangers of the ~goto~ statement. He advocated
+  (and coined the term) *structured programming*.
+
+  #+BEGIN_QUOTE
+  "Computer Science is no more about computers than astronomy is about
+  telescopes."
+
+  "Simplicity is prerequisite for reliability."
+
+  "The question of whether a computer can think is no more interesting than the
+  question of whether a submarine can swim."
+  #+END_QUOTE
