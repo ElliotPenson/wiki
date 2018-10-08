@@ -10,6 +10,7 @@
   - [X] Dune by Frank Herbert
   - [X] Ender's Game by Orson Scott Card
   - [X] Flowers for Algernon
+  - [X] Lost At Sea by Bryan Lee O'Malley
   - [ ] Pride and Prejudice by Jane Austen
   - [X] Red Rising by Pierce Brown
   - [X] Room by Emma Donoghue
@@ -74,26 +75,37 @@
 
 ** Science
 
-   - [ ] Astrophysics for People in a Hurry by Neil deGrasse Tyson
+   - [X] Astrophysics for People in a Hurry by Neil deGrasse Tyson
    - [ ] Cosmos by Carl Sagan
+   - [ ] Sapiens by Yuval Noah Harari
+   - [ ] "Surely You're Joking, Mr. Feynman!" by Richard Feynman
 
 * Schedule
 
-  | Year | Week | Title                           | Done |
-  |------+------+---------------------------------+------|
-  | 2018 |   37 | Naked Statistics                | X    |
-  | 2018 |   38 | Dark Matter                     | X    |
-  | 2018 |   39 | Zero to One                     |      |
-  | 2018 |   40 | Modern Romance                  |      |
-  | 2018 |   41 | Flow                            |      |
-  | 2018 |   42 | The Diamond Age                 |      |
-  | 2018 |   43 | Peopleware                      |      |
-  | 2018 |   44 | Pond River Ocean Rain           |      |
-  | 2018 |   45 | Burn Math Class                 |      |
-  | 2018 |   46 | The Supermen                    |      |
-  | 2018 |   47 | Stories of Your Life and Others |      |
-  | 2018 |   48 |                                 |      |
-  | 2018 |   49 |                                 |      |
-  | 2018 |   50 |                                 |      |
-  | 2018 |   51 |                                 |      |
-  | 2018 |   52 |                                 |      |
+  | Year | Week | Title                                | Done |
+  |------+------+--------------------------------------+------|
+  | 2018 |   37 | Naked Statistics                     | X    |
+  | 2018 |   38 | Dark Matter                          | X    |
+  | 2018 |   39 | Lost At Sea                          | X    |
+  | 2018 |   40 | "Surely You're Joking, Mr. Feynman!" |      |
+  | 2018 |   41 | Zero to One                          |      |
+  | 2018 |   42 | Modern Romance                       |      |
+  | 2018 |   43 | Flow                                 |      |
+  | 2018 |   44 | The Diamond Age                      |      |
+  | 2018 |   45 | Peopleware                           |      |
+  | 2018 |   46 | Pond River Ocean Rain                |      |
+  | 2018 |   47 | Burn Math Class                      |      |
+  | 2018 |   48 | The Supermen                         |      |
+  | 2018 |   49 | Stories of Your Life and Others      |      |
+  | 2018 |   50 |                                      |      |
+  | 2018 |   51 |                                      |      |
+  | 2018 |   52 |                                      |      |
+
+  What week are we on? Evaluate the following with ~C-c C-c~.
+
+  #+BEGIN_SRC elisp
+    (format-time-string "%U")
+  #+END_SRC
+
+  #+RESULTS:
+  : 40
