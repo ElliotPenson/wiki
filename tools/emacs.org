@@ -166,6 +166,15 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
    | C-}     | "Barf" forward. Push out last sexp     |
    | C-{     | "Barf" backward. Push out first sexp   |
 
+** Projectile
+
+   | Command | Description                                   |
+   |---------+-----------------------------------------------|
+   | s-p f   | Find file in current project                  |
+   | s-p p   | Switch project                                |
+   | s-p s g | Grep in project                               |
+   | s-p r   | Replace in project                            |
+
 ** Restclient
 
    Explore and test REST services with Emacs. Run queries from a plain-text file
