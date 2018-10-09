@@ -66,3 +66,43 @@
    books. Each row has around 30 large shelves of books. Each shelf has around
    50 books. I estimate that the number of pages in my school library is 300 *
    3 * 50 * 30 * 50 = 67,500,000 pages.
+
+* Chapter 2: Algorithm Analysis
+
+** 2-1
+
+   The worst case is $O(n^3)$.
+
+** 2-3
+
+   The worst case is $O(n^4)$.
+
+** 2-5
+
+   1. $2n$ multiplications in the worst case. $n$ additions.
+   2. $2n$ multiplications on average.
+
+** 2-7
+
+   1. Yes! $2^{n + 1} = 2*2^n$ and we can drop the constant.
+   2. No!
+
+** 2-9
+
+   1. $g(n) = O(f(n))$
+   2. $f(n) = O(g(n))$
+   3. $f(n) = O(g(n))$
+   4. $g(n) = O(f(n))$
+   5. $g(n) = O(f(n))$
+   6. $f(n) = O(g(n))$
+
+** 2-11
+
+   For all $n > 3$, $n^2 <= 2^n$ with a constant of 1. Therefore, $n^2 =
+   O(2^n)$.
+
+** 2-12
+
+   1. $1$
+   2. $2$
+   3. $2$

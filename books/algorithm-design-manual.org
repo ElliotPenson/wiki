@@ -9,7 +9,7 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
   | Week | Start Date   | Chapter                                                    |   Pages | Done? |
   |------+--------------+------------------------------------------------------------+---------+-------|
   |    1 | September 16 | Introduction to Algorithm Design                           |    1-30 | X     |
-  |    2 | September 23 | Algorithm Analysis                                         |   31-64 |       |
+  |    2 | September 23 | Algorithm Analysis                                         |   31-64 | X     |
   |    3 | September 30 | Data Structures (Part 1)                                   |   65-83 |       |
   |    4 | October 7    | Data Structures (Part 2)                                   |  83-102 |       |
   |    5 | October 14   | Sorting and Searching                                      | 103-144 |       |
@@ -153,7 +153,7 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
 
    - Each /simple/ operation (+, *, -, =, if, call) takes exactly one time
      step.
-   - Loops and subroutines the composition of many single-step operations.
+   - Loops and subroutines are the composition of many single-step operations.
    - Each memory access takes exactly one time step. Further, we have as much
      memory as we need.
 
@@ -231,3 +231,50 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
     \begin{equation}
     O(f(n)) * O(g(n)) \rightarrow O(f(n) * g(n))
     \end{equation}
+
+** Logarithms
+
+   A *logarithm* is simply an inverse exponential function. Saying $b^x = y$ is
+   equivalent to saying that $x = log_b y$. Exponential functions grow at a
+   distressingly fast rate. Thus, inverse exponential functions -
+   i.e. logarithms - grow refreshingly slowly. Logarithms arise in any process
+   where things are repeatedly halved.
+
+   *Binary search* is a good example of an $O(log n)$ algorithm. If searching
+   for a particular name $p$ in a telephone book, we start by comparing $p$
+   against the middle. Then we discard half the names. Only twenty comparisons
+   suffice to find any name in the million-name Manhattan phone book!
+
+   Logarithms appear in trees (height is $log_2 n$), bits ($log_2 n$ bits
+   required to store a number in binary).
+
+*** Logarithm Properties
+
+    The $b$ term in $log_b y$ is the *base* of the logarithm. Three bases are of
+    importance for mathematical and historical reasons.
+
+    - Base $b = 2$: The *binary logarithm*, usually denoted $lg n$, is a base 2
+      logarithm. Most algorithm applications of logarithms imply binary
+      logarithms.
+    - Base $b = e$: The *natural log*, usually denoted $ln x$, is a base $e =
+      2.71828...$ logarithm.
+    - Base $b = 10$: Less common today is the base-10 or *common logarithm*,
+      usually denoted as $log x$.
+
+    \begin{equation}
+    log_x(xy) = log_a(x) + log_a(y)
+    \end{equation}
+
+    It is easy to convert a logarithm from one base to another. This is a
+    consequence of the formula:
+
+    \begin{equation}
+    log_a b = \frac{log_c b}{log_c a}
+    \end{equation}
+
+    Thus, changing the base of $log b$ from base-a to base-c simply involves
+    dividing by $log_c a$.
+
+    The base of the logarithm has no real impact on the growth rate. We are
+    usually justified in ignoring the base of the logarithm when analyzing
+    algorithms.
