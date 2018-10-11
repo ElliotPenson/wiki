@@ -1,6 +1,8 @@
 #+TITLE: Vocabulary
 #+AUTHOR: Elliot Penson
 
+Most definitions on this page come from the New Oxford American Dictionary.
+
 * Instructions
 
   Create a flashcard by writing ~adj~, ~noun~, or ~verb~ and then hitting
@@ -310,29 +312,6 @@
     Showing a lack of respect for people or things that are generally taken
     seriously.
 
-** Adjective                                                          :drill:
-   SCHEDULED: <2018-10-12 Fri>
-   :PROPERTIES:
-   :DRILL_CARD_TYPE: twosided
-   :ID:       CD4C0925-E287-485D-B921-1645E591065E
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-10-08 Mon 19:34]
-   :END:
-
-*** Word
-
-    Nebulous
-
-*** Definition
-
-    (or a concept or idea) unclear, vague, or ill-defined.
-
 ** Noun                                                               :drill:
    SCHEDULED: <2018-10-11 Thu>
    :PROPERTIES:
@@ -357,6 +336,29 @@
     A wrong or inaccurate name or designation.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2018-10-12 Fri>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       CD4C0925-E287-485D-B921-1645E591065E
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-10-08 Mon 19:34]
+   :END:
+
+*** Word
+
+    Nebulous
+
+*** Definition
+
+    (or a concept or idea) unclear, vague, or ill-defined.
+
+** Adjective                                                          :drill:
    SCHEDULED: <2018-10-11 Thu>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
@@ -378,6 +380,30 @@
 *** Definition
 
     Wicked or criminal.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-10-14 Sun>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       A2F89B09-B9F3-4807-AB96-FFB3ACFB1764
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-10-10 Wed 23:11]
+   :END:
+
+*** Word
+
+    Obstinate
+
+*** Definition
+
+    Stubbornly refusing to change one's opinion or chosen course of action,
+    despite attempts to persuade one to do so.
 
 ** Noun, Adjective                                                    :drill:
    SCHEDULED: <2018-10-11 Thu>
@@ -495,6 +521,30 @@
 *** Definition
 
     Not revealing one's thoughts or feelings readily; reserved.
+
+** Noun                                                               :drill:
+   SCHEDULED: <2018-10-14 Sun>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       BF9C33BB-5BDA-4095-9DE7-552B9D40E4A5
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 3
+   :DRILL_FAILURE_COUNT: 2
+   :DRILL_AVERAGE_QUALITY: 2.667
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-10-10 Wed 23:12]
+   :END:
+
+*** Word
+
+    Socialite
+
+*** Definition
+
+    A person who is well known in fashionable society and is fond of social
+    activities and entertainment.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2018-10-11 Thu>
