@@ -174,4 +174,15 @@ on SQL]].
      SELECT COUNT(DISTINCT age) FROM People;
    #+END_SRC
 
-** TODO Grouping Data
+** Grouping
+
+   ~GROUP BY~ divides data into logical sets so that you can perform aggregate
+   calculations on each group. Note that groups may be nested by specifying
+   multiple columns in the ~GROUP BY~ clause. Filter groups with the ~HAVING~
+   clause. ~HAVING~ filters groups, ~WHERE~ filters rows.
+
+   #+BEGIN_SRC sql
+     SELECT age, COUNT(*) AS num_people FROM People GROUP BY age;
+
+     SELECT zip_code, COUNT(*) AS num_people FROM People GROUP BY age HAVING COUNT(*) > 2.
+   #+END_SRC
