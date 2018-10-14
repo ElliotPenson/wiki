@@ -196,6 +196,55 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Deliberately avoid using; abstain from.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2018-10-18 Thu>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       0711270B-D494-45C2-92F4-9ACF8ED5DD6C
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-10-14 Sun 13:56]
+   :END:
+
+*** Word
+
+    Estranged
+
+*** Definition
+
+    (of a person) no longer close or affectionate to someone; alienated. (of a
+    wife or husband) no longer living with their spouse.
+
+** Noun                                                               :drill:
+   SCHEDULED: <2018-10-18 Thu>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       5AE647B0-35FE-46C9-8F9B-487B9C37A80C
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-10-14 Sun 13:56]
+   :END:
+
+*** Word
+
+    Euphemism
+
+*** Definition
+
+    A mild or indirect word or expression substituted for one considered to be
+    too harsh or blunt when referring to something unpleasant or
+    embarrassing. e.g. downsizing for cuts.
+
+** Adjective                                                          :drill:
    SCHEDULED: <2018-10-17 Wed>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
@@ -405,18 +454,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Wicked or criminal.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-10-14 Sun>
+   SCHEDULED: <2018-10-18 Thu>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       A2F89B09-B9F3-4807-AB96-FFB3ACFB1764
    :DRILL_LAST_INTERVAL: 3.93
    :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_TOTAL_REPEATS: 3
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 2.667
    :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-10-10 Wed 23:11]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-10-14 Sun 01:15]
    :END:
 
 *** Word
@@ -569,18 +618,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Not revealing one's thoughts or feelings readily; reserved.
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2018-10-14 Sun>
+   SCHEDULED: <2018-10-18 Thu>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       BF9C33BB-5BDA-4095-9DE7-552B9D40E4A5
    :DRILL_LAST_INTERVAL: 4.0
    :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 3
-   :DRILL_FAILURE_COUNT: 2
-   :DRILL_AVERAGE_QUALITY: 2.667
+   :DRILL_TOTAL_REPEATS: 5
+   :DRILL_FAILURE_COUNT: 3
+   :DRILL_AVERAGE_QUALITY: 2.8
    :DRILL_EASE: 2.5
    :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-10-10 Wed 23:12]
+   :DRILL_LAST_REVIEWED: [2018-10-14 Sun 01:15]
    :END:
 
 *** Word
