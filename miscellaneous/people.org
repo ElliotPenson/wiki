@@ -1,6 +1,10 @@
 #+TITLE: People
 #+AUTHOR: Elliot Penson
 
+* TODO Babbage, Charles
+
+* TODO Church, Alonzo
+
 * Dijkstra, Edsger W.
 
   Edsger W. Dijkstra (1930-2002) was a Dutch computer science pioneer. Dijkstra
@@ -20,3 +24,25 @@
   "The question of whether a computer can think is no more interesting than the
   question of whether a submarine can swim."
   #+END_QUOTE
+
+* TODO Russell, Bertrand
+
+* Turing, Alan
+
+  Alan Turning (1912-1954) was an English computer scientist. Turing was
+  instrumental in the development of computer science theory. He formalized
+  computation with the *Turing machine* (part of the *Church-Turing
+  thesis*). During WWII, Turing worked at Bletchley Park as a codebreaker. In
+  his 1950 paper, /Computing Machinery and Intelligence/, Turing devised the
+  *Turing test*.
+
+  #+BEGIN_QUOTE
+  "Sometimes it is the people no one can imagine anything of who do the things
+  no one can imagine."
+
+  "Science is a differential equation. Religion is a boundary condition."i
+  #+END_QUOTE
+
+* TODO von Neumann, John
+
+* TODO Zuse, Konrad
