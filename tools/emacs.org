@@ -33,7 +33,6 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
    | C-<delete>             | Delete previous word                        |
    | C-k                    | Kill to end of line                         |
    | C-y                    | Yank (paste)                                |
-   | M-y                    | Yank older things (pop from the kill stack) |
    | C-/                    | Undo                                        |
    | C-<space>              | Set mark at cursor                          |
    | C-g                    | Deactivate mark                             |
@@ -115,17 +114,18 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
     | M-X pyvenv-deactivate | Deactivate a virtual environment                       |
     | M-X pyvenv-restart    | Restart Python (useful if venv was activated late)     |
 
-** Interactively Do Things
+** Helm
 
-   Interactively Do Things (Ido) is shipped with emacs but not enabled by
-   default. It provides instant feedback for many operations (like buffer
-   switching and file navigation).
+   Helm is an incremental completion and selection narrowing framework for
+   Emacs. I've ~C-x C-f~, ~M-x~, ~C-x b~, and ~M-y~ to Helm
+   commands. ~helm-mode~ allows a series of commands.
 
-   | Command | Description    |
-   |---------+----------------|
-   | C-f     | Disable ido    |
-   | C-s     | Next match     |
-   | C-r     | Previous match |
+   | Command   | Description           |
+   |-----------+-----------------------|
+   | C-n/C-p   | Next/previous item    |
+   | C-l       | Go up a directory     |
+   | C-<space> | Mark candidates       |
+   | M-a       | Select all            |
 
 ** Org mode
 
@@ -168,12 +168,11 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
 
 ** Projectile
 
-   | Command | Description                                   |
-   |---------+-----------------------------------------------|
-   | s-p f   | Find file in current project                  |
-   | s-p p   | Switch project                                |
-   | s-p s g | Grep in project                               |
-   | s-p r   | Replace in project                            |
+   | Command   | Description                  |
+   |-----------+------------------------------|
+   | C-c p f   | Find file in current project |
+   | C-c p p   | Switch project               |
+   | C-c p s g | Grep in project              |
 
 ** Restclient
 
