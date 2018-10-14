@@ -10,7 +10,7 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
   |------+--------------+------------------------------------------------------------+---------+-------|
   |    1 | September 16 | Introduction to Algorithm Design                           |    1-30 | X     |
   |    2 | September 23 | Algorithm Analysis                                         |   31-64 | X     |
-  |    3 | September 30 | Data Structures (Part 1)                                   |   65-83 |       |
+  |    3 | September 30 | Data Structures (Part 1)                                   |   65-83 | X     |
   |    4 | October 7    | Data Structures (Part 2)                                   |  83-102 |       |
   |    5 | October 14   | Sorting and Searching                                      | 103-144 |       |
   |    6 | October 21   | Graph Traversal (Part 1)                                   | 145-169 |       |
@@ -198,7 +198,7 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
     | Class Name  | Function        |
     |-------------+-----------------|
     | Constant    | $f(n) = 1$      |
-    | Logarithmic | $f(n) = log n$  |
+    | Logarithmic | $f(n) = \log n$ |
     | Linear      | $f(n) = n$      |
     | Superlinear | $f(n) = n lg n$ |
     | Quadratic   | $f(n) = n^2$    |
@@ -235,22 +235,22 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
 ** Logarithms
 
    A *logarithm* is simply an inverse exponential function. Saying $b^x = y$ is
-   equivalent to saying that $x = log_b y$. Exponential functions grow at a
+   equivalent to saying that $x = \log_b y$. Exponential functions grow at a
    distressingly fast rate. Thus, inverse exponential functions -
    i.e. logarithms - grow refreshingly slowly. Logarithms arise in any process
    where things are repeatedly halved.
 
-   *Binary search* is a good example of an $O(log n)$ algorithm. If searching
+   *Binary search* is a good example of an $O(\log n)$ algorithm. If searching
    for a particular name $p$ in a telephone book, we start by comparing $p$
    against the middle. Then we discard half the names. Only twenty comparisons
    suffice to find any name in the million-name Manhattan phone book!
 
-   Logarithms appear in trees (height is $log_2 n$), bits ($log_2 n$ bits
+   Logarithms appear in trees (height is $\log_2 n$), bits ($\log_2 n$ bits
    required to store a number in binary).
 
 *** Logarithm Properties
 
-    The $b$ term in $log_b y$ is the *base* of the logarithm. Three bases are of
+    The $b$ term in $\log_b y$ is the *base* of the logarithm. Three bases are of
     importance for mathematical and historical reasons.
 
     - Base $b = 2$: The *binary logarithm*, usually denoted $lg n$, is a base 2
@@ -259,22 +259,109 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
     - Base $b = e$: The *natural log*, usually denoted $ln x$, is a base $e =
       2.71828...$ logarithm.
     - Base $b = 10$: Less common today is the base-10 or *common logarithm*,
-      usually denoted as $log x$.
+      usually denoted as $\log x$.
 
     \begin{equation}
-    log_x(xy) = log_a(x) + log_a(y)
+    \log_x(xy) = \log_a(x) + \log_a(y)
     \end{equation}
 
     It is easy to convert a logarithm from one base to another. This is a
     consequence of the formula:
 
     \begin{equation}
-    log_a b = \frac{log_c b}{log_c a}
+    \log_a b = \frac{\log_c b}{\log_c a}
     \end{equation}
 
-    Thus, changing the base of $log b$ from base-a to base-c simply involves
-    dividing by $log_c a$.
+    Thus, changing the base of $\log b$ from base-a to base-c simply involves
+    dividing by $\log_c a$.
 
     The base of the logarithm has no real impact on the growth rate. We are
     usually justified in ignoring the base of the logarithm when analyzing
     algorithms.
+
+* Chapter 3: Data Structures
+
+  Classes of *abstract data types* such as containers, dictionaries, and
+  priority queues, have many different but functionally equivalent *data
+  structures* that implement them. These different data structures realize
+  different tradeoffs in the time to execute various operations.
+
+** Contiguous vs. Linked Data Structures
+
+   Data structures are either *contiguous* or *linked*, depending upon whether
+   they are based on arrays or pointers.
+
+*** Arrays
+
+    The *array* is the fundamental contiguously-allocated data structures. These
+    single slabs of memory have constant access given the index and space
+    efficiency. *Dynamic arrays* enable resizing. First, an initial size is
+    allocated. If we run out of space, a larger array (usually 2x) is allocated
+    and the elements are copied over. Insertion amortizes to $O(1)$.
+
+*** Lists
+
+    The *list* is the simplest linked structure. Each node in the list has data
+    and pointer fields. *Pointers* are the connections that hold the pieces of
+    together. Pointers represent the address of a location in memory. List don't
+    incur overflow, but require extra space for pointer fields and don't given
+    efficient random access to items.
+
+** Containers: Stacks and Queues
+
+   A *container* denotes a data structure that permits storage and retrieval of
+   data items independent of content. Containers are distinguished by the
+   particular retrieval order they support. *Stacks* support retrieval by
+   last-in, first-out (LIFO) order. The /put/ and /get/ operations for stacks
+   are usually called /push/ and /pop/. *Queues* support retrieval in first in,
+   first out (FIFO) order. The /put/ and /get/ operations for queues are usually
+   called /enqueue/ and /dequeue/.
+
+** Dictionaries
+
+   The *dictionary* data type permits access to data items by
+   content. Operations include /search/ (when given a /key/), /insert/, and
+   /delete/.
+
+** Binary Search Trees
+
+   A *binary tree* is recursively defined as being empty or consisting of a root
+   node with left and right subtrees. A *binary /search/ tree* labels each node
+   in a binary tree with a single key such that for any node labeled $x$, all
+   nodes in the left subtree have $keys < x$ while all nodes in the right
+   subtree have $keys > x$. Binary tree nodes have left and right point fields,
+   an optional parent pointer, and a data field.
+
+*** Traversal
+
+    Traversal involves visiting all nodes. *In-order* traversal of a binary
+    search tree can be done recursively with the following.
+
+    #+BEGIN_SRC python
+      def traverse(tree):
+          if tree:
+              traverse(tree.left)
+              process(tree.item)
+              traverse(tree.right)
+    #+END_SRC
+
+    Changing the position of ~process~ gives alternate traversal
+    orders. Processing the item first yields a *pre-order* traversal, while
+    processing it last gives a *post-order* traversal.
+
+*** Performance
+
+    /Search/, /insert/, and /delete/ all take $O(h)$ time, where $h$ is the
+    height of the tree. A perfectly balanced tree has $h = \lceil \log n
+    \rceil$. Unfortunately, inserting keys in sorted order produces a skinny
+    linear height tree, $h = n$. Randomizing insert order will produce $O(\log
+    n)$ height on average.
+
+*** Balanced Search Trees
+
+    *Balanced binary search tree* data structures adjust the tree during
+    insertion/delete to guarantee that height will always be $O(\log
+    n)$. Balanced tree implementations include *red-black trees* and *splay
+    trees*.
+
+** TODO Priority Queues
