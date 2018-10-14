@@ -7,7 +7,7 @@ My brain in plain text. View at [[http://wiki.penson.io/][wiki.penson.io]].
 
 * Release
 
-  Render HTML and upload to S3 with
+  Render HTML and upload to Amazon S3 with
 
   #+BEGIN_SRC sh
     ./release

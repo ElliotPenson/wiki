@@ -1,9 +1,10 @@
 #+TITLE: Personal Wiki
 #+AUTHOR: Elliot Penson
 
-My brain in plain text.
-
+#+ATTR_HTML: :align left :style margin-right:10px
 [[file:images/brain.png]]
+
+My brain in plain text.
 
 This site has been created with Emacs org-mode and [[https://github.com/marsmining/ox-twbs][ox-twbs]]. Original source
 files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
