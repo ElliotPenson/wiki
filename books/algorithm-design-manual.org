@@ -364,4 +364,62 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
     n)$. Balanced tree implementations include *red-black trees* and *splay
     trees*.
 
-** TODO Priority Queues
+** Priority Queues
+
+   *Priority queues* are data structures that provide more flexibility than
+   simple sorting, because they allow new elements to enter a system at
+   arbitrary intervals. The basic priority queue supports three primary
+   operations: /insert/, /find-minimum/maximum/, and
+   /delete-minimum/maximum/. Priority queues can be implemented with arrays or
+   BSTs, but a particularly nice implementation is the *heap*.
+
+** Hashing and Strings
+
+   *Hash tables* are a very practical way to maintain a dictionary. A *hash
+   function* is a mathematical function that maps keys to integers. Hash table
+   use the value of a hash function as an index into an array, and store our
+   item at that position.
+
+   The first step of the hash function is usually to map each key to a big
+   integer. Let $\alpha$ be the size of the alphabet on which a given string $S$
+   is written. Let ~char(c)~ be a function that maps each symbol of the alphabet
+   to a unique integer from 0 to $\alpha - 1$. The function
+
+   \begin{equation}
+   H(S) = \sum_{i = 0}^{|S| - 1} \alpha^{|S| - (i + 1)} \times char(s_i)
+   \end{equation}
+
+   maps each string to a unique (but large) integer by treating the characters
+   of the strings as "digits" in a base-$\alpha$ number system.
+
+*** Collision Resolution
+
+    Two distinct keys will occasionally hash to the same value. This is a
+    *collision*. *Chaining* is the easiest approach to collision
+    resolution. Represent the hash table as an array of $m$ linked
+    lists. Chaining devotes a considerable amount of memory to pointers. *Open
+    addressing* is an alternative to chaining. The hash table is maintained as
+    an array of elements, each initialized to null. On an insertion, we check to
+    see if the desired position is empty. If so, we insert it. If not, we must
+    find some other place to insert it instead. The simplest possibility (called
+    *sequential probing*) inserts the item in the next open spot in the table.
+
+*** String Matching via Hashing
+
+    The *Rabin-Karp algorithm* gives a linear-time solution to substring
+    search. Substring search asks if string $t$ contains the pattern $p$ as a
+    substring, and if so where. In the Rabin-Karp algorithm, We compute a given
+    hash function on both the pattern string $p$ and the $|p|$-character
+    substring starting from the $i$th position of $t$. If these two strings are
+    identical, clearly the resulting hash values must be the same. If the two
+    strings are different, the hash values will /almost certainly be different/
+    (we can check).
+
+*** Duplicate Detection via Hashing
+
+    The key idea of hashing is to represent a large object using a single
+    number. Hashing can be applied to duplicate detection. Suppose we're looking
+    to find if a given document is contained in a corpus. Explicitly comparing
+    the new document $D$ to all $n$ documents is hopelessly inefficient. But we
+    can hash $D$ to an integer, and compare it to the hash codes of the rest of
+    the corpus.
