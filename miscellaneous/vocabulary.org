@@ -244,6 +244,29 @@ Most definitions on this page come from the New Oxford American Dictionary.
     too harsh or blunt when referring to something unpleasant or
     embarrassing. e.g. downsizing for cuts.
 
+** Noun                                                               :drill:
+   SCHEDULED: <2018-10-20 Sat>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       F16ACA75-CE64-4112-BC08-24ECB679C612
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-10-16 Tue 17:23]
+   :END:
+
+*** Word
+
+    Euphoria
+
+*** Definition
+
+    A feeling or state of intense excitement and happiness.
+
 ** Adjective                                                          :drill:
    SCHEDULED: <2018-10-17 Wed>
    :PROPERTIES:
@@ -313,6 +336,29 @@ Most definitions on this page come from the New Oxford American Dictionary.
 *** Definition
 
     Relatively unlikely to cause an allergic reaction.
+
+** Noun, Adjective                                                    :drill:
+   SCHEDULED: <2018-10-20 Sat>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       D61267CA-ABC7-4E20-BC49-B47F45DE26D3
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-10-16 Tue 17:23]
+   :END:
+
+*** Word
+
+    Idiosyncrasy, Idiosyncratic
+
+*** Definition
+
+    Peculiar or individual.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2018-10-17 Wed>
@@ -595,18 +641,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     and apparent expansion of consciousness.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-10-16 Tue>
+   SCHEDULED: <2018-10-20 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       B87CB477-B015-4680-B039-9D2E7B5CF337
-   :DRILL_LAST_INTERVAL: 9.1096
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 8
-   :DRILL_FAILURE_COUNT: 5
-   :DRILL_AVERAGE_QUALITY: 1.875
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 11
+   :DRILL_FAILURE_COUNT: 7
+   :DRILL_AVERAGE_QUALITY: 2.0
    :DRILL_EASE: 2.36
    :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-10-07 Sun 13:45]
+   :DRILL_LAST_REVIEWED: [2018-10-16 Tue 17:07]
    :END:
 
 *** Word
