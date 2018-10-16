@@ -3,6 +3,8 @@
 
 * TODO Babbage, Charles
 
+* TODO Berners-Lee, Tim
+
 * TODO Church, Alonzo
 
 * Dijkstra, Edsger W.
@@ -25,7 +27,21 @@
   question of whether a submarine can swim."
   #+END_QUOTE
 
+* TODO Hopper, Grace
+
+* TODO Kay, Alan
+
+* TODO Knuth, Donald
+
+* TODO Lovelace, Ada
+
+* TODO McCarthy, John
+
+* TODO Newton, Isaac
+
 * TODO Russell, Bertrand
+
+* TODO Shannon, Claude
 
 * Turing, Alan
 
