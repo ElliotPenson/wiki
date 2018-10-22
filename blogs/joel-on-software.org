@@ -3,6 +3,20 @@
 
 This page houses my notes from [[https://www.joelonsoftware.com/][Joel Spolsky's blog]].
 
+* [[https://www.joelonsoftware.com/2003/12/01/craftsmanship-2/][Craftmanship]]
+
+  #+BEGIN_QUOTE
+  When software is built by a true craftsman, all the screws line up. When you
+  do something rare, the application behaves intelligently. More effort went
+  into getting rare cases exactly right than getting the main code working. Even
+  if it took an extra 500% effort to handle 1% of the cases.
+
+  Craftmanship is, of course, incredibly expensive. For a shrinkwrapped software
+  company, though, this level of craftsmanship is precisely what delights users
+  and provides longstanding competitive advantage, so I'll take the time and do
+  it right.
+  #+END_QUOTE
+
 * [[https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/][Things You Should Never Do, Part I]]
 
   *Don't rewrite from scratch!*
@@ -121,8 +135,6 @@ This page houses my notes from [[https://www.joelonsoftware.com/][Joel Spolsky's
 * TODO [[https://www.joelonsoftware.com/2006/04/11/the-development-abstraction-layer-2/][The Development Abstraction Layer]]
 
 * TODO [[https://www.joelonsoftware.com/2001/12/11/back-to-basics/][Back to Basics]]
-
-* TODO [[https://www.joelonsoftware.com/2003/12/01/craftsmanship-2/][Craftmanship]]
 
 * TODO [[https://www.joelonsoftware.com/2006/09/08/sorting-resumes-2/][Sorting Resumes]]
 
