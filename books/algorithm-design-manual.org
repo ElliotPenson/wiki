@@ -11,15 +11,13 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
   |    1 | September 16 | Introduction to Algorithm Design                           |    1-30 | X     |
   |    2 | September 23 | Algorithm Analysis                                         |   31-64 | X     |
   |    3 | September 30 | Data Structures (Part 1)                                   |   65-83 | X     |
-  |    4 | October 7    | Data Structures (Part 2)                                   |  83-102 |       |
-  |    5 | October 14   | Sorting and Searching                                      | 103-144 |       |
-  |    6 | October 21   | Graph Traversal (Part 1)                                   | 145-169 |       |
-  |    7 | October 28   | Graph Traversal (Part 2)                                   | 169-190 |       |
-  |    8 | November 4   | Weighted Graph Algorithms                                  | 191-229 |       |
-  |    9 | November 11  | Combinatorial Search and Heuristic Methods                 | 230-272 |       |
-  |   10 | November 18  | Dynamic Programming                                        | 273-315 |       |
-  |   11 | November 25  | Intractable Problems and Approximation Algorithms (Part 1) | 316-330 |       |
-  |   12 | December 2   | Intractable Problems and Approximation Algorithms (Part 1) | 330-355 |       |
+  |    4 | October 7    | Data Structures (Part 2)                                   |  83-102 | X     |
+  |    5 | October 14   | Sorting and Searching                                      | 103-144 | X     |
+  |    6 | October 21   | Graph Traversal                                            | 145-190 |       |
+  |    7 | October 28   | Weighted Graph Algorithms                                  | 191-229 |       |
+  |    8 | November 4   | Combinatorial Search and Heuristic Methods                 | 230-272 |       |
+  |    9 | November 11  | Dynamic Programming                                        | 273-315 |       |
+  |   10 | November 18  | Intractable Problems and Approximation Algorithms          | 316-355 |       |
 
 * Chapter 1: Introduction
 
@@ -59,15 +57,15 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
 
 *** Incorrectness
 
-   The best way to prove that an algorithm is /incorrect/ is to produce an
-   instance in which it yields an incorrect answer. Such instances are called
-   *counter-examples*. Good counter-examples are verifiable and simple. Many
-   tricks exist for finding counter-examples.
+    The best way to prove that an algorithm is /incorrect/ is to produce an
+    instance in which it yields an incorrect answer. Such instances are called
+    *counter-examples*. Good counter-examples are verifiable and simple. Many
+    tricks exist for finding counter-examples.
 
-   - /Think small/: small examples are easier to reason about.
-   - /Think exhaustively/: consider different types of examples.
-   - /Go for a tie/: try similar values in the input collection.
-   - /Seek extremes/: e.g. use values that are far apart or close together.
+    - /Think small/: small examples are easier to reason about.
+    - /Think exhaustively/: consider different types of examples.
+    - /Go for a tie/: try similar values in the input collection.
+    - /Seek extremes/: e.g. use values that are far apart or close together.
 
 *** Induction
 
@@ -423,3 +421,288 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
     the new document $D$ to all $n$ documents is hopelessly inefficient. But we
     can hash $D$ to an integer, and compare it to the hash codes of the rest of
     the corpus.
+
+* Chapter 4: Sorting and Searching
+
+  Sorting a the basic building block that many other algorithms are built
+  around. Many other problems become easy once a set of items is sorted
+  (e.g. /searching/, /closest pair/).
+
+  Many things need to be considered when sorting:
+
+  - /Ascending/ or /descending/ order.
+  - Key or entire record.
+  - What to do with equal keys (/stable/ sort?).
+  - /Comparison function/.
+
+** Heapsort
+
+   *Selection sort* is a simple algorithm that repeatedly extracts the smallest
+   remaining element from the unsorted part of an array. A computer takes $O(n)$
+   time to find the smallest element in an array. This is the operation
+   supported by a priority queue. What if we improve the data structure?
+   *Heapsort* is nothing but an implementation of selection sort using the right
+   data structure.
+
+*** Heaps
+
+    Heaps are a simple and elegant data structure that efficiently support the
+    priority queue operations insert and extract-min. They work by maintaining a
+    partial order on the set of elements. A /heap-labeled tree/ is a binary tree
+    such that the key labeling of each node /dominates/ the key labeling of each
+    of its children. In a /min-heap/ a node dominates its children by containing
+    a smaller key than they do.
+
+    [[file:../images/heap.png]]
+
+    Heaps can be stored with pointers (node with children) or arrays. In a
+    array, the root of the tree is in the first position, and its left and right
+    children are in the second and third positions. In general the keys of the
+    $i$th level of the binary tree are stored in $2^{i - 1}$ to $2^i - 1$. This
+    means that the left child of $k$ sits in position $2k$ and the right child
+    in $2k + 1$, while the parent of $k$ is in $\lceil k / 2 \rceil$. Note that
+    sparse trees can be very space inefficient, we need to be careful to pack
+    our elements as far left as possible. This implicit representation of binary
+    saves memory, but is less flexible than using pointers. We cannot store
+    arbitrary tree topologies without wasting large amount of space. We cannot
+    move subtrees around by just changing a single pointer. This loss of
+    flexibility explains why we cannot use this idea to represent binary search
+    trees.
+
+**** Insert
+
+     Place the new element into the left-most /open/ spot in the array, namely
+     the $(n + 1)$st position of a previously $n$-element heap. Then, /bubble
+     up/ the new key to its proper position in the hierarchy by swapping the
+     element with its parent until the parent dominates the element. Insertion
+     takes at most $O(\log n)$ time.
+
+     #+BEGIN_SRC python
+       def insert(element, heap):
+           heap = heap + [element]
+           bubble_up(len(heap), heap)
+
+       def bubble_up(index, heap):
+           if index > 0 and heap[index] > heap[index // 2]:
+               array[index], array[index // 2] = array[index // 2], array[index]
+               bubble_up(index // 2, heap)
+     #+END_SRC
+
+**** Extracting the Minimum
+
+     The minimum can easily be found by looking in the first position in the
+     array. Removing the top element leaves a hole in the array. Fill by moving
+     the element from the /right-most/ leaf (sitting in the $n$th position of
+     the array) into the first position. Then, /bubble down/ the new key until
+     it dominates all its children. The key should be switched with the dominant
+     child.
+
+     #+BEGIN_SRC python
+       def extract_minimum(heap):
+           minimum = heap[0]
+           heap = [heap[-1]] + heap[1:-1]
+           bubble_down(0, heap)
+           return minimum
+
+       def bubble_down(index, heap):
+           smaller_index = find_smaller_child(index, heap)
+           if smaller_index:
+               heap[index], heap[smaller_index] = heap[smaller_index], heap[index]
+               bubble_down[smaller_index]
+
+       def find_smaller_child(index, heap):
+           if 2 * index + 1 < len(heap) and heap[2 * index] > heap[2 * index + 1]:
+               return 2 * index + 1
+           elif 2 * index < len(heap):
+               return 2 * index
+     #+END_SRC
+
+*** Heapsort Implementation
+
+    Heapsort creates a heap and repeatedly extracts the minimum to give a
+    worst-case $O(n \log n)$ algorithm. It is an /in-place/ sort, meaning it
+    uses no extra memory over the array containing the elements to be sorted.
+
+    #+BEGIN_SRC python
+      def heapsort(array):
+          heap = []
+          for element in array:
+              insert(element, heap)
+          for index in range(len(array)):
+              array[index] = extract_min(heap)
+    #+END_SRC
+
+** Mergesort
+
+   Mergesort is a classic divide-and-conquer algorithm. This recursive approach
+   to sorting involves partitioning the elements into two groups, sorting each
+   of the smaller problems recursively, and then interleaving the two sorted
+   lists to totally order the elements.
+
+   The efficiency of mergesort depends upon how efficiently we combine the two
+   sorted halves into a single sorted list. We need to /merge/ the two lists
+   together. Observe that the smallest overall item in the two sorted lists must
+   sit at the top of one of the two lists. To merge, we remove the smallest
+   element, then repeat. Because the recursion goes $\lg n$ levels deep, and a
+   linear amount of work is done per level, mergesort takes $O(n \log n)$ time
+   in the worst case.
+
+   #+BEGIN_SRC python
+     def mergesort(array):
+         left, right = array[:len(array) / 2], array[len(array / 2):]
+         return merge(mergesort(left), mergesort(right))
+
+     def merge(array1, array2):
+         merged = []
+         while array1 or array2:
+             if not array2 or (array1 and array1[0] < array2[0]):
+                 merged.append(array1.pop(0))
+             else:
+                 merged.append(array2.pop(0))
+         return merged
+   #+END_SRC
+
+** Quicksort
+
+   Quicksort selects a item $p$ from the collection then separates the other
+   elements into piles: those before $p$ and those after $p$. We place the pivot
+   $p$ between the other two piles, and then sort piles independently.
+
+   Quicksort runs in $O(n * h)$, where $h$ is the height of the recursion
+   tree. Suppose, luckily, we always the median element, the subproblems are
+   always half the size of the previous level. This produces $O(n \log n)$, the
+   best case of quicksort. Suppose, unluckily, we always choose the biggest or
+   smallest element in the sub-array. This produces $O(n^2)$, the worst case of
+   quicksort.
+
+   Quicksort is typically 2-3 times faster than mergesort or heapsort when
+   implemented well. All three algorithms are $O(n \log n)$, but experimentation
+   shows that the simpler operations in the inner loop give quicksort a constant
+   improvement.
+
+*** Randomization
+
+    Randomization is a powerful tool to improve algorithms with bad worst-case
+    but good average-case complexity.
+
+    If we randomly choose the pivot in quicksort, we can expect, with high
+    probability, $O(n \log n)$. The best possible selection for the pivot is the
+    median. Suppose a key is good enough if it lies in the center half of the
+    sorted space of keys. Since the expected number of good splits and bad
+    splits is the same, the bad splits can only double the height of the tree,
+    which still produces $O(\log n)$ height. This randomization may be done by
+    either shuffling the array first or by selecting a random index at each
+    step.
+
+** Distribution Sort
+
+   Suppose we have a list of names to sort. We could partition them according to
+   the first letter. This creates 26 different piles, or buckets, or
+   names. Then, we partition each pile based on the second letter of each name,
+   etc. The names will be sorted as soon as each bucket contains only a single
+   name. At the end, we'll be able to simply concatenate the bunch of piles
+   together. This algorithm is commonly called *bucketsort* or *distribution
+   sort*.
+
+   *Bucketing* is a very effective idea whenever we are confident that the
+   distribution of data will be roughly uniform. It is the idea that underlies
+   hash tables, kd-trees, and a variety of other practical data structures. The
+   downside of such techniques is that the performance can be terrible when the
+   data distribution is not what we expected.
+
+** Binary Search and Related Algorithms
+
+   *Binary search* is a fast algorithm for searching in a sorted array. We
+   compare the key $q$ to the middle item. If $q$ is smaller, it must appear in
+   the first half; if not it must reside in the second half. By repeating this
+   process recursively on the correct half, we locate the key in $\lg n$
+   comparisons.
+
+   #+BEGIN_SRC python
+     def binary_search(item, array, start=None, end=None):
+         if start is None or end is None:
+             start, end = 0, len(array)
+
+         middle_index = (start + end) // 2
+         if start > end:
+             return False
+         elif item == array[middle_index]:
+             return True
+         elif item < array[middle_index]:
+             return binary_search(item, array, start, middle_index - 1)
+         else:
+             return binary_search(item, array, middle_index + 1, end)
+   #+END_SRC
+
+   Binary search is the power behind twenty questions!
+
+*** Counting Occurrences
+
+    Suppose we want to count the number of times a given key $k$ occurs in a
+    given sorted array. We could use binary search to find the index of an
+    element in the correct block in $O(\lg n)$ time. Then we sequentially test
+    elements to the left and right until we find one that differs from the
+    key. The difference between the boundaries (plus one) gives the count of
+    the number of occurrences of $k$. This algorithm runs in $O(\lg n + s)$,
+    where $s$ is the number of occurrences of the key.
+
+    A fast algorithm results by modifying binary search to search for the
+    /boundary/ of the block containing $k$, instead of $k$ itself. We perform
+    this search twice, for a total time of $O(\lg n)$, so we can count the
+    occurrences in logarithmic time regardless of the size of the block.
+
+*** One-Sided Binary Search
+
+    Suppose we don't know the bounds of our sorted collection. Binary search can
+    also proceed from a specific position at repeatedly larger intervals (1, 2,
+    4, 8, 16) until we find a value greater than our key. We now have a window
+    containing the target and can proceed with binary search. /One-sided binary
+    search/ is most useful whenever we are looking for a key that lies close to
+    our current position.
+
+*** Square and Other Roots
+
+    Suppose we are searching for the square root $r$ of $n$. Notice that the
+    square root of $n \leq 1$ must be at least 1 and at most $n$. Consider the
+    midpoint $m$ of this interval. How does $m^2$ compare to $n$? If $n \leq
+    m^2$, then the square root must be greater than $m$, so the algorithm
+    repeats on a new range of values. This application of binary search
+    identifies the square root within ±1 after only $\lg n$ rounds. Root-finding
+    algorithms that converge faster are known, but this is simple, robust and
+    applies to other functions.
+
+** Divide-and-Conquer
+
+   One of the most powerful techniques for solving problems is to break them
+   down into smaller, more easily solved pieces. A recursive algorithm starts to
+   become apparent when we break the problem into smaller instances of the same
+   type of problem. *Divide-and-conquer* splits the problem in (say) halves,
+   solves each half, then stitches the pieces back together to form a full
+   solution. Whenever the merging takes less time than recursively solving the
+   two subproblems, we get an efficient algorithm. For example, mergesort takes
+   linear time to merge two sorted lists of $n/2$ elements, each of which was
+   obtained in $O(n \lg n)$ time.
+
+*** Recurrence Relations
+
+    Many divide-and-conquer algorithms have time complexities that are naturally
+    modeled by *recurrence relations*. A recurrence relation is an equation that
+    is defined in terms of itself. The Fibonacci numbers are described by the
+    recurrence relation $F_n = F_{n - 1} + F_{n - 2}$. Many other natural
+    functions are easily expressed as recurrences. For example, $a_n = 2a_{n -
+    1}, a_1 = 1 \rightarrow a_n = 2^{n - 1}$.
+
+    Divide-and-conquer algorithms tend to break a given problem into some number
+    of smaller pieces (say $a$), each of which is of size $n/b$. Further, they
+    spend $f(n)$ time to combine these subproblem solutions into a complete
+    result. Let $T(n)$ denote the worst-case time the algorithm takes to solve a
+    problem of size $n$. Then $T(n)$ is given by the following recurrence
+    relation.
+
+    \begin{equation}
+    T(n) = aT(n/b) + f(n)
+    \end{equation}
+
+    For example, the running time behavior of mergesort is governed the
+    recurrence $T(n) = 2T(n/2) + O(n)$. This recurrence evaluates to $T(n) = O(n
+    \lg n)$. Binary search is governed by the recurrence $T(n) = T(n/2) + O(1)$.

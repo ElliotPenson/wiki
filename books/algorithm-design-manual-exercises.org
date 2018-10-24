@@ -202,3 +202,58 @@
    We can do this in linear time with some extra space. Maintain a dictionary
    from word pair to count. Traverse the word pair, finding the counts. Then
    look for the pair with the highest count.
+
+* Chapter 4: Sorting and Searching
+
+** 4-1
+
+   Sort the list of players by rating ($O(n \log n)$). Then put the lowest rated
+   in one group and the highest rated in another group.
+
+** 4-3
+
+   Sort the sequence of real numbers. Then, pair the largest number with the
+   smallest, the second largest with the second smallest, and so on.
+
+** 4-5
+
+   Add the elements to a hash table. The keys of the hash table should be the
+   number, the value should be the frequency (i.e. first time the key is added,
+   set the value to 1, every other time, increment the key). Then find the
+   largest key. This algorithm is linear.
+
+   Another, slower algorithm, is as follows:
+   1. Sort the list
+   2. Traverse the list, for each item count the occurrences using binary
+      search.
+   3. Return the item with the largest number of occurrences.
+
+   Steps 1 and 2 are $O(n \log n)$.
+
+** 4-7
+
+   Use hashing to make all of these linear (so use a computer)!
+
+** 4-9
+
+   Note that both of these problems can be done linearly with hash tables!
+
+   1. Sort A. Iterate over B, for each item, check if it exist in A using binary
+      search. Maintain then return the items that exist in A. This algorithm is
+      $O(n \log n)$.
+   2. Maintain a set to return. Traverse sets A and B the same time. If the two
+      items match, add this element to the return set. If the two items don't
+      match, increment the index of A or B with the smaller element. This is
+      similar to the /merge/ of mergesort.
+
+** 4-11
+
+   Use hash table counting.
+
+** 4-13
+
+   1. Doesn't matter, both constant.
+   2. The heap is better. It's $O(\log n)$ to delete rather than $O(n)$ for
+      deleting from a sorted list.
+   3. The heap is better, creation is linear if implemented well.
+   4. The sorted list is much better, constant rather than linear.
