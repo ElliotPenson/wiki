@@ -129,12 +129,12 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
 
 ** Indium
 
-   | Command           | Description                              |
-   |-------------------+------------------------------------------|
-   | M-x indium-launch | Start the Indium server.                 |
-   | C-x C-e           | Evaluate expression preceding the point. |
-   | C-M-x             | Evaluate function enclosing the point.   |
-   | C-c C-c           | Evaluate region.                         |
+   | Command | Description                              |
+   |---------+------------------------------------------|
+   | C-c C-z | Launch Indium.                           |
+   | C-x C-e | Evaluate expression preceding the point. |
+   | C-M-x   | Evaluate function enclosing the point.   |
+   | C-c C-c | Evaluate region.                         |
 
 *** Configuration File
 
