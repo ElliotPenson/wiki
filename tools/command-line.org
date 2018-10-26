@@ -85,6 +85,8 @@
    - *Options*:
      - ~-r~
        - /Recursively/ delete a directory.
+     - ~-f~
+       - /Force/ removal without confirmation.
    - *Examples*:
      - ~rm file.lisp~
      - ~rm -r some/folder~
@@ -100,6 +102,17 @@
    - *Form*: ~less <file>~
    - *Usage*:
      - Type ~q~ to quit, ~/~ to search, and ~h~ for help
+
+** ~tail~
+
+   - *Description*: Display the end of a file.
+   - *Form*: ~tail <file>~
+   - *Options*:
+     - ~-f~
+       - /Follow/ the file, updating as new output appears.
+     - ~-n~
+       - /Number/ of lines to show.
+   - *Examples*: ~tail -f solr.log~
 
 ** ~sed~
 
