@@ -706,3 +706,77 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
     For example, the running time behavior of mergesort is governed the
     recurrence $T(n) = 2T(n/2) + O(n)$. This recurrence evaluates to $T(n) = O(n
     \lg n)$. Binary search is governed by the recurrence $T(n) = T(n/2) + O(1)$.
+
+* Chapter 5: Graph Traversal
+
+  A *graph* $G = (V, E)$ consists of a set of *vertices* $V$ together with a set
+  $E$ of vertex pairs or *edges*. Graphs can represent essentially /any/
+  relationship. The key to using graph algorithms effectively in applications
+  lies in correctly modeling your problem so you can take advantage of existing
+  algorithms.
+
+** Flavors of Graphs
+
+   Several fundamental properties of graphs impact the choice of the data
+   structures used to represent them and algorithms available to analyze them.
+
+   - *Undirected* vs. *Directed*
+     - A graph $G = (V, E)$ is undirected if edge $(x, y) \in E$ implies that
+       $(y, x) \in E$. If not, we say that the graph is directed.
+   - *Weighted* vs. *Unweighted*
+     - Each edge (or vertex) in a weighted graph $G$ is assigned a numerical
+       value, or weight. In unweighted graphs, there is no cost distinction
+       between various edges and vertices.
+     - The difference between weighted and unweighted graphs be becomes
+       particularly apparent in finding the shortest path between two vertices.
+   - *Simple* vs. *Non-simple*
+     - Any graph that avoids *self-loops* and *multiedges* is called simple. A
+       self-loop is an edge $(x, x)$ involving only one vertex. An edge $(x, y)$
+       is a multiedge if it occurs more than once in the graph.
+   - *Sparse* vs. *Dense*
+     - Graphs are sparse when only a small fraction of the possible vertex pairs
+       actually have edges defined between them. Graphs where a large fraction
+       of the vertex pairs define edges are called dense.
+     - The *degree* of a vertex is the number of edges adjacent to it.
+     - In a *regular graph*, each vertex has exactly the same degree.
+   - *Cyclic* vs. *Acyclic*
+     - An acyclic graph does not contain any cycles.
+     - *Trees* are connected, acyclic undirected graphs.
+   - *Embedded* vs. *Topological*
+     - A graph is embedded if the vertices and edges are assigned geometric
+       positions.
+   - *Implicit* vs. *Explicit*
+     - Certain graphs are not explicitly constructed and then traversed, but
+       built as we use them.
+   - *Labeled* vs. *Unlabeled*
+     - Each vertex is assigned a unique name or identifier in a labeled graph to
+       distinguish it from all other vertices. In unlabeled graphs, no such
+       distinctions have been made.
+
+   *Social networks* are graphs where the vertices are people, and there is an
+   edge between two people if and only if they are friends.
+
+** Data Structures for Graphs
+
+   The two basic graph data structures are *adjacency matrices* and *adjacency
+   lists*. We assume a graph $G = (V, E)$ contains $n$ vertices and $m$ edges.
+
+   [[file:../images/graph-data-structures.png]]
+
+   Adjacency lists are the right data structure for most applications of
+   graphs.
+
+*** Adjacency Matrix
+
+    We can represent $G$ using an $n x n$ matrix $M$, where element $M[i,j] = 1$
+    if $(i, j)$ is an edge of $G$, and 0 if it isn't. This allows fast answers
+    to the question "is $(i, j)$ in $G$?", and rapid updates for edge insertion
+    and deletion. IT may use excessive space for graphs with many vertices and
+    relatively few edges, however.
+
+*** Adjacency Lists
+
+    We can more efficiently represent sparse graphs by using linked lists to
+    store the neighbors adjacent to each vertex. Adjacency lists make it harder
+    to verify whether a given edge $(i, j)$ is in $G$, since we must search
+    through th3e appropriate list to find the edge.
