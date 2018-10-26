@@ -127,6 +127,34 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
    | C-<space> | Mark candidates       |
    | M-a       | Select all            |
 
+** Indium
+
+   | Command           | Description                              |
+   |-------------------+------------------------------------------|
+   | M-x indium-launch | Start the Indium server.                 |
+   | C-x C-e           | Evaluate expression preceding the point. |
+   | C-M-x             | Evaluate function enclosing the point.   |
+   | C-c C-c           | Evaluate region.                         |
+
+*** Configuration File
+
+    Indium requires a ~.indium.json~ file in the root folder of your JavaScript
+    project. See [[https://indium.readthedocs.io/en/latest/setup.html][the Indium documentation]] for more information.
+
+    #+BEGIN_SRC json
+      {
+        "configurations": [
+          {
+            "name": "Project",
+            "type": "node",
+            "command": "node"
+          }
+        ]
+      }
+    #+END_SRC
+
+    The ~type~ attribute may be ~"node"~ or ~"chrome"~.
+
 ** Org mode
 
    Headings: * for h1, ** for h2, etc.
