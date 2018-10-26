@@ -129,6 +129,8 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
 
 ** Indium
 
+   Indium is a JavaScript development environment for Emacs.
+
    | Command | Description                              |
    |---------+------------------------------------------|
    | C-c C-z | Launch Indium.                           |
