@@ -1,0 +1,63 @@
+#+TITLE: Cron
+#+AUTHOR: Elliot Penson
+
+~cron~ is a Unix utility that executes tasks at regular intervals. This daemon
+relies on a ~crontab~. A ~crontab~ is a configuration file which contains the
+job schedule.
+
+* Commands
+
+  - ~crontab -e~
+    - Edit or create the user's ~crontab~.
+  - ~crontab -l~
+    - List cron jobs.
+
+  The edit command will use the editor specified in ~EDITOR~. Often this
+  environment variable is specified in one's ~.bashrc~ (e.g. ~export
+  EDITOR=emacs~).
+
+* ~crontab~ Syntax
+
+  #+BEGIN_SRC sh
+    # + --------- minute           (0-59)
+    # | + ------- hour             (0-23)
+    # | | + ----- day of the month (1-31)
+    # | | | + --- month            (1-12 or JAN-DEC)
+    # | | | | + - day of the week  (0-6 or SUN-SAT)
+    # | | | | |
+    # * * * * * <command>
+
+    # For example...
+    0 0 * * * /home/elliot/script.sh
+  #+END_SRC
+
+** Special Characters
+
+   | Character | Name  | Match                        | Example       |
+   |-----------+-------+------------------------------+---------------|
+   | ~*~       | Wild  | Any value.                   | ~*~           |
+   | ~,~       | List  | Multiple values.             | ~MON,WED,FRI~ |
+   | ~-~       | Range | Between values, inclusively. | ~MON-FRI~     |
+   | ~/~       | Step  | Every ~n~ values.            | ~*/2~         |
+
+** Examples
+
+   | Expression     | Description                         |
+   |----------------+-------------------------------------|
+   | ~0 * * * *~    | Every hour                          |
+   | ~30 * * * *~   | Every hour at minute 30             |
+   | ~0 */3 * * *~  | Every three hours                   |
+   | ~0 0 * * *~    | Every day                           |
+   | ~0 8 * * *~    | Every day at 8AM                    |
+   | ~0 0 * * FRI~  | Every Friday                        |
+   | ~0 0 1,15 * *~ | Every 1st and 15th day of the month |
+
+** Environment Variables
+
+   A ~crontab~ allows a limited number of environment settings. Most notably,
+   you may specify the shell in ~SHELL~. For example,
+
+   #+BEGIN_SRC sh
+     SHELL=/bin/bash
+     0 0 * * * /home/elliot/script
+   #+END_SRC
