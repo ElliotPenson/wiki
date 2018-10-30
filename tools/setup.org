@@ -1,41 +1,36 @@
 #+TITLE: Setup
 #+AUTHOR: Elliot Penson
 
-* Mac OS X
+* macOS
 
-** Development
+** Shell
 
-*** Emacs
+   Place the following in ~~/.bash_profile~.
 
-   1. Download and install Emacs
-      - See http://emacsformacosx.com/
-   2. Use my configuration
-      - See https://github.com/ElliotPenson/.emacs.d
+   #+BEGIN_SRC sh
+      alias ls="ls -G"
 
-*** SBCL
+      parse_git_branch() {
+          git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/ (\1)/"
+      }
 
-   1. Install homebrew
-      - See http://www.brew.sh/
-   2. Run brew install sbcl
+      GRAY="\[\033[2m\]"
+      RESET="\[\033[00m\]"
+      export PS1="${GRAY}\W\$(parse_git_branch)${RESET} λ "
 
-*** Quicklisp
+      export EDITOR="emacs"
+   #+END_SRC
 
-   1. See the quicklisp website for instructions
-      - https://www.quicklisp.org/beta/
-      - At time of writing, steps were:
-        1. Download quicklisp.lisp
-        2. Load quicklisp.lisp
-        3. Run (quicklisp-quickstart:install)
-        4. Evaluate (ql:add-to-init-file)
+   Download and install [[https://iterm2.com/][iTerm2]]. Change the color scheme
+   (Preferences->Profiles->Colors) to /Argonaut/.
 
-** Essential Apps
+** Emacs
 
-   - Emacs
-   - iTerm2
-   - Xcode
-   - 1Password
-   - Chrome
-   - Alfred
-   - Bartender
-   - Dropbox
-   - Transmit
+   1. Download and install Emacs from http://emacsformacosx.com/.
+   2. Use [[https://github.com/ElliotPenson/.emacs.d][my configuration]].
+
+** Lisp
+
+   1. Ensure [[http://www.brew.sh/][homebrew]] is installed.
+   2. Run ~brew install sbcl~.
+   3. Install [[https://www.quicklisp.org/][Quicklisp]].
