@@ -7,6 +7,20 @@
 
 * TODO Church, Alonzo
 
+* Curry, Haskell
+
+  Haskell Books Curry (1900-1982) was an American mathematician known for
+  developing combinatory logic. Three programming languages are named after him
+  (Haskell, Brooks, and Curry), in addition to *currying*, a technique of
+  applying arguments through a chain of function calls.
+
+  #+BEGIN_SRC python
+    def add(a):
+        return lambda b: a + b
+
+    add(2)(2)
+  #+END_SRC
+
 * Dijkstra, Edsger W.
 
   Edsger W. Dijkstra (1930-2002) was a Dutch computer science pioneer. Dijkstra
