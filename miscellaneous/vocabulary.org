@@ -34,18 +34,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Human like, non-human possessing human traits, emotions, or intentions.
 
 ** Noun, Verb                                                         :drill:
-   SCHEDULED: <2018-10-31 Wed>
+   SCHEDULED: <2018-11-04 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       9E6BCF0A-3384-4F0E-8098-E652BB9F2B9F
-   :DRILL_LAST_INTERVAL: 9.4831
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 5
-   :DRILL_FAILURE_COUNT: 2
-   :DRILL_AVERAGE_QUALITY: 2.4
-   :DRILL_EASE: 2.22
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 7
+   :DRILL_FAILURE_COUNT: 3
+   :DRILL_AVERAGE_QUALITY: 2.428
+   :DRILL_EASE: 2.08
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-10-22 Mon 08:37]
+   :DRILL_LAST_REVIEWED: [2018-10-31 Wed 12:05]
    :END:
 
 *** Word
@@ -266,18 +266,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     wife or husband) no longer living with their spouse.
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2018-10-31 Wed>
+   SCHEDULED: <2018-11-04 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       5AE647B0-35FE-46C9-8F9B-487B9C37A80C
-   :DRILL_LAST_INTERVAL: 8.4208
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 4
-   :DRILL_FAILURE_COUNT: 1
+   :DRILL_LAST_INTERVAL: 3.861
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 6
+   :DRILL_FAILURE_COUNT: 2
    :DRILL_AVERAGE_QUALITY: 2.5
-   :DRILL_EASE: 2.08
+   :DRILL_EASE: 1.94
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-10-23 Tue 10:30]
+   :DRILL_LAST_REVIEWED: [2018-10-31 Wed 12:06]
    :END:
 
 *** Word
@@ -291,18 +291,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     embarrassing. e.g. downsizing for cuts.
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2018-11-01 Thu>
+   SCHEDULED: <2018-11-27 Tue>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       F16ACA75-CE64-4112-BC08-24ECB679C612
-   :DRILL_LAST_INTERVAL: 10.0
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 3
+   :DRILL_LAST_INTERVAL: 25.0
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 4
    :DRILL_FAILURE_COUNT: 1
-   :DRILL_AVERAGE_QUALITY: 3.333
+   :DRILL_AVERAGE_QUALITY: 3.5
    :DRILL_EASE: 2.5
    :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-10-22 Mon 08:36]
+   :DRILL_LAST_REVIEWED: [2018-11-02 Fri 19:06]
    :END:
 
 *** Word
@@ -546,6 +546,30 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Wicked or criminal.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2018-11-06 Tue>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       E51199FC-9051-4C49-A2C4-8947DD9599EC
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 2.5
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-11-02 Fri 19:08]
+   :END:
+
+*** Word
+
+    Nonchalant
+
+*** Definition
+
+    (of a person or manner) feeling or appearing casually calm and relaxed; not
+    displaying anxiety, interest, or enthusiasm.
+
+** Adjective                                                          :drill:
    SCHEDULED: <2018-11-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
@@ -593,18 +617,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Exclude (someone) from a society or group.
 
 ** Adverb                                                             :drill:
-   SCHEDULED: <2018-11-01 Thu>
+   SCHEDULED: <2018-11-26 Mon>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       D09AFE15-C6DE-4603-82F7-17A56D7939BA
-   :DRILL_LAST_INTERVAL: 9.6521
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 4
+   :DRILL_LAST_INTERVAL: 24.1206
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 5
    :DRILL_FAILURE_COUNT: 1
-   :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-10-22 Mon 08:37]
+   :DRILL_AVERAGE_QUALITY: 3.4
+   :DRILL_EASE: 2.46
+   :DRILL_LAST_QUALITY: 5
+   :DRILL_LAST_REVIEWED: [2018-11-02 Fri 19:06]
    :END:
 
 *** Word
@@ -756,18 +780,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     and apparent expansion of consciousness.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-11-01 Thu>
+   SCHEDULED: <2018-11-25 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       B87CB477-B015-4680-B039-9D2E7B5CF337
-   :DRILL_LAST_INTERVAL: 9.6521
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 12
+   :DRILL_LAST_INTERVAL: 23.2905
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 13
    :DRILL_FAILURE_COUNT: 7
-   :DRILL_AVERAGE_QUALITY: 2.167
-   :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-10-22 Mon 08:36]
+   :DRILL_AVERAGE_QUALITY: 2.231
+   :DRILL_EASE: 2.22
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-11-02 Fri 19:07]
    :END:
 
 *** Word
@@ -849,18 +873,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Present, appearing, or found everywhere.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-11-01 Thu>
+   SCHEDULED: <2018-11-26 Mon>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       275B7470-48C6-48BD-B023-C05CB7DC52FD
-   :DRILL_LAST_INTERVAL: 9.6521
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_LAST_INTERVAL: 23.7056
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 3
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.5
+   :DRILL_AVERAGE_QUALITY: 3.667
    :DRILL_EASE: 2.36
    :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-10-22 Mon 08:38]
+   :DRILL_LAST_REVIEWED: [2018-11-02 Fri 19:06]
    :END:
 
 *** Word
@@ -871,6 +895,30 @@ Most definitions on this page come from the New Oxford American Dictionary.
 
     Accorded a great deal of respect, especially because of age, wisdom, or
     character.
+
+** Verb                                                               :drill:
+   SCHEDULED: <2018-11-06 Tue>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       07E98F4A-E826-4F8C-9F9F-A4CE5B126C52
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-11-02 Fri 19:07]
+   :END:
+
+*** Word
+
+    Vindicate
+
+*** Definition
+
+    1. Clear (someone) of blame or suspicion.
+    2. Show or prove to be right, reasonable, or justified.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2018-11-03 Sat>
