@@ -257,3 +257,5 @@
       deleting from a sorted list.
    3. The heap is better, creation is linear if implemented well.
    4. The sorted list is much better, constant rather than linear.
+
+* TODO Chapter 5: Graph Traversal
