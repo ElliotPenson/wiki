@@ -454,18 +454,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Relatively unlikely to cause an allergic reaction.
 
 ** Noun, Adjective                                                    :drill:
-   SCHEDULED: <2018-11-08 Thu>
+   SCHEDULED: <2018-11-29 Thu>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       D61267CA-ABC7-4E20-BC49-B47F45DE26D3
-   :DRILL_LAST_INTERVAL: 8.5714
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 6
+   :DRILL_LAST_INTERVAL: 18.6942
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 7
    :DRILL_FAILURE_COUNT: 2
-   :DRILL_AVERAGE_QUALITY: 2.833
-   :DRILL_EASE: 2.22
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-10-30 Tue 15:59]
+   :DRILL_AVERAGE_QUALITY: 2.857
+   :DRILL_EASE: 2.08
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-11-10 Sat 23:38]
    :END:
 
 *** Word
@@ -521,6 +521,29 @@ Most definitions on this page come from the New Oxford American Dictionary.
 *** Definition
 
     Impossible to understand.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-11-14 Wed>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       192380A6-CB8D-4CBF-8322-47525912417D
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-11-10 Sat 23:38]
+   :END:
+
+*** Word
+
+    Intrepid
+
+*** Definition
+
+    Fearless; adventurous (often used for rhetorical or humorous effect).
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2018-11-13 Tue>
@@ -638,6 +661,29 @@ Most definitions on this page come from the New Oxford American Dictionary.
 
     (of a person or manner) feeling or appearing casually calm and relaxed; not
     displaying anxiety, interest, or enthusiasm.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-11-14 Wed>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       C426D6B7-719E-4E92-A6BD-0156B6547AEF
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-11-10 Sat 23:38]
+   :END:
+
+*** Word
+
+    Nondescript
+
+*** Definition
+
+    Lacking distinctive or interesting features or characteristics.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2018-11-11 Sun>
