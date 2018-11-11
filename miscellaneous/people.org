@@ -49,7 +49,16 @@
 
 * TODO Lovelace, Ada
 
-* TODO McCarthy, John
+* McCarthy, John
+
+  John McCarthy (1927-2011) was a American computer scientist. McCarthy is
+  considered the father of artificial intelligence (a term he coined). He
+  invented the programming language Lisp in 1958. The language design was
+  described in /Recursive Functions of Symbolic Expressions and Their
+  Computation by Machine, Part I/ (ACM, 1960). McCarthy also developed the
+  concept of time-sharing computing resources. John McCarthy was a professor at
+  Stanford University and founded the Stanford Artificial Intelligence
+  Laboratory (SAIL). McCarthy won the Turing Award in 1971.
 
 * TODO Newton, Isaac
 
