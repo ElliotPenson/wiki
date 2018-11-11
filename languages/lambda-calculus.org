@@ -1,0 +1,105 @@
+#+TITLE: Lambda Calculus
+#+AUTHOR: Elliot Penson
+
+Lambda calculus is minimal programming language that's Turing complete. In
+lambda calculus, everything is an anonymous function. The language was invented
+by Alonzo Church.
+
+* Grammar
+
+  #+BEGIN_SRC
+  Expression  -> Variable | Application | Abstraction
+  Variable    -> ID
+  Application -> (Expression Expression)
+  Abstraction -> λID.Expression
+  #+END_SRC
+
+  Or condensed as:
+
+  #+BEGIN_SRC
+  e -> x | (e1 e2) | λx.e
+  #+END_SRC
+
+* Definitions
+
+  - A lambda *abstraction* ~λx.e~ is a definition of an anonymous function
+    capable of taking a single input ~x~ and substituting it into (and thus
+    evaluating) the expression ~e~.
+  - An *application* ~(e1 e2)~ applies the ~e1~ function to the ~e2~ value, that
+    is, it represents the act of calling function ~e1~ on input ~e2~ to product
+    ~e1(e2)~.
+  - In ~λx.e~, ~e~ is *bound* in ~e~ (i.e. ~x~ would have a value associated
+    with it).
+  - A *free variable* is a variable that is not bound. Formally:
+    #+BEGIN_SRC
+    FV(x)       = {x}
+    FV((e1 e2)) = FV(e1) U FV(e2)
+    FV(λx.e)    = FV(e) - {x}
+    #+END_SRC
+  - A *combinator* is an expression with no free variables.
+  - A *value* is an expression in final form (can't be reduced any more),
+    i.e. an abstraction.
+  - An expression in the form ~(x e)~ is *stuck*.
+
+* Reduction
+
+  The meaning of lambda expressions is defined by how expressions can be
+  reduced. Evaluation consists of reducing until either one can't anymore or
+  there is a problem. There are three kinds of reduction: α-conversion,
+  β-reduction, and η-conversion.
+
+** α-conversion
+
+   Allows bound variable names to be changed (effectively renaming a variable):
+   ~e[b/a]~ means ~e~ but with every occurrence of ~a~ replaced with
+   ~b~. α-conversion of ~λx.x~ might yield ~λy.y~ (~λx.x[y/x] = ~λy.y~). Terms
+   that differ only by α-conversion are called α-equivalent.
+
+** β-reduction
+
+   Captures the idea of function application. In operational semantics, ~(λx.M
+   N) -> M[N/x]~.
+
+* Recursion
+
+  Since recursion consists of calling the function within itself, the technique
+  can be tricky because every function is anonymous (that is, it doesn't have a
+  name). To simulate recursion, make a function that you want to be recursive
+  take an extra argument that will be that function itself, the write a wrapper
+  that passes that function as the second argument. For example:
+
+  #+BEGIN_SRC
+  Fact      = λn.λf.If (IsZero n) c1 (Times n (f (Pred n) f))
+  Factorial = λn.Fact n Fact
+  #+END_SRC
+
+* Examples
+
+  The simplest function is the identity function ~λx.x~, it takes something and
+  returns that same thing.
+
+** Booleans
+
+   #+BEGIN_SRC
+   True   =  λt.λf.t
+   False  =  λt.λf.f
+   If     =  λl.λm.λn.((l m) n)
+   #+END_SRC
+
+** Pairs
+
+   #+BEGIN_SRC
+   Pair   =  λf.λs.λb.((b f) s)
+   First  =  λp.(p True)
+   Second =  λp.(p False)
+   #+END_SRC
+
+** Whole Numbers (Church Numerals)
+
+   #+BEGIN_SRC
+   c0     =  λz.λs.z
+   c1     =  λz.λs.(s z)
+   c2     =  λz.λs.(s (s z))
+   cn     =  λz.λs.(s (s ... (s z)))
+   IsZero =  λm.((m True) (λx.False))
+   #+END_SRC
