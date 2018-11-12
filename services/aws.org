@@ -221,11 +221,3 @@ Architect Course]].
    | Service  | Description                 |
    |----------+-----------------------------|
    | GameLift | Develop games in the cloud. |
-
-* Solutions Architect Associate Exam
-
-  The Solution's Architect Associate exam will only test you on Global
-  Infrastructure, Compute, Storage, Databases, Migration, Networking & Content
-  Delivery, Management Tools, Analytics, Security & Identity & Compliance,
-  Application Integration, and Desktop & App Streaming. Be sure that you
-  understand VPC!
