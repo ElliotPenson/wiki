@@ -89,6 +89,13 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
    | C-' <char> | Input a character and jump to it      |
    | C-: <char> | Input two characters and jump to them |
 
+** dumb-jump
+
+   | Command | Description                                       |
+   |---------+---------------------------------------------------|
+   | C-M-g   | Jump to the definition for the thing under point. |
+   | C-M-p   | Jump back to where you were when you jumped.      |
+
 ** Elpy
 
    Elpy is a Python development environment for Emacs.
