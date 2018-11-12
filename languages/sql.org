@@ -122,7 +122,7 @@ on SQL]].
      SELECT email FROM People WHERE email LIKE '%@gmail.com';
 
      -- Find People (babies) with single digit heights.
-     SELECT height FROM People WHERE heigh LIKE '_ inches';
+     SELECT height FROM People WHERE height LIKE '_ inches';
    #+END_SRC
 
 ** Calculated Fields
@@ -137,8 +137,8 @@ on SQL]].
      SELECT item_price * quantity FROM Orders;
    #+END_SRC
 
-   An alias is an alternate name for a field or value. Aliases are assigned with
-   the ~AS~ keyword.
+   An *alias* is an alternate name for a field or value. Aliases are assigned
+   with the ~AS~ keyword.
 
    #+BEGIN_SRC sql
       SELECT last_name || ', ' || first_name AS name FROM People ORDER BY name;
@@ -201,23 +201,43 @@ on SQL]].
 
    Joins are usually more performant than subqueries.
 
-** Joining Tables
+** Joins
 
    Relational tables are designed so that information is split into multiple
    tables, one for each data type. The tables are related to each other through
    common values. A *join* is a mechanism used to associate tables within a
    ~SELECT~ statement.
 
-   #+BEGIN_SRC sql
-     -- Implicit inner join.
-     SELECT vendor_name, product_name FROM Vendors, Products
-     WHERE Vendors.vendor_id = Products.vendor_id;
-
-     -- Explicit inner join (preferred).
-     SELECT vendor_name, product_name FROM Vendors
-     INNER JOIN Products ON Vendors.vendor_id = Products.vendor_id;
-   #+END_SRC
-
    Note that you must use the fully qualified column name (table and column
    separated by a period) whenever there is a possible ambiguity about which
    column you are referring to.
+
+*** Inner Join
+
+    The common *inner join* (or *equijoin*) is a join based on the testing of
+    equality between two tables.
+
+    #+BEGIN_SRC sql
+      -- Implicit inner join.
+      SELECT vendor_name, product_name FROM Vendors, Products
+      WHERE Vendors.id = Products.vendor_id;
+
+      -- Explicit inner join (preferred).
+      SELECT vendor_name, product_name FROM Vendors
+      INNER JOIN Products ON Vendors.id = Products.vendor_id;
+    #+END_SRC
+
+*** Outer Join
+
+    Suppose, you're hoping to find the number of products sold by each
+    vendor. Some of these counts might be zero. The *outer join* lets you
+    include rows with no mutual relation.
+
+    #+BEGIN_SRC sql
+      SELECT vendor_name, COUNT(*) FROM Vendors
+      LEFT OUTER JOIN Products ON Vendors.id = Products.vendor_id
+    #+END_SRC
+
+    The ~RIGHT~ or ~LEFT~ keyword must be used to specify the table from which
+    to include all rows. Some SQL implementations also provide a ~FULL~ keyword
+    that retrieves all rows from both tables.
