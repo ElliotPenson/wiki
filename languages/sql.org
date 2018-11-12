@@ -241,3 +241,18 @@ on SQL]].
     The ~RIGHT~ or ~LEFT~ keyword must be used to specify the table from which
     to include all rows. Some SQL implementations also provide a ~FULL~ keyword
     that retrieves all rows from both tables.
+
+** ~UNION~
+
+   A ~UNION~ is composed of two or more ~SELECT~ statements, each separated by
+   the keyword ~UNION~. Each query in a ~UNION~ must contain the same columns,
+   expressions, or aggregate functions.
+
+   #+BEGIN_SRC sql
+     SELECT first_name, last_name FROM People WHERE state IN ('MA', 'IL')
+     UNION
+     SELECT first_name, last_name FROM People WHERE age = 50;
+   #+END_SRC
+
+   Note that this specific query could have been performed with multiple ~WHERE~
+   clauses instead.
