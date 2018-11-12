@@ -184,5 +184,40 @@ on SQL]].
    #+BEGIN_SRC sql
      SELECT age, COUNT(*) AS num_people FROM People GROUP BY age;
 
-     SELECT zip_code, COUNT(*) AS num_people FROM People GROUP BY age HAVING COUNT(*) > 2.
+     SELECT zip_code, COUNT(*) AS num_people FROM People GROUP BY age HAVING COUNT(*) > 2;
    #+END_SRC
+
+** Subqueries
+
+   *Subqueries* are queries embedded into other queries. SQL imposes no limit on
+   the number of subqueries that can be nested. Note that subquery ~SELECT~
+   statements can only retrieve a single column. Attempting to retrieve multiple
+   columns will return an error.
+
+   #+BEGIN_SRC sql
+     SELECT last_name, first_name FROM People
+     WHERE id IN (SELECT customer_id FROM Orders WHERE product_id = 32);
+   #+END_SRC
+
+   Joins are usually more performant than subqueries.
+
+** Joining Tables
+
+   Relational tables are designed so that information is split into multiple
+   tables, one for each data type. The tables are related to each other through
+   common values. A *join* is a mechanism used to associate tables within a
+   ~SELECT~ statement.
+
+   #+BEGIN_SRC sql
+     -- Implicit inner join.
+     SELECT vendor_name, product_name FROM Vendors, Products
+     WHERE Vendors.vendor_id = Products.vendor_id;
+
+     -- Explicit inner join (preferred).
+     SELECT vendor_name, product_name FROM Vendors
+     INNER JOIN Products ON Vendors.vendor_id = Products.vendor_id;
+   #+END_SRC
+
+   Note that you must use the fully qualified column name (table and column
+   separated by a period) whenever there is a possible ambiguity about which
+   column you are referring to.
