@@ -256,3 +256,49 @@ on SQL]].
 
    Note that this specific query could have been performed with multiple ~WHERE~
    clauses instead.
+
+* ~INSERT~
+
+  ~INSERT~ adds rows to a database table. Complete or partial rows may be
+  inserted.
+
+  #+BEGIN_SRC sql
+    -- Insert a complete row.
+    INSERT INTO People
+    VALUES ('Elliot', 'Penson', 26, 'DC', 'elliotpenson@gmail.com', NULL);
+
+    -- Insert a complete row with explicit columns (highly preferred).
+    INSERT INTO People(first_name, last_name, age, state, email, favorite_color)
+    VALUES ('Elliot', 'Penson', 26, 'DC', 'elliotpenson@gmail.com', NULL);
+
+    -- Insert a partial row.
+    INSERT INTO People(first_name, last_name) VALUES ('Elliot', 'Penson');
+  #+END_SRC
+
+* ~UPDATE~
+
+  The ~UPDATE~ statement modifies data in a table. The format includes the table
+  name, column names/values, and a filter condition. Omitting the filter
+  condition will update all rows in the table.
+
+  #+BEGIN_SRC sql
+    -- Update a column.
+    UPDATE People SET age = 27 WHERE first_name = 'Elliot';
+
+    -- Update multiple columns.
+    UPDATE People SET state = 'CA', email = 'elliot@company.com'
+    WHERE first_name = 'Elliot';
+  #+END_SRC
+
+* ~DELETE~
+
+  Remove rows from a table with ~DELETE~. Be careful to include a ~WHERE~
+  clause!
+
+  #+BEGIN_SRC sql
+    -- Delete all Toms.
+    DELETE FROM People WHERE first_name = 'Tom';
+
+    -- Delete all rows!
+    DELETE FROM People;
+  #+END_SRC
