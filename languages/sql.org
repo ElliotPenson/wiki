@@ -339,3 +339,36 @@ on SQL]].
   #+BEGIN_SRC sql
     DROP TABLE People;
   #+END_SRC
+
+* Transactions
+
+  Transaction processing is used to maintain database integrity by ensuring that
+  batches of SQL operations execute completely or not at all. If no error
+  occurs, the entire set of statements is *committed*. If an error occurs, a
+  *rollback* can restore the database to a known and safe state. Note that
+  individual statements are implicitly a single transaction.
+
+  Unfortunately, transaction processing is implemented differently in each
+  DBMS. In PostgreSQL, a transaction is set up by surrounding the SQL commands
+  with ~BEGIN~ and ~COMMIT~. A ~ROLLBACK~ will cancel the updates.
+
+  #+BEGIN_SRC sql
+    -- PostgreSQL transaction.
+    BEGIN;
+    ...
+    COMMIT;
+  #+END_SRC
+
+
+  *Savepoints* allow you to selectively discard parts of a transaction while
+  committing the rest.
+
+  #+BEGIN_SRC sql
+    BEGIN;
+    ...
+    SAVEPOINT my_savepoint;
+    ...
+    ROLLBACK TO my_savepoint;
+    ...
+    COMMIT;
+  #+END_SRC
