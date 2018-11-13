@@ -242,7 +242,7 @@ on SQL]].
     to include all rows. Some SQL implementations also provide a ~FULL~ keyword
     that retrieves all rows from both tables.
 
-** ~UNION~
+** Combine Results
 
    A ~UNION~ is composed of two or more ~SELECT~ statements, each separated by
    the keyword ~UNION~. Each query in a ~UNION~ must contain the same columns,
@@ -301,4 +301,41 @@ on SQL]].
 
     -- Delete all rows!
     DELETE FROM People;
+  #+END_SRC
+
+* ~CREATE TABLE~
+
+  Use the ~CREATE TABLE~ statement to create a table. Specify the name and a
+  series of column definitions.
+
+  #+BEGIN_SRC sql
+    CREATE TABLE People (
+        id         INTEGER  NOT NULL,
+        first_name TEXT     NOT NULL,
+        last_name  TEXT     NOT NULL,
+        age        INTEGER  NOT NULL  DEFAULT 0,
+        state      CHAR(2)  NOT NULL,
+        email      TEXT     NULL,
+        birthdate  DATETIME NOT NULL  DEFAULT NOW()
+    );
+  #+END_SRC
+
+  ~NULL~ columns permit ~NULL~ values, ~NOT NULL~ columns do not accept rows
+  with no value. ~NULL~. The ~DEFAULT~ keyword is used to specify default
+  values.
+
+* ~ALTER TABLE~
+
+  #+BEGIN_SRC sql
+    -- Add a column.
+    ALTER TABLE People ADD city TEXT;
+
+    -- Remove a column.
+    ALTER TABLE People DROP COLUMN city;
+  #+END_SRC
+
+* ~DROP TABLE~
+
+  #+BEGIN_SRC sql
+    DROP TABLE People;
   #+END_SRC
