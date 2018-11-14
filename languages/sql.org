@@ -324,6 +324,18 @@ on SQL]].
   with no value. ~NULL~. The ~DEFAULT~ keyword is used to specify default
   values.
 
+  Standard SQL types include ~INT~, ~SMALLINT~, ~REAL~, ~FLOAT~, ~CHAR(N)~,
+  ~TEXT~, ~DATE~, ~TIME~, ~TIMESTAMP~. Note that some implementations (like
+  PostgresSQL) provide other types.
+
+** TODO Primary Keys
+
+** TODO Foreign Keys
+
+** TODO Unique Constraints
+
+** TODO Check Constraints
+
 * ~ALTER TABLE~
 
   #+BEGIN_SRC sql
@@ -372,3 +384,29 @@ on SQL]].
     ...
     COMMIT;
   #+END_SRC
+
+* TODO Cursors
+
+* TODO Indexes
+
+* PostgreSQL
+
+  PostgreSQL (or Postgres) is an open-source SQL implementation.
+
+  On macOS, PostgreSQL can be installed via homebrew (i.e. ~brew install
+  postgres~). PostgreSQL uses a client/server model. Run ~brew services start
+  postgresql~ to begin the server. Create a new database with ~createdb
+  <db-name>~, delete a database with ~dropdb <db-name>~.
+
+  ~psql~ is the PostgreSQL terminal client. This application allows one to
+  interactively enter, edit, and execute SQL commands. The command takes the
+  form ~psql <db-name>~.
+
+  | Meta-Command        | Description                                 |
+  |---------------------+---------------------------------------------|
+  | \list               | List all databases.                         |
+  | \connect <database> | Connect to a database.                      |
+  | \dt                 | Display all tables in the current database. |
+  | \dn                 | List schemas (namespaces).                  |
+  | \d <table>          | Describe a table (show columns)             |
+  | \q                  | Quit psql                                   |
