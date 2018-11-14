@@ -121,6 +121,13 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
     | M-X pyvenv-deactivate | Deactivate a virtual environment                       |
     | M-X pyvenv-restart    | Restart Python (useful if venv was activated late)     |
 
+*** Elpy Testing
+
+    | Command                  | Description                    |
+    |--------------------------+--------------------------------|
+    | C-c C-t                  | Start a test run               |
+    | M-x elpy-set-test-runner | Change the current test runner |
+
 ** Helm
 
    Helm is an incremental completion and selection narrowing framework for
