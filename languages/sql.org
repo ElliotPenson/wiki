@@ -428,11 +428,28 @@ on SQL]].
     COMMIT;
   #+END_SRC
 
-* TODO Indexes
+* Indexes
+
+  Searching for specific column values can often be inefficient. The DBMS might
+  have to read every row in the table looking for matches. *Indexes* are a copy
+  of selected columns organized logically to improve the speed of searching and
+  sorting. These data structures can improve lookup from linear to logarithmic
+  or even constant time.
+
+  While indexes improve the performance of retrieval operations, they degrade
+  the performance of data insertion, modification, and deletion. Index data can
+  also take up significant storage space.
+
+  #+BEGIN_SRC sql
+    CREATE INDEX last_name_index ON People (last_name);
+
+    DROP INDEX last_name_index;
+  #+END_SRC
 
 * PostgreSQL
 
-  PostgreSQL (or Postgres) is an open-source SQL implementation.
+  PostgreSQL (or Postgres) is an open-source SQL implementation. See [[https://www.postgresql.org/docs/11/index.html][the
+  documentation]] for more information.
 
   On macOS, PostgreSQL can be installed via homebrew (i.e. ~brew install
   postgres~). PostgreSQL uses a client/server model. Run ~brew services start
