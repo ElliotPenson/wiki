@@ -310,10 +310,10 @@ on SQL]].
 
   #+BEGIN_SRC sql
     CREATE TABLE People (
-        id         INTEGER  NOT NULL,
+        id         INT      NOT NULL  PRIMARY KEY,
         first_name TEXT     NOT NULL,
         last_name  TEXT     NOT NULL,
-        age        INTEGER  NOT NULL  DEFAULT 0,
+        age        INT      NOT NULL  DEFAULT 0,
         state      CHAR(2)  NOT NULL,
         email      TEXT     NULL,
         birthdate  DATETIME NOT NULL  DEFAULT NOW()
@@ -328,13 +328,56 @@ on SQL]].
   ~TEXT~, ~DATE~, ~TIME~, ~TIMESTAMP~. Note that some implementations (like
   PostgresSQL) provide other types.
 
-** TODO Primary Keys
+* Constraints
 
-** TODO Foreign Keys
+  Relational databases store related data in multiple tables. DBMSs enforce
+  *referential integrity* by imposing constraints on database tables.
+  *Constraints* are rules that govern how database data is inserted or
+  manipulated.
 
-** TODO Unique Constraints
+** Primary Keys
 
-** TODO Check Constraints
+   A *primary key* is a special constraint used to ensure that values in a
+   column (or set of columns) are unique and never change. No two rows may have
+   the same primary key value. Use the ~PRIMARY KEY~ keyword in a table
+   definition to define a primary key.
+
+** Foreign Keys
+
+   A *foreign key* is a column whose values must be listed in the primary key of
+   another table. Foreign keys are essential for ensuring referential
+   integrity. Use the ~REFERENCES~ keyword to define a foreign key.
+
+   #+BEGIN_SRC sql
+     CREATE TABLE Orders (
+         order_number INT      NOT NULL  PRIMARY KEY,
+         order_date   DATETIME NOT NULL,
+         customer_id  INT      NOT NULL REFERENCES People(id)
+     );
+   #+END_SRC
+
+** Unique Constraints
+
+   Unique constraints are used to ensure that all data in a column is
+   unique. Unique constraints are similar to primary keys. In contrast, though,
+   a table can contain multiple constraints, but only one primary key. Unique
+   constraints can also be modified or updated. Use the ~UNIQUE~ keyword to
+   define a unique constraint.
+
+** Check Constraints
+
+   Check constraints ensure that data in a column (or set of columns) meet a set
+   of criteria. Common criteria include minimum or maximum values, a range, and
+   specific values. Use the ~CHECK~ keyword to define a check constraint.
+
+   #+BEGIN_SRC sql
+     CREATE TABLE Order (
+        order_number INT      NOT NULL PRIMARY KEY,
+        product_id   CHAR(10) NOT NULL,
+        quantity     INT      NOT NULL CHECK (quantity > 0),
+        price        MONEY    NOT NULL
+     );
+   #+END_SRC
 
 * ~ALTER TABLE~
 
@@ -384,8 +427,6 @@ on SQL]].
     ...
     COMMIT;
   #+END_SRC
-
-* TODO Cursors
 
 * TODO Indexes
 
