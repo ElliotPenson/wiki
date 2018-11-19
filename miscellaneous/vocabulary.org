@@ -10,19 +10,42 @@ Most definitions on this page come from the New Oxford American Dictionary.
 
 * Cards
 
-** Noun                                                               :drill:
-   SCHEDULED: <2018-11-18 Sun>
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-11-23 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
-   :ID:       37915617-5CAF-46D1-BE8B-D0BBBA492B60
-   :DRILL_LAST_INTERVAL: 3.93
+   :ID:       CEAB23DB-1944-4430-A0EE-B1F0614FCA7B
+   :DRILL_LAST_INTERVAL: 4.0
    :DRILL_REPEATS_SINCE_FAIL: 2
    :DRILL_TOTAL_REPEATS: 1
    :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-11-19 Mon 17:53]
+   :END:
+
+*** Word
+
+    Abject
+
+*** Definition
+
+    (of something bad) experienced or present to the maximum degree.
+
+** Noun                                                               :drill:
+   SCHEDULED: <2018-11-28 Wed>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       37915617-5CAF-46D1-BE8B-D0BBBA492B60
+   :DRILL_LAST_INTERVAL: 9.4831
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-11-14 Wed 21:33]
+   :DRILL_LAST_REVIEWED: [2018-11-19 Mon 17:53]
    :END:
 
 *** Word
@@ -128,18 +151,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Cease to resist an opponent or an unwelcome demand; surrender.
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2018-11-19 Mon>
+   SCHEDULED: <2018-11-23 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       A5950AD7-8AB6-4D27-90D7-B0AE64EB755E
-   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_LAST_INTERVAL: 3.93
    :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 4.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-11-15 Thu 13:47]
+   :DRILL_TOTAL_REPEATS: 3
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-11-19 Mon 17:54]
    :END:
 
 *** Word
@@ -242,19 +265,44 @@ Most definitions on this page come from the New Oxford American Dictionary.
 
     Lacking sensitivity, refinement, or intelligence.
 
+** Noun                                                               :drill:
+   SCHEDULED: <2018-11-23 Fri>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       3F2FA5ED-C4E5-4F58-87C7-15FB9E674F78
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-11-19 Mon 17:54]
+   :END:
+
+*** Word
+
+    Deus Ex Machina
+
+*** Definition
+
+    A person or thing (as in fiction or drama) that appears or is introduced
+    suddenly and unexpectedly and provides a contrived solution to an apparently
+    insoluble difficulty
+
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-11-18 Sun>
+   SCHEDULED: <2018-12-06 Thu>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       1FC18694-FA0A-4907-96BE-EB8C842A09AA
-   :DRILL_LAST_INTERVAL: 11.3325
-   :DRILL_REPEATS_SINCE_FAIL: 4
-   :DRILL_TOTAL_REPEATS: 13
+   :DRILL_LAST_INTERVAL: 16.9194
+   :DRILL_REPEATS_SINCE_FAIL: 5
+   :DRILL_TOTAL_REPEATS: 14
    :DRILL_FAILURE_COUNT: 6
-   :DRILL_AVERAGE_QUALITY: 2.077
-   :DRILL_EASE: 1.52
+   :DRILL_AVERAGE_QUALITY: 2.143
+   :DRILL_EASE: 1.38
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-11-07 Wed 11:39]
+   :DRILL_LAST_REVIEWED: [2018-11-19 Mon 17:53]
    :END:
 
 *** Word
@@ -314,18 +362,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     incontrovertibly true.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-11-18 Sun>
+   SCHEDULED: <2018-11-29 Thu>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       85DD415E-2648-4CDC-A7BC-FC75055651AF
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 10.0
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 4.0
    :DRILL_EASE: 2.5
    :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-11-14 Wed 21:33]
+   :DRILL_LAST_REVIEWED: [2018-11-19 Mon 17:53]
    :END:
 
 *** Word
@@ -430,18 +478,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     wife or husband) no longer living with their spouse.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-11-19 Mon>
+   SCHEDULED: <2018-11-28 Wed>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       19FFECA7-3AC7-4152-94AC-D2137F4AFC2E
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.4831
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-11-15 Thu 13:47]
+   :DRILL_LAST_REVIEWED: [2018-11-19 Mon 17:53]
    :END:
 
 *** Word
@@ -967,18 +1015,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Without concealment or secrecy; openly.
 
 ** Noun, Adjective                                                    :drill:
-   SCHEDULED: <2018-11-18 Sun>
+   SCHEDULED: <2019-01-26 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       5E04D751-F895-46C1-978A-416870A34B9B
-   :DRILL_LAST_INTERVAL: 26.4576
-   :DRILL_REPEATS_SINCE_FAIL: 4
-   :DRILL_TOTAL_REPEATS: 6
+   :DRILL_LAST_INTERVAL: 67.5727
+   :DRILL_REPEATS_SINCE_FAIL: 5
+   :DRILL_TOTAL_REPEATS: 7
    :DRILL_FAILURE_COUNT: 2
-   :DRILL_AVERAGE_QUALITY: 3.5
-   :DRILL_EASE: 2.6
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-10-23 Tue 10:31]
+   :DRILL_AVERAGE_QUALITY: 3.429
+   :DRILL_EASE: 2.46
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-11-19 Mon 17:54]
    :END:
 
 *** Word
@@ -1060,18 +1108,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     /At first sight/; appears true at first consideration.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-11-19 Mon>
+   SCHEDULED: <2018-12-05 Wed>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       DB51AD9E-7C2C-4945-B100-A6FAC4E81C81
-   :DRILL_LAST_INTERVAL: 8.422
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 11
+   :DRILL_LAST_INTERVAL: 16.3387
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 12
    :DRILL_FAILURE_COUNT: 7
-   :DRILL_AVERAGE_QUALITY: 1.818
+   :DRILL_AVERAGE_QUALITY: 2.0
    :DRILL_EASE: 1.94
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-11-11 Sun 20:24]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-11-19 Mon 17:53]
    :END:
 
 *** Word
