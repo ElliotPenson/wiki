@@ -1,0 +1,118 @@
+ #+TITLE: Haskell
+#+AUTHOR: Elliot Penson
+
+Haskell is a purely-functional, statically typed programming language. Haskell
+is elegant, concise, and lazy. Haskell can be compiled (~ghc~) or interpreted
+(~ghci~). Haskell files use the ~.hs~ extension. Information on this page is
+taken from /Learn You a Haskell for Great Good!/
+
+* Functions
+
+  Functions in Haskell are pure. Pure functions have no side-effects. If a
+  function is called twice with the same parameters, it's guaranteed to return
+  the same result (*referential transparency*).
+
+** Infix Functions
+
+   *Infix functions* (in contrast to *prefix functions*) are sandwiched between
+   their parameters.
+
+   #+BEGIN_SRC haskell
+     -- Arithmetic
+     50 * 100 - 4999
+     5 / 2
+
+     -- Boolean algebra
+     not (False || True && True)
+
+     -- Equality tests
+     5 == 5
+     5 /= 10
+   #+END_SRC
+
+** Prefix Functions
+
+   In Haskell, prefix functions are called by writing the function name, a space
+   and then the parameters, separated by spaces. Two parameter functions may be
+   called as an infix function using backticks (e.g. ~92 `div` 10~). Note that
+   function application has highest precedence (e.g. ~succ 9 * 10~ <==>
+   ~(succ 9) * 10~).
+
+   #+BEGIN_SRC haskell
+     succ 8 -- 9
+     min 9 10 -- 10
+   #+END_SRC
+
+** Writing Functions
+
+   #+BEGIN_SRC haskell
+     doubleMe x = x + x
+
+     conanO'Brien = "It's a-me, Conan O'Brien!"
+   #+END_SRC
+
+   Functions that don't take any parameters are called *definitions* (or
+   *names*). We cannot change names and functions once we've defined them.
+
+* Control Flow
+
+  Haskell's ~if~ is an expression instead of a statement. Since expressions
+  must return a value, the ~else~ is mandatory in Haskell.
+
+  #+BEGIN_SRC haskell
+    doubleSmallNumber x = if x > 100 then x else x*2
+  #+END_SRC
+
+* Lists
+
+  In Haskell, lists are a *homogeneous* data structure; list elements must be
+  the same type. Strings are syntactic sugar for character lists.
+
+  #+BEGIN_SRC haskell
+    [1,2,3,4]
+
+    -- Concatenation
+    [1,2,3,4] ++ [9,10,11,12]
+
+    -- Cons operator
+    'A':" SMALL CAT"
+
+    -- Indexing
+    "Steve Buscemi" !! 6
+  #+END_SRC
+
+  Common list functions include ~head~, ~tail~, ~last~, ~init~ (get all but
+  last), ~length~, ~null~ (test if empty), ~reverse~, ~take~, ~drop~, ~maximum~,
+  ~minimum~, ~sum~, ~product~, and ~elem~ (test for membership).
+
+** Ranges
+
+   #+BEGIN_SRC haskell
+     [1..5] -- [1,2,3,4,5]
+
+     -- Step
+     [3,6..15]
+
+     -- Infinite lists
+     take 5 [4,8...]
+   #+END_SRC
+
+   ~cycle~, ~repeat~, and ~replicate~ are useful functions for infinite lists.
+
+** List Comprehensions
+
+   List comprehensions are similar to set comprehensions in mathematics (e.g. $S
+   = \{2 \cdot x \mid x \in \mathbb{N}, x \leq 10\}$). Haskell's list
+   comprehensions can accept any number of lists and predicates.
+
+   #+BEGIN_SRC haskell
+     [x | x <- [50..100], x `mod` 7 == 3]
+     -- [52,59,66,73,80,87,94]
+   #+END_SRC
+
+* Tuples
+
+  Tuples, unlike lists, don't have to be homogeneous. Tuples also have a
+  specific length defined in their type. Denote tuples with parenthesis
+  (~(1,2)~). ~fst~ and ~snd~ are useful functions that operate on pairs. ~zip~
+  is a function that produces pairs.

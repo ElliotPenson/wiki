@@ -39,6 +39,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:languages/bash.org][Bash]]
   - [[file:languages/css.org][CSS]]
   - [[file:languages/go.org][Go]]
+  - [[file:languages/haskell.org][Haskell]]
   - [[file:languages/lambda-calculus.org][Lambda Calculus]]
   - [[file:languages/python.org][Python]]
   - [[file:languages/sql.org][SQL]]
@@ -76,6 +77,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
 * Tools
 
+  - [[file:tools/spark.org][Apache Spark]]
   - [[file:tools/command-line.org][Command Line]]
   - [[file:tools/cron.org][Cron and Crontab]]
   - [[file:tools/elasticsearch.org][Elasticsearch]]
