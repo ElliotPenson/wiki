@@ -1,0 +1,64 @@
+#+TITLE: Papers
+#+AUTHOR: Elliot Penson
+
+* Linear Feature-Based Models for Information Retrieval
+
+  Features lie at the very heart of information retrieval. A model that can
+  handle arbitrary *query-dependent* and *query-independent* features is
+  desirable. This paper describes the theory behind a class of models called
+  *linear feature-based models*.
+
+** Model Framework
+
+   Suppose we are given a set of *documents* $D$, *queries* $Q$ and *training
+   data* $T$. In addition, we are given a real-valued *scoring function*
+   $S_\Lambda(D;Q)$ parameterized by $\Lambda$, a vector of parameters. Given the
+   query $Q_i$, the scoring function $S_\Lambda(D;Q)$ is computed for each $d \in
+   D$ and the documents are then ranked in descending order according to their
+   score. The scoring function induces a total ordering (*ranking*)
+   $R_i(\Lambda)$ on $D$ for each query $Q_i$.
+
+   Finally, in order to evaluate a parameter setting, we need an *evaluation
+   function* $E(R_\Lambda;T)$ that produces real valued output given a set of
+   ranked lists and the training data. We require $E$ to only consider the
+   document /rankings/ and not the document scores. The scores are only used to
+   rank the documents and not used to evaluate the ranking. Example evaluation
+   metrics are *mean average precision* and *percent correct in the top n*.
+
+   Our goal is to find the parameter setting $\Lambda$ that maximizes the
+   evaluation metric $E$ over the parameter space ($\hat{\Lambda} =
+   argmax_\Lambda E(R_\Lambda;T)$). To restrict our focus, scoring function
+   often appears as $S_\Lambda(D;Q) = \Lambda^Tf(D, Q) + Z$ where $f$ is a
+   *feature function* that maps query/document pairs to real-valued vectors in
+   $\mathbb{R}^d$ and $Z$ is a constant. We also require monotonically
+   increasing values.
+
+** Features
+
+   Common features include
+
+   - *Term occurrence/non-occurrence*
+     - Whether or not a term occurs within a document.
+   - *Term frequency*
+     - The number of times a term occurs within a document.
+   - *Inverse document frequency*
+     - Inverse of the proportion of documents that contain a given term.
+   - *Document length*
+     - Number of terms within the document.
+   - *Term proximity*
+     - Occurrence patterns of terms within a document.
+
+   Non-textual features include *PageRank*, URL depth, document quality,
+   readability, sentiment, and query clarity.
+
+* TODO A Mathematical Theory of Communication
+* TODO Dynamo: Amazon’s Highly Available Key-value Store
+* TODO Fundamental Concepts in Programming Languages
+* TODO Lisp: Good News, Bad News, How to Win Big
+* TODO On Computable Numbers, with an Application to the Entscheidungsproblem
+* TODO On Understanding Types, Data Abstraction, and Polymorphism
+* TODO Out of the Tar Pit
+* TODO Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I
+* TODO Reflections on Trusting Trust
+* TODO What Makes A Great Software Engineer?
+* TODO Why Functional Programming Matters

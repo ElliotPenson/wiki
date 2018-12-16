@@ -72,6 +72,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:theory/graphs.org][Graphs]]
   - [[file:theory/genetic-algorithms.org][Genetic Algorithms]]
   - [[file:theory/hash-tables.org][Hash Tables]]
+  - [[file:theory/papers.org][Papers]]
   - [[file:theory/sorting-algorithms.org][Sorting Algorithms]]
   - [[file:theory/trees.org][Trees]]
 
