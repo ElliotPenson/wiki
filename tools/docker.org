@@ -1,0 +1,70 @@
+#+TITLE: Docker
+#+AUTHOR: Elliot Penson
+
+Docker is a platform for development and deployment with containers. Containers
+provide similar isolation to virtual machines but use less computing power by
+leveraging the host kernel. Docker enables standardized packaging. Applications
+become portable as they are abstracted from the environment in which they are
+run.
+
+Information on this page is taken from Docker's [[https://docs.docker.com/get-started/][getting started guide]].
+
+* Concepts
+
+  An *image* is an executable package that includes everything needed to run an
+  application - the code, a runtime, libraries, environment variables, and
+  configuration files. A *container* is a runtime instance of an image - what
+  the image becomes in memory when executed (a process).
+
+* Execution
+
+  Run a Docker image with ~docker run <image>~. The ~-p~ argument is often used
+  to map a machine's port to a container's published port. Specify ~-d~ to run
+  the container in the background with detached mode. Type ~docker stop
+  <container>~ to stop the container. List all running containers with ~docker
+  ps~, include ~--all~ to also show stopped containers. You may also ~kill~ and
+  ~rm~ containers.
+
+* ~Dockerfile~
+
+  A ~Dockerfile~ defines a Docker image. An example appears below. Build the
+  Docker image with ~docker build .~. The ~-t~ (tag) argument is often used to
+  name the image.
+
+  #+BEGIN_SRC dockerfile
+    # Define a parent image.
+    FROM python:3.6-slim
+
+    # Set the working directory.
+    WORKDIR /app
+
+    # Copy to the container.
+    COPY . /app
+
+    # Execute commands.
+    RUN pip install -r requirements.txt
+
+    # Make ports available externally to the container.
+    EXPOSE 80
+
+    # Define environment variables.
+    ENV NAME World
+
+    # Run commands on launch.
+    CMD ["python", "app.py"]
+  #+END_SRC
+
+* Registries
+
+  A *registry* is a collection of repositories, and a repository is a collection
+  of images. A raw ~docker build~ will place an image on your machine's local
+  registry. Publish images to an external registry by logging in (~docker
+  login~) and running ~docker push <image>~. See all downloaded images with
+  ~docker image ls~.
+ 
+  Images can be tagged with ~docker tag <image> <name>~. Associate a local image
+  with a repository on a registry with the notation
+  ~username/repository:tag~. For example, ~docker tag example
+  elliot/experiments:1.0~.
+
+* TODO docker-compose
