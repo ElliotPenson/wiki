@@ -1187,4 +1187,59 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
     vertex as a stop helps only if there is a short path that goes through $k$,
     so $W[i, j]^k = min(W[i, j]^{k - 1}, W[i, k]^{k - 1},  + W[k, j]^{k - 1})$.
 
-* TODO Chapter 7: Combinatorial Search and Heuristic Methods
+* Chapter 7: Combinatorial Search and Heuristic Methods
+
+** Backtracking
+
+   *Backtracking* is a systematic way to iterate through all the possible
+   configurations of a search space. These configurations may represent all
+   possible arrangements of objects (permutations), all possible ways of
+   building a collection of them (subsets), or even possible move sequences in a
+   game. We model each solution as a vector $a = (a_1, a_2, ..., a_n)$, where
+   each element $a_i$ is selected from a finite ordered set $S_i$. We must be
+   careful to avoid repetitions and missing configurations.
+
+   #+BEGIN_SRC python
+     def backtrack(a):
+         if is_solution(a):
+             report(a)
+         else:
+             s_i = find_candidates(a)
+             while s_i:
+                 backtrack(a + [s_i.pop()])
+   #+END_SRC
+
+   At each step in the backtracking algorithm, we try to extend a given partial
+   solution $a = (a_1, a_2, ..., a_k)$ by adding another element at the
+   end. After extending it, we must test whether what we now have is a solution
+   or if not we must check whether the partial solution is still extendible to
+   some complete solution. We're using a depth-first search to enumerate
+   solutions. Breadth-first search would require more space (proportional to the
+   width instead of the height of the search tree).
+
+*** Backtracking Subsets
+
+    Suppose we are generating subsets of an /n/-element set, say
+    $\{1,...,n\}$. Define each subset as an array of $n$ cells, where the value
+    of $a_i$ (true or false) signifies whether the ith item is in the given
+    subset. We consider the subset a solution when every cell has true/false
+    (length == n).
+
+*** Backtracking Permutations
+
+    $\{1,...,n\}$ has $n!$ distinct permutations. Each permutation is
+    represented by an array of $n$ cells. The set of candidates for the ith
+    position will be the set of elements that have not appeared in the $(i - 1)$
+    elements of the partial solution, corresponding to the first $(i - 1)$
+    elements of the permutation. Our array is a solution whenever length equals
+    $n$.
+
+*** Backtracking Graph Paths
+
+    The starting point of any path from $s$ to $t$ is always $s$. Thus, $s$ is
+    the only candidate for the first position and $S_0 = \{s\}$. The possible
+    candidates for the second position are the vertices $v$ such that $(s, v)$
+    is an edge of the graph. We have a solution when $a_k$ is equal to $t$. Some
+    paths might be shorter than others.
+
+** TODO Search Pruning
