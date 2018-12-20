@@ -781,18 +781,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Fearless; adventurous (often used for rhetorical or humorous effect).
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-12-19 Wed>
+   SCHEDULED: <2018-12-24 Mon>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       30FFFEF3-4FCA-4A03-821D-329B3655FD26
-   :DRILL_LAST_INTERVAL: 36.3379
-   :DRILL_REPEATS_SINCE_FAIL: 5
-   :DRILL_TOTAL_REPEATS: 12
-   :DRILL_FAILURE_COUNT: 5
-   :DRILL_AVERAGE_QUALITY: 2.417
-   :DRILL_EASE: 2.04
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-11-13 Tue 18:27]
+   :DRILL_LAST_INTERVAL: 3.726
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 14
+   :DRILL_FAILURE_COUNT: 6
+   :DRILL_AVERAGE_QUALITY: 2.429
+   :DRILL_EASE: 1.9
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-12-20 Thu 14:17]
    :END:
 
 *** Word
@@ -1200,19 +1200,43 @@ Most definitions on this page come from the New Oxford American Dictionary.
 
     Make (someone) less angry or hostile.
 
+** Noun                                                               :drill:
+   SCHEDULED: <2018-12-24 Mon>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       03AF7EA8-955A-458D-BEA2-A6DD324CC940
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-12-20 Thu 14:15]
+   :END:
+
+*** Word
+
+    Pretext
+
+*** Definition
+
+    A reason given in justification of a course of action that is not the real
+    reason.
+
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-12-19 Wed>
+   SCHEDULED: <2019-04-10 Wed>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       FF38ABB0-ECF9-4B9B-91B5-1DB1DB2A8DCC
-   :DRILL_LAST_INTERVAL: 49.8555
-   :DRILL_REPEATS_SINCE_FAIL: 5
-   :DRILL_TOTAL_REPEATS: 4
+   :DRILL_LAST_INTERVAL: 110.6792
+   :DRILL_REPEATS_SINCE_FAIL: 6
+   :DRILL_TOTAL_REPEATS: 5
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.5
+   :DRILL_AVERAGE_QUALITY: 3.6
    :DRILL_EASE: 2.22
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2018-10-30 Tue 16:00]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-12-20 Thu 14:17]
    :END:
 
 *** Word
@@ -1247,18 +1271,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Lasting for a long time or longer than expected or usual.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2018-12-18 Tue>
+   SCHEDULED: <2019-01-17 Thu>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       EF68117D-DAED-4071-BE43-178DB41458EC
-   :DRILL_LAST_INTERVAL: 14.9006
-   :DRILL_REPEATS_SINCE_FAIL: 4
-   :DRILL_TOTAL_REPEATS: 13
+   :DRILL_LAST_INTERVAL: 27.7151
+   :DRILL_REPEATS_SINCE_FAIL: 5
+   :DRILL_TOTAL_REPEATS: 14
    :DRILL_FAILURE_COUNT: 4
-   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_AVERAGE_QUALITY: 3.071
    :DRILL_EASE: 1.86
-   :DRILL_LAST_QUALITY: 5
-   :DRILL_LAST_REVIEWED: [2018-12-03 Mon 01:32]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2018-12-20 Thu 14:15]
    :END:
 
 *** Word
@@ -1315,6 +1339,29 @@ Most definitions on this page come from the New Oxford American Dictionary.
 *** Definition
 
     Not revealing one's thoughts or feelings readily; reserved.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2018-12-24 Mon>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       6A50B451-2090-4518-BB7E-53997DFBDC08
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 2.5
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2018-12-20 Thu 14:17]
+   :END:
+
+*** Word
+
+    Serendipitous
+
+*** Definition
+
+    Occurring or discovered by chance in a happy or beneficial way.
 
 ** Noun                                                               :drill:
    SCHEDULED: <2019-01-29 Tue>
