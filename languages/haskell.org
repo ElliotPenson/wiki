@@ -1,4 +1,4 @@
- #+TITLE: Haskell
+#+TITLE: Haskell
 #+AUTHOR: Elliot Penson
 
 Haskell is a purely-functional, statically typed programming language. Haskell
@@ -116,3 +116,236 @@ taken from /Learn You a Haskell for Great Good!/
   specific length defined in their type. Denote tuples with parenthesis
   (~(1,2)~). ~fst~ and ~snd~ are useful functions that operate on pairs. ~zip~
   is a function that produces pairs.
+
+* Types
+
+  Haskell has a static type system; the type of every expression is known at
+  compile time. The ~:t~ command in ~ghci~ gives an expression's type
+  (e.g. ~"Hi" :: [Char]~). ~::~ is read as "has type of."
+
+  | Type      | Description                             |
+  |-----------+-----------------------------------------|
+  | ~Int~     | Bounded integer.                        |
+  | ~Integer~ | Unbounded (but less efficient) integer. |
+  | ~Float~   | Single precision floating-point.        |
+  | ~Double~  | Double precision floating-point.        |
+  | ~Bool~    | Boolean (~True~ or ~False~).            |
+  | ~Char~    | Characters denoted by single quotes.    |
+
+  When writing functions, we can choose to given them an explicit type
+  declaration (generally good practice).
+
+  #+BEGIN_SRC haskell
+    removeNonUppercase :: [Char] -> [Char]
+    removeNonUppercase st = [c | c <- st, c `elem` ['A'..'Z']]
+  #+END_SRC
+
+  Haskell has type inference. However, we must sometimes add a *type annotation*
+  (e.g. ~read "5" :: Int~).
+
+** Type Variables
+
+   A *type variable* is a lowercase symbol that can take any type. Type
+   variables appear in type declarations (e.g. ~a~ in ~head :: [a] ->
+   a~). Functions that have type variables are called *polymorphic functions*.
+
+** Typeclasses
+
+   A *typeclass* is a sort of interface that defines some behavior. A *class
+   constraint* appears in a type declaration and assigns a typeclass. For
+   example the ~==~ function has the type declaration ~(==) :: (Eq a) => a -> a
+   -> Bool~.
+
+   | Typeclass  | Functions              | Description                             |
+   |------------+------------------------+-----------------------------------------|
+   | ~Eq~       | ~==~, ~/=~             | Types that support equality testing.    |
+   | ~Ord~      | ~>~, ~<~, etc          | Types that have an ordering.            |
+   | ~Show~     | ~show~                 | Types that can be presented as strings. |
+   | ~Read~     | ~read~                 | Opposite of Show.                       |
+   | ~Enum~     | ~succ~, ~pred~         | Sequentially ordered types.             |
+   | ~Bounded~  | ~minBound~, ~maxBound~ | Types with an upper and lower bound.    |
+   | ~Num~      | ~+~, ~-~, etc          | Numeric values.                         |
+   | ~Integral~ |                        | Only integral (whole) numbers.          |
+   | ~Floating~ |                        | Only floating point numbers.            |
+
+* Pattern Matching
+
+  When defining functions, you can define separate bodies for different
+  patterns. Patterns are checked from top to bottom. The program will crash if
+  no patterns match.
+
+  #+BEGIN_SRC haskell
+    factorial :: (Integral a) => a -> a
+    factorial 0 = 1
+    factorial n = n * factorial (n - 1)
+  #+END_SRC
+
+  Pattern matching can also be used on tuples (e.g. ~(x, y)~) and lists
+  (e.g. ~(x:xs)~)
+
+  *As patterns* let one break up according to a pattern /and/ keep a reference
+  to the whole thing. This is done by putting a name and an ~@~ in front of a
+  pattern. For example, ~all@(x:xs)~.
+
+* Guards
+
+  A *guard* is a boolean expression indicated with a pipe. A series of guards
+  can appear after a function's name and parameters. If a guard evaluates to
+  ~True~, the corresponding function body is used. The last guard may be
+  ~otherwise~ as a catch all. Use guards instead of patterns when testing for a
+  boolean condition.
+
+  #+BEGIN_SRC haskell
+    max' :: (Ord a) => a -> a -> a
+    max' a b
+        | a > b     = a
+        | otherwise = b
+  #+END_SRC
+
+  A ~where~ clause can appear after guards. This keyword can define several
+  names and functions which will be visible across the guards. A let, in
+  contrast, won't span across guards. Where bindings are a syntactic construct,
+  lets are expressions.
+
+* Let Bindings
+
+  A *let binding* is an expression that defines local variables. The form is
+  ~let <bindings> in <expression>~.
+
+  #+BEGIN_SRC haskell
+    cylinder :: (RealFloat a) => a -> a -> a
+    cylinder r h =
+        let sideArea = 2 * pi * r * h
+            topArea = pi * r ^2
+        in  sideArea + 2 * topArea
+  #+END_SRC
+
+  Let bindings can also appear in list comprehensions. Notice that ~in~ is
+  omitted.
+
+  #+BEGIN_SRC haskell
+    [bmi | (w, h) <- xs, let bmi = w / h ^ 2, bmi >= 25.0]
+  #+END_SRC
+
+* Case Expressions
+
+  Case expressions are expressions that perform pattern matching. Note that
+  pattern matching on parameters in function definitions is syntactic sugar for
+  case expressions.
+
+  #+BEGIN_SRC
+    case expression of <pattern> -> <result>
+                       <pattern> -> <result>
+                       <pattern> -> <result>
+                       ...
+  #+END_SRC
+
+* Higher Order Functions
+
+  A *higher order function* is a function that either that accepts functions as
+  parameters or returns functions. Indicate function parameters with
+  parenthesis:
+
+  #+BEGIN_SRC haskell
+    applyTwice :: (a -> a) -> a -> a
+    applyTwice f x = f (f x)
+  #+END_SRC
+
+  All Haskell functions that accept several parameters are *curried
+  functions*. A function that takes two arguments is really a function that
+  takes one argument and returns another function. If we call a function with
+  too few parameters we get a *partially applied* function. Infix functions can
+  be partially applied using *sections*. To section an infix function, simply
+  surround it with parentheses and only supply a parameter on one side.
+
+  ~map~, ~filter~, ~foldl~, and ~foldr~ are higher order functions. ~foldl1~ and
+  ~foldr1~ are similar to ~foldl~ and ~foldr~, but don't require an explicit
+  starting value. They cause runtime errors if called with empty lists. ~scanl~
+  and ~scanr~ are also similar to ~foldl~ and ~foldr~. They report all the
+  intermediate accumulator states in the form of a list.
+
+** Lambda Expressions
+
+   To make a lambda, write a ~\~, parameters, ~->~, and the function
+   body. Lambdas are normally surrounded by parenthesis unless we mean for them
+   to extend all the way to the right.
+
+   #+BEGIN_SRC haskell
+     \x y -> x + y
+   #+END_SRC
+
+** Function Application
+
+   ~$~ is an infix function known as *function application*. Whereas normal
+   function application (putting a space between two things) has a really high
+   precedence, the ~$~ function has the lowest precedence. ~$~ can help avoid
+   parenthesis: ~sum (map sqrt [1..130])~ could be written as ~sum $ map sqrt
+   [1..10]~.
+
+   ~$~ can be treated like any other function:
+
+   #+BEGIN_SRC haskell
+     map ($ 3) [(4+), (10*), (^2), sqrt]
+   #+END_SRC
+
+** Function Composition
+
+   The ~.~ function performs function composition. Here's an example.
+
+   #+BEGIN_SRC haskell
+     map (\x -> negate (abs x)) [5,-3,-6,7,-3,2,-19,24]
+
+     -- Now with composition...
+     map (negate . abs) [5,-3,-6,7,-3,2,-19,24]
+   #+END_SRC
+
+   Composition is also convenient for *point-free style*. Functions in the
+   point-free style avoid mentioning their actual arguments.
+
+   #+BEGIN_SRC haskell
+     sum xs = foldr (+) 0 xs
+
+     -- Point-free style!
+     sum' = foldr (+) 0
+   #+END_SRC
+
+   Composition is glue to form more complex functions. It allows us to write
+   ~let fn = f . g . h~ instead of ~let fn x = f (g (h x))~.
+
+* Modules
+
+  A Haskell *module* is a collection of related functions, types and
+  typeclasses. A Haskell program is a collection of modules where the main
+  module loads up the other modules and then uses the functions defined in them
+  to do something. The Haskell standard library is split into modules. See [[http://www.haskell.org/ghc/docs/latest/html/libraries/][this
+  handy reference]]. Use ~import~ to load a module. In GHCi, load a module with
+  ~:m~.
+
+  #+BEGIN_SRC haskell
+    -- Make Data.List exports available in the global namespace.
+    import Data.List
+
+    -- We can choose not to import certain functions.
+    import Data.List hiding (nub)
+
+    -- Qualified imports help avoid name clashes.
+    import qualified Data.Map
+
+    -- We can also choose to rename the module.
+    import qualified Data.Map as M
+  #+END_SRC
+
+  Modules *export* functions. These functions act as a sort of interface to the
+  module. At the beginning of a module specify the name and function exports.
+
+  #+BEGIN_SRC haskell
+    -- This would be at the top of Geometry.hs
+    module Geometry
+    ( cubeVolume
+    , cubeArea
+    ) where
+  #+END_SRC
+
+  Modules can also be given hierarchical structures. We just need to specify the
+  directory name as part of the module name. For example, the module name could
+  be ~Geomertry.Cube~ if we had a ~Cube.hs~ file in a ~Geometry~ folder.
