@@ -1,0 +1,105 @@
+#+TITLE: Apache Spark
+#+AUTHOR: Elliot Penson
+
+Apache Spark is an open source, general-purpose platform for cluster
+computing. Spark offers APIs in Java, Scala, Python, and R. Spark also provides
+higher-level tools to support SQL queries, streaming data, ML, and graph
+algorithms.
+
+* Clusters and Nodes
+
+  At its core, Spark is responsible for scheduling, distributing, and monitoring
+  applications consisting of many computational tasks across many workers. Spark
+  spreads data and computations over *clusters* with multiple *nodes*. Each node
+  performs in-memory data processing. Spark enables parallel computation by
+  giving each node a subset of the total data.
+
+  A *master* manages splitting data and computations. The master is connected to
+  the rest of the computers in the cluster, which are called *slaves*. The
+  master sends slaves data and calculations to run, the slaves send their
+  results back to the master.
+
+* Spark Context
+
+  The *Spark Context* is the main entry point for Spark functionality. A Spark
+  Context is essentially a client that tells Spark how to connect to the Spark
+  cluster. The special ~"local"~ string tells Spark to run in local mode.
+
+  #+BEGIN_SRC python
+    sc = SparkContext("local", "example")
+  #+END_SRC
+
+  A ~SparkContext~ object may also be instantiated with ~SparkConf~.
+
+  #+BEGIN_SRC python
+    conf = SparkConf().setMaster("local").setAppName("example")
+    sc = SparkContext(conf=conf)
+  #+END_SRC
+
+* Resilient Distributed Datasets (RDD)
+
+  *Resilient Distributed Datasets (RDD)* are the fundamental data structure of
+  Spark. An RDD is a collection of elements partitioned across the nodes of the
+  cluster. Note that Apache now recommends Datasets and DataFrames instead of
+  the RDD interface. Information in this section is taken (often directly) from
+  [[https://spark.apache.org/docs/latest/rdd-programming-guide.html][the RDD Programming Guide]].
+
+  Create an RDD by /parallelizing/ an existing collection or by referencing a
+  dataset in an external storage system. All methods below take an optional
+  second argument for controlling the number of file partitions.
+
+  #+BEGIN_SRC python
+    # RDD from an existing collection.
+    data = [1, 2, 3, 4, 5]
+    rdd = sc.parallelize(data)
+
+    # RDD from a local file.
+    rdd = sc.textFile("data.txt")
+
+    # RDD from an S3 Bucket.
+    rdd = sc.textFile("s3a://bucket/file.txt")
+  #+END_SRC
+
+  RDDs support two types of operations: /transformations/ (e.g. ~map~) and
+  /actions/ (e.g. ~reduce~). All transformations in Spark are lazy;
+  transformations are only computed when an action requires a result.
+
+  #+BEGIN_SRC python
+    # Count number of characters.
+    rdd.map(len).reduce(lambda a, b: a + b)
+  #+END_SRC
+
+* Spark SQL
+
+  *Spark SQL* is a Spark module for structured data processing. Spark SQL is a
+  higher level interface than the RDD API. The SQL module provides a *DataFrame*
+  abstraction built on top of RDDs. This abstraction facilitates SQL operations
+  and provides additional optimization. DataFrames require a Spark Session.
+
+  #+BEGIN_SRC python
+     spark = SparkSession.builder.getOrCreate()
+     flights = spark.sql("FROM flights SELECT * LIMIT 10")
+     flights.show()
+  #+END_SRC
+
+  The ~sql~ method takes a query string and returns a DataFrame with the
+  results. List all available tables with ~spark.catalog.listTables()~.
+
+  A Spark DataFrame may created from an existing RDD, a file, or
+  programmatically. The ~SparkSession~ has a ~.read~ attribute which has several
+  methods for reading different data sources into Spark DataFrames.
+
+  #+BEGIN_SRC python
+    airports = spark.read.csv("airports.csv")
+  #+END_SRC
+
+  DataFrames provide a domain-specific language for data manipulation. Methods
+  include ~select~, ~filter~, ~join~, ~groupBy~, and others. If the data can fit
+  in memory, a Spark DateFrame can be also be converted to a ~pandas~ DataFrame
+  using the ~.toPandas()~ method. ~spark.createDataFrame(..)~ does the reverse.
+
+* TODO Spark Streaming
+
+* TODO Spark ML
+
+* TODO Spark Graph
