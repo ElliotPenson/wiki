@@ -4,21 +4,6 @@
 This document houses my notes from /The Algorithm Design Manual/ by Steven
 S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to odd exercises]].
 
-* Schedule
-
-  | Week | Start Date   | Chapter                                                    |   Pages | Done? |
-  |------+--------------+------------------------------------------------------------+---------+-------|
-  |    1 | September 16 | Introduction to Algorithm Design                           |    1-30 | X     |
-  |    2 | September 23 | Algorithm Analysis                                         |   31-64 | X     |
-  |    3 | September 30 | Data Structures (Part 1)                                   |   65-83 | X     |
-  |    4 | October 7    | Data Structures (Part 2)                                   |  83-102 | X     |
-  |    5 | October 14   | Sorting and Searching                                      | 103-144 | X     |
-  |    6 | October 21   | Graph Traversal                                            | 145-190 | X     |
-  |    7 | October 28   | Weighted Graph Algorithms                                  | 191-229 | X     |
-  |    8 | November 4   | Combinatorial Search and Heuristic Methods                 | 230-272 |       |
-  |    9 | November 11  | Dynamic Programming                                        | 273-315 |       |
-  |   10 | November 18  | Intractable Problems and Approximation Algorithms          | 316-355 |       |
-
 * Chapter 1: Introduction
 
   A *problem* is specified by describing the complete set of *instances* it must
@@ -1192,12 +1177,12 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
 ** Backtracking
 
    *Backtracking* is a systematic way to iterate through all the possible
-   configurations of a search space. These configurations may represent all
-   possible arrangements of objects (permutations), all possible ways of
-   building a collection of them (subsets), or even possible move sequences in a
-   game. We model each solution as a vector $a = (a_1, a_2, ..., a_n)$, where
-   each element $a_i$ is selected from a finite ordered set $S_i$. We must be
-   careful to avoid repetitions and missing configurations.
+   configurations of a combinatorial search space. These configurations may
+   represent all possible arrangements of objects (permutations), all possible
+   ways of building a collection of them (subsets), or even possible move
+   sequences in a game. We model each solution as a vector $a = (a_1, a_2, ...,
+   a_n)$, where each element $a_i$ is selected from a finite ordered set
+   $S_i$. We must be careful to avoid repetitions and missing configurations.
 
    #+BEGIN_SRC python
      def backtrack(a):
@@ -1239,7 +1224,33 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
     The starting point of any path from $s$ to $t$ is always $s$. Thus, $s$ is
     the only candidate for the first position and $S_0 = \{s\}$. The possible
     candidates for the second position are the vertices $v$ such that $(s, v)$
-    is an edge of the graph. We have a solution when $a_k$ is equal to $t$. Some
-    paths might be shorter than others.
+    is an edge of the graph and $v$ hasn't been used in the partial solution. We
+    have a solution when $a_k$ is equal to $t$. Some paths might be shorter than
+    others.
 
-** TODO Search Pruning
+** Search Pruning
+
+   *Pruning* is the technique of cutting off the search the instant we have
+   established that a partial solution cannot be extended into a full
+   solution. Pruning is powerful. Even simple pruning strategies can suffice to
+   reduce running time from impossible to instantaneous.
+
+   For the traveling salesman, we seek the cheapest tour that visits all
+   vertices. Suppose that in the course of our search we find a tour $t$ whose
+   cost is $C_t$. Later, we may have a partial solution $a$ whose edge sum $C_A
+   > C_t$. Any tour with this prefix will have cost greater than tour $t$, and
+   hence is doomed to be nonoptimal. Cutting away such failed partial tours as
+   soon as possible can have an enormous impact on running time.
+
+   As another example, suppose we're solving a Sudoku puzzle. We run through
+   empty squares, try candidate numbers, and backtrack when we are out of
+   candidates. The naive search randomly chooses open squares. Instead, we could
+   choose the square with the fewest number of candidates. Additionally, when
+   generating candidates, we could look ahead to see if the partial solution
+   causes some /other/ open square to have no candidates. Successful pruning
+   often requires looking ahead to see when a solution is doomed to go nowhere,
+   and backing off as soon as possible.
+
+   Exploiting symmetry is another avenue for reducing combinatorial searches
+
+** TODO Heuristic Search Methods
