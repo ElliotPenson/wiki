@@ -360,18 +360,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     insoluble difficulty
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-01-09 Wed>
+   SCHEDULED: <2019-02-10 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       1FC18694-FA0A-4907-96BE-EB8C842A09AA
-   :DRILL_LAST_INTERVAL: 23.3488
-   :DRILL_REPEATS_SINCE_FAIL: 6
-   :DRILL_TOTAL_REPEATS: 15
+   :DRILL_LAST_INTERVAL: 32.2213
+   :DRILL_REPEATS_SINCE_FAIL: 7
+   :DRILL_TOTAL_REPEATS: 16
    :DRILL_FAILURE_COUNT: 6
-   :DRILL_AVERAGE_QUALITY: 2.267
+   :DRILL_AVERAGE_QUALITY: 2.375
    :DRILL_EASE: 1.38
    :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-12-17 Mon 16:43]
+   :DRILL_LAST_REVIEWED: [2019-01-09 Wed 22:45]
    :END:
 
 *** Word
@@ -384,18 +384,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     something than one really does.
 
 ** Verb                                                               :drill:
-   SCHEDULED: <2019-01-09 Wed>
+   SCHEDULED: <2019-05-15 Wed>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       566639E9-4CEF-4794-B194-D078CAE951F6
-   :DRILL_LAST_INTERVAL: 55.2205
-   :DRILL_REPEATS_SINCE_FAIL: 5
-   :DRILL_TOTAL_REPEATS: 8
+   :DRILL_LAST_INTERVAL: 125.8475
+   :DRILL_REPEATS_SINCE_FAIL: 6
+   :DRILL_TOTAL_REPEATS: 9
    :DRILL_FAILURE_COUNT: 2
-   :DRILL_AVERAGE_QUALITY: 3.25
-   :DRILL_EASE: 2.32
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2018-11-15 Thu 13:47]
+   :DRILL_AVERAGE_QUALITY: 3.222
+   :DRILL_EASE: 2.18
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-01-09 Wed 22:45]
    :END:
 
 *** Word
