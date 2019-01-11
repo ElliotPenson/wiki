@@ -3,8 +3,10 @@
 
 Apache Spark is an open source, general-purpose platform for cluster
 computing. Spark offers APIs in Java, Scala, Python, and R. Spark also provides
-higher-level tools to support SQL queries, streaming data, ML, and graph
-algorithms.
+higher-level tools to support SQL queries, streaming data, machine learning, and
+graph algorithms.
+
+All code snippets are written in Python and use [[https://spark.apache.org/docs/latest/api/python][pyspark]].
 
 * Clusters and Nodes
 
@@ -12,12 +14,19 @@ algorithms.
   applications consisting of many computational tasks across many workers. Spark
   spreads data and computations over *clusters* with multiple *nodes*. Each node
   performs in-memory data processing. Spark enables parallel computation by
-  giving each node a subset of the total data.
+  giving each node a subset of the total data. Information in this section is
+  taken from Spark's [[https://spark.apache.org/docs/latest/cluster-overview.html][Cluster Node Overview]].
 
-  A *master* manages splitting data and computations. The master is connected to
-  the rest of the computers in the cluster, which are called *slaves*. The
-  master sends slaves data and calculations to run, the slaves send their
-  results back to the master.
+  A Spark application is coordinated by the *Spark Context* object of the main
+  program (called the *driver program*). The Spark Context communicates with a
+  *cluster manager* (or *master*). The cluster manager sends application code,
+  input data, and tasks to a set of *worker nodes* (or *slaves*). Worker nodes
+  start an *executor* that runs tasks and returns results.
+
+  [[../images/spark-cluster.png]]
+
+  The driver program has a web UI, typically on port 4040, that displays
+  information about tasks, executors, and storage.
 
 * Spark Context
 
@@ -34,6 +43,26 @@ algorithms.
   #+BEGIN_SRC python
     conf = SparkConf().setMaster("local").setAppName("example")
     sc = SparkContext(conf=conf)
+  #+END_SRC
+
+* Running Applications
+
+  Use ~bin/spark-submit~ to launch applications on a cluster. See [[https://spark.apache.org/docs/latest/submitting-applications.html][Submitting
+  Applications]] for more information.
+
+  #+BEGIN_SRC bash
+    # Run locally with 8 worker threads.
+    bin/spark-submit \
+        --master local[8] \
+        src/example.py \
+        10 # program argument
+
+    # Run against a standalone master server.
+    bin/spark-submit \
+        --master spark://207.184.161.138:7077 \
+        --executor-memory 5G \
+        src/example.py \
+        10
   #+END_SRC
 
 * Resilient Distributed Datasets (RDD)
@@ -103,3 +132,7 @@ algorithms.
 * TODO Spark ML
 
 * TODO Spark Graph
+
+* TODO Shared Variables: Broadcast, Accumulator
+
+  See [[https://spark.apache.org/docs/latest/rdd-programming-guide.html#shared-variables][Spark's documentation]] for more information.
