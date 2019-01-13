@@ -1,0 +1,108 @@
+#+TITLE: The Tipping Point
+#+AUTHOR: Elliot Penson
+
+In /The Tipping Point/, Malcolm Gladwell says that ideas, products, messages,
+and behaviors spread just like viruses do. Social epidemics are contagious,
+happen quickly, and are affected by little things. The *tipping point* is the
+moment of critical mass, the threshold, the boiling point. Sometimes a little
+change - in just the right place - can be a tipping point.
+
+* Law of the Few
+
+  In April 1775, Paul Revere infamously rode from Charlestown to
+  Lexington. Revere's "midnight ride" was a word-of-mouth epidemic pivotal to
+  the American Revolution. In epidemics, a tiny percentage of people do the
+  majority of the work. *Connectors*, *Mavens*, and *Salesmen* are people with
+  rare social gifts critical to social epidemics. They translate innovative
+  messages into something the rest of us can understand.
+
+** Connectors
+
+   "Six degrees of separation" says that any two people are at most six steps
+   (acquaintances) away from each other. This concept seems counterintuitive; we
+   associate with the people who occupy the same small, physical spaces we
+   do. Gladwell says
+
+   #+BEGIN_QUOTE
+   Six degrees of separation doesn't mean that everyone is linked to everyone
+   else in just six steps. It means that a very small number of people are
+   linked to everyone else in a few steps, and the rest of us are linked to the
+   world through those special few.
+   #+END_QUOTE
+
+   These people who link us up with the world are Connectors. Connectors have an
+   extraordinary knack of (and impulse for) making friends and
+   acquaintances. These people manage to occupy many different worlds and
+   subcultures and niches.
+
+** Mavens
+
+   Just as there are people we rely upon to connect us to other people, there
+   are also people we rely upon to connect us with new information. A Maven is
+   someone who accumulates knowledge. Mavens are more than expects, though, they
+   are socially motivated. Mavens are almost pathologically helpful. Mavens are
+   student and teachers.
+
+** Salesmen
+
+   #+BEGIN_QUOTE
+   Mavens are data banks. They provide the message. Connectors are social glue:
+   they spread it. But there is also a select group of people - Salesmen - with
+   the skills to persuade us when we are unconvinced of what we are hearing.
+   #+END_QUOTE
+
+   Gladwell says that nonverbal cues are as or more important than verbal
+   cues. We think of emotion as a reflection of inner state. However, emotion
+   often goes outside-in. Salesmen have an irresistible energy and charm that
+   makes people want to agree with them.
+
+* Stickiness Factor
+
+  In epidemics, the message must be memorable. "Stickiness" can be
+  counterintuitive, though. There is often a simple way to package information
+  that can make it irresistible, but you have to find it. Gladwell gives the
+  example of Sesame Street. The creators of the show used a data-driven
+  approach.
+
+  #+BEGIN_QUOTE
+  The head of research for /Sesame Street/ in the early years was a psychologist
+  from Oregon, Ed Palmer...Palmer's innovation was something he called the
+  Distracter. He would play an episode of /Sesame Street/ on a television
+  monitor, and then run a slide show on a screen next to it, showing a new slide
+  every seven and a half seconds. Palmer and his assistants would note when the
+  children were watching Sesame Street and when they lost interest.
+  #+END_QUOTE
+
+  #+BEGIN_QUOTE
+  The world - much as we want it to - does not accord with our intuition...Those
+  who are successful at creating social epidemics do not just do what they think
+  is right. they deliberately test their intuitions. Without the evidence of the
+  Distractor, which told them that their intuition about fantasy and reality was
+  wrong, /Sesame Street/ would today be a forgotten footnote in television
+  history.
+  #+END_QUOTE
+
+* Power of Context
+
+  Even the smallest and subtlest and most unexpected of factors can affect the
+  way we act. Human beings are a lot more sensitive to their environment than
+  they may seem. Our inner states are often the result of our outer
+  circumstances. The /Broken Window/ theory says that crime is the inevitable
+  result of mess. If a window is broken and left unrepaired, people walking by
+  will conclude that no one cares and no one is in charge. Soon, more windows
+  will be broken, and a sense of anarchy will spread. In the 1990s, New York
+  dramatically reduced crime by altering environmental details like graffiti and
+  subway turnstile-jumping.
+
+  #+BEGIN_QUOTE
+  Broken Windows and the Power of Context...say that the criminal - far from
+  being someone who acts for fundamental, intrinsic reasons and who lives in his
+  own world - is actually someone acutely sensitive to his
+  environment...Behavior is a function of social context.
+  #+END_QUOTE
+
+  150 seems to represent the maximum number of individuals with whom we can have
+  a genuinely social relationship. Small teams have a bond that creates powerful
+  peer pressure. The /Rule of 150/ often distinguishes a group with real social
+  authority from a group with little power at all. This rule of thumb is another
+  subtle contextual factor that can make a big difference.

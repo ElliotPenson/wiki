@@ -10,9 +10,12 @@
   - [X] Dune by Frank Herbert
   - [X] Ender's Game by Orson Scott Card
   - [X] Flowers for Algernon
+  - [ ] Golden State by Ben H. Winters
+  - [ ] Little Fires Everywhere by Celeste Ng
   - [X] Lost At Sea by Bryan Lee O'Malley
   - [ ] Pride and Prejudice by Jane Austen
   - [X] Red Rising by Pierce Brown
+  - [X] Rendezvous with Rama by Arthur C. Clarke
   - [X] Room by Emma Donoghue
   - [X] Speaker for the Dead by Orson Scott Card
   - [ ] Stories of Your Life and Others by Ted Chiang
@@ -35,9 +38,11 @@
    - [X] [[file:./clean-code.org][Clean Code by Robert C. Martin]]
    - [ ] Insanely Great by Steven Levy
    - [ ] Peopleware by DeMarco and Lister
+   - [ ] Programming in Haskell by Graham Hutton
    - [X] Land of Lisp by Conrad Barski
    - [ ] The Algorithm Design Manual by Steven Skina
    - [ ] The C Programming Language by Kernighan and Richie
+   - [ ] The Design of Everyday Things by Don Norman
    - [ ] The Mythical Man-Month by Fred Brooks
    - [ ] The Pragmatic Programmer by Andrew Hunt
    - [ ] The Supermen by Charles J. Murray
@@ -61,10 +66,13 @@
 
 ** Psychology
 
+   - [ ] Consider the Lobster and Other Essays by David Foster Wallace
+   - [ ] Educated by Tara Westover
    - [ ] Flow by Mihaly Csikszentmihalyi
    - [ ] Man's Search for Meaning by Viktor Frankl
    - [ ] Modern Romance by Aziz Ansari
    - [ ] On The Shortness of Life by Seneca
+   - [X] [[file:tipping-point.org][The Tipping Point by Malcolm Gladwell]]
    - [ ] When Breath Becomes Air by Paul Kalanithi
 
 ** Religion
@@ -82,30 +90,18 @@
 
 * Schedule
 
-  | Year | Week | Title                                | Done |
-  |------+------+--------------------------------------+------|
-  | 2018 |   37 | Naked Statistics                     | X    |
-  | 2018 |   38 | Dark Matter                          | X    |
-  | 2018 |   39 | Lost At Sea                          | X    |
-  | 2018 |   40 | "Surely You're Joking, Mr. Feynman!" |      |
-  | 2018 |   41 | Zero to One                          |      |
-  | 2018 |   42 | Modern Romance                       |      |
-  | 2018 |   43 | Flow                                 |      |
-  | 2018 |   44 | The Diamond Age                      |      |
-  | 2018 |   45 | Peopleware                           |      |
-  | 2018 |   46 | Pond River Ocean Rain                |      |
-  | 2018 |   47 | Burn Math Class                      |      |
-  | 2018 |   48 | The Supermen                         |      |
-  | 2018 |   49 | Stories of Your Life and Others      |      |
-  | 2018 |   50 |                                      |      |
-  | 2018 |   51 |                                      |      |
-  | 2018 |   52 |                                      |      |
+  | Year | Week | Title                |
+  |------+------+----------------------|
+  | 2019 |    1 | Rendezvous with Rama |
+  | 2019 |    2 | The Tipping Point    |
+  | 2019 |    3 | Brave New World      |
+  | 2019 |    4 | How to Solve It?     |
 
   What week are we on? Evaluate the following with ~C-c C-c~.
 
   #+BEGIN_SRC elisp
-    (format-time-string "%U")
+    (1+ (string-to-number (format-time-string "%U")))
   #+END_SRC
 
   #+RESULTS:
-  : 40
+  : 3
