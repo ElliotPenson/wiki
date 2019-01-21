@@ -1359,3 +1359,80 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
     The idea behind genetic algorithms is extremely appealing. However, they
     don't seem to work as well on practical combinatorial optimization problems
     as simulated annealing does.
+
+* Chapter 8: Dynamic Programming
+
+  Dynamic programming is a technique for efficiently implementing a recursive
+  algorithm by storing partial results. Dynamic programming guarantees
+  /correctness/ by searching all possibilities and provides /efficiency/ by
+  storing results to avoid recomputing. If the naive recursive algorithm
+  computes the same subproblems over and over again, storing the answer for each
+  subproblem in a table to look up instead of recompute can lead to an efficient
+  algorithm. Dynamic programming is essentially a tradeoff of space for time.
+
+** Fibonacci Example
+
+   Let's look at a simple program for computing the /n/th Fibonacci number.
+
+   #+BEGIN_SRC python
+     def fib(n):
+         if n == 0:
+             return 0
+         if n == 1:
+             return 1
+         return fib(n - 1) + fib(n - 2)
+   #+END_SRC
+
+   The course of execution for this recursive algorithm is illustrated by its
+   *recursion tree*.
+
+   [[file:../images/fib-recursion-tree.png]]
+
+   Note that $F(4)$ is computed on both sides of the recursion tree, and $F(2)$
+   is computed no less than five times in this small example. This redundancy
+   drastically affects performance.
+
+   We can improve performance by storing (or *caching*) the results of each
+   Fibonacci computation $F(k)$ indexed by the parameter $k$.
+
+   #+BEGIN_SRC python
+     cache = {0: 0, 1: 1}
+     def fib(n):
+         if n not in cache:
+             cache[n] = fib(n - 1) + fib( n - 2)
+         return cache[n]
+   #+END_SRC
+
+   This approach is a simple way to get /most/ of the benefits of full dynamic
+   programming. Here's the recursion tree:
+
+   [[file:../images/fib-caching.png]]
+
+   Let's go a step further with full dynamic programming! We can calculate
+   $F(n)$ in linear time and space with no recursive calls by explicitly
+   specifying the order of evaluation of the recurrence relation.
+
+   #+BEGIN_SRC python
+     def fib(n):
+         f = [0, 1]
+         for i in range(2, n + 1):
+             f.append(f[i - 1] + f[i - 2])
+         return f[n]
+   #+END_SRC
+
+   However, more careful study shows that we do not need to store all the
+   intermediate values for the entire period of execution.
+
+   #+BEGIN_SRC python
+     def fib(n):
+         if n == 0:
+             return 0
+
+         back_2, back_1 = 0, 1
+         for _ in range(2, n + 1):
+             back_2, back_1 = back1, back_1 + back_2
+         return back_1 + back_2
+   #+END_SRC
+
+   This analysis reduces the storage demands to constant space with no
+   asymptotic degradation in running time.
