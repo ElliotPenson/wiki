@@ -394,12 +394,14 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
 
     The *Rabin-Karp algorithm* gives a linear-time solution to substring
     search. Substring search asks if string $t$ contains the pattern $p$ as a
-    substring, and if so where. In the Rabin-Karp algorithm, We compute a given
+    substring, and if so where. In the Rabin-Karp algorithm, we compute a given
     hash function on both the pattern string $p$ and the $|p|$-character
     substring starting from the $i$th position of $t$. If these two strings are
     identical, clearly the resulting hash values must be the same. If the two
     strings are different, the hash values will /almost certainly be different/
-    (we can check).
+    (we can check). Note that we need our hashing function to be constant for
+    this algorithm to be $O(n)$ instead of $O(mn)$. This may be accomplished
+    with a rolling hash function.
 
 *** Duplicate Detection via Hashing
 
@@ -1429,10 +1431,65 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
              return 0
 
          back_2, back_1 = 0, 1
-         for _ in range(2, n + 1):
-             back_2, back_1 = back1, back_1 + back_2
+         for _ in range(2, n):
+             back_2, back_1 = back_1, back_1 + back_2
          return back_1 + back_2
    #+END_SRC
 
    This analysis reduces the storage demands to constant space with no
    asymptotic degradation in running time.
+
+** Approximate String Matching
+
+   To deal with inexact string matching, we must first define a cost function
+   telling us how far apart two strings are - i.e., a distance measure between
+   pairs of strings. *Edit distance* reflects the number of /changes/ that must
+   be made to convert one string to another. There are three natural types of
+   changes: /substitution/, /insertion/, and /deletion/. Edit distance assigns
+   each operation an equal cost of 1. Here's a recursive edit distance function:
+
+   #+BEGIN_SRC python
+     def edit_distance(source, target):
+         if not source:
+             return len(target)
+         if not target:
+             return len(source)
+
+         substitution_cost = 0 if source[-1] == target[-1] else 1
+         return min(edit_distance(source[:-1], target[:-1]) + substitution_cost,
+                    edit_distance(source, target[:-1]) + 1,  # insertion
+                    edit_distance(source[:-1], target) + 1)  # deletion
+   #+END_SRC
+
+   This program is absolutely correct but impossible slow. A table-based,
+   dynamic programming implementation of this algorithm is given below. ~costs~
+   is a two-dimensional matrix where each cell contains the optimal solution to
+   a subproblem (i.e. ~costs[x][y]~ is ~edit_distance(source[:x],
+   target[:y])~).
+
+   #+BEGIN_SRC python
+     def edit_distance(source, target):
+         costs = [[None for _ in range(len(target) + 1)]
+                  for _ in range(len(source) + 1)]
+
+         for index in range(len(costs)):
+             costs[index][0] = index
+         for index in range(len(costs[0])):
+             costs[0][index] = index
+
+         for x in range(1, len(source) + 1):
+             for y in range(1, len(target) + 1):
+                 substitution_cost = 0 if source[x - 1] == target[y - 1] else 1
+                 costs[x][y] = min(costs[x - 1][y - 1] + substitution_cost,
+                                   costs[x - 1][y] + 1,  # insertion
+                                   costs[x][y - 1] + 1)  # deletion
+         return costs[-1][-1]
+   #+END_SRC
+
+   The first row and the first column represent the empty prefix of the source
+   and target, respectively. This is why the matrix height/width is larger than
+   the source/target length.
+
+   Note that it is unnecessary to store the entire ~O(mn)~ matrix. The
+   recurrence only requires two rows at a time. Thus, this algorithm could be
+   further optimized to ~O(n)~ space without changing the time complexity.
