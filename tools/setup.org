@@ -3,26 +3,19 @@
 
 * macOS
 
-** Shell
+** Bash
 
    Place the following in ~~/.bash_profile~.
 
    #+BEGIN_SRC sh
       alias ls="ls -G"
 
-      parse_git_branch() {
-          git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/ (\1)/"
-      }
-
-      GRAY="\[\033[2m\]"
-      RESET="\[\033[00m\]"
-      export PS1="${GRAY}\W\$(parse_git_branch)${RESET} λ "
-
       export EDITOR="emacs"
    #+END_SRC
 
    Download and install [[https://iterm2.com/][iTerm2]]. Change the color scheme
-   (Preferences->Profiles->Colors) to /Argonaut/.
+   (Preferences->Profiles->Colors) to /Argonaut/. Install [[https://github.com/powerline/powerline][Powerline]] and adjust
+   iTerm2's font.
 
 ** Emacs
 
