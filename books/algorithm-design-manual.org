@@ -1401,7 +1401,7 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
      cache = {0: 0, 1: 1}
      def fib(n):
          if n not in cache:
-             cache[n] = fib(n - 1) + fib( n - 2)
+             cache[n] = fib(n - 1) + fib(n - 2)
          return cache[n]
    #+END_SRC
 
@@ -1493,3 +1493,108 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
    Note that it is unnecessary to store the entire ~O(mn)~ matrix. The
    recurrence only requires two rows at a time. Thus, this algorithm could be
    further optimized to ~O(n)~ space without changing the time complexity.
+
+** Dynamic Programming in Practice
+
+   There are three steps involved in solving a problem by dynamic programming:
+
+   1. Formulate the answer as a recurrence relation or recursive algorithm.
+   2. Show that the number of different parameter values taken on by your
+      recurrence is bounded by a (hopefully small) polynomial.
+   3. Specify an order of evaluation for the recurrence so the partial results
+      you need are always available when you need them.
+
+   In practice, you'll find that dynamic programming algorithms are usually
+   easier to work out from scratch than look up.
+
+** The Partition Problem
+
+   Suppose three workers are given the task of scanning through a shelf of books
+   in search of a given piece of information. To get the job done fairly and
+   efficiently, the books are to be partitioned among the three workers. If the
+   books are the same length, the job is easy: ~100 100 100 | 100 100 100 | 100
+   100 100~. If the books are not the same length, the task becomes more
+   difficult (~100 200 300 400 500 | 600 700 | 800 900~). An algorithm that
+   solves this *linear partition problem* takes as input an arrangement $S$ of
+   nonnegative numbers and an integer $k$. The algorithm should partition $S$
+   into $k$ or fewer ranges, to minimize the maximum sum over all ranges,
+   without reordering any of the numbers.
+
+   A heuristic to solve this problem might compute the average size of a
+   partition and then try and insert dividers to come close to this
+   average. Unfortunately, this method is doomed to fail on certain inputs.
+
+   Instead, consider a recursive, exhaustive search approach to solving this
+   problem. The /k/th partition starts right ater we placed the (k - 1)st
+   divider. Where can we place this last divider? Between the ith and (i + 1)st
+   elements for some $i$, where $1 \leq i \leq n$. What is the cost of this? The
+   total cost will be the larger of two qualtities - (1) the cost of the last
+   partition and (2) the cost of the largest partition formed to the left of
+   $i$. What is the size of this let partition? To minimize our total, we want
+   to use the $k - 2$ remaining dividers to partition the elements $\{s_1, ...,
+   s_i\}$ as equally as possible. This is a smaller instance of the same problem
+   and hence can be solved recursively!
+
+   Therefore, let us define $M[n, k]$ to be the minimum possible cost over all
+   partitions of $\{s_1, ..., s_n\}$ into $k$ ranges, where the cost of a
+   partition is the largest sum of elements in one of its parts. Thus defined,
+   this function cab be evaluated:
+
+   \begin{equation}
+   M[n,k] = min(i=1, n)(max(M[i, k - 1], \sum_{j = i + 1}^{n} s_j))
+   \end{equation}
+
+   This recurrence can be solved with dynamic programming in $O(kn^2)$
+   time. Note that we also need a second matrix, $D$ to reconstruct the optimal
+   partition. Whenever we update the value of $M[i, j]$, we record which divider
+   position was required to achieve that value.
+
+** Parting Context-Free Grammars
+
+   A *context-free grammar* (CFG) is a precise description of language
+   syntax. Each *rule* or *production* of the grammar defines an interpretation
+   for the named symbol on the left side of the rule as a sequence of symbols on
+   the right side of the rule. The right side can be a combination of
+   *nonterminals* (themselves defined by rules) or *terminal* symbols defined
+   simply as strings, such as "the", "a", "cat", "milk", and "drank."
+
+   *Parsing* a text string $S$ according to a given context-free grammar $G$ is
+   the algorithm problem of constructing a *parse tree* of rule substitutions
+   defining $S$ as a single nonterminal symbol of $G$. One of the nonterminals,
+   usually the one on the left-hand side of the first production, is called the
+   *start symbol*. It names the construct defined by the overall grammar.
+
+   #+BEGIN_SRC
+   Sentence   ::= NounPhrase VerbPhrase
+   NounPhrase ::= Article Noun
+   VerbPhrase ::= Verb NounPhrase
+   Article    ::= the, a
+   Noun       ::= cat, milk
+   Verb       ::= drank
+   #+END_SRC
+
+   [[../images/cfg.png]]
+
+   *Chomsky normal form* requires the right side of every rule to consist of
+
+   - exactly two nonterminals, i.e. $X -> YZ$, or
+   - exactly one terminal symbol, i.e. $X -> \alpha$.
+
+   Any context-free grammar can be easily and mechanically transformed into
+   Chomsky normal form by repeatedly shortening long right-hand sides at the
+   cost of adding extra nonterminals and productions. Thus, there is no loss of
+   generality with this assumption.
+
+   We can efficiently parse a string using dynamic programming. Define $M[i, j,
+   X]$ to be a boolean function that is true iff substring $S[i, j]$ is
+   generated by nonterminal $X$. This is true if there exists a production $X ->
+   YZ$ and breaking point $k$ between $i$ and $j$ such that the left part
+   generates $Y$ and the right part $Z$. In other words,
+
+   \begin{equation}
+   M[i, j, X] = \bigvee\limits_{(X -> YZ) \in G} \Big( \bigvee\limits_{k=i}^j M[i, k, Y] \wedge M[k + 1, j, Z] \Big)
+   \end{equation}
+
+   The one-character terminal symbols define the boundary conditions of the
+   recurrence. In particular, $M[i, i, X]$ is true iff there exists a production
+   $X -> \alpha$ such that $S[i] = \alpha$.
