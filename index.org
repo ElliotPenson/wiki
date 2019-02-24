@@ -76,6 +76,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:theory/papers.org][Papers]]
   - [[file:theory/sorting-algorithms.org][Sorting Algorithms]]
   - [[file:theory/trees.org][Trees]]
+  - [[file:theory/tries.org][Tries]]
 
 * Tools
 
