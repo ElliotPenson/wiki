@@ -34,6 +34,29 @@ Most definitions on this page come from the New Oxford American Dictionary.
     (of something bad) experienced or present to the maximum degree.
 
 ** Verb                                                               :drill:
+   SCHEDULED: <2019-03-11 Mon>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       D26AD480-A892-423B-95D8-E63C5BF18481
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 2.5
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-03-07 Thu 20:34]
+   :END:
+
+*** Word
+
+    Accost
+
+*** Definition
+
+    Approach and address (someone) boldly or aggressively.
+
+** Verb                                                               :drill:
    SCHEDULED: <2019-03-10 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
@@ -127,9 +150,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Human like, non-human possessing human traits, emotions, or intentions.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2019-03-11 Mon>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       DE3C375B-BC94-4377-9D46-F8FD198CC741
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-03-07 Thu 20:33]
    :END:
 
 *** Word
@@ -257,9 +289,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Distress or embarrassment at having failed or been humiliated.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2019-03-11 Mon>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       5A0DCE45-B9EE-40FD-907B-068726DE1010
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-03-07 Thu 20:34]
    :END:
 
 *** Word
@@ -338,6 +379,29 @@ Most definitions on this page come from the New Oxford American Dictionary.
 *** Definition
 
     Lacking sensitivity, refinement, or intelligence.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2019-03-11 Mon>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       9BCC3D26-4305-44D9-A610-9B34A0B806F6
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-03-07 Thu 20:33]
+   :END:
+
+*** Word
+
+    Derisive
+
+*** Definition
+
+    Expressing contempt or ridicule.
 
 ** Noun                                                               :drill:
    SCHEDULED: <2019-03-10 Sun>
@@ -623,9 +687,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     wife or husband) no longer living with their spouse.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2019-03-11 Mon>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       BE6C81E5-475F-4B47-BF14-713B4F5D2024
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2019-03-07 Thu 20:32]
    :END:
 
 *** Word
@@ -990,9 +1063,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     seriously.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2019-03-11 Mon>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       0FAE6D5B-89FF-4B6D-A147-9C2B0A04432F
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 2.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-03-07 Thu 20:35]
    :END:
 
 *** Word
@@ -1214,9 +1296,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Lacking distinctive or interesting features or characteristics.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2019-03-11 Mon>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       98C63851-0C92-4FFA-94E9-823C99E25C28
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 2.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-03-07 Thu 20:34]
    :END:
 
 *** Word
@@ -1509,9 +1600,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Lasting for a long time or longer than expected or usual.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2019-03-11 Mon>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       BB2D53A1-7519-4D47-98B6-6DD3A86797BA
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-03-07 Thu 20:32]
    :END:
 
 *** Word
@@ -1687,9 +1787,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     to be a fault of style.
 
 ** Adjective                                                          :drill:
+   SCHEDULED: <2019-03-11 Mon>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       110D4572-E3AD-466B-85AC-1C3359B6B3A4
+   :DRILL_LAST_INTERVAL: 4.07
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 5.0
+   :DRILL_EASE: 2.6
+   :DRILL_LAST_QUALITY: 5
+   :DRILL_LAST_REVIEWED: [2019-03-07 Thu 20:33]
    :END:
 
 *** Word
