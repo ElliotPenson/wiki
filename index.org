@@ -38,7 +38,8 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 * Languages
 
   - [[file:languages/bash.org][Bash]]
-  - [[file:languages/css.org][CSS]]
+  - HTML/[[file:languages/css.org][CSS]]
+    - [[./languages/canvas.org][Canvas]]
   - [[file:languages/go.org][Go]]
   - [[file:languages/haskell.org][Haskell]]
   - [[file:languages/lambda-calculus.org][Lambda Calculus]]
@@ -49,6 +50,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
 * Math
 
+  - [[file:math/fractals.org][Fractals]]
   - [[file:math/greek-alphabet.org][Greek Alphabet]]
   - [[file:math/linear-algebra.org][Linear Algebra]]
   - [[file:math/normal-distribution.org][Normal Distribution]]
