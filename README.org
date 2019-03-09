@@ -1,7 +1,8 @@
 #+TITLE: org
 #+AUTHOR: Elliot Penson
 
-My brain in plain text. View at [[http://wiki.penson.io/][wiki.penson.io]].
+My brain in plain text. View at [[http://wiki.penson.io/][wiki.penson.io]]. Search the site with
+~s.penson.io/<your-query>~ (e.g. [[http://s.penson.io/tries][s.penson.io/tries]]).
 
 [[./images/brain.png]]
 
