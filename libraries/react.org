@@ -1,0 +1,84 @@
+#+TITLE: React
+#+AUTHOR: Elliot Penson
+
+React is a JavaScript UI library created by Facebook. Information on this page
+is taken from [[https://reactjs.org/docs/hello-world.html][the React guide]].
+
+* Components
+
+  React *components* accept inputs (*props*) and return React *elements*
+  describing what should appear on the screen. Components may be defined with
+  functions or ES6 classes.
+
+  #+BEGIN_SRC js
+    class FriendlyButton extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = { clicked: false };
+        }
+
+        render() {
+            if (this.state.clicked) {
+                return 'Clicked!';
+            } else {
+                return (
+                    <button onClick={() => this.setState({ clicked: true })}>
+                      Click me, {this.props.name}!
+                    </button>
+                );
+            }
+        }
+    }
+  #+END_SRC
+
+  This component could be rendered with ~<FriendlyButton name="Elliot" />~. In
+  addition to ~render()~, React has other *lifecycle methods* like
+  ~componentDidMount()~ and ~componentWillUnmount()~.
+
+  Typically, React applications have a single ~App~ component at the very top.
+
+* Apply React
+
+  1. Place an empty ~<div>~ tag in your HTML file.
+  2. Include React dependencies in ~<script>~ tags.
+  3. Load component code. e.g.:
+
+  #+BEGIN_SRC js
+    class Example extends React.Component {
+        ...
+        render() {
+            return React.createElement('div', ...);
+        }
+    }
+
+    const domContainer = document.querySelector('#container'));  // empty div from above
+    ReactDOM.render(React.createElement(Example), domContainer);
+  #+END_SRC
+
+  Note that you may place as many independent DOM containers on one page as you
+  need. See [[https://reactjs.org/docs/add-react-to-a-website.html][the React guide]] for more information.
+
+** JSX
+
+   JSX is an eXtension to JavaScript that looks a bit like HTML. JSX produces
+   React elements (i.e. ~React.createElement()~ calls). Applications leveraging
+   JSX should use a preprocessor (e.g. [[https://babeljs.io/][babel]]).
+
+* Tips
+
+  - Be sure to use [[https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi][React Dev Tools]] in Chrome.
+  - A React toolchain usually includes a package manager (e.g. ~npm~), a bundler
+    (e.g. ~webpack~), and a compiler (e.g. ~babel~). Consider getting started
+    with [[https://github.com/facebook/create-react-app][create-react-app]].
+  - Capitalize ~N~ in the ~className~ prop.
+  - Instead of collecting data from children, or having two children
+    communicate, declare shared state in the parent component. The parent can
+    pass the state back down to the children with props. *Lifting state* into a
+    parent component is common when refactoring React components.
+  - Favor immutability to enable *pure components*.
+  - Don't be afraid to split components into smaller components.
+  - Do not modify state directly, use ~setState()~. Note that this function can
+    either accept an object or a function. The function receives previous state
+    and props.
+  - Call ~e.preventDefault()~ when handling events. More information [[https://reactjs.org/docs/handling-events.html][here]].
+  - See [[https://reactjs.org/docs/forms.html][this guide]] for information on using forms in React.

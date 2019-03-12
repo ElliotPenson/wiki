@@ -48,6 +48,11 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:languages/swift.org][Swift]]
   - [[file:languages/yaml.org][YAML]]
 
+* Libraries
+
+  - [[file:libraries/spark.org][Apache Spark]]
+  - [[file:libraries/react.org][React]]
+
 * Math
 
   - [[file:math/fractals.org][Fractals]]
@@ -83,7 +88,6 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
 * Tools
 
-  - [[file:tools/spark.org][Apache Spark]]
   - [[file:tools/command-line.org][Command Line]]
   - [[file:tools/cron.org][Cron and Crontab]]
   - [[file:tools/docker.org][Docker]]
