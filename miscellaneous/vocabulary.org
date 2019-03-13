@@ -1157,6 +1157,30 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Liable to change; easily altered.
 
 ** Noun                                                               :drill:
+   SCHEDULED: <2019-03-16 Sat>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       A3F4C438-D665-4EFF-9A11-F20920DB07EF
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-03-12 Tue 20:51]
+   :END:
+
+*** Word
+
+    Luddite
+
+*** Definition
+
+    Derogatory: a person opposed to increased industrialization or new
+    technology.
+
+** Noun                                                               :drill:
    SCHEDULED: <2019-03-21 Thu>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
@@ -1740,6 +1764,29 @@ Most definitions on this page come from the New Oxford American Dictionary.
 *** Definition
 
     A person who tells anecdotes in a skillful and amusing way.
+
+** Verb, Noun                                                         :drill:
+   SCHEDULED: <2019-03-16 Sat>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       2D64E541-8FEE-47BB-828E-5351E0621826
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-03-12 Tue 20:51]
+   :END:
+
+*** Word
+
+    Reproach
+
+*** Definition
+
+    Address (someone) in such a way as to express disapproval or disappointment.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2019-03-20 Wed>
