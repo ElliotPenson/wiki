@@ -1,0 +1,152 @@
+#+TITLE: HTML Canvas
+#+AUTHOR: Elliot Penson
+
+~<canvas>~ is an HTML element used to draw graphics in the browser. Information
+on this page is taken from [[https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial][Mozilla's canvas tutorial]].
+
+#+BEGIN_SRC html
+  <canvas id="example" width="150" height="150"></canvas>
+#+END_SRC
+
+Use a rendering context to create and manipulate content.
+
+#+BEGIN_SRC js
+  const canvas = document.getElementById('example');
+  const context = canvas.getContext('2d');
+#+END_SRC
+
+* Rectangles
+
+  Canvas supports only one primitive shape: rectangles. Three functions exist
+  for drawing rectangles:
+
+  - ~fillRect(x, y, width, height)~
+    - Draw a filled rectangle.
+  - ~strokeRect(x, y, width, height)~
+    - Draw a rectangle outline.
+  - ~clearReact(x, y, width, height)~
+    - Make the rectangle area transparent.
+
+  The ~x~/~y~ parameters are relative to a top left origin.
+
+* Paths
+
+  Paths are the other primitives in canvas. First, call the ~beginPath()~
+  method. Then, execute one or more of the following drawing commands. Lastly,
+  render the path ~stroke()~ and/or ~fill()~.
+
+  - ~moveTo(x, y)~
+    - Lift and move the pen.
+  - ~lineTo(x, y)~
+    - Draw a line.
+  - ~arc(x, y, radius, startAngle, endAngle, anticlockwise)~
+    - Draw an arc centered at (x, y). ~startAngle~ and ~endAngle~ are given in
+      radians.
+  - ~arcTo(x1, y1, x2, y2, radius)~
+    - Draw an arc on ending at (x2, y2) with the control point (x1, y1),
+      connected to the previous point by a straight line.
+  - ~quadraticCurveTo(cp1x, cp1y, x, y)~
+  - ~bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)~
+  - ~rect(x, y, width, height)~
+
+  #+BEGIN_SRC js
+    // Line
+    context.beginPath();
+    context.moveTo(10, 10);
+    context.lineTo(100, 100);
+    context.stroke();
+
+    // Triangle
+    context.beginPath();
+    context.moveTo(50, 50);
+    context.lineTo(100, 100);
+    context.lineTo(50, 100);
+    context.fill();
+
+    // Circle
+    context.beginPath();
+    context.arc(100, 100, 50, 0, Math.PI * 2, true);
+    context.stroke();
+  #+END_SRC
+
+  Optionally, ~closePath()~ may be called to close the shape by drawing a
+  straight line from the current point to the start. If the shape has already
+  been closed or if there's only one point in the list, this function does
+  nothing. Calling ~fill()~ will close any open shapes and ~closePath()~ is
+  unnecessary. This is /not/ the case with ~stroke()~.
+
+* Path2D
+
+  The ~Path2D~ object efficiently records and plays back drawings. All path
+  methods are available on ~Path2D~ objects. Use ~stroke()~ or ~fill()~ to draw
+  these objects onto the canvas.
+
+  #+BEGIN_SRC js
+    const circle = new Path2D();
+    circle.moveTo(125, 35);
+    circle.arc(100, 35, 25, 0, 2 * Path.PI);
+    context.fill(circle);
+  #+END_SRC
+
+  The ~Path2D~ API also provides an ~addPath~ method. This method is useful when
+  you want to build objects from several ~Path2D~ components.
+
+* Styles
+
+  Set the ~fillStyle~ and ~strokeStyle~ properties to change the fill and stroke
+  colors, respectively. Use any CSS color.
+
+  #+BEGIN_SRC js
+    context.fillStyle = 'red';
+    context.fillRect(100, 100, 100, 100);
+  #+END_SRC
+
+  Set transparency on shapes when setting their colors. Or, use the
+  ~globalAlpha~ property to apply a transparency value to all future
+  shapes. This value must be between 0.0 (fully transparent) and 1.0 (fully
+  opaque).
+
+  #+BEGIN_SRC js
+    context.globalAlpha = 0.2;
+  #+END_SRC
+
+  Lines may be styled with several properties: ~lineWidth()~, ~lineCap()~,
+  ~lineJoin()~, ~miterLimit()~, ~getLineDash()~, ~setLineDas()~,
+  ~lineDashOffset()~.
+
+  Shapes may be filled and stoked using linear and radial gradients too. Use the
+  ~createLinearGradient()~ and ~createRadialGradient()~ methods to create
+  gradients. Then, use the ~addColorStop()~ on these objects to denotes relative
+  color positions.
+
+* TODO Text
+
+  Two methods exist for writing text: ~fillText(text, x, y)~ and
+  ~strokeText(text, x, y)~. Change the font and size using the ~font~ property.
+
+  #+BEGIN_SRC js
+    context.font = '100px Helvetica';
+    context.fillText('Hi there', 100, 100);
+  #+END_SRC
+
+  Other useful properties include ~textAlign~, ~textBaseline~, and ~direction~.
+
+* TODO Resize
+
+  Set the component's width and height with JavaScript.
+
+  #+BEGIN_SRC js
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+  #+END_SRC
+
+  TODO Do we also need CSS?
+
+  #+BEGIN_SRC css
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+  #+END_SRC
+
+* TODO Canvas and React
