@@ -313,18 +313,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     An agent that provokes or speeds significant change or action.
 
 ** Noun, Verb                                                         :drill:
-   SCHEDULED: <2019-03-14 Thu>
+   SCHEDULED: <2019-03-22 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       22322572-CCB6-4183-998B-17C16A0254A9
-   :DRILL_LAST_INTERVAL: 3.861
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 3
+   :DRILL_LAST_INTERVAL: 8.4208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 4
    :DRILL_FAILURE_COUNT: 1
-   :DRILL_AVERAGE_QUALITY: 2.667
-   :DRILL_EASE: 2.22
+   :DRILL_AVERAGE_QUALITY: 2.75
+   :DRILL_EASE: 2.08
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-03-10 Sun 18:00]
+   :DRILL_LAST_REVIEWED: [2019-03-14 Thu 20:04]
    :END:
 
 *** Word
@@ -1810,6 +1810,30 @@ Most definitions on this page come from the New Oxford American Dictionary.
 *** Definition
 
     Not revealing one's thoughts or feelings readily; reserved.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2019-03-18 Mon>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       41C8A4B0-734A-455D-A7E1-ECA1CA53760A
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-03-14 Thu 20:04]
+   :END:
+
+*** Word
+
+    Sanguine
+
+*** Definition
+
+    Optimistic or positive, especially in an apparently bad or difficult
+    situation.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2019-03-21 Thu>
