@@ -75,21 +75,21 @@ Use a rendering context to create and manipulate content.
   nothing. Calling ~fill()~ will close any open shapes and ~closePath()~ is
   unnecessary. This is /not/ the case with ~stroke()~.
 
-* Path2D
+** Path2D
 
-  The ~Path2D~ object efficiently records and plays back drawings. All path
-  methods are available on ~Path2D~ objects. Use ~stroke()~ or ~fill()~ to draw
-  these objects onto the canvas.
+   The ~Path2D~ object efficiently records and plays back drawings. All standard
+   path methods are available on ~Path2D~ objects. Use ~stroke()~ or ~fill()~ to
+   draw these objects onto the canvas.
 
-  #+BEGIN_SRC js
+   #+BEGIN_SRC js
     const circle = new Path2D();
     circle.moveTo(125, 35);
     circle.arc(100, 35, 25, 0, 2 * Path.PI);
     context.fill(circle);
-  #+END_SRC
+   #+END_SRC
 
-  The ~Path2D~ API also provides an ~addPath~ method. This method is useful when
-  you want to build objects from several ~Path2D~ components.
+   The ~Path2D~ API also provides an ~addPath~ method. This method is useful when
+   you want to build objects from several ~Path2D~ components.
 
 * Styles
 
@@ -101,25 +101,35 @@ Use a rendering context to create and manipulate content.
     context.fillRect(100, 100, 100, 100);
   #+END_SRC
 
-  Set transparency on shapes when setting their colors. Or, use the
-  ~globalAlpha~ property to apply a transparency value to all future
-  shapes. This value must be between 0.0 (fully transparent) and 1.0 (fully
-  opaque).
+  Set transparency as part of the color or use the ~globalAlpha~ property. This
+  value (between 0 and 1) applies a transparency value to all future shapes.
 
   #+BEGIN_SRC js
     context.globalAlpha = 0.2;
   #+END_SRC
 
-  Lines may be styled with several properties: ~lineWidth()~, ~lineCap()~,
-  ~lineJoin()~, ~miterLimit()~, ~getLineDash()~, ~setLineDas()~,
-  ~lineDashOffset()~.
+  Lines may be styled with several properties and functions: ~lineWidth~,
+  ~lineCap~, ~lineJoin~, ~miterLimit~, ~setLineDash(segments)~/~getLineDash()~,
+  and ~lineDashOffset~. See [[https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors][this page]] for more information.
 
-  Shapes may be filled and stoked using linear and radial gradients too. Use the
+  Obtaining crisp lines requires understanding how paths are stroked. Note the
+  situation in the second image below. The area to be filled only extends
+  halfway into the pixels on either side of the path. Be precise to avoid
+  rendering a blurry approximation.
+
+  [[file:../images/canvas-crisp-lines.png]]
+
+  Shapes may be also filled and stoked with gradients and patterns. Use the
   ~createLinearGradient()~ and ~createRadialGradient()~ methods to create
-  gradients. Then, use the ~addColorStop()~ on these objects to denotes relative
-  color positions.
+  gradients. Then, use the ~addColorStop()~ on these objects to denote relative
+  color positions. Give the ~createPattern()~ method an image to create a
+  pattern. Gradients and patterns should be handed to the ~fillStyle~ property.
 
-* TODO Text
+  Control shadows with four properties: ~shadowOffsetX~, ~shadowOffsetY~,
+  ~shadowBlur~, and ~shadowColor~. ~shadowColor~ is fully-transparent black by
+  default.
+
+* Text
 
   Two methods exist for writing text: ~fillText(text, x, y)~ and
   ~strokeText(text, x, y)~. Change the font and size using the ~font~ property.
