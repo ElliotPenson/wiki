@@ -23,6 +23,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:books/algorithm-design-manual.org][The Algorithm Design Manual]]
       - [[file:books/algorithm-design-manual-exercises.org][The Algorithm Design Manual: Exercises]]
     - [[file:books/visual-display-of-quantitative-information.org][The Visual Display of Quantitative Information by Edward Tufte]]
+    - [[file:books/zero-to-one.org][Zero to One by Peter Thiel]]
 
 * Courses
 

@@ -1,0 +1,26 @@
+#+TITLE: Zero to One by Peter Thiel
+#+AUTHOR: Elliot Penson
+
+Progress may be horizontal or vertical. *Horizontal progress* is the duplication
+of things that work - going from 1 to /n/. *Vertical progress* is the creation
+of new things - going from 0 to 1. Globalization is horizontal
+progress. Technology is vertical progress.
+
+#+BEGIN_QUOTE
+Technology is miraculous because it allows us to do more with less, ratcheting
+up our fundamental capabilities to a higher level...Humans don't decide what
+to build by making choices from some cosmic catalog of options given in advance;
+instead, by creating new technologies, we rewrite the plan of the world.
+#+END_QUOTE
+
+The contrarian question asks "What important truth do very few people agree with
+you on?" Good answers to this question are glimpses into the future. Thiel's
+answer to the contrarian question is that "most people think the future of the
+world will be defined by globalization, but the truth is that technology matters
+more."
+
+#+BEGIN_QUOTE
+New technology tends to come from new ventures - startups...Startups operate on
+the principle that you need to work with other people to get stuff done, but you
+also need to stay small enough so that you actually can.
+#+END_QUOTE
