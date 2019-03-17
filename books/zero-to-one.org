@@ -24,3 +24,37 @@ New technology tends to come from new ventures - startups...Startups operate on
 the principle that you need to work with other people to get stuff done, but you
 also need to stay small enough so that you actually can.
 #+END_QUOTE
+
+* Conventional Beliefs
+
+  #+BEGIN_QUOTE
+  The contrarian question is difficult to answer directly. It may be easier to
+  start with a preliminary: what does everybody agree on? ...Conventional
+  beliefs only ever come to appear arbitrary and wrong in retrospect; whenever
+  one collapses, we call the old belief a *bubble*.
+  #+END_QUOTE
+
+  The dot-com boom of the late 90s was intense but short. The dot-com /bust/
+  taught Silicon Valley four big lessons that still guide business thinking
+  today:
+
+  1. Make incremental advances
+  2. Stay lean and flexible (code for "unplanned")
+  3. Improve on competition
+  4. Focus on product, not sales
+
+  Yet, the opposite principles are probably more correct.
+
+  1. It is better to risk boldness than triviality.
+  2. A bad plan is better than no plan.
+  3. Competitive markets destroy profits.
+  4. Sales matters just as much as product.
+
+  #+BEGIN_QUOTE
+  To build the next generation of companies, we must abandon the dogmas created
+  after the crash. That doesn't mean the opposite ideas are automatically true:
+  you can't escape the madness of crowds by dogmatically rejecting
+  them. Instead ask yourself: how much of what you know about business is shaped
+  by mistaken reactions to past mistakes? The most contrarian thing of all is
+  not to oppose the crowd but to think for yourself.
+  #+END_QUOTE
