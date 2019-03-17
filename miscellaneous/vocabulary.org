@@ -173,6 +173,29 @@ Most definitions on this page come from the New Oxford American Dictionary.
 
     Human like, non-human possessing human traits, emotions, or intentions.
 
+** Adjective                                                          :drill:
+   SCHEDULED: <2019-03-21 Thu>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       BBA2296B-E0ED-4A21-92E5-246B2011195B
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-03-17 Sun 14:31]
+   :END:
+
+*** Word
+
+    Arduous
+
+*** Definition
+
+    Involving or requiring strenuous effort; difficult and tiring.
+
 ** Noun, Adjective                                                    :drill:
    SCHEDULED: <2019-03-24 Sun>
    :PROPERTIES:
@@ -474,6 +497,30 @@ Most definitions on this page come from the New Oxford American Dictionary.
     A person or thing (as in fiction or drama) that appears or is introduced
     suddenly and unexpectedly and provides a contrived solution to an apparently
     insoluble difficulty.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2019-03-21 Thu>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       F236FF7C-6827-4CE6-96DD-2CC1EF5009B6
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2019-03-17 Sun 14:31]
+   :END:
+
+*** Word
+
+    Didactic
+
+*** Definition
+
+    Intended to teach, instructive. Often used negatively for excessive or
+    patronizing teaching.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2019-03-24 Sun>
@@ -1157,18 +1204,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Liable to change; easily altered.
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2019-03-16 Sat>
+   SCHEDULED: <2019-03-26 Tue>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       A3F4C438-D665-4EFF-9A11-F20920DB07EF
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.4831
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-03-12 Tue 20:51]
+   :DRILL_LAST_REVIEWED: [2019-03-17 Sun 14:31]
    :END:
 
 *** Word
@@ -1436,7 +1483,7 @@ Most definitions on this page come from the New Oxford American Dictionary.
 *** Definition
 
     (of a task, duty, or responsibility) involving an amount of effort and
-    difficulty that is oppressively burdensome.
+    difficulty that is oppressively (and unwelcomely) burdensome.
 
 ** Adverb                                                             :drill:
    SCHEDULED: <2019-03-23 Sat>
@@ -1766,18 +1813,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     A person who tells anecdotes in a skillful and amusing way.
 
 ** Verb, Noun                                                         :drill:
-   SCHEDULED: <2019-03-16 Sat>
+   SCHEDULED: <2019-03-21 Thu>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       2D64E541-8FEE-47BB-828E-5351E0621826
-   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_LAST_INTERVAL: 3.861
    :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_TOTAL_REPEATS: 3
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 2.667
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-03-12 Tue 20:51]
+   :DRILL_LAST_REVIEWED: [2019-03-17 Sun 14:31]
    :END:
 
 *** Word
