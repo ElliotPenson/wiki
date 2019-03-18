@@ -1859,18 +1859,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Not revealing one's thoughts or feelings readily; reserved.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-03-18 Mon>
+   SCHEDULED: <2019-03-27 Wed>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       41C8A4B0-734A-455D-A7E1-ECA1CA53760A
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.4831
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-03-14 Thu 20:04]
+   :DRILL_LAST_REVIEWED: [2019-03-18 Mon 14:37]
    :END:
 
 *** Word
