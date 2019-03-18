@@ -1,0 +1,125 @@
+#+TITLE: Design Patterns
+#+AUTHOR: Elliot Penson
+
+#+BEGIN_QUOTE
+A *design pattern* systematically names, motivates, and explains a general
+design that addresses a recurring design problem in object-oriented
+systems...The solution is a general arrangement of objects and classes that
+solve the problem. - /Design Patterns/
+#+END_QUOTE
+
+Good object-oriented software design tends to encourage *interfaces* and favor
+*composition* over *inheritance*. Inheritance is *white-box* reuse. Composition
+is *black-box* reuse. /Design Patterns/ also distinguishes between *aggregation* and
+*composition*. Aggregation suggests *looser coupling* where the objects may live
+independently. Composition is a tighter relationship where if one object is
+destroyed, so are the contained objects (i.e. ownership)
+
+Information on this page is mostly taken from /Design Patterns/ by Gamma, Helm,
+Johnson, and Vlissides.
+
+* TODO Adapter                                                   :structural:
+
+* TODO Builder                                                   :creational:
+
+* Composite                                                      :structural:
+
+  The *composite* design pattern composes objects into tree structures to
+  represent part-whole hierarchies. Composite lets clients tread individual
+  objects and compositions of object uniformly.
+
+  [[file:../images/composite-pattern.png]]
+
+  For example, a drawing application has graphical primitives such as ~Text~,
+  ~Rectangle~, and ~Line~ plus other classes that act as containers for these
+  primitives (e.g. ~Pictures~). Most approaches would treat primitives and
+  containers differently, even if most of the time the user treats them
+  identically.
+
+  The key to the composite pattern is an abstract class that represents /both/
+  primitives and their containers. In our example, this class is
+  ~Graphic~. ~Graphic~ declares operations like ~draw~ that all graphical
+  objects implement. It also declares operations that all composite object
+  share, such as operations for accessing and managing children.
+
+* Chain of Responsibility                                        :behavioral:
+
+  The *chain of responsibility* design pattern avoids coupling the sender of a
+  request to its receiver by giving more than one object a chance to handle the
+  request. Chain the receiving objects and pass the request along the chain
+  until an object handles it. Use this pattern when more than one object may
+  handle a request, and the handler isn't known /a priori/. This pattern is also
+  useful when the set of objects that can handle a request should be specified
+  dynamically.
+
+  [[file:../images/chain-of-responsibility-pattern.png]]
+
+  The object that made the request has no explicit knowledge of who will handle
+  it. Each object in the chain shares a common interface for handling requests
+  and for accessing its /successor/ on the chain. A typical object structure
+  might look like this:
+
+  [[file:../images/chain-of-responsibility-example.png]]
+
+* TODO Decorator                                                 :structural:
+
+* TODO Dependency Injection                                      :creational:
+
+* Facade                                                         :structural:
+
+  The *facade* design pattern provides a unified interface to a set of
+  interfaces in a subsystem. Facade defines a higher-level interface that makes
+  the subsystem easier to use.
+
+  [[file:../images/facade-pattern.png]]
+
+  The facade knows which subsystem classes are responsible for a request and
+  delegates to the appropriate subsystem. The subsystem has no knowledge of the
+  facade.
+
+* TODO Factory Method                                            :creational:
+
+* Iterator                                                       :behavioral:
+
+  The *iterator* design pattern provides a way to access the elements of an
+  aggregate object sequentially without exposing underlying representation.
+
+  [[file:../images/iterator-pattern.png]]
+
+  The pattern's key idea is to take the responsibility for access and traversal
+  out of the object and put it into an iterator object. The ~Iterator~ class
+  defines an interface for accessing the elements.
+
+* TODO Mediator                                                  :behavioral:
+
+* TODO Memento                                                   :behavioral:
+
+* Observer                                                       :behavioral:
+
+  The *observer* design pattern (also known as *publish-subscribe*) defines a
+  one-to-many dependency between objects so that when on object changes state,
+  all its dependents are notified and updated automatically. This pattern
+  maintains consistency while keeping classes loosely coupled.
+
+  [[file:../images/observer-pattern.png]]
+
+  The key objects in this pattern are /subject/ and /observer/. A subject may
+  have any number of dependent observers. All observers are notified whenever
+  the subject undergoes a change in state. In response, each observer will
+  query the subject to synchronize its state with the subject's state.
+
+* Singleton                                                      :creational:
+
+  It's important for some classes to have exactly one instance. The *singleton*
+  design pattern ensures a class only has one instance, and provides a global
+  point of access to it.
+
+  [[file:../images/singleton-pattern.png]]
+
+  A global variable makes an object accessible, but it doesn't keep you from
+  instantiating multiple objects. Therefore, the class itself should be
+  responsible for keeping track of its sole instance.
+
+* TODO Strategy                                                  :behavioral:
+
+* TODO Visitor                                                   :behavioral:
