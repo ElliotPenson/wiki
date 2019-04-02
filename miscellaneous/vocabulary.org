@@ -289,6 +289,29 @@ Most definitions on this page come from the New Oxford American Dictionary.
 
     Bold and without shame.
 
+** Adjective, Verb, Noun                                              :drill:
+   SCHEDULED: <2019-04-05 Fri>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       70732604-657B-45CD-9445-9D045063A29D
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-04-01 Mon 20:21]
+   :END:
+
+*** Word
+
+    Bungling, Bungle
+
+*** Definition
+
+    Clumsily awkward or inept.
+
 ** Adjective                                                          :drill:
    SCHEDULED: <2019-04-12 Fri>
    :PROPERTIES:
@@ -1834,6 +1857,30 @@ Most definitions on this page come from the New Oxford American Dictionary.
 *** Definition
 
     Make (someone) less angry or hostile.
+
+** Noun                                                               :drill:
+   SCHEDULED: <2019-04-05 Fri>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       347D558B-2443-4095-AA5F-E5A93F989303
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-04-01 Mon 20:21]
+   :END:
+
+*** Word
+
+    Predisposition
+
+*** Definition
+
+    A liability or tendency to suffer from a particular condition, hold a
+    particular attitude, or act in a particular way.
 
 ** Noun                                                               :drill:
    SCHEDULED: <2019-04-18 Thu>
