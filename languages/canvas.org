@@ -169,15 +169,17 @@ Use a rendering context to create and manipulate content.
 
 * Transformations
 
-  The ~translate(x, y)~ method moves the canvas and its origin to a different point
-  in the grid. ~x~ indicates the horizontal distance to move and ~y~ the
-  vertical distance.
+** High-Level Transformations
 
-  The ~rotate(angle)~ method rotates the canvas clockwise around the current
-  origin by the ~angle~ number of radians. The center point is always the canvas
-  origin, use the ~translate()~ method to move the canvas.
+   The ~translate(x, y)~ method moves the canvas and its origin to a different point
+   in the grid. ~x~ indicates the horizontal distance to move and ~y~ the
+   vertical distance.
 
-  #+BEGIN_SRC js
+   The ~rotate(angle)~ method rotates the canvas clockwise around the current
+   origin by the ~angle~ number of radians. The center point is always the canvas
+   origin, use the ~translate()~ method to move the canvas.
+
+   #+BEGIN_SRC js
     const width = 100;
     const height = 100;
 
@@ -194,15 +196,94 @@ Use a rendering context to create and manipulate content.
     context.fillRect(x, y, width, height);
 
     context.restore();
-  #+END_SRC
+   #+END_SRC
 
-  Use the ~scale(x, y)~ method to increase or decrease the units in the
-  grid. Both ~x~ and ~y~ are real numbers. Values smaller than 1.0 reduce the
-  unit size and values above 1.0 increase the unit size.
+   Use the ~scale(x, y)~ method to increase or decrease the units in the
+   grid. Both ~x~ and ~y~ are real numbers. Values smaller than 1.0 reduce the
+   unit size and values above 1.0 increase the unit size.
 
-  Lastly, the ~transform()~, ~setTransform()~, and ~resetTransform()~ methods
-  provide more low level manipulation of the transformation matrix. (TODO,
-  more explanation + example)
+** Low-Level Transformations
+
+   The ~transform()~, ~setTransform()~, and ~resetTransform()~ methods provide
+   raw manipulation of the transformation matrix. Rotation, translation,
+   scaling, and skewing may all be accomplished using this matrix.
+
+   \begin{equation}
+   \begin{bmatrix}
+   a & c & e \\
+   b & d & f \\
+   0 & 0 & 1
+   \end{bmatrix}
+   \end{equation}
+
+   Transformations map coordinates from a one coordinate system into another.
+
+   \begin{equation}
+   \begin{bmatrix}
+   x' \\
+   y' \\
+   1
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+   a & c & e \\
+   b & d & f \\
+   0 & 0 & 1
+   \end{bmatrix}
+   *
+   \begin{bmatrix}
+   x \\
+   y \\
+   1
+   \end{bmatrix}
+   \end{equation}
+
+   Translation, scaling, and rotation are equivalent to the following,
+   respectively.
+
+   \begin{equation}
+   \begin{bmatrix}
+   1 & 0 & tx \\
+   0 & 1 & ty \\
+   0 & 0 & 1
+   \end{bmatrix}
+   ,
+   \begin{bmatrix}
+   sx & 0 & 0 \\
+   0 & sy & 0 \\
+   0 & 0 & 1
+   \end{bmatrix}
+   ,
+   \begin{bmatrix}
+   cos(a) & -sin(a) & tx \\
+   sin(a) & cos(a) & ty \\
+   0 & 0 & 1
+   \end{bmatrix}
+   \end{equation}
+
+   A skew transformation along the x-axis and y-axis is equivalent to the
+   following, respectively.
+
+   \begin{equation}
+   \begin{bmatrix}
+   1 & tan(a) & 0 \\
+   0 & 1 & 0 \\
+   0 & 0 & 1
+   \end{bmatrix}
+   ,
+   \begin{bmatrix}
+   1 & 0 & 0 \\
+   tan(a) & 1 & 0 \\
+   0 & 0 & 1
+   \end{bmatrix}
+   \end{equation}
+
+   The ~transform(a, b, c, d, e, f)~ method multiplies the current
+   transformation matrix with the matrix described by its arguments. The
+   ~setTransform(a, b, c, d, e, f)~ method resets the current transform to the
+   identity matrix, and then invokes the ~transform()~ method with the same
+   arguments. Lastly, the ~resetTransform()~ method resets the current transform
+   to the identity matrix.
 
 * TODO Compositing and Clipping
 
@@ -223,5 +304,3 @@ Use a rendering context to create and manipulate content.
         height: 100%;
     }
   #+END_SRC
-
-* TODO Canvas and React
