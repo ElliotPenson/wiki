@@ -6,12 +6,12 @@ My brain in plain text. View at [[http://wiki.penson.io/][wiki.penson.io]]. Sear
 
 [[./images/brain.png]]
 
-* Release
+* Deployment
 
   Render HTML and upload to Amazon S3 with
 
   #+BEGIN_SRC sh
-    ./release
+    ./deploy
   #+END_SRC
 
 * Private Files
