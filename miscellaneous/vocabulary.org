@@ -336,18 +336,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Bold and without shame.
 
 ** Adjective, Verb, Noun                                              :drill:
-   SCHEDULED: <2019-04-28 Sun>
+   SCHEDULED: <2019-05-14 Tue>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       70732604-657B-45CD-9445-9D045063A29D
-   :DRILL_LAST_INTERVAL: 8.422
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 7
+   :DRILL_LAST_INTERVAL: 16.0523
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 8
    :DRILL_FAILURE_COUNT: 3
-   :DRILL_AVERAGE_QUALITY: 2.286
-   :DRILL_EASE: 1.94
+   :DRILL_AVERAGE_QUALITY: 2.375
+   :DRILL_EASE: 1.8
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-04-20 Sat 12:40]
+   :DRILL_LAST_REVIEWED: [2019-04-28 Sun 13:12]
    :END:
 
 *** Word
@@ -827,18 +827,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     2. Make (a person, idea, or piece of legislation) weaker or less effective.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-04-28 Sun>
+   SCHEDULED: <2019-05-14 Tue>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       2E0C18E7-C8F2-4BE2-9929-1559E223EDF9
-   :DRILL_LAST_INTERVAL: 8.422
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 6
+   :DRILL_LAST_INTERVAL: 16.3387
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 7
    :DRILL_FAILURE_COUNT: 1
-   :DRILL_AVERAGE_QUALITY: 2.833
+   :DRILL_AVERAGE_QUALITY: 3.0
    :DRILL_EASE: 1.94
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-04-20 Sat 12:39]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2019-04-28 Sun 13:12]
    :END:
 
 *** Word
@@ -1320,18 +1320,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     something.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-04-28 Sun>
+   SCHEDULED: <2019-05-14 Tue>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       F5C3D364-24D2-4B08-B465-C26FAC7DC626
-   :DRILL_LAST_INTERVAL: 8.422
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 5
+   :DRILL_LAST_INTERVAL: 16.0523
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 6
    :DRILL_FAILURE_COUNT: 1
-   :DRILL_AVERAGE_QUALITY: 2.8
-   :DRILL_EASE: 1.94
+   :DRILL_AVERAGE_QUALITY: 2.833
+   :DRILL_EASE: 1.8
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-04-20 Sat 12:40]
+   :DRILL_LAST_REVIEWED: [2019-04-28 Sun 13:13]
    :END:
 
 *** Word
@@ -1342,6 +1342,30 @@ Most definitions on this page come from the New Oxford American Dictionary.
 
     (of a person or their tendencies) not able to be corrected, improved, or
     reformed.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2019-05-02 Thu>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       CDD2622E-B5EC-4D95-883B-4D8849E79F6E
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 2.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-04-28 Sun 13:36]
+   :END:
+
+*** Word
+
+    Indelible
+
+*** Definition
+
+    (of ink or a pen) making marks that cannot be removed.
+    - not able to be forgotten or removed
 
 ** Adjective                                                    :drill:leech:
    :PROPERTIES:
@@ -2139,18 +2163,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     /At first sight/; appears true at first consideration.
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2019-04-28 Sun>
+   SCHEDULED: <2019-05-16 Thu>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       6FAA8C3E-2DE0-4E41-8526-7304B54E0ABB
-   :DRILL_LAST_INTERVAL: 8.4208
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 4
+   :DRILL_LAST_INTERVAL: 18.0458
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 5
    :DRILL_FAILURE_COUNT: 1
-   :DRILL_AVERAGE_QUALITY: 2.5
-   :DRILL_EASE: 2.08
+   :DRILL_AVERAGE_QUALITY: 2.6
+   :DRILL_EASE: 1.94
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-04-20 Sat 12:40]
+   :DRILL_LAST_REVIEWED: [2019-04-28 Sun 13:33]
    :END:
 
 *** Word
@@ -2443,18 +2467,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Present, appearing, or found everywhere.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-04-28 Sun>
+   SCHEDULED: <2019-05-16 Thu>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       BC6544E8-0A81-49A7-A9E0-0332303BD2F6
-   :DRILL_LAST_INTERVAL: 8.4208
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 4
+   :DRILL_LAST_INTERVAL: 18.0458
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 5
    :DRILL_FAILURE_COUNT: 1
-   :DRILL_AVERAGE_QUALITY: 2.5
-   :DRILL_EASE: 2.08
+   :DRILL_AVERAGE_QUALITY: 2.6
+   :DRILL_EASE: 1.94
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-04-20 Sat 12:40]
+   :DRILL_LAST_REVIEWED: [2019-04-28 Sun 13:13]
    :END:
 
 *** Word
@@ -2583,6 +2607,29 @@ Most definitions on this page come from the New Oxford American Dictionary.
 *** Definition
 
     Relating to deep inward feelings rather than to the intellect.
+
+** Adjective                                                          :drill:
+   SCHEDULED: <2019-05-02 Thu>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       5889FB26-4448-45DA-8FF8-CE4932760DDD
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 3
+   :DRILL_FAILURE_COUNT: 2
+   :DRILL_AVERAGE_QUALITY: 2.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-04-28 Sun 13:36]
+   :END:
+
+*** Word
+
+    Vivacious
+
+*** Definition
+
+    (especially of a woman) attractively lively and animated.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2019-06-16 Sun>
