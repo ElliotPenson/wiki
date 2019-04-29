@@ -181,12 +181,24 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
    | <tab> (on heading) | Expand/collapse section        |
    | C-<enter>          | New heading of same level      |
    | C-c C-n/p          | Next/previous heading          |
-   | C-c <bar>          | Create a new table             |
-   | <tab> (in table)   | Move to next cell in table     |
    | "<s" <tab>         | New code snippet               |
    | C-c '              | Edit snippet in native mode    |
    | C-c C-e            | Dispatch for export            |
    | M-<enter>          | New list item at current level |
+
+*** Tables
+
+    | Command          | Description                   |
+    |------------------+-------------------------------|
+    | C-c <bar>        | Create a new table            |
+    | <tab> (in table) | Move to next cell in table    |
+    | C-c <space>      | Clear the current cell        |
+    | M-<left>         | Move the current column left  |
+    | M-<right>        | Move the current column right |
+    | M-<up>           | Move the current row up       |
+    | M-<down>         | Move the current row down     |
+    | C-c -            | Insert a horizontal line      |
+    | C-c ^            | Sort rows by a column         |
 
 *** Clocking
 
