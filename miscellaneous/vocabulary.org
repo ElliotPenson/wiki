@@ -613,18 +613,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     - luxuriously self-indulgent
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-05-02 Thu>
+   SCHEDULED: <2019-05-07 Tue>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       9BCC3D26-4305-44D9-A610-9B34A0B806F6
-   :DRILL_LAST_INTERVAL: 5.2355
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 17
-   :DRILL_FAILURE_COUNT: 8
-   :DRILL_AVERAGE_QUALITY: 2.235
-   :DRILL_EASE: 1.24
+   :DRILL_LAST_INTERVAL: 3.861
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 19
+   :DRILL_FAILURE_COUNT: 9
+   :DRILL_AVERAGE_QUALITY: 2.263
+   :DRILL_EASE: 1.3
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-04-27 Sat 13:25]
+   :DRILL_LAST_REVIEWED: [2019-05-03 Fri 16:19]
    :END:
 
 *** Word
@@ -850,18 +850,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Expressing something forcibly and clearly.
 
 ** Verb                                                               :drill:
-   SCHEDULED: <2019-05-03 Fri>
+   SCHEDULED: <2019-05-13 Mon>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       CC1FF65C-E464-480B-8D66-0E656B73FFF2
-   :DRILL_LAST_INTERVAL: 6.2973
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 10
+   :DRILL_LAST_INTERVAL: 10.0883
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 11
    :DRILL_FAILURE_COUNT: 3
-   :DRILL_AVERAGE_QUALITY: 2.5
-   :DRILL_EASE: 1.52
+   :DRILL_AVERAGE_QUALITY: 2.545
+   :DRILL_EASE: 1.38
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-04-27 Sat 13:26]
+   :DRILL_LAST_REVIEWED: [2019-05-03 Fri 16:18]
    :END:
 
 *** Word
@@ -1344,18 +1344,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     reformed.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-05-02 Thu>
+   SCHEDULED: <2019-05-12 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       CDD2622E-B5EC-4D95-883B-4D8849E79F6E
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_LAST_INTERVAL: 9.4831
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 3
    :DRILL_FAILURE_COUNT: 1
-   :DRILL_AVERAGE_QUALITY: 2.0
-   :DRILL_EASE: 2.36
+   :DRILL_AVERAGE_QUALITY: 2.333
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-04-28 Sun 13:36]
+   :DRILL_LAST_REVIEWED: [2019-05-03 Fri 16:19]
    :END:
 
 *** Word
@@ -2257,18 +2257,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     A person who tells anecdotes in a skillful and amusing way.
 
 ** Verb, Noun                                                         :drill:
-   SCHEDULED: <2019-05-03 Fri>
+   SCHEDULED: <2019-05-13 Mon>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       2D64E541-8FEE-47BB-828E-5351E0621826
-   :DRILL_LAST_INTERVAL: 6.2973
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 10
+   :DRILL_LAST_INTERVAL: 10.0883
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 11
    :DRILL_FAILURE_COUNT: 3
-   :DRILL_AVERAGE_QUALITY: 2.5
-   :DRILL_EASE: 1.52
+   :DRILL_AVERAGE_QUALITY: 2.545
+   :DRILL_EASE: 1.38
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-04-27 Sat 13:26]
+   :DRILL_LAST_REVIEWED: [2019-05-03 Fri 16:18]
    :END:
 
 *** Word
@@ -2609,18 +2609,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Relating to deep inward feelings rather than to the intellect.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-05-02 Thu>
+   SCHEDULED: <2019-05-07 Tue>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       5889FB26-4448-45DA-8FF8-CE4932760DDD
-   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_LAST_INTERVAL: 3.861
    :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 3
-   :DRILL_FAILURE_COUNT: 2
+   :DRILL_TOTAL_REPEATS: 5
+   :DRILL_FAILURE_COUNT: 3
    :DRILL_AVERAGE_QUALITY: 2.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-04-28 Sun 13:36]
+   :DRILL_LAST_REVIEWED: [2019-05-03 Fri 16:19]
    :END:
 
 *** Word
