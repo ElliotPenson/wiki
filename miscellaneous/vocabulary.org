@@ -173,6 +173,31 @@ Most definitions on this page come from the New Oxford American Dictionary.
 
     Human like, non-human possessing human traits, emotions, or intentions.
 
+** Noun                                                               :drill:
+   SCHEDULED: <2019-05-08 Wed>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       223EEC40-A33A-4118-A565-03FAFF7547C6
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-05-04 Sat 19:55]
+   :END:
+
+*** Word
+
+    Apoplexy
+
+*** Definition
+
+    Unconsciousness or incapacity resulting from a cerebral hemorrhage or
+    stroke.
+    - /informal/ incapacity or speechlessness caused by extreme anger.
+
 ** Adjective                                                          :drill:
    SCHEDULED: <2019-06-18 Tue>
    :PROPERTIES:
@@ -685,18 +710,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     patronizing teaching.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-05-04 Sat>
+   SCHEDULED: <2019-05-18 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       A8928047-2393-4D87-8F88-246CD8875A33
-   :DRILL_LAST_INTERVAL: 7.3591
-   :DRILL_REPEATS_SINCE_FAIL: 3
-   :DRILL_TOTAL_REPEATS: 7
+   :DRILL_LAST_INTERVAL: 13.7836
+   :DRILL_REPEATS_SINCE_FAIL: 4
+   :DRILL_TOTAL_REPEATS: 8
    :DRILL_FAILURE_COUNT: 2
-   :DRILL_AVERAGE_QUALITY: 2.715
-   :DRILL_EASE: 1.8
+   :DRILL_AVERAGE_QUALITY: 2.751
+   :DRILL_EASE: 1.66
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-04-27 Sat 13:23]
+   :DRILL_LAST_REVIEWED: [2019-05-04 Sat 19:54]
    :END:
 
 *** Word
@@ -1037,6 +1062,29 @@ Most definitions on this page come from the New Oxford American Dictionary.
 *** Definition
 
     A feeling or state of intense excitement and happiness.
+
+** Noun                                                               :drill:
+   SCHEDULED: <2019-05-08 Wed>
+   :PROPERTIES:
+   :DRILL_CARD_TYPE: twosided
+   :ID:       E34721F8-B93F-4B7F-8A05-90ADE3EE1C98
+   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-05-04 Sat 19:55]
+   :END:
+
+*** Word
+
+    Exhortation
+
+*** Definition
+
+    An address or communication emphatically urging someone to do something.
 
 ** Adjective                                                          :drill:
    SCHEDULED: <2019-06-09 Sun>
