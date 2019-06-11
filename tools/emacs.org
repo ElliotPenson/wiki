@@ -171,6 +171,20 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
 
     The ~type~ attribute may be ~"node"~ or ~"chrome"~.
 
+** Magit
+
+   | Command | Description            |
+   |---------+------------------------|
+   | C-x g   | Show repository status |
+   | <tab>   | Expand section         |
+   | n/p     | Move between sections  |
+   | s/u     | Stage/unstage region   |
+   | c       | Commit changes         |
+   | h       | Show commands          |
+
+   A /region/ when staging/unstaging may be the file/line at point or a number
+   of highlighted files/lines. Set the mark (C-<space>) to highlight.
+
 ** Org mode
 
    Headings: * for h1, ** for h2, etc.
