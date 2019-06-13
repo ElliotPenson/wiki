@@ -134,12 +134,13 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
    Emacs. I've ~C-x C-f~, ~M-x~, ~C-x b~, and ~M-y~ to Helm
    commands. ~helm-mode~ allows a series of commands.
 
-   | Command   | Description           |
-   |-----------+-----------------------|
-   | C-n/C-p   | Next/previous item    |
-   | C-l       | Go up a directory     |
-   | C-<space> | Mark candidates       |
-   | M-a       | Select all            |
+   | Command   | Description              |
+   |-----------+--------------------------|
+   | C-n/C-p   | Next/previous item       |
+   | C-j       | Go down into a directory |
+   | C-l       | Go up a directory        |
+   | C-<space> | Mark candidates          |
+   | M-a       | Select all               |
 
 ** Indium
 
