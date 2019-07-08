@@ -39,6 +39,8 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 * Languages
 
   - [[file:languages/bash.org][Bash]]
+  - C
+    - Bitwise Operations
   - HTML/[[file:languages/css.org][CSS]]
     - [[./languages/canvas.org][Canvas]]
   - [[file:languages/go.org][Go]]

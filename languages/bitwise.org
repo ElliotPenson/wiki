@@ -1,0 +1,46 @@
+#+TITLE: Bitwise Operations
+#+AUTHOR: Elliot Penson
+
+*Bitwise operations* act on the individual bits of their operands. For example,
+a bitwise AND (~&~) will perform a logical AND (~&&~) on each pair of bits. ~14
+& 9~ evaluates to ~8~:
+
+#+BEGIN_SRC
+   1110
+&  1001
+--------
+   1000
+#+END_SRC
+
+*Logical operators* treat each operand as having only one value.
+
+* Operators
+
+C has a number of operators that work directly on bits.
+
+| Operator | Name            |
+|----------+-----------------|
+| ~&~      | Bitwise AND     |
+| ~│~      | Bitwise OR      |
+| ~^~      | Bitwise XOR     |
+| ~~~      | Bitwise NOT     |
+| ~<<~     | Bit Shift Left  |
+| ~>>~     | Bit Shift Right |
+
+The first three operators are explained with truth table below.
+
+|   |   | ~&~ | ~│~ | ~^~ |
+|---+---+-----+-----+-----|
+| 0 | 0 |   0 |   0 |   0 |
+| 0 | 1 |   0 |   1 |   1 |
+| 1 | 0 |   0 |   1 |   1 |
+| 1 | 1 |   1 |   1 |   0 |
+
+* Examples
+
+| Code         | Description          |
+|--------------+----------------------|
+| ~x&(1<<i)~   | Retrieve the ith bit |
+| ~x│=(1<<i)~  | Set the ith bit      |
+| ~x&=~(1<<i)~ | Clear the ith bit    |
+| ~x^=(1<<i)~  | Flip the ith bit     |
