@@ -44,3 +44,31 @@ The first three operators are explained with truth table below.
 | ~x│=(1<<i)~  | Set the ith bit      |
 | ~x&=~(1<<i)~ | Clear the ith bit    |
 | ~x^=(1<<i)~  | Flip the ith bit     |
+
+** Sum Integers
+
+   #+BEGIN_SRC c
+     int add(int x, int y)
+     {
+       if (y == 0) {
+         return x;
+       } else {
+         int carry = (x & y) << 1;
+         return add(x ^ y, carry);
+       }
+     }
+   #+END_SRC
+
+** Count 1 Bits
+
+   #+BEGIN_SRC c
+     int count(int bits)
+     {
+       int total = 0;
+       for (int bit = 0; bit < sizeof(int) * 8; bit++) {
+         total += bits & 1;
+         bits >>= 1;
+       }
+       return total;
+     }
+   #+END_SRC
