@@ -134,12 +134,13 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
    Emacs. I've ~C-x C-f~, ~M-x~, ~C-x b~, and ~M-y~ to Helm
    commands. ~helm-mode~ allows a series of commands.
 
-   | Command   | Description           |
-   |-----------+-----------------------|
-   | C-n/C-p   | Next/previous item    |
-   | C-l       | Go up a directory     |
-   | C-<space> | Mark candidates       |
-   | M-a       | Select all            |
+   | Command   | Description              |
+   |-----------+--------------------------|
+   | C-n/C-p   | Next/previous item       |
+   | C-j       | Go down into a directory |
+   | C-l       | Go up a directory        |
+   | C-<space> | Mark candidates          |
+   | M-a       | Select all               |
 
 ** Indium
 
@@ -170,6 +171,20 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
     #+END_SRC
 
     The ~type~ attribute may be ~"node"~ or ~"chrome"~.
+
+** Magit
+
+   | Command | Description            |
+   |---------+------------------------|
+   | C-x g   | Show repository status |
+   | <tab>   | Expand section         |
+   | n/p     | Move between sections  |
+   | s/u     | Stage/unstage region   |
+   | c       | Commit changes         |
+   | h       | Show commands          |
+
+   A /region/ when staging/unstaging may be the file/line at point or a number
+   of highlighted files/lines. Set the mark (C-<space>) to highlight.
 
 ** Org mode
 

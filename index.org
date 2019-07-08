@@ -40,7 +40,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
   - [[file:languages/bash.org][Bash]]
   - C
-    - Bitwise Operations
+    - [[file:languages/bitwise.org][Bitwise Operations]]
   - HTML/[[file:languages/css.org][CSS]]
     - [[./languages/canvas.org][Canvas]]
   - [[file:languages/go.org][Go]]
