@@ -1,0 +1,33 @@
+#+TITLE: Summation
+#+AUTHOR: Elliot Penson
+
+A capital sigma is used as shorthand for the addition of a sequence of numbers.
+
+\begin{equation}
+\sum_{i=m}^{n} i = m + (m + 1) + ... + (n - 1) + n
+\end{equation}
+
+Here, $m$ is the *lower bound* and $n$ is the *upper bound*. The summation
+starts at $m$ and ends at $n$. $i$ is the *index of summation*.
+
+* Examples
+
+  \begin{equation}
+  \sum_{i=1}^{n} c = nc
+  \end{equation}
+
+  \begin{equation}
+  \sum_{i=1}^{n} i = \frac{n(n + 1)}{2}
+  \end{equation}
+
+  \begin{equation}
+  \sum_{i=1}^{3} i^2 = 1^2 + 2^2 + 3^2 = 14
+  \end{equation}
+
+* Product
+
+  A similar notation is used to convey iterative multiplication.
+
+  \begin{equation}
+  \prod_{i=a}^{b} f(i)
+  \end{equation}

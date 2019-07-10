@@ -63,6 +63,7 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:math/linear-algebra.org][Linear Algebra]]
   - [[file:math/normal-distribution.org][Normal Distribution]]
   - [[file:math/simultaneous-equations.org][Simultaneous Equations]]
+  - [[file:math/summation.org][Summation]]
 
 * Services
 
