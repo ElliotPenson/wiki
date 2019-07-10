@@ -1,0 +1,98 @@
+#+TITLE: XOR
+#+AUTHOR: Elliot Penson
+
+*Exclusive OR*, or *XOR*, is a logical operator that evaluates to True when
+either but not both of its operands are True. XOR is usually denoted with the ⊕
+symbol.
+
+The XOR truth table is
+
+| p     | q     | p ⊕ q |
+|-------+-------+-------|
+| False | False | False |
+| False | True  | True  |
+| True  | False | True  |
+| True  | True  | False |
+
+XOR may be expressed with AND ($\wedge$), OR ($\lor$), and NOT ($\lnot$) as the
+following.
+
+\begin{equation}
+p\oplus q = (p \lor q) \wedge \lnot(p \wedge q)
+\end{equation}
+
+* Computer Science
+
+  C, Python, and many other programming languages use ~^~ for the [[file:../languages/bitwise.org][bitwise]] XOR.
+
+  | a | b | a ^ b |
+  |---+---+-------|
+  | 0 | 0 |     0 |
+  | 0 | 1 |     1 |
+  | 1 | 0 |     1 |
+  | 1 | 1 |     0 |
+
+  XOR is often used in cryptography. One-time pad and AES use XOR.
+
+** Single Number
+
+   Suppose an array of numbers has every element repeated twice except one. XOR
+   can easily find the non-repeated number.
+
+   #+BEGIN_SRC python
+     def find_single_number(numbers):
+          to_return = 0
+          for number in numbers:
+               to_return ^= numbers
+          return to_return
+   #+END_SRC
+
+   This algorithm follows from the fact that ~n ^ n = 0~, ~n ^ 0 = n~, and XOR
+   is commutative and associative. For example:
+
+   #+BEGIN_SRC python
+     [2, 5, 2, 3, 5]  # only 3 isn't repeated.
+
+     0 ^ 2 ^ 5 ^ 2 ^ 3 ^ 5
+     = 0 ^ (2 ^ 2) ^ (5 ^ 5) ^ 3
+     = 0 ^ 0 ^ 0 ^ 3
+     = 3
+   #+END_SRC
+
+** Missing Number
+
+   Suppose an array contains $n$ distinct numbers taken from ~0, 1, 2, ..., n~
+   and we'd like to find the missing number. XOR can be used to 'cancel-out'
+   numbers until we are left with the missing number.
+
+   #+BEGIN_SRC python
+     def find_missing_number(numbers):
+         to_return = len(numbers)
+         for index, number in enumerate(numbers):
+             to_return ^= number ^ index
+         return to_return
+   #+END_SRC
+
+   This algorithm follows from the fact that ~n ^ n = 0~, ~n ^ 0 = n~, and XOR
+   is commutative and associative. For example:
+
+   #+BEGIN_SRC python
+     [3, 2, 5, 1, 0]  # 4 is missing from the sequence
+
+     5 ^ (0 ^ 3) ^ (1 ^ 2) ^ (2 ^ 5) ^ (3 ^ 1) ^ (4 ^ 0)
+     = (0 ^ 0) ^ (1 ^ 1) ^ (2 ^ 2) ^ (3 ^ 3) ^ 4 ^ (5 ^ 5)
+     = 0 ^ 0 ^ 0 ^ 0 ^ 4 ^ 0
+     = 4
+   #+END_SRC
+
+** Swap
+
+   XOR may be used to swap numbers without using extra memory.
+
+   #+BEGIN_SRC python
+   def swap(a, b):
+         a ^= b
+         b ^= a
+         a ^= b
+         return a, b
+   #+END_SRC
