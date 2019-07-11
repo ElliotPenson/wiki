@@ -191,15 +191,18 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
    Headings: * for h1, ** for h2, etc.
    Formatting: *bold*, /italics/
 
-   | Command            | Description                    |
-   |--------------------+--------------------------------|
-   | <tab> (on heading) | Expand/collapse section        |
-   | C-<enter>          | New heading of same level      |
-   | C-c C-n/p          | Next/previous heading          |
-   | "<s" <tab>         | New code snippet               |
-   | C-c '              | Edit snippet in native mode    |
-   | C-c C-e            | Dispatch for export            |
-   | M-<enter>          | New list item at current level |
+   | Command            | Description                        |
+   |--------------------+------------------------------------|
+   | <tab> (on heading) | Expand/collapse section            |
+   | C-<enter>          | New heading of same level          |
+   | C-c C-n/p          | Next/previous heading              |
+   | "<s" <tab>         | New code snippet                   |
+   | C-c '              | Edit snippet in native mode        |
+   | C-c C-e            | Dispatch for export                |
+   | M-<enter>          | New list item at current level     |
+   | C-c C-o            | Open the link at point             |
+   | C-c -l             | Store a link to the current buffer |
+   | C-c C-l            | Insert the stored link             |
 
 *** Tables
 
