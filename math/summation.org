@@ -1,10 +1,11 @@
 #+TITLE: Summation
 #+AUTHOR: Elliot Penson
 
-A capital sigma is used as shorthand for the addition of a sequence of numbers.
+A summation is a concise expression describing the addition of an arbitrarily
+large set of numbers. A capital sigma is denotes summation.
 
 \begin{equation}
-\sum_{i=m}^{n} i = m + (m + 1) + ... + (n - 1) + n
+\sum_{i=1}^{n} f(i) = f(1) + f(2) + ... + f(n)
 \end{equation}
 
 Here, $m$ is the *lower bound* and $n$ is the *upper bound*. The summation
@@ -12,8 +13,14 @@ starts at $m$ and ends at $n$. $i$ is the *index of summation*.
 
 * Examples
 
+  Simple closed forms exist for many algebraic functions.
+
   \begin{equation}
   \sum_{i=1}^{n} c = nc
+  \end{equation}
+
+  \begin{equation}
+  \sum_{i=1}^{n} 1 = n
   \end{equation}
 
   \begin{equation}

@@ -1,0 +1,22 @@
+#+TITLE: Algorithms
+#+AUTHOR: Elliot Penson
+
+Information on this page is taken from /The Algorithm Design Manual/ by Steven
+S. Skiena.
+
+A *problem* is specified by describing the complete set of *instances* it must
+work on and of its output after running on one of these instances. For example,
+an instance of the sorting problem might be ~[1, 4, 3]~. An *algorithm* is a
+procedure that takes any of the possible input instances and transforms it to
+the desired output. There are many different algorithms that solve the problem
+of sorting. See [[file:program-modeling.org][program modeling]] for more information.
+
+We seek algorithms that are /correct/, /efficient/, and /easy to
+implement/. These goals may not be simultaneously achievable! See [[file:correctness.org][correctness]]
+and [[file:algorithm-analysis.org][analysis of algorithms]] for more information
+
+There is a fundamental difference between algorithms, which always produce a
+correct result, and *heuristics*, which may usually do a good job but without
+providing any guarantee. For example, the nearest-neighbor heuristic can be
+applied to the /traveling salesman problem (TSP)/, but sometimes this heuristic
+doesn't even come close to finding the shortest possible tour.

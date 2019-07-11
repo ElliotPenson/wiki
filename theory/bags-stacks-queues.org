@@ -45,7 +45,7 @@
    A linked list can also be used. This method of course requires
    references. We only need to maintain the head of the linked list
    for a stack implementation. A push appends to the front, a pop
-   remove the first element.
+   removes the first element.
 
 * Queues
 

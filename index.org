@@ -6,8 +6,8 @@
 
 My brain in plain text.
 
-This site has been created with Emacs org-mode and [[https://github.com/marsmining/ox-twbs][ox-twbs]]. Original source
-files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
+Emacs generated this site with org-mode and [[https://github.com/marsmining/ox-twbs][ox-twbs]]. Original source files can
+be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
 * Blogs
 
@@ -17,13 +17,13 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 * Books
 
   - [[file:books/library.org][Library]]
-    - [[file:books/clean-code.org][Clean Code by Robert C. Martin]]
-    - [[file:books/naked-statistics.org][Naked Statistics by Charles Wheelan]]
-    - [[file:books/tipping-point.org][The Tipping Point by Malcolm Gladwell]]
+    - [[file:books/clean-code.org][Clean Code]]
+    - [[file:books/naked-statistics.org][Naked Statistics]]
+    - [[file:books/tipping-point.org][The Tipping Point]]
     - [[file:books/algorithm-design-manual.org][The Algorithm Design Manual]]
       - [[file:books/algorithm-design-manual-exercises.org][The Algorithm Design Manual: Exercises]]
-    - [[file:books/visual-display-of-quantitative-information.org][The Visual Display of Quantitative Information by Edward Tufte]]
-    - [[file:books/zero-to-one.org][Zero to One by Peter Thiel]]
+    - [[file:books/visual-display-of-quantitative-information.org][The Visual Display of Quantitative Information]]
+    - [[file:books/zero-to-one.org][Zero to One]]
 
 * Courses
 
@@ -81,16 +81,19 @@ files can be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
 * Theory
 
-  - [[file:theory/bags-stacks-queues.org][Bags, Stacks, and Queues]]
+  - [[file:theory/algorithms.org][Algoithms]]
+    - [[file:theory/bags-stacks-queues.org][Bags, Stacks, and Queues]]
+    - [[file:theory/correctness.org][Correctness]]
+    - [[file:theory/genetic-algorithms.org][Genetic Algorithms]]
+    - [[file:theory/graphs.org][Graphs]]
+    - [[file:theory/hash-tables.org][Hash Tables]]
+    - [[file:theory/program-modeling.org][Program Modeling]]
+    - [[file:theory/sorting-algorithms.org][Sorting Algorithms]]
+    - [[file:theory/trees.org][Trees]]
+    - [[file:theory/tries.org][Tries]]
   - [[file:theory/cfg.org][Context Free Grammars]]
   - [[file:theory/design-patterns.org][Design Patterns]]
-  - [[file:theory/graphs.org][Graphs]]
-  - [[file:theory/genetic-algorithms.org][Genetic Algorithms]]
-  - [[file:theory/hash-tables.org][Hash Tables]]
   - [[file:theory/papers.org][Papers]]
-  - [[file:theory/sorting-algorithms.org][Sorting Algorithms]]
-  - [[file:theory/trees.org][Trees]]
-  - [[file:theory/tries.org][Tries]]
 
 * Tools
 
