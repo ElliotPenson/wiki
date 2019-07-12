@@ -82,6 +82,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
 * Theory
 
   - [[file:theory/algorithms.org][Algoithms]]
+    - [[file:theory/algorithm-analysis.org][Analysis of Algorithms]]
     - [[file:theory/bags-stacks-queues.org][Bags, Stacks, and Queues]]
     - [[file:theory/correctness.org][Correctness]]
     - [[file:theory/genetic-algorithms.org][Genetic Algorithms]]
