@@ -75,10 +75,54 @@ a bitwise AND (~&~) will perform a logical AND (~&&~) on each pair of bits. ~14
      int count(int bits)
      {
        int total = 0;
-       for (int bit = 0; bit < sizeof(int) * 8; bit++) {
+       while (bits) {
          total += bits & 1;
          bits >>= 1;
        }
        return total;
+     }
+   #+END_SRC
+
+** Erase Lowest Bit
+
+   ~x&(x - 1)~ equals ~x~ with its lowest set bit erased. For example, if ~x =
+   00101100~, then ~x - 1 = 00101011~, so ~x&(x - 1) = 00101100 & 00101011 =
+   00101000~.
+
+   This fact can be used to reduce the time complexity of counting 1 bits.
+
+   #+BEGIN_SRC c
+     int count(int bits)
+     {
+       int total = 0;
+       while (bits) {
+         total += 1;
+         bits &= bits - 1;
+       }
+       return total;
+     }
+   #+END_SRC
+
+** Parity
+
+   The parity of a binary word is 1 if the number of 1s in the word is odd;
+   otherwise, it is 0. For example, the parity of 1011 is 1, and the parity of
+   10001000 is 0.
+
+   Parity could be computed with brute-force by counting 1 bits (see above) and
+   modding by 2. XOR provides a more efficient solution. Note that the XOR of a
+   group of bits is its parity. For example 1^0^1^1 is 1. Since XOR is
+   associative and commutative, we can process multiple bits at a time.
+
+   #+BEGIN_SRC c
+     int parity(int bits)
+     {
+       bits ^= bits >> 32;
+       bits ^= bits >> 16;
+       bits ^= bits >> 8;
+       bits ^= bits >> 4;
+       bits ^= bits >> 2;
+       bits ^= bits >> 1;
+       return bits & 1;  /* extract last bit */
      }
    #+END_SRC
