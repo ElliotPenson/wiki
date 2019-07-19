@@ -39,12 +39,12 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
 * Languages
 
   - [[file:languages/bash.org][Bash]]
-  - C
-    - [[file:languages/bitwise.org][Bitwise Operations]]
-  - HTML/[[file:languages/css.org][CSS]]
-    - [[./languages/canvas.org][Canvas]]
+  - [[file:languages/bitwise.org][Bitwise Operations]]
   - [[file:languages/go.org][Go]]
   - [[file:languages/haskell.org][Haskell]]
+  - HTML/[[file:languages/css.org][CSS]]
+    - [[./languages/canvas.org][Canvas]]
+  - [[file:languages/information-storage.org][Information Storage]]
   - [[file:languages/lambda-calculus.org][Lambda Calculus]]
   - [[file:languages/python.org][Python]]
   - [[file:languages/sql.org][SQL]]
