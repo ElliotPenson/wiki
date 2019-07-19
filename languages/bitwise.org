@@ -16,34 +16,44 @@ a bitwise AND (~&~) will perform a logical AND (~&&~) on each pair of bits. ~14
 
 * Operators
 
-C has a number of operators that work directly on bits.
+  C has a number of operators that work directly on bits.
 
-| Operator | Name            |
-|----------+-----------------|
-| ~&~      | Bitwise AND     |
-| ~│~      | Bitwise OR      |
-| ~^~      | Bitwise XOR     |
-| ~~~      | Bitwise NOT     |
-| ~<<~     | Bit Shift Left  |
-| ~>>~     | Bit Shift Right |
+  | Operator | Name            |
+  |----------+-----------------|
+  | ~&~      | Bitwise AND     |
+  | ~│~      | Bitwise OR      |
+  | ~^~      | Bitwise XOR     |
+  | ~~~      | Bitwise NOT     |
+  | ~<<~     | Bit Shift Left  |
+  | ~>>~     | Bit Shift Right |
 
-The first three operators are explained with truth table below.
+  The first three operators are explained with truth table below.
 
-|   |   | ~&~ | ~│~ | ~^~ |
-|---+---+-----+-----+-----|
-| 0 | 0 |   0 |   0 |   0 |
-| 0 | 1 |   0 |   1 |   1 |
-| 1 | 0 |   0 |   1 |   1 |
-| 1 | 1 |   1 |   1 |   0 |
+  |   |   | ~&~ | ~│~ | ~^~ |
+  |---+---+-----+-----+-----|
+  | 0 | 0 |   0 |   0 |   0 |
+  | 0 | 1 |   0 |   1 |   1 |
+  | 1 | 0 |   0 |   1 |   1 |
+  | 1 | 1 |   1 |   1 |   0 |
+
+  The right shift (~>>~) can be *logical* or *arithmetic*. Logical right shift
+  pads with zeros, but arithmetic right shift pads with the most significant
+  bit.
 
 * Examples
 
-| Code         | Description          |
-|--------------+----------------------|
-| ~x&(1<<i)~   | Retrieve the ith bit |
-| ~x│=(1<<i)~  | Set the ith bit      |
-| ~x&=~(1<<i)~ | Clear the ith bit    |
-| ~x^=(1<<i)~  | Flip the ith bit     |
+  | Code         | Description          |
+  |--------------+----------------------|
+  | ~x&(1<<i)~   | Retrieve the ith bit |
+  | ~x│=(1<<i)~  | Set the ith bit      |
+  | ~x&=~(1<<i)~ | Clear the ith bit    |
+  | ~x^=(1<<i)~  | Flip the ith bit     |
+
+  Bit-level operations often use masking. A *mask* is a bit pattern that indicates
+  a selected set of bits within a word. For example, the bit-level operation ~x &
+  0xFF~ yields a value consisting of the least significant byte of x, but with all
+  other bytes set to 0. The expression ~~0~ will yield a mask of all ones,
+  regardless of the word size of the machine.
 
 ** Sum Integers
 
