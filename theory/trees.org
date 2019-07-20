@@ -4,48 +4,66 @@
 
 * Overview
 
-  A tree is a acyclic connected graph.
+  A tree is an acyclic connected graph. Conventional tree operations are
+  /insert/, /search/, /remove/, and /traverse/.
 
-  Conventional tree operations are insert, search, remove, and
-  traverse.
+  Trees usually have a designated /root/ that indicates the top of the
+  tree. /Leaves/ refer to nodes with no children. A /parent/ is the node above
+  the current one. A /child/ is the node below the current one.
 
-  Tree's usually have a designated /root/ that indicates the top of
-  the tree. /Leaves/ refer to nodes with no children. A /parent/ is
-  the node above the current one. A /child/ is the node below the
-  current one.
+  A tree is /balanced/ when every path from root to leaf has the same length.
 
-** Properties
+* Binary Search Tree
+  
+  A *binary tree* is recursively defined as being empty or consisting of a root
+  node with left and right subtrees. A *binary /search/ tree* (BST) labels each
+  node in a binary tree with a single key such that for any node labeled $x$,
+  all nodes in the left subtree have $keys < x$ while all nodes in the right
+  subtree have $keys > x$.
 
-   A tree is /balanced/ when every path from root to leaf has the same
-   length.
-
-* Binary Search Trees
-
-  In a *binary tree*, each node contains one element and has at most
-  two child nodes.A *binary search tree* (BST) is a binary tree with
-  the following requirements:
   - ∀ y ∈ left subtree of x, y ≤ x
   - ∀ y ∈ right subtree of x, y ≥ x
-    
-  | Operation | Best Complexity | Worst Complexity |
-  |-----------+-----------------+------------------|
-  | Insert    | $O(\log n)$     | $O(n)$           |
-  | Search    | $O(\log n)$     | $O(n)$           |
-  | Delete    | $O(\log n)$     | $O(n)$           |
 
-  A binary search tree is *complete* if every node has zero or two
-  children and all leaves are at the same level.
+  Binary tree nodes have left and right pointer fields, an optional parent
+  pointer, and a data field.
 
-  The shape of the binary search tree depends entirely on the order of
-  insertions and deletions, and can become degenerate. A skewed binary
-  tree can greatly affect performance.
+** Traversal
 
-* Self-Balancing Binary Search Trees
+   Traversal involves visiting all nodes. *In-order* traversal of a binary
+   search tree can be done recursively with the following.
 
-  Examples include:
-  - AVL trees
-  - Red-black trees
+   #+BEGIN_SRC python
+     def traverse(tree):
+         if tree:
+             traverse(tree.left)
+             process(tree.item)
+             traverse(tree.right)
+   #+END_SRC
 
-* TODO B-Tree
+   Changing the position of ~process~ gives alternate traversal
+   orders. Processing the item first yields a *pre-order* traversal, while
+   processing it last gives a *post-order* traversal.
 
-* TODO Trie
+** Performance
+
+   /Search/, /insert/, and /delete/ all take $O(h)$ time, where $h$ is the
+   height of the tree. A perfectly balanced tree has $h = \lceil \log n
+   \rceil$. Unfortunately, inserting keys in sorted order produces a skinny
+   linear height tree, $h = n$. Randomizing insert order will produce $O(\log
+   n)$ height on average.
+
+   | Operation | Best Complexity | Worst Complexity |
+   |-----------+-----------------+------------------|
+   | Insert    | $O(\log n)$     | $O(n)$           |
+   | Search    | $O(\log n)$     | $O(n)$           |
+   | Delete    | $O(\log n)$     | $O(n)$           |
+
+   A binary search tree is *complete* if every node has zero or two
+   children and all leaves are at the same level.
+
+** Balanced Search Trees
+
+   *Balanced binary search tree* data structures adjust the tree during
+   insertion/delete to guarantee that height will always be $O(\log
+   n)$. Balanced tree implementations include *red-black trees* and *splay
+   trees*.
