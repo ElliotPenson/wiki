@@ -1,0 +1,147 @@
+#+TITLE: Competitive Programming
+#+AUTHOR: Elliot Penson
+
+Information on this page is taken from /Competitive Programmer's Handbook/ and
+/Elements of Programming Interviews/. These tricks are also applicable to
+interview questions (e.g. LeetCode).
+
+*Note*: add a heading tag with ~C-c C-c~.
+
+* Plan of Attack                                                       :meta:
+
+  1. *Understand* the problem.
+     - Ask *clarification questions*.
+     - Work on *concrete examples*.
+     - Apply *patterns*.
+       - Find a good *data structure* (e.g. priority queue, graph)
+       - See if the problem fits an *algorithmic technique*
+         (e.g. divide-and-conquer, recursion, dynamic programming).
+  2. Develop a *simple brute-force solution*.
+  3. Analyze the brute-force solution and write a *more efficient algorithm*.
+  4. *Test* the program on concrete input.
+  5. Analyze time and space *complexity*.
+
+* Primitive Types                                                     :topic:
+
+  - Use [[file:../languages/bitwise.org][bitwise operators]].
+    - Understand *shifting* and *masks*.
+    - Be comfortable with *XOR*.
+  - Understand integer storage (see [[file:../languages/information-storage.org][information storage]]).
+    - Understand *unsigned* vs. *signed* and *two's complement*.
+
+* Arrays                                                              :topic:
+
+  - Take advantage of *both ends* of the array.
+    - For example, suppose we'd like to place the even entries of an array
+      first. Easy with $O(n)$ space. Two indices can solve this problem
+      /without/ additional storage.  We would partition the array into three
+      subarrays: even, unclassified, and odd, appearing in that order.
+
+** Random Subset
+
+   Trick is to reuse the given array.
+
+   #+BEGIN_SRC python
+     import random
+
+     def sample(count, array):
+         for i in range(count):
+             r = random.randint(i, len(A) - 1)
+             array[i], array[r] = array[r], array[i]
+   #+END_SRC
+
+** Transpose Matrix
+
+   #+BEGIN_SRC python
+     def transpose(matrix):
+         """Calculate A^T on a 2D array."""
+         list(zip(*matrix))
+   #+END_SRC
+
+** Rotate Matrix 90 Degrees
+
+   #+BEGIN_SRC python
+     def rotate_clockwise(matrix):
+         """Rotate a matrix 90 degrees with flip(A)^T."""
+         return list(zip(*matrix[::-1]))
+
+     def rotate_anticlockwise(matrix):
+         """Rotate a matrix -90 degrees with flip(A^T)."""
+         return list(zip(*matrix))[::-1]
+   #+END_SRC
+
+
+* Strings                                                             :topic:
+
+** Palindromic
+
+   Solution without using extra space:
+
+   #+BEGIN_SRC python
+     def is_palindromic(s):
+         return all(s[i] == s[-(i + 1)] for i in range(len(s) // 2))
+   #+END_SRC
+
+** Base Conversion
+
+   Use multiplication and division to convert to base-10. For example, $1101 =
+   1*2^3 + 1*2^2 + 0*2^1 + 1*2^0 = 13$.
+
+   #+BEGIN_SRC python
+     from functools import reduce
+     from string import hexdigits
+
+     def to_decimal(number: str, base: int):
+         return reduce(lambda total, d: total * base + hexdigits.index(d), number, 0)
+   #+END_SRC
+
+   Use modulus and division to convert base-10 to another base. We find the next
+   digit with ~number % base~ (e.g. ~321 % 10 = 1~). The number without that
+   digit is ~number // base~ (e.g. ~321 // 10 = 32~).
+
+   #+BEGIN_SRC python
+     from string import hexdigits
+
+     def to_base(number: int, base: int):
+         if number:
+             digit = hexdigits[number % base]
+             return to_base(number // base, base) + digit
+         else:
+             return ''
+   #+END_SRC
+
+** Inserting Values
+
+   Inserting into a array without using additional memory requires two passes:
+   (1) find the final size, (2) work backwards moving characters to the end.
+
+   #+BEGIN_SRC python
+     import reduce from functools
+
+     def insert_dd(s, size):
+         """Replace 'a' with 'dd'. Assume the string has room."""
+         final_size = size + s.count('a')
+         write_index = final_size - 1
+         for letter in s:
+             if letter = 'a':
+                 s[write_index - 1:write_index + 1] = 'dd'
+                 write_index -= 2
+             else:
+                 s[write_index] = letter
+                 write_index -= 1
+         return final_size
+   #+END_SRC
+
+** Deleting Values
+
+   Deleting from an array without using additional memory requires two indices.
+
+   #+BEGIN_SRC python
+     def remove_b(s, size):
+         """Remove 'b' from a string."""
+         write_index = 0
+         for letter in s:
+             if letter != 'b':
+                 nums[write_index] = num
+                 write_index += 1
+   #+END_SRC

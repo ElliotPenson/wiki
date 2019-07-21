@@ -47,7 +47,6 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:languages/information-storage.org][Information Storage]]
   - [[file:languages/lambda-calculus.org][Lambda Calculus]]
   - [[file:languages/python.org][Python]]
-    - [[file:languages/python-tricks.org][Python Tricks]]
   - [[file:languages/sql.org][SQL]]
   - [[file:languages/swift.org][Swift]]
   - [[file:languages/yaml.org][YAML]]
@@ -115,3 +114,4 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
   - [[file:miscellaneous/people.org][People]]
   - [[file:miscellaneous/vocabulary.org][Vocabulary]]
+  - [[file:./miscellaneous/competitive-programming.org][Competitive Programming]]
