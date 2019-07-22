@@ -91,6 +91,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:theory/bags-stacks-queues.org][Bags, Stacks, and Queues]]
     - [[file:theory/graphs.org][Graphs]]
     - [[file:theory/hash-tables.org][Hash Tables]]
+    - [[file:theory/linked-lists.org][Linked Lists]]
     - [[file:theory/trees.org][Trees]]
     - [[file:theory/tries.org][Tries]]
   - [[file:theory/cfg.org][Context Free Grammars]]

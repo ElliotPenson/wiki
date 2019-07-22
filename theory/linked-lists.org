@@ -1,0 +1,43 @@
+#+TITLE: Linked Lists
+#+AUTHOR: Elliot Penson
+
+A *linked list* is a [[file:./data-structures.org][data structure]] that stores items in sequence. Each *node*
+contains a value and a reference to the next node in the list. The first node is
+the *head* and the last node is the *tail*. The tail's next field is null.
+
+[[file:../images/linked-list.png]]
+
+Nodes in *doubly linked lists* also contain a reference to the predecessor.
+
+file:../images/doubly-linked-list.png
+
+* Linked Lists vs. Arrays
+
+  A list is similar to an array in that it contains objects in linear order. The
+  key differences are that inserting and deleting elements in a list has time
+  complexity $O(1)$. On the other hand, obtaining the kth element in a list is
+  expensive, having $O(n)$ time complexity.
+
+* Implementation
+
+  #+BEGIN_SRC python
+    class Node:
+        def __init__(self, value, next=None):
+            self.value = value
+            self.next = next
+  #+END_SRC
+
+** Search
+
+  #+BEGIN_SRC python
+    def search(key, linked_list):
+        """Find the Node with value=key. Return None if not found."""
+        if linked_list is None or linked_list.value == key:
+            return linked_list
+        else:
+            return search(key, linked_list.next)
+  #+END_SRC
+
+** TODO Reverse
+
+** TODO Find Cycle
