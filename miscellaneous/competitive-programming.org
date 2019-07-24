@@ -145,3 +145,7 @@ interview questions (e.g. LeetCode).
                  nums[write_index] = num
                  write_index += 1
    #+END_SRC
+
+* Linked Lists
+
+  See [[file:../theory/linked-lists.org][Linked Lists]] and the examples on that page.

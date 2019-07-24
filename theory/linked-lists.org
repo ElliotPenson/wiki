@@ -32,12 +32,36 @@ file:../images/doubly-linked-list.png
   #+BEGIN_SRC python
     def search(key, linked_list):
         """Find the Node with value=key. Return None if not found."""
-        if linked_list is None or linked_list.value == key:
-            return linked_list
-        else:
-            return search(key, linked_list.next)
+        while linked_list and linked_list.key != key:
+            linked_list = linked_list.next
+        return linked_list
   #+END_SRC
 
-** TODO Reverse
+** Reverse
 
-** TODO Find Cycle
+   #+BEGIN_SRC python
+     def reverse(head):
+         """Reverse a singly linked list."""
+         to_return = None
+         while head:
+             buffer = head
+             head = head.next
+             buffer.next = to_return
+             to_return = buffer
+         return to_return
+   #+END_SRC
+
+** Find Cycle
+
+   #+BEGIN_SRC python
+     def has_cycle(head):
+         """Use Floyd's Tortoise and Hare algorithm to check for a cycle."""
+         slow = head
+         fast = head
+         while fast and fast.next:
+             slow = slow.next
+             fast = fast.next.next
+             if fast is slow:
+                 return True
+         return False
+   #+END_SRC
