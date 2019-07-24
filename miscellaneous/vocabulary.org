@@ -25,18 +25,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     (of something bad) experienced or present to the maximum degree.
 
 ** Verb                                                               :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       4AE82692-199D-4BD9-BDC8-877E0949F486
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:10]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:02]
    :END:
 
 *** Word
@@ -71,18 +71,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Accept something reluctantly but without protest.
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       F0DA197C-C25F-49E0-9953-9F1FD15178F9
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.928
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 4.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:13]
+   :DRILL_AVERAGE_QUALITY: 3.5
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -181,18 +181,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     - /informal/ incapacity or speechlessness caused by extreme anger.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-07-28 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       8954262F-3A79-431C-8C63-1505F264B32A
-   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_LAST_INTERVAL: 3.944
    :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_TOTAL_REPEATS: 3
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 2.333
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:11]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:05]
    :END:
 
 *** Word
@@ -227,18 +227,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Showing great care and perseverance.
 
 ** Noun, Adjective                                                    :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       E78662ED-09AD-47BE-B406-B7BFF440CE98
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:29]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:02]
    :END:
 
 *** Word
@@ -273,18 +273,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Express discontent or sorrow over (something).
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       516F6F79-ADCD-4EC7-9858-C4A490333A7A
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:13]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 13:57]
    :END:
 
 *** Word
@@ -320,18 +320,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     it so often before.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       A6C40B34-E280-414C-8DF8-FB0AD201B455
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.7543
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_AVERAGE_QUALITY: 3.5
    :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:10]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -343,18 +343,17 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Bold and without shame.
 
 ** Adjective, Verb, Noun                                              :drill:
-   SCHEDULED: <2019-07-24 Wed>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       42D41F64-4CA5-4AF5-8B69-96E6DFC6B097
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_LAST_INTERVAL: 0.0
+   :DRILL_REPEATS_SINCE_FAIL: 1
+   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 2.5
    :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:29]
+   :DRILL_LAST_QUALITY: 2
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:02]
    :END:
 
 *** Word
@@ -412,18 +411,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Cease to resist an opponent or an unwelcome demand; surrender.
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       C9403807-396A-4954-B012-769E8EFCEE89
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.2748
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_AVERAGE_QUALITY: 3.5
    :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:12]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -527,18 +526,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Deserving contempt; despicable.
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       5996A0D8-F302-4F91-9EFD-7D19332CC731
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 10.0
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 4.0
    :DRILL_EASE: 2.5
    :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:13]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 13:57]
    :END:
 
 *** Word
@@ -550,18 +549,17 @@ Most definitions on this page come from the New Oxford American Dictionary.
     An abundant supply of good things of a specified kind.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       E7D1337E-3291-4304-8571-EA421BC98B5A
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 2
-   :DRILL_FAILURE_COUNT: 1
+   :DRILL_LAST_INTERVAL: 0.0
+   :DRILL_REPEATS_SINCE_FAIL: 1
+   :DRILL_TOTAL_REPEATS: 3
+   :DRILL_FAILURE_COUNT: 2
    :DRILL_AVERAGE_QUALITY: 2.0
    :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:30]
+   :DRILL_LAST_QUALITY: 2
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:04]
    :END:
 
 *** Word
@@ -573,18 +571,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Lacking sensitivity, refinement, or intelligence.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       4A933FCF-3AC3-462B-92FB-6A872F7F9ADD
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.6874
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:12]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -625,9 +623,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Expressing contempt or ridicule.
 
 ** Noun                                                               :drill:
+   SCHEDULED: <2019-07-28 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       9C0F3D24-DC7C-48EF-B1B2-F547C7217BD3
+   :DRILL_LAST_INTERVAL: 3.972
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:05]
    :END:
 
 *** Word
@@ -689,18 +696,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     one had believed.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       2A0FB7E8-90A6-4C48-B6DF-FAFD06FBC297
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:12]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:02]
    :END:
 
 *** Word
@@ -765,18 +772,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Outstandingly bad; shocking.
 
 ** Verb                                                               :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       6006DCA5-C195-4DAB-92A1-7BA0CA910B50
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:29]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 13:57]
    :END:
 
 *** Word
@@ -835,18 +842,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Cause or give rise to (a feeling, situation, or condition).
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       631DDAE3-048A-469F-A1FE-CC968B81B73D
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:12]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -920,18 +927,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     wife or husband) no longer living with their spouse.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       9C09E60B-9CBE-4E6C-9F4B-F1FC85B24DED
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.7543
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_AVERAGE_QUALITY: 3.5
    :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:13]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:05]
    :END:
 
 *** Word
@@ -997,18 +1004,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     An address or communication emphatically urging someone to do something.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       926E9061-1DCA-4BA9-9011-FA6AB9962F9B
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:29]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 13:57]
    :END:
 
 *** Word
@@ -1020,18 +1027,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Partially excusing or justifying.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       5085BC8E-48C0-499C-A567-7352B2B293E1
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.6874
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:28]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:05]
    :END:
 
 *** Word
@@ -1043,18 +1050,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Friendly and cheerful.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       6AC06E71-31A5-4015-A445-34468FD44B70
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:10]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:02]
    :END:
 
 *** Word
@@ -1379,18 +1386,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     In a way that is impossible to stop or prevent.
 
 ** Adverb                                                             :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-07-28 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       31F2E6E0-BAEC-4050-9173-67B19A236B77
-   :DRILL_LAST_INTERVAL: 3.93
+   :DRILL_LAST_INTERVAL: 3.944
    :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_TOTAL_REPEATS: 3
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 2.333
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:30]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:06]
    :END:
 
 *** Word
@@ -1402,18 +1409,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     In a way that is impossible to disentangle or separate.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       FC6EED2F-1E55-4E07-BF5D-5190E0D034CB
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.928
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 4.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:10]
+   :DRILL_AVERAGE_QUALITY: 3.5
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -1566,18 +1573,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     2. (figuratively) Any violent or turbulent situation.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       4DD5F0D6-9782-46C4-BA13-03D6F471C610
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.6874
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:12]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -1589,18 +1596,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Enjoying, or taking pleasure, in feeling pain.
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       2843665D-9B10-478A-A4A8-8188629DBDEC
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.928
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 4.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:12]
+   :DRILL_AVERAGE_QUALITY: 3.5
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:04]
    :END:
 
 *** Word
@@ -1612,9 +1619,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     A wrong or inaccurate name or designation.
 
 ** Noun                                                               :drill:
+   SCHEDULED: <2019-07-28 Sun>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       B407A58E-A9C7-461D-9FC0-FCE19350040A
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:05]
    :END:
 
 *** Word
@@ -1626,18 +1642,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     A person who has an excessive interest in or admiration of themselves.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       9CE5E156-9A00-48C7-BC93-8A1A750E3B1F
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.7543
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_AVERAGE_QUALITY: 3.5
    :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:28]
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -1946,18 +1962,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Without concealment or secrecy; openly.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       ED0D64EA-CD87-4AAF-B8C7-F15D7F70D3D3
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_LAST_INTERVAL: 9.6874
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 3
    :DRILL_FAILURE_COUNT: 1
-   :DRILL_AVERAGE_QUALITY: 2.5
-   :DRILL_EASE: 2.36
+   :DRILL_AVERAGE_QUALITY: 2.667
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:30]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:04]
    :END:
 
 *** Word
@@ -2016,18 +2032,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Engaged in, involving, or reflecting deep or serious thought.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       DFBBAFC9-0442-4E44-B800-F087EFCCFF31
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.928
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 4.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:11]
+   :DRILL_AVERAGE_QUALITY: 3.5
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -2101,18 +2117,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     particular attitude, or act in a particular way.
 
 ** Noun                                                               :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       D0C64C2E-F4DD-4600-8346-41BBA1BB2D86
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:28]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -2125,18 +2141,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     reason.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       90066EE8-495B-41A7-A39F-13390F1DF67B
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.928
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 4.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:29]
+   :DRILL_AVERAGE_QUALITY: 3.5
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -2172,18 +2188,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     predisposition toward a particular thing.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       4532B095-5AD8-4336-BB7C-D7F9358E54A0
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_LAST_INTERVAL: 9.6874
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 3
    :DRILL_FAILURE_COUNT: 1
-   :DRILL_AVERAGE_QUALITY: 2.0
-   :DRILL_EASE: 2.36
+   :DRILL_AVERAGE_QUALITY: 2.333
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:30]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -2417,18 +2433,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     to be a fault of style.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-03 Sat>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       0640F10E-A1A8-4A5E-9CD7-226E54783D06
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 10.0
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 4.0
    :DRILL_EASE: 2.5
    :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:29]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:05]
    :END:
 
 *** Word
@@ -2440,18 +2456,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Present, appearing, or found everywhere.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       ED016E03-4DBB-4356-B9AA-7EF4BE6FCDD4
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 2
+   :DRILL_LAST_INTERVAL: 9.208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 3
    :DRILL_FAILURE_COUNT: 1
-   :DRILL_AVERAGE_QUALITY: 2.5
-   :DRILL_EASE: 2.36
+   :DRILL_AVERAGE_QUALITY: 2.667
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:30]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:03]
    :END:
 
 *** Word
@@ -2467,6 +2483,14 @@ Most definitions on this page come from the New Oxford American Dictionary.
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       FA09F4A0-A843-495B-86DB-0B9FF6A7656E
+   :DRILL_LAST_INTERVAL: 0.0
+   :DRILL_REPEATS_SINCE_FAIL: 1
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 1
+   :DRILL_AVERAGE_QUALITY: 1.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 1
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 14:05]
    :END:
 
 *** Word
@@ -2527,18 +2551,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     2. Show or prove to be right, reasonable, or justified.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       24F000CB-BC16-4142-9628-9FAFF0A6D9F2
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:29]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 13:57]
    :END:
 
 *** Word
@@ -2550,18 +2574,18 @@ Most definitions on this page come from the New Oxford American Dictionary.
     Having or showing a strong or unreasoning desire for revenge.
 
 ** Adjective                                                          :drill:
-   SCHEDULED: <2019-07-24 Wed>
+   SCHEDULED: <2019-08-02 Fri>
    :PROPERTIES:
    :DRILL_CARD_TYPE: twosided
    :ID:       5E8FDC09-D914-4BED-95DD-E00E3CCC9D95
-   :DRILL_LAST_INTERVAL: 3.93
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_LAST_INTERVAL: 9.208
+   :DRILL_REPEATS_SINCE_FAIL: 3
+   :DRILL_TOTAL_REPEATS: 2
    :DRILL_FAILURE_COUNT: 0
    :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
+   :DRILL_EASE: 2.22
    :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2019-07-20 Sat 15:30]
+   :DRILL_LAST_REVIEWED: [2019-07-24 Wed 13:57]
    :END:
 
 *** Word
