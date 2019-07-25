@@ -149,3 +149,7 @@ interview questions (e.g. LeetCode).
 * Linked Lists
 
   See [[file:../theory/linked-lists.org][Linked Lists]] and the examples on that page.
+
+* Stacks and Queues
+
+  See [[file:../theory/bags-stacks-queues.org][Bags, Stacks, and Queues]] for more information.
