@@ -153,3 +153,7 @@ interview questions (e.g. LeetCode).
 * Stacks and Queues
 
   See [[file:../theory/bags-stacks-queues.org][Bags, Stacks, and Queues]] for more information.
+
+* Binary Trees
+
+  See [[file:../theory/trees.org][Trees]] for more information.
