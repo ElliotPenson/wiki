@@ -4,16 +4,18 @@
 
 * Overview
 
-  A tree is an acyclic connected graph. Conventional tree operations are
-  /insert/, /search/, /remove/, and /traverse/.
+  A tree is an acyclic, connected graph. In other words, any two vertices are
+  connected by /exactly/ one path. Conventional tree operations are /insert/,
+  /search/, /remove/, and /traverse/.
 
-  Trees usually have a designated /root/ that indicates the top of the
-  tree. /Leaves/ refer to nodes with no children. A /parent/ is the node above
-  the current one. A /child/ is the node below the current one. A node is an
-  /ancestor/ of /d/ if it lies on the search path from the root to /d/. If a
-  node is an ancestor of /d/, we say /d/ is a /descendant/ of that node.
-
-  A tree is /balanced/ when every path from root to leaf has the same length.
+  - The *root* indicates the top of the tree.
+  - *Leaves* refer to nodes with no children.
+  - A *parent* is the node above the current one. A *child* is the node below
+    the current one.
+  - A node is an *ancestor* of /d/ if it lies on the search path from the root
+    to /d/. If a node is an ancestor of /d/, we say /d/ is a *descendant* of
+    that node.
+  - A tree is *balanced* when every path from root to leaf has the same length.
 
 * Binary Search Tree
 
