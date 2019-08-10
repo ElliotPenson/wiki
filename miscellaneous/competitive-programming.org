@@ -157,3 +157,7 @@ interview questions (e.g. LeetCode).
 * Binary Trees
 
   See [[file:../theory/trees.org][Trees]] for more information.
+
+* Heaps
+
+  See [[file:../theory/heaps.org][Heaps]] for information and examples.

@@ -40,76 +40,7 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
 
 *** Heaps
 
-    Heaps are a simple and elegant data structure that efficiently support the
-    priority queue operations insert and extract-min. They work by maintaining a
-    partial order on the set of elements. A /heap-labeled tree/ is a binary tree
-    such that the key labeling of each node /dominates/ the key labeling of each
-    of its children. In a /min-heap/ a node dominates its children by containing
-    a smaller key than they do.
-
-    [[file:../images/heap.png]]
-
-    Heaps can be stored with pointers (node with children) or arrays. In a
-    array, the root of the tree is in the first position, and its left and right
-    children are in the second and third positions. In general the keys of the
-    $i$th level of the binary tree are stored in $2^{i - 1}$ to $2^i - 1$. This
-    means that the left child of $k$ sits in position $2k$ and the right child
-    in $2k + 1$, while the parent of $k$ is in $\lceil k / 2 \rceil$. Note that
-    sparse trees can be very space inefficient, we need to be careful to pack
-    our elements as far left as possible. This implicit representation of binary
-    saves memory, but is less flexible than using pointers. We cannot store
-    arbitrary tree topologies without wasting large amount of space. We cannot
-    move subtrees around by just changing a single pointer. This loss of
-    flexibility explains why we cannot use this idea to represent binary search
-    trees.
-
-**** Insert
-
-     Place the new element into the left-most /open/ spot in the array, namely
-     the $(n + 1)$st position of a previously $n$-element heap. Then, /bubble
-     up/ the new key to its proper position in the hierarchy by swapping the
-     element with its parent until the parent dominates the element. Insertion
-     takes at most $O(\log n)$ time.
-
-     #+BEGIN_SRC python
-       def insert(element, heap):
-           heap = heap + [element]
-           bubble_up(len(heap), heap)
-
-       def bubble_up(index, heap):
-           if index > 0 and heap[index] > heap[index // 2]:
-               array[index], array[index // 2] = array[index // 2], array[index]
-               bubble_up(index // 2, heap)
-     #+END_SRC
-
-**** Extracting the Minimum
-
-     The minimum can easily be found by looking in the first position in the
-     array. Removing the top element leaves a hole in the array. Fill by moving
-     the element from the /right-most/ leaf (sitting in the $n$th position of
-     the array) into the first position. Then, /bubble down/ the new key until
-     it dominates all its children. The key should be switched with the dominant
-     child.
-
-     #+BEGIN_SRC python
-       def extract_minimum(heap):
-           minimum = heap[0]
-           heap = [heap[-1]] + heap[1:-1]
-           bubble_down(0, heap)
-           return minimum
-
-       def bubble_down(index, heap):
-           smaller_index = find_smaller_child(index, heap)
-           if smaller_index:
-               heap[index], heap[smaller_index] = heap[smaller_index], heap[index]
-               bubble_down[smaller_index]
-
-       def find_smaller_child(index, heap):
-           if 2 * index + 1 < len(heap) and heap[2 * index] > heap[2 * index + 1]:
-               return 2 * index + 1
-           elif 2 * index < len(heap):
-               return 2 * index
-     #+END_SRC
+    See [[file:../theory/heaps.org][Heaps]].
 
 *** Heapsort Implementation
 

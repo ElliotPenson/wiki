@@ -61,4 +61,4 @@ S. Skiena.
    arbitrary intervals. The basic priority queue supports three primary
    operations: /insert/, /find-minimum/maximum/, and
    /delete-minimum/maximum/. Priority queues can be implemented with arrays or
-   BSTs, but a particularly nice implementation is the *heap*.
+   BSTs, but a particularly nice implementation is the [[file:./heaps.org][heap]].
