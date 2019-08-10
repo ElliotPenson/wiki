@@ -146,15 +146,37 @@ interview questions (e.g. LeetCode).
                  write_index += 1
    #+END_SRC
 
-* Linked Lists
+* Linked Lists                                                        :topic:
 
   See [[file:../theory/linked-lists.org][Linked Lists]] and the examples on that page.
 
-* Stacks and Queues
+* Stacks and Queues                                                   :topic:
 
   See [[file:../theory/bags-stacks-queues.org][Bags, Stacks, and Queues]] for more information.
 
-* Binary Trees
+** Queue with Stacks
+
+   #+BEGIN_SRC python
+     def Queue:
+
+         def __init__(self):
+             self.first = []
+             self.second = []
+
+         def enqueue(self, value):
+             self.first.append(value)
+
+         def dequeue(self):
+             while self.first:
+                 self.second.append(self.first.pop())
+             return self.second.pop()
+   #+END_SRC
+
+* Binary Trees                                                        :topic:
+
+  Consider *left- and right-skewed trees* when doing complexity analysis. Note
+  that $O(h)$ complexity, where $h$ is the tree height, translates into $O(log
+  n)$ complexity for balanced trees, but $O(n)$ complexity for skewed trees.
 
   See [[file:../theory/trees.org][Trees]] for more information.
 

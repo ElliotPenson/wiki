@@ -1,6 +1,5 @@
 #+TITLE: Trees
 #+AUTHOR: Elliot Penson
-#+OPTIONS: num:nil
 
 * Overview
 
@@ -12,6 +11,10 @@
   - *Leaves* refer to nodes with no children.
   - A *parent* is the node above the current one. A *child* is the node below
     the current one.
+  - The *depth* of a node /n/ is the number of nodes on the search path from
+    root to /n, not including /n/ itself.
+  - The *height* of a tree is the maximum depth of any node.
+  - A *level* of a tree is all nodes at the same depth.
   - A node is an *ancestor* of /d/ if it lies on the search path from the root
     to /d/. If a node is an ancestor of /d/, we say /d/ is a *descendant* of
     that node.
