@@ -83,6 +83,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
   - [[file:theory/algorithms.org][Algorithms]]
     - [[file:theory/algorithm-analysis.org][Analysis of Algorithms]]
+    - [[file:theory/binary-search.org][Binary Search]]
     - [[file:theory/correctness.org][Correctness]]
     - [[file:theory/genetic-algorithms.org][Genetic Algorithms]]
     - [[file:theory/program-modeling.org][Program Modeling]]
