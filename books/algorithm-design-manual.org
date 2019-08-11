@@ -18,45 +18,6 @@ S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to 
 
 * Chapter 4: Sorting and Searching
 
-  Sorting a the basic building block that many other algorithms are built
-  around. Many other problems become easy once a set of items is sorted
-  (e.g. /searching/, /closest pair/).
-
-  Many things need to be considered when sorting:
-
-  - /Ascending/ or /descending/ order.
-  - Key or entire record.
-  - What to do with equal keys (/stable/ sort?).
-  - /Comparison function/.
-
-** Heapsort
-
-   *Selection sort* is a simple algorithm that repeatedly extracts the smallest
-   remaining element from the unsorted part of an array. A computer takes $O(n)$
-   time to find the smallest element in an array. This is the operation
-   supported by a priority queue. What if we improve the data structure?
-   *Heapsort* is nothing but an implementation of selection sort using the right
-   data structure.
-
-*** Heaps
-
-    See [[file:../theory/heaps.org][Heaps]].
-
-*** Heapsort Implementation
-
-    Heapsort creates a heap and repeatedly extracts the minimum to give a
-    worst-case $O(n \log n)$ algorithm. It is an /in-place/ sort, meaning it
-    uses no extra memory over the array containing the elements to be sorted.
-
-    #+BEGIN_SRC python
-      def heapsort(array):
-          heap = []
-          for element in array:
-              insert(element, heap)
-          for index in range(len(array)):
-              array[index] = extract_min(heap)
-    #+END_SRC
-
 ** Mergesort
 
    Mergesort is a classic divide-and-conquer algorithm. This recursive approach

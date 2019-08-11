@@ -1,21 +1,28 @@
 #+TITLE: Sorting Algorithms
 #+AUTHOR: Elliot Penson
-#+OPTIONS: num:nil
+
+Sorting algorithms put the elements of a collection into a certain
+order. Sorting is a basic building block that many other algorithms are built
+around. Many problems become easy once a set of items is sorted
+(e.g. /searching/, /closest pair/).
 
 * Algorithm Properties
+
+  Items may be places in *ascending* or *descending* order. The sorting
+  algorithm may reference a *key* or the entire record. These properties are
+  often encapsulated in a *comparison function*.
+
+  A *stable* sorting algorithm maintains the relative order of the input when
+  keys are equal. For example, suppose one has an array of people. Each person
+  has an age and a name. Using a stable sorting algorithm, the array is sorted
+  first on age, then on name. When you look at the cluster of people named
+  "John," you'll notice that they are still organized by age.
 
   *In-place* refers to memory usage. An in-place algorithms needs only
   constant ($O(1)$) memory beyond the items being sorted. In-place
   sorting algorithms usually work within and overwrite the input
   array. Note that sometimes $O(\log{}n)$ additional memory is
   considered in-place.
-
-  A *stable* sorting algorithm maintains the relative order of the
-  input. For example, suppose one has an array of people. Each person
-  has an age and a name. Using a stable sorting algorithm, the array
-  is sorted first on age, then on name. When you look at the cluster
-  of people named "John," you'll notice that they are still organized
-  by age.
 
 * Algorithms
 
@@ -237,7 +244,41 @@
     extra memory. See the [[https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme/][Hoare partition scheme]] for an approach that
     progressively switches elements around a central pivot.
 
-** TODO Heapsort
+** Heapsort
+
+*** Overview
+
+   Selection sort (see above) is a simple algorithm that repeatedly extracts the
+   smallest remaining element from the unsorted part of an array. A computer
+   takes $O(n)$ time to find the smallest element in an array. This is the
+   operation supported by a priority queue. What if we improve the data
+   structure?  *Heapsort* is nothing but an implementation of selection sort
+   using the right data structure. Heapsort uses a [[file:heaps.org][heap]].
+
+   |--------------------+--------------|
+   | Best Complexity    | $O(n\log n)$ |
+   | Average Complexity | $O(n\log n)$ |
+   | Worst Complexity   | $O(n\log n)$ |
+   | Memory Usage       | $O(1)$       |
+   | Stability          | Unstable     |
+   |--------------------+--------------|
+
+*** Implementation
+
+    Heapsort creates a heap and repeatedly extracts the minimum to give a
+    worst-case $(O \log n)$ algorithm. Heapsort can be implemented as an
+    in-place sort.
+
+    #+BEGIN_SRC python
+      from heapq import heappush, heappop
+
+      def heapsort(list):
+          heap = []
+          for item in list:
+              heappush(item, heap)
+          return [heappop(heap) for _ in range(len(heap))]
+    #+END_SRC
+
 
 ** TODO Tapesort
 
