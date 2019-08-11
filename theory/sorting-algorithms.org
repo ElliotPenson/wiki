@@ -303,6 +303,22 @@ around. Many problems become easy once a set of items is sorted
     #+END_SRC
 
 
+** Distribution Sort
+
+   Suppose we have a list of names to sort. We could partition them according to
+   the first letter. This creates 26 different piles, or buckets, or
+   names. Then, we partition each pile based on the second letter of each name,
+   etc. The names will be sorted as soon as each bucket contains only a single
+   name. At the end, we'll be able to simply concatenate the bunch of piles
+   together. This algorithm is commonly called *bucketsort* or *distribution
+   sort*.
+
+   *Bucketing* is a very effective idea whenever we are confident that the
+   distribution of data will be roughly uniform. It is the idea that underlies
+   hash tables, kd-trees, and a variety of other practical data structures. The
+   downside of such techniques is that the performance can be terrible when the
+   data distribution is not what we expected.
+
 ** TODO Tapesort
 
    See
