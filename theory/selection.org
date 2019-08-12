@@ -1,0 +1,30 @@
+#+TITLE: Selection
+#+AUTHOR: Elliot Penson
+
+Selection finds the /kth smallest element/ of a list of numbers. This algorithm
+is often used to find the median ($k = \lfloor |S|/2 \rfloor$). Information on
+this page is taken from /Algorithms/ by Dasgupta et al.
+
+Selection may be implemented with [[file:divide-and-conquer.org][divide-and-conquer]]. For any number $v$,
+imagine splitting list $S$ into three categories: elements smaller than $v$,
+those equal to $v$, and those greater than $v$. For example, if array
+
+#+BEGIN_SRC python
+  [2, 36, 5, 21, 8, 13, 11, 20, 5, 4, 1]
+#+END_SRC
+
+is split on $v = 5$, the three subarrays ($S_L$, $S_v$, $S_R$) generated are
+
+#+BEGIN_SRC python
+  [2, 4, 1], [5, 5], [36, 21, 8, 13, 11, 20]
+#+END_SRC
+
+The search can instantly be narrowed down to one of these sublists. If we want,
+say, the /eighth/-smallest element of $S$, we know it must be the
+/third/-smallest element of $S_R$ since $|S_L| + |S_v| = 5$. That is,
+selection($S$, 8) = selection($S_R$, 3). We then recurse on the appropriate
+sublist.
+
+The three sublists can be computed in-place with linear time. With poor pivot
+choice the algorithm is $O(n^2)$ (worse case). However, on average, the
+algorithm is $O(n)$. Like quicksort, random pivot choice usually works well.

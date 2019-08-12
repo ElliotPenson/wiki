@@ -210,7 +210,6 @@ around. Many problems become easy once a set of items is sorted
     with elements larger than the pivot. We place the pivot between the other
     two piles, and then sort piles independently.
 
-
     |--------------------+--------------------|
     | Best Complexity    | $O(n\log n)$       |
     | Average Complexity | $O(n\log n)$       |

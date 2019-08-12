@@ -88,6 +88,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:theory/divide-and-conquer.org][Divide-And-Conquer]]
     - [[file:theory/genetic-algorithms.org][Genetic Algorithms]]
     - [[file:theory/program-modeling.org][Program Modeling]]
+    - [[file:theory/selection.org][Selection]]
     - [[file:theory/sorting-algorithms.org][Sorting Algorithms]]
   - [[file:theory/data-structures.org][Data Structures]]
     - [[file:theory/bags-stacks-queues.org][Bags, Stacks, and Queues]]
