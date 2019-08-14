@@ -468,3 +468,17 @@ on SQL]].
   | \dn                 | List schemas (namespaces).                  |
   | \d <table>          | Describe a table (show columns)             |
   | \q                  | Quit psql                                   |
+
+* Tricks and Examples
+
+** Remove Duplicates
+
+   Suppose we have a ~People~ table with ~Id~ and ~Email~ columns. The following
+   command will delete all duplicate email entries keeping entries based on the
+   smallest ID.
+
+   #+BEGIN_SRC sql
+     DELETE * FROM People p1
+     INNER JOIN People p2
+     WHERE p1.Email = p2.Email AND p1.Id > p2.Id;
+   #+END_SRC
