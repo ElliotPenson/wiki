@@ -2,7 +2,7 @@
 #+AUTHOR: Elliot Penson
 
 This document houses my notes from /The Algorithm Design Manual/ by Steven
-S. Skiena. Also see [[file:algorithm-design-manual-exercises.org][my answers to odd exercises]].
+S. Skiena.
 
 * Chapter 1: Introduction
 

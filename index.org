@@ -21,7 +21,6 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:books/naked-statistics.org][Naked Statistics]]
     - [[file:books/tipping-point.org][The Tipping Point]]
     - [[file:books/algorithm-design-manual.org][The Algorithm Design Manual]]
-      - [[file:books/algorithm-design-manual-exercises.org][The Algorithm Design Manual: Exercises]]
     - [[file:books/visual-display-of-quantitative-information.org][The Visual Display of Quantitative Information]]
     - [[file:books/zero-to-one.org][Zero to One]]
 
