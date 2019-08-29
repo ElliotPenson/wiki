@@ -183,3 +183,11 @@ interview questions (e.g. LeetCode).
 * Heaps
 
   See [[file:../theory/heaps.org][Heaps]] for information and examples.
+
+* Searching
+
+  [[file:../theory/binary-search.org][Binary search]] is an effective search tool. It is applicable to more than just
+  searching in sorted arrays, e.g., it can be used to search an interval of real
+  numbers or integers.
+
+  Also see [[file:../theory/selection.org][selection]].
