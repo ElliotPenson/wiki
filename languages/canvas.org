@@ -255,8 +255,8 @@ Use a rendering context to create and manipulate content.
    \end{bmatrix}
    ,
    \begin{bmatrix}
-   cos(a) & -sin(a) & tx \\
-   sin(a) & cos(a) & ty \\
+   cos(a) & -sin(a) & 0 \\
+   sin(a) & cos(a) & 0 \\
    0 & 0 & 1
    \end{bmatrix}
    \end{equation}
