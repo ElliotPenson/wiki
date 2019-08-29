@@ -9,6 +9,10 @@ the key $q$ to the middle item. If $q$ is smaller, it must appear in the first
 half; if not it must reside in the second half. By repeating this process
 recursively on the correct half, we locate the key in $\lg n$ comparisons.
 
+A disadvantage of binary search is that it requires a sorted array and sorting
+an array takes $O(n\log n)$ time. However, if there are many searches to
+perform, the time taken to sort is not an issue.
+
 Binary search is the power behind twenty questions!
 
 * Implementation
@@ -28,6 +32,21 @@ Binary search is the power behind twenty questions!
             return binary_search(item, array, start, middle_index)
         else:
             return binary_search(item, array, middle_index + 1, end)
+  #+END_SRC
+
+* Libraries
+
+  The ~bisect~ module provides binary search functions in
+  Python. ~bisect_left(array, item)~ finds the first element that is not less
+  than a target value. ~bisect_right(array, item)~ finds the first element that
+  is greater than a target value.
+
+  #+BEGIN_SRC python
+    from bisect import bisect_left
+
+    def binary_search(item, array):
+        index = bisect_left(array, item)
+        return 0 <= index < len(array) and array[index] == item
   #+END_SRC
 
 * Related Algorithms
