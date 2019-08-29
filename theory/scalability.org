@@ -1,0 +1,89 @@
+#+TITLE: Scalability
+#+AUTHOR: Elliot Penson
+
+Information on this page is taken from /Designing Data-Intensive Applications/
+by Martin Kleppmann.
+
+Even if a system is working reliably today, that doesn't mean it will
+necessarily work reliably in the future. One common reason for degradation is
+increased load: perhaps the system has grown from 10,000 concurrent users to
+100,000 concurrent users, or from 1 million to 10 million. Perhaps it is
+processing much larger volumes of data than it did before.
+
+*Scalability* is the term we use to describe a system's ability to cope with
+increased load.
+
+* Describing Load
+
+  First, we need to succinctly describe the current load on the system; only
+  then can we discuss growth questions (what happens if our load doubles?). Load
+  can be described with a few numbers which we call *load parameters*. The best
+  choice of parameters depends on the architecture of your system: it may be
+  requests per second to a web server, the ratio of reads to write in a
+  database, the number of simultaneously active users in a char room, the hit
+  rate on a cache, or something else. Perhaps the average case is what matters
+  for you, or perhaps your bottleneck is dominated by a small number of extreme
+  cases.
+
+  For example, two of Twitter's main operations are /post tweet/ and /view home
+  timeline/. Twitter sees 5k requests/second and 300k requests/second for these
+  operations, respectively.
+
+* Describing Performance
+
+  Once you have described the load on your system, you can investigate what
+  happens when the load increases. You can look at it in two ways.
+
+  - When you increase a load parameter and keep the system resources (CPU,
+    memory, network bandwidth, etc.) unchanged, how is the performance of your
+    system affected?
+  - When you increase a load parameter, how much do you need to increase
+    resources if you want to keep performance unchanged?
+
+  In a batch processing system such as Hadoop, we usually care about
+  *throughput* - the number of records we can process per second, or the total
+  time it takes to run a job on a dataset of a certain size. In online systems,
+  what's usually more important is the service's *response time* - that is, the
+  time between a client sending a request and receiving a response.
+
+  *Latency* and response time are often used synonymously, but they are not the
+  same. The response time is what the client sees: besides the actual time to
+  process the request (*service time*), it includes network delays and queueing
+  delays. Latency is the duration that a request is waiting to be handled -
+  during which is it *latent*, awaiting service.
+
+  It's common to see the average response time of a service reported, but
+  percentiles are usually better.  The median (/p50/) is useful in addition to
+  higher percentiles (/p95/, /p99/, /p999/). High percentiles of response times
+  are also known as *tail latencies*.
+
+* Approaches for Coping with Load
+
+  How do we maintain good performance even when our load parameters increase by
+  some amount?
+
+  People often talk of a dichotomy between *scaling up* (*vertical scaling*,
+  moving to a more powerful machine) and *scaling out* (*horizontal scaling*,
+  distributing the load across multiple smaller machines). Distributing load
+  across multiple machines is also known as a *shared-nothing architecture*. A
+  system that can run on a single machine is often simpler, but high-end
+  machines can become very expensive, so very intensive workloads often can't
+  avoid scaling out. In reality, good architectures usually involve a pragmatic
+  mixture of approaches.
+
+  Some systems are *elastic*, meaning that they can automatically add computing
+  resources when they detect a load increase, whereas other systems are scaled
+  manually.
+
+  While distributing stateless services across multiple machines is fairly
+  straightforward, taking stateful data systems from a single node to a
+  distributed setup can introduce a lot of additional complexity. For this
+  reason, common wisdom until recently was to keep your database on a single
+  node (scale up) until scaling cost or high-available requirements forces you
+  to make it distributed. As the tools and abstractions for distributed systems
+  get better, this common wisdom may change, at least for some kinds of
+  applications.
+
+  The architecture of systems that operate at large scale is usually highly
+  specific to the application - there is no such thing as a generic,
+  one-size-fits-all scalable architecture.

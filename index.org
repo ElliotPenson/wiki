@@ -18,6 +18,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
   - [[file:books/library.org][Library]]
     - [[file:books/clean-code.org][Clean Code]]
+    - [[file:books/designing-data-intensive-applications.org][Designing Data-Intensive Applications]]
     - [[file:books/naked-statistics.org][Naked Statistics]]
     - [[file:books/tipping-point.org][The Tipping Point]]
     - [[file:books/algorithm-design-manual.org][The Algorithm Design Manual]]
@@ -97,6 +98,10 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:theory/linked-lists.org][Linked Lists]]
     - [[file:theory/trees.org][Trees]]
     - [[file:theory/tries.org][Tries]]
+  - [[file:theory/data-intensive-applications.org][Data-Intensive Applications]]
+    - [[file:theory/reliability.org][Reliability]]
+    - [[file:theory/scalability.org][Scalability]]
+    - [[file:theory/maintainability.org][Maintainability]]
   - [[file:theory/cfg.org][Context Free Grammars]]
   - [[file:theory/design-patterns.org][Design Patterns]]
   - [[file:theory/papers.org][Papers]]
