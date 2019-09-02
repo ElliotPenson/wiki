@@ -1,0 +1,10 @@
+#+TITLE: Designing Data-Intensive Applications
+#+AUTHOR: Elliot Penson
+
+My notes for /Designing Data-Intensive Applications/ by Martin Kleppmann are
+divided among the follow pages.
+
+- [[file:../theory/data-intensive-applications.org][Data-Intensive Applications]]
+  - [[file:../theory/reliability.org][Reliability]]
+  - [[file:../theory/scalability.org][Scalability]]
+  - [[file:../theory/maintainability.org][Maintainability]]

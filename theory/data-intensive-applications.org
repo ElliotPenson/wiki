@@ -1,0 +1,25 @@
+#+TITLE: Data-Intensive Applications
+#+AUTHOR: Elliot Penson
+
+Information on this page is taken from /Designing Data-Intensive Applications/
+by Martin Kleppmann.
+
+An application is *data-intensive* if data is its primary challenge - the
+quantity of data, the complexity of data, or the speed at which it is changing -
+as opposed to *compute-intensive*, where CPU cycles are the bottleneck. A data
+intensive application is typically built from standard building blocks that
+provide commonly needed functionality; these *data systems* include:
+
+- Store data so that they, or another application, can find it again later
+  (databases).
+- Remember the result of an expensive operation, to speed up reads (caches).
+- Allow users to search data by keyword or filter it in various ways (search
+  indexes).
+- Send a message to another process, to be handled asynchronously (stream
+  processing).
+- Periodically crunch a large amount of accumulated data (batch processing).
+
+Most data-intensive applications are concerned with [[file:./reliability.org][reliability]], [[file:./scalability.org][scalability]],
+and [[file:maintainability.org][maintainability]].
+
+[[file:../images/data-intensive-architecture.png]]

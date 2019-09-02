@@ -1,0 +1,28 @@
+#+TITLE: Maintainability
+#+AUTHOR: Elliot Penson
+
+Information on this page is taken from /Designing Data-Intensive Applications/
+by Martin Kleppmann.
+
+It is well known that the majority of the cost of software is not its initial
+development but its ongoing *maintenance* - fixing bugs, keeping its systems
+operational, investigating failures, adapting it to new platforms, modifying it
+for new use cases, repaying technical debt, and adding new features.
+
+We can and should design software in such a way that it will hopefully minimize
+pain during maintenance, and thus avoid creating legacy software ourselves. To
+this end, we pay particular attention to three design principles for software
+systems:
+
+- *Operability*
+  - Make it easy for operations teams to keep the system running smoothly. Data
+    systems need good monitoring, good support to automation, and good
+    documentation.
+- *Simplicity*
+  - Make it easy for new engineers to understand the system, by removing as much
+    complexity as possible from the system. *Abstraction* is one of the best
+    tools we have for removing complexity.
+- *Evolvability*
+  - Make it easy for engineers to make changes to the system in the future,
+    adapting it for unanticipated use cases as requirements change. Also known
+    as *extensibility*, *modifiability*, or *plasticity*.

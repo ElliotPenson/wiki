@@ -1,0 +1,62 @@
+#+TITLE: Reliability
+#+AUTHOR: Elliot Penson
+
+Information on this page is taken from /Designing Data-Intensive Applications/
+by Martin Kleppmann.
+
+A system is *reliable* when it continues to work /correctly/ even in the face of
+/adversity/. The things that can go wrong are called *faults*, and systems that
+anticipate faults and can cope with them are called *fault-tolerant* or
+*resilient*.
+
+* Fault vs. Failure
+
+  A *fault* is usually defined as one component of the system deviating from its
+  spec, whereas a *failure* is when the system as a whole stops providing the
+  required service to the user. It is impossible to reduce the probability of a
+  fault to zero; therefore it is usually best to design fault-tolerance
+  mechanisms that prevent faults from causing failures.
+
+* Types of Faults
+
+** Hardware Faults
+
+   Hard disk crash, faulty RAM, and power blackout are all examples of *hardware
+   faults*. Traditionally, *redundancy* is added to individual hardware
+   components to help reduce system failure rate. Modern cloud platforms also
+   commonly use software fault-tolerance techniques.
+
+** Software Errors
+
+    Systematic errors within the system are hard to anticipate and tend to cause
+    many more system failures than uncorrelated hardware faults. There is no
+    quick solution to the problem of systematic faults in software. Lots of
+    small things can help: carefully thinking about assumptions and interactions
+    in the system; thorough testing; process isolation; allowing processes to
+    crash and restart; measuring, monitoring, and analyzing system behavior in
+    production.
+
+** Human Errors
+
+   Humans design and build software systems, and the operators who keep the
+   systems running are also human. Even when they have the best intentions,
+   humans are known to be unreliable. The best systems combine several
+   approaches to help reduce human errors:
+
+   - Design systems in a way that minimizes opportunities for error. For
+     example, well-designed abstractions, APIs, and admin interfaces make it
+     easy to do "the right thing" and discourage "the wrong thing."
+   - Decouple the places where people make the most mistakes from the places
+     where they cause failures. In particular, provide fully featured
+     non-production *sandbox environments* where people can explore and
+     experiment safely, using real data, without affecting real users.
+   - Test thoroughly at all levels, from unit tests to whole-system integration
+     tests and manual tests.
+   - Allow quick and easy recovery from human errors, to minimize the impact in
+     the case of a failure. For example, make it fast to roll back configuration
+     changes, roll out new code gradually (so that any unexpected bugs affect
+     only a small subset of users), and provide tools to recompute data (in case
+     it turns out that the old computation was incorrect).
+   - Set up detailed and clear monitoring, such as performance metrics and error
+     rates.
+   - Implement good management practices and training.
