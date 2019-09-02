@@ -3,8 +3,15 @@
 
 Sorting algorithms put the elements of a collection into a certain
 order. Sorting is a basic building block that many other algorithms are built
-around. Many problems become easy once a set of items is sorted
-(e.g. /searching/, /closest pair/).
+around. Sorting is used to preprocess the collection to make searching faster
+(e.g. [[file:./binary-search.org][binary search]]), as well as identify items that are similar (e.g. students
+are sorted on test scores).
+
+A number of sorting algorithms run in $O(n\logn)$ time - heapsort, merge sort,
+and quicksort are examples. Each has its advantages and disadvantages: for
+example, heapsort is in-place but not stable; merge sort is stable but not
+in-place; quicksort runs $O(n^2)$ time in worst-case. In practice, a
+well-implemented quicksort is usually the best choice for sorting.
 
 * Algorithm Properties
 
@@ -152,11 +159,11 @@ around. Many problems become easy once a set of items is sorted
           return list
     #+END_SRC
 
-** Mergesort
+** Merge Sort
 
 *** Overview
 
-    Mergesort is a classic divide-and-conquer algorithm. The algorithm first
+    Merge sort is a classic divide-and-conquer algorithm. The algorithm first
     divides the input into smaller and smaller lists. At the base case (list
     length = 1) the list is sorted. These sorted sublists are progressively
     /merged/ until we have sorted the original list.
@@ -171,21 +178,21 @@ around. Many problems become easy once a set of items is sorted
 
 *** Implementation
 
-    The efficiency of mergesort depends upon how we combine the two sorted
+    The efficiency of merge sort depends upon how we combine the two sorted
     halves into a single sorted list. We need to /merge/ the two lists
     together. Observe that the smallest overall item in the two sorted lists
     must sit at the top of one of the two lists. To merge, we remove the
     smallest element, then repeat. Because the recursion goes $\lg n$ levels
-    deep, and a linear amount of work is done per level, mergesort takes $O(n
+    deep, and a linear amount of work is done per level, merge sort takes $O(n
     \log n)$ time in the worst case.
 
     #+BEGIN_SRC python
-      def mergesort(array):
+      def merge_sort(array):
           if len(array) < 2:
               return array
           else:
               middle = len(array) / 2
-              left, right = mergesort(array[:middle]), mergesort(array[middle:])
+              left, right = merge_sort(array[:middle]), merge_sort(array[middle:])
               return merge(left, right)
 
       def merge(array1, array2):
@@ -203,7 +210,7 @@ around. Many problems become easy once a set of items is sorted
 
 *** Overview
 
-    Like mergesort, quicksort is a divide-and-conquer algorithm. In mergesort,
+    Like merge sort, quicksort is a divide-and-conquer algorithm. In merge sort,
     the hard part is combining the sublists. In quicksort, the hard part is
     dividing the list. Quicksort first chooses a /pivot/. The input is then
     divided into two parts: one with elements smaller than the pivot and one
@@ -225,7 +232,7 @@ around. Many problems become easy once a set of items is sorted
     smallest element in the sub-array. This produces $O(n^2)$, the worst case of
     quicksort.
 
-    Quicksort is typically 2-3 times faster than mergesort or heapsort when
+    Quicksort is typically 2-3 times faster than merge sort or heapsort when
     implemented well. All three algorithms are $O(n \log n)$, but
     experimentation shows that the simpler operations in the inner loop give
     quicksort a constant improvement.

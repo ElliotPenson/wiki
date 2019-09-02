@@ -10,6 +10,11 @@ structures support four operations.
 - /Modify/ the value associated with a given key.
 - /Search/ for a given key's value.
 
+Hash tables have the best theoretical and real-world performance for these
+operations at $O(1)$. The $O(1)$ time complexity for insertion is for the
+average case - a single insert can take $O(n)$ if the hash table has to be
+resized.
+
 Information on this page is taken from /The Algorithm Design Manual/ by Steven
 S. Skiena.
 
@@ -100,4 +105,5 @@ S. Skiena.
 * Libraries
 
   Java's standard library provides the ~HashTable~ class. Python has built in
-  hash tables with the ~dict~ type.
+  hash tables with the ~dict~ type. Python also includes ~defaultdict~ and
+  ~Counter~ in the ~collections~ module.

@@ -183,3 +183,11 @@ interview questions (e.g. LeetCode).
 * Heaps
 
   See [[file:../theory/heaps.org][Heaps]] for information and examples.
+
+* Hash Tables
+
+  See [[file:../theory/hash-tables.org][Hash Tables]] for more information.
+
+* Sorting
+
+  See [[file:../theory/sorting-algorithms.org][Sorting Algorithms]] for more information.
