@@ -1,0 +1,80 @@
+#+TITLE: Databases
+#+AUTHOR: Elliot Penson
+
+Information on this page is taken from /Designing Data-Intensive Applications/
+by Martin Kleppmann.
+
+* Data Models
+
+  Data models are important because they effect not only how the software is
+  written, but also how we think about the problem we are solving. Most
+  applications are built by layering one data model on top of another (e.g. API
+  -> database -> disk -> bytes). Each layer hides the complexity of the layers
+  below it by providing a clean data model.
+
+  Different kinds of data models embody assumptions about how they are going to
+  be used: some kinds of usage are easy and some are not supported, some
+  operations are fast and some perform badly.
+
+** Relational Model
+
+   The best-known data model today is probably that of SQL, based on the
+   relational model. Data is organized into *relations* (called *tables* in
+   SQL), where each relation is a series of *tuples* (*rows* in SQL).
+
+   The relational model provides good support for joins, and one-to-many and
+   many-to-many relationships. This model encourages *normalization*. In
+   relational databases, it's normal to refer to rows in other tables by ID,
+   because joins are easy. IDs remove duplication and never need to change, even
+   if the information it identifies changes.
+
+   A common criticism of the SQL data model is that a translation layer must
+   exist between the objects in the application code and the database model of
+   tables, rows, and columns. *Object-relational mapping* (*ORM*) frameworks
+   reduce the amount of boilerplate code required, but they can't completely
+   hide the differences between these two models.
+
+   SQL is a *declarative* query language (not *imperative*). In a declarative
+   query language, you just specify the pattern of the data you want - what
+   conditions the result must meet, and how you want the data to be
+   transformed (e.g. sorted, grouped, and aggregated) - but not /how/ to achieve
+   that goal. It is up to the database system's query optimizer to decide which
+   indexes and which join methods to use, and in which order to execute various
+   parts of the query.
+
+** Document Model
+
+   Non-relational databases store a collection of *documents* which usually
+   contain *key/value* pairs (JSON). Sometimes called *NoSQL*, these databases
+   provide a more dynamic and expressive data model than relational
+   schemas. Additional, these database sometimes offer greater scalability than
+   relational databases.
+
+   The JSON representation has better *locality* than a multi-table schema; all
+   relevant information is in one space and can be retrieved with a single
+   query. The tree structure of JSON implicitly represents one-to-many
+   relationships.
+
+   If your application uses many-to-many relationships, the document model
+   becomes less appealing. It's possible to reduce the need for joins by
+   *denormalizing*, but then the application code needs to do additional work to
+   keep the data consistent. Joins can be emulated in application code by making
+   multiple requests to the database, but that also moves complexity into the
+   application and is usually slower than a join performed by specialized code
+   inside the database.
+
+   Document databases are sometimes called *schemaless*, but that's misleading,
+   as the code that reads the data usually assumes some kind of structure -
+   i.e. there is an implicit schema, but it is not enforced by the database. A
+   more accurate term is *schema-on-read* in contrast to *schema-on-write* (the
+   traditional approach of relational databases).
+
+** Graph Model
+
+   When many-to-many relationships are very common in your data it becomes
+   natural to start modeling your data as a graph. Note that graph databases
+   don't limit vertices to homogeneous data: different types of object can be
+   stored in a single datastore.
+
+   There are many ways to structure and query data in graphs. Example query
+   languages include Cypher, SPARQL, and Datalog.

@@ -110,6 +110,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
   - [[file:tools/command-line.org][Command Line]]
   - [[file:tools/cron.org][Cron and Crontab]]
+  - [[file:tools/databases.org][Databases]]
   - [[file:tools/docker.org][Docker]]
   - [[file:tools/elasticsearch.org][Elasticsearch]]
   - [[file:tools/emacs.org][Emacs]]
