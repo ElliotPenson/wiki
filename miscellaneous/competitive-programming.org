@@ -232,3 +232,7 @@ interview questions (e.g. LeetCode).
    of intervals. First sort the intervals by their start date. Then traverse the
    i]ntervals joining when the current interval's start is before the previous
    interval's end.
+
+* Binary Search Trees
+
+  See [[file:../theory/trees.org][Trees]] for more information. Remember standard traversal methods (and BFS).

@@ -36,6 +36,18 @@
   Binary tree nodes have left and right pointer fields, an optional parent
   pointer, and a data field.
 
+  #+BEGIN_SRC python
+    from collections import namedtuple
+
+    Node = namedtuple("Node", ["left", "right", "data"])
+  #+END_SRC
+
+  Binary search trees can be used to solve almost every data structures problem
+  reasonably efficiently. They offer the ability to efficiently search for a key
+  as well as find the /min/ and /max/ elements, look for the successor or
+  predecessor of a search key, and enumerate the keys in a range in sorted
+  order.
+
 ** Traversal
 
    Traversal involves visiting all nodes. *In-order* traversal of a binary
