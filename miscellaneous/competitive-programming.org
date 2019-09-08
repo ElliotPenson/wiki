@@ -199,3 +199,36 @@ interview questions (e.g. LeetCode).
 * Sorting
 
   See [[file:../theory/sorting-algorithms.org][Sorting Algorithms]] for more information.
+
+** Intervals
+
+   Given a list of intervals (~(start_time, end_time)~), determine the maximum
+   number of events that take place concurrently. The trick is to focus on the
+   endpoints. This algorithm is $O(n\logn)$ (dominated by the sort).
+
+   #+BEGIN_SRC python
+     from collections import namedtuple
+
+     Endpoint = namedtuple("Endpoint", ["time", "is_start"])
+
+     def find_max_simultaneous(intervals):
+         endpoints = [endpoint
+                      for start, end in intervals
+                      for endpoint in [Endpoint(start, True), Endpoint(end, False)]]
+         # Sort by time, break ties by putting start times before end times.
+         endpoint.sort(key=lambda endpoint: (endpoint.time, not endpoint.is_start))
+
+         max_simultaneous, current_simultaneous = 0, 0
+         for endpoint in endpoints:
+             if endpoint.is_start:
+                 current_simultaneous += 1
+                 max_simultaneous = max(max_simultaneous, current_simultaneous)
+             else:
+                 current_simultaneous -= 1
+         return max_simultaneous
+   #+END_SRC
+
+   Another /interval/ problem that benefits from sorting is computing the union
+   of intervals. First sort the intervals by their start date. Then traverse the
+   i]ntervals joining when the current interval's start is before the previous
+   interval's end.
