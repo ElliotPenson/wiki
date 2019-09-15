@@ -70,7 +70,6 @@ interview questions (e.g. LeetCode).
          return list(zip(*matrix))[::-1]
    #+END_SRC
 
-
 * Strings                                                             :topic:
 
 ** Palindromic
@@ -180,11 +179,11 @@ interview questions (e.g. LeetCode).
 
   See [[file:../theory/trees.org][Trees]] for more information.
 
-* Heaps
+* Heaps                                                               :topic:
 
   See [[file:../theory/heaps.org][Heaps]] for information and examples.
 
-* Searching
+* Searching                                                           :topic:
 
   [[file:../theory/binary-search.org][Binary search]] is an effective search tool. It is applicable to more than just
   searching in sorted arrays, e.g., it can be used to search an interval of real
@@ -192,11 +191,11 @@ interview questions (e.g. LeetCode).
 
   Also see [[file:../theory/selection.org][selection]].
 
-* Hash Tables
+* Hash Tables                                                         :topic:
 
   See [[file:../theory/hash-tables.org][Hash Tables]] for more information.
 
-* Sorting
+* Sorting                                                             :topic:
 
   See [[file:../theory/sorting-algorithms.org][Sorting Algorithms]] for more information.
 
@@ -233,6 +232,19 @@ interview questions (e.g. LeetCode).
    i]ntervals joining when the current interval's start is before the previous
    interval's end.
 
-* Binary Search Trees
+* Binary Search Trees                                                 :topic:
 
   See [[file:../theory/trees.org][Trees]] for more information. Remember standard traversal methods (and BFS).
+
+* Recursion                                                           :topic:
+
+  Recursion is especially suitable when the input is expressed using recursive
+  rules (e.g. recurrence relation). Consider recursion in search, enumeration,
+  and [[file:../theory/divide-and-conquer.org][divide-and-conquer]].
+
+  Two key ingredients to a successful use of recursion are identifying the base
+  cases, which are to be solved directly, and ensuring process, that is the
+  recursion converges to the solution.
+
+  [[file:../theory/combinatorial-search-and-heuristic-methods.org][Backtracking]] is a useful technique for combinatorial search that uses
+  recursion.

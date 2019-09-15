@@ -84,6 +84,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:theory/algorithms.org][Algorithms]]
     - [[file:theory/algorithm-analysis.org][Analysis of Algorithms]]
     - [[file:theory/binary-search.org][Binary Search]]
+    - [[file:theory/combinatorial-search-and-heuristic-methods.org][Combinatorial Search and Heuristic Methods]]
     - [[file:theory/correctness.org][Correctness]]
     - [[file:theory/divide-and-conquer.org][Divide-And-Conquer]]
     - [[file:theory/genetic-algorithms.org][Genetic Algorithms]]
