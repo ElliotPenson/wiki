@@ -1,6 +1,5 @@
 #+TITLE: Genetic Algorithms
 #+AUTHOR: Elliot Penson
-#+OPTIONS: num:nil
 
 Information on this page is taken (often directly) from [[https://en.wikipedia.org/wiki/Genetic_algorithm][Wikipedia]].
 

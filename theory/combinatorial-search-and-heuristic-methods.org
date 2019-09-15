@@ -83,10 +83,8 @@ S. Skiena.
          backtrack([])
          return solutions
 
-
      def is_solution(board, n):
          return len(board) == n
-
 
      def find_candidates(board, n):
          row = len(board)
@@ -230,3 +228,5 @@ S. Skiena.
    The idea behind genetic algorithms is extremely appealing. However, they
    don't seem to work as well on practical combinatorial optimization problems
    as simulated annealing does.
+
+   See [[file:./genetic-algorithms.org][Genetic Algorithms]] for more information.
