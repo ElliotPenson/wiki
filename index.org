@@ -122,6 +122,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
 
 * Miscellaneous
 
-  - [[file:miscellaneous/people.org][People]]
-  - [[file:miscellaneous/vocabulary.org][Vocabulary]]
   - [[file:./miscellaneous/competitive-programming.org][Competitive Programming]]
+  - [[file:miscellaneous/people.org][People]]
+  - [[file:miscellaneous/system-design-interview.org][System Design Interview]]
+  - [[file:miscellaneous/vocabulary.org][Vocabulary]]
