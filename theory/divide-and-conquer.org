@@ -37,3 +37,29 @@ obtained in $O(n \lg n)$ time.
   For example, the running time behavior of [[file:sorting-algorithms.org][mergesort]] is governed the recurrence
   $T(n) = 2T(n/2) + O(n)$. This recurrence evaluates to $T(n) = O(n \lg
   n)$. [[file:binary-search.org][Binary search]] is governed by the recurrence $T(n) = T(n/2) + O(1)$.
+
+* Example
+
+  This example comes from /Elements of Programming Interviews/ by Aziz et al.
+
+  Suppose we are asked to design an algorithm that computes a placement of 21
+  *triominoes* that covers the 8x8 *Mboard*. A triomino is three unit-sized
+  squares in an L-shape. An Mboard is a mutilated chessboard made up of 64
+  unit-sized squares arranged in an 8x8 square, minus the top-left square.
+
+  [[file:../images/mboard.png]]
+
+  The key insight is that if a placement exists for an $n$ x $n$ Mboard, then
+  one also exists for a $2n$ x $2n$ Mboard. Now we can apply
+  divide-and-conquer. Take four $n$ x $n$ Mboards and arrange them to form a
+  $2n$ x $2n$ Mboard square in such a way that three of the Mboards have their
+  missing square set towards the center and one Mboard has its missing square
+  outward to coincide with the missing corner of a $2n$ x $2n$ Mboard. The gap
+  in the center can be covered with a triomino and, by hypothesis, we can cover
+  the four $n$ x $n$ Mboards with triominoes as well.
+
+  With divide-and-conquer, the algorithm works by repeatedly decomposing a
+  problem into two or more smaller independent subproblems of the same kind,
+  until it gets to instances that are simple enough to be solved directly. The
+  solutions to the subproblem are then combined to give a solution to the
+  original problem.
