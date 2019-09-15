@@ -87,6 +87,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:theory/combinatorial-search-and-heuristic-methods.org][Combinatorial Search and Heuristic Methods]]
     - [[file:theory/correctness.org][Correctness]]
     - [[file:theory/divide-and-conquer.org][Divide-And-Conquer]]
+    - [[file:theory/dynamic-programming.org][Dynamic Programming]]
     - [[file:theory/genetic-algorithms.org][Genetic Algorithms]]
     - [[file:theory/program-modeling.org][Program Modeling]]
     - [[file:theory/selection.org][Selection]]

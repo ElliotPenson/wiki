@@ -248,3 +248,7 @@ interview questions (e.g. LeetCode).
 
   [[file:../theory/combinatorial-search-and-heuristic-methods.org][Backtracking]] is a useful technique for combinatorial search that uses
   recursion.
+
+* Dynamic Programming                                                 :topic:
+
+  See [[file:../theory/dynamic-programming.org][Dynamic Programming]].
