@@ -131,6 +131,66 @@ algorithm. Dynamic programming is essentially a tradeoff of space for time.
   recurrence only requires two rows at a time. Thus, this algorithm could be
   further optimized to ~O(n)~ space without changing the time complexity.
 
+* Maximum Subarray
+
+  Here is a more sophisticated application of dynamic programming. Consider the
+  problem of finding the maximum sum over all subarrays of a given array of
+  integers. For example, the following array's max subarray starts at index 0
+  and ends at index 3.
+
+  #+BEGIN_SRC python
+    [904, 40, 523, 12, -335, -385, -124, 481, -31]
+  #+END_SRC
+
+  The brute-force algorithm, which computes each subarray sum, has $O(n^3)$ time
+  complexity.
+
+  Here's a solution with dynamic programming. The maximum subarray must end at
+  some position. Notice that the largest range ending at $i$ is ~best_at(i) =
+  max(A[i], A[i] + best_at(i - 1))~. Our final answer is the maximum "best_at"
+  over all ~i~. Here's an approach with memoization.
+
+  #+BEGIN_SRC python
+    def max_subarray(array):
+        cache = {}
+
+        def best_at(array, index):
+            if index not in cache:
+                if index == 0:
+                    cache[0] = array[0]
+                else:
+                    cache[index] = max(array[index], cache[index - 1] + array[index])
+            return cache[index]
+
+        return max(best_at(array, index) for index in range(len(array)))
+  #+END_SRC
+
+  Let's remove the recursive calls and use dynamic programming.
+
+  #+BEGIN_SRC python
+    def max_subarray(array):
+        best_at = [None] * len(array)
+        for index in array:
+            if index == 0:
+                best_at[index] = array[index]
+            else:
+                best_at[index] = max(array[index], array[index] + best_at[index - 1])
+        return max(best_at)
+  #+END_SRC
+
+  Finally, notice that we can go to constant space by only remembering the last
+  "best_at" and the maximum.
+
+  #+BEGIN_SRC python
+    def max_subarray(array):
+        last, best = array[0], array[0]
+        for index in range(1, len(array)):
+            last = max(array[index], last + array[index])
+            best = max(last, best)
+        return best
+  #+END_SRC
+
+
 * Dynamic Programming in Practice
 
   There are three steps involved in solving a problem by dynamic programming:
