@@ -89,6 +89,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:theory/divide-and-conquer.org][Divide-And-Conquer]]
     - [[file:theory/dynamic-programming.org][Dynamic Programming]]
     - [[file:theory/genetic-algorithms.org][Genetic Algorithms]]
+    - [[file:theory/greedy-algorithms.org][Greedy Algorithms]]
     - [[file:theory/program-modeling.org][Program Modeling]]
     - [[file:theory/selection.org][Selection]]
     - [[file:theory/sorting-algorithms.org][Sorting Algorithms]]

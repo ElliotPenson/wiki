@@ -1,0 +1,50 @@
+#+TITLE: Greedy Algorithms
+#+AUTHOR: Elliot Penson
+
+Greedy algorithms make the decision of what to do next by selecting the best
+local option from all available choices without regard to the global
+structure. This heuristic produces the optimum solution for /some/ problems.
+
+* 3Sum
+
+  Given an array and a number, determine if there are three entries in the array
+  which add up to the specified number.
+
+  The brute force algorithm is to consider all possible triples ($O(n^3)$). We
+  can improve the time complexity to $O(n^2)$ by using a linear version of
+  /2Sum/. The 2Sum implementation below first places all array items in a
+  set. Note that we could return the indices by storing items in a dictionary
+  with item keys and index values.
+
+  #+BEGIN_SRC python
+    def has_three_sum(array, target):
+        return any(has_two_sum(array, target - item) for item in array)
+
+    def has_two_sum(array, target):
+        values = set(array)
+        return any(target - item in values for item in array)
+  #+END_SRC
+
+  We can remove the need for $O(n)$ space with a greedy algorithm. First, sort
+  the given array. Then, compare $A[0] + A[n - 1]$ with the target. If the sum
+  is smaller than the target, move to $A[1] + A[n - 1]$. If the sum is larger
+  than the target, move to $A[0] + A[n - 2]$. Follow this logic until either the
+  target is reached or the indices meet.
+
+  #+BEGIN_SRC python
+    def has_three_sum(array, target):
+        array.sort()
+        return any(has_two_sum(array, target - item) for item in array)
+
+    def has_two_sum(array, target):
+        left, right = 0, len(array) - 1
+        while left < right:
+            total = array[left] + array[right]
+            if total == target:
+                return True
+            elif total < target:
+                left += 1
+            else:
+                right -= 1
+        return False
+  #+END_SRC
