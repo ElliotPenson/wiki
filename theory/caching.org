@@ -1,0 +1,50 @@
+#+TITLE: Caching
+#+AUTHOR: Elliot Penson
+
+Caches take advantage of the locality of reference principle: recently requested
+data is likely to be requested again. They are used in almost every layer of
+computing: hardware, operating systems, web browsers, web applications, and
+more. A cache is like short-term memory: it has a limited amount of space, but
+is typically faster than the original data source and contains the most recently
+accessed items. Caches can exist at all levels in architecture, but are often
+found at the level nearest to the frontend where they return data quickly
+without taxing downstream levels.
+
+Information on this page comes from Educative's /System Design/ course.
+
+* Examples
+
+  A cache directly on a request layer node enables the local storage of response
+  data. Each time a request is made to the service, the node will quickly return
+  local cached data if it exists (*cache hit*). If the requested information is
+  not in the cache, the node will query the disk (*cache miss*).
+
+  A *content distribution network* (CDN) is a system of distributed servers
+  (network) that deliver web pages based on the geographic locations of the
+  user. The edge locations of a CDN often cache static assets.
+
+* Cache Invalidation
+
+  Caching does require some maintenance to keep content coherent with the source
+  of truth. If the data is modified in the database, it should probably be
+  invalidated in the cache. Three main schemes exist for cache invalidation.
+
+  - *Write-through cache*
+    - Data is written to the cache and the database at the same time. This
+      schema has the disadvantage of higher latency for write operations.
+  - *Write-around cache*
+    - Data is written to the database and bypasses the cache. A read request of
+      recently written data will create a cache miss.
+  - *Write-back cache*
+    - Data is written to the cache alone. The write to permanent storage is done
+      after specified intervals or under certain conditions. This approach
+      increases the risk of data loss.
+
+* Cache Eviction
+
+  - *First In First Out (FIFO)*
+  - *Last In First Out (LIFO)*
+  - *Least Recently Used (LRU)*
+  - *Most Recently Used (MRU)*
+  - *Least Frequently Used (LFU)*
+  - *Random Replacement (RR)*
