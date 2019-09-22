@@ -17,6 +17,9 @@ anticipate faults and can cope with them are called *fault-tolerant* or
   fault to zero; therefore it is usually best to design fault-tolerance
   mechanisms that prevent faults from causing failures.
 
+  Reliability is sometimes seen as the probability a system will fail in a given
+  period.
+
 * Types of Faults
 
 ** Hardware Faults
@@ -60,3 +63,13 @@ anticipate faults and can cope with them are called *fault-tolerant* or
    - Set up detailed and clear monitoring, such as performance metrics and error
      rates.
    - Implement good management practices and training.
+
+* Reliability vs. Availability
+
+  Availability is the time a system remains operational to perform its required
+  function in a specific period. If a system is reliable, it is
+  available. However, if it is available, it is not necessarily reliable. In
+  other words, high reliability contributes to high availability, but it is
+  possible to achieve a high availability even with an unreliable product by
+  minimizing repair time and ensuring that spares are always available when they
+  are needed.

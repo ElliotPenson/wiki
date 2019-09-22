@@ -1,0 +1,65 @@
+#+TITLE: Load Balancing
+#+AUTHOR: Elliot Penson
+
+A *load balancer* is a component of a distributed system that spreads traffic
+across a cluster of servers.
+
+[[file:../images/load-balancer.svg]]
+
+Information on this page comes from Educative's /System Design/ course.
+
+* Benefits
+
+  Load balancers maximize throughput and minimize response time by distributing
+  load among multiple servers.
+
+  Load balancers improve reliability of systems through redundancy. A load
+  balancer keeps track of the status of resources. If a server is not available
+  to take new requests, is not responding, or has elevated error rates the load
+  balancer will stop sending traffic to such a server. By balancing application
+  requests across multiple servers, a load balancer prevents any one application
+  server from becoming a single point of failure.
+
+* Location
+
+  Typically a load balancer sits between the client and the server, but to
+  utilize full scalability and redundancy, we can try to balance the load at
+  each layer of the system. We can add load balancers at three places.
+
+  - Between the user and the web server.
+  - Between web servers and an internal platform layer.
+  - Between an internal platform layer and a database.
+
+  [[file:../images/multi-load-balancer.svg]]
+
+* Algorithms
+
+  Load balancers should only forward traffic to healthy backend servers. To
+  monitor the health of a backend server, *health checks* regularly attempt to
+  connect to backend servers to ensure that servers are listening.
+
+  A number of load balancing methods exist.
+
+  - *Least Connection Method*
+    - Direct traffic to the server with the fewest active connections.
+  - *Least Response Time Method*
+    - Direct traffic to the server with the fewest active connections and the
+      lowest average response time.
+  - *Least Bandwidth Method*
+    - Select the server that is currently serving the least amount of traffic
+      measured in megabits per second (Mbps).
+  - *Round Robin Method*
+    - Cycle through the list of servers and send each new request to the next
+      server. This method may be *weighted* when servers have different
+      processing capabilities.
+  - *IP Hash*
+    - A hash of the IP address of the client is calculated to redirect the
+      request to a server.
+
+* Redundant Load Balancers
+
+  The load balancer can be a single point of failure. To overcome this, a second
+  load balancer can be connected to the first to form a cluster. Each load
+  balancer monitors the health of the other and, since both of them are equally
+  capable of serving traffic and failure detecting, in the event the main load
+  balancer fails, the second load balancer takes over.
