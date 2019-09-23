@@ -74,6 +74,11 @@ Design Manual/ by Skiena.
 
 * Representations
 
+  The two basic graph data structures are *adjacency matrices* and *adjacency
+  lists*. We assume a graph $G = (V, E)$ contains $n$ vertices and $m$
+  edges. Adjacency lists are the right data structure for most applications of
+  graphs.
+
 ** Adjacency Matrix
 
    We can represent a graph by an /adjacency matrix/; if there are $n
@@ -139,62 +144,197 @@ Design Manual/ by Skiena.
    range is usually a crucial factor in selecting the right graph
    algorithm.
 
-   [see World Wide Web example in the shaded box of page 82]
+* Traversal
 
-* Operations
+  The key idea behind graph traversal is to mark each vertex when we first visit
+  it and keep track of what we have not yet completely explored. Each vertex may
+  be /undiscovered/, /discovered/, or /processed/. We must maintain a structure
+  containing the vertices that we have discovered but not yet completely
+  processed.
 
-** Depth-first search in undirected graphs
+** Breadth-First Search (BFS)
 
-   Depth-first search (DFS) addresses the question "what parts of the
-   graph are reachable from a given vertex?" DFS works by exploring
-   deep before going wide. In other words, the algorithm looks at the
-   entirety of a child before moving to the next child. Since graphs
-   can be cyclic, DFS must maintain a set of visited vertexes.
+   The basic breadth-first search algorithm is given below. The algorithm
+   explores wide before going deep; we look at each child before looking at any
+   of the children's children. BFS takes $O(n + m)$ time.
 
-*** Sample Code
+   #+BEGIN_SRC python
+     def bfs(graph, root):
+         parent = {}
+         discovered = {root}
+         queue = [root]
+         while queue:
+             current = queue.pop(0)
+             for neighbor in get_adjacent(current, graph):
+                 if neighbor not in discovered:
+                     parent[neighbor] = current
+                     discovered.add(neighbor)
+                     queue.append(neighbor)
+   #+END_SRC
 
-    #+BEGIN_SRC python
-      def depth_first_search(vertex, visited=None):
-          if visited is None:
-              visited = set()
-          visited.add(vertex)
-          for neighbor in vertex.neighbors():
-              if neighbor not in visited:
-                  depth_first_search(graph, neighbor, visited)
-          return visited
-    #+END_SRC
+   Note that to search an entire graph one would need to apply this function to
+   each vertex in the graph.
+   
+   In this implementation of breadth-first search, we assign a direction to each
+   edge, from the discoverer ~current~ to the discovered ~neighbor~. We maintain
+   a ~parent~ map which defines a tree on the vertices of the graph. This tree
+   contains the *shortest path* from the root to every other node in the tree. A
+   breadth-first search tree can be seen in the right of the image below.
 
-    Note that to search an entire graph one would need to apply this
-    function to each vertex in the graph.
+   [[file:../images/bfs.png]]
 
-** Breadth-first search in undirected graphs
+   The graph edges that do not appear in the breadth-first search tree also have
+   special properties. For undirected graphs, non-tree edges can point only to
+   vertices on the same level as the parent vertex, or to vertices on the level
+   directly below the parent. These properties follow easily from the fact that
+   each path in the tree must be the shortest path in the graph.
 
-   Breadth-first search (BFS) is similar to DFS. Both algorithms give
-   vertexes reachable from a given vertex. Unlike DFS though, BFS
-   explores wide before going deep. In other words, the algorithm
-   looks at each child before looking at any of the children's
-   children. BFS (like DFS) maintains a set of visited vertexes.
+*** Applications of BFS
 
-   DFS and BFS can both be modified to find paths between vertexes. An
-   advantage of BFS over DFS is that BFS is guaranteed to return the
-   shortest path first.
+**** Connected Components
 
-*** Sample Code
+     A *connected component* of an undirected graph is a maximal set of vertices
+     such that there is a path between every pair of vertices. The components
+     are separate "pieces" of the graph such that there is no connection between
+     the pieces. An amazing number of seemingly complicated problems reduce to
+     finding or counting connected components. For example, testing whether a
+     puzzle such as the Rubik's Cube or the 15 puzzle can be solved from any
+     position is really asking whether the graph of legal configurations is
+     connected.
 
-    #+BEGIN_SRC python
-      def breadth_first_search(vertex):
-          queue = [vertex]
-          visited = set()
-          while queue:
-              current = queue.pop(0)
-              if current not in visited:
-                  visited.add(current)
-                  queue.extend(vertex.neighbors)
-          return visited
-    #+END_SRC
+     Connected components can be found using breadth-first search since vertex
+     order does not matter. We start from the first vertex. Anything we discover
+     during this search must be part of the same connected component. We then
+     repeat the search from any undiscovered vertex (if one exists) to define
+     the next component, and so on until all vertices have been found.
 
-    Note that to search an entire graph one would need to apply this
-    function to each vertex in the graph.
+**** Two-Coloring Graphs
+
+     The *vertex-coloring* problem seeks to assign a label (or color) to each
+     vertex of a graph such that no edge links any two vertices of the same
+     color. We can easily avoid all conflicts by assigning each vertex a unique
+     color. However, the goal is to use as few colors as possible.
+
+     A graph is *bipartite* if it can be colored without conflicts while using
+     only two colors. Consider the "had-sex-with" graph in a heterosexual
+     world. Men have sex only with women, and vice versa. Thus gender defines a
+     legal two-coloring, in this simple model.
+
+     We can augment breadth-first search so that whenever we discover a new
+     vertex, we color it the opposite of its parent. We check whether any
+     nondiscovery edge links two vertices of the same color. Such a conflict
+     means that the graph cannot be two-colored.
+
+** Depth-First Search (DFS)
+
+   The difference between BFS and DFS results is in the order in which they
+   explore vertices. This order depends completely upon the container data
+   structure used to store the unprocessed vertices: BFS uses a queue, DFS uses
+   a stack. DFS implementations often use recursion instead of an explicit
+   stack. Depth-first search explores deep before going wide; the algorithm
+   looks at the entirety of a child before moving to the next child.
+
+   #+BEGIN_SRC python
+     def dfs(root, graph):
+         discovered = set()
+         parent = {}
+
+         def search(node):
+             discovered.add(node)
+             for neighbor in get_adjacent(node, graph):
+                 if neighbor not in discovered:
+                     parent[neighbor] = root
+                     dfs(neighbor, graph)
+
+         search(root)
+   #+END_SRC
+
+   Note that some implementations of depth-first search also maintain the
+   traversal time for each vertex. A ~time~ clock ticks each time we enter or
+   exit any vertex. ~entry_time~ and ~exit_time~ dictionaries go from node ->
+   time. The time intervals can tell us a vertex's ancestor and how many
+   descendants it has.
+
+   [[file:../images/dfs.png]]
+
+   Depth-first search partitions the edges of an undirected graph into exactly
+   two classes: *tree edges* and *back edges*. The tree edges discover new
+   vertices, and are those encoding in the ~parent~ relation (seen in the image
+   above). Back edges are those whose other endpoint is an ancestor of the
+   vertex being expanded, so they point back into the tree.
+
+*** Applications of DFS
+
+**** Finding Cycles
+
+     Back edges are the key to finding a cycle in an undirected graph. If there
+     is no back edge, all edges are tree edges, and no cycle exists in a
+     tree. But /any/ back edge going from $x$ to an ancestor $y$ creates a cycle
+     with the tree path from $y$ to $x$.
+
+     #+BEGIN_SRC python
+       def has_cycle(node, graph, discovered=None):
+           if discovered is None:
+               discovered = set()
+           discovered.add(node)
+           return any((neighbor in discovered or
+                       has_cycle(graph, neighbor, discoverd))
+                      for neighbor in get_adjacent(node, graph))
+     #+END_SRC
+
+**** Articulation Vertices
+
+     [[file:../images/articulation-vertex.png]]
+
+     The *articulation vertex* is a single vertex whose deletion disconnects a
+     connected component of the graph. Any graph that contains an articulation
+     vertex is inherently fragile, because deleting that single vertex causes a
+     loss of connectivity between other nodes. The *connectivity* of a graph is
+     the smallest number of vertices whose deletion will disconnect the
+     graph. The connectivity is one if the graph has an articulation
+     vertex. More robust graphs without such a vertex are said to be
+     *biconnected*.
+
+     Testing for articulation vertices by brute force is easy. Temporarily
+     delete each vertex $v$, and then do a BFS or DFS traversal of the remaining
+     graph to establish whether it is still connected. The total time is
+     $O(n(m + n))$.
+
+     DFS gives a clever, linear-time algorithm. Look at the depth-first search
+     tree. If this tree represents the entirety of the graph, all internal
+     (non-leaf) nodes would be articulation vertices, since deleting any one of
+     them would separate a leaf from the root. A depth-first search of a
+     /general/ graph partitions the edges into tree edges and back edges. Think
+     of these back edges as security cables linking a vertex back to one of its
+     ancestors. Finding articulation vertices requires maintaining the extent to
+     which back edges (i.e. security cables) link chunks of the DFS tree back to
+     ancestor nodes.
+
+*** DFS on Directed Graphs
+
+    When traversing undirected graphs, every edge is either in the depth-first
+    search tree or a back edge to an ancestor in the tree. For directed graphs,
+    depth-first search labelings can take on a wider range of possibilities:
+    tree edges, forward edges, back edges, and cross edges.
+
+**** Topological Sorting
+
+     Topological sorting is the most important operation on directed acyclic
+     graphs (DAGs). It orders the vertices on a line such that all directed
+     edges go from left to right. Such an ordering cannot exist if the graph
+     contains a directed cycle, because there is no way you can keep going from
+     right on a line and still return back to where you started from!
+
+     Each DAG has at least one topological sort. The importance of topological
+     sorting is that it gives us an ordering to process each vertex before any
+     of its successors. For example, suppose college courses are vertices and
+     prerequisites are edges. Your transcript is a topological sort of courses.
+
+     Topological sorting can be performed efficiently using depth-first
+     searching. A directed graph is a DAG if and only if no back edges are
+     encountered. Labeling the vertices in the reverse order that they are
+     marked /processed/ finds a topological sort of a DAG (i.e. record when you
+     finish processing then reverse the collection).
 
 * TODO Glossary of Terms
 
