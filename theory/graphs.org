@@ -7,6 +7,8 @@ relationship. The key to using graph algorithms effectively in applications
 often lies in correctly modeling your problem so you can take advantage of
 existing algorithms.
 
+Also see [[file:weighted-graphs.org][weighted graphs]].
+
 *Note:* This page comes from /Algorithms/ by Dasgupta et al. and /The Algorithm
 Design Manual/ by Skiena.
 
