@@ -22,4 +22,4 @@ provide commonly needed functionality; these *data systems* include:
 Most data-intensive applications are concerned with [[file:./reliability.org][reliability]], [[file:./scalability.org][scalability]],
 and [[file:maintainability.org][maintainability]].
 
-[[file:../images/data-intensive-architecture.png]]
+[[file:../images/data-system-example.svg]]
