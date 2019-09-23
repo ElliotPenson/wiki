@@ -256,3 +256,39 @@ interview questions (e.g. LeetCode).
 * Greedy Algorithms
 
   See [[file:../theory/greedy-algorithms.org][Greedy Algorithms]].
+
+* Graphs
+
+  See [[file:../theory/graphs.org][Graphs]].
+
+* Parallel Computing
+
+  The two primary models for parallel computation are the /shared memory model/,
+  in which each processor can access any location in memory, and the
+  /distributed memory model/, in which a processor must explicitly send a
+  message to another processor to access its memory. The former is more
+  appropriate in the multicore setting and the latter is more accurate for a
+  cluster.
+
+  Challenges in parallel computing include
+
+  - *Races*: two concurrent instruction sequences access the same address in
+    memory and at least one of them writes to that address.
+  - *Starvation*:  a processor needs a resource but never gets it.
+  - *Deadlock*: thread A acquires lock 1 and thread B acquires lock 2, following
+    which A tries to acquire 2 and B tries to acquire 1.
+  - *Livelock*: a processor keeps retrying an operation that always fails.
+
+  A *semaphore* is a very powerful synchronization construct. Conceptually, a
+  semaphore maintains a set of permits. A thread calling ~acquire()~ on a
+  semaphore waits, if necessary, until a permit is available, and then takes
+  it. A thread calling ~release()~ on a semaphore adds a permit and notifies
+  threads waiting on that semaphore potentially releasing a blocking acquirer.
+
+** Concurrency Tips
+
+   - Start with an algorithm that locks aggressively and is easily seen to be
+     correct. Then add back concurrency, while ensuring the critical parts are
+     locked.
+   - Try to work at a higher level of abstraction. Know the concurrency
+     libraries.
