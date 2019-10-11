@@ -1,0 +1,121 @@
+#+TITLE: Java
+#+AUTHOR: Elliot Penson
+
+*Java* is an object-oriented, statically-typed language developed by Sun
+Microsystems. Programmers compile Java to bytecode that's executed by the *Java
+Virtual Machine* (JVM).
+
+* Hello World
+
+  Place the following code in a file called ~Main.java~.
+
+  #+BEGIN_SRC java
+    public class Main {
+        public static void main(String[] args) {
+            System.out.println("Hello, world.");
+        }
+    }
+  #+END_SRC
+
+  Compile and execute with the following commands.
+
+  #+BEGIN_SRC sh
+    javac Main.java
+    java Main
+  #+END_SRC
+
+* Types
+
+** Primitive Types
+
+   Primitive types begin with a lowercase letter.
+
+   | Type      | Size   | Example             |
+   |-----------+--------+---------------------|
+   | ~byte~    | 1 byte | ~byte b = 1;~       |
+   | ~short~   | 2 byte | ~short s = 2;~      |
+   | ~int~     | 4 byte | ~int i = 3;~        |
+   | ~long~    | 8 byte | ~long l = 4L;~      |
+   | ~float~   | 4 byte | ~float f = 5.6f;~   |
+   | ~double~  | 8 byte | ~double d = 7.8;~   |
+   | ~char~    | 2 byte | ~char c = 'c';~     |
+   | ~boolean~ | 1 bit  | ~boolean b = true;~ |
+
+   Note that ~String~ is sometimes considered a primitive type.
+
+** Arrays
+
+   #+BEGIN_SRC java
+     // Array of size 10.
+     int[] array = new int[10];
+
+     // Arrays can also be declared literally.
+     String[] numbers = {"One", "Two", "Three"};
+   #+END_SRC
+
+** Custom Types
+
+   #+BEGIN_SRC java
+     public interface Animal {
+         public void speak();
+         public void setPosition(int x, int y);
+     }
+
+     public class Dog implements Animal {
+
+         private String name;
+
+         private int x;
+
+         private int y;
+
+         public Dog(String name) {
+             this.name = name;
+             this.x = 0;
+             this.y = 0;
+         }
+
+         public String getName() {
+             return this.name;
+         }
+
+         @Override
+         public void speak() {
+             System.out.println("Bark!");
+         }
+
+         @Override
+         public void setPosition(int x, int y) {
+             this.x = x;
+             this.y = y;
+         }
+     }
+   #+END_SRC
+
+* Control Flow
+
+  If statements are c-like.
+
+  #+BEGIN_SRC java
+    if (test) {
+        // Ran if test is true.
+    } else {
+        // Ran if test is false.
+    }
+  #+END_SRC
+
+  Java has standard for loops. ~for...each~ provides iteration over 'Iterable'
+  types.
+
+  #+BEGIN_SRC java
+    for (int i = 0; i < 10; i++) { }
+
+    for (String item: items) { }
+  #+END_SRC
+
+  Java also has ~while~ and ~do...while~ loops.
+
+* Standard Library
+
+  [[https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html][ArrayList]] provides resizable arrays. [[https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html][HashSet]] and [[https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html][HashMap]] enable sets and maps,
+  respectedly.

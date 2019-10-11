@@ -45,6 +45,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - HTML/[[file:languages/css.org][CSS]]
     - [[./languages/canvas.org][Canvas]]
   - [[file:languages/information-storage.org][Information Storage]]
+  - [[file:languages/java.org][Java]]
   - [[file:languages/lambda-calculus.org][Lambda Calculus]]
   - [[file:languages/python.org][Python]]
   - [[file:languages/sql.org][SQL]]
