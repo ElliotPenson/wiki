@@ -117,5 +117,82 @@ Virtual Machine* (JVM).
 
 * Standard Library
 
-  [[https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html][ArrayList]] provides resizable arrays. [[https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html][HashSet]] and [[https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html][HashMap]] enable sets and maps,
-  respectedly.
+** ArrayList
+
+   [[https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html][ArrayList]] implements the [[https://docs.oracle.com/javase/8/docs/api/java/util/List.html][List]] interface.
+
+   #+BEGIN_SRC java
+     import java.util.ArrayList;
+
+     ArrayList<Integer> items = new ArrayList<>();
+
+     items.add(1);
+     items.add(2);
+     items.get(0); // 1
+     items.size(); // 2
+
+     for (int item : items) {
+         System.out.println(item);
+     }
+   #+END_SRC
+
+** HashMap
+
+   [[https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html][HashMap]] implements the [[https://docs.oracle.com/javase/8/docs/api/java/util/Map.html][Map]] interface.
+
+   #+BEGIN_SRC java
+     import java.util.HashMap;
+
+     HashMap<String, Integer> map = new HashMap<>();
+
+     map.put("One", 1);
+     map.put("Two", 2);
+     map.size();             // 2
+     map.containsKey("One"); // true
+   #+END_SRC
+
+** HashSet
+
+   [[https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html][HashSet]] implements the [[https://docs.oracle.com/javase/8/docs/api/java/util/Set.html][Set]] interface.
+
+   #+BEGIN_SRC java
+     import java.util.HashSet;
+
+     HashSet<Integer> set = new HashSet<>;
+
+     set.add(1);
+     set.add(2);
+
+     set.size();      // 2
+     set.contains(1); // true
+   #+END_SRC
+
+** Random
+
+   #+BEGIN_SRC java
+     int number = (int)(Math.random() * 10) // Number between 0 and 10
+   #+END_SRC
+
+   [[https://docs.oracle.com/javase/8/docs/api/java/util/Random.html][Random]] gives another approach.
+
+   #+BEGIN_SRC java
+     import java.util.Random;
+
+     Random rand = new Random();
+     rand.nextInt(10); // Number between 0 and 9.
+   #+END_SRC
+
+** Sorting
+
+   #+BEGIN_SRC java
+     import java.util.Arrays;
+     import java.util.Collections;
+
+     // Array
+     int[] array = new int {4, 3, 2, 4, 1};
+     Arrays.sort(array);
+
+     // List
+     List<Integer> = List.of(4, 3, 2, 4, 1);
+     Collections.sort(array);
+   #+END_SRC
