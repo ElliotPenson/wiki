@@ -14,8 +14,8 @@ interview questions (e.g. LeetCode).
      - Work on *concrete examples*.
      - Apply *patterns*.
        - Find a good *data structure* (e.g. priority queue, graph)
-       - See if the problem fits an *algorithmic technique*
-         (e.g. divide-and-conquer, recursion, dynamic programming).
+       - See if the problem fits an *algorithmic technique* (e.g. sort,
+         divide-and-conquer, recursion, dynamic programming).
   2. Develop a *simple brute-force solution*.
   3. Analyze the brute-force solution and write a *more efficient algorithm*.
   4. *Test* the program on concrete input.
@@ -231,6 +231,11 @@ interview questions (e.g. LeetCode).
    of intervals. First sort the intervals by their start date. Then traverse the
    i]ntervals joining when the current interval's start is before the previous
    interval's end.
+
+** Sort/Group
+
+   When needing to sort and group items in a list, consider if sorting should
+   come before or after grouping. A good choice may make the problem easier.
 
 * Binary Search Trees                                                 :topic:
 
