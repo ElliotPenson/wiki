@@ -116,6 +116,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
 * Tools
 
   - [[file:tools/command-line.org][Command Line]]
+  - [[file:tools/containers.org][Containers]]
   - [[file:tools/cron.org][Cron and Crontab]]
   - [[file:tools/databases.org][Databases]]
   - [[file:tools/docker.org][Docker]]
@@ -123,6 +124,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:tools/emacs.org][Emacs]]
   - [[file:tools/git.org][Git]]
   - [[file:tools/intellij.org][IntelliJ]]
+  - [[file:tools/kubernetes.org][Kubernetes]]
   - [[file:tools/setup.org][Machine Setup]]
   - [[file:tools/profiling.org][Profiling]]
   - [[file:tools/shebang.org][Shebang]]

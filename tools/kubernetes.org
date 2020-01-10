@@ -1,0 +1,46 @@
+#+TITLE: Kubernetes
+#+AUTHOR: Elliot Penson
+
+* Resources
+
+  | Topic         | Resource                                   |
+  |---------------+--------------------------------------------|
+  | Big Picture   | [[https://www.youtube.com/watch?v=tsk0pWf4ipw][Brendan Burns at Google I/O]]                |
+  | Basics        | Kubernetes [[https://github.com/kubernetes/kubernetes/tree/release-1.1/docs/user-guide/walkthrough][101]], [[https://github.com/kubernetes/kubernetes/blob/release-1.1/docs/user-guide/walkthrough/k8s201.md][201]], [[https://kubernetes.io/docs/home/][documentation]]         |
+  | Practice      | [[https://github.com/kelseyhightower/kubernetes-the-hard-way][Kubernetes the Hard Way]]                    |
+  | Deep Dive     | Linux Foundation Training ([[https://training.linuxfoundation.org/training/introduction-to-kubernetes/][LFS158]], [[https://training.linuxfoundation.org/training/kubernetes-for-developers/][LFD259]]) |
+  | Certification | [[https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/][CKAD]]                                       |
+
+* Overview
+
+  Information in this section is taken from Brendan Burns' [[https://www.youtube.com/watch?v=tsk0pWf4ipw][presentation at
+  Google I/O]].
+
+  #+attr_html: :width 250px :align left
+  [[file:../images/google-cluster.svg]]
+
+  [[file:containers.org][Containers]] are great. /Everything/ at Google runs in a container. To manage
+  these containers, Google developed a cluster management system (*Borg*). The
+  system has four basic parts.
+
+  The *Base OS* and *Container Manager* constitute a container optimized VM
+  image with monitoring, logging, restart, etc. Users configure these images
+  with a declarative manifest file.
+
+  The *Cluster Scheduler* distrubutes work across machines with replication,
+  resizing, and service naming/discovery. Often containers have very different
+  resource requirements and quality of service quarantees. For example, a web
+  server might need very low latency and require higher quality of service than
+  a background batch process. The scheduler efficiently handles these
+  differences.
+
+  *Kubernetes* is an open source project that makes these internal Google
+  concepts available to the world. Kubernetes provides the scheduler (master)
+  and the container manager.
+
+  When scheduling becomes easy, people quickly find themselves with hundereds of
+  pods. Kubernetes provides *labels* where pods can be organized and queried
+  declaratively. One no longer has to worry about particular machines; the
+  cluster becomes one resource which runs containers. This is a powerful
+  abstration. People also want to replicate containers. Kubernetes gives the
+  *service* abstration which provides a named load balancer over a label query.

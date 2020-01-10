@@ -1,7 +1,7 @@
 #+TITLE: Docker
 #+AUTHOR: Elliot Penson
 
-Docker is a platform for development and deployment with containers. Containers
+Docker is a platform for development and deployment with [[file:containers.org][containers]]. Containers
 provide similar isolation to virtual machines but use less computing power by
 leveraging the host kernel. Docker enables standardized packaging. Applications
 become portable as they are abstracted from the environment in which they are

@@ -1,0 +1,14 @@
+#+TITLE: Containers
+#+AUTHOR: Elliot Penson
+
+A *container* is a lightweight linux environment that lets one package
+application pieces into a hermetic, deployable unit. Containers raise the
+abstraction layer from idealized hardware (virtual machines) to idealized
+operating systems. Developers care about containers because...
+
+- the static application environment makes deployments more *reliable*.
+- the repeatable, runnable artifact makes code *portable*.
+- applications are *loosely coupled* and can be organized as microservices.
+- the consistent framework is particularly *automatable*.
+
+Also see [[file:docker.org][Docker]].
