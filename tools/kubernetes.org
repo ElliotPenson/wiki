@@ -3,6 +3,8 @@
 
 * Resources
 
+  Information on this page comes (often directly) from the following resources.
+
   | Topic         | Resource                                   |
   |---------------+--------------------------------------------|
   | Big Picture   | [[https://www.youtube.com/watch?v=tsk0pWf4ipw][Brendan Burns at Google I/O]]                |
@@ -12,9 +14,6 @@
   | Certification | [[https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/][CKAD]]                                       |
 
 * Overview
-
-  Information in this section is taken from Brendan Burns' [[https://www.youtube.com/watch?v=tsk0pWf4ipw][presentation at
-  Google I/O]].
 
   #+attr_html: :width 250px :align left
   [[file:../images/google-cluster.svg]]
@@ -44,3 +43,139 @@
   cluster becomes one resource which runs containers. This is a powerful
   abstration. People also want to replicate containers. Kubernetes gives the
   *service* abstration which provides a named load balancer over a label query.
+
+* Pods
+
+  A *pod* is a group of one or more containers. A pod's containers are deployed
+  together and started, stoped, and replicated as a group. A *pod definition* is
+  a declaration of a *desired state*. Kubernetes' responsibility is to make sure
+  that the current state matches the desired state.
+
+  #+BEGIN_SRC yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: ...
+    spec:
+      containers:
+        name: ...
+        image: ...
+        env: ...
+  #+END_SRC
+
+  #+BEGIN_SRC sh
+    kubectl create -f <yaml-path>
+    kubectl get pods
+    kubetcl delete pod <name>
+  #+END_SRC
+
+* Volumes
+
+  A container file system only lives as long as the container does. A *volume*
+  lets the application's state survive relocation, reboots, and crashes. Specify
+  this persistent storage in your pod definition. Volumes may be mounted in
+  multiple containers. Volume types include ~EmptyDir~ (for new directories) and
+  ~HostPath~ (for existing directories). One may prevent a container from
+  writing to a volume with ~readOnly: true~.
+
+  #+BEGIN_SRC yaml
+     ...
+     kind: Pod
+     spec:
+       containers:
+       - name: ...
+         volumeMounts:
+         - mountPath: ...
+           name: <volume-name>
+       volumes:
+       - name: <volume-name>
+         emptyDir: {}
+  #+END_SRC
+
+* Labels
+
+  Labels are key-value pairs that are attached to objects in Kubernetes. Add a
+  label under ~metadata~ in the pod definition. Labels are a core concept used
+  by other Kubernetes building blocks (replication controllers and services).
+
+  #+BEGIN_SRC yaml
+    ...
+    kind: Pod
+    metadata:
+      name: example
+      labels:
+        <key>: <value>
+    spec:
+      containers:
+        ...
+  #+END_SRC
+
+  Pods may be queried with label selectors.
+
+  #+BEGIN_SRC sh
+    kubectl get pods -l <key>=<value>
+  #+END_SRC
+
+* Replication Controllers
+
+  A replication controller combines a template for pod creation (a
+  "cookie-cutter") and a number of desired replicas, into a single Kubernetes
+  object. The replication controller also contains a label selector that
+  identifies the set of objects managed.
+
+  #+BEGIN_SRC yaml
+    apiVersion: v1
+    kind: ReplicationController
+    metadata:
+      name: <name>
+    spec:
+      replicas: 2
+      selector:
+        <key>: <value>  # label(s)
+      template:  # pod template
+        metadata:
+          labels:
+            <key>: <value>
+        spec:
+          containers:
+            ...
+  #+END_SRC
+
+  #+BEGIN_SRC sh
+    kubectl create -f <yaml-path>
+    kubectl get rc
+    kubectl delete rc <name>
+  #+END_SRC
+
+* Services
+
+  A *service* is an abstraction that refers to a set of pods using a single
+  static IP address. Services may provide load balancing.
+
+  #+BEGIN_SRC yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: <name>
+    spec:
+      ports:
+      - port: <port>
+        ...
+      selector:
+        <key>:<value>  # label(s)
+  #+END_SRC
+
+  #+BEGIN_SRC sh
+    kubectl create -f <yaml-path>
+    kubectl get services
+    kubectl delete service <name>
+  #+END_SRC
+
+* Health Checking
+
+  Health checking may appear at the process level or the application
+  level. Process health checks (default) are a simple check by the Docker
+  daemon. Application health checks may be required to detect issues such as
+  deadlock. Kubernetes supports three types of user implemented health-checks:
+  HTTP, command execution, and TCP socket. Configure health checks in the
+  ~livenessProbe~ section of your container.
