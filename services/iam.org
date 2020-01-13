@@ -15,6 +15,10 @@ access to the AWS Console. IAM gives
 
 *IAM is global*. This service does not allow region selection.
 
+AWS has a *shared responsibility security model*. The security *of* the cloud is
+AWS' responsibility. The security *in* the cloud is the customer's
+responsibility.
+
 * Terminology
   
   - *Users*: End users (think people).

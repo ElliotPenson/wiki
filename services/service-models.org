@@ -1,0 +1,28 @@
+#+TITLE: Service Models
+#+AUTHOR: Elliot Penson
+
+Service models define how a service or product is delivered, how you pay, what
+you receive, and what you manage.
+
+* IaaS
+
+  [[file:../images/iaas.svg]]
+
+  IaaS stands for infrastructure as a service. Here, the system stack is split:
+  the customer manages data, applications, runtimes, and the operating
+  system. AWS EC2 is an example of IaaS.
+
+* PaaS
+
+  [[file:../images/paas.svg]]
+
+  PaaS stands for platform as a service. In PaaS, customers give up a bit more
+  control; customers only manage data and the application(s). Google App Engine
+  is an example of PaaS.
+
+* SaaS
+
+  [[file:../images/saas.svg]]
+
+  SaaS stands for software as a service. The vendor manages the entirety of the
+  system stack (other than perhaps the data). Slack is an example of SaaS.

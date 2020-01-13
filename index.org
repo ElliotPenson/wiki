@@ -79,6 +79,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
     - [[file:services/aws-best-practices.org][Best Practices]]
     - [[file:services/aws-cli.org][Command Line Interface]]
     - [[file:services/aws-developer-tools.org][Developer Tools]]
+  - [[file:services/service-models.org][Service Models]]
 
 * Theory
 
