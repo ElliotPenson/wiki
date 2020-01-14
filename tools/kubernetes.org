@@ -1,6 +1,18 @@
 #+TITLE: Kubernetes
 #+AUTHOR: Elliot Penson
 
+#+ATTR_HTML: :width 100 :align right
+[[file:../images/kubernetes-logo.svg]]
+
+#+BEGIN_QUOTE
+"*Kubernetes* (K8s) is an open-source system for automating deployment, scaling,
+and management of containerized applications." ~ kubernetes.io
+#+END_QUOTE
+
+Kubernetes features include automatic bin packing, self-healing, horizontal
+scaling, service discovery, load balancing, rollouts/rollbacks, secret and
+configuration management, storage orchestration, and batch execution.
+
 * Resources
 
   Information on this page comes (often directly) from the following resources.
@@ -15,7 +27,7 @@
 
 * Overview
 
-  #+attr_html: :width 250px :align left
+  #+ATTR_HTML: :width 250px :align left
   [[file:../images/google-cluster.svg]]
 
   [[file:containers.org][Containers]] are great. /Everything/ at Google runs in a container. To manage
@@ -43,6 +55,93 @@
   cluster becomes one resource which runs containers. This is a powerful
   abstration. People also want to replicate containers. Kubernetes gives the
   *service* abstration which provides a named load balancer over a label query.
+
+* Architecture
+
+  [[file:../images/kubernetes-architecture.png]]
+
+  Image taken from [[https://kubernetes.io/docs/concepts/overview/components][kubernetes.io]].
+
+** Master
+
+   The *master* node provides the cluster's *control plane*. Master components
+   make global decisions about the cluster (e.g. scheduling) and detect and
+   respond to cluster events. Users communicate with the cluster through the
+   master node.
+
+   In High-Availability (HA) mode, master node replicas are added to the
+   cluster. While only one of the master node replicas actively manages the
+   cluster, the control plane components stay in sync across the master node
+   replicas.
+
+** etcd
+
+   Kubernetes saves configuration data and cluster state to *etcd*. This
+   distributed key-value store lives on the master node (*stacked*) or on a
+   dedicated host (*external*). Data is persistent; new information is only
+   appended.
+
+** kube-apiserver
+
+   *kube-apiserver* is a master component that processes REST calls from users
+   and reads/saves state information to etcd. *kube-apiserver* is the only
+   component that communicates with etcd.
+
+** kube-scheduler
+
+   *kube-scheduler* is a master component that assigns new objects, such as
+   pods, to nodes. The scheduler makes decisions based on the current cluster
+   state and new object requirements.
+
+** Controller Managers
+
+   *Controller managers* are control plane components that regulate and respond
+   to the state of the Kubernetes cluster. Controllers are watch-loops which
+   compare the cluster's desired state with the current
+   state. *kube-controller-manager* includes a number of controllers that manage
+   nodes, replication, endpoints, and tokens. *cloud-controller-manager* runs
+   controllers that interact with the underlying infrastructure of a cloud
+   provider.
+
+** Worker
+
+   A *worker* node provides a running environment for client applications. Pods
+   are scheduled on worker nodes. The worker node has a container runtime,
+   kublet, and kube-proxy. Each node may also have addons for DNS, dashboarding,
+   monitoring, and logging.
+
+** Container Runtime
+
+   A container runtime runs containers. Kubernetes supports several container
+   runtimes including Docker, containerd, rkt, and more.
+
+** Kubelet
+
+   A *kubelet* is an agent that runs on each node in the cluster. The kubelet
+   recieves Pod definitions from the master and interacts with the container
+   runtime. The kubelet connects to the container runtime using the *Container
+   Runtime Interface (CRI)*: kubelet as the gRPC client, CRI as the gRPC
+   server. The kubelet also monitors the health of the Pod's running
+   containers. *dockershim* enables CRI on Docker containers.
+
+** kube-proxy
+
+   *kube-proxy* is a network proxy that runs on each node in the cluster.
+   *kube-proxy* maintains network rules on nodes.
+
+* Networking
+
+  A container orchestrator has four distinct networking challenges.
+
+  - Container-to-container communication inside pods.
+    - Kubernetes uses the operating system's *network namespace*. All containers
+      inside a pod are able to communicate via localhost.
+  - Pod-to-pod communication on the same node and across cluster nodes.
+    - Kubernetes has an *IP-per-Pod* model.
+  - Pod-to-service communication within and across namespaces.
+  - External-to-service commuincation for clients to access applications.
+    - Applications are available externally over a virtual IP encapsulated by a
+      service.
 
 * Pods
 
