@@ -1,12 +1,27 @@
 #+TITLE: Kubernetes Objects
 #+AUTHOR: Elliot Penson
 
+[[file:kubernetes.org][Kubernetes]] has an object model that represents persistent entities in the
+cluster. Express objects in the ~.yaml~ format. The desired state is listed in
+the ~spec~ section. Kubernetes manages the ~status~ section (the actual state of
+the object). The control plane tries to match the object's actual state to the
+desired state.
+
+Kubernetes requires four fields.
+
+| Name         | Description                                |
+|--------------+--------------------------------------------|
+| ~apiVersion~ | API endpoint                               |
+| ~kind~       | Object type                                |
+| ~metadata~   | Basic info such as name, labels, namespace |
+| ~spec~       | Desired state definition                   |
+
 * Pods
 
-  A *pod* is a group of one or more containers. A pod's containers are deployed
-  together and started, stoped, and replicated as a group. A *pod definition* is
-  a declaration of a *desired state*. Kubernetes' responsibility is to make sure
-  that the current state matches the desired state.
+  A [[https://kubernetes.io/docs/concepts/workloads/pods/pod/][Pod]] is a group of one or more containers which represent a single instance
+  of an application. A Pod's containers are deployed together and started,
+  stoped, and replicated as a group. Pods share the same host and the same
+  network namespace.
 
   #+BEGIN_SRC yaml
     apiVersion: v1
@@ -18,6 +33,7 @@
         name: ...
         image: ...
         env: ...
+        ports: ...
   #+END_SRC
 
   #+BEGIN_SRC sh
@@ -30,7 +46,7 @@
 
   A container file system only lives as long as the container does. A *volume*
   lets the application's state survive relocation, reboots, and crashes. Specify
-  this persistent storage in your pod definition. Volumes may be mounted in
+  this persistent storage in your Pod definition. Volumes may be mounted in
   multiple containers. Volume types include ~EmptyDir~ (for new directories) and
   ~HostPath~ (for existing directories). One may prevent a container from
   writing to a volume with ~readOnly: true~.
@@ -52,7 +68,7 @@
 * Labels
 
   Labels are key-value pairs that are attached to objects in Kubernetes. Add a
-  label under ~metadata~ in the pod definition. Labels are a core concept used
+  label under ~metadata~ in the Pod definition. Labels are a core concept used
   by other Kubernetes building blocks (replication controllers and services).
 
   #+BEGIN_SRC yaml
@@ -67,18 +83,33 @@
         ...
   #+END_SRC
 
-  Pods may be queried with label selectors.
+  Pods may be queried with label selectors. Kubernetes support two types of
+  selectors: *equality-based selectors* and *set-based selectors*. Note that ~,~
+  acts as "AND".
 
-  #+BEGIN_SRC sh
-    kubectl get pods -l <key>=<value>
+  #+BEGIN_SRC yaml
+    # Equality-based selectors
+    key = value   # note that '==' is also allowed
+    key != value  #
+
+    # Set-based selectors
+    key in (value1, value2)
+    key notin (value1, value2)
+    key   # label must exist
+    !key
   #+END_SRC
 
-* Replication Controllers
+  Label selectors may be used with [[file:kubernetes-cli.org::*Labels][~kubectl~]].
 
-  A replication controller combines a template for pod creation (a
-  "cookie-cutter") and a number of desired replicas, into a single Kubernetes
-  object. The replication controller also contains a label selector that
-  identifies the set of objects managed.
+* ReplicationControllers
+
+  A [[https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/][ReplicationController]] is a *controller* that combines a template for Pod
+  creation (a "cookie-cutter") and a number of desired replicas, into a single
+  Kubernetes object. The ReplicationController also contains a label selector
+  that identifies the set of objects managed.
+
+  *Note*: A Deployment that configures a ReplicaSet is now the recommended way
+  to set up replication.
 
   #+BEGIN_SRC yaml
     apiVersion: v1
@@ -104,9 +135,63 @@
     kubectl delete rc <name>
   #+END_SRC
 
+* ReplicaSets
+
+  A [[https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/][ReplicaSet]] is the next-generation ReplicaController. ReplicaSets support
+  both equality- and set-based selectors, ReplicationControllers only support
+  equality-based selectors. Note that Kubernetes recommends using [[*Deployments][Deployments]]
+  instead of using ReplicaSets directly.
+
+  #+BEGIN_SRC yaml
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    metadata:
+      name: <name>
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          key: value
+      template:
+        metadata:
+          ...
+        spec:
+          ...
+  #+END_SRC
+
+* Deployments
+
+  [[https://kubernetes.io/docs/concepts/workloads/controllers/deployment/][Deployments]] manage the creation, deletion, and updates of Pods. A Deployment
+  automatically creates a ReplicaSet, which then creates a Pod. The
+  DeploymentController is part of the master node's controller manager and
+  allows application updates and downgrades through rollouts and rollbacks.
+
+  #+BEGIN_SRC yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: <name>
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          key: value
+      template:
+        metadata:
+          ...
+        spec:
+          ...
+  #+END_SRC
+
+* Namespaces
+
+  A Kubernetes cluster can be partitioned into virtual sub-clusters using
+  Namespaces. Kubernetes creates four default Namespaces: ~kube-system~,
+  ~kube-public~, ~kube-node-lease~, and ~default~.
+
 * Services
 
-  A *service* is an abstraction that refers to a set of pods using a single
+  A *service* is an abstraction that refers to a set of Pods using a single
   static IP address. Services may provide load balancing.
 
   #+BEGIN_SRC yaml

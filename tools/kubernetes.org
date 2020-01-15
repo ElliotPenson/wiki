@@ -52,11 +52,11 @@ configuration management, storage orchestration, and batch execution.
   and the container manager.
 
   When scheduling becomes easy, people quickly find themselves with hundereds of
-  pods. Kubernetes provides *labels* where pods can be organized and queried
+  pods. Kubernetes provides [[file:kubernetes-objects.org::Labels][*labels*]] where pods can be organized and queried
   declaratively. One no longer has to worry about particular machines; the
   cluster becomes one resource which runs containers. This is a powerful
-  abstration. People also want to replicate containers. Kubernetes gives the
-  *service* abstration which provides a named load balancer over a label query.
+  abstraction. People also want to replicate containers. Kubernetes gives the
+  *service* abstraction which provides a named load balancer over a label query.
 
 * Architecture
 
