@@ -16,14 +16,24 @@ Information on this page is taken from Docker's [[https://docs.docker.com/get-st
   configuration files. A *container* is a runtime instance of an image - what
   the image becomes in memory when executed (a process).
 
-* Execution
+* CLI
 
-  Run a Docker image with ~docker run <image>~. The ~-p~ argument is often used
-  to map a machine's port to a container's published port. Specify ~-d~ to run
-  the container in the background with detached mode. Type ~docker stop
-  <container>~ to stop the container. List all running containers with ~docker
-  ps~, include ~--all~ to also show stopped containers. You may also ~kill~ and
-  ~rm~ containers.
+  #+BEGIN_SRC sh
+    docker run <image>           # Run an image.
+    docker run -d <image>        # Run in background with detached mode
+    docker run -p 80:80 <image>  # Map published port to the host
+
+    docker stop <container>      # Send SIGTERM, then SIGKILL
+    docker kill <container>      # Send SIGKILL
+    docker rm <container>        # Remove a container
+
+    docker ps                    # List running containers
+    docker ps -a                 # List running and stopped containers
+
+    docker exec <container> <command>     # Execute a command
+    docker exec -d <container> <command>  # Run in background
+    docker exec -it <container> bash      # Start interactive shell
+  #+END_SRC
 
 * ~Dockerfile~
 
@@ -66,5 +76,3 @@ Information on this page is taken from Docker's [[https://docs.docker.com/get-st
   with a repository on a registry with the notation
   ~username/repository:tag~. For example, ~docker tag example
   elliot/experiments:1.0~.
-
-* TODO docker-compose
