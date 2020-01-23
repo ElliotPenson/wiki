@@ -11,11 +11,16 @@ operating systems. Developers care about containers because...
 - applications are *loosely coupled* and can be organized as microservices.
 - the consistent framework is particularly *automatable*.
 
-A *container image* bundles the application along with its runtime and
-dependencies. Container images become containers at runtime.
+*Container images* bundle a program and its runtime/dependencies into a single
+artifact under a root filesystem. Images also include additional metadata used
+by a *container runtime* to start a running application based on the contents of
+the container image. Container images become containers at runtime.
 
 A *container orchestrator* (such as [[file:kubernetes.org][Kubernetes]]) are tools which group containers
 to form clusters. Orchestrators provide fault-tolerance, scalability, optimal
 resource usage, auto-discovery, and deployments.
+
+A *container registry* (such as ECR, GCR, and Docker Registry) enables sharing
+by storing images which may be later pulled by others.
 
 Also see [[file:docker.org][Docker]].

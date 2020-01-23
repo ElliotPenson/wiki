@@ -1,13 +1,12 @@
 #+TITLE: Docker
 #+AUTHOR: Elliot Penson
 
-Docker is a platform for development and deployment with [[file:containers.org][containers]]. Containers
-provide similar isolation to virtual machines but use less computing power by
-leveraging the host kernel. Docker enables standardized packaging. Applications
-become portable as they are abstracted from the environment in which they are
-run.
+Docker is a platform for development and deployment with [[file:containers.org][containers]]. Docker
+images have been standardized by the Open Container Initiative to the OCI image
+format.
 
-Information on this page is taken from Docker's [[https://docs.docker.com/get-started/][getting started guide]].
+Information on this page is taken from Docker's [[https://docs.docker.com/get-started/][getting started guide]] and
+chapter 2 of /Kubernetes: Up & Running/.
 
 * Concepts
 
@@ -15,6 +14,11 @@ Information on this page is taken from Docker's [[https://docs.docker.com/get-st
   application - the code, a runtime, libraries, environment variables, and
   configuration files. A *container* is a runtime instance of an image - what
   the image becomes in memory when executed (a process).
+
+  Docker images are made up of a series of filesystem layers (an *overlay*
+  filesystem). Each layer adds, removes, or modifies files from the preceding
+  layer in the filesystem. For example, container /A/ may be OS only, container
+  /B/ adds Ruby, and container /C/ adds Golang.
 
 * CLI
 
@@ -45,14 +49,14 @@ Information on this page is taken from Docker's [[https://docs.docker.com/get-st
     # Define a parent image.
     FROM python:3.6-slim
 
-    # Set the working directory.
+    # Set the working directory in the container image.
     WORKDIR /app
 
-    # Copy to the container.
-    COPY . /app
+    COPY requirements.txt ./
+    RUN pip install -r requirements.txt  # executes in the container.
 
-    # Execute commands.
-    RUN pip install -r requirements.txt
+    # Copy all program files to the container.
+    COPY . .
 
     # Make ports available externally to the container.
     EXPOSE 80
@@ -63,6 +67,14 @@ Information on this page is taken from Docker's [[https://docs.docker.com/get-st
     # Run commands on launch.
     CMD ["python", "app.py"]
   #+END_SRC
+
+  In general, you want to order your layers from least likely to change to most
+  likely to change in order to optimize the image size for pushing and
+  pulling. This is why, above, we copy ~requirements.txt~ and install
+  dependencies before copying the rest of the program files.
+
+  Handy trick: use a ~.dockerignore~ file to define a set of files that should
+  be ignored when copying to the image.
 
 * Registries
 
