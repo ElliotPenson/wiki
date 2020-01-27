@@ -16,12 +16,23 @@ Kubernetes requires four fields.
 | ~metadata~   | Basic info such as name, labels, namespace |
 | ~spec~       | Desired state definition                   |
 
+Information on this page comes from /Kubernetes: Up & Running/.
+
 * Pods
 
   A [[https://kubernetes.io/docs/concepts/workloads/pods/pod/][Pod]] is a group of one or more containers which represent a single instance
-  of an application. A Pod's containers are deployed together and started,
+  of an application. Pods, not containers, are the smallest deployable artifact
+  in a Kubernetes cluster. A Pod's containers are deployed together and started,
   stoped, and replicated as a group. Pods share the same host and the same
   network namespace.
+
+  The imperative ~kubectl run~ command can create a Pod.
+
+  #+BEGIN_SRC sh
+    kubectl run <name> --generator=run-pod/v1 --image=<image>
+  #+END_SRC
+
+  Pods can also be described and created with a *Pod manifest*.
 
   #+BEGIN_SRC yaml
     apiVersion: v1
@@ -36,17 +47,13 @@ Kubernetes requires four fields.
         ports: ...
   #+END_SRC
 
-  #+BEGIN_SRC sh
-    kubectl create -f <yaml-path>
-    kubectl get pods
-    kubetcl delete pod <name>
-  #+END_SRC
+  Useful additional topics include [[https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/][health checks]] and [[https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/][resource management]].
 
 * Volumes
 
   A container file system only lives as long as the container does. A *volume*
   lets the application's state survive relocation, reboots, and crashes. Specify
-  this persistent storage in your Pod definition. Volumes may be mounted in
+  this persistent storage in your Pod manifest. Volumes may be mounted in
   multiple containers. Volume types include ~EmptyDir~ (for new directories) and
   ~HostPath~ (for existing directories). One may prevent a container from
   writing to a volume with ~readOnly: true~.
@@ -64,6 +71,9 @@ Kubernetes requires four fields.
        - name: <volume-name>
          emptyDir: {}
   #+END_SRC
+
+  Note that volumes are specified in two locations: the ~spec.volumes~ section
+  and the ~volumeMounts~ array in the container definition.
 
 * Labels
 
@@ -185,14 +195,18 @@ Kubernetes requires four fields.
 
 * Namespaces
 
-  A Kubernetes cluster can be partitioned into virtual sub-clusters using
-  Namespaces. Kubernetes creates four default Namespaces: ~kube-system~,
-  ~kube-public~, ~kube-node-lease~, and ~default~.
+  Kubernetes uses *namespaces* to organize objects in the cluster. You can think
+  of each namespace as a folder that holds a set of objects. Namespaces
+  partition the cluster into virtual sub-clusters. Kubernetes creates four
+  default Namespaces: ~kube-system~, ~kube-public~, ~kube-node-lease~, and
+  ~default~.
 
 * Services
 
-  A *service* is an abstraction that refers to a set of Pods using a single
-  static IP address. Services may provide load balancing.
+  To access the application a user need to connect to a Pod. Pods are ephemeral
+  in nature. A *service* is an abstraction that refers to a set of Pods using a
+  single static IP address and provides load balancing by default. Services
+  group pods with label selectors.
 
   #+BEGIN_SRC yaml
     apiVersion: v1
@@ -200,12 +214,21 @@ Kubernetes requires four fields.
     metadata:
       name: <name>
     spec:
-      ports:
-      - port: <port>
-        ...
       selector:
         <key>:<value>  # label(s)
+      ports:
+      - protocol: ...
+        port: ...
+        targetPort: ...
   #+END_SRC
+
+  A logical set of a Pod's IP address, along with the ~targetPort~ is referred
+  to as a *Service endpoint*.
+
+  All worker nodes run a daemon called ~kube-proxy~ which watches the API server
+  on the master node for the additional and removal of Services and
+  endpoints. ~kube-proxy~ configures iptables rules to capture traffic for its
+  ClusterIP and foward it to one of the Service's endpoints.
 
   #+BEGIN_SRC sh
     kubectl create -f <yaml-path>
