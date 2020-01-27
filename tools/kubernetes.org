@@ -129,7 +129,8 @@ configuration management, storage orchestration, and batch execution.
 ** kube-proxy
 
    *kube-proxy* is a network proxy that runs on each node in the cluster.
-   *kube-proxy* maintains network rules on nodes.
+   *kube-proxy* maintains network rules on nodes and is responsible for routing
+   *network traffic to load-balanced services in the cluster.
 
 * Networking
 
@@ -159,3 +160,46 @@ configuration management, storage orchestration, and batch execution.
   deadlock. Kubernetes supports three types of user implemented health-checks:
   HTTP, command execution, and TCP socket. Configure health checks in the
   ~livenessProbe~ section of your container.
+
+* API
+
+  Kubernetes provides an API server (~kube-apiserver~). The HTTP API space can
+  be divided into three groups.
+
+  - Core Group (~/api/v1~)
+    - Include objects such as Pods, Services, nodes, etc.
+  - Named Group (~/apis/$NAME/$VERSION~)
+    - Different versions (e.g. ~alpha~, ~beta~) imply different levels of
+      support.
+  - System-Wide
+    - Endpoints include ~/healthz~, ~/logs~, ~/metrics~, and others.
+
+  The API may be access directly or through [[file:kubernetes-cli.org][the CLI]].
+
+* Authentication
+
+  Each Kubernetes access request goes through three stages: *authentication*,
+  *authorization*, and *admission control*.
+
+  Authentication logs in the user. Kubernetes does not store users or
+  usernames. Users may be *normal users* (those managed outside the cluster) or
+  *service acconts* (in-cluster users). Service accounts are tied to a given
+  namespace and communicate with secrets. Kubernetes uses client certificates,
+  bearer tokens, an authenticating proxy, or HTTP basic auth to authenticate API
+  requests through authentication plugins.
+
+* Authorization
+
+  After successful authentication, a request needs to be authorized. Kubernetes
+  may compare a number of request attributes (e.g. user, group, extra, resource,
+  namespace) against policies. Like authentication, authorization supports
+  multiple modules/authorizers including [[https://kubernetes.io/docs/reference/access-authn-authz/node/][node authorization]], [[https://kubernetes.io/docs/reference/access-authn-authz/abac/][ABAC]], [[https://kubernetes.io/docs/reference/access-authn-authz/webhook/][webhook]], and
+  [[https://kubernetes.io/docs/reference/access-authn-authz/rbac/][RBAC]].
+
+* Admission Control
+
+  Admission control is used to specify granular access control policies
+  (e.g. privileged containers, resource quota limits). These policies are
+  enforced with admission controllers like ResourceQuota, DefaultStorageClass,
+  AlwaysPullImages, etc. These controllers only come into effect after API
+  requests are authenticated and authorized.
