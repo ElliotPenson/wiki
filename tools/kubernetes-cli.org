@@ -1,0 +1,120 @@
+#+TITLE: Kubernetes CLI
+#+AUTHOR: Elliot Penson
+
+~kubectl~ is the Kubernetes CLI for managing cluster resources and
+applications. ~kubectl~ contacts kubernetes through the [[file:kubernetes.org::API][API server]].
+
+Information on this page comes from /Kubernetes: Up & Running/. See ch. 4 and
+the end of ch. 3 for more information.
+
+* Status
+
+  #+BEGIN_SRC sh
+    kubectl config view            # Display configuration file (usually ~/.kube/config)
+    kubectl version                # Display client and API server versions.
+    kubectl cluster-info           # TODO
+    kubectl get componentstatuses  # Display cluster health.
+  #+END_SRC
+
+* Namespaces
+
+  By default, ~kubectl~ interacts with the ~default~ namespace. Pass the
+  ~--namespace~ flag (e.g. ~--namespace=mystuff~) to use a different
+  namespace. Pass ~--all-namespaces~ to interact with all namespaces.
+
+* Context
+
+  Change the namespace more permanently with a *context*.
+
+  #+BEGIN_SRC sh
+    kubectl config set-context <name> --namespace=<name>
+    kubectl config set-context <name> --namespace=<name> --clusters=<name>
+
+    kubectl config use-context <name>
+  #+END_SRC
+
+* Viewing Objects
+
+  #+BEGIN_SRC sh
+    kubectl get <resource-name>
+    kubectl get <resource-name> <obj-name>
+    # e.g. kubectl get pods my-pod
+
+    kubectl get <resource-name> -o wide  # more details on a longer line
+    kubectl get <resource-name> -o yaml
+    kubectl get <resource-name> <obj-name> -o jsonpath={.status.podIP}
+
+    kubectl describe <resource-name> <object-name>
+    # e.g. kubectl describe pods my-pod
+  #+END_SRC
+
+* Creating/Updating Objects
+
+  #+BEGIN_SRC sh
+    kubectl apply -f obj.yaml  # creates or updates
+    kubectl apply -f obj.yaml view-last-applied
+
+    # Interactive editing (launches editor).
+    kubectl edit <resource-name> <obj-name>
+  #+END_SRC
+
+* Deleting Objects
+
+  #+BEGIN_SRC sh
+    # Use either yaml or resource name + object name.
+    kubectl delete -f obj.yaml
+    kubectl delete <resource-name> <obj-name>
+  #+END_SRC
+
+* Proxy
+
+ Start a secure connection to the API Server with ~kubectl proxy~. When not
+ using ~kubectl proxy~, we need to authenticate requests sent to the API
+ server. We can authenticate by providing a Bearer Token or a set of keys and
+ certificates.
+
+  #+BEGIN_SRC sh
+    kubectl proxy
+  #+END_SRC
+
+  Send requests to the API server over ~localhost~ on port ~8001~.
+
+  #+BEGIN_SRC sh
+    curl http://localhost:8001/
+    curl http://localhost:8001/api/v1
+  #+END_SRC
+
+* Labels
+
+  See [[file:kubernetes-objects.org::*Labels][Kubernetes Object]] or more information on labels.
+
+  #+BEGIN_SRC sh
+    kubectl label <resource-name> <name> <label>
+    # e.g. kubectl label pods foo color=red
+    
+    # Remove a label with the '-' suffix.
+    kubectl label <resource-name> <name> <label>-
+
+    # Use the -l flag to add a label selector.
+    kubectl get pods -l <key>=<value>
+    kubectl get pods -l <key1>=<value1>,<key2>=<value2>
+    kubectl get pods -l '<key> in (value1, value2)'
+  #+END_SRC
+
+* Debugging
+
+  #+BEGIN_SRC sh
+    kubectl logs <pod-name>
+
+    kubectl exec <pod-name> -- <command>
+    kubectl exec -it <pod-name> -- bash  # interactive shell.
+
+    kubectl attach -it <pod-name>  # send stdin to running process.
+
+    kubectl cp <pod-name>:<path> <path>
+
+    kubectl port-forward <pod-name> 8080:80
+
+    kubectl top nodes
+    kubectl top pods
+  #+END_SRC
