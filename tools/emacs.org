@@ -82,6 +82,37 @@ Many of these commands are specific to [[https://github.com/ElliotPenson/.emacs.
 
 * Packages
 
+** artist-mode
+
+   Start Artist with ~M-x artist-mode~.
+
+   | Command   | Description                     |
+   |-----------+---------------------------------|
+   | C-c C-c   | Close artist mode               |
+   | C-c C-a c | Select circle                   |
+   | C-c C-a e | Select ellipse                  |
+   | C-c C-a f | Select fill                     |
+   | C-c C-a l | Select line                     |
+   | C-c C-a p | Select pen                      |
+   | C-c C-a r | Select rectangle                |
+   | C-c C-a S | Select spray can                |
+   | C-c C-a V | Delete lines                    |
+
+   Artist combines nicely with ~ascii-art-to-unicode~.
+
+   #+BEGIN_SRC emacs
+     ;; Draw rectangles
+     M-x artist-mode
+     C-c C-a r
+     C-c C-c
+
+     ;; Convert to unicode
+     M-x aa2u
+   #+END_SRC
+
+   Use the ~aa2u-uniform-weight~ variable to change lines (~'LIGHT~, ~'HEAVY~,
+   or ~DOUBLE~): ~M-: (setq aa2u-uniform-weight 'DOUBLE)~.
+
 ** Avy
 
    | Command    | Description                           |
