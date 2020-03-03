@@ -1,0 +1,87 @@
+#+TITLE: Terraform
+#+AUTHOR: Elliot Penson
+
+Terraform is an *infrastructure as code* offering from [[https://www.hashicorp.com/][HashiCorp]]. As
+[[https://www.terraform.io/intro/][terraform.io/intro]] describes,
+
+#+BEGIN_QUOTE
+Terraform is a tool for building, changing, and versioning *infrastructure*
+safely and efficiently. Terraform can manage existing and popular service
+providers as well as custom in-house solutions.
+
+*Configuration files* describe to Terraform the components needed to run a
+single application or your entire datacenter. Terraform generates an *execution
+plan* describing what it will do to reach the desired state, and then executes
+it to build the described infrastructure. As the configuration changes,
+Terraform is able to determine what changed and create *incremental execution
+plans* which can be applied.
+#+END_QUOTE
+
+Information on this page comes from HashiCorp's [[https://learn.hashicorp.com/terraform/getting-started][getting started guide]].
+
+* Configuration
+
+  The set of files used to describe infrastructure in Terraform is simply known as
+  a Terraform *configuration*. Configuration is saved in ~*.tf~ files.
+
+  #+BEGIN_SRC terraform
+    provider "aws" {
+      profile = "default"
+      region  = "us-east-1"
+    }
+
+    resource "aws_instance" "example" {
+      ami           = "ami-2757f631"
+      instance_type = "t2.micro"
+    }
+  #+END_SRC
+
+* CLI
+
+  #+BEGIN_SRC bash
+    # Use the 'terraform' command.
+    terraform -help
+
+    terraform init  # initialize local settings, data, and plugins.
+    terraform fmt   # format configurations in the current directory.
+    terraform apply # create an execution plan and execute.
+
+    # On 'terraform apply', Terraform writes data to a terraform.tfstate file. This
+    # file keeps track of the IDs of created resources. Use 'show' to inspect
+    # current state.
+    terraform show
+
+    terraform destroy  # remove all resources
+  #+END_SRC
+
+* Variables
+
+  #+BEGIN_SRC terraform
+    # Variables are global parameters.
+    variable "region" {
+      default = "us-east-1"
+    }
+
+    # Use the '.var' prefix to access variables.
+    provider "aws" {
+      region = var.region
+    }
+  #+END_SRC
+
+  Specify variables on the command line...
+
+  #+BEGIN_SRC bash
+    terraform apply -var 'region=us-east-2'
+  #+END_SRC
+
+  ...or in a ~terraform.tfvars~ file.
+
+  #+BEGIN_SRC terraform
+    region = "us-east-2"
+  #+END_SRC
+
+  You may also customize the file name and use ~-var-file~.
+
+  #+BEGIN_SRC bash
+    terraform apply -var-file="production.tfvars"
+  #+END_SRC

@@ -129,6 +129,7 @@ be found on [[https://github.com/ElliotPenson/org][GitHub]].
   - [[file:tools/setup.org][Machine Setup]]
   - [[file:tools/profiling.org][Profiling]]
   - [[file:tools/shebang.org][Shebang]]
+  - [[file:tools/terraform.org][Terraform]]
 
 * Miscellaneous
 
