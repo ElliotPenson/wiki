@@ -1,4 +1,4 @@
-#+TITLE: org
+#+TITLE: wiki
 #+AUTHOR: Elliot Penson
 
 My brain in plain text. View at [[http://wiki.penson.io/][wiki.penson.io]]. Search the site with
