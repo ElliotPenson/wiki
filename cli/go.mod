@@ -2,7 +2,10 @@ module github.com/elliotpenson/wiki/cli
 
 go 1.19
 
-require github.com/spf13/cobra v1.6.0
+require (
+	github.com/spf13/cobra v1.6.0
+	github.com/yuin/goldmark v1.5.3
+)
 
 require (
 	github.com/inconshreveable/mousetrap v1.0.1 // indirect
