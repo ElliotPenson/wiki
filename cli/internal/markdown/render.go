@@ -4,6 +4,7 @@ import (
 	"bytes"
 
 	"github.com/yuin/goldmark"
+	highlighting "github.com/yuin/goldmark-highlighting/v2"
 	"github.com/yuin/goldmark/extension"
 )
 
@@ -11,6 +12,7 @@ var md = goldmark.New(
 	goldmark.WithExtensions(
 		extension.GFM,
 		extension.Footnote,
+		highlighting.Highlighting,
 	),
 )
 
