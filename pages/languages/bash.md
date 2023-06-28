@@ -1,8 +1,7 @@
 # Bash
 
 Bash (Bourne Again SHell) is a command language and Unix shell. Bash is a
-superset of Bourne shell (`sh`): commands that work in `sh`, also work in
-`bash`.
+superset of Bourne shell (`sh`); commands that work in `sh` also work in `bash`.
 
 ## When to Use Bash
 
@@ -46,7 +45,7 @@ greet "Elliot"
 
 ### Arguments
 
-Use **special parameters** to access parameters given to the function.
+Use _special parameters_ to access parameters given to the function.
 
 | Expression | Description         |
 | ---------- | ------------------- |
@@ -108,3 +107,14 @@ contents.
 ```
 
 Executables (`chmod +x file`) should have no extension.
+
+## `set`
+
+Use `set` to configure shell. Many scripts start with `set -eou pipefail`.
+
+| Argument      | Description                         |
+| ------------- | ----------------------------------- |
+| `-e`          | Stop on first non-zero exit status  |
+| `-o pipefail` | Don't mask errors in pipelines      |
+| `-u`          | Treat undefined variables as errors |
+| `-x`          | Print commands before execution     |
