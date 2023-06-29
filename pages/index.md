@@ -14,3 +14,4 @@ Golang, and hosted on AWS S3. View the source code on GitHub at
 ## Tools
 
 - [[tools/vim|Vim]]
+- [[tools/vscode|Visual Studio Code]]
