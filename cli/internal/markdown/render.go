@@ -6,6 +6,7 @@ import (
 	"github.com/yuin/goldmark"
 	highlighting "github.com/yuin/goldmark-highlighting/v2"
 	"github.com/yuin/goldmark/extension"
+	"go.abhg.dev/goldmark/wikilink"
 )
 
 var md = goldmark.New(
@@ -13,6 +14,7 @@ var md = goldmark.New(
 		extension.GFM,
 		extension.Footnote,
 		highlighting.Highlighting,
+		&wikilink.Extender{},
 	),
 )
 
