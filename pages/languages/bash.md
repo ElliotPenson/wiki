@@ -97,8 +97,7 @@ echo "${today}"
 
 ## Style
 
-Start each file with a [shebang](../tools/shebang.org) and a description of the
-contents.
+Start each file with a [[shebang]] and a description of the contents.
 
 ```bash
 #!/bin/bash
