@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestRender(t *testing.T) {
+func TestConvert(t *testing.T) {
 	tests := []struct {
 		input []byte
 		want  []byte
@@ -15,12 +15,12 @@ func TestRender(t *testing.T) {
 		{[]byte("[Site](site.com)"), []byte("<p><a href=\"site.com\">Site</a></p>\n")},
 	}
 	for _, test := range tests {
-		got, err := Render(test.input)
+		got, err := Convert(test.input)
 		if err != nil {
-			t.Errorf("Render(%q) returned error: %v", test.input, err)
+			t.Errorf("Convert(%q) returned error: %v", test.input, err)
 		}
 		if !bytes.Equal(got, test.want) {
-			t.Errorf("Render(%q) = %q, want %q", test.input, got, test.want)
+			t.Errorf("Convert(%q) = %q, want %q", test.input, got, test.want)
 		}
 	}
 }

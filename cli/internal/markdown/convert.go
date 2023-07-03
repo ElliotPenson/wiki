@@ -18,8 +18,8 @@ var md = goldmark.New(
 	),
 )
 
-// Render converts Markdown into HTML.
-func Render(markdown []byte) ([]byte, error) {
+// Convert transforms Markdown into HTML.
+func Convert(markdown []byte) ([]byte, error) {
 	var b bytes.Buffer
 	if err := md.Convert(markdown, &b); err != nil {
 		return []byte{}, err

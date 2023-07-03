@@ -66,7 +66,7 @@ func renderMarkdown(src, dest string) error {
 	if err != nil {
 		return fmt.Errorf("error reading Markdown file %q: %w", src, err)
 	}
-	html, err := markdown.Render(md)
+	html, err := markdown.Convert(md)
 	if err != nil {
 		return fmt.Errorf("error rendering Markdown %q: %w", src, err)
 	}
