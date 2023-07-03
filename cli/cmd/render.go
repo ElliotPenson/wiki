@@ -12,24 +12,26 @@ import (
 )
 
 const (
-	markdownDir = "pages"
-	htmlDir     = "public"
-
 	filePerm = 0644
 	dirPerm  = 0755
+)
+
+var (
+	src  string
+	dest string
 )
 
 var renderCmd = &cobra.Command{
 	Use:   "render",
 	Short: "Convert wiki markdown into HTML",
-	Run: func(cmd *cobra.Command, args []string) {
-		if err := render(markdownDir, htmlDir); err != nil {
-			fmt.Printf("error during render: %v\n", err)
-		}
+	RunE: func(cmd *cobra.Command, args []string) error {
+		return render(src, dest)
 	},
 }
 
 func init() {
+	renderCmd.Flags().StringVarP(&src, "src", "s", "pages", "Directory with Markdown input")
+	renderCmd.Flags().StringVarP(&dest, "dest", "d", "public", "Directory for HTML output")
 	rootCmd.AddCommand(renderCmd)
 }
 
