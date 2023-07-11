@@ -13,7 +13,7 @@ Every computer has a **word size**. A word size indicates the normal size of
 integers and pointer data. Since a virtual address is encoded by such a word,
 word size determines the maximum size of the virtual address space. That is, for
 a machine with a w-bit word size, virtual addresses can range from $0$ to
-$2^{(w-1)}$, giving the program access to at most $2^w$ bytes. Thus, 32-bit
+$2^w - 1$, giving the program access to at most $2^w$ bytes. Thus, 32-bit
 computers have a limited virtual address space of 4GB.
 
 We generally write bit patterns as base-16, or **hexadecimal**. Hexadecimal
@@ -36,9 +36,9 @@ numbers. Signed integers may be negative, zero, or positive numbers.
 
 ### Unsigned
 
-Unsigned binary representation encodes every number between $0$ and
-$2^{(w - 1)}$ with a unique w-bit value. …0000 is 0, …0001 is 1, etc. In C,
-unsigned literals have a `u` suffix.
+Unsigned binary representation encodes every number between $0$ and $2^w - 1$
+with a unique w-bit value. …0000 is 0, …0001 is 1, etc. In C, unsigned literals
+have a `u` suffix.
 
 ### Signed
 
