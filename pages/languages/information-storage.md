@@ -1,5 +1,8 @@
 # Information Storage
 
+NOTE: This page draws heavily, often verbatim, from _Computer Systems: A
+Programmer's Perspective_ by Bryant and O'Hallaron.
+
 Rather than accessing individual bits in memory, most computers use blocks of
 eight bits, or **bytes**. A machine-level program views memory as a very large
 array of bytes, referred to as **virtual memory**. Every byte of memory is
