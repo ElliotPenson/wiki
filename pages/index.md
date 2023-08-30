@@ -19,4 +19,4 @@ Golang, and hosted on AWS S3. View the source code on GitHub at
 ## Theory
 
 - [[theory/algorithms|Algorithms]]
-  -
+  - [[theory/analysis-of-algorithms|Analysis of Algorithms]]

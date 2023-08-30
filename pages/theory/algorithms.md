@@ -14,7 +14,7 @@ more information.
 We seek algorithms that are _correct_, _efficient_, and _easy to implement_.
 These goals may not be simultaneously achievable! See
 [correctness](correctness.org) and
-[analysis of algorithms](algorithm-analysis.org) for more information
+[[analysis-of-algorithms|analysis of algorithms]] for more information
 
 There is a fundamental difference between algorithms, which always produce a
 correct result, and **heuristics**, which may usually do a good job but without
