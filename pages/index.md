@@ -15,3 +15,8 @@ Golang, and hosted on AWS S3. View the source code on GitHub at
 
 - [[tools/vim|Vim]]
 - [[tools/vscode|Visual Studio Code]]
+
+## Theory
+
+- [[theory/algorithms|Algorithms]]
+  -
