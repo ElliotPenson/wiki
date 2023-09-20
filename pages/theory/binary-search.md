@@ -17,20 +17,18 @@ Binary search is the power behind twenty questions!
 ## Implementation
 
 ```python
-def binary_search(item, array, start=None, end=None):
-    """Precondition: array is sorted"""
-    if start is None or end is None:
-        start, end = 0, len(array)
-
-    middle_index = (start + end) // 2
-    if start >= end:
-        return False
-    elif item == array[middle_index]:
-        return True
-    elif item < array[middle_index]:
-        return binary_search(item, array, start, middle_index)
-    else:
-        return binary_search(item, array, middle_index + 1, end)
+def binary_search(item, array):
+    """Find the index of an item in a sorted array. Return -1 if not found."""
+    start, end = 0, len(array) - 1
+    while start <= end:
+        middle = (start + end) // 2
+        if item == array[middle]:
+            return middle
+        elif item < array[middle]:
+            end = middle - 1
+        else:
+            start = middle + 1
+    return -1
 ```
 
 ## Libraries
@@ -45,7 +43,9 @@ from bisect import bisect_left
 
 def binary_search(item, array):
     index = bisect_left(array, item)
-    return 0 <= index < len(array) and array[index] == item
+    if index < len(array) and array[index] == item:
+        return index
+    return -1
 ```
 
 ## Related Algorithms
