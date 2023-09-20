@@ -12,8 +12,7 @@ solve the problem of sorting. See [program modeling](program-modeling.org) for
 more information.
 
 We seek algorithms that are _correct_, _efficient_, and _easy to implement_.
-These goals may not be simultaneously achievable! See
-[correctness](correctness.org) and
+These goals may not be simultaneously achievable! See [[correctness]] and
 [[analysis-of-algorithms|analysis of algorithms]] for more information
 
 There is a fundamental difference between algorithms, which always produce a

@@ -5,9 +5,8 @@ Skiena.
 
 ## Chapter 1: Introduction
 
-See [[../theory/algorithms|algorithms]],
-[correctness](~/org/theory/correctness.org), and
-[program modeling](~/org/theory/program-modeling.org).
+See [[../theory/algorithms|algorithms]], [[../theory/correctness|correctness]],
+and [program modeling](~/org/theory/program-modeling.org).
 
 ## Chapter 2: Algorithm Analysis
 
