@@ -8,8 +8,8 @@ must work on and of its output after running on one of these instances. For
 example, an instance of the sorting problem might be `[1, 4, 3]`. An
 **algorithm** is a procedure that takes any of the possible input instances and
 transforms it to the desired output. There are many different algorithms that
-solve the problem of sorting. See [program modeling](program-modeling.org) for
-more information.
+solve the problem of sorting. See [[program-modeling|program modeling]] for more
+information.
 
 We seek algorithms that are _correct_, _efficient_, and _easy to implement_.
 These goals may not be simultaneously achievable! See [[correctness]] and
