@@ -15,19 +15,20 @@ they are based on arrays or pointers.
 
 ### Arrays
 
-The **array** is the fundamental contiguously-allocated data structures. These
-single slabs of memory have constant access given the index and space
-efficiency. **Dynamic arrays** enable resizing. First, an initial size is
-allocated. If we run out of space, a larger array (usually 2x) is allocated and
-the elements are copied over. Insertion amortizes to $O(1)$.
+The **array** is the fundamental contiguously-allocated data structures.
+Advantages of these single slabs of memory include: constant access given the
+index, space efficiency, and memory locality[^1]. **Dynamic arrays** enable
+resizing. First, an initial size is allocated. If we run out of space, a larger
+array (usually 2x) is allocated and the elements are copied over. Insertion
+amortizes to $O(1)$.
 
 ### Lists
 
 The **list** is the simplest linked structure. Each node in the list has data
 and pointer fields. **Pointers** are the connections that hold the pieces of
-together. Pointers represent the address of a location in memory. List don't
-incur overflow, but require extra space for pointer fields and don't given
-efficient random access to items.
+linked structures together. Pointers represent the address of a location in
+memory. List don't incur overflow, but require extra space for pointer fields
+and don't give efficient random access to items.
 
 ## Abstract Data Types
 
@@ -62,3 +63,10 @@ intervals. The basic priority queue supports three primary operations: _insert_,
 _find-minimum/maximum_, and _delete-minimum/maximum_. Priority queues can be
 implemented with arrays or BSTs, but a particularly nice implementation is the
 [heap](./heaps.org).
+
+[^1]:
+    "A common programming idiom involves iterating through all the elements of a
+    data structure. Arrays are good for this because they exhibit excellent
+    memory locality. Physical continuity between successive data accesses helps
+    exploit the high-speed _cache memory_ on modern computer architectures."
+    -Skiena
