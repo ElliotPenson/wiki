@@ -3,7 +3,7 @@
 Information on this page is taken from _The Algorithm Design Manual_ by Steven
 S. Skiena.
 
-Mobdeling is the art of formulating your application in terms of precisely
+Modeling is the art of formulating your application in terms of precisely
 described, well-understood problems. Proper modeling can eliminate the need to
 design or even implement algorithms, by relating your application to what has
 been done before.
