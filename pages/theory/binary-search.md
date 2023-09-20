@@ -77,9 +77,8 @@ current position.
 ### Square and Other Roots
 
 Suppose we are searching for the square root $r$ of $n$. Notice that the square
-root of $n \leq 1$ must be at least 1 and at most $n$. Consider the midpoint $m$
-of this interval. How does $m^2$ compare to $n$? If $n \leq
-   m^2$, then the
+root of $n \geq 1$ must be at least 1 and at most $n$. Consider the midpoint $m$
+of this interval. How does $m^2$ compare to $n$? If $n \geq m^2$, then the
 square root must be greater than $m$, so the algorithm repeats on a new range of
 values. This application of binary search identifies the square root within ±1
 after only $\lg n$ rounds. Root-finding algorithms that converge faster are
