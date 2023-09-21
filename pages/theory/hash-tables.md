@@ -100,6 +100,6 @@ integer, and compare it to the hash codes of the rest of the corpus.
 
 ## Libraries
 
-Java's standard library provides the `HashTable` class. Python has built in hash
+Java's standard library provides the `HashMap` class. Python has built in hash
 tables with the `dict` type. Python also includes `defaultdict` and `Counter` in
 the `collections` module.
