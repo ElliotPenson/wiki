@@ -54,7 +54,7 @@ stack = []
 
 stack.append('item')  # push
 stack[-1]             # peek
-stacks.pop()          # pop
+stack.pop()           # pop
 len(stack) == 0       # isEmpty
 ```
 
@@ -93,8 +93,8 @@ from collections import deque
 
 queue = deque()
 
-queue.append('item')   # add
+queue.append('item')   # enqueue
 queue[0]               # peek
-queue.popleft('item')  # remote
+queue.popleft()        # dequeue
 len(queue) == 0        # isEmpty
 ```
