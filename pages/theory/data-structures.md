@@ -40,7 +40,7 @@ particular retrieval order they support. **Stacks** support retrieval by
 last-in, first-out (LIFO) order. **Queues** support retrieval in first in, first
 out (FIFO) order.
 
-See [Bags, Stacks, and Queues](bags-stacks-queues.org) for more information.
+See [[bags-stacks-queues|Bags, Stacks, and Queues]] for more information.
 
 ### Dictionaries
 
