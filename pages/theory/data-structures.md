@@ -48,8 +48,7 @@ The **dictionary** data type permits access to data items by content. Operations
 include _search_ (when given a _key_), _insert_, and _delete_. Dictionaries are
 also called **maps** and **associative arrays**.
 
-[Hash tables](./hash-tables.org) are a very practical way to maintain a
-dictionary.
+[[hash-tables|Hash tables]] are a very practical way to maintain a dictionary.
 
 ### Trees
 
