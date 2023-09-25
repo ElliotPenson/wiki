@@ -16,7 +16,7 @@ See [[../theory/analysis-of-algorithms|analysis of algorithms]].
 
 See [[../theory/data-structures|data structures]],
 [[../theory/bags-stacks-queues|bags, stacks, queues]],
-[[../theory/hash-tables|hash tables]], [trees](../theory/trees.org), and heaps.
+[[../theory/hash-tables|hash tables]], [[../theory/trees|trees]], and heaps.
 
 ## Chapter 4: Sorting and Searching
 

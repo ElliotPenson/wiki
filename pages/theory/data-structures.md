@@ -52,7 +52,7 @@ also called **maps** and **associative arrays**.
 
 ### Trees
 
-See [Trees](./trees.org) for more information.
+See [[trees|Trees]] for more information.
 
 ### Priority Queues
 
